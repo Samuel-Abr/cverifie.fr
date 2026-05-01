@@ -2,241 +2,194 @@
 layout: base.njk
 title: "Marilee Jones : 28 ans de faux diplômes à la tête des admissions du MIT"
 description: "Elle était la grande prêtresse de l'admission au MIT, adulée, conférencière internationale. Elle n'avait aucun des trois diplômes qu'elle déclarait. L'histoire de la plus longue imposture universitaire américaine."
+bodyClass: dark-story
 ---
 <style>
-.story-hero {
-  margin-top:64px;
-  background:#0D0D1A;
-  position:relative;
-  overflow:hidden;
-  padding:5rem 2rem 4rem;
-}
-.story-hero::before {
-  content:'';
-  position:absolute;inset:0;
-  background:radial-gradient(ellipse at 70% 0%, rgba(45,106,79,0.18) 0%, transparent 60%),
-             radial-gradient(ellipse at 10% 80%, rgba(45,106,79,0.12) 0%, transparent 50%);
-}
-.story-hero-inner { max-width:800px; margin:0 auto; position:relative; z-index:1; }
-.story-badge {
-  display:inline-flex; align-items:center; gap:8px;
-  background:rgba(45,106,79,0.18); border:1px solid rgba(82,183,136,0.4);
-  color:#52B788; padding:5px 14px; border-radius:100px;
-  font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
-  margin-bottom:1.5rem;
-}
-.story-badge::before {
-  content:''; width:6px; height:6px; border-radius:50%; background:#52B788;
-}
-.story-hero h1 {
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2rem,4.5vw,3.2rem);
-  color:white; line-height:1.15;
-  letter-spacing:-0.02em; margin-bottom:1.25rem;
-  font-weight:700;
-}
-.story-hero h1 em { color:#52B788; font-style:italic; }
-.story-hero-lead {
-  font-size:1.1rem; color:rgba(255,255,255,0.65);
-  line-height:1.75; max-width:660px; margin-bottom:2rem;
-}
-.story-meta {
-  display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;
-}
-.story-meta-item {
-  font-size:12px; color:rgba(255,255,255,0.4);
-  display:flex; align-items:center; gap:6px;
-}
-.story-meta-item strong { color:rgba(255,255,255,0.65); }
+/* ── PROGRESS BAR ─────────────────────────────── */
+.sp-bar{position:fixed;top:64px;left:0;height:3px;width:0%;background:var(--green-light);z-index:9999;transition:width .1s linear;pointer-events:none}
 
-.story-body {
-  max-width:800px; margin:0 auto;
-  padding:4rem 2rem 5rem;
-}
-.story-body h2 {
-  font-family:'Playfair Display',serif;
-  font-size:1.75rem; color:var(--ink);
-  font-weight:700; line-height:1.2;
-  letter-spacing:-0.02em;
-  margin:3rem 0 1.25rem;
-  padding-bottom:.75rem;
-  border-bottom:2px solid var(--green-pale);
-}
-.story-body h3 {
-  font-size:1.1rem; font-weight:700; color:var(--ink);
-  margin:2rem 0 .75rem;
-}
-.story-body p {
-  font-size:1rem; color:var(--ink-light);
-  line-height:1.85; margin-bottom:1.25rem;
-}
-.story-body strong { color:var(--ink); font-weight:600; }
-.story-body ul { padding-left:1.5rem; margin-bottom:1.25rem; }
-.story-body li { font-size:.9375rem; color:var(--ink-light); line-height:1.7; margin-bottom:.5rem; }
+/* ── RESET FOR DARK STORY ─────────────────────── */
+body.dark-story{background:#050507;color:rgba(255,255,255,0.82)}
+body.dark-story a{color:var(--green-light)}
 
-.story-pullquote {
-  margin:2.5rem 0;
-  border-left:4px solid var(--green);
-  padding:1.25rem 1.75rem;
-  background:var(--green-ultra, #F0F7F4);
-  border-radius:0 10px 10px 0;
-}
-.story-pullquote p {
-  font-family:'Playfair Display',serif;
-  font-size:1.2rem; color:var(--ink);
-  line-height:1.65; margin:0;
-  font-style:italic;
-}
-.story-pullquote cite {
-  display:block; margin-top:.75rem;
-  font-size:.8rem; color:#777; font-style:normal;
-}
+/* ── HERO ─────────────────────────────────────── */
+.sp-hero{height:100vh;min-height:580px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:12vh}
+.sp-hero-img{position:absolute;inset:0;z-index:0}
+.sp-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.sp-hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(5,5,7,0.97) 0%,rgba(5,5,7,0.72) 40%,rgba(5,5,7,0.25) 100%)}
+.sp-hero-body{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 2rem;width:100%}
+.sp-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(82,183,136,0.15);border:1px solid rgba(82,183,136,0.4);color:#52B788;padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.5rem}
+.sp-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:#52B788}
+.sp-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5.5vw,4rem);color:white;line-height:1.1;letter-spacing:-0.025em;margin-bottom:1.25rem;font-weight:700}
+.sp-hero h1 em{color:#52B788;font-style:italic}
+.sp-hero-lead{font-size:1.1rem;color:rgba(255,255,255,0.65);line-height:1.75;max-width:640px;margin-bottom:2rem}
+.sp-hero-meta{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.sp-hero-meta-item{font-size:12px;color:rgba(255,255,255,0.38);display:flex;align-items:center;gap:6px}
+.sp-hero-meta-item strong{color:rgba(255,255,255,0.6)}
+.sp-hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:2}
+.sp-hero-scroll span{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,0.3)}
+.sp-hero-scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,rgba(255,255,255,0.3),transparent);animation:scrollpulse 1.8s ease-in-out infinite}
+@keyframes scrollpulse{0%,100%{opacity:.4;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.1)}}
 
-.story-keybox {
-  background:var(--cream-dark); border:1px solid var(--border);
-  border-radius:12px; padding:1.5rem 2rem; margin:2.5rem 0;
-}
-.story-keybox h4 {
-  font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
-  color:var(--ink-muted); margin-bottom:1rem;
-}
-.story-keybox ul { padding-left:1.25rem; margin:0; }
-.story-keybox li { font-size:.9rem; color:var(--ink-light); line-height:1.65; margin-bottom:.5rem; }
+/* ── ARTICLE ──────────────────────────────────── */
+.sp-article{max-width:740px;margin:0 auto;padding:5rem 2rem 2rem}
+.sp-text p{font-size:1.0625rem;color:rgba(255,255,255,0.75);line-height:1.9;margin-bottom:1.4rem}
+.sp-text strong{color:rgba(255,255,255,0.92);font-weight:600}
+.sp-text em{color:rgba(255,255,255,0.82)}
+.sp-text ul{padding-left:1.4rem;margin-bottom:1.25rem}
+.sp-text li{font-size:1rem;color:rgba(255,255,255,0.7);line-height:1.75;margin-bottom:.5rem}
 
-.story-timeline {
-  margin:2.5rem 0;
-  border-left:2px solid var(--border);
-  padding-left:1.5rem;
-}
-.story-timeline-item { position:relative; margin-bottom:1.5rem; }
-.story-timeline-item::before {
-  content:''; position:absolute; left:-1.75rem; top:4px;
-  width:10px; height:10px; border-radius:50%;
-  background:var(--green); border:2px solid white;
-  box-shadow:0 0 0 2px var(--green);
-}
-.story-timeline-item .tl-date {
-  font-size:.8rem; font-weight:700; color:var(--green);
-  letter-spacing:.05em; text-transform:uppercase;
-  margin-bottom:.25rem; display:block;
-}
-.story-timeline-item p { font-size:.9rem; margin-bottom:0; }
+/* ── CHAPTER HEADS ────────────────────────────── */
+.sp-chapter{margin:4.5rem 0 1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.08)}
+.sp-chapter-num{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green-light);opacity:.7;margin-bottom:.6rem}
+.sp-chapter h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3.5vw,2.1rem);color:white;line-height:1.2;letter-spacing:-0.02em;font-weight:700}
 
-.story-lesson {
-  background:var(--ink); border-radius:16px;
-  padding:2.5rem; margin:3rem 0;
-  position:relative; overflow:hidden;
-}
-.story-lesson::before {
-  content:''; position:absolute; top:-60px; right:-30px;
-  width:200px; height:200px; border-radius:50%;
-  background:radial-gradient(circle,rgba(45,106,79,0.3) 0%,transparent 70%);
-}
-.story-lesson-inner { position:relative; z-index:1; }
-.story-lesson h3 {
-  font-size:1rem; font-weight:700; color:var(--green-light);
-  letter-spacing:.06em; text-transform:uppercase;
-  margin-bottom:1rem;
-}
-.story-lesson p {
-  font-size:.9375rem; color:rgba(255,255,255,.7);
-  line-height:1.75; margin-bottom:.75rem;
-}
-.story-lesson p:last-child { margin-bottom:0; }
+/* ── PULLQUOTE ────────────────────────────────── */
+.sp-quote{margin:3rem 0;padding:0 0 0 1.75rem;border-left:3px solid var(--green-light);position:relative}
+.sp-quote blockquote{font-family:'Playfair Display',serif;font-size:1.25rem;color:rgba(255,255,255,0.88);line-height:1.65;font-style:italic;margin:0 0 .75rem}
+.sp-quote cite{font-size:.8rem;color:rgba(255,255,255,0.38);font-style:normal;letter-spacing:.03em}
 
-.story-cta {
-  background:white; border:1.5px solid var(--border);
-  border-radius:16px; padding:2rem;
-  display:flex; align-items:center; gap:2rem;
-  margin-top:3rem;
-}
-.story-cta-icon {
-  width:56px; height:56px; background:var(--green-pale);
-  border-radius:50%; display:flex; align-items:center; justify-content:center;
-  flex-shrink:0;
-}
-.story-cta-icon svg { width:24px; height:24px; stroke:var(--green); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-.story-cta-text h4 { font-size:1rem; font-weight:700; color:var(--ink); margin-bottom:.4rem; }
-.story-cta-text p { font-size:.875rem; color:var(--ink-light); line-height:1.6; margin:0; }
-.story-cta-btn {
-  display:inline-flex; align-items:center; gap:8px;
-  background:var(--green); color:white;
-  padding:11px 22px; border-radius:8px;
-  font-size:13px; font-weight:600;
-  white-space:nowrap; transition:background .2s;
-  flex-shrink:0;
-}
-.story-cta-btn:hover { background:var(--green-mid); }
+/* ── KEY BOX ──────────────────────────────────── */
+.sp-keybox{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:1.75rem 2rem;margin:2.5rem 0}
+.sp-keybox-label{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green-light);margin-bottom:1rem;opacity:.8}
+.sp-keybox ul{padding-left:1.25rem;margin:0}
+.sp-keybox li{font-size:.9375rem;color:rgba(255,255,255,0.68);line-height:1.7;margin-bottom:.55rem}
+.sp-keybox li strong{color:rgba(255,255,255,0.88)}
 
-.story-nav {
-  border-top:1px solid var(--border);
-  padding:2rem 0 0; margin-top:3rem;
-  display:flex; align-items:center; justify-content:space-between; gap:1rem;
-  flex-wrap:wrap;
-}
-.story-nav a {
-  font-size:.875rem; color:var(--green); font-weight:600;
-  display:flex; align-items:center; gap:6px;
-}
-.story-nav a svg { width:14px; height:14px; stroke:currentColor; fill:none; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
+/* ── TIMELINE ─────────────────────────────────── */
+.sp-timeline{margin:2.5rem 0;border-left:1px solid rgba(255,255,255,0.12);padding-left:1.75rem}
+.sp-tl-item{position:relative;margin-bottom:1.75rem}
+.sp-tl-item::before{content:'';position:absolute;left:-2.125rem;top:5px;width:9px;height:9px;border-radius:50%;background:var(--green-light);border:2px solid #050507;box-shadow:0 0 0 2px var(--green-light)}
+.sp-tl-date{font-size:.75rem;font-weight:700;color:var(--green-light);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.3rem;display:block;opacity:.9}
+.sp-tl-item p{font-size:.9375rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0}
 
-@media(max-width:640px) {
-  .story-hero { padding:3.5rem 1.25rem 3rem; }
-  .story-body { padding:2.5rem 1.25rem 4rem; }
-  .story-cta { flex-direction:column; align-items:flex-start; }
+/* ── LESSON BOX ───────────────────────────────── */
+.sp-lesson{background:rgba(82,183,136,0.06);border:1px solid rgba(82,183,136,0.18);border-radius:16px;padding:2.5rem;margin:3.5rem 0;position:relative;overflow:hidden}
+.sp-lesson::before{content:'';position:absolute;top:-80px;right:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(82,183,136,0.12) 0%,transparent 70%)}
+.sp-lesson-inner{position:relative;z-index:1}
+.sp-lesson-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green-light);margin-bottom:1rem;display:block}
+.sp-lesson h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:white;margin-bottom:1.25rem;font-weight:700}
+.sp-lesson p{font-size:.9375rem;color:rgba(255,255,255,0.68);line-height:1.8;margin-bottom:.8rem}
+.sp-lesson p:last-child{margin-bottom:0}
+.sp-lesson strong{color:rgba(255,255,255,0.88)}
+
+/* ── IMAGE BREAK ──────────────────────────────── */
+.sp-img-break{position:relative;height:65vh;min-height:320px;margin:5.5rem 0;overflow:hidden}
+.sp-img-break img{width:100%;height:100%;object-fit:cover;object-position:center}
+.sp-img-break::before{content:'';position:absolute;inset:0;z-index:1;background:rgba(5,5,7,0.38)}
+.sp-img-break-caption{position:absolute;bottom:1.25rem;right:1.5rem;font-size:.7rem;color:rgba(255,255,255,0.3);z-index:2;letter-spacing:.06em}
+
+/* ── CTA BLOCK ────────────────────────────────── */
+.sp-cta-block{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:2.25rem 2rem;margin:4rem 0;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.sp-cta-icon{width:52px;height:52px;background:rgba(82,183,136,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sp-cta-icon svg{width:22px;height:22px;stroke:var(--green-light);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sp-cta-text{flex:1;min-width:200px}
+.sp-cta-text h4{font-size:1rem;font-weight:700;color:white;margin-bottom:.4rem}
+.sp-cta-text p{font-size:.875rem;color:rgba(255,255,255,0.55);line-height:1.65;margin:0}
+.sp-cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:white;padding:12px 24px;border-radius:9px;font-size:13px;font-weight:600;white-space:nowrap;transition:background .2s;flex-shrink:0}
+.sp-cta-btn:hover{background:var(--green-mid);color:white}
+.sp-cta-btn svg{stroke:white;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* ── NAV ──────────────────────────────────────── */
+.sp-nav{border-top:1px solid rgba(255,255,255,0.08);padding:2rem 0 3rem;margin-top:1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.sp-nav a{font-size:.875rem;color:var(--green-light);font-weight:600;display:flex;align-items:center;gap:6px;transition:opacity .2s}
+.sp-nav a:hover{opacity:.75}
+.sp-nav a svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* ── SCROLL REVEAL ────────────────────────────── */
+.sp-reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.sp-reveal.sp-in{opacity:1;transform:translateY(0)}
+.sp-img-break.sp-reveal img{opacity:0;transform:scale(1.05);transition:opacity 1.1s ease,transform 1.4s ease}
+.sp-img-break.sp-in img{opacity:1;transform:scale(1)}
+.sp-img-break.sp-reveal{opacity:1;transform:none}
+
+/* ── RESPONSIVE ───────────────────────────────── */
+@media(max-width:640px){
+  .sp-hero{padding-bottom:8vh}
+  .sp-hero-body{padding:0 1.25rem}
+  .sp-article{padding:3rem 1.25rem 1rem}
+  .sp-cta-block{flex-direction:column;align-items:flex-start}
+  .sp-img-break{height:45vh}
 }
 </style>
 
+<!-- PROGRESS BAR -->
+<div class="sp-bar" id="spBar"></div>
+
 <!-- HERO -->
-<section class="story-hero">
-  <div class="story-hero-inner">
-    <span class="story-badge">Histoire vraie · États-Unis</span>
-    <h1>Marilee Jones :<br><em>28 ans de faux diplômes</em> au MIT</h1>
-    <p class="story-hero-lead">Elle était l'une des femmes les plus respectées du monde de l'éducation américaine. Conférencière, auteure, doyenne des admissions du MIT pendant 10 ans. Et elle n'avait aucun des trois diplômes universitaires qui figuraient sur son CV depuis 1979.</p>
-    <div class="story-meta">
-      <span class="story-meta-item">
+<section class="sp-hero">
+  <div class="sp-hero-img">
+    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=80&auto=format&fit=crop" alt="Cérémonie de remise de diplômes">
+  </div>
+  <div class="sp-hero-body">
+    <div class="sp-eyebrow">Histoire vraie · États-Unis</div>
+    <h1>Marilee Jones :<br><em>28 ans de faux diplômes</em><br>au MIT</h1>
+    <p class="sp-hero-lead">Elle était l'une des femmes les plus respectées du monde de l'éducation américaine. Conférencière, auteure, doyenne des admissions du MIT. Et elle n'avait aucun des trois diplômes universitaires qui figuraient sur son CV depuis 1979.</p>
+    <div class="sp-hero-meta">
+      <span class="sp-hero-meta-item">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="2" width="10" height="9" rx="1"/><path d="M4 2V1M8 2V1M1 5h10"/></svg>
         <strong>Avril 2007</strong> · Cambridge, Massachusetts
       </span>
-      <span class="story-meta-item">
+      <span class="sp-hero-meta-item">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="5"/><polyline points="6,3 6,6 8,8"/></svg>
         10 min de lecture
       </span>
-      <span class="story-meta-item">Histoires vraies de fraudes CV</span>
     </div>
+  </div>
+  <div class="sp-hero-scroll">
+    <span>Défiler</span>
+    <div class="sp-hero-scroll-line"></div>
   </div>
 </section>
 
-<!-- ARTICLE BODY -->
-<article class="story-body">
+<!-- ARTICLE -->
+<article class="sp-article">
 
-  <p>Il y a une ironie cruelle dans cette histoire : Marilee Jones était célèbre, entre autres, pour prôner la réduction du stress dans les dossiers d'admission universitaires. Elle publiait des articles. Elle donnait des conférences. Elle avait écrit un livre entier sur le sujet. Pendant ce temps, depuis 1979, chaque année universitaire commençait pour elle avec le même secret profondément enfoui : ses propres diplômes, ceux sur lesquels reposait toute sa légitimité, étaient des inventions.</p>
-
-  <h2>1979 : Une petite ligne sur un CV</h2>
-
-  <p>Marilee Jones rejoint le MIT en 1979 comme assistante administrative au bureau des admissions. C'est un poste d'entrée de gamme. Sur son CV, elle indique trois formations universitaires : un diplôme de l'Albany Medical College, un de Union College, et un de Rensselaer Polytechnic Institute.</p>
-
-  <p>Personne ne vérifie. Pourquoi le ferait-on ? C'est un poste administratif junior. Elle est souriante, efficace, motivée.</p>
-
-  <p>Les années passent. Elle grimpe les échelons. Elle devient directrice des admissions. Puis doyenne des admissions, le poste le plus élevé du bureau. Elle devient une figure nationale de l'éducation américaine. Elle est invitée à prendre la parole dans les meilleures universités du pays. En 2006, elle co-signe "Less Stress, More Success" (<em>Moins de stress, plus de succès</em>), un livre très bien accueilli sur la course aux admissions dans les grandes universités américaines.</p>
-
-  <div class="story-pullquote">
-    <p>« Elle était un modèle pour des milliers d'étudiants et de professionnels de l'éducation. Sa prise de parole sur le sujet des admissions était considérée comme une référence absolue. »</p>
-    <cite><em>The Boston Globe</em>, avril 2007</cite>
+  <div class="sp-text sp-reveal">
+    <p>Il y a une ironie cruelle dans cette histoire : Marilee Jones était célèbre, entre autres, pour prôner la réduction du stress dans les dossiers d'admission universitaires. Elle publiait des articles. Elle donnait des conférences. Elle avait écrit un livre entier sur le sujet. Pendant ce temps, depuis 1979, chaque année universitaire commençait pour elle avec le même secret profondément enfoui : ses propres diplômes, ceux sur lesquels reposait toute sa légitimité, étaient des inventions.</p>
   </div>
 
-  <p>Pendant tout ce temps, les trois diplômes mentionnés sur son CV de 1979 restaient là, silencieusement, dans ses dossiers officiels. Vérifiés une fois ? Non. Jamais.</p>
+  <!-- CHAPTER 1 -->
+  <div class="sp-chapter sp-reveal">
+    <div class="sp-chapter-num">Chapitre 01</div>
+    <h2>1979 : Une petite ligne sur un CV</h2>
+  </div>
 
-  <h2>28 ans plus tard : Un email anonyme</h2>
+  <div class="sp-text sp-reveal">
+    <p>Marilee Jones rejoint le MIT en 1979 comme assistante administrative au bureau des admissions. C'est un poste d'entrée de gamme. Sur son CV, elle indique trois formations universitaires : un diplôme de l'Albany Medical College, un de Union College, et un de Rensselaer Polytechnic Institute.</p>
+    <p>Personne ne vérifie. Pourquoi le ferait-on ? C'est un poste administratif junior. Elle est souriante, efficace, motivée.</p>
+    <p>Les années passent. Elle grimpe les échelons. Elle devient directrice des admissions. Puis doyenne des admissions, le poste le plus élevé du bureau. Elle devient une figure nationale de l'éducation américaine. Elle est invitée à prendre la parole dans les meilleures universités du pays. En 2006, elle co-signe <em>"Less Stress, More Success"</em>, un livre très bien accueilli sur la course aux admissions dans les grandes universités américaines.</p>
+  </div>
 
-  <p>En 2007, un email anonyme arrive sur les bureaux du MIT. Il est laconique, précis, et dévastateur : les diplômes de Marilee Jones sont inventés.</p>
+  <div class="sp-quote sp-reveal">
+    <blockquote>« Elle était un modèle pour des milliers d'étudiants et de professionnels de l'éducation. Sa prise de parole sur le sujet des admissions était considérée comme une référence absolue. »</blockquote>
+    <cite>The Boston Globe, avril 2007</cite>
+  </div>
 
-  <p>Le MIT ouvre une enquête discrète. En quelques jours, la conclusion est sans appel : <strong>aucun des trois établissements cités ne confirme avoir diplômé Marilee Jones.</strong></p>
+  <div class="sp-text sp-reveal">
+    <p>Pendant tout ce temps, les trois diplômes mentionnés sur son CV de 1979 restaient là, silencieusement, dans ses dossiers officiels. Vérifiés une fois ? Non. Jamais.</p>
+  </div>
 
-  <p>Albany Medical College, Union College, Rensselaer Polytechnic Institute, trois appels téléphoniques. Trois réponses négatives. Vingt-huit ans de mensonge, dissous en 72 heures de vérification.</p>
+  <!-- IMAGE BREAK 1 -->
+  <div class="sp-img-break sp-reveal">
+    <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80&auto=format&fit=crop" alt="Bibliothèque universitaire">
+    <span class="sp-img-break-caption">Cambridge · Massachusetts</span>
+  </div>
 
-  <div class="story-keybox">
-    <h4>Les diplômes inventés de Marilee Jones</h4>
+  <!-- CHAPTER 2 -->
+  <div class="sp-chapter sp-reveal">
+    <div class="sp-chapter-num">Chapitre 02</div>
+    <h2>28 ans plus tard : Un email anonyme</h2>
+  </div>
+
+  <div class="sp-text sp-reveal">
+    <p>En 2007, un email anonyme arrive sur les bureaux du MIT. Il est laconique, précis, et dévastateur : les diplômes de Marilee Jones sont inventés.</p>
+    <p>Le MIT ouvre une enquête discrète. En quelques jours, la conclusion est sans appel : <strong>aucun des trois établissements cités ne confirme avoir diplômé Marilee Jones.</strong></p>
+    <p>Albany Medical College, Union College, Rensselaer Polytechnic Institute. Trois appels téléphoniques. Trois réponses négatives. Vingt-huit ans de mensonge, dissous en 72 heures de vérification.</p>
+  </div>
+
+  <div class="sp-keybox sp-reveal">
+    <div class="sp-keybox-label">Les diplômes inventés de Marilee Jones</div>
     <ul>
       <li><strong>Albany Medical College :</strong> Non confirmé. Aucun diplôme délivré à son nom.</li>
       <li><strong>Union College :</strong> Non confirmé.</li>
@@ -244,96 +197,145 @@ description: "Elle était la grande prêtresse de l'admission au MIT, adulée, c
     </ul>
   </div>
 
-  <p>Confrontée aux preuves, Marilee Jones ne nie pas. Elle démissionne le 26 avril 2007, dans une déclaration sobre et étrange à la fois : <em>"Je suis profondément désolée pour la communauté du MIT, pour les lycéens que j'ai guidés pendant des années, et pour les personnes dont j'ai pu influencer le chemin. Je n'avais pas les diplômes que j'avais indiqués."</em></p>
-
-  <p>Pas de procès. Pas de charges pénales, car elle n'avait pas utilisé ces faux diplômes pour obtenir une license professionnelle réglementée. Elle était simplement... partie.</p>
-
-  <h2>L'ironie systémique</h2>
-
-  <p>Ce qui rend cette affaire particulièrement grinçante, c'est ce que faisait Marilee Jones <em>professionnellement</em>.</p>
-
-  <p>Elle évaluait, pour le MIT, les dossiers de milliers de candidats chaque année. Elle jugeait leurs diplômes, leurs parcours, leur sincérité. Elle avait le pouvoir de refuser ou d'accepter des étudiants sur la base de leurs qualifications, des qualifications qu'elle était particulièrement bien placée pour savoir qu'on pouvait inventer.</p>
-
-  <p>Plus troublant encore : son livre de 2006 encourageait les lycéens à "montrer qui ils sont vraiment" dans leurs dossiers, à ne pas se cacher derrière des apparences artificielles. La page du livre dédicacée à "l'authenticité" est difficile à lire avec le recul.</p>
-
-  <div class="story-pullquote">
-    <p>« Elle a passé des années à enseigner aux jeunes l'importance de l'intégrité dans leurs dossiers de candidature. C'est la contradiction la plus cruelle de toute cette affaire. »</p>
-    <cite>Professeur de Harvard, <em>New York Times</em>, mai 2007</cite>
+  <div class="sp-text sp-reveal">
+    <p>Confrontée aux preuves, Marilee Jones ne nie pas. Elle démissionne le 26 avril 2007, dans une déclaration sobre et étrange : <em>"Je suis profondément désolée pour la communauté du MIT, pour les lycéens que j'ai guidés pendant des années, et pour les personnes dont j'ai pu influencer le chemin. Je n'avais pas les diplômes que j'avais indiqués."</em></p>
+    <p>Pas de procès. Pas de charges pénales, car elle n'avait pas utilisé ces faux diplômes pour obtenir une licence professionnelle réglementée. Elle était simplement... partie.</p>
   </div>
 
-  <h2>Le MIT : Institution victime ou complice involontaire ?</h2>
+  <!-- CHAPTER 3 -->
+  <div class="sp-chapter sp-reveal">
+    <div class="sp-chapter-num">Chapitre 03</div>
+    <h2>L'ironie systémique</h2>
+  </div>
 
-  <p>La question que tout le monde a éludée dans l'affaire Jones, c'est celle-ci : comment le MIT, l'une des universités les plus prestigieuses et les plus rigoureuses du monde, une institution qui vérifie l'origine des publications scientifiques à la virgule près, a-t-il pu employer une personne à son poste le plus sensible en matière d'admissions pendant 28 ans, sans jamais vérifier ses propres diplômes ?</p>
+  <div class="sp-text sp-reveal">
+    <p>Ce qui rend cette affaire particulièrement grinçante, c'est ce que faisait Marilee Jones <em>professionnellement</em>.</p>
+    <p>Elle évaluait, pour le MIT, les dossiers de milliers de candidats chaque année. Elle jugeait leurs diplômes, leurs parcours, leur sincérité. Elle avait le pouvoir de refuser ou d'accepter des étudiants sur la base de leurs qualifications, des qualifications qu'elle était particulièrement bien placée pour savoir qu'on pouvait inventer.</p>
+    <p>Plus troublant encore : son livre de 2006 encourageait les lycéens à "montrer qui ils sont vraiment" dans leurs dossiers, à ne pas se cacher derrière des apparences artificielles. La page dédicacée à "l'authenticité" est difficile à lire avec le recul.</p>
+  </div>
 
-  <p>La réponse est simple, et elle vaut pour toutes les organisations : <strong>la vérification des diplômes n'était pas une procédure systématique lors de son recrutement en 1979.</strong> Et une fois qu'un employé est là, qui vérifie rétrospectivement ? Le dossier est classé. La confiance s'est installée. La promotion suivante efface encore davantage le doute initial.</p>
+  <div class="sp-quote sp-reveal">
+    <blockquote>« Elle a passé des années à enseigner aux jeunes l'importance de l'intégrité dans leurs dossiers de candidature. C'est la contradiction la plus cruelle de toute cette affaire. »</blockquote>
+    <cite>Professeur de Harvard, New York Times, mai 2007</cite>
+  </div>
 
-  <p>C'est le mécanisme classique de la fraude au long cours : plus le mensonge vieillit, plus il semble impossible. "Elle est doyenne des admissions du MIT depuis 10 ans, personne ne va lui demander ses diplômes." Sauf qu'il aurait suffi d'un email à trois universités.</p>
+  <!-- CHAPTER 4 -->
+  <div class="sp-chapter sp-reveal">
+    <div class="sp-chapter-num">Chapitre 04</div>
+    <h2>Le MIT : Institution victime ou complice involontaire ?</h2>
+  </div>
 
-  <div class="story-timeline">
-    <div class="story-timeline-item">
-      <span class="tl-date">1979</span>
+  <div class="sp-text sp-reveal">
+    <p>La question que tout le monde a éludée dans l'affaire Jones : comment le MIT, l'une des universités les plus rigoureuses du monde, a-t-il pu employer une personne à son poste le plus sensible en matière d'admissions pendant 28 ans, sans jamais vérifier ses propres diplômes ?</p>
+    <p>La réponse est simple, et elle vaut pour toutes les organisations : <strong>la vérification des diplômes n'était pas une procédure systématique lors de son recrutement en 1979.</strong> Et une fois qu'un employé est là, qui vérifie rétrospectivement ? Le dossier est classé. La confiance s'est installée. La promotion suivante efface encore davantage le doute initial.</p>
+    <p>C'est le mécanisme classique de la fraude au long cours : plus le mensonge vieillit, plus il semble impossible. "Elle est doyenne des admissions du MIT depuis 10 ans, personne ne va lui demander ses diplômes." Sauf qu'il aurait suffi d'un email à trois universités.</p>
+  </div>
+
+  <!-- IMAGE BREAK 2 -->
+  <div class="sp-img-break sp-reveal">
+    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1600&q=80&auto=format&fit=crop" alt="Bibliothèque, rayonnages de livres">
+    <span class="sp-img-break-caption">28 ans · 3 diplômes · 0 vérification</span>
+  </div>
+
+  <!-- CHAPTER 5 -->
+  <div class="sp-chapter sp-reveal">
+    <div class="sp-chapter-num">Chronologie</div>
+    <h2>La longue marche d'un mensonge</h2>
+  </div>
+
+  <div class="sp-timeline sp-reveal">
+    <div class="sp-tl-item">
+      <span class="sp-tl-date">1979</span>
       <p>Jones rejoint le MIT avec un CV mentionnant trois diplômes non obtenus. Aucune vérification lors du recrutement.</p>
     </div>
-    <div class="story-timeline-item">
-      <span class="tl-date">1997</span>
+    <div class="sp-tl-item">
+      <span class="sp-tl-date">1997</span>
       <p>Nommée doyenne des admissions du MIT, le poste le plus influent du bureau des admissions.</p>
     </div>
-    <div class="story-timeline-item">
-      <span class="tl-date">2006</span>
+    <div class="sp-tl-item">
+      <span class="sp-tl-date">2006</span>
       <p>Publication de <em>"Less Stress, More Success"</em>, un livre sur l'authenticité dans les dossiers d'admission.</p>
     </div>
-    <div class="story-timeline-item">
-      <span class="tl-date">Début 2007</span>
+    <div class="sp-tl-item">
+      <span class="sp-tl-date">Début 2007</span>
       <p>Un email anonyme signale les faux diplômes au MIT.</p>
     </div>
-    <div class="story-timeline-item">
-      <span class="tl-date">26 avril 2007</span>
+    <div class="sp-tl-item">
+      <span class="sp-tl-date">26 avril 2007</span>
       <p>Démission de Marilee Jones. Le MIT confirme publiquement les faits. Aucune charge pénale.</p>
     </div>
   </div>
 
-  <h2>Ce qui a changé : et ce qui n'a pas changé</h2>
+  <!-- CHAPTER 6 -->
+  <div class="sp-chapter sp-reveal">
+    <div class="sp-chapter-num">Leçon</div>
+    <h2>Ce qui a changé, et ce qui ne change jamais</h2>
+  </div>
 
-  <p>Après l'affaire Jones, le MIT a revu ses procédures de vérification pour les nouvelles recrues. D'autres grandes universités américaines ont fait de même. Plusieurs études ont alors révélé des chiffres alarmants sur la fréquence des faux diplômes dans les dossiers professionnels : entre 15 et 30 % des cadres américains mentionnent des diplômes inexacts ou non obtenus sur leurs CV.</p>
+  <div class="sp-text sp-reveal">
+    <p>Après l'affaire Jones, le MIT a revu ses procédures de vérification pour les nouvelles recrues. D'autres grandes universités américaines ont fait de même. Plusieurs études ont alors révélé des chiffres alarmants : entre 15 et 30 % des cadres américains mentionnent des diplômes inexacts ou non obtenus sur leurs CV.</p>
+    <p>Mais la leçon de fond reste entière : la fraude n'est pas d'abord un problème de personnes malintentionnées. C'est un problème de <strong>systèmes qui rendent la fraude facile et la vérification rare.</strong></p>
+    <p>Marilee Jones n'était pas un génie du mal. C'était quelqu'un qui avait menti une fois, vu que ça fonctionnait, et continué pendant 28 ans, parce que personne n'avait jamais eu l'idée de vérifier.</p>
+  </div>
 
-  <p>Mais la leçon de fond reste entière : la fraude n'est pas d'abord un problème de personnes malintentionnées. C'est un problème de <strong>systèmes qui rendent la fraude facile et la vérification rare.</strong></p>
-
-  <p>Marilee Jones n'était pas un génie du mal. C'était quelqu'un qui avait menti une fois, vu que ça fonctionnait, et continué, pendant 28 ans, parce que personne n'avait jamais eu l'idée de vérifier.</p>
-
-  <div class="story-lesson">
-    <div class="story-lesson-inner">
-      <h3>La leçon pour les recruteurs</h3>
-      <p>L'affaire Jones est l'illustration parfaite de ce que les spécialistes appellent le "biais de confirmation professionnelle" : une fois qu'un candidat est recruté et qu'il performe, on ne remet jamais en question les bases de son dossier. Le mensonge initial est doublement protégé, d'abord par l'absence de vérification à l'embauche, ensuite par le confort du statu quo.</p>
-      <p>La solution est aussi simple que la fraude elle-même : <strong>vérifier systématiquement les diplômes avant tout recrutement, quel que soit le niveau de poste</strong>. Un appel à l'établissement, une vérification sur une base officielle. Quelques minutes qui auraient épargné au MIT une décennie de gêne institutionnelle.</p>
-      <p>En France, diplome.gouv.fr permet de vérifier la quasi-totalité des diplômes nationaux gratuitement. Pour les grandes écoles et les diplômes étrangers, une vérification directe reste indispensable.</p>
-    </div>
+  <div class="sp-lesson sp-reveal">
+    <span class="sp-lesson-label">Ce que ça change pour vous</span>
+    <h3>La leçon pour les recruteurs</h3>
+    <p>L'affaire Jones est l'illustration parfaite du "biais de confirmation professionnelle" : une fois qu'un candidat est recruté et qu'il performe, on ne remet jamais en question les bases de son dossier. Le mensonge initial est doublement protégé, d'abord par l'absence de vérification à l'embauche, ensuite par le confort du statu quo.</p>
+    <p>La solution est aussi simple que la fraude elle-même : <strong>vérifier systématiquement les diplômes avant tout recrutement, quel que soit le niveau de poste</strong>. Un appel à l'établissement, une vérification sur une base officielle. Quelques minutes qui auraient épargné au MIT une décennie de gêne institutionnelle.</p>
+    <p>En France, diplome.gouv.fr permet de vérifier la quasi-totalité des diplômes nationaux gratuitement. Pour les grandes écoles et les diplômes étrangers, une vérification directe reste indispensable.</p>
   </div>
 
   <!-- CTA -->
-  <div class="story-cta">
-    <div class="story-cta-icon">
+  <div class="sp-cta-block sp-reveal">
+    <div class="sp-cta-icon">
       <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
     </div>
-    <div class="story-cta-text">
+    <div class="sp-cta-text">
       <h4>Ne laissez pas un CV non vérifié devenir votre problème</h4>
       <p>CVérifié contacte directement les établissements et vous remet un rapport complet sous 48h. Dès 14,90 €.</p>
     </div>
-    <a href="/commander.html" class="story-cta-btn">
+    <a href="/commander.html" class="sp-cta-btn">
       Vérifier un candidat
-      <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 13,8"/><polyline points="9,4 13,8 9,12"/></svg>
+      <svg viewBox="0 0 16 16" width="14" height="14"><polyline points="3,8 13,8"/><polyline points="9,4 13,8 9,12"/></svg>
     </a>
   </div>
 
   <!-- NAVIGATION -->
-  <nav class="story-nav">
+  <nav class="sp-nav">
     <a href="/blog/histoire-jean-claude-romand-faux-medecin.html">
       <svg viewBox="0 0 16 16"><polyline points="13,8 3,8"/><polyline points="7,12 3,8 7,4"/></svg>
-      Précédent : Jean-Claude Romand
+      Jean-Claude Romand
     </a>
     <a href="/blog/histoire-scott-thompson-yahoo-faux-diplome.html">
-      Suivant : Scott Thompson, PDG de Yahoo
+      Scott Thompson, Yahoo
       <svg viewBox="0 0 16 16"><polyline points="3,8 13,8"/><polyline points="9,4 13,8 9,12"/></svg>
     </a>
   </nav>
 
 </article>
+
+<script>
+(function(){
+  // Progress bar
+  var bar=document.getElementById('spBar');
+  function updateBar(){
+    var s=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;
+    if(h>0) bar.style.width=(s/h*100)+'%';
+  }
+  window.addEventListener('scroll',updateBar,{passive:true});
+
+  // Scroll reveal
+  var els=document.querySelectorAll('.sp-reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('sp-in');io.unobserve(e.target);}
+      });
+    },{threshold:0.12});
+    els.forEach(function(el){io.observe(el);});
+  } else {
+    els.forEach(function(el){el.classList.add('sp-in');});
+  }
+})();
+</script>

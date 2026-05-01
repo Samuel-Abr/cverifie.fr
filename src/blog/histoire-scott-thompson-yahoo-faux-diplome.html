@@ -2,368 +2,323 @@
 layout: base.njk
 title: "Scott Thompson : le PDG de Yahoo viré après 4 mois pour un diplôme inventé"
 description: "En 2012, Scott Thompson est nommé PDG de Yahoo avec grande fanfare. Quatre mois plus tard, il doit partir, à cause d'un diplôme en informatique qu'il n'a jamais obtenu. La chute la plus rapide de la Silicon Valley."
+bodyClass: dark-story
 ---
 <style>
-.story-hero {
-  margin-top:64px;
-  background:#0A0A0A;
-  position:relative;
-  overflow:hidden;
-  padding:5rem 2rem 4rem;
-}
-.story-hero::before {
-  content:'';
-  position:absolute;inset:0;
-  background:radial-gradient(ellipse at 80% 0%, rgba(45,106,79,0.18) 0%, transparent 60%),
-             radial-gradient(ellipse at 5% 70%, rgba(45,106,79,0.1) 0%, transparent 50%);
-}
-.story-hero-inner { max-width:800px; margin:0 auto; position:relative; z-index:1; }
-.story-badge {
-  display:inline-flex; align-items:center; gap:8px;
-  background:rgba(45,106,79,0.18); border:1px solid rgba(82,183,136,0.4);
-  color:#52B788; padding:5px 14px; border-radius:100px;
-  font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
-  margin-bottom:1.5rem;
-}
-.story-badge::before {
-  content:''; width:6px; height:6px; border-radius:50%; background:#52B788;
-}
-.story-hero h1 {
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2rem,4.5vw,3.2rem);
-  color:white; line-height:1.15;
-  letter-spacing:-0.02em; margin-bottom:1.25rem;
-  font-weight:700;
-}
-.story-hero h1 em { color:#52B788; font-style:italic; }
-.story-hero-lead {
-  font-size:1.1rem; color:rgba(255,255,255,0.65);
-  line-height:1.75; max-width:660px; margin-bottom:2rem;
-}
-.story-meta {
-  display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;
-}
-.story-meta-item {
-  font-size:12px; color:rgba(255,255,255,0.4);
-  display:flex; align-items:center; gap:6px;
-}
-.story-meta-item strong { color:rgba(255,255,255,0.65); }
+/* ── PROGRESS BAR ─────────────────────────────── */
+.sp-bar{position:fixed;top:64px;left:0;height:3px;width:0%;background:var(--green-light);z-index:9999;transition:width .1s linear;pointer-events:none}
 
-.story-body {
-  max-width:800px; margin:0 auto;
-  padding:4rem 2rem 5rem;
-}
-.story-body h2 {
-  font-family:'Playfair Display',serif;
-  font-size:1.75rem; color:var(--ink);
-  font-weight:700; line-height:1.2;
-  letter-spacing:-0.02em;
-  margin:3rem 0 1.25rem;
-  padding-bottom:.75rem;
-  border-bottom:2px solid var(--green-pale);
-}
-.story-body h3 {
-  font-size:1.1rem; font-weight:700; color:var(--ink);
-  margin:2rem 0 .75rem;
-}
-.story-body p {
-  font-size:1rem; color:var(--ink-light);
-  line-height:1.85; margin-bottom:1.25rem;
-}
-.story-body strong { color:var(--ink); font-weight:600; }
-.story-body ul { padding-left:1.5rem; margin-bottom:1.25rem; }
-.story-body li { font-size:.9375rem; color:var(--ink-light); line-height:1.7; margin-bottom:.5rem; }
+/* ── RESET FOR DARK STORY ─────────────────────── */
+body.dark-story{background:#050507;color:rgba(255,255,255,0.82)}
+body.dark-story a{color:var(--green-light)}
 
-.story-pullquote {
-  margin:2.5rem 0;
-  border-left:4px solid var(--green);
-  padding:1.25rem 1.75rem;
-  background:var(--green-ultra, #F0F7F4);
-  border-radius:0 10px 10px 0;
-}
-.story-pullquote p {
-  font-family:'Playfair Display',serif;
-  font-size:1.2rem; color:var(--ink);
-  line-height:1.65; margin:0;
-  font-style:italic;
-}
-.story-pullquote cite {
-  display:block; margin-top:.75rem;
-  font-size:.8rem; color:#888; font-style:normal;
-}
+/* ── HERO ─────────────────────────────────────── */
+.sp-hero{height:100vh;min-height:580px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:12vh}
+.sp-hero-img{position:absolute;inset:0;z-index:0}
+.sp-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.sp-hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(5,5,7,0.97) 0%,rgba(5,5,7,0.72) 40%,rgba(5,5,7,0.2) 100%)}
+.sp-hero-body{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 2rem;width:100%}
+.sp-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(82,183,136,0.15);border:1px solid rgba(82,183,136,0.4);color:#52B788;padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.5rem}
+.sp-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:#52B788}
+.sp-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5.5vw,4rem);color:white;line-height:1.1;letter-spacing:-0.025em;margin-bottom:1.25rem;font-weight:700}
+.sp-hero h1 em{color:#52B788;font-style:italic}
+.sp-hero-lead{font-size:1.1rem;color:rgba(255,255,255,0.65);line-height:1.75;max-width:640px;margin-bottom:2rem}
+.sp-hero-meta{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.sp-hero-meta-item{font-size:12px;color:rgba(255,255,255,0.38);display:flex;align-items:center;gap:6px}
+.sp-hero-meta-item strong{color:rgba(255,255,255,0.6)}
+.sp-hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:2}
+.sp-hero-scroll span{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,0.3)}
+.sp-hero-scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,rgba(255,255,255,0.3),transparent);animation:scrollpulse 1.8s ease-in-out infinite}
+@keyframes scrollpulse{0%,100%{opacity:.4;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.1)}}
 
-.story-keybox {
-  background:var(--cream-dark); border:1px solid var(--border);
-  border-radius:12px; padding:1.5rem 2rem; margin:2.5rem 0;
-}
-.story-keybox h4 {
-  font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
-  color:var(--ink-muted); margin-bottom:1rem;
-}
-.story-keybox ul { padding-left:1.25rem; margin:0; }
-.story-keybox li { font-size:.9rem; color:var(--ink-light); line-height:1.65; margin-bottom:.5rem; }
+/* ── ARTICLE ──────────────────────────────────── */
+.sp-article{max-width:740px;margin:0 auto;padding:5rem 2rem 2rem}
+.sp-text p{font-size:1.0625rem;color:rgba(255,255,255,0.75);line-height:1.9;margin-bottom:1.4rem}
+.sp-text strong{color:rgba(255,255,255,0.92);font-weight:600}
+.sp-text em{color:rgba(255,255,255,0.82)}
+.sp-text ul{padding-left:1.4rem;margin-bottom:1.25rem}
+.sp-text li{font-size:1rem;color:rgba(255,255,255,0.7);line-height:1.75;margin-bottom:.5rem}
 
-.story-timeline {
-  margin:2.5rem 0;
-  border-left:2px solid var(--border);
-  padding-left:1.5rem;
-}
-.story-timeline-item { position:relative; margin-bottom:1.5rem; }
-.story-timeline-item::before {
-  content:''; position:absolute; left:-1.75rem; top:4px;
-  width:10px; height:10px; border-radius:50%;
-  background:var(--green); border:2px solid white;
-  box-shadow:0 0 0 2px var(--green);
-}
-.story-timeline-item .tl-date {
-  font-size:.8rem; font-weight:700; color:var(--green);
-  letter-spacing:.05em; text-transform:uppercase;
-  margin-bottom:.25rem; display:block;
-}
-.story-timeline-item p { font-size:.9rem; margin-bottom:0; }
+/* ── CHAPTER HEADS ────────────────────────────── */
+.sp-chapter{margin:4.5rem 0 1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.08)}
+.sp-chapter-num{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green-light);opacity:.7;margin-bottom:.6rem}
+.sp-chapter h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3.5vw,2.1rem);color:white;line-height:1.2;letter-spacing:-0.02em;font-weight:700}
 
-.story-numbers {
-  display:grid; grid-template-columns:repeat(3,1fr); gap:1rem;
-  margin:2.5rem 0;
-}
-.story-number-item {
-  background:var(--cream-dark); border:1px solid var(--border);
-  border-radius:10px; padding:1.25rem; text-align:center;
-}
-.story-number-item .num {
-  font-size:1.8rem; font-weight:700; color:var(--ink);
-  font-family:'Playfair Display',serif; line-height:1;
-  margin-bottom:.4rem; display:block;
-}
-.story-number-item .label {
-  font-size:.75rem; color:var(--ink-muted); line-height:1.4;
-}
+/* ── PULLQUOTE ────────────────────────────────── */
+.sp-quote{margin:3rem 0;padding:0 0 0 1.75rem;border-left:3px solid var(--green-light);position:relative}
+.sp-quote blockquote{font-family:'Playfair Display',serif;font-size:1.25rem;color:rgba(255,255,255,0.88);line-height:1.65;font-style:italic;margin:0 0 .75rem}
+.sp-quote cite{font-size:.8rem;color:rgba(255,255,255,0.38);font-style:normal;letter-spacing:.03em}
 
-.story-lesson {
-  background:var(--ink); border-radius:16px;
-  padding:2.5rem; margin:3rem 0;
-  position:relative; overflow:hidden;
-}
-.story-lesson::before {
-  content:''; position:absolute; top:-60px; right:-30px;
-  width:200px; height:200px; border-radius:50%;
-  background:radial-gradient(circle,rgba(45,106,79,0.3) 0%,transparent 70%);
-}
-.story-lesson-inner { position:relative; z-index:1; }
-.story-lesson h3 {
-  font-size:1rem; font-weight:700; color:var(--green-light);
-  letter-spacing:.06em; text-transform:uppercase;
-  margin-bottom:1rem;
-}
-.story-lesson p {
-  font-size:.9375rem; color:rgba(255,255,255,.7);
-  line-height:1.75; margin-bottom:.75rem;
-}
-.story-lesson p:last-child { margin-bottom:0; }
+/* ── STATS BAR ────────────────────────────────── */
+.sp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;margin:2.5rem 0}
+.sp-stat{background:#050507;padding:1.5rem 1rem;text-align:center}
+.sp-stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:white;line-height:1;display:block;margin-bottom:.4rem}
+.sp-stat-label{font-size:.72rem;color:rgba(255,255,255,0.4);line-height:1.4}
 
-.story-cta {
-  background:white; border:1.5px solid var(--border);
-  border-radius:16px; padding:2rem;
-  display:flex; align-items:center; gap:2rem;
-  margin-top:3rem;
-}
-.story-cta-icon {
-  width:56px; height:56px; background:var(--green-pale);
-  border-radius:50%; display:flex; align-items:center; justify-content:center;
-  flex-shrink:0;
-}
-.story-cta-icon svg { width:24px; height:24px; stroke:var(--green); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-.story-cta-text h4 { font-size:1rem; font-weight:700; color:var(--ink); margin-bottom:.4rem; }
-.story-cta-text p { font-size:.875rem; color:var(--ink-light); line-height:1.6; margin:0; }
-.story-cta-btn {
-  display:inline-flex; align-items:center; gap:8px;
-  background:var(--green); color:white;
-  padding:11px 22px; border-radius:8px;
-  font-size:13px; font-weight:600;
-  white-space:nowrap; transition:background .2s;
-  flex-shrink:0;
-}
-.story-cta-btn:hover { background:var(--green-mid); }
+/* ── KEY BOX ──────────────────────────────────── */
+.sp-keybox{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:1.75rem 2rem;margin:2.5rem 0}
+.sp-keybox-label{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green-light);margin-bottom:1rem;opacity:.8}
+.sp-keybox ul{padding-left:1.25rem;margin:0}
+.sp-keybox li{font-size:.9375rem;color:rgba(255,255,255,0.68);line-height:1.7;margin-bottom:.55rem}
+.sp-keybox li strong{color:rgba(255,255,255,0.88)}
 
-.story-nav {
-  border-top:1px solid var(--border);
-  padding:2rem 0 0; margin-top:3rem;
-  display:flex; align-items:center; justify-content:space-between; gap:1rem;
-  flex-wrap:wrap;
-}
-.story-nav a {
-  font-size:.875rem; color:var(--green); font-weight:600;
-  display:flex; align-items:center; gap:6px;
-}
-.story-nav a svg { width:14px; height:14px; stroke:currentColor; fill:none; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
+/* ── TIMELINE ─────────────────────────────────── */
+.sp-timeline{margin:2.5rem 0;border-left:1px solid rgba(255,255,255,0.12);padding-left:1.75rem}
+.sp-tl-item{position:relative;margin-bottom:1.75rem}
+.sp-tl-item::before{content:'';position:absolute;left:-2.125rem;top:5px;width:9px;height:9px;border-radius:50%;background:var(--green-light);border:2px solid #050507;box-shadow:0 0 0 2px var(--green-light)}
+.sp-tl-date{font-size:.75rem;font-weight:700;color:var(--green-light);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.3rem;display:block;opacity:.9}
+.sp-tl-item p{font-size:.9375rem;color:rgba(255,255,255,0.65);line-height:1.7;margin:0}
 
-@media(max-width:768px) {
-  .story-numbers { grid-template-columns:1fr 1fr; }
+/* ── LESSON BOX ───────────────────────────────── */
+.sp-lesson{background:rgba(82,183,136,0.06);border:1px solid rgba(82,183,136,0.18);border-radius:16px;padding:2.5rem;margin:3.5rem 0;position:relative;overflow:hidden}
+.sp-lesson::before{content:'';position:absolute;top:-80px;right:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(82,183,136,0.12) 0%,transparent 70%)}
+.sp-lesson-inner{position:relative;z-index:1}
+.sp-lesson-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green-light);margin-bottom:1rem;display:block}
+.sp-lesson h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:white;margin-bottom:1.25rem;font-weight:700}
+.sp-lesson p{font-size:.9375rem;color:rgba(255,255,255,0.68);line-height:1.8;margin-bottom:.8rem}
+.sp-lesson p:last-child{margin-bottom:0}
+.sp-lesson strong{color:rgba(255,255,255,0.88)}
+
+/* ── IMAGE BREAK ──────────────────────────────── */
+.sp-img-break{position:relative;height:65vh;min-height:320px;margin:5.5rem 0;overflow:hidden}
+.sp-img-break img{width:100%;height:100%;object-fit:cover;object-position:center}
+.sp-img-break::before{content:'';position:absolute;inset:0;z-index:1;background:rgba(5,5,7,0.38)}
+.sp-img-break-caption{position:absolute;bottom:1.25rem;right:1.5rem;font-size:.7rem;color:rgba(255,255,255,0.3);z-index:2;letter-spacing:.06em}
+
+/* ── CTA BLOCK ────────────────────────────────── */
+.sp-cta-block{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:2.25rem 2rem;margin:4rem 0;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.sp-cta-icon{width:52px;height:52px;background:rgba(82,183,136,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sp-cta-icon svg{width:22px;height:22px;stroke:var(--green-light);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sp-cta-text{flex:1;min-width:200px}
+.sp-cta-text h4{font-size:1rem;font-weight:700;color:white;margin-bottom:.4rem}
+.sp-cta-text p{font-size:.875rem;color:rgba(255,255,255,0.55);line-height:1.65;margin:0}
+.sp-cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:white;padding:12px 24px;border-radius:9px;font-size:13px;font-weight:600;white-space:nowrap;transition:background .2s;flex-shrink:0}
+.sp-cta-btn:hover{background:var(--green-mid);color:white}
+.sp-cta-btn svg{stroke:white;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* ── NAV ──────────────────────────────────────── */
+.sp-nav{border-top:1px solid rgba(255,255,255,0.08);padding:2rem 0 3rem;margin-top:1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.sp-nav a{font-size:.875rem;color:var(--green-light);font-weight:600;display:flex;align-items:center;gap:6px;transition:opacity .2s}
+.sp-nav a:hover{opacity:.75}
+.sp-nav a svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* ── SCROLL REVEAL ────────────────────────────── */
+.sp-reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.sp-reveal.sp-in{opacity:1;transform:translateY(0)}
+.sp-img-break.sp-reveal img{opacity:0;transform:scale(1.05);transition:opacity 1.1s ease,transform 1.4s ease}
+.sp-img-break.sp-in img{opacity:1;transform:scale(1)}
+.sp-img-break.sp-reveal{opacity:1;transform:none}
+
+/* ── RESPONSIVE ───────────────────────────────── */
+@media(max-width:640px){
+  .sp-hero{padding-bottom:8vh}
+  .sp-hero-body{padding:0 1.25rem}
+  .sp-article{padding:3rem 1.25rem 1rem}
+  .sp-cta-block{flex-direction:column;align-items:flex-start}
+  .sp-img-break{height:45vh}
+  .sp-stats{grid-template-columns:1fr}
 }
-@media(max-width:640px) {
-  .story-hero { padding:3.5rem 1.25rem 3rem; }
-  .story-body { padding:2.5rem 1.25rem 4rem; }
-  .story-cta { flex-direction:column; align-items:flex-start; }
-  .story-numbers { grid-template-columns:1fr; }
+@media(min-width:641px) and (max-width:768px){
+  .sp-stats{grid-template-columns:1fr 1fr}
 }
 </style>
 
+<!-- PROGRESS BAR -->
+<div class="sp-bar" id="spBar"></div>
+
 <!-- HERO -->
-<section class="story-hero">
-  <div class="story-hero-inner">
-    <span class="story-badge">Histoire vraie · Silicon Valley</span>
-    <h1>Scott Thompson :<br><em>PDG de Yahoo viré</em> après 4 mois</h1>
-    <p class="story-hero-lead">Nommé avec le mandat de sauver Yahoo, Scott Thompson avait tout pour plaire : un CV brillant, une réputation de bâtisseur, et un diplôme en informatique de Stonehill College. Problème : ce dernier diplôme n'existait pas. Et dans la Silicon Valley, quelqu'un allait le découvrir.</p>
-    <div class="story-meta">
-      <span class="story-meta-item">
+<section class="sp-hero">
+  <div class="sp-hero-img">
+    <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1600&q=80&auto=format&fit=crop" alt="Laptop ouvert, bureau de direction">
+  </div>
+  <div class="sp-hero-body">
+    <div class="sp-eyebrow">Histoire vraie · Silicon Valley</div>
+    <h1>Scott Thompson :<br><em>PDG de Yahoo viré</em><br>après 4 mois</h1>
+    <p class="sp-hero-lead">Nommé avec le mandat de sauver Yahoo, Scott Thompson avait tout pour plaire : un CV brillant, une réputation de bâtisseur, et un diplôme en informatique de Stonehill College. Problème : ce diplôme n'existait pas. Et dans la Silicon Valley, quelqu'un allait le découvrir.</p>
+    <div class="sp-hero-meta">
+      <span class="sp-hero-meta-item">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="2" width="10" height="9" rx="1"/><path d="M4 2V1M8 2V1M1 5h10"/></svg>
         <strong>Mai 2012</strong> · Sunnyvale, Californie
       </span>
-      <span class="story-meta-item">
+      <span class="sp-hero-meta-item">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="5"/><polyline points="6,3 6,6 8,8"/></svg>
         11 min de lecture
       </span>
-      <span class="story-meta-item">Histoires vraies de fraudes CV</span>
     </div>
+  </div>
+  <div class="sp-hero-scroll">
+    <span>Défiler</span>
+    <div class="sp-hero-scroll-line"></div>
   </div>
 </section>
 
-<!-- ARTICLE BODY -->
-<article class="story-body">
+<!-- ARTICLE -->
+<article class="sp-article">
 
-  <p>Janvier 2012. Yahoo est en crise. L'entreprise qui a longtemps régné sur internet est en train de se noyer, bousculée par Google, rattrapée par Facebook, incapable de trouver une direction. Son conseil d'administration cherche un sauveur. Il croit l'avoir trouvé en la personne de Scott Thompson, l'ancien président de PayPal. Le jour de son annonce, les marchés applaudissent. L'histoire aurait pu s'arrêter là.</p>
+  <div class="sp-text sp-reveal">
+    <p>Janvier 2012. Yahoo est en crise. L'entreprise qui a longtemps régné sur internet est en train de se noyer, bousculée par Google, rattrapée par Facebook, incapable de trouver une direction. Son conseil d'administration cherche un sauveur. Il croit l'avoir trouvé en la personne de Scott Thompson, l'ancien président de PayPal. Le jour de son annonce, les marchés applaudissent.</p>
+    <p>L'histoire aurait pu s'arrêter là. Elle s'arrête quatre mois plus tard, à cause d'une ligne sur un CV.</p>
+  </div>
 
-  <p>Elle s'arrête quatre mois plus tard, à cause d'une ligne sur un CV.</p>
+  <!-- CHAPTER 1 -->
+  <div class="sp-chapter sp-reveal">
+    <div class="sp-chapter-num">Chapitre 01</div>
+    <h2>L'ascension : Un CV au millimètre</h2>
+  </div>
 
-  <h2>L'ascension : Un CV au millimètre</h2>
+  <div class="sp-text sp-reveal">
+    <p>Scott Thompson, 54 ans en 2012, a une carrière solide. Il a grandi dans l'industrie des paiements électroniques, contribué à la montée en puissance de Visa, puis dirigé PayPal, qu'il a transformé en machine à cash sous l'égide d'eBay. Son bilan opérationnel est réel, ses résultats mesurables.</p>
+    <p>Sur son CV et dans les documents officiels de Yahoo, il est indiqué qu'il détient un diplôme en comptabilité <em>et</em> en informatique du Stonehill College, une petite université catholique du Massachusetts. Ce double diplôme lui donne une crédibilité particulière dans la Silicon Valley : être un financier <em>et</em> comprendre la tech, c'est précisément ce que Yahoo cherche.</p>
+  </div>
 
-  <p>Scott Thompson, 54 ans en 2012, a une carrière solide. Il a grandi dans l'industrie des paiements électroniques, contribué à la montée en puissance de Visa, puis dirigé PayPal, qu'il a transformé en machine à cash sous l'égide d'eBay. Son bilan opérationnel est réel, ses résultats mesurables.</p>
-
-  <p>Sur son CV et dans les documents officiels de Yahoo, il est indiqué qu'il détient un diplôme en comptabilité <em>et</em> en informatique du Stonehill College, une petite université catholique du Massachusetts. C'est ce double diplôme qui lui donne une crédibilité particulière dans la Silicon Valley, être un financier <em>et</em> comprendre la tech, c'est précisément ce que Yahoo cherche.</p>
-
-  <div class="story-numbers">
-    <div class="story-number-item">
-      <span class="num">4</span>
-      <span class="label">mois comme PDG de Yahoo avant la démission forcée</span>
+  <div class="sp-stats sp-reveal">
+    <div class="sp-stat">
+      <span class="sp-stat-num">4</span>
+      <span class="sp-stat-label">mois comme PDG de Yahoo avant la démission forcée</span>
     </div>
-    <div class="story-number-item">
-      <span class="num">~7 M$</span>
-      <span class="label">de rémunération perçue pendant ces 4 mois</span>
+    <div class="sp-stat">
+      <span class="sp-stat-num">~7 M$</span>
+      <span class="sp-stat-label">de rémunération perçue pendant ces 4 mois</span>
     </div>
-    <div class="story-number-item">
-      <span class="num">1</span>
-      <span class="label">diplôme inventé, en informatique, jamais obtenu à Stonehill</span>
+    <div class="sp-stat">
+      <span class="sp-stat-num">1</span>
+      <span class="sp-stat-label">diplôme inventé : informatique, jamais obtenu à Stonehill</span>
     </div>
   </div>
 
-  <h2>Dan Loeb : Le détective improbable</h2>
+  <!-- CHAPTER 2 -->
+  <div class="sp-chapter sp-reveal">
+    <div class="sp-chapter-num">Chapitre 02</div>
+    <h2>Dan Loeb : Le détective improbable</h2>
+  </div>
 
-  <p>L'ennemi de Thompson ne s'appelle pas un journaliste d'investigation ni un agent du FBI. Il s'appelle Dan Loeb, et c'est un hedge fund manager agressif, fondateur de Third Point LLC, qui détient une participation significative dans Yahoo et veut imposer ses propres candidats au conseil d'administration.</p>
+  <div class="sp-text sp-reveal">
+    <p>L'ennemi de Thompson ne s'appelle pas un journaliste d'investigation ni un agent du FBI. Il s'appelle Dan Loeb, et c'est un hedge fund manager agressif, fondateur de Third Point LLC, qui détient une participation significative dans Yahoo et veut imposer ses propres candidats au conseil d'administration.</p>
+    <p>Dans ce contexte de bras de fer entre l'actionnaire activiste et le conseil d'administration, Loeb et ses équipes passent au crible tout ce qui peut nuire à la crédibilité de Thompson, y compris, méthodiquement, son CV.</p>
+    <p>Le 26 avril 2012, Third Point envoie une lettre de 8 pages au conseil d'administration de Yahoo. La lettre est chirurgicale. Elle pointe en particulier un élément : <strong>Stonehill College ne proposait pas de diplôme en informatique en 1979, l'année où Thompson est supposé avoir obtenu le sien.</strong> Le département d'informatique a été créé bien après.</p>
+  </div>
 
-  <p>Dans ce contexte de bras de fer entre l'actionnaire activiste et le conseil d'administration, Loeb et ses équipes passent au crible tout ce qui peut nuire à la crédibilité de Thompson, y compris, méthodiquement, son CV.</p>
-
-  <p>Le 26 avril 2012, Third Point envoie une lettre de 8 pages au conseil d'administration de Yahoo. La lettre est chirurgicale. Elle pointe en particulier un élément : <strong>Stonehill College ne proposait pas de diplôme en informatique en 1979, l'année où Thompson est supposé avoir obtenu le sien.</strong> Le département d'informatique a été créé bien après.</p>
-
-  <div class="story-pullquote">
-    <p>« Ce n'était pas une erreur de bonne foi. Ce diplôme qui n'existe pas apparaît dans des dizaines de documents officiels déposés auprès de la SEC. Cela soulève des questions fondamentales sur l'intégrité du management. »</p>
+  <div class="sp-quote sp-reveal">
+    <blockquote>« Ce n'était pas une erreur de bonne foi. Ce diplôme qui n'existe pas apparaît dans des dizaines de documents officiels déposés auprès de la SEC. Cela soulève des questions fondamentales sur l'intégrité du management. »</blockquote>
     <cite>Dan Loeb, lettre à Yahoo Board of Directors, 26 avril 2012</cite>
   </div>
 
-  <h2>La séquence de la chute</h2>
+  <!-- IMAGE BREAK -->
+  <div class="sp-img-break sp-reveal">
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80&auto=format&fit=crop" alt="Circuit imprimé, technologie">
+    <span class="sp-img-break-caption">Silicon Valley · 2012</span>
+  </div>
 
-  <p>Ce qui suit est un manuel de gestion de crise raté.</p>
+  <!-- CHAPTER 3 -->
+  <div class="sp-chapter sp-reveal">
+    <div class="sp-chapter-num">Chapitre 03</div>
+    <h2>La séquence de la chute</h2>
+  </div>
 
-  <p>Dans un premier temps, Yahoo tente de minimiser. Un porte-parole parle d'"inadvertance". Le conseil affirme que Thompson n'est "pas personnellement responsable" de l'inexactitude. On laisse entendre que c'est peut-être la faute du cabinet de chasseurs de têtes, Heidrick & Struggles, qui aurait mal compilé le dossier.</p>
+  <div class="sp-text sp-reveal">
+    <p>Ce qui suit est un manuel de gestion de crise raté.</p>
+    <p>Dans un premier temps, Yahoo tente de minimiser. Un porte-parole parle d'"inadvertance". Le conseil affirme que Thompson n'est "pas personnellement responsable" de l'inexactitude. On laisse entendre que c'est peut-être la faute du cabinet de chasseurs de têtes, Heidrick &amp; Struggles, qui aurait mal compilé le dossier.</p>
+    <p>La presse ne lâche pas. Le New York Times, le Wall Street Journal, TechCrunch : tous passent au crible les autres documents officiels de Yahoo. Le faux diplôme apparaît dans des <em>proxy statements</em> déposés auprès de la Securities and Exchange Commission, des documents légaux, sous serment.</p>
+    <p>En quelques jours, l'affaire dépasse Thompson lui-même : on découvre que Patti Hart, membre du conseil d'administration qui avait validé sa nomination, avait elle-même des inexactitudes dans son CV officiel. Le conseil est embarrassé à tous les niveaux.</p>
+  </div>
 
-  <p>La presse ne lâche pas. The New York Times, le Wall Street Journal, TechCrunch, tous passent au crible les autres documents officiels de Yahoo : le faux diplôme apparaît dans des <em>proxy statements</em> déposés auprès de la Securities and Exchange Commission, des documents légaux, sous serment.</p>
-
-  <p>En quelques jours, l'affaire dépasse Thompson lui-même : on découvre que Patti Hart, membre du conseil d'administration qui avait validé la nomination de Thompson, avait elle-même des inexactitudes dans son CV officiel sur Yahoo (un diplôme indiqué comme en économie alors qu'il l'était en speech communication). Le conseil est embarrassé à tous les niveaux.</p>
-
-  <div class="story-keybox">
-    <h4>La cascade d'effets de l'affaire Thompson</h4>
+  <div class="sp-keybox sp-reveal">
+    <div class="sp-keybox-label">La cascade d'effets de l'affaire Thompson</div>
     <ul>
-      <li><strong>Scott Thompson :</strong> Démission forcée le 13 mai 2012. Il invoque officiellement un cancer de la thyroïde récemment diagnostiqué, sans lien avec le scandale selon lui.</li>
+      <li><strong>Scott Thompson :</strong> Démission forcée le 13 mai 2012. Il invoque officiellement un cancer de la thyroïde récemment diagnostiqué.</li>
       <li><strong>Patti Hart :</strong> Administratrice qui avait soutenu Thompson. Son propre CV est remis en question. Elle quitte le conseil peu après.</li>
-      <li><strong>Heidrick & Struggles :</strong> Cabinet de chasseurs de têtes, sous pression pour expliquer comment la vérification des diplômes n'a pas révélé l'inexactitude.</li>
-      <li><strong>Yahoo :</strong> Nommera finalement Marissa Mayer comme PDG, une vraie diplômée en informatique de Stanford, dont les qualifications n'ont fait l'objet d'aucun doute.</li>
+      <li><strong>Heidrick &amp; Struggles :</strong> Cabinet de chasseurs de têtes, sous pression pour expliquer comment la vérification n'a pas révélé l'inexactitude.</li>
+      <li><strong>Yahoo :</strong> Nommera finalement Marissa Mayer comme PDG, diplômée en informatique de Stanford, dont les qualifications n'ont fait l'objet d'aucun doute.</li>
     </ul>
   </div>
 
-  <h2>La vraie question : qui a vérifié ?</h2>
+  <!-- CHAPTER 4 -->
+  <div class="sp-chapter sp-reveal">
+    <div class="sp-chapter-num">Chapitre 04</div>
+    <h2>La vraie question : qui a vérifié ?</h2>
+  </div>
 
-  <p>Scott Thompson avait un vrai diplôme de comptabilité de Stonehill College. Il avait une vraie carrière. Ses résultats chez PayPal étaient réels et documentés. La ligne "informatique" sur son diplôme était, dans le fond, accessoire à sa légitimité réelle.</p>
+  <div class="sp-text sp-reveal">
+    <p>Scott Thompson avait un vrai diplôme de comptabilité de Stonehill College. Il avait une vraie carrière. Ses résultats chez PayPal étaient réels et documentés. La ligne "informatique" sur son diplôme était, dans le fond, accessoire à sa légitimité réelle.</p>
+    <p>Alors pourquoi l'avoir mise ? Vraisemblablement parce que dans la Silicon Valley, "je comprends la tech" c'est bien, mais "j'ai un diplôme en informatique" c'est mieux. Une petite ligne. Une petite amélioration. Un détail.</p>
+    <p>Sauf que ce détail a figé dans des documents légaux officiels, répété sur 10 ans dans des dépôts auprès de la SEC, et personne, pas Yahoo, pas les chasseurs de têtes, pas les administrateurs, pas les actionnaires, n'avait pris la peine de demander une simple copie du diplôme.</p>
+    <p><strong>L'information aurait été disponible en 30 minutes.</strong> Un appel au bureau des alumni de Stonehill College aurait suffi.</p>
+  </div>
 
-  <p>Alors pourquoi l'avoir mise ? Vraisemblablement parce que dans la Silicon Valley, "je comprends la tech" c'est bien, mais "j'ai un diplôme en informatique" c'est mieux. Une petite ligne. Une petite amélioration. Un détail.</p>
+  <!-- CHAPTER 5 -->
+  <div class="sp-chapter sp-reveal">
+    <div class="sp-chapter-num">Chronologie</div>
+    <h2>Quatre mois, une chute</h2>
+  </div>
 
-  <p>Sauf que ce détail a figé dans des documents légaux officiels, répété sur 10 ans dans des dépôts auprès de la SEC, et personne, pas Yahoo, pas les chasseurs de têtes, pas les administrateurs, pas les actionnaires, n'avait pris la peine de demander une simple copie du diplôme.</p>
-
-  <p><strong>L'information aurait été disponible en 30 minutes.</strong> Un appel au bureau des alumni de Stonehill College aurait suffi.</p>
-
-  <div class="story-timeline">
-    <div class="story-timeline-item">
-      <span class="tl-date">Janvier 2012</span>
+  <div class="sp-timeline sp-reveal">
+    <div class="sp-tl-item">
+      <span class="sp-tl-date">Janvier 2012</span>
       <p>Thompson nommé PDG de Yahoo. Son CV mentionne un double diplôme (comptabilité + informatique) à Stonehill College.</p>
     </div>
-    <div class="story-timeline-item">
-      <span class="tl-date">26 avril 2012</span>
-      <p>Third Point / Dan Loeb envoie sa lettre explosant l'inexactitude du diplôme au conseil de Yahoo.</p>
+    <div class="sp-tl-item">
+      <span class="sp-tl-date">26 avril 2012</span>
+      <p>Third Point / Dan Loeb envoie sa lettre de 8 pages exposant l'inexactitude du diplôme au conseil de Yahoo.</p>
     </div>
-    <div class="story-timeline-item">
-      <span class="tl-date">28 avril – 12 mai 2012</span>
+    <div class="sp-tl-item">
+      <span class="sp-tl-date">28 avril – 12 mai 2012</span>
       <p>Deux semaines de gestion de crise calamiteuse. Yahoo tente de nier, puis de minimiser, puis de diluer les responsabilités.</p>
     </div>
-    <div class="story-timeline-item">
-      <span class="tl-date">13 mai 2012</span>
-      <p>Thompson démissionne. Officiellement pour raisons de santé (cancer de la thyroïde). Aucune charge pénale.</p>
+    <div class="sp-tl-item">
+      <span class="sp-tl-date">13 mai 2012</span>
+      <p>Thompson démissionne. Officiellement pour raisons de santé. Aucune charge pénale.</p>
     </div>
-    <div class="story-timeline-item">
-      <span class="tl-date">Juillet 2012</span>
-      <p>Marissa Mayer nommée PDG. Le conseil restructuré. Yahoo tente de tourner la page.</p>
+    <div class="sp-tl-item">
+      <span class="sp-tl-date">Juillet 2012</span>
+      <p>Marissa Mayer nommée PDG. Le conseil est restructuré. Yahoo tente de tourner la page.</p>
     </div>
   </div>
 
-  <h2>L'effet domino : Ce que l'affaire Thompson a changé</h2>
-
-  <p>Dans les mois qui ont suivi, plusieurs grandes entreprises américaines ont renforcé leurs procédures de vérification pour les nominations au niveau exécutif. Des cabinets de chasseurs de têtes ont explicitement mentionné la vérification des diplômes comme une étape obligatoire de leurs processus, ce qui, étrangement, n'était pas toujours le cas avant 2012.</p>
-
-  <p>Des études publiées après l'affaire ont révélé que des inexactitudes similaires existaient dans les CV d'un pourcentage non négligeable de dirigeants du Fortune 500, non pas forcément des faux flagrants, mais des diplômes non obtenus présentés comme tels, des spécialités ajoutées rétrospectivement, des formations partielles transformées en diplômes complets.</p>
-
-  <p>La leçon est inconfortable : <strong>la fraude sur les diplômes n'est pas le fait de candidats sans scrupules aux postes d'entrée.</strong> Elle touche tous les niveaux hiérarchiques, y compris, et peut-être surtout, les postes les plus élevés, où la légitimité symbolique compte le plus et où la vérification rigoureuse est paradoxalement la moins systématique.</p>
-
-  <div class="story-pullquote">
-    <p>« Dans les recrutements de dirigeants, on passe des semaines à analyser les résultats financiers, les références stratégiques, les softs skills. Et on oublie souvent de vérifier si le diplôme inscrit sur le CV existe vraiment. »</p>
-    <cite>Analyste RH, <em>Harvard Business Review</em>, 2013</cite>
+  <!-- CHAPTER 6 -->
+  <div class="sp-chapter sp-reveal">
+    <div class="sp-chapter-num">Leçon</div>
+    <h2>L'effet domino et ce qu'il reste</h2>
   </div>
 
-  <div class="story-lesson">
-    <div class="story-lesson-inner">
-      <h3>La leçon pour les recruteurs</h3>
-      <p>L'affaire Thompson illustre une vérité contre-intuitive : les recrutements les plus risqués en matière de fraude sont souvent ceux des postes les plus élevés. Plus le poste est prestigieux, plus la tentation d'embellir un CV est forte, et plus la vérification semble "inconvenante" ou superflue.</p>
-      <p>Un actionnaire activiste hostile n'est pas le meilleur outil de vérification des diplômes. <strong>Vérifier les diplômes de tout candidat, quel que soit son niveau, fait partie de la diligence raisonnable standard.</strong> C'est même plus crucial pour les postes de direction, où les conséquences d'une découverte tardive sont amplifiées.</p>
-      <p>En France, la vérification peut se faire directement auprès des établissements ou via un service dédié. Le coût d'une vérification (14,90 € à 79 €) est dérisoire face aux 7 millions de dollars versés à Thompson pendant ses 4 mois, sans compter le coût d'image pour Yahoo.</p>
-    </div>
+  <div class="sp-text sp-reveal">
+    <p>Dans les mois qui ont suivi, plusieurs grandes entreprises américaines ont renforcé leurs procédures de vérification pour les nominations au niveau exécutif. Des cabinets de chasseurs de têtes ont explicitement mentionné la vérification des diplômes comme étape obligatoire, ce qui, étrangement, n'était pas toujours le cas avant 2012.</p>
+    <p>Des études publiées après l'affaire ont révélé que des inexactitudes similaires existaient dans les CV d'un pourcentage non négligeable de dirigeants du Fortune 500 : des diplômes non obtenus présentés comme tels, des spécialités ajoutées rétrospectivement, des formations partielles transformées en diplômes complets.</p>
+    <p>La leçon est inconfortable : <strong>la fraude sur les diplômes n'est pas le fait de candidats sans scrupules aux postes d'entrée.</strong> Elle touche tous les niveaux hiérarchiques, y compris, et peut-être surtout, les postes les plus élevés, où la vérification rigoureuse est paradoxalement la moins systématique.</p>
+  </div>
+
+  <div class="sp-quote sp-reveal">
+    <blockquote>« Dans les recrutements de dirigeants, on passe des semaines à analyser les résultats financiers, les références stratégiques, les softs skills. Et on oublie souvent de vérifier si le diplôme inscrit sur le CV existe vraiment. »</blockquote>
+    <cite>Analyste RH, Harvard Business Review, 2013</cite>
+  </div>
+
+  <div class="sp-lesson sp-reveal">
+    <span class="sp-lesson-label">Ce que ça change pour vous</span>
+    <h3>La leçon pour les recruteurs</h3>
+    <p>L'affaire Thompson illustre une vérité contre-intuitive : les recrutements les plus risqués en matière de fraude sont souvent ceux des postes les plus élevés. Plus le poste est prestigieux, plus la tentation d'embellir un CV est forte, et plus la vérification semble "inconvenante" ou superflue.</p>
+    <p>Un actionnaire activiste hostile n'est pas le meilleur outil de vérification des diplômes. <strong>Vérifier les diplômes de tout candidat, quel que soit son niveau, fait partie de la diligence raisonnable standard.</strong> C'est même plus crucial pour les postes de direction, où les conséquences d'une découverte tardive sont amplifiées.</p>
+    <p>En France, le coût d'une vérification (14,90 € à 79 €) est dérisoire face aux 7 millions de dollars versés à Thompson pendant ses 4 mois, sans compter le coût d'image pour Yahoo.</p>
   </div>
 
   <!-- CTA -->
-  <div class="story-cta">
-    <div class="story-cta-icon">
+  <div class="sp-cta-block sp-reveal">
+    <div class="sp-cta-icon">
       <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
     </div>
-    <div class="story-cta-text">
+    <div class="sp-cta-text">
       <h4>Un appel suffit. Nous le passons pour vous.</h4>
       <p>CVérifié vérifie diplômes et expériences directement à la source, et vous remet un rapport écrit sous 48h. Sans abonnement, dès 14,90 €.</p>
     </div>
-    <a href="/commander.html" class="story-cta-btn">
+    <a href="/commander.html" class="sp-cta-btn">
       Vérifier un candidat
-      <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 13,8"/><polyline points="9,4 13,8 9,12"/></svg>
+      <svg viewBox="0 0 16 16" width="14" height="14"><polyline points="3,8 13,8"/><polyline points="9,4 13,8 9,12"/></svg>
     </a>
   </div>
 
   <!-- NAVIGATION -->
-  <nav class="story-nav">
+  <nav class="sp-nav">
     <a href="/blog/histoire-marilee-jones-faux-diplomes-mit.html">
       <svg viewBox="0 0 16 16"><polyline points="13,8 3,8"/><polyline points="7,12 3,8 7,4"/></svg>
-      Précédent : Marilee Jones, MIT
+      Marilee Jones, MIT
     </a>
     <a href="/blog/histoires-vraies-fraudes-cv.html">
       Voir toutes les histoires
@@ -372,3 +327,28 @@ description: "En 2012, Scott Thompson est nommé PDG de Yahoo avec grande fanfar
   </nav>
 
 </article>
+
+<script>
+(function(){
+  // Progress bar
+  var bar=document.getElementById('spBar');
+  function updateBar(){
+    var s=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;
+    if(h>0) bar.style.width=(s/h*100)+'%';
+  }
+  window.addEventListener('scroll',updateBar,{passive:true});
+
+  // Scroll reveal
+  var els=document.querySelectorAll('.sp-reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('sp-in');io.unobserve(e.target);}
+      });
+    },{threshold:0.12});
+    els.forEach(function(el){io.observe(el);});
+  } else {
+    els.forEach(function(el){el.classList.add('sp-in');});
+  }
+})();
+</script>
