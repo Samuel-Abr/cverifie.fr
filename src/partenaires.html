@@ -121,10 +121,12 @@ description: "CVérifié vérifie les CV via des sources officielles : Ministèr
 .logo-card img{
   max-height:32px;width:auto;max-width:110px;
   object-fit:contain;
-  filter:brightness(0) opacity(0.5);
+  filter:brightness(0) invert(1) sepia(1) hue-rotate(116deg) saturate(0.5) brightness(0.42);
   transition:filter .25s;
 }
-.logo-card:hover img{filter:brightness(0) opacity(0.85)}
+.logo-card:hover img{
+  filter:brightness(0) invert(1) sepia(1) hue-rotate(116deg) saturate(0.65) brightness(0.52);
+}
 .logos-more{
   font-size:.875rem;color:var(--ink-muted);
   margin-top:1.5rem;padding:.875rem 1rem;
@@ -283,7 +285,7 @@ description: "CVérifié vérifie les CV via des sources officielles : Ministèr
       <a class="logo-card" href="https://www.minesparis.psl.eu" target="_blank" rel="noopener" title="Mines Paris - PSL"><img src="/images/logos/mines-paris.png" alt="Mines Paris" loading="lazy"></a>
       <a class="logo-card" href="https://www.centralesupelec.fr" target="_blank" rel="noopener" title="CentraleSupélec"><img src="/images/logos/centralesupelec.png" alt="CentraleSupélec" loading="lazy"></a>
       <a class="logo-card" href="https://www.ecoledesponts.fr" target="_blank" rel="noopener" title="École des Ponts ParisTech"><img src="/images/logos/ponts.png" alt="École des Ponts" loading="lazy"></a>
-      <a class="logo-card" href="https://artsetmetiers.fr" target="_blank" rel="noopener" title="Arts et Métiers"><img src="/images/logos/arts-metiers.svg" alt="Arts et Métiers" loading="lazy"></a>
+      <a class="logo-card" href="https://artsetmetiers.fr" target="_blank" rel="noopener" title="Arts et Métiers"><img src="/images/logos/arts-metiers.png" alt="Arts et Métiers" loading="lazy"></a>
       <a class="logo-card" href="https://www.insa-lyon.fr" target="_blank" rel="noopener" title="INSA Lyon"><img src="/images/logos/insa-lyon.png" alt="INSA Lyon" loading="lazy"></a>
       <a class="logo-card" href="https://www.ens.psl.eu" target="_blank" rel="noopener" title="ENS Paris - PSL"><img src="/images/logos/ens-paris.png" alt="ENS Paris" loading="lazy"></a>
       <a class="logo-card" href="https://www.utc.fr" target="_blank" rel="noopener" title="Université de Technologie de Compiègne"><img src="/images/logos/utc.svg" alt="UTC Compiègne" loading="lazy"></a>
