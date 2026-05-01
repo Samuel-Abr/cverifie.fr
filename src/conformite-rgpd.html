@@ -1,0 +1,548 @@
+---
+layout: base.njk
+title: "Conformité RGPD · CVérifié vérifie dans le respect de la vie privée"
+description: "CVérifié opère strictement dans le cadre du RGPD : consentement candidat, bases légales, durées de conservation, droits des personnes. Guide complet."
+hasFaq: true
+---
+<style>
+.legal-hero {
+  margin-top:64px; padding:3.5rem 2rem 3rem;
+  background:var(--ink); position:relative; overflow:hidden;
+}
+.legal-hero::before {
+  content:''; position:absolute; top:-80px; right:-40px;
+  width:300px; height:300px; border-radius:50%;
+  background:radial-gradient(circle,rgba(45,106,79,.25) 0%,transparent 65%);
+}
+.legal-hero-inner { max-width:800px; margin:0 auto; position:relative; z-index:1; }
+.legal-eyebrow {
+  font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--green-light); margin-bottom:1rem; display:block;
+}
+.legal-hero h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,3.5vw,2.6rem);
+  color:white; font-weight:600; line-height:1.2;
+  letter-spacing:-0.02em; margin-bottom:1rem;
+}
+.legal-hero p { font-size:1rem; color:rgba(255,255,255,.6); line-height:1.6; }
+.legal-meta {
+  display:flex; gap:1.5rem; margin-top:1.5rem; flex-wrap:wrap;
+}
+.legal-meta-item { font-size:.8rem; color:rgba(255,255,255,.45); }
+.legal-meta-item strong { color:rgba(255,255,255,.7); }
+
+.legal-content {
+  max-width:800px; margin:0 auto; padding:4rem 2rem 5rem;
+}
+.legal-toc {
+  background:var(--cream-dark); border:1px solid var(--border);
+  border-radius:12px; padding:1.5rem 2rem; margin-bottom:3rem;
+}
+.legal-toc h2 {
+  font-size:.8rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-muted); margin-bottom:1rem;
+}
+.legal-toc ol { padding-left:1.25rem; }
+.legal-toc li { margin-bottom:.4rem; }
+.legal-toc a { font-size:.875rem; color:var(--green); text-decoration:none; }
+.legal-toc a:hover { text-decoration:underline; }
+
+.legal-section { margin-bottom:3rem; }
+.legal-section h2 {
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem; color:var(--ink);
+  font-weight:600; margin-bottom:1rem;
+  padding-bottom:.5rem; border-bottom:2px solid var(--green-pale);
+  letter-spacing:-0.01em;
+}
+.legal-section h3 {
+  font-size:1rem; font-weight:700; color:var(--ink);
+  margin:1.5rem 0 .5rem;
+}
+.legal-section p {
+  font-size:.9375rem; color:var(--ink-light);
+  line-height:1.75; margin-bottom:1rem;
+}
+.legal-section ul, .legal-section ol {
+  padding-left:1.5rem; margin-bottom:1rem;
+}
+.legal-section li {
+  font-size:.9375rem; color:var(--ink-light);
+  line-height:1.7; margin-bottom:.4rem;
+}
+.legal-section a { color:var(--green); }
+.legal-section strong { color:var(--ink); font-weight:600; }
+
+.legal-highlight {
+  background:var(--green-pale); border-left:3px solid var(--green);
+  border-radius:0 8px 8px 0; padding:1rem 1.25rem;
+  margin:1.5rem 0;
+}
+.legal-highlight p { margin:0; font-size:.875rem; color:var(--ink); }
+
+.legal-table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:.875rem; }
+.legal-table th {
+  background:var(--cream-dark); padding:.75rem 1rem; text-align:left;
+  font-weight:700; font-size:.8rem; text-transform:uppercase; letter-spacing:.05em;
+  color:var(--ink-light); border-bottom:2px solid var(--border);
+}
+.legal-table td {
+  padding:.75rem 1rem; border-bottom:1px solid var(--border);
+  color:var(--ink-light); vertical-align:top;
+}
+.legal-table tr:last-child td { border-bottom:none; }
+
+.legal-contact-box {
+  background:white; border:1px solid var(--border);
+  border-radius:14px; padding:2rem; margin-top:2rem;
+}
+.legal-contact-box h3 { font-size:1rem; font-weight:700; color:var(--ink); margin-bottom:1rem; }
+.legal-contact-box p { font-size:.875rem; color:var(--ink-light); line-height:1.6; margin-bottom:.5rem; }
+.legal-contact-box a { color:var(--green); }
+
+/* RGPD-specific additions */
+.rgpd-steps { display:flex; flex-direction:column; gap:1.25rem; margin:1.5rem 0; }
+.rgpd-step {
+  display:flex; gap:1rem; align-items:flex-start;
+  background:white; border:1px solid var(--border);
+  border-radius:12px; padding:1.25rem 1.5rem;
+}
+.rgpd-step-num {
+  flex-shrink:0; width:32px; height:32px; border-radius:50%;
+  background:var(--green); color:white;
+  display:flex; align-items:center; justify-content:center;
+  font-size:.85rem; font-weight:700;
+}
+.rgpd-step-body h4 { font-size:.9375rem; font-weight:700; color:var(--ink); margin-bottom:.35rem; }
+.rgpd-step-body p { font-size:.875rem; color:var(--ink-light); line-height:1.6; margin:0; }
+
+.rights-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.5rem 0;
+}
+.right-item {
+  background:var(--cream); border:1px solid var(--border);
+  border-radius:10px; padding:1rem 1.25rem;
+}
+.right-item h4 {
+  font-size:.875rem; font-weight:700; color:var(--ink); margin-bottom:.35rem;
+  display:flex; align-items:center; gap:.5rem;
+}
+.right-item h4::before {
+  content:''; display:inline-block; width:8px; height:8px;
+  border-radius:50%; background:var(--green); flex-shrink:0;
+}
+.right-item p { font-size:.8125rem; color:var(--ink-muted); line-height:1.55; margin:0; }
+
+.security-list { list-style:none; padding:0; margin:1.5rem 0; }
+.security-list li {
+  display:flex; align-items:flex-start; gap:.75rem;
+  padding:.75rem 0; border-bottom:1px solid var(--border);
+  font-size:.9375rem; color:var(--ink-light); line-height:1.6;
+}
+.security-list li:last-child { border-bottom:none; }
+.security-list li::before {
+  content:''; display:block; flex-shrink:0;
+  width:18px; height:18px; margin-top:2px;
+  background:var(--green-pale); border-radius:50%;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8l3.5 3.5L13 4' stroke='%232D6A4F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:center;
+  background-size:12px;
+}
+
+/* FAQ */
+.faq-list { margin:1.5rem 0; }
+.faq-item {
+  border:1px solid var(--border); border-radius:10px;
+  margin-bottom:.75rem; overflow:hidden;
+}
+.faq-item summary {
+  padding:1rem 1.25rem; font-size:.9375rem; font-weight:600;
+  color:var(--ink); cursor:pointer; list-style:none;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.faq-item summary::-webkit-details-marker { display:none; }
+.faq-item summary::after {
+  content:'+'; font-size:1.2rem; color:var(--green); font-weight:400; flex-shrink:0;
+}
+.faq-item[open] summary::after { content:'−'; }
+.faq-item[open] summary { background:var(--cream-dark); }
+.faq-answer {
+  padding:1rem 1.25rem 1.25rem; font-size:.9375rem;
+  color:var(--ink-light); line-height:1.75; background:white;
+}
+.faq-answer p { margin:0 0 .75rem; }
+.faq-answer p:last-child { margin:0; }
+
+@media(max-width:600px){
+  .legal-content { padding:2.5rem 1.25rem 4rem; }
+  .rights-grid { grid-template-columns:1fr; }
+}
+</style>
+
+<!-- HERO -->
+<section class="legal-hero">
+  <div class="legal-hero-inner">
+    <span class="legal-eyebrow">CVérifié · Conformité RGPD</span>
+    <h1>CVérifié vérifie dans le respect de la vie privée</h1>
+    <p>La vérification de CV touche aux données personnelles des candidats. CVérifié a été conçu dès l'origine pour opérer dans le strict respect du RGPD et du droit du travail français — pour vous, et pour les candidats.</p>
+    <div class="legal-meta">
+      <div class="legal-meta-item">Dernière mise à jour : <strong>1er mai 2026</strong></div>
+      <div class="legal-meta-item">Version : <strong>1.0</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="legal-content">
+
+  <div class="legal-toc">
+    <h2>Sommaire</h2>
+    <ol>
+      <li><a href="#section-1">Pourquoi la conformité RGPD est cruciale pour la vérification de CV</a></li>
+      <li><a href="#section-2">Base légale du traitement des données candidats</a></li>
+      <li><a href="#section-3">Rôle de CVérifié dans la chaîne de traitement</a></li>
+      <li><a href="#section-4">Comment le consentement candidat est recueilli</a></li>
+      <li><a href="#section-5">Données traitées sur les candidats</a></li>
+      <li><a href="#section-6">Droits du candidat</a></li>
+      <li><a href="#section-7">Mesures de sécurité techniques et organisationnelles</a></li>
+      <li><a href="#section-8">FAQ RGPD</a></li>
+      <li><a href="#section-9">Contact et signalement</a></li>
+    </ol>
+  </div>
+
+  <!-- Section 1 -->
+  <div class="legal-section" id="section-1">
+    <h2>1. Pourquoi la conformité RGPD est cruciale pour la vérification de CV</h2>
+    <p>La vérification de CV ne se limite pas à un simple contrôle factuel : elle implique le traitement de données personnelles relatives à des candidats — leur identité, leurs diplômes, leur historique professionnel. Ces informations sont protégées par le Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679).</p>
+    <p>En tant que recruteur ou employeur qui commande une vérification, vous êtes le <strong>responsable du traitement</strong> de ces données. À ce titre, vous êtes légalement tenu de respecter les principes du RGPD, sous peine de sanctions pouvant atteindre <strong>4 % du chiffre d'affaires annuel mondial</strong> de votre organisation ou 20 millions d'euros, selon le montant le plus élevé (art. 83 RGPD).</p>
+    <p>CVérifié a été conçu dès l'origine comme un outil <strong>conforme par design</strong> (<em>privacy by design</em> et <em>privacy by default</em>) :</p>
+    <ul>
+      <li>Seules les données strictement nécessaires à la vérification sont collectées (principe de minimisation) ;</li>
+      <li>Le consentement du candidat est une condition préalable et non négociable à toute commande ;</li>
+      <li>Les données sont automatiquement supprimées à l'issue des durées de conservation définies ;</li>
+      <li>Un contrat de sous-traitance (DPA) est signé avec chaque client entreprise.</li>
+    </ul>
+    <div class="legal-highlight">
+      <p>Toute vérification réalisée via CVérifié sans consentement préalable du candidat constituerait une violation du RGPD et de l'article L.1221-6 du Code du travail. CVérifié met à disposition un modèle de formulaire de consentement prêt à l'emploi.</p>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="legal-section" id="section-2">
+    <h2>2. Sur quelle base légale CVérifié traite-t-il les données des candidats ?</h2>
+    <p>Le traitement des données des candidats dans le cadre du service CVérifié repose sur un fondement juridique double, solide et complémentaire :</p>
+    <h3>Base principale : intérêt légitime (art. 6.1.f RGPD)</h3>
+    <p>L'employeur dispose d'un intérêt légitime à vérifier l'exactitude des informations déclarées par un candidat postulant à un emploi. Cet intérêt est mis en balance avec les droits des candidats : la vérification porte uniquement sur des informations que le candidat a lui-même déclaré publiquement dans son CV, dans le but précis d'obtenir un poste.</p>
+    <h3>Cadre légal renforcé : article L.1221-6 du Code du travail</h3>
+    <p>L'article L.1221-6 du Code du travail dispose que « les informations demandées au candidat à un emploi ne peuvent avoir comme finalité que d'apprécier sa capacité à occuper l'emploi proposé ou ses aptitudes professionnelles ». Cet article autorise explicitement la vérification des informations déclarées par un candidat, dans la limite de ce qui est pertinent au regard du poste à pourvoir.</p>
+    <h3>Condition impérative : le consentement explicite du candidat</h3>
+    <p>Bien que l'intérêt légitime constitue la base légale principale, CVérifié exige que le recruteur obtienne le <strong>consentement explicite et documenté</strong> du candidat avant toute commande de vérification. Ce consentement doit être :</p>
+    <ul>
+      <li>Libre (non contraint par la relation employeur-candidat) ;</li>
+      <li>Éclairé (le candidat est informé de la nature et de l'étendue de la vérification) ;</li>
+      <li>Spécifique (pour cette vérification précise, dans le cadre de ce recrutement) ;</li>
+      <li>Documenté (une preuve de consentement est archivée par CVérifié).</li>
+    </ul>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="legal-section" id="section-3">
+    <h2>3. Quel est le rôle de CVérifié dans la chaîne de traitement ?</h2>
+    <p>Le RGPD distingue le <strong>responsable du traitement</strong> (qui décide des finalités et des moyens du traitement) du <strong>sous-traitant</strong> (qui traite des données pour le compte du responsable, sur instruction de celui-ci). Cette distinction est fondamentale en matière de vérification de CV.</p>
+    <table class="legal-table">
+      <thead>
+        <tr>
+          <th>Acteur</th>
+          <th>Rôle RGPD</th>
+          <th>Responsabilités clés</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Le Client (recruteur / employeur)</strong></td>
+          <td>Responsable du traitement (art. 4.7 RGPD)</td>
+          <td>Définit la finalité de la vérification, obtient le consentement du candidat, décide de l'embauche</td>
+        </tr>
+        <tr>
+          <td><strong>CVérifié</strong></td>
+          <td>Sous-traitant (art. 4.8 et art. 28 RGPD)</td>
+          <td>Réalise la vérification sur instruction du Client, garantit la sécurité des données, n'utilise jamais les données à d'autres fins</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>En qualité de sous-traitant, CVérifié s'engage à :</p>
+    <ul>
+      <li>Traiter les données des candidats uniquement sur instruction documentée du Client ;</li>
+      <li>Ne jamais utiliser les données à des fins autres que l'exécution des vérifications commandées ;</li>
+      <li>Garantir la confidentialité et la sécurité des données traitées ;</li>
+      <li>Notifier le Client sans délai de tout incident de sécurité susceptible d'affecter les données ;</li>
+      <li>Supprimer ou restituer les données à l'issue du traitement.</li>
+    </ul>
+    <p>Un contrat de sous-traitance (DPA — <em>Data Processing Agreement</em>) conforme aux exigences de l'article 28 du RGPD est signé avec chaque client entreprise souscrivant au service CVérifié.</p>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="legal-section" id="section-4">
+    <h2>4. Comment le consentement candidat est-il recueilli ?</h2>
+    <p>CVérifié a mis en place un processus en trois étapes pour garantir que le consentement de chaque candidat est valablement obtenu avant toute vérification.</p>
+
+    <div class="rgpd-steps">
+      <div class="rgpd-step">
+        <div class="rgpd-step-num">1</div>
+        <div class="rgpd-step-body">
+          <h4>Information du candidat par le recruteur</h4>
+          <p>Avant de commander une vérification, le recruteur informe le candidat de la vérification prévue : nature des éléments vérifiés, identité du sous-traitant (CVérifié), finalité et durée de conservation des données. CVérifié fournit un modèle d'email ou de formulaire d'information prêt à l'emploi, personnalisable en quelques clics.</p>
+        </div>
+      </div>
+      <div class="rgpd-step">
+        <div class="rgpd-step-num">2</div>
+        <div class="rgpd-step-body">
+          <h4>Accord écrit du candidat</h4>
+          <p>Le candidat donne son accord explicite par écrit : soit par email (réponse confirmant son accord), soit via le formulaire de consentement en ligne fourni par CVérifié dans l'espace client. Le formulaire enregistre l'heure, la date et l'adresse IP du consentement.</p>
+        </div>
+      </div>
+      <div class="rgpd-step">
+        <div class="rgpd-step-num">3</div>
+        <div class="rgpd-step-body">
+          <h4>Archivage de la preuve de consentement</h4>
+          <p>La preuve du consentement (email, horodatage du formulaire) est archivée de manière sécurisée par CVérifié pendant <strong>3 ans</strong>. Elle est accessible au Client depuis son espace client et peut être produite en cas de contrôle CNIL.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="legal-section" id="section-5">
+    <h2>5. Quelles données CVérifié traite-t-il sur les candidats ?</h2>
+    <p>CVérifié applique rigoureusement le principe de minimisation des données : seules les informations strictement nécessaires à l'exécution de la vérification commandée sont collectées et traitées.</p>
+
+    <table class="legal-table">
+      <thead>
+        <tr>
+          <th>Données traitées</th>
+          <th>Source</th>
+          <th>Finalité</th>
+          <th>Durée de conservation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Identité (nom, prénom)</td>
+          <td>Transmise par le recruteur (Client)</td>
+          <td>Identification du dossier de vérification</td>
+          <td>2 ans</td>
+        </tr>
+        <tr>
+          <td>Diplôme(s) revendiqué(s) et établissement(s)</td>
+          <td>Transmise par le recruteur (Client)</td>
+          <td>Objet principal de la vérification diplômante</td>
+          <td>2 ans</td>
+        </tr>
+        <tr>
+          <td>Expériences professionnelles déclarées</td>
+          <td>Transmise par le recruteur (Client)</td>
+          <td>Objet principal de la vérification d'expérience</td>
+          <td>2 ans</td>
+        </tr>
+        <tr>
+          <td>Résultat de la vérification (rapport)</td>
+          <td>Produit par CVérifié</td>
+          <td>Rapport livré au Client pour sa décision de recrutement</td>
+          <td>2 ans</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>À l'issue de la durée de conservation de 2 ans, les données des candidats sont supprimées de manière automatique et irréversible des systèmes de CVérifié. Aucune copie n'est conservée à des fins de ré-utilisation ou d'analyse commerciale.</p>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="legal-section" id="section-6">
+    <h2>6. Quels sont les droits du candidat ?</h2>
+    <p>Tout candidat dont les informations ont fait l'objet d'une vérification via CVérifié dispose de l'ensemble des droits reconnus par le RGPD. Ces droits s'exercent directement auprès de CVérifié en tant que sous-traitant, à l'adresse <a href="mailto:rgpd@cverifie.fr">rgpd@cverifie.fr</a>.</p>
+
+    <div class="rights-grid">
+      <div class="right-item">
+        <h4>Droit d'accès</h4>
+        <p>Le candidat peut demander à consulter l'ensemble des données traitées le concernant dans le cadre de la vérification réalisée sur son CV.</p>
+      </div>
+      <div class="right-item">
+        <h4>Droit de rectification</h4>
+        <p>En cas d'erreur ou d'inexactitude dans les données traitées, le candidat peut en demander la correction immédiate.</p>
+      </div>
+      <div class="right-item">
+        <h4>Droit à l'effacement</h4>
+        <p>Le candidat peut demander la suppression de ses données. CVérifié procède à l'effacement dans un délai de 30 jours, sauf obligation légale contraire.</p>
+      </div>
+      <div class="right-item">
+        <h4>Droit d'opposition</h4>
+        <p>Le candidat peut s'opposer à la réalisation d'une vérification avant qu'elle ne soit effectuée. Une fois le rapport livré, la vérification ne peut être annulée rétroactivement.</p>
+      </div>
+    </div>
+
+    <div class="legal-highlight">
+      <p><strong>Contact pour exercer vos droits :</strong> adressez votre demande à <a href="mailto:rgpd@cverifie.fr">rgpd@cverifie.fr</a> en indiquant vos nom, prénom et la nature de votre demande. CVérifié s'engage à répondre dans un délai de 30 jours. En cas d'insatisfaction, vous pouvez introduire une réclamation auprès de la <strong>CNIL</strong> — <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>.</p>
+    </div>
+  </div>
+
+  <!-- Section 7 -->
+  <div class="legal-section" id="section-7">
+    <h2>7. Mesures de sécurité techniques et organisationnelles</h2>
+    <p>CVérifié met en œuvre un ensemble de mesures techniques et organisationnelles (SMTO) conformes aux exigences de l'article 32 du RGPD, proportionnées aux risques identifiés dans le cadre de son activité de vérification.</p>
+
+    <ul class="security-list">
+      <li>Chiffrement de toutes les communications via HTTPS / TLS 1.3 — aucune donnée ne transite en clair sur le réseau.</li>
+      <li>Authentification à deux facteurs (2FA) obligatoire pour l'accès aux comptes clients et aux outils internes.</li>
+      <li>Accès aux données des candidats strictement limité aux collaborateurs habilités, selon le principe du moindre privilège. Chaque accès est journalisé et auditable.</li>
+      <li>Hébergement chez Netlify, certifié SOC 2 Type II — garantissant un niveau élevé de sécurité des infrastructures et des processus.</li>
+      <li>Aucun numéro de carte bancaire stocké chez CVérifié : le traitement des paiements est intégralement délégué à Stripe (certifié PCI DSS niveau 1).</li>
+      <li>Tests de pénétration (pentest) réalisés annuellement par un prestataire indépendant, avec correction des vulnérabilités identifiées.</li>
+      <li>Procédure de notification de violation de données conforme à l'article 33 du RGPD : notification à la CNIL dans les 72 heures suivant la détection d'un incident, et aux personnes concernées si le risque est élevé.</li>
+    </ul>
+  </div>
+
+  <!-- Section 8 — FAQ -->
+  <div class="legal-section" id="section-8">
+    <h2>8. FAQ RGPD</h2>
+    <p>Les questions les plus fréquentes de nos clients recruteurs et des candidats sur la conformité RGPD du service CVérifié.</p>
+
+    <div class="faq-list">
+
+      <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary itemprop="name">Le recruteur peut-il vérifier un CV sans l'accord du candidat ?</summary>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p>Non. Procéder à une vérification de CV sans le consentement préalable du candidat constitue une violation du RGPD et de l'article L.1221-6 du Code du travail. En pratique, cela expose le recruteur à une plainte du candidat devant la CNIL et à des sanctions pouvant atteindre 4 % du CA mondial de l'entreprise.</p>
+            <p>CVérifié exige que le consentement du candidat soit documenté avant toute commande de vérification, et met à disposition un modèle de formulaire conforme pour simplifier cette démarche.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary itemprop="name">CVérifié peut-il transmettre les données des candidats à des tiers ?</summary>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p>Non. En qualité de sous-traitant au sens de l'article 28 du RGPD, CVérifié traite les données des candidats exclusivement pour le compte et sur instruction du Client (recruteur). CVérifié n'utilise jamais ces données à des fins propres, ne les vend pas et ne les cède pas à des tiers.</p>
+            <p>Seuls les établissements ou employeurs directement contactés dans le cadre de la vérification reçoivent les données strictement nécessaires à la confirmation des informations (typiquement : nom du candidat et diplôme ou dates d'emploi revendiqués).</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary itemprop="name">Pendant combien de temps CVérifié conserve-t-il les données du candidat ?</summary>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p>CVérifié conserve les données des candidats (identité, diplômes vérifiés, expériences professionnelles, rapport de vérification) pendant un maximum de <strong>2 ans</strong> à compter de la date de livraison du rapport. À l'issue de ce délai, les données sont automatiquement et irréversiblement supprimées.</p>
+            <p>Ce délai est conforme aux recommandations de la CNIL et permet au Client de consulter le rapport en cas de besoin (par exemple, en cas de contestation ultérieure du candidat), sans excéder la durée strictement nécessaire.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary itemprop="name">Comment un candidat peut-il exercer ses droits RGPD ?</summary>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p>Un candidat souhaitant exercer ses droits RGPD (accès, rectification, effacement, opposition) peut contacter CVérifié directement à l'adresse <a href="mailto:rgpd@cverifie.fr">rgpd@cverifie.fr</a> en précisant son nom, prénom et la nature de sa demande.</p>
+            <p>CVérifié s'engage à répondre dans un délai de <strong>30 jours</strong>. En cas de demande d'effacement, les données sont supprimées dans ce délai, sauf si une obligation légale de conservation s'y oppose (ex. : données de facturation conservées 10 ans).</p>
+            <p>Si le candidat estime que sa demande n'a pas été traitée correctement, il peut introduire une réclamation auprès de la CNIL — <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary itemprop="name">CVérifié est-il conforme au RGPD pour les vérifications de candidats étrangers ou hors UE ?</summary>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p>Oui, pour les candidats résidant dans l'Union européenne ou l'Espace Économique Européen, le RGPD s'applique pleinement et CVérifié opère en pleine conformité. Pour les candidats résidant hors UE, CVérifié applique par défaut les mêmes standards de protection et les mêmes procédures de consentement, indépendamment de la nationalité ou de la résidence du candidat.</p>
+            <p>Concernant les diplômes étrangers, CVérifié contacte les établissements concernés à l'international, dans le respect des législations locales applicables. Pour en savoir plus, consultez notre article <a href="/blog/verification-diplome-etranger-france/">Vérification de diplôme étranger en France</a>.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary itemprop="name">Qu'est-ce qu'un DPA et CVérifié en fournit-il un ?</summary>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+            <p>Un DPA (<em>Data Processing Agreement</em>, ou contrat de sous-traitance) est le contrat obligatoire que l'article 28 du RGPD impose entre un responsable de traitement (ici, votre entreprise) et un sous-traitant (ici, CVérifié). Ce contrat formalise les instructions données au sous-traitant, les garanties qu'il offre en matière de sécurité, les durées de conservation et les obligations mutuelles des parties.</p>
+            <p>Oui, CVérifié fournit un DPA à chaque client entreprise souscrivant au service. Ce document est disponible depuis l'espace client lors de la création du compte professionnel, et peut être transmis sur demande à votre DPO ou service juridique. Pour toute question, contactez <a href="mailto:rgpd@cverifie.fr">rgpd@cverifie.fr</a>.</p>
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- Section 9 -->
+  <div class="legal-section" id="section-9">
+    <h2>9. Contact et signalement</h2>
+    <p>Pour toute question relative à la conformité RGPD du service CVérifié, pour exercer vos droits ou pour signaler un incident de sécurité, plusieurs canaux sont à votre disposition.</p>
+
+    <div class="legal-contact-box">
+      <h3>Contact RGPD — CVérifié</h3>
+      <p><strong>Email DPO :</strong> <a href="mailto:rgpd@cverifie.fr">rgpd@cverifie.fr</a> — pour toute demande relative aux données personnelles (droits des personnes, questions DPA, signalement d'incident).</p>
+      <p><strong>Email général :</strong> <a href="mailto:contact@cverifie.fr">contact@cverifie.fr</a> — pour les questions commerciales ou relatives au service.</p>
+      <p><strong>Adresse postale :</strong> CVérifié — [Adresse complète à compléter], Paris, France.</p>
+      <p style="margin-top:1.25rem;">Pour aller plus loin, consultez notre <a href="/politique-de-confidentialite/">Politique de confidentialité complète</a> ainsi que notre article de blog <a href="/blog/rgpd-verification-candidat-guide-complet/">RGPD et vérification de candidat : le guide complet pour les recruteurs</a>.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- FAQ Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Le recruteur peut-il vérifier un CV sans l'accord du candidat ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Procéder à une vérification de CV sans le consentement préalable du candidat constitue une violation du RGPD et de l'article L.1221-6 du Code du travail. CVérifié exige que le consentement du candidat soit documenté avant toute commande de vérification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "CVérifié peut-il transmettre les données des candidats à des tiers ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. En qualité de sous-traitant au sens de l'article 28 du RGPD, CVérifié traite les données des candidats exclusivement pour le compte et sur instruction du Client (recruteur). CVérifié ne vend pas et ne cède jamais ces données à des tiers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pendant combien de temps CVérifié conserve-t-il les données du candidat ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CVérifié conserve les données des candidats pendant un maximum de 2 ans à compter de la date de livraison du rapport, puis procède à une suppression automatique et irréversible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment un candidat peut-il exercer ses droits RGPD ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En contactant CVérifié à l'adresse rgpd@cverifie.fr. CVérifié s'engage à répondre dans un délai de 30 jours. En cas d'insatisfaction, le candidat peut saisir la CNIL sur www.cnil.fr."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "CVérifié est-il conforme au RGPD pour les vérifications de candidats étrangers ou hors UE ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Pour les candidats résidant dans l'UE, le RGPD s'applique pleinement. Pour les candidats hors UE, CVérifié applique par défaut les mêmes standards de protection, indépendamment de la nationalité ou de la résidence du candidat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce qu'un DPA et CVérifié en fournit-il un ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un DPA (Data Processing Agreement) est le contrat obligatoire imposé par l'article 28 du RGPD entre un responsable de traitement et son sous-traitant. Oui, CVérifié fournit un DPA à chaque client entreprise, disponible dans l'espace client ou sur demande à rgpd@cverifie.fr."
+      }
+    }
+  ]
+}
+</script>

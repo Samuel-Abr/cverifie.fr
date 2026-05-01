@@ -1,0 +1,324 @@
+---
+layout: base.njk
+title: "Politique de confidentialité | CVérifié"
+description: "Comment CVérifié collecte, traite et protège vos données personnelles. Droits RGPD, durées de conservation, contact DPO. Mise à jour mai 2026."
+---
+<style>
+.legal-hero {
+  margin-top:64px; padding:3.5rem 2rem 3rem;
+  background:var(--ink); position:relative; overflow:hidden;
+}
+.legal-hero::before {
+  content:''; position:absolute; top:-80px; right:-40px;
+  width:300px; height:300px; border-radius:50%;
+  background:radial-gradient(circle,rgba(45,106,79,.25) 0%,transparent 65%);
+}
+.legal-hero-inner { max-width:800px; margin:0 auto; position:relative; z-index:1; }
+.legal-eyebrow {
+  font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--green-light); margin-bottom:1rem; display:block;
+}
+.legal-hero h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,3.5vw,2.6rem);
+  color:white; font-weight:600; line-height:1.2;
+  letter-spacing:-0.02em; margin-bottom:1rem;
+}
+.legal-hero p { font-size:1rem; color:rgba(255,255,255,.6); line-height:1.6; }
+.legal-meta {
+  display:flex; gap:1.5rem; margin-top:1.5rem; flex-wrap:wrap;
+}
+.legal-meta-item { font-size:.8rem; color:rgba(255,255,255,.45); }
+.legal-meta-item strong { color:rgba(255,255,255,.7); }
+
+.legal-content {
+  max-width:800px; margin:0 auto; padding:4rem 2rem 5rem;
+}
+.legal-toc {
+  background:var(--cream-dark); border:1px solid var(--border);
+  border-radius:12px; padding:1.5rem 2rem; margin-bottom:3rem;
+}
+.legal-toc h2 {
+  font-size:.8rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-muted); margin-bottom:1rem;
+}
+.legal-toc ol { padding-left:1.25rem; }
+.legal-toc li { margin-bottom:.4rem; }
+.legal-toc a { font-size:.875rem; color:var(--green); text-decoration:none; }
+.legal-toc a:hover { text-decoration:underline; }
+
+.legal-section { margin-bottom:3rem; }
+.legal-section h2 {
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem; color:var(--ink);
+  font-weight:600; margin-bottom:1rem;
+  padding-bottom:.5rem; border-bottom:2px solid var(--green-pale);
+  letter-spacing:-0.01em;
+}
+.legal-section h3 {
+  font-size:1rem; font-weight:700; color:var(--ink);
+  margin:1.5rem 0 .5rem;
+}
+.legal-section p {
+  font-size:.9375rem; color:var(--ink-light);
+  line-height:1.75; margin-bottom:1rem;
+}
+.legal-section ul, .legal-section ol {
+  padding-left:1.5rem; margin-bottom:1rem;
+}
+.legal-section li {
+  font-size:.9375rem; color:var(--ink-light);
+  line-height:1.7; margin-bottom:.4rem;
+}
+.legal-section a { color:var(--green); }
+.legal-section strong { color:var(--ink); font-weight:600; }
+
+.legal-highlight {
+  background:var(--green-pale); border-left:3px solid var(--green);
+  border-radius:0 8px 8px 0; padding:1rem 1.25rem;
+  margin:1.5rem 0;
+}
+.legal-highlight p { margin:0; font-size:.875rem; color:var(--ink); }
+
+.legal-table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:.875rem; }
+.legal-table th {
+  background:var(--cream-dark); padding:.75rem 1rem; text-align:left;
+  font-weight:700; font-size:.8rem; text-transform:uppercase; letter-spacing:.05em;
+  color:var(--ink-light); border-bottom:2px solid var(--border);
+}
+.legal-table td {
+  padding:.75rem 1rem; border-bottom:1px solid var(--border);
+  color:var(--ink-light); vertical-align:top;
+}
+.legal-table tr:last-child td { border-bottom:none; }
+
+.legal-contact-box {
+  background:white; border:1px solid var(--border);
+  border-radius:14px; padding:2rem; margin-top:2rem;
+}
+.legal-contact-box h3 { font-size:1rem; font-weight:700; color:var(--ink); margin-bottom:1rem; }
+.legal-contact-box p { font-size:.875rem; color:var(--ink-light); line-height:1.6; margin-bottom:.5rem; }
+.legal-contact-box a { color:var(--green); }
+
+@media(max-width:600px){ .legal-content { padding:2.5rem 1.25rem 4rem; } }
+</style>
+
+<!-- HERO -->
+<section class="legal-hero">
+  <div class="legal-hero-inner">
+    <span class="legal-eyebrow">CVérifié · Informations légales</span>
+    <h1>Politique de confidentialité</h1>
+    <p>CVérifié s'engage à protéger la vie privée de ses clients et des candidats dont les informations sont vérifiées. Le présent document décrit de manière transparente quelles données sont collectées, pourquoi, pendant combien de temps, et quels droits vous pouvez exercer.</p>
+    <div class="legal-meta">
+      <div class="legal-meta-item">Dernière mise à jour : <strong>1er mai 2026</strong></div>
+      <div class="legal-meta-item">Version : <strong>1.0</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="legal-content">
+
+  <div class="legal-toc">
+    <h2>Sommaire</h2>
+    <ol>
+      <li><a href="#section-1">Qui est responsable du traitement ?</a></li>
+      <li><a href="#section-2">Quelles données collectons-nous ?</a></li>
+      <li><a href="#section-3">Sur quelle base légale traitons-nous vos données ?</a></li>
+      <li><a href="#section-4">Combien de temps conservons-nous vos données ?</a></li>
+      <li><a href="#section-5">Qui a accès à vos données ?</a></li>
+      <li><a href="#section-6">Vos données sont-elles transférées hors UE ?</a></li>
+      <li><a href="#section-7">Quels sont vos droits ?</a></li>
+      <li><a href="#section-8">Cookies</a></li>
+      <li><a href="#section-9">Modifications de cette politique</a></li>
+    </ol>
+  </div>
+
+  <!-- Section 1 -->
+  <div class="legal-section" id="section-1">
+    <h2>1. Qui est responsable du traitement ?</h2>
+    <p>Le responsable du traitement des données à caractère personnel collectées via le site cverifie.fr est :</p>
+    <ul>
+      <li><strong>Société :</strong> CVérifié, SAS au capital de [X] €</li>
+      <li><strong>Siège social :</strong> [Adresse complète à compléter], Paris, France</li>
+      <li><strong>SIRET :</strong> [À COMPLÉTER PAR L'ÉDITEUR]</li>
+      <li><strong>Contact RGPD / DPO :</strong> <a href="mailto:rgpd@cverifie.fr">rgpd@cverifie.fr</a></li>
+    </ul>
+    <p>CVérifié traite des données à caractère personnel dans le cadre de la fourniture de son service de vérification de CV, de diplômes et d'expériences professionnelles, conformément au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679) et à la loi Informatique et Libertés modifiée.</p>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="legal-section" id="section-2">
+    <h2>2. Quelles données collectons-nous ?</h2>
+    <p>CVérifié collecte uniquement les données strictement nécessaires à la fourniture de ses services. Le tableau ci-dessous détaille les catégories de données traitées.</p>
+
+    <table class="legal-table">
+      <thead>
+        <tr>
+          <th>Catégorie de données</th>
+          <th>Exemples</th>
+          <th>Finalité</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Données d'identification client</strong></td>
+          <td>Nom, prénom, adresse email professionnelle, numéro de téléphone, nom de l'entreprise</td>
+          <td>Création et gestion du compte client, facturation, communication relative au service</td>
+        </tr>
+        <tr>
+          <td><strong>Données des candidats à vérifier</strong></td>
+          <td>Nom, prénom du candidat, diplôme(s) revendiqué(s), établissement(s) fréquenté(s), employeurs déclarés, dates d'emploi</td>
+          <td>Exécution du service de vérification commandé par le client</td>
+        </tr>
+        <tr>
+          <td><strong>Données de navigation</strong></td>
+          <td>Adresse IP, pages visitées, durée de la session, type de navigateur, cookies analytiques</td>
+          <td>Amélioration du site et du service, mesure d'audience (avec consentement pour les cookies analytiques)</td>
+        </tr>
+        <tr>
+          <td><strong>Données de facturation</strong></td>
+          <td>Montant des transactions, date, référence de commande, méthode de paiement (type de carte — jamais le numéro complet)</td>
+          <td>Comptabilité, respect des obligations légales de conservation</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="legal-highlight">
+      <p>CVérifié ne collecte jamais de données sensibles au sens de l'article 9 du RGPD (origines raciales ou ethniques, opinions politiques, croyances religieuses, données de santé, etc.).</p>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="legal-section" id="section-3">
+    <h2>3. Sur quelle base légale traitons-nous vos données ?</h2>
+    <p>Chaque traitement de données réalisé par CVérifié repose sur une base légale explicite au sens de l'article 6 du RGPD :</p>
+    <ul>
+      <li><strong>Exécution du contrat (art. 6.1.b RGPD) :</strong> le traitement est nécessaire pour réaliser les vérifications commandées par le client et lui livrer les rapports correspondants. Sans ce traitement, le service ne peut être fourni.</li>
+      <li><strong>Intérêt légitime (art. 6.1.f RGPD) :</strong> CVérifié a un intérêt légitime à traiter certaines données pour prévenir la fraude, assurer la sécurité des accès, améliorer la qualité du service et analyser l'utilisation du site. Ces intérêts sont mis en balance avec les droits des personnes concernées et ne leur causent pas de préjudice disproportionné.</li>
+      <li><strong>Obligation légale (art. 6.1.c RGPD) :</strong> la conservation des données de facturation pendant 10 ans est imposée par le Code de commerce (art. L.123-22) et le Code général des impôts.</li>
+      <li><strong>Consentement (art. 6.1.a RGPD) :</strong> le dépôt de cookies analytiques non essentiels n'a lieu qu'après recueil de votre consentement explicite, librement donné et révocable à tout moment.</li>
+    </ul>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="legal-section" id="section-4">
+    <h2>4. Combien de temps conservons-nous vos données ?</h2>
+    <p>CVérifié applique des durées de conservation strictement limitées à ce qui est nécessaire aux finalités du traitement.</p>
+
+    <table class="legal-table">
+      <thead>
+        <tr>
+          <th>Type de données</th>
+          <th>Durée de conservation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Données du compte client (identité, email, société)</td>
+          <td>Durée de la relation commerciale + 3 ans après la dernière interaction</td>
+        </tr>
+        <tr>
+          <td>Rapports de vérification livrés</td>
+          <td>2 ans à compter de la date de livraison</td>
+        </tr>
+        <tr>
+          <td>Données des candidats vérifiés</td>
+          <td>2 ans maximum, puis suppression automatique</td>
+        </tr>
+        <tr>
+          <td>Données de facturation et pièces comptables</td>
+          <td>10 ans (obligation légale — art. L.123-22 C. com.)</td>
+        </tr>
+        <tr>
+          <td>Logs de connexion et de sécurité</td>
+          <td>12 mois</td>
+        </tr>
+        <tr>
+          <td>Cookies analytiques</td>
+          <td>13 mois à compter du dépôt (recommandation CNIL)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>À l'issue des durées de conservation applicables, les données sont soit supprimées de manière sécurisée, soit anonymisées de manière irréversible à des fins statistiques.</p>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="legal-section" id="section-5">
+    <h2>5. Qui a accès à vos données ?</h2>
+    <p>CVérifié veille à ce que l'accès aux données personnelles soit strictement limité aux personnes et entités qui en ont besoin pour les finalités définies.</p>
+    <ul>
+      <li><strong>Équipe CVérifié :</strong> les collaborateurs habilités accèdent aux données dans le cadre strict de leurs missions (traitement des dossiers, support client, comptabilité). Chaque accès est tracé et limité au principe du moindre privilège.</li>
+      <li><strong>Hébergeur Netlify :</strong> Netlify héberge les fichiers techniques du site et accède à certaines données de connexion dans le cadre de la fourniture de l'infrastructure. Netlify agit en qualité de sous-traitant et est soumis à un accord de traitement des données conforme au RGPD.</li>
+      <li><strong>Établissements et employeurs contactés :</strong> dans le cadre d'une vérification, CVérifié transmet aux établissements d'enseignement ou aux employeurs uniquement les données strictement nécessaires à la confirmation (nom, diplôme ou dates d'emploi revendiqués). Aucune donnée superflue n'est communiquée.</li>
+      <li><strong>Prestataire de paiement (Stripe) :</strong> le paiement en ligne est géré par Stripe, Inc. CVérifié ne stocke jamais les numéros de carte bancaire ; seul Stripe y a accès dans le cadre de la transaction sécurisée.</li>
+      <li><strong>Autorités compétentes :</strong> CVérifié peut être amenée à communiquer des données aux autorités judiciaires ou administratives en cas d'obligation légale dûment établie.</li>
+    </ul>
+    <p>CVérifié ne vend, ne loue et ne cède jamais de données personnelles à des tiers à des fins commerciales ou publicitaires.</p>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="legal-section" id="section-6">
+    <h2>6. Vos données sont-elles transférées hors UE ?</h2>
+    <p>CVérifié peut être amenée à transférer certaines données vers des pays situés hors de l'Union européenne, notamment dans le cadre de l'utilisation de l'hébergeur Netlify, dont les serveurs sont situés aux États-Unis.</p>
+    <p>Ces transferts sont encadrés par des garanties appropriées conformément au chapitre V du RGPD :</p>
+    <ul>
+      <li><strong>Netlify, Inc. (USA) :</strong> le transfert est couvert par les clauses contractuelles types (CCT) de la Commission européenne, constituant une garantie adéquate au sens de l'article 46 du RGPD.</li>
+      <li><strong>Stripe, Inc. (USA) :</strong> le transfert des données de paiement est encadré par les clauses contractuelles types et les certifications de Stripe en matière de sécurité des paiements (PCI DSS niveau 1).</li>
+    </ul>
+    <p>CVérifié s'assure que tout sous-traitant établi hors de l'UE offre un niveau de protection substantiellement équivalent à celui garanti au sein de l'Espace Économique Européen. Vous pouvez obtenir une copie des garanties mises en place en contactant <a href="mailto:rgpd@cverifie.fr">rgpd@cverifie.fr</a>.</p>
+  </div>
+
+  <!-- Section 7 -->
+  <div class="legal-section" id="section-7">
+    <h2>7. Quels sont vos droits ?</h2>
+    <p>Conformément au RGPD, vous disposez des droits suivants sur les données personnelles vous concernant :</p>
+    <ul>
+      <li><strong>Droit d'accès (art. 15 RGPD) :</strong> vous pouvez demander à obtenir une copie des données que CVérifié détient vous concernant, ainsi que des informations sur leur traitement.</li>
+      <li><strong>Droit de rectification (art. 16 RGPD) :</strong> vous pouvez demander la correction de données inexactes ou incomplètes vous concernant.</li>
+      <li><strong>Droit à l'effacement (art. 17 RGPD) :</strong> vous pouvez demander la suppression de vos données, dans les limites des obligations légales de conservation qui s'imposent à CVérifié.</li>
+      <li><strong>Droit à la limitation du traitement (art. 18 RGPD) :</strong> vous pouvez demander la suspension temporaire du traitement de vos données dans certaines circonstances prévues par le RGPD.</li>
+      <li><strong>Droit à la portabilité (art. 20 RGPD) :</strong> vous pouvez demander à recevoir vos données dans un format structuré, couramment utilisé et lisible par machine, afin de les transmettre à un autre responsable de traitement.</li>
+      <li><strong>Droit d'opposition (art. 21 RGPD) :</strong> vous pouvez vous opposer au traitement de vos données lorsque celui-ci repose sur l'intérêt légitime de CVérifié, pour des motifs tenant à votre situation particulière.</li>
+      <li><strong>Droit de réclamation auprès de la CNIL :</strong> si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la Commission Nationale de l'Informatique et des Libertés — <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>.</li>
+    </ul>
+
+    <div class="legal-highlight">
+      <p><strong>Comment exercer vos droits :</strong> adressez votre demande par email à <a href="mailto:rgpd@cverifie.fr">rgpd@cverifie.fr</a> en précisant votre identité. CVérifié s'engage à répondre dans un délai de 30 jours. En cas de demande complexe ou multiple, ce délai peut être prorogé de 2 mois supplémentaires, avec information préalable.</p>
+    </div>
+  </div>
+
+  <!-- Section 8 -->
+  <div class="legal-section" id="section-8">
+    <h2>8. Cookies</h2>
+    <p>Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, tablette, smartphone) lors de votre visite sur le site cverifie.fr. CVérifié utilise plusieurs catégories de cookies.</p>
+
+    <h3>Cookies strictement nécessaires</h3>
+    <p>Ces cookies sont indispensables au fonctionnement du site et ne peuvent pas être désactivés. Ils incluent les cookies de gestion de session, de sécurité (protection CSRF) et de mémorisation de vos préférences de consentement. Ils ne collectent aucune information permettant de vous identifier à des fins publicitaires.</p>
+
+    <h3>Cookies analytiques (avec consentement)</h3>
+    <p>Avec votre accord préalable, CVérifié dépose des cookies analytiques destinés à mesurer l'audience du site (pages visitées, durée des sessions, provenance du trafic). Ces données sont agrégées et anonymisées ; elles permettent d'améliorer la qualité et la pertinence du service.</p>
+
+    <h3>Gérer vos préférences</h3>
+    <p>Vous pouvez à tout moment modifier vos préférences en matière de cookies via le gestionnaire de consentement accessible depuis le pied de page du site. Vous pouvez également configurer votre navigateur pour refuser tout ou partie des cookies. Notez que le refus des cookies non essentiels n'affecte pas votre accès au service.</p>
+  </div>
+
+  <!-- Section 9 -->
+  <div class="legal-section" id="section-9">
+    <h2>9. Modifications de cette politique</h2>
+    <p>CVérifié se réserve le droit de mettre à jour la présente politique de confidentialité à tout moment, notamment en cas d'évolution de la réglementation applicable, de modification du service ou de changement de sous-traitants.</p>
+    <p>En cas de modification substantielle, CVérifié informera les clients actifs par email au moins 30 jours avant l'entrée en vigueur des nouvelles dispositions. La date de dernière mise à jour figurant en haut de la présente page est systématiquement tenue à jour.</p>
+    <p>Nous vous invitons à consulter régulièrement cette page pour rester informé des éventuelles évolutions.</p>
+
+    <div class="legal-contact-box">
+      <h3>Contact — Délégué à la Protection des Données</h3>
+      <p>Pour toute question relative au traitement de vos données personnelles ou pour exercer vos droits RGPD :</p>
+      <p><strong>Email DPO :</strong> <a href="mailto:rgpd@cverifie.fr">rgpd@cverifie.fr</a></p>
+      <p><strong>Email général :</strong> <a href="mailto:contact@cverifie.fr">contact@cverifie.fr</a></p>
+      <p><strong>Adresse :</strong> CVérifié — [Adresse complète à compléter], Paris, France</p>
+      <p style="margin-top:1rem;">Vous pouvez également consulter notre page <a href="/conformite-rgpd/">Conformité RGPD</a> pour plus de détails sur nos pratiques.</p>
+    </div>
+  </div>
+
+</div>

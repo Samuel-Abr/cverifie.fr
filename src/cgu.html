@@ -1,0 +1,288 @@
+---
+layout: base.njk
+title: "Conditions Générales d'Utilisation | CVérifié"
+description: "CGU de CVérifié — conditions d'accès au service de vérification de CV et diplômes, obligations des parties, tarifs, responsabilité. Droit français."
+---
+<style>
+.legal-hero {
+  margin-top:64px; padding:3.5rem 2rem 3rem;
+  background:var(--ink); position:relative; overflow:hidden;
+}
+.legal-hero::before {
+  content:''; position:absolute; top:-80px; right:-40px;
+  width:300px; height:300px; border-radius:50%;
+  background:radial-gradient(circle,rgba(45,106,79,.25) 0%,transparent 65%);
+}
+.legal-hero-inner { max-width:800px; margin:0 auto; position:relative; z-index:1; }
+.legal-eyebrow {
+  font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--green-light); margin-bottom:1rem; display:block;
+}
+.legal-hero h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,3.5vw,2.6rem);
+  color:white; font-weight:600; line-height:1.2;
+  letter-spacing:-0.02em; margin-bottom:1rem;
+}
+.legal-hero p { font-size:1rem; color:rgba(255,255,255,.6); line-height:1.6; }
+.legal-meta {
+  display:flex; gap:1.5rem; margin-top:1.5rem; flex-wrap:wrap;
+}
+.legal-meta-item { font-size:.8rem; color:rgba(255,255,255,.45); }
+.legal-meta-item strong { color:rgba(255,255,255,.7); }
+
+.legal-content {
+  max-width:800px; margin:0 auto; padding:4rem 2rem 5rem;
+}
+.legal-toc {
+  background:var(--cream-dark); border:1px solid var(--border);
+  border-radius:12px; padding:1.5rem 2rem; margin-bottom:3rem;
+}
+.legal-toc h2 {
+  font-size:.8rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-muted); margin-bottom:1rem;
+}
+.legal-toc ol { padding-left:1.25rem; }
+.legal-toc li { margin-bottom:.4rem; }
+.legal-toc a { font-size:.875rem; color:var(--green); text-decoration:none; }
+.legal-toc a:hover { text-decoration:underline; }
+
+.legal-section { margin-bottom:3rem; }
+.legal-section h2 {
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem; color:var(--ink);
+  font-weight:600; margin-bottom:1rem;
+  padding-bottom:.5rem; border-bottom:2px solid var(--green-pale);
+  letter-spacing:-0.01em;
+}
+.legal-section h3 {
+  font-size:1rem; font-weight:700; color:var(--ink);
+  margin:1.5rem 0 .5rem;
+}
+.legal-section p {
+  font-size:.9375rem; color:var(--ink-light);
+  line-height:1.75; margin-bottom:1rem;
+}
+.legal-section ul, .legal-section ol {
+  padding-left:1.5rem; margin-bottom:1rem;
+}
+.legal-section li {
+  font-size:.9375rem; color:var(--ink-light);
+  line-height:1.7; margin-bottom:.4rem;
+}
+.legal-section a { color:var(--green); }
+.legal-section strong { color:var(--ink); font-weight:600; }
+
+.legal-highlight {
+  background:var(--green-pale); border-left:3px solid var(--green);
+  border-radius:0 8px 8px 0; padding:1rem 1.25rem;
+  margin:1.5rem 0;
+}
+.legal-highlight p { margin:0; font-size:.875rem; color:var(--ink); }
+
+.legal-table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:.875rem; }
+.legal-table th {
+  background:var(--cream-dark); padding:.75rem 1rem; text-align:left;
+  font-weight:700; font-size:.8rem; text-transform:uppercase; letter-spacing:.05em;
+  color:var(--ink-light); border-bottom:2px solid var(--border);
+}
+.legal-table td {
+  padding:.75rem 1rem; border-bottom:1px solid var(--border);
+  color:var(--ink-light); vertical-align:top;
+}
+.legal-table tr:last-child td { border-bottom:none; }
+
+.legal-contact-box {
+  background:white; border:1px solid var(--border);
+  border-radius:14px; padding:2rem; margin-top:2rem;
+}
+.legal-contact-box h3 { font-size:1rem; font-weight:700; color:var(--ink); margin-bottom:1rem; }
+.legal-contact-box p { font-size:.875rem; color:var(--ink-light); line-height:1.6; margin-bottom:.5rem; }
+.legal-contact-box a { color:var(--green); }
+
+@media(max-width:600px){ .legal-content { padding:2.5rem 1.25rem 4rem; } }
+</style>
+
+<!-- HERO -->
+<section class="legal-hero">
+  <div class="legal-hero-inner">
+    <span class="legal-eyebrow">CVérifié · Informations légales</span>
+    <h1>Conditions Générales d'Utilisation</h1>
+    <p>Les présentes conditions générales d'utilisation régissent l'accès et l'utilisation du service CVérifié par tout professionnel souscrivant à nos offres. Toute utilisation du service vaut acceptation sans réserve des présentes CGU.</p>
+    <div class="legal-meta">
+      <div class="legal-meta-item">Dernière mise à jour : <strong>1er mai 2026</strong></div>
+      <div class="legal-meta-item">Version : <strong>1.0</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="legal-content">
+
+  <div class="legal-toc">
+    <h2>Sommaire</h2>
+    <ol>
+      <li><a href="#section-1">Objet et champ d'application</a></li>
+      <li><a href="#section-2">Description du service</a></li>
+      <li><a href="#section-3">Accès au service et création de compte</a></li>
+      <li><a href="#section-4">Obligations du client</a></li>
+      <li><a href="#section-5">Obligations de CVérifié</a></li>
+      <li><a href="#section-6">Tarifs et paiement</a></li>
+      <li><a href="#section-7">Délais et force majeure</a></li>
+      <li><a href="#section-8">Limites du service et responsabilité</a></li>
+      <li><a href="#section-9">Propriété intellectuelle</a></li>
+      <li><a href="#section-10">Résiliation</a></li>
+      <li><a href="#section-11">Droit applicable et règlement des litiges</a></li>
+      <li><a href="#section-12">Modifications des CGU</a></li>
+    </ol>
+  </div>
+
+  <!-- Section 1 -->
+  <div class="legal-section" id="section-1">
+    <h2>1. Objet et champ d'application</h2>
+    <p>Les présentes Conditions Générales d'Utilisation (ci-après « CGU ») ont pour objet de définir les conditions dans lesquelles la société CVérifié (ci-après « CVérifié » ou « la Société ») met à disposition de ses clients professionnels (ci-après « le Client » ou « l'Utilisateur ») le service de vérification de CV, diplômes et expériences professionnelles accessible sur le site <a href="https://cverifie.fr">cverifie.fr</a>.</p>
+    <p>Les présentes CGU s'appliquent à toute utilisation du service CVérifié, que celle-ci soit réalisée à titre d'essai, dans le cadre d'une commande ponctuelle ou d'un accès régulier. Toute utilisation du service implique l'acceptation pleine et entière des présentes CGU par le Client.</p>
+    <p>CVérifié se réserve le droit de modifier les présentes CGU à tout moment. Les CGU applicables sont celles en vigueur au moment de chaque commande.</p>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="legal-section" id="section-2">
+    <h2>2. Description du service</h2>
+    <p>CVérifié est un service de vérification de CV, de diplômes et d'expériences professionnelles destiné aux professionnels du recrutement. Il permet aux recruteurs, aux responsables des ressources humaines et aux cabinets de recrutement de s'assurer de la véracité des informations déclarées par les candidats à un emploi.</p>
+    <p>Le service est accessible intégralement en ligne, depuis le tableau de bord sécurisé de l'espace client CVérifié.</p>
+    <p>Le périmètre standard du service comprend :</p>
+    <ul>
+      <li>La vérification des diplômes déclarés auprès des établissements d'enseignement concernés ;</li>
+      <li>La vérification des expériences professionnelles déclarées (dates d'emploi, intitulé de poste) auprès des employeurs mentionnés ;</li>
+      <li>La livraison d'un rapport de vérification structuré au Client dans les délais convenus.</li>
+    </ul>
+    <p>CVérifié s'engage à réaliser les vérifications et à livrer les résultats dans un délai de <strong>48 heures ouvrées</strong> à compter de la réception d'un dossier complet (ensemble des informations nécessaires fournies par le Client).</p>
+    <div class="legal-highlight">
+      <p>CVérifié ne vérifie que les informations déclarées par le candidat et transmises par le Client, et uniquement avec le consentement préalable et explicite du candidat concerné.</p>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="legal-section" id="section-3">
+    <h2>3. Accès au service et création de compte</h2>
+    <p>L'accès au service CVérifié est réservé aux professionnels agissant dans le cadre de leur activité : recruteurs, responsables des ressources humaines, directions des ressources humaines (DRH), cabinets de recrutement, entreprises et organisations souhaitant vérifier les CV de candidats dans un contexte de recrutement légitime.</p>
+    <p>La création d'un compte client est obligatoire pour accéder au service. Le Client s'engage à fournir des informations exactes, complètes et à jour lors de son inscription. CVérifié se réserve le droit de refuser la création d'un compte ou d'en suspendre l'accès en cas d'informations manifestement inexactes ou frauduleuses.</p>
+    <p>Le Client est seul responsable de la confidentialité de ses identifiants de connexion (adresse email et mot de passe). Il s'engage à ne pas les communiquer à des tiers et à informer immédiatement CVérifié de toute utilisation non autorisée de son compte à l'adresse <a href="mailto:contact@cverifie.fr">contact@cverifie.fr</a>. CVérifié ne saurait être tenu responsable des dommages résultant de l'utilisation du compte par un tiers due à une négligence du Client.</p>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="legal-section" id="section-4">
+    <h2>4. Obligations du client</h2>
+    <p>En souscrivant et utilisant le service CVérifié, le Client s'engage à respecter les obligations suivantes :</p>
+    <ul>
+      <li><strong>Obtenir le consentement explicite du candidat :</strong> conformément au RGPD (art. 6.1) et à l'article L.1221-6 du Code du travail, le Client s'engage à informer le candidat de la vérification prévue et à recueillir son accord préalable, libre, éclairé et non équivoque avant toute commande de vérification. CVérifié met à disposition un modèle de formulaire de consentement à cet effet.</li>
+      <li><strong>Usage conforme et légitime :</strong> le Client s'engage à utiliser le service CVérifié uniquement à des fins de vérification dans le cadre d'un processus de recrutement légal et légitime. Toute utilisation à des fins de surveillance, de discrimination ou étrangères au recrutement est strictement interdite.</li>
+      <li><strong>Non-réutilisation des données :</strong> les données contenues dans les rapports de vérification ne peuvent être utilisées qu'à la finalité pour laquelle elles ont été collectées (la décision de recrutement du candidat concerné) et ne peuvent être transmises à des tiers non habilités.</li>
+      <li><strong>Exactitude des informations transmises :</strong> le Client s'engage à transmettre à CVérifié des informations exactes et complètes sur le candidat à vérifier. En cas d'inexactitude dans les données transmises, CVérifié ne peut être tenu responsable des résultats obtenus.</li>
+      <li><strong>Signalement :</strong> le Client s'engage à informer CVérifié sans délai de toute anomalie, inexactitude ou dysfonctionnement constaté dans les rapports livrés, à l'adresse <a href="mailto:contact@cverifie.fr">contact@cverifie.fr</a>.</li>
+    </ul>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="legal-section" id="section-5">
+    <h2>5. Obligations de CVérifié</h2>
+    <p>Dans le cadre de l'exécution de ses services, CVérifié s'engage à :</p>
+    <ul>
+      <li><strong>Diligence dans les vérifications :</strong> CVérifié s'engage à contacter les établissements d'enseignement et les employeurs par les voies appropriées afin de confirmer ou d'infirmer les informations déclarées par le candidat, dans le respect des bonnes pratiques du secteur.</li>
+      <li><strong>Respect des délais :</strong> CVérifié s'engage à livrer les rapports de vérification dans le délai de 48 heures ouvrées annoncé pour les dossiers standards, à compter de la réception d'un dossier complet et du paiement validé.</li>
+      <li><strong>Confidentialité :</strong> CVérifié s'engage à traiter l'ensemble des données qui lui sont transmises avec la plus stricte confidentialité, à ne les utiliser qu'aux fins des vérifications commandées et à ne jamais les céder à des tiers à des fins commerciales.</li>
+      <li><strong>Sécurité des données :</strong> CVérifié met en œuvre les mesures techniques et organisationnelles appropriées pour protéger les données contre tout accès non autorisé, perte ou altération, conformément aux exigences du RGPD.</li>
+      <li><strong>Disponibilité du service :</strong> CVérifié s'efforce d'assurer la disponibilité du service 7j/7, sous réserve des opérations de maintenance nécessaires qui seront annoncées dans les meilleurs délais.</li>
+    </ul>
+    <p>CVérifié agit en qualité de <strong>sous-traitant</strong> au sens de l'article 28 du RGPD pour le traitement des données des candidats. Un contrat de sous-traitance (DPA — Data Processing Agreement) est signé avec chaque Client entreprise souscrivant au service.</p>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="legal-section" id="section-6">
+    <h2>6. Tarifs et paiement</h2>
+    <p>Les tarifs du service CVérifié sont indiqués en euros hors taxes (HT) sur le site cverifie.fr et dans l'espace client.</p>
+    <ul>
+      <li><strong>Tarif de base :</strong> à partir de <strong>14,90 € HT</strong> par dossier de vérification standard.</li>
+      <li><strong>TVA :</strong> la TVA est applicable au taux légal en vigueur (20 %). Le montant TTC est affiché lors de la confirmation de commande.</li>
+      <li><strong>Paiement :</strong> le paiement est effectué en ligne par carte bancaire sécurisée via Stripe. Le traitement de la commande débute après validation et encaissement du paiement.</li>
+      <li><strong>Facturation :</strong> une facture est émise automatiquement pour chaque commande et disponible dans l'espace client. CVérifié ne requiert aucun abonnement obligatoire pour les commandes ponctuelles.</li>
+      <li><strong>Tarifs volumes :</strong> des conditions tarifaires spécifiques peuvent être négociées pour les clients réalisant un volume mensuel significatif de vérifications. Contactez <a href="mailto:contact@cverifie.fr">contact@cverifie.fr</a> pour obtenir un devis personnalisé.</li>
+    </ul>
+    <p>CVérifié se réserve le droit de modifier ses tarifs à tout moment. Les tarifs applicables sont ceux affichés sur le site au moment de la passation de la commande.</p>
+  </div>
+
+  <!-- Section 7 -->
+  <div class="legal-section" id="section-7">
+    <h2>7. Délais et force majeure</h2>
+    <h3>Délais standard</h3>
+    <p>Le délai de livraison standard est de <strong>48 heures ouvrées</strong> à compter de la réception d'un dossier complet et du paiement validé. Un dossier est considéré comme complet lorsque CVérifié dispose de l'ensemble des informations nécessaires à la réalisation des vérifications commandées.</p>
+    <h3>Délais prolongés</h3>
+    <p>En cas de non-réponse de l'établissement ou de l'employeur contacté dans le délai standard, le délai de livraison peut être porté à <strong>5 jours ouvrés</strong>. CVérifié s'engage à informer le Client de ce délai prolongé par email dès que la situation est identifiée.</p>
+    <p>Dans le cas exceptionnel où une vérification ne peut être finalisée faute de réponse des tiers contactés dans un délai de 10 jours ouvrés, CVérifié en informera le Client et lui proposera une solution appropriée (remboursement ou rapport partiel avec mention des éléments non confirmés).</p>
+    <h3>Force majeure</h3>
+    <p>CVérifié ne saurait être tenu responsable de tout retard ou inexécution résultant d'un événement de force majeure au sens de l'article 1218 du Code civil, notamment une panne générale d'Internet, une catastrophe naturelle, un acte de cyberattaque d'envergure nationale, une décision gouvernementale imprévisible ou toute autre circonstance extérieure, imprévisible et irrésistible. CVérifié informera le Client dans les meilleurs délais et s'efforcera de reprendre l'exécution du service dès que possible.</p>
+  </div>
+
+  <!-- Section 8 -->
+  <div class="legal-section" id="section-8">
+    <h2>8. Limites du service et responsabilité</h2>
+    <p>Le service CVérifié s'appuie sur les informations communiquées par des tiers (établissements d'enseignement, employeurs, organismes de certification). La qualité et l'exhaustivité des résultats dépendent en partie de la réactivité et de la coopération de ces sources tierces.</p>
+    <ul>
+      <li><strong>Limitation de responsabilité :</strong> en cas d'inexactitude des résultats due à des informations erronées fournies par un tiers ou à l'indisponibilité de registres consultés, la responsabilité de CVérifié ne pourra en aucun cas excéder le montant payé par le Client pour la vérification concernée.</li>
+      <li><strong>Non-exhaustivité des registres :</strong> CVérifié ne garantit pas l'exhaustivité des registres consultés. Certains établissements ou employeurs peuvent ne pas répondre ou ne pas disposer d'archives accessibles. Cette situation est signalée dans le rapport.</li>
+      <li><strong>Absence de vérification judiciaire :</strong> CVérifié n'effectue aucune consultation de casier judiciaire (bulletins B2 ou B3) ni aucune enquête de nature policière ou judiciaire. Toute demande d'accès au casier judiciaire relève exclusivement du droit français et est soumise à des conditions légales strictes.</li>
+      <li><strong>Aide à la décision :</strong> les rapports de vérification fournis par CVérifié constituent une aide à la décision pour le Client. La décision finale d'embaucher ou non un candidat appartient exclusivement au Client. CVérifié ne saurait être tenu responsable des conséquences d'une décision de recrutement fondée sur les résultats d'une vérification.</li>
+    </ul>
+    <div class="legal-highlight">
+      <p>Pour en savoir plus sur la conformité RGPD du service et les bases légales des traitements, consultez notre <a href="/politique-de-confidentialite/">Politique de confidentialité</a> et notre page <a href="/conformite-rgpd/">Conformité RGPD</a>.</p>
+    </div>
+  </div>
+
+  <!-- Section 9 -->
+  <div class="legal-section" id="section-9">
+    <h2>9. Propriété intellectuelle</h2>
+    <p>Les <strong>rapports de vérification</strong> livrés par CVérifié sont la propriété du Client qui en a passé commande. Le Client peut les utiliser librement dans le cadre de son processus de recrutement.</p>
+    <p>En revanche, l'ensemble des autres éléments du service CVérifié — notamment les méthodes de vérification, les algorithmes, les interfaces utilisateur, les bases de données, les contenus éditoriaux du site et la marque CVérifié — demeurent la propriété exclusive de CVérifié et sont protégés par les dispositions du Code de la propriété intellectuelle.</p>
+    <p>Le Client s'interdit expressément de reproduire, copier, revendre ou exploiter tout ou partie du service ou de ses composants sans l'autorisation écrite préalable de CVérifié.</p>
+  </div>
+
+  <!-- Section 10 -->
+  <div class="legal-section" id="section-10">
+    <h2>10. Résiliation</h2>
+    <h3>Résiliation par le Client</h3>
+    <p>Le Client peut supprimer son compte à tout moment depuis son espace client ou en envoyant une demande à <a href="mailto:contact@cverifie.fr">contact@cverifie.fr</a>. La suppression du compte prend effet dans un délai de 7 jours ouvrés. Les commandes en cours au moment de la demande de suppression seront menées à leur terme.</p>
+    <h3>Résiliation ou suspension par CVérifié</h3>
+    <p>CVérifié se réserve le droit de suspendre ou de résilier l'accès d'un Client au service en cas de :</p>
+    <ul>
+      <li>Violation des présentes CGU, notamment en cas d'utilisation du service à des fins non conformes à son objet ;</li>
+      <li>Non-paiement d'une ou plusieurs factures ;</li>
+      <li>Fourniture d'informations manifestement inexactes ou frauduleuses lors de l'inscription ou lors d'une commande.</li>
+    </ul>
+    <p>Sauf en cas de fraude avérée, CVérifié accordera au Client un préavis de <strong>48 heures</strong> par email avant toute suspension, afin de lui permettre de régulariser la situation. En cas de fraude avérée, la suspension peut être immédiate et sans préavis.</p>
+  </div>
+
+  <!-- Section 11 -->
+  <div class="legal-section" id="section-11">
+    <h2>11. Droit applicable et règlement des litiges</h2>
+    <p>Les présentes CGU sont soumises au droit français. En cas de litige relatif à leur interprétation ou à leur exécution, les parties s'engagent à rechercher en premier lieu une solution amiable.</p>
+    <p>À cet effet, le Client adressera une réclamation formelle par email à <a href="mailto:contact@cverifie.fr">contact@cverifie.fr</a>. CVérifié s'engage à accuser réception dans un délai de 5 jours ouvrés et à proposer une réponse substantielle dans un délai de 15 jours ouvrés.</p>
+    <p>À défaut d'accord amiable dans un délai de 30 jours à compter de la réclamation, les <strong>tribunaux compétents de Paris</strong> seront seuls compétents pour connaître du litige, nonobstant pluralité de défendeurs ou appel en garantie.</p>
+  </div>
+
+  <!-- Section 12 -->
+  <div class="legal-section" id="section-12">
+    <h2>12. Modifications des CGU</h2>
+    <p>CVérifié se réserve le droit de modifier les présentes CGU à tout moment, notamment en cas d'évolution du service, de modification du cadre légal ou réglementaire applicable, ou de décisions jurisprudentielles impactant les pratiques du secteur.</p>
+    <p>Toute modification substantielle sera notifiée au Client par email avec un préavis minimum de <strong>30 jours</strong> avant son entrée en vigueur. La poursuite de l'utilisation du service après cette période vaut acceptation des nouvelles CGU. Si le Client n'accepte pas les nouvelles conditions, il dispose de la faculté de résilier son compte avant la date d'entrée en vigueur.</p>
+    <p>La version en vigueur des CGU est toujours accessible à l'adresse <a href="/cgu/">https://cverifie.fr/cgu/</a>. La date de la dernière mise à jour est indiquée en haut de la présente page.</p>
+
+    <div class="legal-contact-box">
+      <h3>Questions sur les CGU ou le service ?</h3>
+      <p>Pour toute question relative aux présentes conditions ou au service CVérifié :</p>
+      <p><strong>Email :</strong> <a href="mailto:contact@cverifie.fr">contact@cverifie.fr</a></p>
+      <p><strong>RGPD :</strong> <a href="mailto:rgpd@cverifie.fr">rgpd@cverifie.fr</a></p>
+      <p style="margin-top:1rem;">Consultez également notre <a href="/politique-de-confidentialite/">Politique de confidentialité</a> pour tout ce qui concerne le traitement de vos données personnelles.</p>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,221 @@
+---
+layout: base.njk
+title: "Mentions légales | CVérifié"
+description: "Mentions légales de CVérifié — éditeur, hébergeur, propriété intellectuelle, conditions d'utilisation du site cverifie.fr."
+---
+<style>
+.legal-hero {
+  margin-top:64px; padding:3.5rem 2rem 3rem;
+  background:var(--ink); position:relative; overflow:hidden;
+}
+.legal-hero::before {
+  content:''; position:absolute; top:-80px; right:-40px;
+  width:300px; height:300px; border-radius:50%;
+  background:radial-gradient(circle,rgba(45,106,79,.25) 0%,transparent 65%);
+}
+.legal-hero-inner { max-width:800px; margin:0 auto; position:relative; z-index:1; }
+.legal-eyebrow {
+  font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--green-light); margin-bottom:1rem; display:block;
+}
+.legal-hero h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,3.5vw,2.6rem);
+  color:white; font-weight:600; line-height:1.2;
+  letter-spacing:-0.02em; margin-bottom:1rem;
+}
+.legal-hero p { font-size:1rem; color:rgba(255,255,255,.6); line-height:1.6; }
+.legal-meta {
+  display:flex; gap:1.5rem; margin-top:1.5rem; flex-wrap:wrap;
+}
+.legal-meta-item { font-size:.8rem; color:rgba(255,255,255,.45); }
+.legal-meta-item strong { color:rgba(255,255,255,.7); }
+
+.legal-content {
+  max-width:800px; margin:0 auto; padding:4rem 2rem 5rem;
+}
+.legal-toc {
+  background:var(--cream-dark); border:1px solid var(--border);
+  border-radius:12px; padding:1.5rem 2rem; margin-bottom:3rem;
+}
+.legal-toc h2 {
+  font-size:.8rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-muted); margin-bottom:1rem;
+}
+.legal-toc ol { padding-left:1.25rem; }
+.legal-toc li { margin-bottom:.4rem; }
+.legal-toc a { font-size:.875rem; color:var(--green); text-decoration:none; }
+.legal-toc a:hover { text-decoration:underline; }
+
+.legal-section { margin-bottom:3rem; }
+.legal-section h2 {
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem; color:var(--ink);
+  font-weight:600; margin-bottom:1rem;
+  padding-bottom:.5rem; border-bottom:2px solid var(--green-pale);
+  letter-spacing:-0.01em;
+}
+.legal-section h3 {
+  font-size:1rem; font-weight:700; color:var(--ink);
+  margin:1.5rem 0 .5rem;
+}
+.legal-section p {
+  font-size:.9375rem; color:var(--ink-light);
+  line-height:1.75; margin-bottom:1rem;
+}
+.legal-section ul, .legal-section ol {
+  padding-left:1.5rem; margin-bottom:1rem;
+}
+.legal-section li {
+  font-size:.9375rem; color:var(--ink-light);
+  line-height:1.7; margin-bottom:.4rem;
+}
+.legal-section a { color:var(--green); }
+.legal-section strong { color:var(--ink); font-weight:600; }
+
+.legal-highlight {
+  background:var(--green-pale); border-left:3px solid var(--green);
+  border-radius:0 8px 8px 0; padding:1rem 1.25rem;
+  margin:1.5rem 0;
+}
+.legal-highlight p { margin:0; font-size:.875rem; color:var(--ink); }
+
+.legal-table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:.875rem; }
+.legal-table th {
+  background:var(--cream-dark); padding:.75rem 1rem; text-align:left;
+  font-weight:700; font-size:.8rem; text-transform:uppercase; letter-spacing:.05em;
+  color:var(--ink-light); border-bottom:2px solid var(--border);
+}
+.legal-table td {
+  padding:.75rem 1rem; border-bottom:1px solid var(--border);
+  color:var(--ink-light); vertical-align:top;
+}
+.legal-table tr:last-child td { border-bottom:none; }
+
+.legal-contact-box {
+  background:white; border:1px solid var(--border);
+  border-radius:14px; padding:2rem; margin-top:2rem;
+}
+.legal-contact-box h3 { font-size:1rem; font-weight:700; color:var(--ink); margin-bottom:1rem; }
+.legal-contact-box p { font-size:.875rem; color:var(--ink-light); line-height:1.6; margin-bottom:.5rem; }
+.legal-contact-box a { color:var(--green); }
+
+@media(max-width:600px){ .legal-content { padding:2.5rem 1.25rem 4rem; } }
+</style>
+
+<!-- HERO -->
+<section class="legal-hero">
+  <div class="legal-hero-inner">
+    <span class="legal-eyebrow">CVérifié · Informations légales</span>
+    <h1>Mentions légales</h1>
+    <p>Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN), les présentes mentions légales précisent l'identité des différents intervenants dans le cadre de la réalisation et du suivi du site cverifie.fr.</p>
+    <div class="legal-meta">
+      <div class="legal-meta-item">Dernière mise à jour : <strong>1er mai 2026</strong></div>
+      <div class="legal-meta-item">Version : <strong>1.0</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="legal-content">
+
+  <div class="legal-toc">
+    <h2>Sommaire</h2>
+    <ol>
+      <li><a href="#section-1">Éditeur du site</a></li>
+      <li><a href="#section-2">Hébergement</a></li>
+      <li><a href="#section-3">Propriété intellectuelle</a></li>
+      <li><a href="#section-4">Données personnelles</a></li>
+      <li><a href="#section-5">Cookies</a></li>
+      <li><a href="#section-6">Limitation de responsabilité</a></li>
+      <li><a href="#section-7">Droit applicable et juridiction compétente</a></li>
+    </ol>
+  </div>
+
+  <!-- Section 1 -->
+  <div class="legal-section" id="section-1">
+    <h2>1. Éditeur du site</h2>
+    <p>Le site <strong>cverifie.fr</strong> est édité par la société CVérifié, société par actions simplifiée (SAS) au capital social à compléter.</p>
+    <ul>
+      <li><strong>Raison sociale :</strong> CVérifié</li>
+      <li><strong>Forme juridique :</strong> SAS (Société par Actions Simplifiée)</li>
+      <li><strong>SIRET :</strong> [À COMPLÉTER PAR L'ÉDITEUR]</li>
+      <li><strong>Siège social :</strong> [Adresse complète à compléter], Paris, France</li>
+      <li><strong>Directeur de la publication :</strong> [Prénom NOM]</li>
+      <li><strong>Email :</strong> <a href="mailto:contact@cverifie.fr">contact@cverifie.fr</a></li>
+      <li><strong>Site web :</strong> <a href="https://cverifie.fr">https://cverifie.fr</a></li>
+    </ul>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="legal-section" id="section-2">
+    <h2>2. Hébergement</h2>
+    <p>Le site cverifie.fr est hébergé par la société :</p>
+    <ul>
+      <li><strong>Raison sociale :</strong> Netlify, Inc.</li>
+      <li><strong>Adresse :</strong> 512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis</li>
+      <li><strong>Site web :</strong> <a href="https://www.netlify.com" target="_blank" rel="noopener">https://www.netlify.com</a></li>
+    </ul>
+    <p>Netlify est une plateforme d'hébergement et de déploiement de sites web, certifiée SOC 2 Type II, dont les infrastructures sont déployées sur des réseaux de distribution de contenu (CDN) mondiaux.</p>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="legal-section" id="section-3">
+    <h2>3. Propriété intellectuelle</h2>
+    <p>L'ensemble des éléments constituant le site cverifie.fr — notamment les textes, articles, guides, illustrations, photographies, logos, icônes, mise en page, charte graphique, ainsi que le code source — sont la propriété exclusive de la société CVérifié ou font l'objet d'une autorisation d'utilisation accordée à celle-ci.</p>
+    <p>Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est strictement interdite sans l'autorisation écrite préalable de CVérifié. Toute exploitation non autorisée du site ou de l'un quelconque des éléments qu'il contient est susceptible de constituer une contrefaçon et d'engager des poursuites judiciaires conformément aux articles L.335-2 et suivants du Code de la propriété intellectuelle.</p>
+    <p>La marque <strong>CVérifié</strong> ainsi que les logos associés sont des marques de la société CVérifié. Toute reproduction ou usage non autorisé de ces marques constitue une contrefaçon au sens des articles L.713-1 et suivants du Code de la propriété intellectuelle.</p>
+    <div class="legal-highlight">
+      <p>Pour toute demande d'autorisation de reproduction ou d'utilisation des contenus du site, veuillez contacter <a href="mailto:contact@cverifie.fr">contact@cverifie.fr</a>.</p>
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="legal-section" id="section-4">
+    <h2>4. Données personnelles</h2>
+    <p>CVérifié accorde une importance particulière à la protection des données personnelles de ses utilisateurs et de ses clients. Le traitement des données à caractère personnel est réalisé conformément au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679) et à la loi Informatique et Libertés modifiée.</p>
+    <ul>
+      <li><strong>Responsable du traitement :</strong> CVérifié — [Adresse siège social], Paris, France</li>
+      <li><strong>Contact RGPD / DPO :</strong> <a href="mailto:rgpd@cverifie.fr">rgpd@cverifie.fr</a></li>
+    </ul>
+    <p>Conformément aux articles 15 à 22 du RGPD, vous disposez des droits suivants sur vos données personnelles : droit d'accès, droit de rectification, droit à l'effacement, droit à la limitation du traitement, droit à la portabilité et droit d'opposition. Pour exercer ces droits, adressez votre demande à <a href="mailto:rgpd@cverifie.fr">rgpd@cverifie.fr</a>. CVérifié s'engage à répondre dans un délai de 30 jours.</p>
+    <p>Vous pouvez également introduire une réclamation auprès de la Commission Nationale de l'Informatique et des Libertés (CNIL) — <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>.</p>
+    <p>Pour plus de détails sur la manière dont CVérifié collecte et traite vos données, consultez notre <a href="/politique-de-confidentialite/">Politique de confidentialité</a>.</p>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="legal-section" id="section-5">
+    <h2>5. Cookies</h2>
+    <p>Le site cverifie.fr utilise des cookies afin d'améliorer l'expérience de navigation des utilisateurs et de mesurer l'audience du site.</p>
+    <h3>Cookies strictement nécessaires</h3>
+    <p>Ces cookies sont indispensables au bon fonctionnement du site (gestion de session, sécurité, préférences de consentement). Ils sont déposés sans consentement préalable et ne peuvent pas être désactivés.</p>
+    <h3>Cookies analytiques</h3>
+    <p>Avec votre consentement, CVérifié peut déposer des cookies analytiques permettant de mesurer le nombre de visiteurs, les pages consultées et les sources de trafic, dans le but d'améliorer la qualité du service. Ces cookies sont anonymisés et ne permettent pas de vous identifier personnellement.</p>
+    <h3>Comment gérer vos préférences</h3>
+    <p>Vous pouvez à tout moment retirer votre consentement ou modifier vos préférences en matière de cookies via le gestionnaire de consentement accessible dans le pied de page du site. Vous pouvez également configurer votre navigateur pour refuser l'ensemble des cookies ; dans ce cas, certaines fonctionnalités du site pourraient être affectées.</p>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="legal-section" id="section-6">
+    <h2>6. Limitation de responsabilité</h2>
+    <p>CVérifié s'efforce d'assurer l'exactitude et la mise à jour des informations publiées sur le site cverifie.fr. Toutefois, CVérifié ne peut garantir l'exactitude, la précision ou l'exhaustivité des informations mises à disposition.</p>
+    <p>Le service de vérification de CVérifié s'appuie sur des informations communiquées par des tiers (établissements d'enseignement, employeurs, organismes de certification). CVérifié ne saurait être tenu responsable d'inexactitudes résultant de données erronées fournies par ces sources tierces. La responsabilité de CVérifié ne pourra en aucun cas excéder le montant payé par le client pour la vérification concernée.</p>
+    <p>Le site peut contenir des liens hypertextes vers des sites tiers. CVérifié n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu, leurs pratiques en matière de données personnelles ou leur disponibilité. La présence d'un lien vers un site tiers ne vaut pas approbation ou recommandation de ce site par CVérifié.</p>
+    <p>CVérifié ne peut être tenu responsable des dommages directs ou indirects résultant de l'accès au site, de son utilisation ou de l'impossibilité d'y accéder.</p>
+  </div>
+
+  <!-- Section 7 -->
+  <div class="legal-section" id="section-7">
+    <h2>7. Droit applicable et juridiction compétente</h2>
+    <p>Les présentes mentions légales sont régies par le droit français. En cas de litige relatif à l'interprétation ou à l'exécution des présentes, et à défaut de résolution amiable, les tribunaux compétents de Paris seront seuls compétents.</p>
+
+    <div class="legal-contact-box">
+      <h3>Une question ou un signalement ?</h3>
+      <p>Pour toute question relative aux présentes mentions légales, pour exercer vos droits sur vos données personnelles, ou pour signaler un contenu illicite sur le site, contactez-nous :</p>
+      <p><strong>Email :</strong> <a href="mailto:contact@cverifie.fr">contact@cverifie.fr</a></p>
+      <p><strong>RGPD :</strong> <a href="mailto:rgpd@cverifie.fr">rgpd@cverifie.fr</a></p>
+      <p><strong>Adresse :</strong> CVérifié — [Adresse complète à compléter], Paris, France</p>
+    </div>
+  </div>
+
+</div>
