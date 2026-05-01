@@ -419,13 +419,15 @@ body.dark-story nav.main-nav {
   background:rgba(5,5,7,0.88);
   border-bottom-color:rgba(255,255,255,0.07);
 }
-body.dark-story .nav-logo-text { color:white; }
-body.dark-story .nav-logo-text .cv { color:var(--green-light); }
+body.dark-story .logo-nav {
+  filter: brightness(0) saturate(100%) invert(67%) sepia(30%) saturate(607%) hue-rotate(101deg) brightness(1.05);
+}
 body.dark-story .nav-links a { color:rgba(255,255,255,0.55); }
 body.dark-story .nav-links a:hover { color:var(--green-light); }
 body.dark-story .nav-links a.active { color:var(--green-light); }
 body.dark-story .hamburger span { background:rgba(255,255,255,0.8); }
 body.dark-story .nav-cta { background:var(--green); }
+body.dark-story .nav-cta-mobile { background:var(--green); }
 
 /* ── LIRE AUSSI ── */
 .lire-aussi{padding:3rem 2rem;background:var(--cream-dark);border-top:1px solid var(--border)}
