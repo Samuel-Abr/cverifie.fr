@@ -9,6 +9,79 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://cverifie.fr{{ page.url }}">
 
+<!-- JSON-LD: Organisation (toutes pages) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "CVérifié",
+  "url": "https://cverifie.fr",
+  "logo": "https://cverifie.fr/images/cverifie-logo-green-sm.png",
+  "description": "Service de vérification de CV et de diplômes pour recruteurs français — 100 % en ligne, sous 48 h.",
+  "address": { "@type": "PostalAddress", "addressCountry": "FR" },
+  "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "url": "https://cverifie.fr/contact.html", "areaServed": "FR" }
+}
+</script>
+{% if ogType == 'article' %}
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ title | dump | safe }},
+  "description": {{ description | dump | safe }},
+  "datePublished": "{{ articleDate }}",
+  "dateModified": "{{ articleDate }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ articleAuthor if articleAuthor else 'Équipe CVérifié' }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CVérifié",
+    "logo": { "@type": "ImageObject", "url": "https://cverifie.fr/images/cverifie-logo-green-sm.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://cverifie.fr{{ page.url }}" }
+}
+</script>
+{% endif %}
+{% if hasFaq %}
+<!-- JSON-LD: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Combien coûte une vérification de CV ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Une vérification CVérifié commence à 14,90 € par dossier. Le tarif varie selon les éléments contrôlés (diplômes, expériences, références). Aucun abonnement ni engagement requis." }
+    },
+    {
+      "@type": "Question",
+      "name": "En combien de temps obtenez-vous les résultats ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "CVérifié remet un rapport complet sous 48 heures ouvrées. Une option express 24 h est disponible sur demande." }
+    },
+    {
+      "@type": "Question",
+      "name": "Est-ce légal de vérifier le CV d'un candidat en France ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui, à condition d'avoir obtenu le consentement écrit du candidat. CVérifié vous fournit les formulaires de consentement conformes au RGPD et au Code du travail." }
+    },
+    {
+      "@type": "Question",
+      "name": "Que vérifie exactement CVérifié ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "CVérifié contrôle les diplômes (auprès des établissements émetteurs), les expériences professionnelles (auprès des anciens employeurs), les certifications professionnelles (CACES, IT, etc.) et peut réaliser des prises de références." }
+    },
+    {
+      "@type": "Question",
+      "name": "La vérification est-elle conforme au RGPD ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui. Le consentement explicite du candidat est recueilli avant toute vérification. Les données sont traitées et hébergées en France, conformément au RGPD et à la CNIL." }
+    }
+  ]
+}
+</script>
+{% endif %}
+
 <!-- Open Graph -->
 <meta property="og:type" content="{{ ogType if ogType else 'website' }}">
 <meta property="og:title" content="{{ title if title else 'CVérifié · Vérification de CV & Diplômes en 48h' }}">
@@ -301,11 +374,49 @@ footer{
 .rating-item svg{flex-shrink:0}
 @media(max-width:1024px){.footer-top{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.footer-top{grid-template-columns:1fr}}
+
+/* ── LIRE AUSSI ── */
+.lire-aussi{padding:3rem 2rem;background:var(--cream-dark);border-top:1px solid var(--border)}
+.lire-aussi-inner{max-width:760px;margin:0 auto}
+.lire-aussi-title{font-size:1.25rem;margin-bottom:1.5rem;color:var(--ink)}
+.lire-aussi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.875rem}
+.lire-aussi-card{
+  display:flex;flex-direction:column;gap:.5rem;
+  background:white;border:1px solid var(--border);
+  border-radius:12px;padding:1.25rem;
+  transition:border-color .2s,box-shadow .2s;
+  color:var(--ink);
+  text-decoration:none;
+}
+.lire-aussi-card:hover{border-color:var(--green);box-shadow:0 4px 16px rgba(45,106,79,.1);text-decoration:none}
+.lire-aussi-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.lire-aussi-name{font-size:.875rem;font-weight:600;line-height:1.4;color:var(--ink)}
+.lire-aussi-arrow{font-size:.875rem;color:var(--green);margin-top:.25rem}
 </style>
 </head>
 <body>
 {% include "nav.njk" %}
 {{ content | safe }}
+{% if ogType == 'article' %}
+{% set slug = page.fileSlug %}
+{% set related = relatedArticles[slug] %}
+{% if related and related.length %}
+<section class="lire-aussi">
+  <div class="lire-aussi-inner">
+    <h2 class="lire-aussi-title">Lire aussi</h2>
+    <div class="lire-aussi-grid">
+      {% for item in related %}
+      <a href="/blog/{{ item.slug }}.html" class="lire-aussi-card">
+        <span class="lire-aussi-label">Article</span>
+        <span class="lire-aussi-name">{{ item.title }}</span>
+        <span class="lire-aussi-arrow">→</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endif %}
 {% include "footer.njk" %}
 </body>
 </html>
