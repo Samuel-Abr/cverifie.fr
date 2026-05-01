@@ -9,7 +9,7 @@ faqItems:
   - q: "Combien coûte vraiment un mauvais recrutement en France en 2026 ?"
     a: "En France, le coût varie entre 15 000 et 160 000 € selon le profil. Pour un technicien ou commercial à 38 000 € brut, comptez 25 000 à 45 000 €. Pour un cadre à 55 000 €, entre 40 000 et 80 000 €. Pour un cadre dirigeant à 90 000 €, plus de 100 000 €. Ces estimations intègrent recrutement initial, intégration, sous-performance, séparation et remplacement."
   - q: "Comment calculer le ROI d'une vérification de CV ?"
-    a: "ROI = coût estimé du mauvais recrutement / coût de la vérification. Pour un cadre à 55 000 €, le coût médian d'un recrutement raté est environ 50 000 €. Avec une vérification CVérifié à 49 €, le ROI dépasse 1 000x : chaque euro investi protège potentiellement 1 020 euros."
+    a: "ROI = coût estimé du mauvais recrutement / coût de la vérification. Pour un cadre à 55 000 €, le coût médian d'un recrutement raté est environ 50 000 €. Avec la formule Complet CVérifié à 39,90 €, le ROI dépasse 1 250x : chaque euro investi protège potentiellement 1 253 euros."
   - q: "Pourquoi la durée avant détection a-t-elle autant d'impact ?"
     a: "La sous-performance s'accumule chaque mois : un salarié produisant 50% de sa valeur attendue génère une perte mensuelle équivalente à 50% de son salaire. Sur 12 mois, c'est l'équivalent de 6 mois de salaire perdus. Après la période d'essai, la séparation devient également plus coûteuse sur le plan juridique."
   - q: "Ces chiffres s'appliquent-ils aux TPE et très petites entreprises ?"
@@ -455,13 +455,13 @@ table.data-table tr:nth-child(odd){background:var(--cream)}
         </div>
         <div class="roi-box-text">
           <div class="roi-box-ratio" id="roi-ratio">700x</div>
-          <div class="roi-box-desc" id="roi-desc">le ROI d'une vérification à 49 € face à ce coût estimé</div>
+          <div class="roi-box-desc" id="roi-desc">le ROI d'une vérification à 39,90 € face à ce coût estimé</div>
         </div>
       </div>
 
       <a href="/commander.html" class="calc-cta">
         <svg viewBox="0 0 16 16"><polyline points="3,8 7,12 13,4"/></svg>
-        Vérifier ce candidat pour 49 € et éviter tout ça
+        Vérifier ce candidat · dès 14,90 € · et éviter tout ça
       </a>
     </div>
 
@@ -537,7 +537,7 @@ table.data-table tr:nth-child(odd){background:var(--cream)}
 
   <div class="faq-item">
     <button class="faq-q">Comment calculer le ROI d'une vérification de CV ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
-    <div class="faq-a">Le ROI se calcule simplement : coût estimé d'un mauvais recrutement divisé par le coût de la vérification. Pour un cadre à 55 000 €, le coût médian d'un recrutement raté est d'environ 50 000 €. La formule Pro CVérifié coûte 49 €. Le ROI est donc de 50 000 / 49 = environ 1 020x. Autrement dit : pour chaque euro investi dans la vérification, vous protégez potentiellement 1 020 euros.</div>
+    <div class="faq-a">Le ROI se calcule simplement : coût estimé du mauvais recrutement divisé par le coût de la vérification. Pour un cadre à 55 000 €, le coût médian d'un recrutement raté est d'environ 50 000 €. La formule Complet CVérifié coûte 39,90 €. Le ROI est donc de 50 000 / 39,90 = environ 1 253x. Autrement dit : pour chaque euro investi dans la vérification, vous protégez potentiellement 1 253 euros.</div>
   </div>
 
   <div class="faq-item">
@@ -557,7 +557,7 @@ table.data-table tr:nth-child(odd){background:var(--cream)}
 
   <div class="faq-item">
     <button class="faq-q">La vérification de CV protège-t-elle contre tous les risques de mauvais recrutement ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
-    <div class="faq-a">Non. La vérification de CV élimine les risques liés aux informations factuelles fausses : diplôme inventé, expérience gonflée, dates modifiées. Elle ne protège pas contre les problèmes d'adéquation culturelle, de motivation, ou de compétences comportementales. Mais elle retire une source majeure et détectable de risque. Dans les études disponibles, 12% des CV contiennent un mensonge sérieux remettant en cause l'embauche. Éliminer ce risque pour 49 € est l'un des meilleurs investissements préventifs d'un processus de recrutement.</div>
+    <div class="faq-a">Non. La vérification de CV élimine les risques liés aux informations factuelles fausses : diplôme inventé, expérience gonflée, dates modifiées. Elle ne protège pas contre les problèmes d'adéquation culturelle, de motivation, ou de compétences comportementales. Mais elle retire une source majeure et détectable de risque. Dans les études disponibles, 12% des CV contiennent un mensonge sérieux remettant en cause l'embauche. Éliminer ce risque pour 14,90 € (formule Essentiel) est l'un des meilleurs investissements préventifs d'un processus de recrutement.</div>
   </div>
 
   <div style="margin:3rem 0 0;padding:1.5rem;background:var(--green-ultra,#f0faf4);border-radius:12px;border:1px solid var(--border,#e5e7eb)">
@@ -583,7 +583,7 @@ table.data-table tr:nth-child(odd){background:var(--cream)}
 let currentMode = 'interne';
 let animFrame = null;
 let displayedTotal = 0;
-const VER_COST = 49;
+const VER_COST = 39.90;
 
 // ─── HELPERS ─────────────────────────────────────────
 function fmt(n){
@@ -678,7 +678,7 @@ function updateAll(){
   const roi = Math.round(total / VER_COST);
   document.getElementById('roi-ratio').textContent = new Intl.NumberFormat('fr-FR').format(roi) + 'x';
   document.getElementById('roi-desc').textContent =
-    'le ROI d\'une vérification à ' + VER_COST + ' € face à ce coût estimé';
+    'le ROI d\'une vérification Complet à 39,90 € face à ce coût estimé';
 
   // Pulse danger on number if critical
   const numEl = document.getElementById('res-total');
