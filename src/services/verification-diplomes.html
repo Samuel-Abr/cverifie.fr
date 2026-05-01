@@ -1,0 +1,544 @@
+---
+layout: base.njk
+title: "Vérification de Diplômes · Service officiel sous 48 h | CVérifié"
+description: "Vérifiez les diplômes de vos candidats auprès des sources officielles (diplome.gouv.fr, ENIC-NARIC, grandes écoles). Résultat sous 48 h. À partir de 14,90 €."
+hasFaq: true
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Vérification de diplômes",
+  "description": "Service de vérification de diplômes auprès des établissements émetteurs et des registres officiels français (diplome.gouv.fr, ENIC-NARIC). Résultat sous 48 heures.",
+  "provider": { "@type": "Organization", "name": "CVérifié", "url": "https://cverifie.fr" },
+  "areaServed": { "@type": "Country", "name": "FR" },
+  "serviceType": "Vérification de diplômes",
+  "offers": { "@type": "Offer", "price": "14.90", "priceCurrency": "EUR", "url": "https://cverifie.fr/commander.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cverifie.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://cverifie.fr/services/" },
+    { "@type": "ListItem", "position": 3, "name": "Vérification de diplômes", "item": "https://cverifie.fr/services/verification-diplomes.html" }
+  ]
+}
+</script>
+
+<style>
+/* Hero */
+.svc-hero { margin-top:64px; padding:5rem 2rem 4rem; background:var(--ink); position:relative; overflow:hidden; }
+.svc-hero::before { content:''; position:absolute; top:-100px; right:-60px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle,rgba(45,106,79,.35) 0%,transparent 65%); }
+.svc-hero::after { content:''; position:absolute; bottom:-80px; left:-40px; width:280px; height:280px; border-radius:50%; background:radial-gradient(circle,rgba(82,183,136,.12) 0%,transparent 65%); }
+.svc-hero-inner { max-width:860px; margin:0 auto; position:relative; z-index:1; }
+.svc-eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--green-light); margin-bottom:1.5rem; }
+.svc-hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,4.5vw,3rem); color:white; font-weight:600; line-height:1.15; letter-spacing:-0.02em; max-width:700px; margin-bottom:1.5rem; }
+.svc-hero p { font-size:1.1rem; color:rgba(255,255,255,.7); line-height:1.7; max-width:580px; }
+.svc-hero-kpis { display:flex; gap:2.5rem; margin-top:2.5rem; flex-wrap:wrap; }
+.svc-kpi-num { font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:var(--green-light); line-height:1; }
+.svc-kpi-label { font-size:12px; color:rgba(255,255,255,.55); margin-top:3px; }
+
+/* Sections */
+.svc-section { padding:4.5rem 2rem; }
+.svc-inner { max-width:1100px; margin:0 auto; }
+.svc-label { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--green); margin-bottom:.75rem; }
+.svc-title { font-family:'Playfair Display',serif; font-size:clamp(1.6rem,2.8vw,2.2rem); color:var(--ink); margin-bottom:.75rem; letter-spacing:-0.02em; }
+.svc-body { font-size:1rem; color:var(--ink-light); line-height:1.75; max-width:680px; margin-bottom:2.5rem; }
+
+/* Steps */
+.steps-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.step-card { background:white; border:1px solid var(--border,#E5E2DA); border-radius:14px; padding:1.75rem; position:relative; }
+.step-num { width:36px; height:36px; border-radius:50%; background:var(--green-pale); color:var(--green); font-weight:800; font-size:.9rem; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
+.step-card h3 { font-size:.95rem; font-weight:700; color:var(--ink); margin-bottom:.5rem; }
+.step-card p { font-size:.85rem; color:var(--ink-muted); line-height:1.6; }
+
+/* Check grid */
+.check-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:1.5rem; }
+.check-item { display:flex; align-items:flex-start; gap:12px; background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.25rem; }
+.check-icon { width:36px; height:36px; border-radius:9px; background:var(--green-pale); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.check-item h4 { font-size:.9rem; font-weight:700; color:var(--ink); margin-bottom:.3rem; }
+.check-item p { font-size:.82rem; color:var(--ink-muted); line-height:1.5; }
+
+/* FAQ */
+.faq-list { display:flex; flex-direction:column; gap:1rem; margin-top:1.5rem; }
+.faq-item { background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.5rem; }
+.faq-item h3 { font-size:.95rem; font-weight:700; color:var(--ink); margin-bottom:.6rem; }
+.faq-item p { font-size:.88rem; color:var(--ink-light); line-height:1.65; }
+
+/* Related articles */
+.related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.5rem; }
+.related-card { background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.25rem; display:block; text-decoration:none; transition:border-color .2s,box-shadow .2s; }
+.related-card:hover { border-color:var(--green); box-shadow:0 4px 16px rgba(45,106,79,.1); }
+.related-card-label { font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--green); margin-bottom:.5rem; }
+.related-card h4 { font-size:.875rem; font-weight:700; color:var(--ink); line-height:1.4; }
+
+/* CTA */
+.svc-cta { background:var(--green); border-radius:20px; padding:4rem 3rem; text-align:center; margin:5rem auto; max-width:800px; }
+.svc-cta h2 { font-family:'Playfair Display',serif; font-size:clamp(1.5rem,3vw,2rem); color:white; margin-bottom:1rem; letter-spacing:-0.02em; }
+.svc-cta p { font-size:1rem; color:rgba(255,255,255,.8); margin-bottom:2rem; }
+.svc-cta-btn { display:inline-block; background:white; color:var(--green); padding:14px 36px; border-radius:10px; font-weight:700; font-size:15px; transition:all .2s; text-decoration:none; }
+.svc-cta-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.15); }
+
+/* Breadcrumb */
+.breadcrumb { padding:.75rem 2rem; background:var(--cream-dark,#F0EDE5); font-size:.8rem; color:var(--ink-muted); }
+.breadcrumb a { color:var(--green); text-decoration:none; }
+.breadcrumb span { margin:0 6px; color:var(--ink-muted); }
+
+/* Comparison table */
+.compare-table { width:100%; border-collapse:collapse; margin-top:1.5rem; font-size:.875rem; }
+.compare-table th { background:var(--cream-dark,#F0EDE5); padding:.75rem 1rem; text-align:left; font-weight:700; font-size:.8rem; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-light); }
+.compare-table td { padding:.75rem 1rem; border-bottom:1px solid var(--border,#E5E2DA); color:var(--ink-light); }
+.compare-table tr:last-child td { border-bottom:none; }
+.compare-table .highlight { color:var(--green); font-weight:700; }
+.compare-table .check-green { color:var(--green); }
+.compare-table .cross-red { color:#e53e3e; }
+
+/* Pricing card */
+.pricing-card { background:var(--green-pale); border:2px solid var(--green-light); border-radius:16px; padding:2rem; max-width:480px; }
+.pricing-price { font-family:'Playfair Display',serif; font-size:2.5rem; font-weight:700; color:var(--green); line-height:1; margin-bottom:.5rem; }
+.pricing-sub { font-size:.85rem; color:var(--ink-muted); margin-bottom:1.5rem; }
+.pricing-features { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:.6rem; }
+.pricing-features li { display:flex; align-items:center; gap:8px; font-size:.9rem; color:var(--ink-light); }
+.pricing-features li::before { content:'✓'; color:var(--green); font-weight:700; }
+
+/* Sectors */
+.sector-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.sector-card { background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.25rem; }
+.sector-card .sector-icon { font-size:1.5rem; margin-bottom:.75rem; }
+.sector-card h4 { font-size:.9rem; font-weight:700; color:var(--ink); margin-bottom:.4rem; }
+.sector-card p { font-size:.8rem; color:var(--ink-muted); line-height:1.5; }
+
+/* Related services */
+.related-services { margin-top:2rem; padding:1rem 1.5rem; background:var(--cream-dark,#F0EDE5); border-radius:10px; font-size:.875rem; color:var(--ink-muted); }
+.related-services a { color:var(--green); text-decoration:none; font-weight:600; }
+.related-services a:hover { text-decoration:underline; }
+
+@media(max-width:768px){
+  .steps-grid,.check-grid,.related-grid,.sector-grid { grid-template-columns:1fr; }
+  .svc-cta { padding:2.5rem 1.5rem; border-radius:14px; }
+}
+@media(max-width:1024px){ .steps-grid { grid-template-columns:1fr 1fr; } }
+</style>
+
+<!-- HERO -->
+<section class="svc-hero">
+  <div class="svc-hero-inner">
+    <div class="svc-eyebrow">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L2 3.5V7.5C2 10.2 4.2 12.7 7 13.5C9.8 12.7 12 10.2 12 7.5V3.5L7 1.5Z" fill="#2D6A4F" stroke="#52B788" stroke-width="0.8"/><polyline points="4.5,7 6.5,9 9.5,5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Vérification · Diplômes officiels
+    </div>
+    <h1>Vérification de diplômes : auprès des sources officielles, sous 48 h</h1>
+    <p>CVérifié contacte directement diplome.gouv.fr, ENIC-NARIC et les établissements émetteurs pour confirmer ou infirmer chaque diplôme revendiqué par vos candidats. Aucune approximation, uniquement des sources primaires.</p>
+    <div class="svc-hero-kpis">
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">1/5</div>
+        <div class="svc-kpi-label">diplômes contient des erreurs</div>
+      </div>
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">48 h</div>
+        <div class="svc-kpi-label">délai moyen de réponse</div>
+      </div>
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">14,90 €</div>
+        <div class="svc-kpi-label">par dossier</div>
+      </div>
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">100 %</div>
+        <div class="svc-kpi-label">sources officielles</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb" aria-label="Fil d'Ariane">
+  <a href="/">Accueil</a><span>›</span><a href="/services/">Services</a><span>›</span>Vérification de diplômes
+</nav>
+
+<!-- SECTION 1 : POURQUOI VÉRIFIER -->
+<section class="svc-section" style="background:var(--cream,#FAF8F3)">
+  <div class="svc-inner">
+    <div class="svc-label">Enjeux &amp; risques</div>
+    <h2 class="svc-title">Pourquoi vérifier les diplômes de vos candidats ?</h2>
+    <p class="svc-body">Entre 15 % et 30 % des CV contiennent des inexactitudes sur les diplômes selon les études RH françaises. Ce chiffre peut sembler surprenant, mais il recouvre des réalités très diverses : un candidat qui arrondit une mention, un master abandonné en cours de route présenté comme obtenu, ou dans les cas les plus graves, un faux diplôme de grande école fabriqué de toutes pièces.</p>
+
+    <div class="check-grid">
+      <div class="check-item">
+        <div class="check-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L3 4.5V9C3 12.3 5.6 15.3 9 16.2C12.4 15.3 15 12.3 15 9V4.5L9 2Z" fill="#D8F3DC" stroke="#2D6A4F" stroke-width="1.2"/></svg>
+        </div>
+        <div>
+          <h4>Risque d'incompétence cachée</h4>
+          <p>Un candidat recruté sur la foi d'un diplôme fictif n'a pas les compétences attendues. Les conséquences sont immédiates : erreurs coûteuses, démotivation de l'équipe, perte de clients. Le coût d'un mauvais recrutement oscille entre 15 000 et 50 000 € selon le niveau de poste.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="4" width="12" height="11" rx="2" stroke="#2D6A4F" stroke-width="1.3" fill="#D8F3DC"/><path d="M6 8h6M6 11h4" stroke="#2D6A4F" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h4>Responsabilité juridique de l'employeur</h4>
+          <p>Dans certains secteurs réglementés (santé, droit, finance), recruter un salarié sans le diplôme requis expose l'employeur à des sanctions pénales. La jurisprudence française reconnaît la faute de l'employeur qui n'a pas vérifié les qualifications exigées par la loi ou par la convention collective.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6" stroke="#2D6A4F" stroke-width="1.3" fill="#D8F3DC"/><path d="M9 6v4M9 13v.5" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h4>Faux diplômes de grandes écoles</h4>
+          <p>Les diplômes de HEC, Polytechnique ou Sciences Po sont parmi les plus imités. Des affaires récentes ont révélé des candidats à des postes de direction ayant présenté des faux. La vérification directe auprès de l'établissement est la seule méthode fiable. Voir notre article sur les <a href="/blog/faux-diplome-grande-ecole-hec-sciences-po.html" style="color:var(--green)">faux diplômes de grandes écoles</a>.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9h10M9 4l5 5-5 5" stroke="#2D6A4F" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h4>Diplômes étrangers introuvables</h4>
+          <p>Un candidat formé à l'étranger peut présenter un diplôme authentique mais non reconnu en France, ou une équivalence gonflée. Les employeurs français ont rarement les outils pour vérifier un diplôme délivré en dehors de France. CVérifié mobilise ENIC-NARIC pour ces cas spécifiques.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 : QUELS DIPLÔMES -->
+<section class="svc-section" style="background:white">
+  <div class="svc-inner">
+    <div class="svc-label">Périmètre de vérification</div>
+    <h2 class="svc-title">Quels diplômes CVérifié peut-il vérifier ?</h2>
+    <p class="svc-body">CVérifié couvre l'ensemble du spectre éducatif français, du CAP au doctorat, en passant par les grandes écoles et les diplômes internationaux. Voici en détail les catégories de diplômes vérifiables.</p>
+
+    <div class="check-grid">
+      <div class="check-item">
+        <div class="check-icon" style="background:#E3F2FD">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L3 6v9h12V6L9 2Z" stroke="#1565C0" stroke-width="1.2" fill="#E3F2FD"/><rect x="6" y="10" width="6" height="5" stroke="#1565C0" stroke-width="1"/></svg>
+        </div>
+        <div>
+          <h4>Diplômes universitaires français</h4>
+          <p>Licence, Master, Doctorat, BUT, BTS, DUT — vérifiés via diplome.gouv.fr (couverture depuis 1990). Délai : immédiat pour les diplômes dans la base, 24 h pour confirmation documentaire.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon" style="background:#FFF3E0">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="9,2 16,6 16,12 9,16 2,12 2,6" stroke="#E65100" stroke-width="1.2" fill="#FFF3E0"/></svg>
+        </div>
+        <div>
+          <h4>Grandes écoles (ingénieurs &amp; commerce)</h4>
+          <p>HEC, Polytechnique, Sciences Po, ESCP, CentraleSupélec, Mines Paris, EDHEC, emlyon, etc. — contact direct du service des diplômés de chaque établissement. CVérifié maintient des canaux de vérification avec plus de 80 grandes écoles françaises.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon" style="background:#F3E5F5">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="3" stroke="#7B1FA2" stroke-width="1.2" fill="#F3E5F5"/><polyline points="6,9 8,11 12,7" stroke="#7B1FA2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h4>Diplômes professionnels &amp; RNCP</h4>
+          <p>CAP, BEP, Bac Pro, CQP, titres professionnels — vérifiés via France Compétences (RNCP) et les organismes certificateurs habilités. Ces vérifications sont particulièrement fréquentes dans les secteurs du BTP, de l'industrie et de la logistique.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon" style="background:#E8F5E9">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#2E7D32" stroke-width="1.2" fill="#E8F5E9"/><path d="M6 9l2 2 4-4" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h4>Diplômes étrangers — ENIC-NARIC</h4>
+          <p>Diplômes européens et internationaux — vérification via ENIC-NARIC (Centre national de reconnaissance des diplômes étrangers) et les services équivalents dans les pays d'origine. Délai : 2 à 5 jours ouvrés selon le pays.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon" style="background:#FCE4EC">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3l2 4h4l-3.3 2.4 1.3 4L9 11 5 13.4l1.3-4L3 7h4z" stroke="#C62828" stroke-width="1.1" fill="#FCE4EC"/></svg>
+        </div>
+        <div>
+          <h4>Certifications professionnelles (CACES, IT)</h4>
+          <p>CACES (toutes catégories), habilitations électriques, certifications IT (AWS, Azure, Cisco, PMP) — via organismes accrédités INRS, Credly et portails officiels des éditeurs. Couverture étendue aux certifications sectorielles (ACPR, AMF, etc.).</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon" style="background:var(--cream-dark,#F0EDE5)">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3l1.5 4.5H15l-3.7 2.7 1.4 4.3L9 12 5.3 14.5l1.4-4.3L3 7.5h4.5z" stroke="#696975" stroke-width="1.1" fill="none"/></svg>
+        </div>
+        <div>
+          <h4>Établissements privés &amp; titres non reconnus</h4>
+          <p>Diplômes d'écoles privées non accréditées, MBA internationaux non reconnus en France, certifications de formation continue — CVérifié vérifie leur réalité et leur statut légal exact, évitant les malentendus sur le niveau de qualification réel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 : COMMENT ÇA MARCHE -->
+<section class="svc-section" style="background:var(--cream,#FAF8F3)">
+  <div class="svc-inner">
+    <div class="svc-label">Processus</div>
+    <h2 class="svc-title">Comment fonctionne la vérification de diplôme ?</h2>
+    <p class="svc-body">Le processus CVérifié est conçu pour être simple côté employeur et rigoureux côté vérification. Trois étapes suffisent pour obtenir un rapport officiel.</p>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Vous soumettez le dossier en ligne</h3>
+        <p>Via notre formulaire sécurisé, vous renseignez le nom et prénom du candidat, le diplôme revendiqué, l'établissement émetteur et l'année d'obtention. Le candidat reçoit automatiquement une demande de consentement conforme RGPD. Toute la saisie prend moins de 5 minutes.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>CVérifié contacte les sources officielles</h3>
+        <p>Nos équipes interrogent diplome.gouv.fr pour les diplômes universitaires français, ENIC-NARIC pour les diplômes étrangers, et contactent directement les services des diplômés des grandes écoles via leurs canaux officiels — pas via les coordonnées fournies par le candidat.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Rapport PDF livré sous 48 h</h3>
+        <p>Vous recevez un rapport structuré indiquant : diplôme confirmé, non confirmé ou discordance détectée. En cas de discordance, le rapport précise la nature de l'écart (diplôme inexistant, date erronée, mention inexacte, etc.). Le rapport est archivé 2 ans dans votre espace.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 : SOURCES OFFICIELLES -->
+<section class="svc-section" style="background:white">
+  <div class="svc-inner">
+    <div class="svc-label">Sources</div>
+    <h2 class="svc-title">Quelles sources officielles CVérifié utilise-t-il pour vérifier les diplômes ?</h2>
+    <p class="svc-body">CVérifié n'utilise que des sources primaires. Voici le détail des bases interrogées selon le type de diplôme. Pour la liste complète de nos partenaires, consultez notre <a href="/partenaires.html" style="color:var(--green)">page partenaires</a>.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Source</th>
+          <th>Périmètre</th>
+          <th>Délai</th>
+          <th>Utilisé par CVérifié</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="highlight">diplome.gouv.fr</td>
+          <td>Licences, Masters, Doctorats, BTS français depuis 1990</td>
+          <td>Immédiat</td>
+          <td class="check-green">✓</td>
+        </tr>
+        <tr>
+          <td class="highlight">ENIC-NARIC</td>
+          <td>Diplômes étrangers, équivalences européennes et internationales</td>
+          <td>2–5 jours ouvrés</td>
+          <td class="check-green">✓</td>
+        </tr>
+        <tr>
+          <td class="highlight">Établissements émetteurs</td>
+          <td>Grandes écoles, diplômes d'établissements privés non couverts par diplome.gouv.fr</td>
+          <td>24–48 h ouvrées</td>
+          <td class="check-green">✓</td>
+        </tr>
+        <tr>
+          <td class="highlight">France Compétences (RNCP)</td>
+          <td>Certifications professionnelles, titres professionnels, CQP</td>
+          <td>Immédiat</td>
+          <td class="check-green">✓</td>
+        </tr>
+        <tr>
+          <td>LinkedIn / annuaires non officiels</td>
+          <td>Aucun périmètre fiable</td>
+          <td>—</td>
+          <td class="cross-red">✗ jamais utilisé</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SECTION 5 : CADRE LÉGAL -->
+<section class="svc-section" style="background:var(--cream,#FAF8F3)">
+  <div class="svc-inner">
+    <div class="svc-label">Cadre légal</div>
+    <h2 class="svc-title">Dans quel cadre légal s'inscrit la vérification de diplôme ?</h2>
+    <p class="svc-body">La vérification de diplôme en France est encadrée par le Code du travail et le RGPD. CVérifié opère strictement dans ce cadre et ne réalise aucune vérification sans consentement explicite du candidat.</p>
+
+    <div class="check-grid">
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="2" width="12" height="14" rx="2" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/><path d="M6 7h6M6 10h4" stroke="#2D6A4F" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+        <div>
+          <h4>Article L.1221-6 du Code du travail</h4>
+          <p>Cet article autorise explicitement l'employeur à recueillir et vérifier les informations déclarées par un candidat, à condition qu'elles soient directement liées à l'emploi proposé. La vérification d'un diplôme requis pour le poste est donc légalement fondée.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/><path d="M9 5v4l3 2" stroke="#2D6A4F" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <div>
+          <h4>Consentement candidat requis (RGPD, art. 6.1.f)</h4>
+          <p>Le RGPD exige un consentement explicite du candidat avant toute collecte d'information. CVérifié envoie systématiquement une demande de consentement au candidat avant de lancer la vérification. Sans réponse dans 48 h, le dossier est suspendu et l'employeur prévenu.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#2D6A4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <div>
+          <h4>Ce que CVérifié fait</h4>
+          <p>Vérification des diplômes mentionnés dans le CV avec le consentement du candidat. Conservation des données limitée à 2 ans. Données hébergées en France. Rapport fourni uniquement à l'employeur commanditaire.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#e53e3e" stroke-width="1.2" fill="#fff5f5"/><path d="M6 6l6 6M12 6l-6 6" stroke="#e53e3e" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div>
+          <h4>Ce que CVérifié ne fait PAS</h4>
+          <p>Aucune vérification sans consentement explicite du candidat. Pas de conservation de données au-delà de 2 ans. Pas de vérification du casier judiciaire (sauf secteurs réglementés). Pas de recherche sur les réseaux sociaux privés.</p>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:1.5rem;font-size:.875rem;color:var(--ink-muted)">
+      Pour aller plus loin :
+      <a href="/blog/verification-cv-legal-france.html" style="color:var(--green)">Cadre légal de la vérification de CV en France</a> ·
+      <a href="/blog/rgpd-verification-candidat-guide-complet.html" style="color:var(--green)">Guide RGPD pour la vérification de candidats</a>
+    </p>
+  </div>
+</section>
+
+<!-- SECTION 6 : TARIF -->
+<section class="svc-section" style="background:white">
+  <div class="svc-inner">
+    <div class="svc-label">Tarification</div>
+    <h2 class="svc-title">Quel est le tarif de la vérification de diplôme ?</h2>
+    <p class="svc-body">Une tarification transparente, sans abonnement, sans engagement. Vous payez uniquement pour les vérifications que vous lancez.</p>
+
+    <div class="pricing-card">
+      <div class="pricing-price">14,90 €</div>
+      <div class="pricing-sub">par dossier de vérification · TVA non applicable (article 293B du CGI)</div>
+      <ul class="pricing-features">
+        <li>Résultat sous 48 heures ouvrées</li>
+        <li>Rapport PDF téléchargeable et archivé 2 ans</li>
+        <li>Vérification auprès des sources officielles uniquement</li>
+        <li>Gestion du consentement RGPD incluse</li>
+        <li>Sans abonnement, sans engagement</li>
+        <li>Tarifs volume disponibles dès 10 dossiers/mois</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7 : SECTEURS -->
+<section class="svc-section" style="background:var(--cream,#FAF8F3)">
+  <div class="svc-inner">
+    <div class="svc-label">Secteurs prioritaires</div>
+    <h2 class="svc-title">Quels secteurs vérifient le plus les diplômes de leurs candidats ?</h2>
+    <p class="svc-body">Certains secteurs ont une obligation légale ou conventionnelle de vérifier les diplômes. D'autres le font par bonne pratique RH, compte tenu des responsabilités en jeu.</p>
+
+    <div class="sector-grid">
+      <div class="sector-card">
+        <div class="sector-icon">🏦</div>
+        <h4>Finance &amp; Banque</h4>
+        <p>Les postes BAC+5 sont systématiquement exigés (HEC, Sciences Po, ESCP). La réglementation ACPR impose des vérifications pour les fonctions clés. Un seul faux diplôme peut entraîner une mise en cause de la conformité de l'établissement.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🏥</div>
+        <h4>Santé</h4>
+        <p>Médecins, infirmiers, pharmaciens, kinésithérapeutes — les diplômes d'État sont obligatoires et vérifiés par les ordres professionnels. Toute falsification constitue un exercice illégal de la médecine, délit pénal.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">⚖️</div>
+        <h4>Droit</h4>
+        <p>Avocats (CAPA), notaires, huissiers, magistrats — l'accès à ces professions réglementées est conditionné à des diplômes spécifiques contrôlés par les ordres. La vérification des collaborateurs est une obligation déontologique.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">⚙️</div>
+        <h4>Ingénierie</h4>
+        <p>Les diplômes d'ingénieur habilités CTI sont la référence pour les recruteurs du secteur industriel et de l'ingénierie. Un titre usurpé peut avoir des conséquences graves sur la sécurité des installations et la responsabilité de l'entreprise.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">💼</div>
+        <h4>Conseil &amp; Audit</h4>
+        <p>Les grands cabinets de conseil (McKinsey, BCG, Deloitte, EY) font de la vérification des diplômes un standard de recrutement. La réputation du cabinet repose sur le niveau académique réel de ses consultants.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🎓</div>
+        <h4>Éducation &amp; Formation</h4>
+        <p>Enseignants, formateurs, responsables pédagogiques — les établissements d'enseignement et les organismes de formation certifiés Qualiopi ont des obligations de vérification des qualifications de leurs intervenants.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8 : FAQ -->
+<section class="svc-section" style="background:white">
+  <div class="svc-inner">
+    <div class="svc-label">Questions fréquentes</div>
+    <h2 class="svc-title">Questions fréquentes sur la vérification de diplômes</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>Qu'est-ce qu'une vérification de diplôme ?</h3>
+        <p>Une vérification de diplôme est une démarche formelle par laquelle un tiers — ici CVérifié — contacte l'établissement émetteur ou un registre officiel pour confirmer qu'un diplôme revendiqué par un candidat a bien été obtenu. La vérification porte sur le nom du titulaire, l'intitulé exact du diplôme, l'année d'obtention et, selon les cas, la mention. Elle est différente d'une simple consultation de diplome.gouv.fr que l'employeur pourrait faire lui-même : CVérifié assure aussi la traçabilité légale, la gestion du consentement RGPD et la conservation documentaire du rapport.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Peut-on vérifier un diplôme sans le consentement du candidat ?</h3>
+        <p>Non. En vertu du RGPD (article 6.1.f) et des recommandations de la CNIL, toute vérification de données personnelles d'un candidat requiert son consentement explicite préalable. CVérifié ne lance jamais de vérification sans avoir obtenu ce consentement. Pratiquement, le candidat reçoit un email lui demandant d'autoriser la vérification, avec un lien vers la politique de confidentialité et ses droits RGPD. Ce processus protège à la fois le candidat et l'employeur en cas de litige ultérieur.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Combien de temps prend la vérification d'un diplôme ?</h3>
+        <p>Le délai moyen est de 48 heures ouvrées à compter de la réception du consentement du candidat. Ce délai peut être réduit à quelques heures pour les diplômes universitaires français couverts par diplome.gouv.fr (base interrogée en temps réel). Pour les diplômes étrangers passant par ENIC-NARIC, le délai peut atteindre 3 à 5 jours ouvrés selon le pays d'origine et la disponibilité des sources. CVérifié vous notifie en temps réel de l'avancement du dossier.</p>
+      </div>
+      <div class="faq-item">
+        <h3>CVérifié peut-il vérifier les diplômes étrangers ?</h3>
+        <p>Oui. CVérifié vérifie les diplômes délivrés dans l'ensemble des pays de l'Union Européenne via le réseau ENIC-NARIC, ainsi que les diplômes de nombreux pays tiers (USA, Canada, Maghreb, Afrique subsaharienne, Asie). Pour les pays dotés d'un système d'apostille (Convention de La Haye), la vérification est facilitée. Pour les autres pays, CVérifié mobilise des correspondants locaux ou les ambassades selon les cas. Un devis spécifique peut être établi pour les cas complexes.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Que se passe-t-il si un diplôme est faux ?</h3>
+        <p>CVérifié signale la discordance dans son rapport, en précisant sa nature : diplôme inexistant dans les registres, intitulé inexact, date erronée, établissement inconnu, etc. CVérifié ne prend pas de décision à la place de l'employeur. Ce dernier peut alors confronter le candidat avec le rapport, décider de ne pas poursuivre le recrutement, ou dans les cas graves (postes réglementés), signaler la tentative de fraude. Note : la présentation d'un faux diplôme est constitutive d'un délit de faux et usage de faux (art. 441-1 du Code pénal).</p>
+      </div>
+      <div class="faq-item">
+        <h3>Comment vérifier un diplôme de grande école (HEC, Polytechnique) ?</h3>
+        <p>Les grandes écoles françaises disposent toutes d'un service des diplômés ou d'un annuaire officiel permettant de confirmer le statut de diplômé d'un individu. CVérifié contacte ces services directement, en utilisant les coordonnées officielles de chaque établissement — jamais les contacts fournis par le candidat lui-même. Pour HEC, Sciences Po, Polytechnique et les principales écoles d'ingénieurs, CVérifié dispose de canaux de vérification établis permettant des réponses en 24 à 48 heures.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Quel est le prix d'une vérification de diplôme ?</h3>
+        <p>La vérification d'un diplôme chez CVérifié est à 14,90 € par dossier, sans abonnement ni engagement. Ce tarif inclut la gestion du consentement RGPD, la vérification auprès de la source officielle, le rapport PDF détaillé et l'archivage du rapport pendant 2 ans dans votre espace client. Des tarifs dégressifs sont disponibles pour les équipes RH gérant plus de 10 dossiers par mois. Pour les grandes entreprises, un accès API est disponible au même tarif unitaire.</p>
+      </div>
+      <div class="faq-item">
+        <h3>La vérification de diplôme est-elle obligatoire pour les employeurs ?</h3>
+        <p>Elle n'est pas obligatoire dans la plupart des cas. Toutefois, pour certaines professions réglementées (médecins, avocats, experts-comptables, etc.), la vérification des diplômes requis est une obligation légale. Dans les secteurs financiers soumis à supervision ACPR, les établissements doivent vérifier les qualifications des personnes occupant des fonctions clés. Pour tous les autres postes, la vérification de diplôme est fortement recommandée comme bonne pratique RH, notamment pour les postes à responsabilité, les fonctions sensibles et les recrutements cadres.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 9 : ARTICLES LIÉS -->
+<section class="svc-section" style="background:var(--cream,#FAF8F3)">
+  <div class="svc-inner">
+    <div class="svc-label">Ressources</div>
+    <h2 class="svc-title">Articles pour aller plus loin</h2>
+
+    <div class="related-grid">
+      <a class="related-card" href="/blog/comment-verifier-diplome-francais-etape-par-etape.html">
+        <div class="related-card-label">Guide pratique</div>
+        <h4>Comment vérifier un diplôme français étape par étape</h4>
+      </a>
+      <a class="related-card" href="/blog/faux-diplome-grande-ecole-hec-sciences-po.html">
+        <div class="related-card-label">Cas concrets</div>
+        <h4>Faux diplômes de grandes écoles (HEC, Sciences Po) : comment les détecter</h4>
+      </a>
+      <a class="related-card" href="/blog/verification-diplome-etranger-france.html">
+        <div class="related-card-label">International</div>
+        <h4>Vérifier un diplôme étranger en France : procédures ENIC-NARIC</h4>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div style="padding:0 2rem">
+  <div class="svc-cta">
+    <h2>Vérifiez votre prochain diplôme en 48 h</h2>
+    <p>14,90 € par dossier. Sans abonnement. Rapport PDF officiel sous 48 heures ouvrées.</p>
+    <a href="/commander.html" class="svc-cta-btn">Lancer une vérification →</a>
+    <div class="related-services" style="margin-top:1.5rem;background:rgba(255,255,255,.15);border-radius:8px;padding:.75rem 1rem">
+      <p style="color:rgba(255,255,255,.8);font-size:.85rem;margin:0">Aller plus loin :
+        <a href="/services/verification-experiences.html" style="color:white;font-weight:600">Vérification d'expériences</a> ·
+        <a href="/services/controle-integrite.html" style="color:white;font-weight:600">Contrôle d'intégrité</a> ·
+        <a href="/services/api-integrations-rh.html" style="color:white;font-weight:600">API &amp; Intégrations RH</a>
+      </p>
+    </div>
+  </div>
+</div>

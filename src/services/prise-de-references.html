@@ -1,0 +1,317 @@
+---
+layout: base.njk
+title: "Prise de Références Professionnelles · CVérifié"
+description: "Recueillez des avis structurés d'anciens managers sur vos candidats. Entretiens téléphoniques standardisés, conformes RGPD. Résultat sous 48 h."
+hasFaq: true
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Prise de références professionnelles",
+  "description": "Service de prise de références professionnelles : entretiens téléphoniques structurés menés auprès de 2 à 3 anciens managers du candidat, avec rapport de synthèse sous 48 heures.",
+  "provider": { "@type": "Organization", "name": "CVérifié", "url": "https://cverifie.fr" },
+  "areaServed": { "@type": "Country", "name": "FR" },
+  "serviceType": "Prise de références professionnelles",
+  "offers": { "@type": "Offer", "price": "29.90", "priceCurrency": "EUR", "url": "https://cverifie.fr/commander.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cverifie.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://cverifie.fr/services/" },
+    { "@type": "ListItem", "position": 3, "name": "Prise de références professionnelles", "item": "https://cverifie.fr/services/prise-de-references.html" }
+  ]
+}
+</script>
+
+<style>
+.svc-hero { margin-top:64px; padding:5rem 2rem 4rem; background:var(--ink); position:relative; overflow:hidden; }
+.svc-hero::before { content:''; position:absolute; top:-100px; right:-60px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle,rgba(45,106,79,.35) 0%,transparent 65%); }
+.svc-hero::after { content:''; position:absolute; bottom:-80px; left:-40px; width:280px; height:280px; border-radius:50%; background:radial-gradient(circle,rgba(82,183,136,.12) 0%,transparent 65%); }
+.svc-hero-inner { max-width:860px; margin:0 auto; position:relative; z-index:1; }
+.svc-eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--green-light); margin-bottom:1.5rem; }
+.svc-hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,4.5vw,3rem); color:white; font-weight:600; line-height:1.15; letter-spacing:-0.02em; max-width:700px; margin-bottom:1.5rem; }
+.svc-hero p { font-size:1.1rem; color:rgba(255,255,255,.7); line-height:1.7; max-width:580px; }
+.svc-hero-kpis { display:flex; gap:2.5rem; margin-top:2.5rem; flex-wrap:wrap; }
+.svc-kpi-num { font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:var(--green-light); line-height:1; }
+.svc-kpi-label { font-size:12px; color:rgba(255,255,255,.55); margin-top:3px; }
+.svc-section { padding:4.5rem 2rem; }
+.svc-inner { max-width:1100px; margin:0 auto; }
+.svc-label { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--green); margin-bottom:.75rem; }
+.svc-title { font-family:'Playfair Display',serif; font-size:clamp(1.6rem,2.8vw,2.2rem); color:var(--ink); margin-bottom:.75rem; letter-spacing:-0.02em; }
+.svc-body { font-size:1rem; color:var(--ink-light); line-height:1.75; max-width:680px; margin-bottom:2.5rem; }
+.steps-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.step-card { background:white; border:1px solid var(--border,#E5E2DA); border-radius:14px; padding:1.75rem; }
+.step-num { width:36px; height:36px; border-radius:50%; background:var(--green-pale); color:var(--green); font-weight:800; font-size:.9rem; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
+.step-card h3 { font-size:.95rem; font-weight:700; color:var(--ink); margin-bottom:.5rem; }
+.step-card p { font-size:.85rem; color:var(--ink-muted); line-height:1.6; }
+.check-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:1.5rem; }
+.check-item { display:flex; align-items:flex-start; gap:12px; background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.25rem; }
+.check-icon { width:36px; height:36px; border-radius:9px; background:var(--green-pale); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.check-item h4 { font-size:.9rem; font-weight:700; color:var(--ink); margin-bottom:.3rem; }
+.check-item p { font-size:.82rem; color:var(--ink-muted); line-height:1.5; }
+.faq-list { display:flex; flex-direction:column; gap:1rem; margin-top:1.5rem; }
+.faq-item { background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.5rem; }
+.faq-item h3 { font-size:.95rem; font-weight:700; color:var(--ink); margin-bottom:.6rem; }
+.faq-item p { font-size:.88rem; color:var(--ink-light); line-height:1.65; }
+.related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.5rem; }
+.related-card { background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.25rem; display:block; text-decoration:none; transition:border-color .2s,box-shadow .2s; }
+.related-card:hover { border-color:var(--green); box-shadow:0 4px 16px rgba(45,106,79,.1); }
+.related-card-label { font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--green); margin-bottom:.5rem; }
+.related-card h4 { font-size:.875rem; font-weight:700; color:var(--ink); line-height:1.4; }
+.svc-cta { background:var(--green); border-radius:20px; padding:4rem 3rem; text-align:center; margin:5rem auto; max-width:800px; }
+.svc-cta h2 { font-family:'Playfair Display',serif; font-size:clamp(1.5rem,3vw,2rem); color:white; margin-bottom:1rem; letter-spacing:-0.02em; }
+.svc-cta p { font-size:1rem; color:rgba(255,255,255,.8); margin-bottom:2rem; }
+.svc-cta-btn { display:inline-block; background:white; color:var(--green); padding:14px 36px; border-radius:10px; font-weight:700; font-size:15px; transition:all .2s; text-decoration:none; }
+.svc-cta-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.15); }
+.breadcrumb { padding:.75rem 2rem; background:var(--cream-dark,#F0EDE5); font-size:.8rem; color:var(--ink-muted); }
+.breadcrumb a { color:var(--green); text-decoration:none; }
+.breadcrumb span { margin:0 6px; color:var(--ink-muted); }
+.questions-list { list-style:none; padding:0; margin:1.5rem 0 0; display:grid; grid-template-columns:repeat(2,1fr); gap:.75rem; }
+.questions-list li { display:flex; align-items:flex-start; gap:10px; background:white; border:1px solid var(--border,#E5E2DA); border-radius:10px; padding:1rem; font-size:.875rem; color:var(--ink-light); line-height:1.5; }
+.questions-list li::before { content:'?'; display:flex; align-items:center; justify-content:center; width:24px; height:24px; min-width:24px; border-radius:50%; background:var(--green-pale); color:var(--green); font-weight:800; font-size:.8rem; }
+.forbidden-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-top:1.5rem; }
+.forbidden-item { display:flex; align-items:flex-start; gap:10px; background:#fff5f5; border:1px solid #fed7d7; border-radius:10px; padding:1rem; font-size:.875rem; color:#742a2a; line-height:1.5; }
+.forbidden-item::before { content:'✗'; font-weight:800; color:#e53e3e; flex-shrink:0; }
+@media(max-width:768px){
+  .steps-grid,.check-grid,.related-grid,.questions-list,.forbidden-grid { grid-template-columns:1fr; }
+  .svc-cta { padding:2.5rem 1.5rem; border-radius:14px; }
+}
+@media(max-width:1024px){ .steps-grid { grid-template-columns:1fr 1fr; } }
+</style>
+
+<!-- HERO -->
+<section class="svc-hero">
+  <div class="svc-hero-inner">
+    <div class="svc-eyebrow">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="5" r="2.5" stroke="#52B788" stroke-width="1.1" fill="none"/><path d="M3 12c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="#52B788" stroke-width="1.1" stroke-linecap="round" fill="none"/></svg>
+      Prise de références · Entretiens structurés
+    </div>
+    <h1>Prise de références professionnelles : entretiens structurés avec les anciens managers</h1>
+    <p>CVérifié mène des entretiens téléphoniques standardisés et validés juridiquement auprès de 2 à 3 anciens référents de vos candidats. Un rapport de synthèse complet livré sous 48 heures.</p>
+    <div class="svc-hero-kpis">
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">2–3</div>
+        <div class="svc-kpi-label">références contactées en moyenne</div>
+      </div>
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">48 h</div>
+        <div class="svc-kpi-label">délai de rapport</div>
+      </div>
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">12</div>
+        <div class="svc-kpi-label">questions standardisées</div>
+      </div>
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">100 %</div>
+        <div class="svc-kpi-label">conforme RGPD</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb" aria-label="Fil d'Ariane">
+  <a href="/">Accueil</a><span>›</span><a href="/services/">Services</a><span>›</span>Prise de références professionnelles
+</nav>
+
+<!-- SECTION 1 : QU'EST-CE QUE LA PRISE DE RÉFÉRENCES -->
+<section class="svc-section" style="background:var(--cream,#FAF8F3)">
+  <div class="svc-inner">
+    <div class="svc-label">Définition &amp; valeur ajoutée</div>
+    <h2 class="svc-title">Qu'est-ce que la prise de références professionnelles ?</h2>
+    <p class="svc-body">La prise de références professionnelles est une démarche structurée par laquelle CVérifié contacte 2 à 3 anciens managers ou responsables directs d'un candidat pour recueillir leur avis sur ses compétences, son comportement et sa valeur ajoutée. C'est une démarche qualitative, distincte de la vérification de faits objectifs.</p>
+
+    <div class="check-grid">
+      <div class="check-item">
+        <div class="check-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#2D6A4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <div>
+          <h4>Entretiens menés par CVérifié, pas par l'employeur</h4>
+          <p>CVérifié mène les entretiens à votre place, avec un script standardisé et validé juridiquement. Cela garantit l'objectivité (pas de biais de l'intervieweur), la conformité légale (aucune question discriminatoire) et la traçabilité (verbatims conservés dans le rapport).</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/><path d="M6 9l2 2 4-4" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h4>Complément indispensable à la vérification des faits</h4>
+          <p>Un candidat peut avoir occupé exactement le poste qu'il revendique, aux dates exactes, avec le bon type de contrat — et pourtant s'être révélé inefficace, conflictuel ou peu fiable. La prise de références donne accès à cette dimension que les documents ne peuvent pas révéler.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2l2.5 5h5.5l-4.4 3.2 1.7 5.3L9 12.5 3.7 15.5l1.7-5.3L1 7h5.5z" stroke="#2D6A4F" stroke-width="1.1" fill="#D8F3DC"/></svg>
+        </div>
+        <div>
+          <h4>Sources indépendantes des coordonnées candidat</h4>
+          <p>CVérifié ne contacte pas les référents via les coordonnées fournies par le candidat. Pour chaque référent, CVérifié retrouve les coordonnées professionnelles officielles via l'annuaire de l'entreprise ou les réseaux professionnels publics, garantissant ainsi l'indépendance du témoignage.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="3" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/><path d="M6 9h6M9 6v6" stroke="#2D6A4F" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h4>Rapport de synthèse avec verbatims</h4>
+          <p>Le rapport CVérifié inclut la synthèse des éléments recueillis, les verbatims anonymisés ou nominatifs (selon le choix de l'employeur et le consentement du référent), et une appréciation globale du candidat sur les dimensions clés de la prise de références.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 : QUELLES QUESTIONS -->
+<section class="svc-section" style="background:white">
+  <div class="svc-inner">
+    <div class="svc-label">Protocole d'entretien</div>
+    <h2 class="svc-title">Quelles questions sont posées lors d'une prise de références ?</h2>
+    <p class="svc-body">CVérifié utilise un questionnaire standardisé de 12 questions, validé par des juristes spécialisés en droit du travail. Ce questionnaire est identique pour tous les référents d'un même candidat, garantissant la comparabilité des réponses. Des questions supplémentaires spécifiques au poste peuvent être ajoutées à la demande.</p>
+
+    <ul class="questions-list">
+      <li>Confirmation du poste occupé et des dates d'emploi</li>
+      <li>Appréciation globale de la qualité du travail (note de 1 à 10 avec justification)</li>
+      <li>Capacité à travailler en équipe et à collaborer avec différents profils</li>
+      <li>Points forts identifiés lors de la collaboration</li>
+      <li>Axes d'amélioration ou domaines de développement observés</li>
+      <li>Gestion du stress, des délais serrés et des situations de pression</li>
+      <li>Adaptabilité au changement et capacité à évoluer</li>
+      <li>Autonomie et prise d'initiative dans la fonction</li>
+      <li>Relations avec la hiérarchie et les équipes</li>
+      <li>Si l'occasion se présentait, réembaucheriez-vous cette personne ? (Oui / Non / Conditionnel)</li>
+      <li>Y a-t-il des éléments importants que vous souhaiteriez porter à notre connaissance ?</li>
+      <li>Questions spécifiques à l'employeur commanditaire (facultatif, jusqu'à 3 questions)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SECTION 3 : CE QUE LA LOI INTERDIT -->
+<section class="svc-section" style="background:var(--cream,#FAF8F3)">
+  <div class="svc-inner">
+    <div class="svc-label">Conformité légale</div>
+    <h2 class="svc-title">Ce que la loi interdit de demander lors d'une prise de références</h2>
+    <p class="svc-body">Le questionnaire CVérifié exclut rigoureusement toute question susceptible d'alimenter une discrimination au sens de l'article L.1132-1 du Code du travail. Voici les sujets que CVérifié ne aborde jamais lors d'une prise de références.</p>
+
+    <div class="forbidden-grid">
+      <div class="forbidden-item">État de santé, arrêts maladie, handicap ou grossesse — données de santé protégées par la loi</div>
+      <div class="forbidden-item">Religion, convictions religieuses ou pratiques cultuelles observées au travail</div>
+      <div class="forbidden-item">Opinions politiques, activité syndicale ou appartenance à un parti ou syndicat</div>
+      <div class="forbidden-item">Vie personnelle, situation familiale, nombre d'enfants, situation maritale</div>
+      <div class="forbidden-item">Origine ethnique, nationalité, nom à consonance étrangère ou apparence physique</div>
+      <div class="forbidden-item">Orientation sexuelle ou identité de genre</div>
+      <div class="forbidden-item">Salaire exact ou éléments de rémunération de la relation précédente</div>
+      <div class="forbidden-item">Motif de départ si non consenti explicitement par le candidat selon l'art. L.1221-8</div>
+    </div>
+
+    <p style="margin-top:1.5rem;font-size:.875rem;color:var(--ink-muted);background:var(--green-pale);padding:1rem 1.25rem;border-radius:10px">
+      <strong style="color:var(--green)">Note juridique :</strong> CVérifié utilise un questionnaire validé par un cabinet d'avocats spécialisé en droit du travail français. En cas d'évolution de la jurisprudence, le questionnaire est mis à jour. L'employeur commanditaire reçoit un rapport conforme aux exigences légales actuelles.
+    </p>
+  </div>
+</section>
+
+<!-- SECTION 4 : COMMENT ÇA MARCHE -->
+<section class="svc-section" style="background:white">
+  <div class="svc-inner">
+    <div class="svc-label">Processus</div>
+    <h2 class="svc-title">Comment fonctionne la prise de références CVérifié ?</h2>
+    <p class="svc-body">Le processus est conçu pour être simple à déclencher côté employeur et rigoureux côté exécution. Trois étapes de la commande à la livraison du rapport.</p>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Soumission du dossier et identification des référents</h3>
+        <p>Vous soumettez le nom du candidat et, si vous les connaissez, les coordonnées de ses référents. Si vous ne les avez pas, CVérifié recherche les coordonnées professionnelles officielles des managers identifiés par le candidat, via les sites officiels des entreprises et les annuaires professionnels publics. Le candidat reçoit une demande de consentement.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Entretiens téléphoniques structurés par CVérifié</h3>
+        <p>Nos équipes contactent chaque référent par téléphone avec le questionnaire standardisé. Les entretiens durent entre 15 et 25 minutes. Les verbatims sont pris en note de façon exhaustive. Si un référent refuse de répondre, cela est consigné dans le rapport avec les tentatives de contact effectuées.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Rapport de synthèse livré sous 48 h</h3>
+        <p>Le rapport de synthèse compile les réponses de tous les référents contactés, avec une section de synthèse par compétence évaluée et les verbatims (nominatifs ou anonymisés selon votre choix). Un score global de recommandation est calculé à partir des réponses à la question "Réembauche ?" et des appréciations générales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5 : FAQ -->
+<section class="svc-section" style="background:var(--cream,#FAF8F3)">
+  <div class="svc-inner">
+    <div class="svc-label">Questions fréquentes</div>
+    <h2 class="svc-title">Questions fréquentes sur la prise de références</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>Combien de références CVérifié contacte-t-il par défaut ?</h3>
+        <p>CVérifié contacte 2 à 3 références en standard. Il est recommandé de viser 3 références couvrant si possible les 5 dernières années : le manager direct le plus récent, un manager ou N+2 d'une expérience précédente, et si pertinent un client interne ou externe. Le rapport intègre toutes les réponses obtenues. Si un référent refuse de répondre ou n'est pas joignable, CVérifié le consigne et peut proposer de contacter un référent de substitution si vous en avez un à suggérer.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Peut-on faire une prise de références à l'insu du candidat ?</h3>
+        <p>Non, en aucun cas. CVérifié requiert le consentement explicite du candidat avant de contacter ses références, conformément au RGPD et au droit du travail français. Le candidat est informé du nom de l'employeur commanditaire, du nombre de références qui seront contactées et des grandes thématiques abordées. Une prise de références menée à l'insu d'un candidat constituerait une violation de sa vie privée et exposerait l'employeur à des poursuites.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Que se passe-t-il si les référents refusent de répondre ?</h3>
+        <p>CVérifié effectue jusqu'à 3 tentatives de contact par téléphone et email pour chaque référent. En cas de refus explicite, cela est consigné dans le rapport ("Référent contacté — a refusé de répondre") sans que CVérifié ne cherche à interpréter ce refus. En cas d'absence de réponse, un dernier message est laissé et l'absence de réponse est documentée. L'employeur reçoit dans tous les cas un rapport avec la traçabilité complète des démarches effectuées, même si aucun référent n'a répondu.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Quelle est la différence entre prise de références et vérification d'expériences professionnelles ?</h3>
+        <p>La vérification d'expériences est factuelle et documentaire : elle confirme ou infirme des données objectives (dates d'emploi, intitulé de poste, type de contrat) en interrogeant le service RH de l'ancien employeur. La prise de références est qualitative : elle recueille l'opinion subjective d'anciens managers sur les compétences comportementales, la qualité du travail et la valeur ajoutée du candidat. Les deux démarches sont complémentaires. CVérifié propose de les combiner dans son offre de contrôle d'intégrité.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Quel est le tarif de la prise de références ?</h3>
+        <p>La prise de références professionnelles est proposée à partir de 29,90 € par dossier (2 à 3 références contactées, rapport de synthèse inclus). Pour les clients souhaitant combiner prise de références et vérification d'expériences ou de diplômes, des offres groupées sont disponibles dans notre formule de contrôle d'intégrité complète à 39,90 €. Aucun abonnement, aucun engagement. Facturation à l'usage.</p>
+      </div>
+      <div class="faq-item">
+        <h3>La prise de références est-elle juridiquement valable en France ?</h3>
+        <p>Oui, la prise de références professionnelles est une pratique légale en France, encadrée par l'article L.1221-6 du Code du travail et le RGPD. Elle est considérée comme une méthode de recrutement licite à condition de respecter trois critères : consentement du candidat, pertinence des questions par rapport à l'emploi proposé, et absence de questions discriminatoires. Le rapport produit par CVérifié peut être conservé dans le dossier de recrutement et utilisé comme élément d'aide à la décision.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 : ARTICLES LIÉS -->
+<section class="svc-section" style="background:white">
+  <div class="svc-inner">
+    <div class="svc-label">Ressources</div>
+    <h2 class="svc-title">Articles recommandés sur la prise de références</h2>
+
+    <div class="related-grid">
+      <a class="related-card" href="/blog/comment-verifier-experiences-professionnelles-candidat.html">
+        <div class="related-card-label">Méthodes</div>
+        <h4>Comment vérifier les expériences professionnelles d'un candidat : méthodes et outils</h4>
+      </a>
+      <a class="related-card" href="/blog/verification-cv-legal-france.html">
+        <div class="related-card-label">Cadre légal</div>
+        <h4>Vérification de CV en France : ce que la loi autorise et interdit</h4>
+      </a>
+      <a class="related-card" href="/blog/rgpd-verification-candidat-guide-complet.html">
+        <div class="related-card-label">RGPD</div>
+        <h4>RGPD et vérification de candidats : guide complet pour les RH</h4>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div style="padding:0 2rem">
+  <div class="svc-cta">
+    <h2>Lancez une prise de références sous 48 h</h2>
+    <p>29,90 € par dossier. Entretiens structurés avec les anciens managers. Rapport de synthèse complet.</p>
+    <a href="/commander.html" class="svc-cta-btn">Commander une prise de références →</a>
+    <div style="margin-top:1.5rem;background:rgba(255,255,255,.15);border-radius:8px;padding:.75rem 1rem">
+      <p style="color:rgba(255,255,255,.8);font-size:.85rem;margin:0">Aller plus loin :
+        <a href="/services/verification-diplomes.html" style="color:white;font-weight:600">Vérification de diplômes</a> ·
+        <a href="/services/verification-experiences.html" style="color:white;font-weight:600">Vérification d'expériences</a> ·
+        <a href="/services/controle-integrite.html" style="color:white;font-weight:600">Contrôle d'intégrité complet</a>
+      </p>
+    </div>
+  </div>
+</div>

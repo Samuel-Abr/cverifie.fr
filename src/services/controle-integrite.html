@@ -1,0 +1,424 @@
+---
+layout: base.njk
+title: "Contrôle d'Intégrité Candidat · Background Check France | CVérifié"
+description: "Contrôle d'intégrité complet : diplômes + expériences + références + certifications en un seul rapport. Pour les postes à responsabilité. Dès 39,90 €."
+hasFaq: true
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Contrôle d'intégrité candidat",
+  "description": "Vérification complète des antécédents professionnels d'un candidat : diplômes, expériences professionnelles, prise de références et certifications. Rapport consolidé sous 72 heures. Conforme au droit français et au RGPD.",
+  "provider": { "@type": "Organization", "name": "CVérifié", "url": "https://cverifie.fr" },
+  "areaServed": { "@type": "Country", "name": "FR" },
+  "serviceType": "Contrôle d'intégrité professionnelle",
+  "offers": { "@type": "Offer", "price": "39.90", "priceCurrency": "EUR", "url": "https://cverifie.fr/commander.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cverifie.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://cverifie.fr/services/" },
+    { "@type": "ListItem", "position": 3, "name": "Contrôle d'intégrité", "item": "https://cverifie.fr/services/controle-integrite.html" }
+  ]
+}
+</script>
+
+<style>
+.svc-hero { margin-top:64px; padding:5rem 2rem 4rem; background:var(--ink); position:relative; overflow:hidden; }
+.svc-hero::before { content:''; position:absolute; top:-100px; right:-60px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle,rgba(45,106,79,.35) 0%,transparent 65%); }
+.svc-hero::after { content:''; position:absolute; bottom:-80px; left:-40px; width:280px; height:280px; border-radius:50%; background:radial-gradient(circle,rgba(82,183,136,.12) 0%,transparent 65%); }
+.svc-hero-inner { max-width:860px; margin:0 auto; position:relative; z-index:1; }
+.svc-eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--green-light); margin-bottom:1.5rem; }
+.svc-hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,4.5vw,3rem); color:white; font-weight:600; line-height:1.15; letter-spacing:-0.02em; max-width:700px; margin-bottom:1.5rem; }
+.svc-hero p { font-size:1.1rem; color:rgba(255,255,255,.7); line-height:1.7; max-width:580px; }
+.svc-hero-kpis { display:flex; gap:2.5rem; margin-top:2.5rem; flex-wrap:wrap; }
+.svc-kpi-num { font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:var(--green-light); line-height:1; }
+.svc-kpi-label { font-size:12px; color:rgba(255,255,255,.55); margin-top:3px; }
+.svc-section { padding:4.5rem 2rem; }
+.svc-inner { max-width:1100px; margin:0 auto; }
+.svc-label { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--green); margin-bottom:.75rem; }
+.svc-title { font-family:'Playfair Display',serif; font-size:clamp(1.6rem,2.8vw,2.2rem); color:var(--ink); margin-bottom:.75rem; letter-spacing:-0.02em; }
+.svc-body { font-size:1rem; color:var(--ink-light); line-height:1.75; max-width:680px; margin-bottom:2.5rem; }
+.check-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:1.5rem; }
+.check-item { display:flex; align-items:flex-start; gap:12px; background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.25rem; }
+.check-icon { width:36px; height:36px; border-radius:9px; background:var(--green-pale); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.check-item h4 { font-size:.9rem; font-weight:700; color:var(--ink); margin-bottom:.3rem; }
+.check-item p { font-size:.82rem; color:var(--ink-muted); line-height:1.5; }
+.faq-list { display:flex; flex-direction:column; gap:1rem; margin-top:1.5rem; }
+.faq-item { background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.5rem; }
+.faq-item h3 { font-size:.95rem; font-weight:700; color:var(--ink); margin-bottom:.6rem; }
+.faq-item p { font-size:.88rem; color:var(--ink-light); line-height:1.65; }
+.related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.5rem; }
+.related-card { background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.25rem; display:block; text-decoration:none; transition:border-color .2s,box-shadow .2s; }
+.related-card:hover { border-color:var(--green); box-shadow:0 4px 16px rgba(45,106,79,.1); }
+.related-card-label { font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--green); margin-bottom:.5rem; }
+.related-card h4 { font-size:.875rem; font-weight:700; color:var(--ink); line-height:1.4; }
+.svc-cta { background:var(--green); border-radius:20px; padding:4rem 3rem; text-align:center; margin:5rem auto; max-width:800px; }
+.svc-cta h2 { font-family:'Playfair Display',serif; font-size:clamp(1.5rem,3vw,2rem); color:white; margin-bottom:1rem; letter-spacing:-0.02em; }
+.svc-cta p { font-size:1rem; color:rgba(255,255,255,.8); margin-bottom:2rem; }
+.svc-cta-btn { display:inline-block; background:white; color:var(--green); padding:14px 36px; border-radius:10px; font-weight:700; font-size:15px; transition:all .2s; text-decoration:none; }
+.svc-cta-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.15); }
+.breadcrumb { padding:.75rem 2rem; background:var(--cream-dark,#F0EDE5); font-size:.8rem; color:var(--ink-muted); }
+.breadcrumb a { color:var(--green); text-decoration:none; }
+.breadcrumb span { margin:0 6px; color:var(--ink-muted); }
+.compare-table { width:100%; border-collapse:collapse; margin-top:1.5rem; font-size:.875rem; }
+.compare-table th { background:var(--cream-dark,#F0EDE5); padding:.75rem 1rem; text-align:left; font-weight:700; font-size:.8rem; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-light); }
+.compare-table td { padding:.75rem 1rem; border-bottom:1px solid var(--border,#E5E2DA); color:var(--ink-light); }
+.compare-table tr:last-child td { border-bottom:none; }
+.compare-table .highlight { color:var(--green); font-weight:700; }
+.compare-table .check-green { color:var(--green); font-weight:700; }
+.compare-table .cross-red { color:#e53e3e; }
+.sector-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.sector-card { background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.25rem; }
+.sector-card .sector-icon { font-size:1.5rem; margin-bottom:.75rem; }
+.sector-card h4 { font-size:.9rem; font-weight:700; color:var(--ink); margin-bottom:.4rem; }
+.sector-card p { font-size:.8rem; color:var(--ink-muted); line-height:1.5; }
+.integrity-modules { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; margin-top:1.5rem; }
+.integrity-module { background:white; border:2px solid var(--green-pale); border-radius:16px; padding:1.75rem; }
+.integrity-module-num { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:50%; background:var(--green); color:white; font-weight:800; font-size:.85rem; margin-bottom:1rem; }
+.integrity-module h3 { font-size:1rem; font-weight:700; color:var(--ink); margin-bottom:.5rem; }
+.integrity-module p { font-size:.85rem; color:var(--ink-muted); line-height:1.6; }
+.integrity-module .module-tag { display:inline-block; background:var(--green-pale); color:var(--green); font-size:.75rem; font-weight:600; padding:2px 8px; border-radius:5px; margin-top:.75rem; }
+@media(max-width:768px){
+  .check-grid,.related-grid,.sector-grid,.integrity-modules { grid-template-columns:1fr; }
+  .svc-cta { padding:2.5rem 1.5rem; border-radius:14px; }
+}
+@media(max-width:1024px){ .sector-grid { grid-template-columns:1fr 1fr; } }
+</style>
+
+<!-- HERO -->
+<section class="svc-hero">
+  <div class="svc-hero-inner">
+    <div class="svc-eyebrow">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L1.5 3V7.5C1.5 10.5 4 13 7 13.8C10 13 12.5 10.5 12.5 7.5V3L7 1Z" fill="#2D6A4F" stroke="#52B788" stroke-width="0.8"/><polyline points="4,7 6,9.2 10,5" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Contrôle d'intégrité · Background Check France
+    </div>
+    <h1>Contrôle d'intégrité : vérification complète des antécédents professionnels d'un candidat</h1>
+    <p>Diplômes, expériences, références et certifications vérifiés en un seul rapport consolidé. La solution la plus complète légalement disponible en France pour les postes à responsabilité.</p>
+    <div class="svc-hero-kpis">
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">4</div>
+        <div class="svc-kpi-label">types de vérifications incluses</div>
+      </div>
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">72 h</div>
+        <div class="svc-kpi-label">délai maximum</div>
+      </div>
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">39,90 €</div>
+        <div class="svc-kpi-label">par dossier complet</div>
+      </div>
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">100 %</div>
+        <div class="svc-kpi-label">conforme droit français</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb" aria-label="Fil d'Ariane">
+  <a href="/">Accueil</a><span>›</span><a href="/services/">Services</a><span>›</span>Contrôle d'intégrité
+</nav>
+
+<!-- SECTION 1 : QU'EST-CE QU'UN CONTRÔLE D'INTÉGRITÉ -->
+<section class="svc-section" style="background:var(--cream,#FAF8F3)">
+  <div class="svc-inner">
+    <div class="svc-label">Définition</div>
+    <h2 class="svc-title">Qu'est-ce qu'un contrôle d'intégrité (background check) en France ?</h2>
+    <p class="svc-body">Dans les pays anglo-saxons, le "background check" peut inclure vérification du casier judiciaire, scoring de crédit et antécédents médicaux. En France, le cadre légal est radicalement différent : seules les informations déclarées par le candidat et directement liées à l'emploi proposé peuvent être vérifiées, avec son consentement explicite. CVérifié propose le contrôle d'intégrité le plus complet légalement possible en France — sans jamais dépasser ce qui est autorisé par le Code du travail et le RGPD.</p>
+
+    <div class="check-grid">
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#2D6A4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <div>
+          <h4>Ce que CVérifié peut légalement vérifier</h4>
+          <p>Diplômes mentionnés dans le CV, expériences professionnelles déclarées (dates, postes, contrats), certifications professionnelles revendiquées, références auprès d'anciens managers. Toutes ces informations ont été déclarées par le candidat et leur vérification est autorisée avec son consentement.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#e53e3e" stroke-width="1.2" fill="#fff5f5"/><path d="M6 6l6 6M12 6l-6 6" stroke="#e53e3e" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div>
+          <h4>Ce qui n'est PAS légal en France</h4>
+          <p>Casier judiciaire (sauf secteurs réglementés spécifiques), scoring de crédit (sauf secteurs financiers réglementés), données biométriques, antécédents médicaux, opinions politiques, appartenance syndicale. Ces vérifications sont prohibées ou soumises à des régimes légaux spéciaux inaccessibles aux employeurs ordinaires.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2l2.5 5h5.5l-4.4 3.2 1.7 5.3L9 12.5 3.7 15.5l1.7-5.3L1 7h5.5z" stroke="#2D6A4F" stroke-width="1.1" fill="#D8F3DC"/></svg></div>
+        <div>
+          <h4>Idéal pour les postes à responsabilité</h4>
+          <p>Le contrôle d'intégrité CVérifié est particulièrement adapté aux recrutements de direction, aux postes avec accès aux données sensibles, aux fonctions financières ou aux métiers réglementés où la vérification approfondie des antécédents professionnels est une bonne pratique indispensable.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="3" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/><path d="M6 9h6M9 6v6" stroke="#2D6A4F" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+        <div>
+          <h4>Un rapport consolidé, une seule commande</h4>
+          <p>Plutôt que de commander séparément la vérification de diplômes, la vérification d'expériences et la prise de références, le contrôle d'intégrité regroupe tout en un seul rapport structuré, avec une synthèse globale et un statut de recommandation clair.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 : QUE COMPREND LE CONTRÔLE -->
+<section class="svc-section" style="background:white">
+  <div class="svc-inner">
+    <div class="svc-label">Contenu du contrôle</div>
+    <h2 class="svc-title">Que comprend le contrôle d'intégrité CVérifié ?</h2>
+    <p class="svc-body">Le contrôle d'intégrité CVérifié est une formule tout-en-un qui combine quatre modules de vérification, menés en parallèle pour minimiser le délai global.</p>
+
+    <div class="integrity-modules">
+      <div class="integrity-module">
+        <div class="integrity-module-num">1</div>
+        <h3>Vérification des diplômes</h3>
+        <p>Tous les diplômes mentionnés dans le CV sont vérifiés auprès de diplome.gouv.fr, ENIC-NARIC ou directement auprès des établissements émetteurs. Couverture complète : diplômes français, étrangers, grandes écoles, diplômes professionnels RNCP.</p>
+        <span class="module-tag">Inclus</span>
+      </div>
+      <div class="integrity-module">
+        <div class="integrity-module-num">2</div>
+        <h3>Vérification des expériences professionnelles</h3>
+        <p>Vérification des 3 dernières années minimum d'expérience (ou toutes les expériences si le candidat y consent). Dates, intitulés de poste, type de contrat — confirmés ou infirmés par contact direct des anciens employeurs via leurs coordonnées officielles.</p>
+        <span class="module-tag">Inclus</span>
+      </div>
+      <div class="integrity-module">
+        <div class="integrity-module-num">3</div>
+        <h3>Prise de références (2–3 référents)</h3>
+        <p>Entretiens téléphoniques structurés avec 2 à 3 anciens managers du candidat. Script de 12 questions standardisées validé juridiquement. Rapport de synthèse avec verbatims. Score de recommandation global calculé.</p>
+        <span class="module-tag">Inclus</span>
+      </div>
+      <div class="integrity-module">
+        <div class="integrity-module-num">4</div>
+        <h3>Vérification des certifications professionnelles</h3>
+        <p>CACES, habilitations électriques, certifications IT (AWS, Azure, Cisco, PMP), certifications sectorielles (AMF, ACPR, etc.) — vérifiés auprès des organismes certificateurs officiels (INRS, Credly, portails éditeurs).</p>
+        <span class="module-tag">Inclus</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 : POUR QUELS POSTES -->
+<section class="svc-section" style="background:var(--cream,#FAF8F3)">
+  <div class="svc-inner">
+    <div class="svc-label">Cas d'usage</div>
+    <h2 class="svc-title">Pour quels postes le contrôle d'intégrité est-il recommandé ?</h2>
+    <p class="svc-body">Le contrôle d'intégrité est particulièrement adapté aux postes où une incompétence ou une fraude sur le parcours professionnel aurait des conséquences graves : financières, légales, sur la sécurité ou sur la réputation de l'entreprise.</p>
+
+    <div class="sector-grid">
+      <div class="sector-card">
+        <div class="sector-icon">👔</div>
+        <h4>Direction générale (PDG, DG, DAF)</h4>
+        <p>Pour un dirigeant, chaque ligne du parcours compte. Un faux MBA, une expérience de direction fictive ou des références biaisées peuvent avoir des conséquences catastrophiques sur la gouvernance de l'entreprise et sa relation avec les investisseurs.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">💹</div>
+        <h4>Postes financiers sensibles</h4>
+        <p>Traders, gestionnaires de patrimoine, DAF, contrôleurs de gestion senior — ces postes impliquent un accès à des fonds et des données financières sensibles. Les régulateurs (ACPR, AMF) recommandent des vérifications approfondies des antécédents professionnels.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🏥</div>
+        <h4>Santé (médecins, directeurs)</h4>
+        <p>Médecins, pharmaciens, directeurs d'établissements de santé, directeurs de laboratoire — les qualifications et l'expérience doivent être vérifiées avant toute prise de poste. Les ordres professionnels l'exigent et la responsabilité pénale est en jeu.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">🔒</div>
+        <h4>Tech &amp; Data (CISO, CTO)</h4>
+        <p>Les personnes ayant accès aux données sensibles, à l'infrastructure critique ou à la propriété intellectuelle de l'entreprise doivent faire l'objet d'une vérification d'antécédents poussée. Une certification IT fictive peut exposer l'entreprise à des failles de sécurité majeures.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">⚖️</div>
+        <h4>Juridique (avocats, notaires)</h4>
+        <p>L'exercice des professions juridiques réglementées est conditionné à des diplômes spécifiques. La vérification du CAPA pour un avocat collaborateur, du diplôme de notariat ou du titre d'huissier est une obligation déontologique avant toute association.</p>
+      </div>
+      <div class="sector-card">
+        <div class="sector-icon">👥</div>
+        <h4>Ressources Humaines (DRH senior)</h4>
+        <p>Un DRH ou un recruteur senior a accès à l'ensemble des données personnelles des salariés. La vérification de ses propres antécédents est une exigence de cohérence et de conformité RGPD, d'autant que ce profil est susceptible de comprendre les failles des processus de vérification.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 : COMPARAISON -->
+<section class="svc-section" style="background:white">
+  <div class="svc-inner">
+    <div class="svc-label">Comparatif</div>
+    <h2 class="svc-title">Contrôle d'intégrité vs vérification simple : quelle différence ?</h2>
+    <p class="svc-body">Le tableau suivant compare les deux offres CVérifié. Pour les postes d'exécution ou les profils juniors, la vérification simple peut suffire. Pour les postes à responsabilité, le contrôle d'intégrité est la solution recommandée.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Fonctionnalité</th>
+          <th>Vérification simple</th>
+          <th>Contrôle d'intégrité</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vérification des diplômes</td>
+          <td class="check-green">✓</td>
+          <td class="check-green">✓</td>
+        </tr>
+        <tr>
+          <td>Vérification des expériences professionnelles</td>
+          <td class="check-green">✓</td>
+          <td class="check-green">✓</td>
+        </tr>
+        <tr>
+          <td>Prise de références (2–3 référents)</td>
+          <td class="cross-red">✗</td>
+          <td class="check-green">✓</td>
+        </tr>
+        <tr>
+          <td>Vérification des certifications professionnelles</td>
+          <td class="cross-red">✗</td>
+          <td class="check-green">✓</td>
+        </tr>
+        <tr>
+          <td>Rapport consolidé avec synthèse globale</td>
+          <td class="cross-red">✗</td>
+          <td class="check-green">✓</td>
+        </tr>
+        <tr>
+          <td>Score de recommandation global</td>
+          <td class="cross-red">✗</td>
+          <td class="check-green">✓</td>
+        </tr>
+        <tr>
+          <td>Délai de livraison</td>
+          <td>48 h ouvrées</td>
+          <td class="highlight">72 h ouvrées max.</td>
+        </tr>
+        <tr>
+          <td>Tarif par dossier</td>
+          <td>14,90 €</td>
+          <td class="highlight">39,90 €</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SECTION 5 : CADRE LÉGAL -->
+<section class="svc-section" style="background:var(--cream,#FAF8F3)">
+  <div class="svc-inner">
+    <div class="svc-label">Cadre légal</div>
+    <h2 class="svc-title">Quel est le cadre légal du contrôle d'intégrité en France ?</h2>
+    <p class="svc-body">Le contrôle d'intégrité en France est strictement encadré. CVérifié opère dans les limites fixées par le Code du travail et le RGPD. Voici ce qui est autorisé, ce qui ne l'est pas, et ce que CVérifié fait concrètement pour rester dans ce cadre.</p>
+
+    <div class="check-grid">
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#2D6A4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <div>
+          <h4>Autorisé : vérification des déclarations du candidat</h4>
+          <p>L'article L.1221-6 du Code du travail autorise explicitement l'employeur à vérifier les informations déclarées par le candidat, à condition de recueillir son consentement et que les informations soient liées à l'emploi. CVérifié respecte rigoureusement cette condition de pertinence.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#e53e3e" stroke-width="1.2" fill="#fff5f5"/><path d="M6 6l6 6M12 6l-6 6" stroke="#e53e3e" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div>
+          <h4>Interdit : casier judiciaire (sauf exceptions)</h4>
+          <p>CVérifié ne consulte pas le casier judiciaire des candidats. Seule une autorité de l'État habilitée peut demander le B2 ou B3 du casier, dans des secteurs réglementés très spécifiques (enseignement, sécurité, etc.). Un employeur ordinaire ne peut pas obtenir ces informations, et CVérifié ne le fait pas non plus.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#e53e3e" stroke-width="1.2" fill="#fff5f5"/><path d="M6 6l6 6M12 6l-6 6" stroke="#e53e3e" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div>
+          <h4>Interdit : scoring de crédit pour emplois ordinaires</h4>
+          <p>CVérifié ne réalise pas de scoring de crédit sur les candidats. Cette vérification n'est autorisée que dans des secteurs financiers très spécifiques (gestion de fonds, accès aux actifs clients) et dans le cadre réglementaire correspondant. Pour les postes hors secteur financier réglementé, cette vérification est prohibée.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/><path d="M9 5v4l3 2" stroke="#2D6A4F" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <div>
+          <h4>Processus de consentement RGPD intégré</h4>
+          <p>CVérifié gère intégralement le processus de consentement : email d'information au candidat, recueil du consentement via lien sécurisé, traçabilité horodatée du consentement dans le rapport. En cas de refus ou d'absence de réponse sous 48 h, le dossier est suspendu et l'employeur notifié.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 : FAQ -->
+<section class="svc-section" style="background:white">
+  <div class="svc-inner">
+    <div class="svc-label">Questions fréquentes</div>
+    <h2 class="svc-title">Questions fréquentes sur le contrôle d'intégrité</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>Qu'est-ce qu'un background check en France, concrètement ?</h3>
+        <p>En France, le "background check" désigne la vérification des antécédents professionnels déclarés par un candidat. Contrairement aux États-Unis ou au Royaume-Uni, il ne peut pas inclure le casier judiciaire (sauf secteurs réglementés), le scoring de crédit ou les données biométriques. Le background check français légal couvre la vérification des diplômes, des expériences professionnelles, des certifications et la prise de références — ce qui correspond exactement au contrôle d'intégrité proposé par CVérifié.</p>
+      </div>
+      <div class="faq-item">
+        <h3>CVérifié peut-il vérifier le casier judiciaire d'un candidat ?</h3>
+        <p>Non. En France, seule une autorité habilitée par la loi peut demander le bulletin n°2 ou n°3 du casier judiciaire d'un individu. Les employeurs du secteur privé ordinaire n'y ont pas accès. Seuls certains secteurs très réglementés (éducation, sécurité, accès à des personnes vulnérables) peuvent en faire la demande via des procédures spécifiques. CVérifié ne contourne pas ce cadre légal et ne propose pas ce service. Toute société prétendant le faire en dehors du cadre légal opère illégalement.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Pour quels postes le contrôle d'intégrité est-il obligatoire en France ?</h3>
+        <p>Il n'existe pas d'obligation légale générale de réaliser un contrôle d'intégrité pour les postes du secteur privé. Toutefois, dans certains secteurs réglementés, des vérifications spécifiques sont imposées : vérification des diplômes pour les professions médicales (Conseil de l'Ordre), vérification des habilitations pour les activités de sécurité (CNAPS), vérification des certifications AMF pour les conseillers en investissements financiers. Dans tous les autres cas, le contrôle d'intégrité est fortement recommandé pour les postes à responsabilité mais reste optionnel.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Quelle est la différence entre le contrôle d'intégrité CVérifié et les services d'EveryCheck ?</h3>
+        <p>CVérifié et EveryCheck proposent des services similaires dans leur périmètre. CVérifié se distingue par son interface entièrement en ligne (commande, suivi et rapport accessibles en self-service), sa tarification transparente à l'usage sans abonnement obligatoire, et son API pour l'intégration aux ATS. EveryCheck est davantage orienté grands comptes avec des processus plus manuels. Pour une PME ou une start-up qui recrute de façon ponctuelle, CVérifié est généralement plus adapté. Pour notre analyse détaillée, consultez notre article sur les <a href="/blog/alternative-everycheck.html" style="color:var(--green)">alternatives à EveryCheck</a>.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Combien coûte un contrôle d'intégrité complet chez CVérifié ?</h3>
+        <p>Le contrôle d'intégrité complet (diplômes + expériences + références + certifications) est proposé à 39,90 € par dossier, sans abonnement ni engagement. Ce tarif est avantageux par rapport au cumul des vérifications séparées (14,90 € + 14,90 € + 29,90 € = 59,70 €). Pour les équipes RH gérant plus de 10 dossiers par mois, des tarifs dégressifs sont disponibles. Le tarif API est identique au tarif web.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Le contrôle d'intégrité CVérifié respecte-t-il le RGPD ?</h3>
+        <p>Oui, le contrôle d'intégrité CVérifié est conçu pour être pleinement conforme au RGPD. La base légale retenue est l'intérêt légitime de l'employeur (art. 6.1.f du RGPD), complété par le consentement explicite du candidat. Toutes les données sont hébergées en France, sur des serveurs certifiés ISO 27001. La durée de conservation est limitée à 2 ans. Le candidat dispose de ses droits d'accès, de rectification et de suppression, qu'il peut exercer via CVérifié.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Combien de temps dure un contrôle d'intégrité complet ?</h3>
+        <p>Le contrôle d'intégrité complet est livré sous 72 heures ouvrées à compter de la réception du consentement du candidat. Ce délai est optimisé par le fait que CVérifié mène les quatre modules de vérification en parallèle. Le délai peut être allongé à 5 jours pour les candidats avec des diplômes étrangers passant par ENIC-NARIC, ou pour des expériences à l'étranger nécessitant des contacts dans des fuseaux horaires éloignés. CVérifié vous notifie en temps réel de l'avancement de chaque module.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7 : ARTICLES LIÉS -->
+<section class="svc-section" style="background:var(--cream,#FAF8F3)">
+  <div class="svc-inner">
+    <div class="svc-label">Ressources</div>
+    <h2 class="svc-title">Articles pour approfondir le sujet</h2>
+
+    <div class="related-grid">
+      <a class="related-card" href="/blog/cout-mauvais-recrutement-france.html">
+        <div class="related-card-label">Coûts</div>
+        <h4>Coût d'un mauvais recrutement en France : ce que les RH sous-estiment</h4>
+      </a>
+      <a class="related-card" href="/blog/statistiques-mensonges-cv-france.html">
+        <div class="related-card-label">Statistiques</div>
+        <h4>Mensonges sur les CV en France : statistiques et répartition par secteur</h4>
+      </a>
+      <a class="related-card" href="/blog/que-faire-candidat-ment-sur-cv.html">
+        <div class="related-card-label">Pratique RH</div>
+        <h4>Que faire quand un candidat ment sur son CV ? Procédure et options légales</h4>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div style="padding:0 2rem">
+  <div class="svc-cta">
+    <h2>Commander un contrôle d'intégrité complet</h2>
+    <p>39,90 € par dossier. Diplômes, expériences, références et certifications vérifiés en 72 h.</p>
+    <a href="/commander.html" class="svc-cta-btn">Lancer un contrôle d'intégrité →</a>
+    <div style="margin-top:1.5rem;background:rgba(255,255,255,.15);border-radius:8px;padding:.75rem 1rem">
+      <p style="color:rgba(255,255,255,.8);font-size:.85rem;margin:0">Aller plus loin :
+        <a href="/services/verification-diplomes.html" style="color:white;font-weight:600">Vérification de diplômes</a> ·
+        <a href="/services/prise-de-references.html" style="color:white;font-weight:600">Prise de références</a> ·
+        <a href="/services/api-integrations-rh.html" style="color:white;font-weight:600">API &amp; Intégrations RH</a>
+      </p>
+    </div>
+  </div>
+</div>

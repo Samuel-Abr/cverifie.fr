@@ -1,0 +1,460 @@
+---
+layout: base.njk
+title: "API Vérification CV & Intégrations RH | CVérifié"
+description: "Intégrez la vérification de CV directement dans votre ATS ou SIRH. API REST CVérifié : webhooks, authentification OAuth2, résultats JSON. Pour équipes RH et DSI."
+hasFaq: true
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "API CVérifié — Intégration vérification CV",
+  "description": "API REST permettant d'intégrer la vérification de CV dans un ATS, SIRH ou workflow RH. Authentification OAuth2, webhooks, résultats JSON, sandbox de test. Même tarif que le service web.",
+  "provider": { "@type": "Organization", "name": "CVérifié", "url": "https://cverifie.fr" },
+  "areaServed": { "@type": "Country", "name": "FR" },
+  "serviceType": "API de vérification de CV",
+  "offers": { "@type": "Offer", "price": "14.90", "priceCurrency": "EUR", "url": "https://cverifie.fr/commander.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cverifie.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://cverifie.fr/services/" },
+    { "@type": "ListItem", "position": 3, "name": "API & Intégrations RH", "item": "https://cverifie.fr/services/api-integrations-rh.html" }
+  ]
+}
+</script>
+
+<style>
+.svc-hero { margin-top:64px; padding:5rem 2rem 4rem; background:var(--ink); position:relative; overflow:hidden; }
+.svc-hero::before { content:''; position:absolute; top:-100px; right:-60px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle,rgba(45,106,79,.35) 0%,transparent 65%); }
+.svc-hero::after { content:''; position:absolute; bottom:-80px; left:-40px; width:280px; height:280px; border-radius:50%; background:radial-gradient(circle,rgba(82,183,136,.12) 0%,transparent 65%); }
+.svc-hero-inner { max-width:860px; margin:0 auto; position:relative; z-index:1; }
+.svc-eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--green-light); margin-bottom:1.5rem; }
+.svc-hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,4.5vw,3rem); color:white; font-weight:600; line-height:1.15; letter-spacing:-0.02em; max-width:700px; margin-bottom:1.5rem; }
+.svc-hero p { font-size:1.1rem; color:rgba(255,255,255,.7); line-height:1.7; max-width:580px; }
+.svc-hero-kpis { display:flex; gap:2.5rem; margin-top:2.5rem; flex-wrap:wrap; }
+.svc-kpi-num { font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:var(--green-light); line-height:1; }
+.svc-kpi-label { font-size:12px; color:rgba(255,255,255,.55); margin-top:3px; }
+.svc-section { padding:4.5rem 2rem; }
+.svc-inner { max-width:1100px; margin:0 auto; }
+.svc-label { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--green); margin-bottom:.75rem; }
+.svc-title { font-family:'Playfair Display',serif; font-size:clamp(1.6rem,2.8vw,2.2rem); color:var(--ink); margin-bottom:.75rem; letter-spacing:-0.02em; }
+.svc-body { font-size:1rem; color:var(--ink-light); line-height:1.75; max-width:680px; margin-bottom:2.5rem; }
+.steps-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.step-card { background:white; border:1px solid var(--border,#E5E2DA); border-radius:14px; padding:1.75rem; }
+.step-num { width:36px; height:36px; border-radius:50%; background:var(--green-pale); color:var(--green); font-weight:800; font-size:.9rem; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
+.step-card h3 { font-size:.95rem; font-weight:700; color:var(--ink); margin-bottom:.5rem; }
+.step-card p { font-size:.85rem; color:var(--ink-muted); line-height:1.6; }
+.check-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:1.5rem; }
+.check-item { display:flex; align-items:flex-start; gap:12px; background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.25rem; }
+.check-icon { width:36px; height:36px; border-radius:9px; background:var(--green-pale); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.check-item h4 { font-size:.9rem; font-weight:700; color:var(--ink); margin-bottom:.3rem; }
+.check-item p { font-size:.82rem; color:var(--ink-muted); line-height:1.5; }
+.faq-list { display:flex; flex-direction:column; gap:1rem; margin-top:1.5rem; }
+.faq-item { background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.5rem; }
+.faq-item h3 { font-size:.95rem; font-weight:700; color:var(--ink); margin-bottom:.6rem; }
+.faq-item p { font-size:.88rem; color:var(--ink-light); line-height:1.65; }
+.related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.5rem; }
+.related-card { background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.25rem; display:block; text-decoration:none; transition:border-color .2s,box-shadow .2s; }
+.related-card:hover { border-color:var(--green); box-shadow:0 4px 16px rgba(45,106,79,.1); }
+.related-card-label { font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--green); margin-bottom:.5rem; }
+.related-card h4 { font-size:.875rem; font-weight:700; color:var(--ink); line-height:1.4; }
+.svc-cta { background:var(--green); border-radius:20px; padding:4rem 3rem; text-align:center; margin:5rem auto; max-width:800px; }
+.svc-cta h2 { font-family:'Playfair Display',serif; font-size:clamp(1.5rem,3vw,2rem); color:white; margin-bottom:1rem; letter-spacing:-0.02em; }
+.svc-cta p { font-size:1rem; color:rgba(255,255,255,.8); margin-bottom:2rem; }
+.svc-cta-btn { display:inline-block; background:white; color:var(--green); padding:14px 36px; border-radius:10px; font-weight:700; font-size:15px; transition:all .2s; text-decoration:none; }
+.svc-cta-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.15); }
+.breadcrumb { padding:.75rem 2rem; background:var(--cream-dark,#F0EDE5); font-size:.8rem; color:var(--ink-muted); }
+.breadcrumb a { color:var(--green); text-decoration:none; }
+.breadcrumb span { margin:0 6px; color:var(--ink-muted); }
+/* Code block */
+.code-block { background:#1A1A24; border-radius:12px; padding:1.5rem; margin-top:1.5rem; overflow-x:auto; }
+.code-block code { font-family:'Courier New',Courier,monospace; font-size:.82rem; color:#52B788; line-height:1.7; white-space:pre; }
+.code-block .key { color:#D8F3DC; }
+.code-block .val { color:#40916C; }
+.code-block .comment { color:#696975; }
+/* ATS grid */
+.ats-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.5rem; }
+.ats-card { background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.25rem; display:flex; align-items:flex-start; gap:12px; }
+.ats-logo { width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-weight:800; font-size:.75rem; color:white; }
+.ats-card h4 { font-size:.9rem; font-weight:700; color:var(--ink); margin-bottom:.25rem; }
+.ats-card p { font-size:.8rem; color:var(--ink-muted); line-height:1.5; }
+/* Pricing API */
+.api-pricing { background:var(--green-pale); border:2px solid var(--green-light); border-radius:16px; padding:2rem; }
+.api-pricing-tiers { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.5rem; }
+.api-tier { background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.25rem; text-align:center; }
+.api-tier-name { font-size:.8rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-muted); margin-bottom:.5rem; }
+.api-tier-price { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:700; color:var(--green); margin-bottom:.4rem; }
+.api-tier-volume { font-size:.8rem; color:var(--ink-muted); }
+/* Svc dark */
+.svc-dark { background:var(--ink); }
+.svc-dark .svc-label { color:var(--green-light); }
+.svc-dark .svc-title { color:white; }
+.svc-dark .svc-body { color:rgba(255,255,255,.65); }
+.svc-dark .step-card { background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.1); }
+.svc-dark .step-card h3 { color:white; }
+.svc-dark .step-card p { color:rgba(255,255,255,.6); }
+.svc-dark .step-num { background:rgba(82,183,136,.2); color:var(--green-light); }
+@media(max-width:768px){
+  .steps-grid,.check-grid,.related-grid,.ats-grid,.api-pricing-tiers { grid-template-columns:1fr; }
+  .svc-cta { padding:2.5rem 1.5rem; border-radius:14px; }
+}
+@media(max-width:1024px){ .steps-grid,.ats-grid { grid-template-columns:1fr 1fr; } }
+</style>
+
+<!-- HERO -->
+<section class="svc-hero">
+  <div class="svc-hero-inner">
+    <div class="svc-eyebrow">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="4" width="5" height="6" rx="1.5" stroke="#52B788" stroke-width="1"/><rect x="8" y="4" width="5" height="6" rx="1.5" stroke="#52B788" stroke-width="1"/><path d="M6 7h2" stroke="#52B788" stroke-width="1.2" stroke-linecap="round"/></svg>
+      API REST · Intégrations RH · ATS &amp; SIRH
+    </div>
+    <h1>API CVérifié : intégrez la vérification de CV dans votre workflow RH en quelques heures</h1>
+    <p>Déclenchez automatiquement les vérifications CVérifié depuis votre ATS, recevez les résultats JSON en temps réel via webhook, et éliminez toute ressaisie manuelle. Une API REST documentée, disponible 99,9 % du temps.</p>
+    <div class="svc-hero-kpis">
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">API</div>
+        <div class="svc-kpi-label">REST · JSON</div>
+      </div>
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">Webhooks</div>
+        <div class="svc-kpi-label">notification à la livraison</div>
+      </div>
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">&lt; 200ms</div>
+        <div class="svc-kpi-label">temps de réponse API</div>
+      </div>
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">99,9 %</div>
+        <div class="svc-kpi-label">uptime garanti (SLA)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb" aria-label="Fil d'Ariane">
+  <a href="/">Accueil</a><span>›</span><a href="/services/">Services</a><span>›</span>API &amp; Intégrations RH
+</nav>
+
+<!-- SECTION 1 : POURQUOI INTÉGRER L'API -->
+<section class="svc-section" style="background:var(--cream,#FAF8F3)">
+  <div class="svc-inner">
+    <div class="svc-label">Valeur ajoutée</div>
+    <h2 class="svc-title">Pourquoi intégrer CVérifié directement dans votre ATS ?</h2>
+    <p class="svc-body">Lancer une vérification de CV manuellement depuis le portail CVérifié prend 5 minutes par dossier. Pour une équipe RH qui traite 50 recrutements par mois, cela représente plus de 4 heures de saisie manuelle. L'API CVérifié automatise entièrement ce processus et intègre les résultats directement dans votre workflow.</p>
+
+    <div class="check-grid">
+      <div class="check-item">
+        <div class="check-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3v5l4 2" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="9" cy="9" r="7" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/></svg>
+        </div>
+        <div>
+          <h4>Déclenchement automatique à chaque candidature retenue</h4>
+          <p>Configurez un déclencheur dans votre ATS : dès qu'un candidat passe en phase d'entretien (ou à l'étape de votre choix), la vérification CVérifié se lance automatiquement. Plus besoin d'action manuelle du recruteur. Le gain de temps est immédiat et le processus devient systématique.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="11" rx="2" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/><path d="M5 8h8M5 11h5" stroke="#2D6A4F" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h4>Résultats directement dans votre interface</h4>
+          <p>Via webhook, CVérifié envoie le rapport JSON dès que la vérification est terminée. Votre intégration peut afficher le statut du rapport directement dans la fiche candidat de votre ATS : diplôme confirmé, expériences vérifiées, score de références — sans quitter votre interface.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 10l2 2 8-8" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <div>
+          <h4>Consentement RGPD géré par l'API</h4>
+          <p>L'API CVérifié gère intégralement le flux de consentement : l'email d'information au candidat, la page de consentement, la confirmation horodatée. Vous n'avez qu'à passer l'adresse email du candidat dans votre requête API — tout le reste est pris en charge conformément au RGPD.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/><path d="M6 9l2 2 4-4" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h4>ROI immédiat : 2 h de travail manuel économisées par dossier</h4>
+          <p>En tenant compte de la saisie manuelle, du suivi des délais, de la relance des candidats et du téléchargement des rapports, l'automatisation via API économise environ 2 heures de travail administratif par dossier. Pour 50 dossiers par mois, c'est 100 heures récupérées par l'équipe RH.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 : ATS COMPATIBLES -->
+<section class="svc-section" style="background:white">
+  <div class="svc-inner">
+    <div class="svc-label">Intégrations</div>
+    <h2 class="svc-title">Quels ATS et SIRH sont compatibles avec l'API CVérifié ?</h2>
+    <p class="svc-body">L'API CVérifié est une API REST standard. Elle est compatible avec tout système capable d'envoyer des requêtes HTTP et de recevoir des webhooks. Les intégrations natives suivantes sont documentées et testées.</p>
+
+    <div class="ats-grid">
+      <div class="ats-card">
+        <div class="ats-logo" style="background:#0062FF">WD</div>
+        <div>
+          <h4>Workday</h4>
+          <p>Intégration via API REST Workday. Déclenchement automatique à chaque passage en phase "Offer" ou custom. Documentation disponible.</p>
+        </div>
+      </div>
+      <div class="ats-card">
+        <div class="ats-logo" style="background:#007DB8">SF</div>
+        <div>
+          <h4>SAP SuccessFactors</h4>
+          <p>Connecteur via SAP Integration Suite. Compatible avec le module Recruiting Management. Tutoriel d'intégration fourni.</p>
+        </div>
+      </div>
+      <div class="ats-card">
+        <div class="ats-logo" style="background:#E8785A">BH</div>
+        <div>
+          <h4>BambooHR</h4>
+          <p>Intégration via Zapier ou webhook natif BambooHR. Déclenchement sur changement de statut candidat. Prêt en moins d'une heure.</p>
+        </div>
+      </div>
+      <div class="ats-card">
+        <div class="ats-logo" style="background:#3F9142">GH</div>
+        <div>
+          <h4>Greenhouse</h4>
+          <p>Intégration officielle disponible via le Greenhouse Partner Directory. Installation en self-service depuis le marketplace Greenhouse.</p>
+        </div>
+      </div>
+      <div class="ats-card">
+        <div class="ats-logo" style="background:#5E4DA5">LV</div>
+        <div>
+          <h4>Lever</h4>
+          <p>Intégration via Lever Webhooks et l'API Lever Hire. Déclenche la vérification à chaque passage en phase "Hiring Manager Review" ou sur mesure.</p>
+        </div>
+      </div>
+      <div class="ats-card">
+        <div class="ats-logo" style="background:var(--green)">API</div>
+        <div>
+          <h4>Tout ATS avec webhooks</h4>
+          <p>Si votre ATS supporte les webhooks sortants (la majorité des outils modernes), CVérifié peut s'y connecter. Consultez notre documentation pour le guide générique.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 : COMMENT FONCTIONNE L'API -->
+<section class="svc-section svc-dark">
+  <div class="svc-inner">
+    <div class="svc-label">Fonctionnement technique</div>
+    <h2 class="svc-title">Comment fonctionne l'API CVérifié ?</h2>
+    <p style="font-size:1rem;color:rgba(255,255,255,.65);line-height:1.75;max-width:680px;margin-bottom:2.5rem">Trois appels API suffisent pour déclencher une vérification et en récupérer les résultats. Le flux est asynchrone : vous soumettez la demande, CVérifié traite et vous notifie via webhook à la livraison du rapport.</p>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>POST /verifications — Soumission du dossier</h3>
+        <p>Envoyez une requête POST avec les données du candidat (nom, email, diplômes et/ou expériences à vérifier). CVérifié déclenche le processus de consentement et retourne un <code style="color:var(--green-light);font-size:.8rem">verification_id</code>. Délai de réponse API : moins de 200 ms.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>CVérifié traite la vérification (48 h)</h3>
+        <p>Après accord du candidat, CVérifié mène les vérifications auprès des sources officielles. Pendant ce temps, vous pouvez interroger <code style="color:var(--green-light);font-size:.8rem">GET /verifications/{id}</code> pour suivre l'état en temps réel (pending, consent_required, in_progress, completed).</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Webhook POST — Résultats JSON livrés</h3>
+        <p>À la clôture du rapport, CVérifié envoie un POST vers votre URL de webhook avec le rapport complet en JSON (ou un lien vers le PDF). Le payload inclut le statut de chaque vérification et le lien de téléchargement du rapport PDF signé.</p>
+      </div>
+    </div>
+
+    <div class="code-block" style="margin-top:2rem">
+      <code><span class="comment">// Exemple de payload de requête POST /verifications</span>
+{
+  <span class="key">"candidate_email"</span>: <span class="val">"jean.dupont@email.fr"</span>,
+  <span class="key">"candidate_name"</span>: <span class="val">"Jean Dupont"</span>,
+  <span class="key">"checks"</span>: [
+    {
+      <span class="key">"type"</span>: <span class="val">"diploma"</span>,
+      <span class="key">"institution"</span>: <span class="val">"HEC Paris"</span>,
+      <span class="key">"degree"</span>: <span class="val">"Master Management"</span>,
+      <span class="key">"year"</span>: <span class="val">2019</span>
+    },
+    {
+      <span class="key">"type"</span>: <span class="val">"experience"</span>,
+      <span class="key">"company"</span>: <span class="val">"Accenture France"</span>,
+      <span class="key">"title"</span>: <span class="val">"Senior Consultant"</span>,
+      <span class="key">"start_date"</span>: <span class="val">"2020-03"</span>,
+      <span class="key">"end_date"</span>: <span class="val">"2023-11"</span>
+    }
+  ],
+  <span class="key">"webhook_url"</span>: <span class="val">"https://votre-ats.fr/webhooks/cverifie"</span>,
+  <span class="key">"reference"</span>: <span class="val">"REF-CANDIDAT-12345"</span>
+}</code>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 : FONCTIONNALITÉS TECHNIQUES -->
+<section class="svc-section" style="background:var(--cream,#FAF8F3)">
+  <div class="svc-inner">
+    <div class="svc-label">Spécifications techniques</div>
+    <h2 class="svc-title">Quelles sont les fonctionnalités techniques de l'API CVérifié ?</h2>
+    <p class="svc-body">L'API CVérifié est conçue pour être simple à intégrer et robuste en production. Elle suit les standards REST modernes et est documentée avec OpenAPI/Swagger.</p>
+
+    <div class="check-grid">
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="3" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/><path d="M6 9h2l1.5-2.5L11 11.5 12.5 9H13" stroke="#2D6A4F" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <h4>Authentification OAuth2 / API Key</h4>
+          <p>Deux modes d'authentification disponibles : OAuth2 (recommandé pour les intégrations complexes avec scopes) et API Key simple (pour les intégrations légères). Les clés API sont générées depuis votre tableau de bord CVérifié et révocables à tout moment.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4-4 4 4 4-4" stroke="#2D6A4F" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M3 13l4-4 4 4 4-4" stroke="#2D6A4F" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <h4>Webhooks de notification</h4>
+          <p>CVérifié envoie un POST vers votre URL de webhook à chaque changement d'état majeur : consentement reçu, vérification en cours, rapport livré. La signature HMAC-SHA256 de chaque webhook permet de vérifier l'authenticité de la notification.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3L5 6H3v6h2l4 3 4-3h2V6h-2L9 3Z" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/></svg></div>
+        <div>
+          <h4>Sandbox de test disponible</h4>
+          <p>Un environnement sandbox complet est disponible pour tester votre intégration sans créer de vrais dossiers ni engager de frais. Le sandbox simule tous les cas de figure : consentement accordé, refus, délais variables, discordances détectées. Accès immédiat depuis votre compte.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14L9 4l5 10H4Z" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/></svg></div>
+        <div>
+          <h4>Documentation OpenAPI / Swagger</h4>
+          <p>Documentation complète et interactive disponible en ligne. Chaque endpoint est documenté avec exemples de requêtes et de réponses, codes d'erreur, et tests exécutables directement depuis la documentation Swagger UI.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/><path d="M9 6v3l2 1.5" stroke="#2D6A4F" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <div>
+          <h4>SLA : 99,9 % d'uptime garanti</h4>
+          <p>L'API CVérifié dispose d'un SLA de 99,9 % d'uptime mensuel. En cas d'incident, la page de statut (status.cverifie.fr) est mise à jour en temps réel. Le temps de réponse de l'API (hors traitement de la vérification) est inférieur à 200 ms pour 95 % des requêtes.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="3" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/><path d="M6 9l2 2 4-4" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <h4>Gestion du consentement RGPD intégrée</h4>
+          <p>Le flux de consentement est entièrement géré par l'API. Vous passez l'email du candidat ; CVérifié envoie l'email d'information, héberge la page de consentement conforme RGPD, et retourne dans le rapport la preuve de consentement horodatée et archivée.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5 : TARIFICATION API -->
+<section class="svc-section" style="background:white">
+  <div class="svc-inner">
+    <div class="svc-label">Tarification</div>
+    <h2 class="svc-title">Quelle est la tarification de l'API CVérifié ?</h2>
+    <p class="svc-body">L'accès à l'API CVérifié est gratuit. Vous ne payez que les vérifications réellement effectuées, au même tarif unitaire que le service web. Pas de frais d'installation, pas d'abonnement.</p>
+
+    <div class="api-pricing">
+      <p style="font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.5rem">Tarification à l'usage — identique au service web</p>
+      <p style="font-size:.9rem;color:var(--ink-muted);margin-bottom:1.5rem">Accès API gratuit. Facturation uniquement sur les vérifications lancées.</p>
+
+      <div class="api-pricing-tiers">
+        <div class="api-tier">
+          <div class="api-tier-name">À l'unité</div>
+          <div class="api-tier-price">14,90 €</div>
+          <div class="api-tier-volume">par vérification</div>
+        </div>
+        <div class="api-tier" style="border-color:var(--green);border-width:2px">
+          <div class="api-tier-name" style="color:var(--green)">Volume (10–49/mois)</div>
+          <div class="api-tier-price">12,90 €</div>
+          <div class="api-tier-volume">par vérification</div>
+        </div>
+        <div class="api-tier">
+          <div class="api-tier-name">Grand volume (50+/mois)</div>
+          <div class="api-tier-price">Sur devis</div>
+          <div class="api-tier-volume">tarif négocié</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:1.5rem;padding:1.25rem;background:var(--cream-dark,#F0EDE5);border-radius:12px;font-size:.875rem;color:var(--ink-light)">
+      <strong style="color:var(--ink)">Inclus dans chaque appel API :</strong> gestion du consentement RGPD, vérification auprès des sources officielles, rapport JSON + lien PDF, archivage 2 ans, signature HMAC des webhooks, accès à la documentation Swagger, support technique par email.
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 : FAQ -->
+<section class="svc-section" style="background:var(--cream,#FAF8F3)">
+  <div class="svc-inner">
+    <div class="svc-label">Questions fréquentes</div>
+    <h2 class="svc-title">Questions fréquentes sur l'API CVérifié</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>Faut-il être développeur pour utiliser l'API CVérifié ?</h3>
+        <p>L'API CVérifié est destinée aux équipes techniques (développeurs, DSI) qui souhaitent intégrer la vérification de CV dans leur ATS ou SIRH. Elle requiert des compétences en développement backend pour effectuer des requêtes HTTP et gérer des webhooks. Cependant, si vous utilisez Greenhouse ou un ATS avec un marketplace d'intégrations, l'installation peut se faire en self-service sans développement. Pour toute autre intégration, un développeur ayant quelques heures disponibles suffira pour connecter l'API CVérifié à votre système.</p>
+      </div>
+      <div class="faq-item">
+        <h3>L'API CVérifié est-elle disponible en sandbox pour les tests ?</h3>
+        <p>Oui. Un environnement sandbox complet est disponible gratuitement depuis votre espace client CVérifié. Le sandbox utilise des données fictives et simule des délais réduits (quelques minutes au lieu de 48 h) pour faciliter les tests. Il reproduit tous les scénarios possibles : consentement accordé ou refusé, rapport avec confirmation, rapport avec discordances, timeout de candidat, etc. Aucun frais n'est engagé dans le sandbox. L'accès au sandbox est disponible immédiatement après création de compte.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Comment l'API gère-t-elle le consentement RGPD du candidat ?</h3>
+        <p>Quand vous soumettez une vérification via l'API avec l'adresse email du candidat, CVérifié envoie automatiquement un email d'information au candidat, lui expliquant qu'une vérification est en cours, pour quel employeur, et sur quels éléments de son parcours. Un lien lui permet de donner ou refuser son consentement via une page sécurisée hébergée par CVérifié. La preuve de consentement (horodatée, avec adresse IP) est incluse dans le rapport final. Si le candidat refuse ou ne répond pas dans les 48 h, la vérification est annulée et vous êtes notifié via webhook. Aucun frais n'est prélevé pour les dossiers annulés avant consentement.</p>
+      </div>
+      <div class="faq-item">
+        <h3>L'API peut-elle s'intégrer à n'importe quel ATS ?</h3>
+        <p>L'API CVérifié est une API REST standard qui peut s'intégrer à tout ATS supportant les webhooks sortants ou les intégrations via HTTP. La grande majorité des ATS modernes (Greenhouse, Lever, Workday, BambooHR, Personio, Recruitee, SmartRecruiters, etc.) supportent ce type d'intégration. Si votre ATS est plus ancien et ne supporte pas les webhooks, il est souvent possible de passer par un outil d'automatisation intermédiaire (Zapier, Make/Integromat, n8n) pour faire le pont entre votre ATS et l'API CVérifié sans développement spécifique.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Quel est le délai de réponse de l'API CVérifié ?</h3>
+        <p>L'API CVérifié répond à toutes les requêtes de soumission et de statut en moins de 200 ms (p95). Ce délai correspond au temps de réponse de l'API elle-même, pas au délai de traitement de la vérification. La vérification effective (contact des sources, rapport) prend 48 à 72 heures selon le type de vérification commandée. Vous êtes notifié de la livraison du rapport via webhook — vous n'avez donc pas à poller l'API en boucle pour suivre l'avancement.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Y a-t-il des coûts supplémentaires pour l'accès à l'API ?</h3>
+        <p>Non. L'accès à l'API CVérifié est entièrement gratuit. Il n'y a pas de frais d'inscription, pas de frais mensuels d'accès à l'API, pas de frais de mise en place, et pas de coût minimum. Vous ne payez que les vérifications réellement effectuées, au même tarif unitaire que le service web (14,90 € à l'unité, avec dégressif à partir de 10 dossiers par mois). Le sandbox est également gratuit et illimité. Pour les grandes entreprises avec des volumes importants (plus de 50 dossiers par mois), des tarifs négociés sont disponibles sur demande.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7 : ARTICLES LIÉS -->
+<section class="svc-section" style="background:white">
+  <div class="svc-inner">
+    <div class="svc-label">Ressources</div>
+    <h2 class="svc-title">Articles connexes sur la vérification de CV</h2>
+
+    <div class="related-grid">
+      <a class="related-card" href="/blog/alternative-everycheck.html">
+        <div class="related-card-label">Comparatif</div>
+        <h4>Alternatives à EveryCheck : comparatif des solutions de vérification de CV en France</h4>
+      </a>
+      <a class="related-card" href="/blog/verification-cv-legal-france.html">
+        <div class="related-card-label">Cadre légal</div>
+        <h4>Vérification de CV en France : ce que la loi autorise et interdit</h4>
+      </a>
+      <a class="related-card" href="/blog/rgpd-verification-candidat-guide-complet.html">
+        <div class="related-card-label">RGPD</div>
+        <h4>RGPD et vérification de candidats : guide complet pour les RH</h4>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div style="padding:0 2rem">
+  <div class="svc-cta">
+    <h2>Accéder à la documentation API</h2>
+    <p>Sandbox gratuit, documentation Swagger complète, support technique inclus. Première intégration réalisable en quelques heures.</p>
+    <a href="/contact.html" class="svc-cta-btn">Demander l'accès à l'API →</a>
+    <div style="margin-top:1.5rem;background:rgba(255,255,255,.15);border-radius:8px;padding:.75rem 1rem">
+      <p style="color:rgba(255,255,255,.8);font-size:.85rem;margin:0">Aller plus loin :
+        <a href="/services/verification-diplomes.html" style="color:white;font-weight:600">Vérification de diplômes</a> ·
+        <a href="/services/controle-integrite.html" style="color:white;font-weight:600">Contrôle d'intégrité</a> ·
+        <a href="/services/prise-de-references.html" style="color:white;font-weight:600">Prise de références</a>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,368 @@
+---
+layout: base.njk
+title: "Vérification d'Expériences Professionnelles · CVérifié"
+description: "Vérifiez les expériences professionnelles de vos candidats : dates, postes, employeurs. Service en ligne, résultat sous 48 h, conforme RGPD. Dès 14,90 €."
+hasFaq: true
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Vérification d'expériences professionnelles",
+  "description": "Service de vérification des expériences professionnelles : dates d'emploi, intitulés de poste, type de contrat. Contact direct des anciens employeurs via sources officielles. Résultat sous 48 heures.",
+  "provider": { "@type": "Organization", "name": "CVérifié", "url": "https://cverifie.fr" },
+  "areaServed": { "@type": "Country", "name": "FR" },
+  "serviceType": "Vérification d'expériences professionnelles",
+  "offers": { "@type": "Offer", "price": "14.90", "priceCurrency": "EUR", "url": "https://cverifie.fr/commander.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cverifie.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://cverifie.fr/services/" },
+    { "@type": "ListItem", "position": 3, "name": "Vérification d'expériences professionnelles", "item": "https://cverifie.fr/services/verification-experiences.html" }
+  ]
+}
+</script>
+
+<style>
+.svc-hero { margin-top:64px; padding:5rem 2rem 4rem; background:var(--ink); position:relative; overflow:hidden; }
+.svc-hero::before { content:''; position:absolute; top:-100px; right:-60px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle,rgba(45,106,79,.35) 0%,transparent 65%); }
+.svc-hero::after { content:''; position:absolute; bottom:-80px; left:-40px; width:280px; height:280px; border-radius:50%; background:radial-gradient(circle,rgba(82,183,136,.12) 0%,transparent 65%); }
+.svc-hero-inner { max-width:860px; margin:0 auto; position:relative; z-index:1; }
+.svc-eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--green-light); margin-bottom:1.5rem; }
+.svc-hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,4.5vw,3rem); color:white; font-weight:600; line-height:1.15; letter-spacing:-0.02em; max-width:700px; margin-bottom:1.5rem; }
+.svc-hero p { font-size:1.1rem; color:rgba(255,255,255,.7); line-height:1.7; max-width:580px; }
+.svc-hero-kpis { display:flex; gap:2.5rem; margin-top:2.5rem; flex-wrap:wrap; }
+.svc-kpi-num { font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:var(--green-light); line-height:1; }
+.svc-kpi-label { font-size:12px; color:rgba(255,255,255,.55); margin-top:3px; }
+.svc-section { padding:4.5rem 2rem; }
+.svc-inner { max-width:1100px; margin:0 auto; }
+.svc-label { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--green); margin-bottom:.75rem; }
+.svc-title { font-family:'Playfair Display',serif; font-size:clamp(1.6rem,2.8vw,2.2rem); color:var(--ink); margin-bottom:.75rem; letter-spacing:-0.02em; }
+.svc-body { font-size:1rem; color:var(--ink-light); line-height:1.75; max-width:680px; margin-bottom:2.5rem; }
+.steps-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.step-card { background:white; border:1px solid var(--border,#E5E2DA); border-radius:14px; padding:1.75rem; }
+.step-num { width:36px; height:36px; border-radius:50%; background:var(--green-pale); color:var(--green); font-weight:800; font-size:.9rem; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
+.step-card h3 { font-size:.95rem; font-weight:700; color:var(--ink); margin-bottom:.5rem; }
+.step-card p { font-size:.85rem; color:var(--ink-muted); line-height:1.6; }
+.check-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-top:1.5rem; }
+.check-item { display:flex; align-items:flex-start; gap:12px; background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.25rem; }
+.check-icon { width:36px; height:36px; border-radius:9px; background:var(--green-pale); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.check-item h4 { font-size:.9rem; font-weight:700; color:var(--ink); margin-bottom:.3rem; }
+.check-item p { font-size:.82rem; color:var(--ink-muted); line-height:1.5; }
+.faq-list { display:flex; flex-direction:column; gap:1rem; margin-top:1.5rem; }
+.faq-item { background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.5rem; }
+.faq-item h3 { font-size:.95rem; font-weight:700; color:var(--ink); margin-bottom:.6rem; }
+.faq-item p { font-size:.88rem; color:var(--ink-light); line-height:1.65; }
+.related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.5rem; }
+.related-card { background:white; border:1px solid var(--border,#E5E2DA); border-radius:12px; padding:1.25rem; display:block; text-decoration:none; transition:border-color .2s,box-shadow .2s; }
+.related-card:hover { border-color:var(--green); box-shadow:0 4px 16px rgba(45,106,79,.1); }
+.related-card-label { font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--green); margin-bottom:.5rem; }
+.related-card h4 { font-size:.875rem; font-weight:700; color:var(--ink); line-height:1.4; }
+.svc-cta { background:var(--green); border-radius:20px; padding:4rem 3rem; text-align:center; margin:5rem auto; max-width:800px; }
+.svc-cta h2 { font-family:'Playfair Display',serif; font-size:clamp(1.5rem,3vw,2rem); color:white; margin-bottom:1rem; letter-spacing:-0.02em; }
+.svc-cta p { font-size:1rem; color:rgba(255,255,255,.8); margin-bottom:2rem; }
+.svc-cta-btn { display:inline-block; background:white; color:var(--green); padding:14px 36px; border-radius:10px; font-weight:700; font-size:15px; transition:all .2s; text-decoration:none; }
+.svc-cta-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.15); }
+.breadcrumb { padding:.75rem 2rem; background:var(--cream-dark,#F0EDE5); font-size:.8rem; color:var(--ink-muted); }
+.breadcrumb a { color:var(--green); text-decoration:none; }
+.breadcrumb span { margin:0 6px; color:var(--ink-muted); }
+.stat-highlight { display:inline-block; background:var(--green-pale); color:var(--green); font-weight:700; padding:.2rem .6rem; border-radius:6px; font-size:.95rem; }
+.legal-box { background:var(--cream-dark,#F0EDE5); border-left:3px solid var(--green); border-radius:0 10px 10px 0; padding:1.25rem 1.5rem; margin-top:1.5rem; font-size:.9rem; color:var(--ink-light); line-height:1.7; }
+.legal-box strong { color:var(--ink); }
+@media(max-width:768px){
+  .steps-grid,.check-grid,.related-grid { grid-template-columns:1fr; }
+  .svc-cta { padding:2.5rem 1.5rem; border-radius:14px; }
+}
+@media(max-width:1024px){ .steps-grid { grid-template-columns:1fr 1fr; } }
+</style>
+
+<!-- HERO -->
+<section class="svc-hero">
+  <div class="svc-hero-inner">
+    <div class="svc-eyebrow">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="3" width="10" height="9" rx="1.5" stroke="#52B788" stroke-width="1.1" fill="none"/><path d="M5 1v3M9 1v3M2 7h10" stroke="#52B788" stroke-width="1.1" stroke-linecap="round"/></svg>
+      Vérification · Expériences professionnelles
+    </div>
+    <h1>Vérification des expériences professionnelles : dates, postes et responsabilités confirmés</h1>
+    <p>CVérifié contacte directement les anciens employeurs via leurs coordonnées officielles — jamais celles fournies par le candidat — pour vérifier chaque ligne du CV. Résultat structuré sous 48 heures ouvrées.</p>
+    <div class="svc-hero-kpis">
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">45 %</div>
+        <div class="svc-kpi-label">des CV gonflent les expériences</div>
+      </div>
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">48 h</div>
+        <div class="svc-kpi-label">délai moyen de rapport</div>
+      </div>
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">100 %</div>
+        <div class="svc-kpi-label">sources primaires uniquement</div>
+      </div>
+      <div class="svc-kpi">
+        <div class="svc-kpi-num">RGPD</div>
+        <div class="svc-kpi-label">conforme</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb" aria-label="Fil d'Ariane">
+  <a href="/">Accueil</a><span>›</span><a href="/services/">Services</a><span>›</span>Vérification d'expériences professionnelles
+</nav>
+
+<!-- SECTION 1 : POURQUOI -->
+<section class="svc-section" style="background:var(--cream,#FAF8F3)">
+  <div class="svc-inner">
+    <div class="svc-label">Enjeux &amp; risques</div>
+    <h2 class="svc-title">Pourquoi vérifier les expériences professionnelles de vos candidats ?</h2>
+    <p class="svc-body">Les expériences professionnelles sont la partie du CV la plus susceptible d'être embellie. <span class="stat-highlight">Plus de 45 % des candidats</span> modifient au moins un élément de leurs expériences : titre de poste gonflé, durée allongée, périmètre de responsabilités exagéré, voire employeur fictif. Ces embellissements peuvent avoir des conséquences graves pour l'entreprise.</p>
+
+    <div class="check-grid">
+      <div class="check-item">
+        <div class="check-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="6" r="3.5" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/><path d="M3 15c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#2D6A4F" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+        </div>
+        <div>
+          <h4>Recruter un "manager" qui n'a jamais managé</h4>
+          <p>Le cas le plus fréquent : un candidat se présente comme "Responsable d'équipe" alors qu'il était collaborateur individuel. Découvert trop tard, après l'embauche, cela génère une rupture de période d'essai coûteuse et une perte de temps pour l'équipe. La vérification du titre exact est la seule protection fiable.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="4" width="12" height="11" rx="2" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/><path d="M6 8h6M6 11h3" stroke="#2D6A4F" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h4>Durées d'emploi trafiquées pour masquer des trous</h4>
+          <p>Allonger de quelques mois une mission passée pour masquer une période sans emploi est une pratique courante. Cela fausse la compréhension du parcours réel du candidat et peut cacher des licenciements pour faute, des arrêts maladie prolongés ou des situations de conflit. La vérification des dates mois par mois est indispensable.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14l10-10M14 8V4h-4" stroke="#2D6A4F" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <div>
+          <h4>Coût d'un mauvais recrutement : 15 000 à 120 000 €</h4>
+          <p>Selon le niveau de poste, le coût total d'un mauvais recrutement (onboarding, formation, rupture, remplacement) va de 15 000 € pour un poste d'exécution à plus de 120 000 € pour un poste de direction. Consulter notre article sur le <a href="/blog/cout-mauvais-recrutement-france.html" style="color:var(--green)">coût d'un mauvais recrutement en France</a>.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3L3 6v5c0 3 2.5 5.5 6 6.5C15 16.5 15 14 15 11V6L9 3Z" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/></svg>
+        </div>
+        <div>
+          <h4>Postes sensibles exigeant une expérience avérée</h4>
+          <p>Pour certains postes — trader, directeur financier, CISO, médecin urgentiste — l'expérience réelle n'est pas une formalité mais une condition de sécurité. Recruter sur une expérience fictive dans ces contextes peut engager la responsabilité pénale de l'employeur en cas d'incident.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 : QUE VÉRIFIE-T-ON -->
+<section class="svc-section" style="background:white">
+  <div class="svc-inner">
+    <div class="svc-label">Périmètre de vérification</div>
+    <h2 class="svc-title">Que vérifie CVérifié dans les expériences professionnelles ?</h2>
+    <p class="svc-body">CVérifié vérifie les éléments objectifs de chaque expérience — ceux que l'employeur ou le service RH de l'entreprise précédente peut confirmer officiellement. Voici le détail de ce qui est systématiquement contrôlé.</p>
+
+    <div class="check-grid">
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#2D6A4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <div>
+          <h4>Nom de l'employeur et adresse légale</h4>
+          <p>Vérification via le registre SIREN/SIRET que l'entreprise mentionnée existe (ou a existé) avec les coordonnées indiquées. Détection des entreprises fictives ou des noms approximatifs destinés à tromper.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#2D6A4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <div>
+          <h4>Dates d'entrée et de sortie (mois et année)</h4>
+          <p>Confirmation précise des dates de début et de fin de contrat, mois par mois. Détection des allongements de durée destinés à masquer des périodes d'inactivité ou à atteindre le seuil d'une expérience requise.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#2D6A4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <div>
+          <h4>Intitulé de poste réel</h4>
+          <p>Confirmation que le titre de poste revendiqué correspond bien à la classification interne de l'entreprise précédente. Distinction entre "Directeur commercial" et "Commercial senior", entre "Chef de projet" et "Assistant chef de projet".</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#2D6A4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <div>
+          <h4>Type de contrat (CDI, CDD, interim, stage)</h4>
+          <p>Vérification que le type de contrat correspond à ce que le candidat a déclaré. Un candidat peut présenter un stage court comme un CDI, ou une mission intérimaire comme un emploi permanent. Ces informations ont un impact direct sur l'évaluation de la stabilité professionnelle.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#2D6A4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <div>
+          <h4>Périmètre de responsabilités réelles</h4>
+          <p>Dans la mesure du possible, confirmation que les responsabilités déclarées (taille d'équipe, budget géré, périmètre géographique) correspondent à la réalité de la fonction occupée. Cette information dépend de la coopération de l'employeur précédent.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#2D6A4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <div>
+          <h4>Motif de départ (si consentement du candidat)</h4>
+          <p>Avec l'accord explicite du candidat, CVérifié peut vérifier le motif de départ (démission, fin de CDD, licenciement). Cette information reste facultative et soumise au consentement du candidat conformément à l'article L.1221-8 du Code du travail.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 : COMMENT CVérifié CONTACTE LES EMPLOYEURS -->
+<section class="svc-section" style="background:var(--cream,#FAF8F3)">
+  <div class="svc-inner">
+    <div class="svc-label">Processus</div>
+    <h2 class="svc-title">Comment CVérifié contacte-t-il les anciens employeurs ?</h2>
+    <p class="svc-body">La méthode de CVérifié est conçue pour garantir l'indépendance de la vérification. CVérifié ne contacte jamais les références aux coordonnées fournies par le candidat — une pratique qui permettrait à un candidat de substituer ses propres contacts.</p>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Vérification de l'identité de l'entreprise</h3>
+        <p>CVérifié vérifie l'existence légale de l'entreprise via les registres officiels (SIREN, Infogreffe, BODACC). En cas d'entreprise liquidée ou fusionnée, CVérifié remonte à l'entité successeur pour obtenir la confirmation. Un SIREN invalide ou une entreprise introuvable est immédiatement signalé dans le rapport.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Contact du service RH via coordonnées officielles</h3>
+        <p>CVérifié utilise les coordonnées officielles de l'entreprise (site web, annuaire professionnel, Infogreffe) pour contacter directement le service des ressources humaines ou la direction administrative — jamais le numéro ou l'email fournis par le candidat. Cette approche est la seule qui garantit l'authenticité de la source.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Rapport de vérification sous 48 h</h3>
+        <p>Le rapport détaille chaque point vérifié avec un statut : confirmé, non confirmé, ou discordance détectée. En cas de discordance, la nature exacte de l'écart est précisée (ex : "durée déclarée : 3 ans / durée confirmée : 18 mois"). Le rapport est livré en PDF dans votre espace client sous 48 heures ouvrées.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 : CADRE LÉGAL -->
+<section class="svc-section" style="background:white">
+  <div class="svc-inner">
+    <div class="svc-label">Cadre légal</div>
+    <h2 class="svc-title">Quelles sont les limites légales de la vérification d'expériences ?</h2>
+    <p class="svc-body">La vérification d'expériences professionnelles est encadrée par plusieurs textes de loi qui définissent précisément ce qui peut et ne peut pas être vérifié. CVérifié opère strictement dans ce périmètre légal.</p>
+
+    <div class="check-grid">
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#2D6A4F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        <div>
+          <h4>Ce qu'on peut vérifier</h4>
+          <p>Dates d'emploi, intitulé de poste, type de contrat, périmètre général de la mission. Ces éléments sont directement liés à l'emploi proposé au sens de l'article L.1221-6 du Code du travail. Leur vérification est légalement fondée avec le consentement du candidat.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#e53e3e" stroke-width="1.2" fill="#fff5f5"/><path d="M6 6l6 6M12 6l-6 6" stroke="#e53e3e" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div>
+          <h4>Ce qu'on ne peut PAS demander sans accord spécifique</h4>
+          <p>Motif de départ, évaluation de performance, état de santé, congés maladie, vie personnelle, religion, opinions politiques, appartenance syndicale. Ces informations sont soit protégées par la loi anti-discrimination (L.1132-1), soit soumises à un consentement spécifique et explicite du candidat.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="2" width="12" height="14" rx="2" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/><path d="M6 7h6M6 10h4" stroke="#2D6A4F" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+        <div>
+          <h4>Article L.1221-8 : principe de pertinence</h4>
+          <p>Seules les informations directement pertinentes pour l'emploi proposé peuvent être recueillies. CVérifié adapte les points de vérification selon le niveau et la nature du poste : on ne demande pas les mêmes informations pour un poste d'exécution et pour un poste de direction générale.</p>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#2D6A4F" stroke-width="1.2" fill="#D8F3DC"/><path d="M9 5v4l3 2" stroke="#2D6A4F" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <div>
+          <h4>RGPD et consentement du candidat</h4>
+          <p>CVérifié recueille le consentement explicite du candidat avant toute démarche. Le candidat est informé de la nature des vérifications, du nom de l'employeur commanditaire, et de ses droits (accès, rectification, suppression). Sans consentement, aucune vérification n'est lancée.</p>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:1.5rem;font-size:.875rem;color:var(--ink-muted)">
+      Pour aller plus loin : <a href="/blog/verification-cv-legal-france.html" style="color:var(--green)">La vérification de CV en France : ce que dit la loi</a>
+    </p>
+  </div>
+</section>
+
+<!-- SECTION 5 : FAQ -->
+<section class="svc-section" style="background:var(--cream,#FAF8F3)">
+  <div class="svc-inner">
+    <div class="svc-label">Questions fréquentes</div>
+    <h2 class="svc-title">Questions fréquentes sur la vérification d'expériences professionnelles</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>Quelle est la différence entre vérification d'expériences et prise de références ?</h3>
+        <p>La vérification d'expériences confirme des faits objectifs et vérifiables : dates d'emploi, intitulé de poste, type de contrat, existence de l'employeur. C'est une démarche factuelle qui donne une réponse binaire (confirmé / discordance). La prise de références, en revanche, recueille des avis qualitatifs d'anciens managers sur les compétences comportementales, la qualité du travail et l'intégration en équipe. Les deux démarches sont complémentaires et peuvent être commandées ensemble chez CVérifié. Pour les postes à responsabilité, nous recommandons systématiquement de combiner les deux.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Peut-on vérifier l'expérience d'un candidat qui n'a pas donné son accord ?</h3>
+        <p>Non, en aucun cas. Le RGPD (art. 6.1.a) et l'article L.1221-6 du Code du travail imposent le consentement explicite du candidat avant toute collecte d'informations le concernant. CVérifié ne permet pas de lancer une vérification sans que le candidat ait formellement donné son accord via notre processus de consentement. Toute vérification effectuée sans consentement expose l'employeur à une plainte CNIL et à des poursuites pour violation de la vie privée.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Que faire si un ancien employeur ne répond pas à la demande de vérification ?</h3>
+        <p>CVérifié effectue jusqu'à 3 tentatives de contact par canaux différents (téléphone, email officiel, courrier). Si l'employeur ne répond pas dans le délai imparti, le rapport indique "Non confirmé — absence de réponse de l'employeur" avec la traçabilité des tentatives de contact. Ce résultat est différent d'un résultat "Discordance détectée" et laisse à l'employeur le soin d'interpréter le silence selon le contexte. En cas d'entreprise liquidée, CVérifié recherche les archives commerciales disponibles.</p>
+      </div>
+      <div class="faq-item">
+        <h3>CVérifié peut-il vérifier des expériences professionnelles à l'étranger ?</h3>
+        <p>Oui, pour la majorité des pays. Pour les pays de l'Union Européenne, la vérification est facilitée par les registres d'entreprises accessibles en ligne (Companies House au Royaume-Uni, Handelsregister en Allemagne, Registro Mercantil en Espagne, etc.). Pour les pays hors UE, CVérifié dispose de correspondants locaux dans les principaux marchés (USA, Canada, Maghreb, Afrique subsaharienne, Asie). Un délai supplémentaire peut s'appliquer selon le pays d'origine.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Combien coûte la vérification d'une expérience professionnelle ?</h3>
+        <p>La vérification d'une expérience est à 14,90 € par dossier. Un dossier peut inclure la vérification de 1 à 3 expériences pour ce même tarif de base. Au-delà de 3 expériences à vérifier, des frais additionnels peuvent s'appliquer. Pour les clients récurrents (plus de 10 dossiers par mois), des tarifs dégressifs sont disponibles. Consultez notre <a href="/commander.html" style="color:var(--green)">page de commande</a> pour les détails tarifaires.</p>
+      </div>
+      <div class="faq-item">
+        <h3>La vérification d'expériences est-elle différente de la prise de références ?</h3>
+        <p>Oui. La vérification d'expériences est une démarche factuelle et documentaire : on confirme des données objectives (dates, poste, contrat) auprès du service RH de l'ancien employeur. La prise de références est une démarche qualitative : on recueille l'opinion d'un manager direct sur les compétences, le comportement et la valeur ajoutée du candidat. La vérification d'expériences est plus rapide et moins sujette à interprétation ; la prise de références est plus riche mais plus subjective. CVérifié propose les deux services, séparément ou combinés.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Peut-on vérifier un stage ou une période d'alternance ?</h3>
+        <p>Oui. CVérifié peut vérifier les stages, les contrats d'apprentissage et les contrats de professionnalisation exactement comme les autres types de contrats. Ces vérifications sont particulièrement importantes pour les jeunes diplômés dont le parcours professionnel est essentiellement composé de stages. La vérification porte sur les mêmes éléments : dates, intitulé de mission, nom du maître de stage ou tuteur, type de contrat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 : ARTICLES LIÉS -->
+<section class="svc-section" style="background:white">
+  <div class="svc-inner">
+    <div class="svc-label">Ressources</div>
+    <h2 class="svc-title">Articles pour approfondir le sujet</h2>
+
+    <div class="related-grid">
+      <a class="related-card" href="/blog/comment-verifier-experiences-professionnelles-candidat.html">
+        <div class="related-card-label">Guide pratique</div>
+        <h4>Comment vérifier les expériences professionnelles d'un candidat</h4>
+      </a>
+      <a class="related-card" href="/blog/faux-cv-exemples-detecter-signaux.html">
+        <div class="related-card-label">Signaux d'alerte</div>
+        <h4>Faux CV : exemples concrets et signaux à détecter lors du recrutement</h4>
+      </a>
+      <a class="related-card" href="/blog/statistiques-mensonges-cv-france.html">
+        <div class="related-card-label">Statistiques</div>
+        <h4>Mensonges sur les CV en France : les chiffres qui doivent alerter les RH</h4>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div style="padding:0 2rem">
+  <div class="svc-cta">
+    <h2>Vérifiez les expériences de votre prochain candidat</h2>
+    <p>14,90 € par dossier. Résultat sous 48 heures ouvrées. Aucun engagement.</p>
+    <a href="/commander.html" class="svc-cta-btn">Lancer une vérification →</a>
+    <div style="margin-top:1.5rem;background:rgba(255,255,255,.15);border-radius:8px;padding:.75rem 1rem">
+      <p style="color:rgba(255,255,255,.8);font-size:.85rem;margin:0">Aller plus loin :
+        <a href="/services/verification-diplomes.html" style="color:white;font-weight:600">Vérification de diplômes</a> ·
+        <a href="/services/prise-de-references.html" style="color:white;font-weight:600">Prise de références</a> ·
+        <a href="/services/controle-integrite.html" style="color:white;font-weight:600">Contrôle d'intégrité</a>
+      </p>
+    </div>
+  </div>
+</div>
