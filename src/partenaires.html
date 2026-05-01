@@ -78,9 +78,9 @@ description: "CVérifié vérifie les CV via des sources officielles : Ministèr
 }
 .inst-card:hover{border-color:var(--green);box-shadow:0 4px 20px rgba(45,106,79,.1)}
 .inst-card-logo{
-  height:44px;display:flex;align-items:center;margin-bottom:1.25rem;
+  height:30px;display:flex;align-items:center;margin-bottom:1.25rem;
 }
-.inst-card-logo img{height:100%;width:auto;max-width:160px;object-fit:contain}
+.inst-card-logo img{height:100%;width:auto;max-width:120px;object-fit:contain}
 .inst-card-logo .logo-text{
   font-size:1rem;font-weight:800;letter-spacing:-.01em;color:var(--ink);
 }
@@ -114,17 +114,17 @@ description: "CVérifié vérifie les CV via des sources officielles : Ministèr
   background:white;border:1px solid var(--border);
   border-radius:12px;padding:1.1rem .75rem;
   display:flex;align-items:center;justify-content:center;
-  min-height:64px;
+  min-height:64px;text-decoration:none;
   transition:border-color .2s,box-shadow .2s;
 }
 .logo-card:hover{border-color:var(--green-mid);box-shadow:0 4px 12px rgba(45,106,79,.08)}
 .logo-card img{
   max-height:32px;width:auto;max-width:110px;
   object-fit:contain;
-  filter:grayscale(40%) opacity(0.8);
+  filter:brightness(0) opacity(0.5);
   transition:filter .25s;
 }
-.logo-card:hover img{filter:grayscale(0%) opacity(1)}
+.logo-card:hover img{filter:brightness(0) opacity(0.85)}
 .logos-more{
   font-size:.875rem;color:var(--ink-muted);
   margin-top:1.5rem;padding:.875rem 1rem;
@@ -279,39 +279,39 @@ description: "CVérifié vérifie les CV via des sources officielles : Ministèr
 
     <div class="logos-group-label">Grandes écoles d'ingénieurs & scientifiques</div>
     <div class="logos-grid">
-      <div class="logo-card"><img src="/images/logos/polytechnique.png" alt="École Polytechnique" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/mines-paris.png" alt="Mines Paris" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/centralesupelec.png" alt="CentraleSupélec" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/ponts.png" alt="École des Ponts" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/arts-metiers.svg" alt="Arts et Métiers" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/insa-lyon.png" alt="INSA Lyon" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/ens-paris.png" alt="ENS Paris" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/utc.svg" alt="UTC Compiègne" loading="lazy"></div>
+      <a class="logo-card" href="https://www.polytechnique.edu" target="_blank" rel="noopener" title="École Polytechnique"><img src="/images/logos/polytechnique.png" alt="École Polytechnique" loading="lazy"></a>
+      <a class="logo-card" href="https://www.minesparis.psl.eu" target="_blank" rel="noopener" title="Mines Paris - PSL"><img src="/images/logos/mines-paris.png" alt="Mines Paris" loading="lazy"></a>
+      <a class="logo-card" href="https://www.centralesupelec.fr" target="_blank" rel="noopener" title="CentraleSupélec"><img src="/images/logos/centralesupelec.png" alt="CentraleSupélec" loading="lazy"></a>
+      <a class="logo-card" href="https://www.ecoledesponts.fr" target="_blank" rel="noopener" title="École des Ponts ParisTech"><img src="/images/logos/ponts.png" alt="École des Ponts" loading="lazy"></a>
+      <a class="logo-card" href="https://artsetmetiers.fr" target="_blank" rel="noopener" title="Arts et Métiers"><img src="/images/logos/arts-metiers.svg" alt="Arts et Métiers" loading="lazy"></a>
+      <a class="logo-card" href="https://www.insa-lyon.fr" target="_blank" rel="noopener" title="INSA Lyon"><img src="/images/logos/insa-lyon.png" alt="INSA Lyon" loading="lazy"></a>
+      <a class="logo-card" href="https://www.ens.psl.eu" target="_blank" rel="noopener" title="ENS Paris - PSL"><img src="/images/logos/ens-paris.png" alt="ENS Paris" loading="lazy"></a>
+      <a class="logo-card" href="https://www.utc.fr" target="_blank" rel="noopener" title="Université de Technologie de Compiègne"><img src="/images/logos/utc.svg" alt="UTC Compiègne" loading="lazy"></a>
     </div>
 
     <div class="logos-group-label" style="margin-top:2rem">Écoles de commerce & management</div>
     <div class="logos-grid">
-      <div class="logo-card"><img src="/images/logos/hec.svg" alt="HEC Paris" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/escp.svg" alt="ESCP Business School" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/edhec.svg" alt="EDHEC Business School" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/emlyon.svg" alt="emlyon business school" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/audencia.svg" alt="Audencia" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/kedge.svg" alt="KEDGE Business School" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/neoma.svg" alt="NEOMA Business School" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/grenoble-em.png" alt="Grenoble EM" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/skema.svg" alt="SKEMA Business School" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/tbs.svg" alt="TBS Education" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/paris-dauphine.png" alt="Paris Dauphine" loading="lazy"></div>
+      <a class="logo-card" href="https://www.hec.edu" target="_blank" rel="noopener" title="HEC Paris"><img src="/images/logos/hec.svg" alt="HEC Paris" loading="lazy"></a>
+      <a class="logo-card" href="https://escp.eu" target="_blank" rel="noopener" title="ESCP Business School"><img src="/images/logos/escp.svg" alt="ESCP Business School" loading="lazy"></a>
+      <a class="logo-card" href="https://www.edhec.edu" target="_blank" rel="noopener" title="EDHEC Business School"><img src="/images/logos/edhec.svg" alt="EDHEC Business School" loading="lazy"></a>
+      <a class="logo-card" href="https://em-lyon.com" target="_blank" rel="noopener" title="emlyon business school"><img src="/images/logos/emlyon.svg" alt="emlyon business school" loading="lazy"></a>
+      <a class="logo-card" href="https://www.audencia.com" target="_blank" rel="noopener" title="Audencia Business School"><img src="/images/logos/audencia.svg" alt="Audencia" loading="lazy"></a>
+      <a class="logo-card" href="https://kedge.edu" target="_blank" rel="noopener" title="KEDGE Business School"><img src="/images/logos/kedge.svg" alt="KEDGE Business School" loading="lazy"></a>
+      <a class="logo-card" href="https://www.neoma-bs.fr" target="_blank" rel="noopener" title="NEOMA Business School"><img src="/images/logos/neoma.svg" alt="NEOMA Business School" loading="lazy"></a>
+      <a class="logo-card" href="https://www.grenoble-em.com" target="_blank" rel="noopener" title="Grenoble École de Management"><img src="/images/logos/grenoble-em.png" alt="Grenoble EM" loading="lazy"></a>
+      <a class="logo-card" href="https://www.skema.edu" target="_blank" rel="noopener" title="SKEMA Business School"><img src="/images/logos/skema.svg" alt="SKEMA Business School" loading="lazy"></a>
+      <a class="logo-card" href="https://www.tbs-education.fr" target="_blank" rel="noopener" title="TBS Education"><img src="/images/logos/tbs.svg" alt="TBS Education" loading="lazy"></a>
+      <a class="logo-card" href="https://dauphine.psl.eu" target="_blank" rel="noopener" title="Université Paris Dauphine - PSL"><img src="/images/logos/paris-dauphine.png" alt="Paris Dauphine" loading="lazy"></a>
     </div>
 
     <div class="logos-group-label" style="margin-top:2rem">Universités françaises</div>
     <div class="logos-grid">
-      <div class="logo-card"><img src="/images/logos/sorbonne.svg" alt="Université Paris 1 Panthéon-Sorbonne" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/aix-marseille.svg" alt="Université Aix-Marseille" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/bordeaux.png" alt="Université de Bordeaux" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/univ-lyon.svg" alt="Université de Lyon" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/nantes.png" alt="Université de Nantes" loading="lazy"></div>
-      <div class="logo-card"><img src="/images/logos/upec.svg" alt="UPEC" loading="lazy"></div>
+      <a class="logo-card" href="https://www.sorbonne-universite.fr" target="_blank" rel="noopener" title="Sorbonne Université"><img src="/images/logos/sorbonne.svg" alt="Sorbonne Université" loading="lazy"></a>
+      <a class="logo-card" href="https://www.univ-amu.fr" target="_blank" rel="noopener" title="Université Aix-Marseille"><img src="/images/logos/aix-marseille.svg" alt="Université Aix-Marseille" loading="lazy"></a>
+      <a class="logo-card" href="https://www.u-bordeaux.fr" target="_blank" rel="noopener" title="Université de Bordeaux"><img src="/images/logos/bordeaux.png" alt="Université de Bordeaux" loading="lazy"></a>
+      <a class="logo-card" href="https://www.universite-lyon.fr" target="_blank" rel="noopener" title="Université de Lyon"><img src="/images/logos/univ-lyon.svg" alt="Université de Lyon" loading="lazy"></a>
+      <a class="logo-card" href="https://www.univ-nantes.fr" target="_blank" rel="noopener" title="Nantes Université"><img src="/images/logos/nantes.png" alt="Nantes Université" loading="lazy"></a>
+      <a class="logo-card" href="https://www.u-pec.fr" target="_blank" rel="noopener" title="UPEC — Université Paris-Est Créteil"><img src="/images/logos/upec.svg" alt="UPEC" loading="lazy"></a>
     </div>
 
     <div class="logos-more">
