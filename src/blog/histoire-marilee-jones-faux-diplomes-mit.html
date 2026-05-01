@@ -14,19 +14,19 @@ description: "Elle était la grande prêtresse de l'admission au MIT, adulée, c
 .story-hero::before {
   content:'';
   position:absolute;inset:0;
-  background:radial-gradient(ellipse at 70% 0%, rgba(30,80,180,0.2) 0%, transparent 60%),
+  background:radial-gradient(ellipse at 70% 0%, rgba(45,106,79,0.18) 0%, transparent 60%),
              radial-gradient(ellipse at 10% 80%, rgba(45,106,79,0.12) 0%, transparent 50%);
 }
 .story-hero-inner { max-width:800px; margin:0 auto; position:relative; z-index:1; }
 .story-badge {
   display:inline-flex; align-items:center; gap:8px;
-  background:rgba(30,80,180,0.25); border:1px solid rgba(80,130,255,0.4);
-  color:#8BB; padding:5px 14px; border-radius:100px;
+  background:rgba(45,106,79,0.18); border:1px solid rgba(82,183,136,0.4);
+  color:#52B788; padding:5px 14px; border-radius:100px;
   font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
   margin-bottom:1.5rem;
 }
 .story-badge::before {
-  content:''; width:6px; height:6px; border-radius:50%; background:#79A;
+  content:''; width:6px; height:6px; border-radius:50%; background:#52B788;
 }
 .story-hero h1 {
   font-family:'Playfair Display',serif;
@@ -35,7 +35,7 @@ description: "Elle était la grande prêtresse de l'admission au MIT, adulée, c
   letter-spacing:-0.02em; margin-bottom:1.25rem;
   font-weight:700;
 }
-.story-hero h1 em { color:#9BB; font-style:italic; }
+.story-hero h1 em { color:#52B788; font-style:italic; }
 .story-hero-lead {
   font-size:1.1rem; color:rgba(255,255,255,0.65);
   line-height:1.75; max-width:660px; margin-bottom:2rem;
@@ -60,7 +60,7 @@ description: "Elle était la grande prêtresse de l'admission au MIT, adulée, c
   letter-spacing:-0.02em;
   margin:3rem 0 1.25rem;
   padding-bottom:.75rem;
-  border-bottom:2px solid #E0E8F5;
+  border-bottom:2px solid var(--green-pale);
 }
 .story-body h3 {
   font-size:1.1rem; font-weight:700; color:var(--ink);
@@ -76,14 +76,14 @@ description: "Elle était la grande prêtresse de l'admission au MIT, adulée, c
 
 .story-pullquote {
   margin:2.5rem 0;
-  border-left:4px solid #2255BB;
+  border-left:4px solid var(--green);
   padding:1.25rem 1.75rem;
-  background:#F0F4FF;
+  background:var(--green-ultra, #F0F7F4);
   border-radius:0 10px 10px 0;
 }
 .story-pullquote p {
   font-family:'Playfair Display',serif;
-  font-size:1.2rem; color:#1A2D6A;
+  font-size:1.2rem; color:var(--ink);
   line-height:1.65; margin:0;
   font-style:italic;
 }
@@ -112,11 +112,11 @@ description: "Elle était la grande prêtresse de l'admission au MIT, adulée, c
 .story-timeline-item::before {
   content:''; position:absolute; left:-1.75rem; top:4px;
   width:10px; height:10px; border-radius:50%;
-  background:#2255BB; border:2px solid white;
-  box-shadow:0 0 0 2px #2255BB;
+  background:var(--green); border:2px solid white;
+  box-shadow:0 0 0 2px var(--green);
 }
 .story-timeline-item .tl-date {
-  font-size:.8rem; font-weight:700; color:#2255BB;
+  font-size:.8rem; font-weight:700; color:var(--green);
   letter-spacing:.05em; text-transform:uppercase;
   margin-bottom:.25rem; display:block;
 }
@@ -212,35 +212,35 @@ description: "Elle était la grande prêtresse de l'admission au MIT, adulée, c
 
   <p>Il y a une ironie cruelle dans cette histoire : Marilee Jones était célèbre, entre autres, pour prôner la réduction du stress dans les dossiers d'admission universitaires. Elle publiait des articles. Elle donnait des conférences. Elle avait écrit un livre entier sur le sujet. Pendant ce temps, depuis 1979, chaque année universitaire commençait pour elle avec le même secret profondément enfoui : ses propres diplômes, ceux sur lesquels reposait toute sa légitimité, étaient des inventions.</p>
 
-  <h2>1979 — Une petite ligne sur un CV</h2>
+  <h2>1979 : Une petite ligne sur un CV</h2>
 
   <p>Marilee Jones rejoint le MIT en 1979 comme assistante administrative au bureau des admissions. C'est un poste d'entrée de gamme. Sur son CV, elle indique trois formations universitaires : un diplôme de l'Albany Medical College, un de Union College, et un de Rensselaer Polytechnic Institute.</p>
 
   <p>Personne ne vérifie. Pourquoi le ferait-on ? C'est un poste administratif junior. Elle est souriante, efficace, motivée.</p>
 
-  <p>Les années passent. Elle grimpe les échelons. Elle devient directrice des admissions. Puis doyenne des admissions — le poste le plus élevé du bureau. Elle devient une figure nationale de l'éducation américaine. Elle est invitée à prendre la parole dans les meilleures universités du pays. En 2006, elle co-signe "Less Stress, More Success" (<em>Moins de stress, plus de succès</em>), un livre très bien accueilli sur la course aux admissions dans les grandes universités américaines.</p>
+  <p>Les années passent. Elle grimpe les échelons. Elle devient directrice des admissions. Puis doyenne des admissions, le poste le plus élevé du bureau. Elle devient une figure nationale de l'éducation américaine. Elle est invitée à prendre la parole dans les meilleures universités du pays. En 2006, elle co-signe "Less Stress, More Success" (<em>Moins de stress, plus de succès</em>), un livre très bien accueilli sur la course aux admissions dans les grandes universités américaines.</p>
 
   <div class="story-pullquote">
     <p>« Elle était un modèle pour des milliers d'étudiants et de professionnels de l'éducation. Sa prise de parole sur le sujet des admissions était considérée comme une référence absolue. »</p>
-    <cite>— <em>The Boston Globe</em>, avril 2007</cite>
+    <cite><em>The Boston Globe</em>, avril 2007</cite>
   </div>
 
   <p>Pendant tout ce temps, les trois diplômes mentionnés sur son CV de 1979 restaient là, silencieusement, dans ses dossiers officiels. Vérifiés une fois ? Non. Jamais.</p>
 
-  <h2>28 ans plus tard — Un email anonyme</h2>
+  <h2>28 ans plus tard : Un email anonyme</h2>
 
   <p>En 2007, un email anonyme arrive sur les bureaux du MIT. Il est laconique, précis, et dévastateur : les diplômes de Marilee Jones sont inventés.</p>
 
   <p>Le MIT ouvre une enquête discrète. En quelques jours, la conclusion est sans appel : <strong>aucun des trois établissements cités ne confirme avoir diplômé Marilee Jones.</strong></p>
 
-  <p>Albany Medical College, Union College, Rensselaer Polytechnic Institute — trois appels téléphoniques. Trois réponses négatives. Vingt-huit ans de mensonge, dissous en 72 heures de vérification.</p>
+  <p>Albany Medical College, Union College, Rensselaer Polytechnic Institute, trois appels téléphoniques. Trois réponses négatives. Vingt-huit ans de mensonge, dissous en 72 heures de vérification.</p>
 
   <div class="story-keybox">
     <h4>Les diplômes inventés de Marilee Jones</h4>
     <ul>
       <li><strong>Albany Medical College :</strong> Non confirmé. Aucun diplôme délivré à son nom.</li>
       <li><strong>Union College :</strong> Non confirmé.</li>
-      <li><strong>Rensselaer Polytechnic Institute :</strong> Non confirmé. Elle a bien étudié là — mais elle n'a jamais obtenu de diplôme.</li>
+      <li><strong>Rensselaer Polytechnic Institute :</strong> Non confirmé. Elle a bien étudié là, mais elle n'a jamais obtenu de diplôme.</li>
     </ul>
   </div>
 
@@ -252,18 +252,18 @@ description: "Elle était la grande prêtresse de l'admission au MIT, adulée, c
 
   <p>Ce qui rend cette affaire particulièrement grinçante, c'est ce que faisait Marilee Jones <em>professionnellement</em>.</p>
 
-  <p>Elle évaluait, pour le MIT, les dossiers de milliers de candidats chaque année. Elle jugeait leurs diplômes, leurs parcours, leur sincérité. Elle avait le pouvoir de refuser ou d'accepter des étudiants sur la base de leurs qualifications — des qualifications qu'elle était particulièrement bien placée pour savoir qu'on pouvait inventer.</p>
+  <p>Elle évaluait, pour le MIT, les dossiers de milliers de candidats chaque année. Elle jugeait leurs diplômes, leurs parcours, leur sincérité. Elle avait le pouvoir de refuser ou d'accepter des étudiants sur la base de leurs qualifications, des qualifications qu'elle était particulièrement bien placée pour savoir qu'on pouvait inventer.</p>
 
   <p>Plus troublant encore : son livre de 2006 encourageait les lycéens à "montrer qui ils sont vraiment" dans leurs dossiers, à ne pas se cacher derrière des apparences artificielles. La page du livre dédicacée à "l'authenticité" est difficile à lire avec le recul.</p>
 
   <div class="story-pullquote">
     <p>« Elle a passé des années à enseigner aux jeunes l'importance de l'intégrité dans leurs dossiers de candidature. C'est la contradiction la plus cruelle de toute cette affaire. »</p>
-    <cite>— Professeur de Harvard, <em>New York Times</em>, mai 2007</cite>
+    <cite>Professeur de Harvard, <em>New York Times</em>, mai 2007</cite>
   </div>
 
-  <h2>Le MIT — Institution victime ou complice involontaire ?</h2>
+  <h2>Le MIT : Institution victime ou complice involontaire ?</h2>
 
-  <p>La question que tout le monde a éludée dans l'affaire Jones, c'est celle-ci : comment le MIT — l'une des universités les plus prestigieuses et les plus rigoureuses du monde, une institution qui vérifie l'origine des publications scientifiques à la virgule près — a-t-il pu employer une personne à son poste le plus sensible en matière d'admissions pendant 28 ans, sans jamais vérifier ses propres diplômes ?</p>
+  <p>La question que tout le monde a éludée dans l'affaire Jones, c'est celle-ci : comment le MIT, l'une des universités les plus prestigieuses et les plus rigoureuses du monde, une institution qui vérifie l'origine des publications scientifiques à la virgule près, a-t-il pu employer une personne à son poste le plus sensible en matière d'admissions pendant 28 ans, sans jamais vérifier ses propres diplômes ?</p>
 
   <p>La réponse est simple, et elle vaut pour toutes les organisations : <strong>la vérification des diplômes n'était pas une procédure systématique lors de son recrutement en 1979.</strong> Et une fois qu'un employé est là, qui vérifie rétrospectivement ? Le dossier est classé. La confiance s'est installée. La promotion suivante efface encore davantage le doute initial.</p>
 
@@ -276,11 +276,11 @@ description: "Elle était la grande prêtresse de l'admission au MIT, adulée, c
     </div>
     <div class="story-timeline-item">
       <span class="tl-date">1997</span>
-      <p>Nommée doyenne des admissions du MIT — le poste le plus influent du bureau des admissions.</p>
+      <p>Nommée doyenne des admissions du MIT, le poste le plus influent du bureau des admissions.</p>
     </div>
     <div class="story-timeline-item">
       <span class="tl-date">2006</span>
-      <p>Publication de <em>"Less Stress, More Success"</em> — un livre sur l'authenticité dans les dossiers d'admission.</p>
+      <p>Publication de <em>"Less Stress, More Success"</em>, un livre sur l'authenticité dans les dossiers d'admission.</p>
     </div>
     <div class="story-timeline-item">
       <span class="tl-date">Début 2007</span>
@@ -292,18 +292,18 @@ description: "Elle était la grande prêtresse de l'admission au MIT, adulée, c
     </div>
   </div>
 
-  <h2>Ce qui a changé — et ce qui n'a pas changé</h2>
+  <h2>Ce qui a changé : et ce qui n'a pas changé</h2>
 
   <p>Après l'affaire Jones, le MIT a revu ses procédures de vérification pour les nouvelles recrues. D'autres grandes universités américaines ont fait de même. Plusieurs études ont alors révélé des chiffres alarmants sur la fréquence des faux diplômes dans les dossiers professionnels : entre 15 et 30 % des cadres américains mentionnent des diplômes inexacts ou non obtenus sur leurs CV.</p>
 
   <p>Mais la leçon de fond reste entière : la fraude n'est pas d'abord un problème de personnes malintentionnées. C'est un problème de <strong>systèmes qui rendent la fraude facile et la vérification rare.</strong></p>
 
-  <p>Marilee Jones n'était pas un génie du mal. C'était quelqu'un qui avait menti une fois, vu que ça fonctionnait, et continué — pendant 28 ans, parce que personne n'avait jamais eu l'idée de vérifier.</p>
+  <p>Marilee Jones n'était pas un génie du mal. C'était quelqu'un qui avait menti une fois, vu que ça fonctionnait, et continué, pendant 28 ans, parce que personne n'avait jamais eu l'idée de vérifier.</p>
 
   <div class="story-lesson">
     <div class="story-lesson-inner">
       <h3>La leçon pour les recruteurs</h3>
-      <p>L'affaire Jones est l'illustration parfaite de ce que les spécialistes appellent le "biais de confirmation professionnelle" : une fois qu'un candidat est recruté et qu'il performe, on ne remet jamais en question les bases de son dossier. Le mensonge initial est doublement protégé — d'abord par l'absence de vérification à l'embauche, ensuite par le confort du statu quo.</p>
+      <p>L'affaire Jones est l'illustration parfaite de ce que les spécialistes appellent le "biais de confirmation professionnelle" : une fois qu'un candidat est recruté et qu'il performe, on ne remet jamais en question les bases de son dossier. Le mensonge initial est doublement protégé, d'abord par l'absence de vérification à l'embauche, ensuite par le confort du statu quo.</p>
       <p>La solution est aussi simple que la fraude elle-même : <strong>vérifier systématiquement les diplômes avant tout recrutement, quel que soit le niveau de poste</strong>. Un appel à l'établissement, une vérification sur une base officielle. Quelques minutes qui auraient épargné au MIT une décennie de gêne institutionnelle.</p>
       <p>En France, diplome.gouv.fr permet de vérifier la quasi-totalité des diplômes nationaux gratuitement. Pour les grandes écoles et les diplômes étrangers, une vérification directe reste indispensable.</p>
     </div>

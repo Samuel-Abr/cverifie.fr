@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: "Jean-Claude Romand : 18 ans de mensonge, 5 meurtres — l'imposteur le plus glaçant de l'histoire"
+title: "Jean-Claude Romand : 18 ans de mensonge, 5 meurtres, l'imposteur le plus glaçant de l'histoire"
 description: "Pendant 18 ans, Jean-Claude Romand a prétendu être médecin et chercheur à l'OMS. Quand la vérité allait éclater, il a tué sa famille entière. L'histoire vraie qui hante encore la France."
 ---
 <style>
@@ -14,19 +14,19 @@ description: "Pendant 18 ans, Jean-Claude Romand a prétendu être médecin et c
 .story-hero::before {
   content:'';
   position:absolute;inset:0;
-  background:radial-gradient(ellipse at 60% 0%, rgba(180,30,30,0.18) 0%, transparent 60%),
+  background:radial-gradient(ellipse at 60% 0%, rgba(45,106,79,0.18) 0%, transparent 60%),
              radial-gradient(ellipse at 10% 80%, rgba(45,106,79,0.12) 0%, transparent 50%);
 }
 .story-hero-inner { max-width:800px; margin:0 auto; position:relative; z-index:1; }
 .story-badge {
   display:inline-flex; align-items:center; gap:8px;
-  background:rgba(180,30,30,0.2); border:1px solid rgba(180,30,30,0.4);
-  color:#E88; padding:5px 14px; border-radius:100px;
+  background:rgba(45,106,79,0.18); border:1px solid rgba(82,183,136,0.4);
+  color:#52B788; padding:5px 14px; border-radius:100px;
   font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
   margin-bottom:1.5rem;
 }
 .story-badge::before {
-  content:''; width:6px; height:6px; border-radius:50%; background:#E55;
+  content:''; width:6px; height:6px; border-radius:50%; background:#52B788;
 }
 .story-hero h1 {
   font-family:'Playfair Display',serif;
@@ -35,7 +35,7 @@ description: "Pendant 18 ans, Jean-Claude Romand a prétendu être médecin et c
   letter-spacing:-0.02em; margin-bottom:1.25rem;
   font-weight:700;
 }
-.story-hero h1 em { color:#E88; font-style:italic; }
+.story-hero h1 em { color:#52B788; font-style:italic; }
 .story-hero-lead {
   font-size:1.1rem; color:rgba(255,255,255,0.65);
   line-height:1.75; max-width:660px; margin-bottom:2rem;
@@ -60,7 +60,7 @@ description: "Pendant 18 ans, Jean-Claude Romand a prétendu être médecin et c
   letter-spacing:-0.02em;
   margin:3rem 0 1.25rem;
   padding-bottom:.75rem;
-  border-bottom:2px solid #F5E0E0;
+  border-bottom:2px solid var(--green-pale);
 }
 .story-body h3 {
   font-size:1.1rem; font-weight:700; color:var(--ink);
@@ -74,14 +74,14 @@ description: "Pendant 18 ans, Jean-Claude Romand a prétendu être médecin et c
 
 .story-pullquote {
   margin:2.5rem 0;
-  border-left:4px solid #C0392B;
+  border-left:4px solid var(--green);
   padding:1.25rem 1.75rem;
-  background:#FFF5F5;
+  background:var(--green-ultra, #F0F7F4);
   border-radius:0 10px 10px 0;
 }
 .story-pullquote p {
   font-family:'Playfair Display',serif;
-  font-size:1.2rem; color:#8B1A1A;
+  font-size:1.2rem; color:var(--ink);
   line-height:1.65; margin:0;
   font-style:italic;
 }
@@ -114,11 +114,11 @@ description: "Pendant 18 ans, Jean-Claude Romand a prétendu être médecin et c
 .story-timeline-item::before {
   content:''; position:absolute; left:-1.75rem; top:4px;
   width:10px; height:10px; border-radius:50%;
-  background:#C0392B; border:2px solid white;
-  box-shadow:0 0 0 2px #C0392B;
+  background:var(--green); border:2px solid white;
+  box-shadow:0 0 0 2px var(--green);
 }
 .story-timeline-item .tl-date {
-  font-size:.8rem; font-weight:700; color:#C0392B;
+  font-size:.8rem; font-weight:700; color:var(--green);
   letter-spacing:.05em; text-transform:uppercase;
   margin-bottom:.25rem; display:block;
 }
@@ -214,60 +214,60 @@ description: "Pendant 18 ans, Jean-Claude Romand a prétendu être médecin et c
 <!-- ARTICLE BODY -->
 <article class="story-body">
 
-  <p>Il y a des histoires qu'on lit et qu'on ne peut plus oublier. L'affaire Jean-Claude Romand est de celles-là — non pas parce qu'elle est spectaculaire, mais parce qu'elle est profondément humaine dans toute la complexité de ce terme. C'est l'histoire d'un mensonge ordinaire qui a duré dix-huit ans, et d'un homme ordinaire qui a préféré tuer sa famille plutôt que d'avouer qu'il n'avait jamais été ce qu'il prétendait être.</p>
+  <p>Il y a des histoires qu'on lit et qu'on ne peut plus oublier. L'affaire Jean-Claude Romand est de celles-là, non pas parce qu'elle est spectaculaire, mais parce qu'elle est profondément humaine dans toute la complexité de ce terme. C'est l'histoire d'un mensonge ordinaire qui a duré dix-huit ans, et d'un homme ordinaire qui a préféré tuer sa famille plutôt que d'avouer qu'il n'avait jamais été ce qu'il prétendait être.</p>
 
-  <h2>Acte I — Le mensonge inaugural, 1975</h2>
+  <h2>Acte I : Le mensonge inaugural, 1975</h2>
 
   <p>Tout commence à la faculté de médecine de Lyon, à l'automne 1975. Jean-Claude Romand, 18 ans, fils d'un garde forestier des Alpes, s'inscrit en première année de médecine. Il est sérieux, discret, un peu effacé. C'est là qu'il rencontre Florentine Crolet, dite Florence, dont il tombe amoureux.</p>
 
-  <p>En juin 1976, il rate son examen de passage en deuxième année. C'est un échec banal — les deux tiers de ses camarades subissent le même sort. La différence, c'est ce qu'il décide ce soir-là : il ne dit rien à personne. Ni à Florence, ni à ses parents. Il continue de se lever le matin, de prendre sa voiture, de partir "à la fac". Sauf qu'il ne va nulle part. Il passe ses journées dans sa voiture, dans des cafés, dans des forêts. Il rentre le soir à la même heure.</p>
+  <p>En juin 1976, il rate son examen de passage en deuxième année. C'est un échec banal, les deux tiers de ses camarades subissent le même sort. La différence, c'est ce qu'il décide ce soir-là : il ne dit rien à personne. Ni à Florence, ni à ses parents. Il continue de se lever le matin, de prendre sa voiture, de partir "à la fac". Sauf qu'il ne va nulle part. Il passe ses journées dans sa voiture, dans des cafés, dans des forêts. Il rentre le soir à la même heure.</p>
 
-  <p>Un an plus tard, il "passe" en troisième année. Puis il "obtient" sa maîtrise. Puis son doctorat. Puis son poste de chercheur à Genève — à l'Organisation Mondiale de la Santé.</p>
+  <p>Un an plus tard, il "passe" en troisième année. Puis il "obtient" sa maîtrise. Puis son doctorat. Puis son poste de chercheur à Genève, à l'Organisation Mondiale de la Santé.</p>
 
   <div class="story-pullquote">
     <p>« Il passait ses journées dans sa voiture garée sur des aires d'autoroute, dans des forêts, sur des parkings de supermarchés. Parfois il regardait la frontière suisse sans la franchir. »</p>
-    <cite>— Emmanuel Carrère, <em>L'Adversaire</em> (2000)</cite>
+    <cite>Emmanuel Carrère, <em>L'Adversaire</em> (2000)</cite>
   </div>
 
   <p>Pendant dix-huit ans, Jean-Claude Romand, qui n'a jamais travaillé un seul jour de sa vie, se lève chaque matin, embrasse sa femme Florence, dit au revoir à ses deux enfants Caroline et Antoine, monte dans sa voiture... et disparaît dans le vide.</p>
 
-  <h2>Acte II — Construire une vie entière sur du vent</h2>
+  <h2>Acte II : Construire une vie entière sur du vent</h2>
 
-  <p>Pour entretenir l'illusion, Romand est devenu un artiste. Il parle de ses "recherches" avec suffisamment de vague pour sembler crédible. Il voyage en Suisse une ou deux fois par an — pas pour travailler à l'OMS, mais pour y rôder, photographier les couloirs, mémoriser les noms des vrais chercheurs afin de pouvoir en parler.</p>
+  <p>Pour entretenir l'illusion, Romand est devenu un artiste. Il parle de ses "recherches" avec suffisamment de vague pour sembler crédible. Il voyage en Suisse une ou deux fois par an, pas pour travailler à l'OMS, mais pour y rôder, photographier les couloirs, mémoriser les noms des vrais chercheurs afin de pouvoir en parler.</p>
 
   <p>Il a un bureau imaginaire au Département de médecine interne. Un salaire imaginaire de 24 000 francs par mois. Des collègues imaginaires dont il cite les prénoms au dîner. Des conférences imaginaires à Washington, à Tokyo, à Vienne.</p>
 
   <div class="story-keybox">
     <h4>L'architecture du mensonge</h4>
     <ul>
-      <li><strong>Diplômes :</strong> Tous faux. Doctorat de médecine, habilitation à diriger des recherches — aucun n'existait.</li>
+      <li><strong>Diplômes :</strong> Tous faux. Doctorat de médecine, habilitation à diriger des recherches, aucun n'existait.</li>
       <li><strong>Emploi :</strong> Il ne mit jamais les pieds dans les bureaux de l'OMS en tant que salarié.</li>
-      <li><strong>Revenus :</strong> "Gérait" l'argent de ses parents et de ses beaux-parents pour "l'investir" via des réseaux suisses — en réalité, il le dépensait ou le perdait dans des placements douteux.</li>
+      <li><strong>Revenus :</strong> "Gérait" l'argent de ses parents et de ses beaux-parents pour "l'investir" via des réseaux suisses, en réalité, il le dépensait ou le perdait dans des placements douteux.</li>
       <li><strong>Réseau social :</strong> Tous ses amis, ses collègues, ses voisins le croyaient sincèrement médecin à l'OMS. Personne n'avait vérifié. Personne.</li>
     </ul>
   </div>
 
-  <p>Ce qui est peut-être le plus vertigineux dans cette histoire, c'est la logistique du mensonge. Romand devait mémoriser des dizaines de détails, maintenir une cohérence sur dix-huit ans, adapter son récit aux questions sans jamais se contredire. C'est une performance intellectuelle hallucinante — mise au service d'un vide absolu.</p>
+  <p>Ce qui est peut-être le plus vertigineux dans cette histoire, c'est la logistique du mensonge. Romand devait mémoriser des dizaines de détails, maintenir une cohérence sur dix-huit ans, adapter son récit aux questions sans jamais se contredire. C'est une performance intellectuelle hallucinante, mise au service d'un vide absolu.</p>
 
-  <h2>Acte III — L'argent, le poison lent</h2>
+  <h2>Acte III : L'argent, le poison lent</h2>
 
-  <p>À partir du début des années 1980, Romand commence à court-circuiter ses mensonges par un nouveau problème : il lui faut de l'argent. Son "salaire" de l'OMS n'existe pas, mais les factures, elles, arrivent. La maison à Prévessin-Moëns, les vacances, les vêtements des enfants — tout cela coûte.</p>
+  <p>À partir du début des années 1980, Romand commence à court-circuiter ses mensonges par un nouveau problème : il lui faut de l'argent. Son "salaire" de l'OMS n'existe pas, mais les factures, elles, arrivent. La maison à Prévessin-Moëns, les vacances, les vêtements des enfants, tout cela coûte.</p>
 
   <p>Sa solution est diabolique dans sa simplicité : il propose à ses proches de faire fructifier leur épargne via ses "contacts" en Suisse. Ses parents, ses beaux-parents, son ami d'enfance Luc Ladmiral : ils lui confient des dizaines de milliers de francs. Florence elle-même lui remet les économies familiales.</p>
 
   <p>L'argent disparaît. Certaines sommes partent dans des investissements que Romand finit par perdre. D'autres alimentent simplement son quotidien. Au fil des années, la dette invisible s'accumule : l'équivalent d'environ 900 000 euros au total seront dérobés à ses proches.</p>
 
-  <p>Fin 1992, un médecin ami de la famille commence à poser des questions trop précises sur ses "recherches". Florence a demandé à consulter un médecin à Genève, "un collègue" de son mari — et la réponse qui lui revient est ambiguë. Le château de cartes commence à trembler.</p>
+  <p>Fin 1992, un médecin ami de la famille commence à poser des questions trop précises sur ses "recherches". Florence a demandé à consulter un médecin à Genève, "un collègue" de son mari, et la réponse qui lui revient est ambiguë. Le château de cartes commence à trembler.</p>
 
-  <h2>Acte IV — Les 9 et 11 janvier 1993</h2>
+  <h2>Acte IV : Les 9 et 11 janvier 1993</h2>
 
-  <p>Jean-Claude Romand comprend que tout va s'effondrer. Pas dans quelques semaines — dans quelques jours.</p>
+  <p>Jean-Claude Romand comprend que tout va s'effondrer. Pas dans quelques semaines, dans quelques jours.</p>
 
   <p>Dans la nuit du 8 au 9 janvier 1993, après une dispute avec Florence à propos d'une somme d'argent, il la tue dans leur chambre à coups de rouleau à pâtisserie.</p>
 
   <p>Le lendemain matin, il attend que ses enfants descendent. Caroline, 7 ans, et Antoine, 5 ans. Il les tue l'un après l'autre.</p>
 
-  <p>Le 11 janvier, il rend visite à ses parents dans le village des Rousses, dans le Jura. Il leur tire dessus. Puis à sa maîtresse parisienne, Corinne Chambonnet, à Paris — elle survit miraculeusement.</p>
+  <p>Le 11 janvier, il rend visite à ses parents dans le village des Rousses, dans le Jura. Il leur tire dessus. Puis à sa maîtresse parisienne, Corinne Chambonnet, à Paris, elle survit miraculeusement.</p>
 
   <p>Il revient ensuite dans la maison de Prévessin-Moëns, avale des barbituriques, et met le feu à la maison. Il survivra. Ses victimes, non.</p>
 
@@ -282,7 +282,7 @@ description: "Pendant 18 ans, Jean-Claude Romand a prétendu être médecin et c
     </div>
     <div class="story-timeline-item">
       <span class="tl-date">11 janvier 1993</span>
-      <p>Meurtre de ses deux parents. Tentative de meurtre sur Corinne Chambonnet (Paris). Tentative de suicide par incendie — il survit.</p>
+      <p>Meurtre de ses deux parents. Tentative de meurtre sur Corinne Chambonnet (Paris). Tentative de suicide par incendie, il survit.</p>
     </div>
     <div class="story-timeline-item">
       <span class="tl-date">Juillet 1996</span>
@@ -294,34 +294,34 @@ description: "Pendant 18 ans, Jean-Claude Romand a prétendu être médecin et c
     </div>
   </div>
 
-  <h2>Acte V — L'imposteur et ses miroirs</h2>
+  <h2>Acte V : L'imposteur et ses miroirs</h2>
 
-  <p>Comment un homme peut-il mentir pendant dix-huit ans à sa femme, ses enfants, ses amis, ses parents — sans jamais être démasqué ?</p>
+  <p>Comment un homme peut-il mentir pendant dix-huit ans à sa femme, ses enfants, ses amis, ses parents, sans jamais être démasqué ?</p>
 
   <p>La réponse est aussi inconfortable qu'évidente : <strong>personne n'a jamais vérifié.</strong></p>
 
-  <p>Pas Florence, pourtant médecin elle-même, qui partageait sa vie depuis 1980. Pas ses beaux-parents, qui lui confièrent leurs économies. Pas ses amis de longue date, qui ne pensaient jamais à demander une simple preuve. La confiance interpersonnelle — cette confiance aveugle que nous accordons à ceux que nous pensons connaître — était suffisante pour entretenir le mensonge.</p>
+  <p>Pas Florence, pourtant médecin elle-même, qui partageait sa vie depuis 1980. Pas ses beaux-parents, qui lui confièrent leurs économies. Pas ses amis de longue date, qui ne pensaient jamais à demander une simple preuve. La confiance interpersonnelle, cette confiance aveugle que nous accordons à ceux que nous pensons connaître, était suffisante pour entretenir le mensonge.</p>
 
   <p>Dans son livre "L'Adversaire" (2000), Emmanuel Carrère tente de comprendre Romand de l'intérieur. Il conclut que Romand n'est pas un pervers calculateur, mais quelque chose de plus étrange : un homme incapable d'exister autrement que dans les yeux des autres, prisonnier d'une image qu'il avait lui-même construite et dont il ne pouvait plus sortir.</p>
 
   <div class="story-pullquote">
     <p>« Pendant dix-huit ans, il a vécu dans le mensonge total, et la question qui se pose n'est pas : comment a-t-il pu faire ça ? C'est : comment avons-nous pu ne pas le voir ? »</p>
-    <cite>— Compte-rendu du procès, <em>Le Monde</em>, juillet 1996</cite>
+    <cite>Compte-rendu du procès, <em>Le Monde</em>, juillet 1996</cite>
   </div>
 
   <h2>Ce que cette histoire dit du recrutement</h2>
 
-  <p>L'affaire Romand est un cas extrême — le plus extrême imaginable. Mais elle illustre un mécanisme universel : <strong>nous ne vérifions pas ce que les gens disent de ce qu'ils sont, parce que nous leur faisons confiance.</strong></p>
+  <p>L'affaire Romand est un cas extrême, le plus extrême imaginable. Mais elle illustre un mécanisme universel : <strong>nous ne vérifions pas ce que les gens disent de ce qu'ils sont, parce que nous leur faisons confiance.</strong></p>
 
-  <p>Dans un contexte professionnel, cette confiance a un prix. Pas aussi dramatique, évidemment — mais réel. Combien de directeurs financiers, de chirurgiens, d'ingénieurs exercent-ils aujourd'hui avec des diplômes falsifiés ? Combien de postes à responsabilité sont occupés par des gens dont personne n'a jamais vérifié les déclarations ?</p>
+  <p>Dans un contexte professionnel, cette confiance a un prix. Pas aussi dramatique, évidemment, mais réel. Combien de directeurs financiers, de chirurgiens, d'ingénieurs exercent-ils aujourd'hui avec des diplômes falsifiés ? Combien de postes à responsabilité sont occupés par des gens dont personne n'a jamais vérifié les déclarations ?</p>
 
-  <p>Les études françaises estiment que <strong>12 % des CV contiennent un mensonge significatif</strong> sur les diplômes ou les expériences. Pas des assassins. Pas des Romand. Mais des gens qui ont pris le risque de mentir parce qu'ils savaient — consciemment ou non — que personne ne vérifierait.</p>
+  <p>Les études françaises estiment que <strong>12 % des CV contiennent un mensonge significatif</strong> sur les diplômes ou les expériences. Pas des assassins. Pas des Romand. Mais des gens qui ont pris le risque de mentir parce qu'ils savaient, consciemment ou non, que personne ne vérifierait.</p>
 
   <div class="story-lesson">
     <div class="story-lesson-inner">
       <h3>La leçon pour les recruteurs</h3>
-      <p>L'affaire Romand n'est pas une curiosité historique. C'est un rappel brutal que la confiance, sans vérification, n'est pas une stratégie — c'est un pari.</p>
-      <p>Vérifier les diplômes et les expériences d'un candidat n'est pas un acte de méfiance. C'est simplement de la diligence raisonnable — celle que tout acte professionnel sérieux exige. Un recruteur qui ne vérifie pas ne fait pas confiance à son candidat : il lui fait simplement cadeau d'une occasion de mentir sans risque.</p>
+      <p>L'affaire Romand n'est pas une curiosité historique. C'est un rappel brutal que la confiance, sans vérification, n'est pas une stratégie, c'est un pari.</p>
+      <p>Vérifier les diplômes et les expériences d'un candidat n'est pas un acte de méfiance. C'est simplement de la diligence raisonnable, celle que tout acte professionnel sérieux exige. Un recruteur qui ne vérifie pas ne fait pas confiance à son candidat : il lui fait simplement cadeau d'une occasion de mentir sans risque.</p>
       <p>La question n'est pas : "Ai-je des raisons de douter ?" La question est : "Ai-je des raisons de ne pas vérifier ?"</p>
     </div>
   </div>
@@ -329,7 +329,7 @@ description: "Pendant 18 ans, Jean-Claude Romand a prétendu être médecin et c
   <h3>Pour aller plus loin</h3>
   <p>L'affaire Romand a inspiré plusieurs œuvres majeures :</p>
   <ul style="padding-left:1.5rem;margin-bottom:1rem;">
-    <li style="font-size:.9375rem;color:var(--ink-light);line-height:1.7;margin-bottom:.4rem;"><strong>L'Adversaire</strong> d'Emmanuel Carrère (Gallimard, 2000) — sans doute le livre le plus troublant jamais écrit sur le mensonge identitaire.</li>
+    <li style="font-size:.9375rem;color:var(--ink-light);line-height:1.7;margin-bottom:.4rem;"><strong>L'Adversaire</strong> d'Emmanuel Carrère (Gallimard, 2000), sans doute le livre le plus troublant jamais écrit sur le mensonge identitaire.</li>
     <li style="font-size:.9375rem;color:var(--ink-light);line-height:1.7;margin-bottom:.4rem;"><strong>L'Adversaire</strong>, film de Nicole Garcia (2002), avec Daniel Auteuil dans le rôle de Romand.</li>
     <li style="font-size:.9375rem;color:var(--ink-light);line-height:1.7;margin-bottom:.4rem;"><strong>L'Emploi du temps</strong>, film de Laurent Cantet (2001), librement inspiré de l'affaire.</li>
   </ul>

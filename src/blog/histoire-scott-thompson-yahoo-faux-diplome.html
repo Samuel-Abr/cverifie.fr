@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: "Scott Thompson : le PDG de Yahoo viré après 4 mois pour un diplôme inventé"
-description: "En 2012, Scott Thompson est nommé PDG de Yahoo avec grande fanfare. Quatre mois plus tard, il doit partir — à cause d'un diplôme en informatique qu'il n'a jamais obtenu. La chute la plus rapide de la Silicon Valley."
+description: "En 2012, Scott Thompson est nommé PDG de Yahoo avec grande fanfare. Quatre mois plus tard, il doit partir, à cause d'un diplôme en informatique qu'il n'a jamais obtenu. La chute la plus rapide de la Silicon Valley."
 ---
 <style>
 .story-hero {
@@ -14,19 +14,19 @@ description: "En 2012, Scott Thompson est nommé PDG de Yahoo avec grande fanfar
 .story-hero::before {
   content:'';
   position:absolute;inset:0;
-  background:radial-gradient(ellipse at 80% 0%, rgba(140,80,180,0.2) 0%, transparent 60%),
+  background:radial-gradient(ellipse at 80% 0%, rgba(45,106,79,0.18) 0%, transparent 60%),
              radial-gradient(ellipse at 5% 70%, rgba(45,106,79,0.1) 0%, transparent 50%);
 }
 .story-hero-inner { max-width:800px; margin:0 auto; position:relative; z-index:1; }
 .story-badge {
   display:inline-flex; align-items:center; gap:8px;
-  background:rgba(140,80,180,0.2); border:1px solid rgba(180,120,220,0.4);
-  color:#C9A; padding:5px 14px; border-radius:100px;
+  background:rgba(45,106,79,0.18); border:1px solid rgba(82,183,136,0.4);
+  color:#52B788; padding:5px 14px; border-radius:100px;
   font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
   margin-bottom:1.5rem;
 }
 .story-badge::before {
-  content:''; width:6px; height:6px; border-radius:50%; background:#B8A;
+  content:''; width:6px; height:6px; border-radius:50%; background:#52B788;
 }
 .story-hero h1 {
   font-family:'Playfair Display',serif;
@@ -35,7 +35,7 @@ description: "En 2012, Scott Thompson est nommé PDG de Yahoo avec grande fanfar
   letter-spacing:-0.02em; margin-bottom:1.25rem;
   font-weight:700;
 }
-.story-hero h1 em { color:#C9A; font-style:italic; }
+.story-hero h1 em { color:#52B788; font-style:italic; }
 .story-hero-lead {
   font-size:1.1rem; color:rgba(255,255,255,0.65);
   line-height:1.75; max-width:660px; margin-bottom:2rem;
@@ -60,7 +60,7 @@ description: "En 2012, Scott Thompson est nommé PDG de Yahoo avec grande fanfar
   letter-spacing:-0.02em;
   margin:3rem 0 1.25rem;
   padding-bottom:.75rem;
-  border-bottom:2px solid #F0EAF8;
+  border-bottom:2px solid var(--green-pale);
 }
 .story-body h3 {
   font-size:1.1rem; font-weight:700; color:var(--ink);
@@ -76,14 +76,14 @@ description: "En 2012, Scott Thompson est nommé PDG de Yahoo avec grande fanfar
 
 .story-pullquote {
   margin:2.5rem 0;
-  border-left:4px solid #7B3FAF;
+  border-left:4px solid var(--green);
   padding:1.25rem 1.75rem;
-  background:#F8F0FF;
+  background:var(--green-ultra, #F0F7F4);
   border-radius:0 10px 10px 0;
 }
 .story-pullquote p {
   font-family:'Playfair Display',serif;
-  font-size:1.2rem; color:#3D1070;
+  font-size:1.2rem; color:var(--ink);
   line-height:1.65; margin:0;
   font-style:italic;
 }
@@ -112,11 +112,11 @@ description: "En 2012, Scott Thompson est nommé PDG de Yahoo avec grande fanfar
 .story-timeline-item::before {
   content:''; position:absolute; left:-1.75rem; top:4px;
   width:10px; height:10px; border-radius:50%;
-  background:#7B3FAF; border:2px solid white;
-  box-shadow:0 0 0 2px #7B3FAF;
+  background:var(--green); border:2px solid white;
+  box-shadow:0 0 0 2px var(--green);
 }
 .story-timeline-item .tl-date {
-  font-size:.8rem; font-weight:700; color:#7B3FAF;
+  font-size:.8rem; font-weight:700; color:var(--green);
   letter-spacing:.05em; text-transform:uppercase;
   margin-bottom:.25rem; display:block;
 }
@@ -231,15 +231,15 @@ description: "En 2012, Scott Thompson est nommé PDG de Yahoo avec grande fanfar
 <!-- ARTICLE BODY -->
 <article class="story-body">
 
-  <p>Janvier 2012. Yahoo est en crise. L'entreprise qui a longtemps régné sur internet est en train de se noyer — bousculée par Google, rattrapée par Facebook, incapable de trouver une direction. Son conseil d'administration cherche un sauveur. Il croit l'avoir trouvé en la personne de Scott Thompson, l'ancien président de PayPal. Le jour de son annonce, les marchés applaudissent. L'histoire aurait pu s'arrêter là.</p>
+  <p>Janvier 2012. Yahoo est en crise. L'entreprise qui a longtemps régné sur internet est en train de se noyer, bousculée par Google, rattrapée par Facebook, incapable de trouver une direction. Son conseil d'administration cherche un sauveur. Il croit l'avoir trouvé en la personne de Scott Thompson, l'ancien président de PayPal. Le jour de son annonce, les marchés applaudissent. L'histoire aurait pu s'arrêter là.</p>
 
   <p>Elle s'arrête quatre mois plus tard, à cause d'une ligne sur un CV.</p>
 
-  <h2>L'ascension — Un CV au millimètre</h2>
+  <h2>L'ascension : Un CV au millimètre</h2>
 
-  <p>Scott Thompson, 54 ans en 2012, a une carrière solide. Il a grandi dans l'industrie des paiements électroniques, contribué à la montée en puissance de Visa, puis dirigé PayPal — qu'il a transformé en machine à cash sous l'égide d'eBay. Son bilan opérationnel est réel, ses résultats mesurables.</p>
+  <p>Scott Thompson, 54 ans en 2012, a une carrière solide. Il a grandi dans l'industrie des paiements électroniques, contribué à la montée en puissance de Visa, puis dirigé PayPal, qu'il a transformé en machine à cash sous l'égide d'eBay. Son bilan opérationnel est réel, ses résultats mesurables.</p>
 
-  <p>Sur son CV et dans les documents officiels de Yahoo, il est indiqué qu'il détient un diplôme en comptabilité <em>et</em> en informatique du Stonehill College, une petite université catholique du Massachusetts. C'est ce double diplôme qui lui donne une crédibilité particulière dans la Silicon Valley — être un financier <em>et</em> comprendre la tech, c'est précisément ce que Yahoo cherche.</p>
+  <p>Sur son CV et dans les documents officiels de Yahoo, il est indiqué qu'il détient un diplôme en comptabilité <em>et</em> en informatique du Stonehill College, une petite université catholique du Massachusetts. C'est ce double diplôme qui lui donne une crédibilité particulière dans la Silicon Valley, être un financier <em>et</em> comprendre la tech, c'est précisément ce que Yahoo cherche.</p>
 
   <div class="story-numbers">
     <div class="story-number-item">
@@ -252,21 +252,21 @@ description: "En 2012, Scott Thompson est nommé PDG de Yahoo avec grande fanfar
     </div>
     <div class="story-number-item">
       <span class="num">1</span>
-      <span class="label">diplôme inventé — en informatique, jamais obtenu à Stonehill</span>
+      <span class="label">diplôme inventé, en informatique, jamais obtenu à Stonehill</span>
     </div>
   </div>
 
-  <h2>Dan Loeb — Le détective improbable</h2>
+  <h2>Dan Loeb : Le détective improbable</h2>
 
   <p>L'ennemi de Thompson ne s'appelle pas un journaliste d'investigation ni un agent du FBI. Il s'appelle Dan Loeb, et c'est un hedge fund manager agressif, fondateur de Third Point LLC, qui détient une participation significative dans Yahoo et veut imposer ses propres candidats au conseil d'administration.</p>
 
-  <p>Dans ce contexte de bras de fer entre l'actionnaire activiste et le conseil d'administration, Loeb et ses équipes passent au crible tout ce qui peut nuire à la crédibilité de Thompson — y compris, méthodiquement, son CV.</p>
+  <p>Dans ce contexte de bras de fer entre l'actionnaire activiste et le conseil d'administration, Loeb et ses équipes passent au crible tout ce qui peut nuire à la crédibilité de Thompson, y compris, méthodiquement, son CV.</p>
 
   <p>Le 26 avril 2012, Third Point envoie une lettre de 8 pages au conseil d'administration de Yahoo. La lettre est chirurgicale. Elle pointe en particulier un élément : <strong>Stonehill College ne proposait pas de diplôme en informatique en 1979, l'année où Thompson est supposé avoir obtenu le sien.</strong> Le département d'informatique a été créé bien après.</p>
 
   <div class="story-pullquote">
     <p>« Ce n'était pas une erreur de bonne foi. Ce diplôme qui n'existe pas apparaît dans des dizaines de documents officiels déposés auprès de la SEC. Cela soulève des questions fondamentales sur l'intégrité du management. »</p>
-    <cite>— Dan Loeb, lettre à Yahoo Board of Directors, 26 avril 2012</cite>
+    <cite>Dan Loeb, lettre à Yahoo Board of Directors, 26 avril 2012</cite>
   </div>
 
   <h2>La séquence de la chute</h2>
@@ -275,7 +275,7 @@ description: "En 2012, Scott Thompson est nommé PDG de Yahoo avec grande fanfar
 
   <p>Dans un premier temps, Yahoo tente de minimiser. Un porte-parole parle d'"inadvertance". Le conseil affirme que Thompson n'est "pas personnellement responsable" de l'inexactitude. On laisse entendre que c'est peut-être la faute du cabinet de chasseurs de têtes, Heidrick & Struggles, qui aurait mal compilé le dossier.</p>
 
-  <p>La presse ne lâche pas. The New York Times, le Wall Street Journal, TechCrunch, tous passent au crible les autres documents officiels de Yahoo : le faux diplôme apparaît dans des <em>proxy statements</em> déposés auprès de la Securities and Exchange Commission — des documents légaux, sous serment.</p>
+  <p>La presse ne lâche pas. The New York Times, le Wall Street Journal, TechCrunch, tous passent au crible les autres documents officiels de Yahoo : le faux diplôme apparaît dans des <em>proxy statements</em> déposés auprès de la Securities and Exchange Commission, des documents légaux, sous serment.</p>
 
   <p>En quelques jours, l'affaire dépasse Thompson lui-même : on découvre que Patti Hart, membre du conseil d'administration qui avait validé la nomination de Thompson, avait elle-même des inexactitudes dans son CV officiel sur Yahoo (un diplôme indiqué comme en économie alors qu'il l'était en speech communication). Le conseil est embarrassé à tous les niveaux.</p>
 
@@ -285,7 +285,7 @@ description: "En 2012, Scott Thompson est nommé PDG de Yahoo avec grande fanfar
       <li><strong>Scott Thompson :</strong> Démission forcée le 13 mai 2012. Il invoque officiellement un cancer de la thyroïde récemment diagnostiqué, sans lien avec le scandale selon lui.</li>
       <li><strong>Patti Hart :</strong> Administratrice qui avait soutenu Thompson. Son propre CV est remis en question. Elle quitte le conseil peu après.</li>
       <li><strong>Heidrick & Struggles :</strong> Cabinet de chasseurs de têtes, sous pression pour expliquer comment la vérification des diplômes n'a pas révélé l'inexactitude.</li>
-      <li><strong>Yahoo :</strong> Nommera finalement Marissa Mayer comme PDG — une vraie diplômée en informatique de Stanford, dont les qualifications n'ont fait l'objet d'aucun doute.</li>
+      <li><strong>Yahoo :</strong> Nommera finalement Marissa Mayer comme PDG, une vraie diplômée en informatique de Stanford, dont les qualifications n'ont fait l'objet d'aucun doute.</li>
     </ul>
   </div>
 
@@ -293,9 +293,9 @@ description: "En 2012, Scott Thompson est nommé PDG de Yahoo avec grande fanfar
 
   <p>Scott Thompson avait un vrai diplôme de comptabilité de Stonehill College. Il avait une vraie carrière. Ses résultats chez PayPal étaient réels et documentés. La ligne "informatique" sur son diplôme était, dans le fond, accessoire à sa légitimité réelle.</p>
 
-  <p>Alors pourquoi l'avoir mise ? Vraisemblablement parce que dans la Silicon Valley, "je comprends la tech" c'est bien — mais "j'ai un diplôme en informatique" c'est mieux. Une petite ligne. Une petite amélioration. Un détail.</p>
+  <p>Alors pourquoi l'avoir mise ? Vraisemblablement parce que dans la Silicon Valley, "je comprends la tech" c'est bien, mais "j'ai un diplôme en informatique" c'est mieux. Une petite ligne. Une petite amélioration. Un détail.</p>
 
-  <p>Sauf que ce détail a figé dans des documents légaux officiels, répété sur 10 ans dans des dépôts auprès de la SEC, et personne — pas Yahoo, pas les chasseurs de têtes, pas les administrateurs, pas les actionnaires — n'avait pris la peine de demander une simple copie du diplôme.</p>
+  <p>Sauf que ce détail a figé dans des documents légaux officiels, répété sur 10 ans dans des dépôts auprès de la SEC, et personne, pas Yahoo, pas les chasseurs de têtes, pas les administrateurs, pas les actionnaires, n'avait pris la peine de demander une simple copie du diplôme.</p>
 
   <p><strong>L'information aurait été disponible en 30 minutes.</strong> Un appel au bureau des alumni de Stonehill College aurait suffi.</p>
 
@@ -322,25 +322,25 @@ description: "En 2012, Scott Thompson est nommé PDG de Yahoo avec grande fanfar
     </div>
   </div>
 
-  <h2>L'effet domino — Ce que l'affaire Thompson a changé</h2>
+  <h2>L'effet domino : Ce que l'affaire Thompson a changé</h2>
 
-  <p>Dans les mois qui ont suivi, plusieurs grandes entreprises américaines ont renforcé leurs procédures de vérification pour les nominations au niveau exécutif. Des cabinets de chasseurs de têtes ont explicitement mentionné la vérification des diplômes comme une étape obligatoire de leurs processus — ce qui, étrangement, n'était pas toujours le cas avant 2012.</p>
+  <p>Dans les mois qui ont suivi, plusieurs grandes entreprises américaines ont renforcé leurs procédures de vérification pour les nominations au niveau exécutif. Des cabinets de chasseurs de têtes ont explicitement mentionné la vérification des diplômes comme une étape obligatoire de leurs processus, ce qui, étrangement, n'était pas toujours le cas avant 2012.</p>
 
-  <p>Des études publiées après l'affaire ont révélé que des inexactitudes similaires existaient dans les CV d'un pourcentage non négligeable de dirigeants du Fortune 500 — non pas forcément des faux flagrants, mais des diplômes non obtenus présentés comme tels, des spécialités ajoutées rétrospectivement, des formations partielles transformées en diplômes complets.</p>
+  <p>Des études publiées après l'affaire ont révélé que des inexactitudes similaires existaient dans les CV d'un pourcentage non négligeable de dirigeants du Fortune 500, non pas forcément des faux flagrants, mais des diplômes non obtenus présentés comme tels, des spécialités ajoutées rétrospectivement, des formations partielles transformées en diplômes complets.</p>
 
-  <p>La leçon est inconfortable : <strong>la fraude sur les diplômes n'est pas le fait de candidats sans scrupules aux postes d'entrée.</strong> Elle touche tous les niveaux hiérarchiques, y compris — et peut-être surtout — les postes les plus élevés, où la légitimité symbolique compte le plus et où la vérification rigoureuse est paradoxalement la moins systématique.</p>
+  <p>La leçon est inconfortable : <strong>la fraude sur les diplômes n'est pas le fait de candidats sans scrupules aux postes d'entrée.</strong> Elle touche tous les niveaux hiérarchiques, y compris, et peut-être surtout, les postes les plus élevés, où la légitimité symbolique compte le plus et où la vérification rigoureuse est paradoxalement la moins systématique.</p>
 
   <div class="story-pullquote">
     <p>« Dans les recrutements de dirigeants, on passe des semaines à analyser les résultats financiers, les références stratégiques, les softs skills. Et on oublie souvent de vérifier si le diplôme inscrit sur le CV existe vraiment. »</p>
-    <cite>— Analyste RH, <em>Harvard Business Review</em>, 2013</cite>
+    <cite>Analyste RH, <em>Harvard Business Review</em>, 2013</cite>
   </div>
 
   <div class="story-lesson">
     <div class="story-lesson-inner">
       <h3>La leçon pour les recruteurs</h3>
-      <p>L'affaire Thompson illustre une vérité contre-intuitive : les recrutements les plus risqués en matière de fraude sont souvent ceux des postes les plus élevés. Plus le poste est prestigieux, plus la tentation d'embellir un CV est forte — et plus la vérification semble "inconvenante" ou superflue.</p>
+      <p>L'affaire Thompson illustre une vérité contre-intuitive : les recrutements les plus risqués en matière de fraude sont souvent ceux des postes les plus élevés. Plus le poste est prestigieux, plus la tentation d'embellir un CV est forte, et plus la vérification semble "inconvenante" ou superflue.</p>
       <p>Un actionnaire activiste hostile n'est pas le meilleur outil de vérification des diplômes. <strong>Vérifier les diplômes de tout candidat, quel que soit son niveau, fait partie de la diligence raisonnable standard.</strong> C'est même plus crucial pour les postes de direction, où les conséquences d'une découverte tardive sont amplifiées.</p>
-      <p>En France, la vérification peut se faire directement auprès des établissements ou via un service dédié. Le coût d'une vérification (14,90 € à 79 €) est dérisoire face aux 7 millions de dollars versés à Thompson pendant ses 4 mois — sans compter le coût d'image pour Yahoo.</p>
+      <p>En France, la vérification peut se faire directement auprès des établissements ou via un service dédié. Le coût d'une vérification (14,90 € à 79 €) est dérisoire face aux 7 millions de dollars versés à Thompson pendant ses 4 mois, sans compter le coût d'image pour Yahoo.</p>
     </div>
   </div>
 
