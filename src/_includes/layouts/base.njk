@@ -24,16 +24,32 @@
   "sameAs": []
 }
 </script>
-{% if ogType == 'article' %}
-<!-- JSON-LD: Article -->
+<!-- JSON-LD: WebSite (toutes pages) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "WebSite",
+  "name": "CVérifié",
+  "url": "https://cverifie.fr",
+  "description": "Service français de vérification de CV, diplômes et expériences professionnelles pour recruteurs. 100 % en ligne, sous 48 h, à partir de 14,90 €. Conforme RGPD.",
+  "inLanguage": "fr-FR",
+  "publisher": {
+    "@type": "Organization",
+    "name": "CVérifié",
+    "url": "https://cverifie.fr"
+  }
+}
+</script>
+{% if ogType == 'article' %}
+<!-- JSON-LD: BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
   "headline": {{ title | dump | safe }},
   "description": {{ description | dump | safe }},
   "datePublished": "{{ articleDate }}",
-  "dateModified": "{{ articleDate }}",
+  "dateModified": "{{ articleModified if articleModified else articleDate }}",
   "author": {
     "@type": "Person",
     "name": "{{ articleAuthor if articleAuthor else 'Équipe CVérifié' }}"
@@ -47,8 +63,25 @@
 }
 </script>
 {% endif %}
-{% if hasFaq %}
-<!-- JSON-LD: FAQPage -->
+{% if faqItems %}
+<!-- JSON-LD: FAQPage (questions spécifiques à la page) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in faqItems %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | dump | safe }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} }
+    }{{ "," if not loop.last }}
+    {% endfor %}
+  ]
+}
+</script>
+{% elif hasFaq %}
+<!-- JSON-LD: FAQPage (générique service) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
