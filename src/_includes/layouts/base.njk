@@ -410,6 +410,23 @@ footer{
 @media(max-width:1024px){.footer-top{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.footer-top{grid-template-columns:1fr}}
 
+/* ── DARK STORY MODE (bodyClass: dark-story) ── */
+body.dark-story {
+  background:#050507;
+  color:rgba(255,255,255,0.82);
+}
+body.dark-story nav.main-nav {
+  background:rgba(5,5,7,0.88);
+  border-bottom-color:rgba(255,255,255,0.07);
+}
+body.dark-story .nav-logo-text { color:white; }
+body.dark-story .nav-logo-text .cv { color:var(--green-light); }
+body.dark-story .nav-links a { color:rgba(255,255,255,0.55); }
+body.dark-story .nav-links a:hover { color:var(--green-light); }
+body.dark-story .nav-links a.active { color:var(--green-light); }
+body.dark-story .hamburger span { background:rgba(255,255,255,0.8); }
+body.dark-story .nav-cta { background:var(--green); }
+
 /* ── LIRE AUSSI ── */
 .lire-aussi{padding:3rem 2rem;background:var(--cream-dark);border-top:1px solid var(--border)}
 .lire-aussi-inner{max-width:760px;margin:0 auto}
@@ -429,7 +446,7 @@ footer{
 .lire-aussi-arrow{font-size:.875rem;color:var(--green);margin-top:.25rem}
 </style>
 </head>
-<body>
+<body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
 {% include "nav.njk" %}
 {{ content | safe }}
 {% if ogType == 'article' %}
