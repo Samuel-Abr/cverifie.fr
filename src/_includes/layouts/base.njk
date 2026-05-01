@@ -125,7 +125,7 @@ nav{
 .nav-cta-mobile {
   background: var(--green);
   color: white;
-  padding: 9px 18px;
+  padding: 11px 18px;
   border-radius: 8px;
   border: none;
   font-family: 'Outfit', sans-serif;
@@ -133,6 +133,7 @@ nav{
   font-weight: 600;
   white-space: nowrap;
   cursor: pointer;
+  min-height: 44px;
   transition: background .2s;
   letter-spacing: 0.01em;
 }
@@ -245,32 +246,32 @@ footer{
   font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);
   text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.25rem;
 }
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.65rem}
-.footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.4);transition:color .2s}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.6);transition:color .2s;padding:6px 0;min-height:44px;display:flex;align-items:center;}
 .footer-col ul li a:hover{color:var(--green-light)}
 .footer-bottom{
   padding-top:2rem;
   display:flex;align-items:center;justify-content:space-between;
   flex-wrap:wrap;gap:1rem;font-size:13px;
 }
-.footer-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
-.footer-legal a{color:rgba(255,255,255,0.3);transition:color .2s}
-.footer-legal a:hover{color:rgba(255,255,255,0.65)}
+.footer-legal{display:flex;gap:.5rem;flex-wrap:wrap}
+.footer-legal a{color:rgba(255,255,255,0.55);transition:color .2s;padding:8px 10px;border-radius:6px;min-height:44px;display:flex;align-items:center;}
+.footer-legal a:hover{color:rgba(255,255,255,0.9)}
 .footer-logo-text{
   font-family:'Playfair Display',serif;
   font-size:20px;font-weight:600;color:white;
 }
 .footer-social{display:flex;gap:.75rem;margin-bottom:1.5rem}
 .social-icon{
-  width:34px;height:34px;border-radius:8px;
+  width:48px;height:48px;border-radius:10px;
   background:rgba(255,255,255,0.08);
   border:1px solid rgba(255,255,255,0.1);
   display:flex;align-items:center;justify-content:center;
-  color:rgba(255,255,255,0.5);
+  color:rgba(255,255,255,0.7);
   transition:all .2s;
 }
 .social-icon:hover{background:var(--green);border-color:var(--green);color:white}
-.social-icon svg{width:15px;height:15px}
+.social-icon svg{width:17px;height:17px}
 .footer-trust{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
 .trust-logo{
   height:28px;width:auto;
