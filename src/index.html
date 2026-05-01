@@ -12,10 +12,10 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
   display:flex;align-items:center;
   position:relative;overflow:hidden;
 }
-.hero-bg{
+.hero-bg-img{
   position:absolute;inset:0;
-  background-image:url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=70&fm=webp');
-  background-size:cover;background-position:center 30%;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 30%;
   filter:brightness(0.35) saturate(0.6);
 }
 .hero-overlay{
@@ -83,7 +83,7 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
 }
 .hero-trust-item{
   display:flex;align-items:center;gap:6px;
-  color:rgba(255,255,255,0.55);font-size:12px;font-weight:400;
+  color:rgba(255,255,255,0.75);font-size:12px;font-weight:400;
 }
 .hero-trust-item svg{width:14px;height:14px;stroke:var(--green-light);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
@@ -217,7 +217,7 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
   margin-bottom:1rem;
 }
 .problem-quote cite{
-  font-size:13px;color:rgba(255,255,255,0.55);
+  font-size:13px;color:rgba(255,255,255,0.75);
   font-style:normal;
 }
 
@@ -339,7 +339,7 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
   text-transform:uppercase;letter-spacing:0.1em;
   color:var(--ink-muted);margin-bottom:.75rem;
 }
-.pricing-card.featured .pricing-plan{color:rgba(255,255,255,0.5)}
+.pricing-card.featured .pricing-plan{color:rgba(255,255,255,0.85)}
 .pricing-price{
   font-family:'Playfair Display',serif;
   font-size:3rem;font-weight:700;
@@ -349,14 +349,14 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
 .pricing-card.featured .pricing-price{color:white}
 .pricing-price sup{font-size:1.5rem;vertical-align:super}
 .pricing-per{font-size:14px;color:var(--ink-muted);margin-bottom:1.5rem}
-.pricing-card.featured .pricing-per{color:rgba(255,255,255,0.45)}
+.pricing-card.featured .pricing-per{color:rgba(255,255,255,0.85)}
 .pricing-desc{
   font-size:.9rem;color:var(--ink-light);
   margin-bottom:1.5rem;line-height:1.6;
   padding-bottom:1.5rem;
   border-bottom:1px solid var(--border);
 }
-.pricing-card.featured .pricing-desc{color:rgba(255,255,255,0.6);border-bottom-color:rgba(255,255,255,0.12)}
+.pricing-card.featured .pricing-desc{color:rgba(255,255,255,0.8);border-bottom-color:rgba(255,255,255,0.12)}
 .pricing-features{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem;flex:1}
 .pricing-features li{
   display:flex;align-items:flex-start;gap:10px;
@@ -466,7 +466,7 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
 }
 .candidate-title em{color:var(--green-light);font-style:italic}
 .candidate-sub{
-  font-size:1rem;color:rgba(255,255,255,0.6);
+  font-size:1rem;color:rgba(255,255,255,0.8);
   line-height:1.75;margin-bottom:2.5rem;font-weight:300;
 }
 .candidate-feats{display:flex;flex-direction:column;gap:.85rem;margin-bottom:2.5rem}
@@ -521,7 +521,7 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
 .badge-status-dot{width:6px;height:6px;border-radius:50%;background:var(--green-light)}
 .badge-cta-note{
   text-align:center;
-  font-size:13px;color:rgba(255,255,255,0.5);
+  font-size:13px;color:rgba(255,255,255,0.75);
 }
 .badge-cta-note strong{color:rgba(255,255,255,0.8);font-weight:500}
 
@@ -658,7 +658,10 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
 </style>
 <!-- ═══════════════════════ HERO ═══════════════════════ -->
 <section class="hero">
-  <div class="hero-bg"></div>
+  <picture>
+    <source media="(min-width:768px)" srcset="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1440&q=70&fm=webp">
+    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=70&fm=webp" alt="" class="hero-bg-img" fetchpriority="high" loading="eager" decoding="async" width="900" height="600">
+  </picture>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-left">
@@ -785,7 +788,7 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
     </div>
 
     <div class="problem-image-wrap">
-      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=72&fm=webp" alt="Recruteur analysant des documents" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=72&fm=webp" alt="Recruteur analysant des documents" loading="lazy" width="1200" height="800">
       <div class="problem-image-overlay">
         <div class="problem-quote">
           <blockquote>« Un faux diplôme est aujourd'hui indiscernable d'un vrai à l'œil nu. Même moi, après 20 ans dans le métier, je ne pourrais pas vous dire lequel est authentique. »</blockquote>
@@ -879,7 +882,7 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
       <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,2.9rem);color:white;margin-bottom:1.25rem;letter-spacing:-0.02em;line-height:1.15">
         Testez l'interface<br><em style="color:var(--green-light);font-style:italic">gratuitement.</em>
       </h2>
-      <p style="font-size:1.05rem;color:rgba(255,255,255,0.55);line-height:1.75;max-width:480px;margin-bottom:2rem;font-weight:300">
+      <p style="font-size:1.05rem;color:rgba(255,255,255,0.75);line-height:1.75;max-width:480px;margin-bottom:2rem;font-weight:300">
         Deposez n'importe quel CV et voyez comment CVérifié extrait les informations, interroge les bases de donnees et detecte les ecarts en 30 secondes. Sans inscription.
       </p>
       <div style="display:flex;gap:1rem;flex-wrap:wrap">
@@ -891,7 +894,7 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
           Voir les tarifs
         </a>
       </div>
-      <p style="margin-top:1.25rem;font-size:12px;color:rgba(255,255,255,0.25)">
+      <p style="margin-top:1.25rem;font-size:12px;color:rgba(255,255,255,0.65)">
         Demonstration uniquement &mdash; donnees entierement fictives
       </p>
     </div>
@@ -909,11 +912,11 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
           </svg>
           <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
             <span style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:white;line-height:1">91</span>
-            <span style="font-size:9px;color:rgba(255,255,255,0.4)">/100</span>
+            <span style="font-size:9px;color:rgba(255,255,255,0.65)">/100</span>
           </div>
         </div>
         <div>
-          <div style="font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:.07em;text-transform:uppercase;margin-bottom:.2rem">Analyse · Simulee</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.65);letter-spacing:.07em;text-transform:uppercase;margin-bottom:.2rem">Analyse · Simulee</div>
           <div style="font-family:'Playfair Display',serif;font-size:1.05rem;color:white;margin-bottom:.35rem">Sarah Lambert</div>
           <span style="display:inline-flex;align-items:center;gap:5px;background:rgba(82,183,136,0.18);border:1px solid rgba(82,183,136,0.3);padding:2px 10px;border-radius:100px;font-size:10px;font-weight:600;color:#52B788">
             <svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,4 3,6 7,2"/></svg>
@@ -967,38 +970,38 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
   <p class="logos-title">Nous vérifions auprès des sources officielles : établissements d'enseignement supérieur, Ministère du Travail &amp; CNIL</p>
   <div class="logos-grid">
 
-    <div class="logo-item"><img src="/images/logos/hec.svg" alt="HEC Paris" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">HEC Paris</span></div>
+    <div class="logo-item"><img src="/images/logos/hec.svg" alt="HEC Paris" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">HEC Paris</span></div>
     <div class="logo-item"><span class="logo-text-fb" style="display:flex">Sciences Po</span></div>
-    <div class="logo-item"><img src="/images/logos/polytechnique.png" alt="Polytechnique" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Polytechnique</span></div>
+    <div class="logo-item"><img src="/images/logos/polytechnique.png" alt="Polytechnique" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Polytechnique</span></div>
     <div class="logo-item"><span class="logo-text-fb" style="display:flex">ESSEC</span></div>
-    <div class="logo-item"><img src="/images/logos/escp.svg" alt="ESCP" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">ESCP</span></div>
-    <div class="logo-item"><img src="/images/logos/centralesupelec.png" alt="CentraleSupélec" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">CentraleSupélec</span></div>
-    <div class="logo-item"><img src="/images/logos/sorbonne.svg" alt="Sorbonne Université" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Sorbonne</span></div>
+    <div class="logo-item"><img src="/images/logos/escp.svg" alt="ESCP" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">ESCP</span></div>
+    <div class="logo-item"><img src="/images/logos/centralesupelec.png" alt="CentraleSupélec" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">CentraleSupélec</span></div>
+    <div class="logo-item"><img src="/images/logos/sorbonne.svg" alt="Sorbonne Université" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Sorbonne</span></div>
     <div class="logo-item"><span class="logo-text-fb" style="display:flex">Paris 1</span></div>
-    <div class="logo-item"><img src="/images/logos/edhec.svg" alt="EDHEC" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">EDHEC</span></div>
-    <div class="logo-item"><img src="/images/logos/emlyon.svg" alt="emlyon" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">emlyon</span></div>
-    <div class="logo-item"><img src="/images/logos/grenoble-em.png" alt="Grenoble EM" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Grenoble EM</span></div>
-    <div class="logo-item"><img src="/images/logos/kedge.svg" alt="KEDGE" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">KEDGE</span></div>
-    <div class="logo-item"><img src="/images/logos/neoma.svg" alt="NEOMA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">NEOMA</span></div>
-    <div class="logo-item"><img src="/images/logos/skema.svg" alt="SKEMA" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">SKEMA</span></div>
+    <div class="logo-item"><img src="/images/logos/edhec.svg" alt="EDHEC" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">EDHEC</span></div>
+    <div class="logo-item"><img src="/images/logos/emlyon.svg" alt="emlyon" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">emlyon</span></div>
+    <div class="logo-item"><img src="/images/logos/grenoble-em.png" alt="Grenoble EM" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Grenoble EM</span></div>
+    <div class="logo-item"><img src="/images/logos/kedge.svg" alt="KEDGE" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">KEDGE</span></div>
+    <div class="logo-item"><img src="/images/logos/neoma.svg" alt="NEOMA" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">NEOMA</span></div>
+    <div class="logo-item"><img src="/images/logos/skema.svg" alt="SKEMA" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">SKEMA</span></div>
     <div class="logo-item"><span class="logo-text-fb" style="display:flex">Dauphine</span></div>
-    <div class="logo-item"><img src="/images/logos/ens-paris.png" alt="ENS Paris" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">ENS Paris</span></div>
-    <div class="logo-item"><img src="/images/logos/mines-paris.png" alt="Mines ParisTech" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Mines Paris</span></div>
+    <div class="logo-item"><img src="/images/logos/ens-paris.png" alt="ENS Paris" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">ENS Paris</span></div>
+    <div class="logo-item"><img src="/images/logos/mines-paris.png" alt="Mines ParisTech" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Mines Paris</span></div>
     <div class="logo-item"><span class="logo-text-fb" style="display:flex">Télécom Paris</span></div>
-    <div class="logo-item"><img src="/images/logos/insa-lyon.png" alt="INSA Lyon" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">INSA Lyon</span></div>
-    <div class="logo-item"><img src="/images/logos/univ-lyon.svg" alt="Université de Lyon" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Univ. Lyon</span></div>
-    <div class="logo-item"><img src="/images/logos/aix-marseille.svg" alt="Aix-Marseille" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Aix-Marseille</span></div>
-    <div class="logo-item"><img src="/images/logos/bordeaux.png" alt="Bordeaux" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Bordeaux</span></div>
+    <div class="logo-item"><img src="/images/logos/insa-lyon.png" alt="INSA Lyon" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">INSA Lyon</span></div>
+    <div class="logo-item"><img src="/images/logos/univ-lyon.svg" alt="Université de Lyon" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Univ. Lyon</span></div>
+    <div class="logo-item"><img src="/images/logos/aix-marseille.svg" alt="Aix-Marseille" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Aix-Marseille</span></div>
+    <div class="logo-item"><img src="/images/logos/bordeaux.png" alt="Bordeaux" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Bordeaux</span></div>
     <div class="logo-item"><span class="logo-text-fb" style="display:flex">Strasbourg</span></div>
-    <div class="logo-item"><img src="/images/logos/nantes.png" alt="Nantes" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Univ. Nantes</span></div>
-    <div class="logo-item"><img src="/images/logos/upec.svg" alt="UPEC" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Paris-Est</span></div>
+    <div class="logo-item"><img src="/images/logos/nantes.png" alt="Nantes" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Univ. Nantes</span></div>
+    <div class="logo-item"><img src="/images/logos/upec.svg" alt="UPEC" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Paris-Est</span></div>
     <div class="logo-item"><span class="logo-text-fb" style="display:flex">Rennes SB</span></div>
-    <div class="logo-item"><img src="/images/logos/tbs.svg" alt="TBS Education" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">TBS</span></div>
-    <div class="logo-item"><img src="/images/logos/audencia.svg" alt="Audencia" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Audencia</span></div>
+    <div class="logo-item"><img src="/images/logos/tbs.svg" alt="TBS Education" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">TBS</span></div>
+    <div class="logo-item"><img src="/images/logos/audencia.svg" alt="Audencia" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Audencia</span></div>
     <div class="logo-item"><span class="logo-text-fb" style="display:flex">INSEAD</span></div>
-    <div class="logo-item"><img src="/images/logos/arts-metiers.svg" alt="Arts et Métiers" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Arts et Métiers</span></div>
-    <div class="logo-item"><img src="/images/logos/ponts.png" alt="École des Ponts" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">École des Ponts</span></div>
-    <div class="logo-item"><img src="/images/logos/utc.svg" alt="UTC" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">UTC</span></div>
+    <div class="logo-item"><img src="/images/logos/arts-metiers.svg" alt="Arts et Métiers" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Arts et Métiers</span></div>
+    <div class="logo-item"><img src="/images/logos/ponts.png" alt="École des Ponts" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">École des Ponts</span></div>
+    <div class="logo-item"><img src="/images/logos/utc.svg" alt="UTC" loading="lazy" width="110" height="24" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">UTC</span></div>
     <div class="logo-item"><span class="logo-text-fb" style="display:flex">ESPCI Paris</span></div>
     <div class="logo-item"><span class="logo-text-fb" style="display:flex">Min. Travail</span></div>
 
@@ -1064,9 +1067,9 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
 
         <div style="position:relative;z-index:1">
 
-          <p style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.42);margin-bottom:.45rem">Coût total estimé</p>
+          <p style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.75);margin-bottom:.45rem">Coût total estimé</p>
           <div id="mini-res-total" style="font-family:'Playfair Display',serif;font-size:clamp(2.2rem,3.8vw,2.9rem);font-weight:700;color:var(--green-light);line-height:1;letter-spacing:-0.02em;margin-bottom:.35rem;transition:all .3s">31 230 €</div>
-          <p style="font-size:12px;color:rgba(255,255,255,0.32);margin-bottom:1.4rem">pour ce profil, sur 6 mois</p>
+          <p style="font-size:12px;color:rgba(255,255,255,0.65);margin-bottom:1.4rem">pour ce profil, sur 6 mois</p>
 
           <!-- ROI -->
           <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:1.2rem;margin-bottom:1.3rem">
@@ -1076,7 +1079,7 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
               </div>
               <div>
                 <div id="mini-roi" style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--green-light);line-height:1">637x</div>
-                <div style="font-size:11.5px;color:rgba(255,255,255,0.38);margin-top:.15rem">le ROI d'une vérification à 49 €</div>
+                <div style="font-size:11.5px;color:rgba(255,255,255,0.75);margin-top:.15rem">le ROI d'une vérification à 49 €</div>
               </div>
             </div>
           </div>
@@ -1252,7 +1255,7 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
         <p class="testimonial-text">« On a découvert grâce à CVérifié que notre candidat finaliste n'avait jamais obtenu son Master 2. Il l'avait juste "en cours" depuis 6 ans. Ça nous a évité une catastrophe pour un poste de direction. »</p>
         <div class="testimonial-author">
           <div class="author-avatar">
-            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=84&h=84&q=72&fm=webp" alt="Sophie L." loading="lazy">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=84&h=84&q=72&fm=webp" alt="Sophie L." loading="lazy" width="84" height="84">
           </div>
           <div>
             <div class="author-name">Sophie L.</div>
@@ -1265,7 +1268,7 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
         <p class="testimonial-text">« En tant que cabinet de recrutement, on cherchait quelque chose à proposer à nos clients PME. CVérifié c'est exactement ça : self-service, prix clair, aucune complexité. On l'intègre systématiquement pour nos placements cadres. »</p>
         <div class="testimonial-author">
           <div class="author-avatar">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=84&h=84&q=72&fm=webp" alt="Marc B." loading="lazy">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=84&h=84&q=72&fm=webp" alt="Marc B." loading="lazy" width="84" height="84">
           </div>
           <div>
             <div class="author-name">Marc B.</div>
@@ -1278,7 +1281,7 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
         <p class="testimonial-text">« On a eu une mauvaise expérience avec un "ingénieur" qui n'avait pas son diplôme d'école. Depuis, on vérifie tous nos candidats tech avant la période d'essai. CVérifié est fluide et le rapport est vraiment actionnable. »</p>
         <div class="testimonial-author">
           <div class="author-avatar">
-            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=84&h=84&q=72&fm=webp" alt="Amira K." loading="lazy">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=84&h=84&q=72&fm=webp" alt="Amira K." loading="lazy" width="84" height="84">
           </div>
           <div>
             <div class="author-name">Amira K.</div>
@@ -1505,10 +1508,10 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
   <div class="final-trust-logos">
     <img src="/images/ministere-travail-white.png"
          alt="Ministère du Travail"
-         class="final-trust-img" loading="lazy">
+         class="final-trust-img" loading="lazy" width="120" height="38">
     <img src="/images/rgpd-white.png"
          alt="RGPD conforme"
-         class="final-trust-img" loading="lazy">
+         class="final-trust-img" loading="lazy" width="120" height="38">
   </div>
 </section>
 

@@ -314,28 +314,28 @@ description: "Lancez une vérification de CV ou de diplôme en quelques clics. C
       </div>
       <div class="form-row">
         <div class="field">
-          <label>Prénom <span class="required-star">*</span></label>
-          <input type="text" name="prenom_recruteur" placeholder="Marie" required>
+          <label for="prenom_recruteur">Prénom <span class="required-star">*</span></label>
+          <input type="text" id="prenom_recruteur" name="prenom_recruteur" placeholder="Marie" required>
         </div>
         <div class="field">
-          <label>Nom <span class="required-star">*</span></label>
-          <input type="text" name="nom_recruteur" placeholder="Dupont" required>
+          <label for="nom_recruteur">Nom <span class="required-star">*</span></label>
+          <input type="text" id="nom_recruteur" name="nom_recruteur" placeholder="Dupont" required>
         </div>
       </div>
       <div class="form-row single">
         <div class="field">
-          <label>Email professionnel <span class="required-star">*</span> <span class="hint">(pour recevoir votre lien de paiement et le rapport)</span></label>
-          <input type="email" name="email_recruteur" placeholder="marie.dupont@entreprise.fr" required>
+          <label for="email_recruteur">Email professionnel <span class="required-star">*</span> <span class="hint">(pour recevoir votre lien de paiement et le rapport)</span></label>
+          <input type="email" id="email_recruteur" name="email_recruteur" placeholder="marie.dupont@entreprise.fr" required>
         </div>
       </div>
       <div class="form-row">
         <div class="field">
-          <label>Votre poste <span class="required-star">*</span></label>
-          <input type="text" name="poste_recruteur" placeholder="DRH, Gérant, Responsable RH..." required>
+          <label for="poste_recruteur">Votre poste <span class="required-star">*</span></label>
+          <input type="text" id="poste_recruteur" name="poste_recruteur" placeholder="DRH, Gérant, Responsable RH..." required>
         </div>
         <div class="field">
-          <label>Nom de votre entreprise <span class="required-star">*</span></label>
-          <input type="text" name="entreprise" placeholder="Dupont & Associés" required>
+          <label for="entreprise">Nom de votre entreprise <span class="required-star">*</span></label>
+          <input type="text" id="entreprise" name="entreprise" placeholder="Dupont & Associés" required>
         </div>
       </div>
     </div>
@@ -348,24 +348,24 @@ description: "Lancez une vérification de CV ou de diplôme en quelques clics. C
       </div>
       <div class="form-row">
         <div class="field">
-          <label>Prénom du candidat <span class="required-star">*</span></label>
-          <input type="text" name="prenom_candidat" placeholder="Jean" required>
+          <label for="prenom_candidat">Prénom du candidat <span class="required-star">*</span></label>
+          <input type="text" id="prenom_candidat" name="prenom_candidat" placeholder="Jean" required>
         </div>
         <div class="field">
-          <label>Nom du candidat <span class="required-star">*</span></label>
-          <input type="text" name="nom_candidat" placeholder="Martin" required>
-        </div>
-      </div>
-      <div class="form-row single">
-        <div class="field">
-          <label>Email du candidat <span class="required-star">*</span></label>
-          <input type="email" name="email_candidat" placeholder="jean.martin@email.com" required>
+          <label for="nom_candidat">Nom du candidat <span class="required-star">*</span></label>
+          <input type="text" id="nom_candidat" name="nom_candidat" placeholder="Martin" required>
         </div>
       </div>
       <div class="form-row single">
         <div class="field">
-          <label>Profil LinkedIn du candidat <span class="hint">facultatif mais utile</span></label>
-          <input type="url" name="linkedin_candidat" placeholder="https://linkedin.com/in/jean-martin">
+          <label for="email_candidat">Email du candidat <span class="required-star">*</span></label>
+          <input type="email" id="email_candidat" name="email_candidat" placeholder="jean.martin@email.com" required>
+        </div>
+      </div>
+      <div class="form-row single">
+        <div class="field">
+          <label for="linkedin_candidat">Profil LinkedIn du candidat <span class="hint">facultatif mais utile</span></label>
+          <input type="url" id="linkedin_candidat" name="linkedin_candidat" placeholder="https://linkedin.com/in/jean-martin">
         </div>
       </div>
     </div>
@@ -381,36 +381,36 @@ description: "Lancez une vérification de CV ou de diplôme en quelques clics. C
 
         <!-- CV — obligatoire -->
         <div class="upload-zone" id="zone-cv">
-          <input type="file" name="cv" id="input-cv" accept=".pdf,.doc,.docx" onchange="fileSelected(this,'zone-cv','name-cv')">
+          <input type="file" name="cv" id="input-cv" accept=".pdf,.doc,.docx" onchange="fileSelected(this,'zone-cv','name-cv')" aria-label="CV du candidat (PDF, DOC, DOCX, max 10 Mo)">
           <span class="upload-optional">Facultatif</span>
           <div class="upload-icon">
             <svg viewBox="0 0 20 20"><path d="M10 2v10M10 2L6 6M10 2l4 4"/><rect x="2" y="13" width="16" height="5" rx="1"/></svg>
           </div>
-          <div class="upload-label">CV du candidat</div>
+          <label class="upload-label" for="input-cv">CV du candidat</label>
           <div class="upload-sub">Glissez-déposez ou cliquez<br>PDF, DOC, DOCX · Max 10 Mo</div>
           <div class="upload-filename" id="name-cv"></div>
         </div>
 
         <!-- Diplôme — facultatif -->
         <div class="upload-zone" id="zone-diplome">
-          <input type="file" name="diplome" id="input-diplome" accept=".pdf,.jpg,.jpeg,.png" onchange="fileSelected(this,'zone-diplome','name-diplome')">
+          <input type="file" name="diplome" id="input-diplome" accept=".pdf,.jpg,.jpeg,.png" onchange="fileSelected(this,'zone-diplome','name-diplome')" aria-label="Diplôme (PDF, JPG, PNG, max 10 Mo)">
           <span class="upload-optional">Facultatif</span>
           <div class="upload-icon">
             <svg viewBox="0 0 20 20"><path d="M3 7l7-4 7 4-7 4-7-4z"/><path d="M3 11l7 4 7-4"/><path d="M3 15l7 4 7-4"/></svg>
           </div>
-          <div class="upload-label">Diplôme</div>
+          <label class="upload-label" for="input-diplome">Diplôme</label>
           <div class="upload-sub">Scan ou photo du diplôme<br>PDF, JPG, PNG · Max 10 Mo</div>
           <div class="upload-filename" id="name-diplome"></div>
         </div>
 
         <!-- Lettre de motivation — facultatif -->
         <div class="upload-zone" id="zone-lm">
-          <input type="file" name="lettre_motivation" id="input-lm" accept=".pdf,.doc,.docx" onchange="fileSelected(this,'zone-lm','name-lm')">
+          <input type="file" name="lettre_motivation" id="input-lm" accept=".pdf,.doc,.docx" onchange="fileSelected(this,'zone-lm','name-lm')" aria-label="Lettre de motivation (PDF, DOC, DOCX, max 10 Mo)">
           <span class="upload-optional">Facultatif</span>
           <div class="upload-icon">
             <svg viewBox="0 0 20 20"><rect x="2" y="3" width="16" height="14" rx="2"/><polyline points="2,6 10,12 18,6"/></svg>
           </div>
-          <div class="upload-label">Lettre de motivation</div>
+          <label class="upload-label" for="input-lm">Lettre de motivation</label>
           <div class="upload-sub">Si le candidat en a fourni une<br>PDF, DOC, DOCX · Max 10 Mo</div>
           <div class="upload-filename" id="name-lm"></div>
         </div>
@@ -454,8 +454,8 @@ description: "Lancez une vérification de CV ou de diplôme en quelques clics. C
       </div>
 
       <div class="trust-logos-form">
-        <img src="/images/ministere-travail-black.png" alt="Ministère du Travail" loading="lazy">
-        <img src="/images/rgpd-black.png" alt="RGPD conforme" loading="lazy">
+        <img src="/images/ministere-travail-black.png" alt="Ministère du Travail" loading="lazy" width="120" height="38">
+        <img src="/images/rgpd-black.png" alt="RGPD conforme" loading="lazy" width="120" height="38">
       </div>
     </div>
 
