@@ -1,39 +1,8 @@
 ---
+layout: layouts/base.njk
+title: "Lancer une vérification · CVérifié"
 ---
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<link rel="icon" type="image/png" href="/images/favicon.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lancer une vérification · CVérifié</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --cream:#FAF8F3;--cream-dark:#F0EDE5;
-  --ink:#1A1A24;--ink-light:#44444E;--ink-muted:#8A8A94;
-  --green:#2D6A4F;--green-mid:#40916C;--green-light:#52B788;
-  --green-pale:#D8F3DC;--green-ultralight:#F0FAF2;
-  --border:#E0DDD5;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2;font-weight:600}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-button,input,select,textarea{font-family:'Outfit',sans-serif}
-
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,243,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav-inner{max-width:960px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
-.logo-nav{height:38px;width:auto;display:block}
-.nav-back{font-size:14px;color:var(--ink-muted);display:flex;align-items:center;gap:6px;transition:color .2s}
-.nav-back:hover{color:var(--green)}
-.nav-back svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-
 /* ── PROGRESS ── */
 .progress-wrap{padding-top:64px;background:white;border-bottom:1px solid var(--border)}
 .progress-inner{max-width:960px;margin:0 auto;padding:1.5rem 2rem;display:flex;align-items:center;gap:0}
@@ -211,52 +180,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,243,
 }
 .back-home-btn:hover{border-color:var(--green);color:var(--green);background:var(--green-ultralight)}
 
-/* ── FOOTER ── */
-footer{background:var(--ink);padding:4rem 2rem 2rem;color:rgba(255,255,255,0.5)}
-.footer-inner{max-width:1200px;margin:0 auto}
-.footer-top{display:grid;grid-template-columns:260px 180px 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.08)}
-.footer-col h4{font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.25rem}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.65rem}
-.footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.4);transition:color .2s}
-.footer-col ul li a:hover{color:var(--green-light)}
-.footer-bottom{padding-top:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:13px}
-.footer-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
-.footer-legal a{color:rgba(255,255,255,0.3);transition:color .2s}
-.footer-legal a:hover{color:rgba(255,255,255,0.65)}
-.logo-footer{height:38px;width:auto;display:block}
-.footer-social{display:flex;gap:.75rem;margin-bottom:1.5rem}
-.social-icon{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);transition:all .2s}
-.social-icon:hover{background:var(--green);border-color:var(--green);color:white}
-.social-icon svg{width:15px;height:15px}
-.footer-trust{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.trust-logo{height:28px;width:auto;filter:brightness(0) invert(1) opacity(0.35)}
-.trust-badge-rgpd{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;letter-spacing:.04em;color:rgba(255,255,255,0.35);border:1px solid rgba(255,255,255,0.12);padding:4px 8px;border-radius:6px}
-.footer-stars-row{margin-bottom:.75rem}
-.footer-stars{color:var(--green-light);font-size:16px;letter-spacing:2px}
-.footer-rating-list{display:flex;flex-direction:column;gap:.6rem}
-.rating-item{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,0.45)}
-.rating-item strong{color:rgba(255,255,255,0.7);font-weight:600}
-
 /* ── RESPONSIVE ── */
 @media(max-width:768px){
   .plan-grid{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
   .uploads-grid{grid-template-columns:1fr}
   .confirm-steps{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr 1fr}
+
   .reassurance{gap:1rem}
 }
 @media(max-width:500px){
-  .footer-top{grid-template-columns:1fr}
+
   .prog-step span{display:none}
 }
 </style>
-</head>
-<body>
-
-<!-- ═══════════════════════ NAV ═══════════════════════ -->
-{% include "nav.njk" %}
-
 <!-- ═══════════════════════ PROGRESS ═══════════════════════ -->
 <div class="progress-wrap">
   <div class="progress-inner">
@@ -558,9 +495,6 @@ footer{background:var(--ink);padding:4rem 2rem 2rem;color:rgba(255,255,255,0.5)}
   </button>
 </div>
 
-<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
-{% include "footer.njk" %}
-
 <script>
 let selectedPlan = null;
 let selectedPrice = null;
@@ -654,6 +588,3 @@ function showConfirmation() {
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
 </script>
-
-</body>
-</html>

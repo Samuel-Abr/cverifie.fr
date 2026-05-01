@@ -30,7 +30,13 @@
       "Bash(cp -r \"/Users/sabraham/Desktop/CVérifié.fr/.claude\" \"/Users/sabraham/Desktop/CVérifié.fr/src/.claude\")",
       "Bash(cp /Users/sabraham/Desktop/CVérifié.fr/blog/*.html \"/Users/sabraham/Desktop/CVérifié.fr/src/blog/\")",
       "Bash(node process_html.js)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(git checkout *)",
+      "Bash(cat)",
+      "Bash(python3 /tmp/process_pages_v2.py)",
+      "Bash(python3 -)",
+      "Bash(grep -v \":0$\")",
+      "Bash(git -C /Users/sabraham/Desktop/CVérifié.fr status --short)"
     ]
   }
 }

@@ -1,101 +1,9 @@
 ---
+layout: layouts/base.njk
+title: "Calculateur Coût Mauvais Recrutement France 2026 : Outil Gratuit | CVérifié"
+description: "Calculez gratuitement le coût réel d'un mauvais recrutement en France. Ajustez le salaire, la durée et le niveau de poste : obtenez une estimation personnalisée en 30 secondes."
 ---
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<link rel="icon" type="image/png" href="/images/favicon.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calculateur Coût Mauvais Recrutement France 2026 : Outil Gratuit | CVérifié</title>
-<meta name="description" content="Calculez gratuitement le coût réel d'un mauvais recrutement en France. Ajustez le salaire, la durée et le niveau de poste : obtenez une estimation personnalisée en 30 secondes.">
-<meta name="keywords" content="calculateur cout mauvais recrutement, calcul recrutement raté, combien coute mauvais recrutement france, outil ROI recrutement, cout erreur recrutement PME">
-<meta property="og:title" content="Calculateur : combien vous coûte vraiment un mauvais recrutement ?">
-<meta property="og:description" content="Outil gratuit. Salaire, durée, niveau de poste. Résultat immédiat. La comparaison avec le coût d'une vérification préalable va vous surprendre.">
-<meta property="og:type" content="website">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://cverifie.fr/blog/calculateur-cout-mauvais-recrutement.html">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- Schema.org WebApplication -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Calculateur coût mauvais recrutement France",
-  "description": "Outil gratuit pour calculer le coût réel d'un mauvais recrutement en France en fonction du salaire brut, de la durée avant détection, du mode de recrutement et du niveau de poste.",
-  "url": "https://cverifie.fr/blog/calculateur-cout-mauvais-recrutement.html",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-  "provider": { "@type": "Organization", "name": "CVérifié", "url": "https://cverifie.fr" }
-}
-</script>
-<!-- Schema.org FAQPage -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Combien coûte un mauvais recrutement en France en 2026 ?",
-      "acceptedAnswer": { "@type": "Answer", "text": "En France, le coût d'un mauvais recrutement varie entre 15 000 et 160 000 euros selon le niveau du poste. Pour un cadre avec un salaire brut de 45 000 euros par an, le coût total est estimé entre 35 000 et 65 000 euros (recrutement, intégration, sous-performance, séparation, remplacement). Ces chiffres incluent les coûts directs et indirects, dont la perte de productivité pendant la période d'emploi." }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment calculer le coût d'un mauvais recrutement ?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Le calcul se fait en additionnant 5 postes : (1) coût du recrutement initial (9 à 18% du salaire annuel selon le mode), (2) coût d'intégration et formation (10 à 15% du salaire), (3) coût de la sous-performance pendant la période d'emploi (environ 50% du salaire mensuel par mois), (4) coût de la séparation (3 à 20% du salaire selon la durée), (5) coût du remplacement (équivalent au recrutement initial +10%). Le total est ajusté selon le niveau de poste." }
-    },
-    {
-      "@type": "Question",
-      "name": "Quel est le ROI de la vérification de CV avant recrutement ?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Pour un poste cadre à 45 000 euros brut par an, une vérification CVérifié coûte 49 euros. Le coût médian d'un mauvais recrutement pour ce profil est estimé à 45 000 euros. Le retour sur investissement est donc de l'ordre de 900 pour 1 : chaque euro investi dans la vérification préalable permet d'éviter en moyenne 900 euros de coût potentiel." }
-    },
-    {
-      "@type": "Question",
-      "name": "Pourquoi le coût d'un mauvais recrutement est-il sous-estimé par les entreprises françaises ?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Le coût d'un mauvais recrutement est sous-estimé parce qu'il se dilue entre plusieurs services (RH, management, finance, juridique) et dans le temps (souvent sur 6 à 12 mois). Aucune ligne budgétaire ne consolide ce coût total. Les entreprises comptabilisent le nouveau recrutement, mais rarement la perte de productivité, le temps manager perdu, l'impact sur l'équipe ou les coûts juridiques éventuels." }
-    },
-    {
-      "@type": "Question",
-      "name": "Un mauvais recrutement détecté pendant la période d'essai coûte-t-il moins cher ?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Oui, mais pas autant qu'on le pense. Une rupture en période d'essai évite les indemnités de licenciement, mais les coûts de recrutement initial, d'intégration et de formation sont entièrement perdus. Pour un cadre à 45 000 euros, une rupture à 2 mois coûte encore entre 12 000 et 20 000 euros. Plus la détection est tardive, plus le coût total augmente significativement." }
-    }
-  ]
-}
-</script>
-
 <style>
-:root{
-  --cream:#FAF8F3;--cream-dark:#F0EDE5;
-  --ink:#1A1A24;--ink-light:#44444E;--ink-muted:#8A8A94;
-  --green:#2D6A4F;--green-mid:#40916C;--green-light:#52B788;
-  --green-pale:#D8F3DC;--green-ultra:#F0FAF2;
-  --border:#E0DDD5;
-  --red:#C44B4B;--amber:#E07820;
-  --bar-1:#0D2B1E;--bar-2:#1B4332;--bar-3:#2D6A4F;--bar-4:#40916C;--bar-5:#52B788;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2;font-weight:600}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-p{margin-bottom:1rem}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,243,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{display:flex;align-items:center;gap:10px}
-.logo-nav{height:38px;width:auto;display:block}
-.nav-links{display:flex;align-items:center;gap:2rem}
-.nav-links a{font-size:14px;font-weight:500;color:var(--ink-light);transition:color .2s}
-.nav-links a:hover{color:var(--green)}
-.nav-cta{background:var(--green);color:white;padding:10px 22px;border-radius:8px;border:none;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s,transform .15s;white-space:nowrap}
-.nav-cta:hover{background:var(--green-mid);transform:translateY(-1px)}
-
 /* HERO */
 .calc-hero{
   margin-top:64px;
@@ -409,53 +317,20 @@ table.data-table tr:nth-child(odd){background:var(--cream)}
 .faq-a{padding:0 1.25rem;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s ease;font-size:.875rem;color:var(--ink-light);line-height:1.7}
 .faq-item.open .faq-a{padding:.25rem 1.25rem 1.25rem;max-height:500px}
 
-/* Footer */
-footer{background:var(--ink);padding:4rem 2rem 2rem;color:rgba(255,255,255,0.5)}
-.footer-inner{max-width:1200px;margin:0 auto}
-.footer-top{display:grid;grid-template-columns:260px 180px 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.08)}
-.footer-col h4{font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.25rem}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.65rem}
-.footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.4);transition:color .2s}
-.footer-col ul li a:hover{color:var(--green-light)}
-.footer-bottom{padding-top:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:13px}
-.footer-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
-.footer-legal a{color:rgba(255,255,255,0.3);transition:color .2s}
-.footer-legal a:hover{color:rgba(255,255,255,0.65)}
-.footer-social{display:flex;gap:.75rem;margin-bottom:1.5rem}
-.social-icon{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);transition:all .2s}
-.social-icon:hover{background:var(--green);border-color:var(--green);color:white}
-.social-icon svg{width:15px;height:15px}
-.footer-trust{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.trust-logo{height:28px;width:auto;filter:brightness(0) invert(1) opacity(0.35);transition:opacity .2s}
-.trust-badge-rgpd{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;letter-spacing:.04em;color:rgba(255,255,255,0.35);border:1px solid rgba(255,255,255,0.12);padding:4px 8px;border-radius:6px}
-.footer-stars-row{margin-bottom:.75rem}
-.footer-stars{color:var(--green-light);font-size:16px;letter-spacing:2px}
-.footer-rating-list{display:flex;flex-direction:column;gap:.6rem}
-.rating-item{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,0.45)}
-.rating-item strong{color:rgba(255,255,255,0.7);font-weight:600}
-.rating-item svg{flex-shrink:0}
-.logo-footer{height:38px;width:auto;display:block}
-
 /* RESPONSIVE */
 @media(max-width:900px){
   .calc-card{grid-template-columns:1fr}
   .calc-inputs{border-right:none;border-bottom:1px solid var(--border)}
   .calc-hero{padding:3.5rem 1.5rem 0}
-  .footer-top{grid-template-columns:1fr 1fr}
+
 }
 @media(max-width:600px){
   .calc-card{border-radius:14px 14px 0 0}
   .calc-inputs,.calc-results{padding:1.75rem 1.5rem}
-  .footer-top{grid-template-columns:1fr}
+
   .calc-hero-title{font-size:2rem}
 }
 </style>
-</head>
-<body>
-
-<!-- NAV -->
-{% include "nav.njk" %}
-
 <!-- HERO -->
 <section class="calc-hero">
   <div class="calc-hero-top">
@@ -671,9 +546,6 @@ footer{background:var(--ink);padding:4rem 2rem 2rem;color:rgba(255,255,255,0.5)}
 
 </main>
 
-<!-- FOOTER -->
-{% include "footer.njk" %}
-
 <script>
 // ─── STATE ───────────────────────────────────────────
 let currentMode = 'interne';
@@ -805,5 +677,3 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 // Init
 updateAll();
 </script>
-</body>
-</html>

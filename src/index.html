@@ -1,86 +1,8 @@
 ---
+layout: layouts/base.njk
+title: "CVérifié · Vérification de CV & Diplômes en 48h"
 ---
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<link rel="icon" type="image/png" href="/images/favicon.png">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CVérifié · Vérification de CV & Diplômes en 48h</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --cream: #FAF8F3;
-  --cream-dark: #F0EDE5;
-  --ink: #1A1A24;
-  --ink-light: #44444E;
-  --ink-muted: #8A8A94;
-  --green: #2D6A4F;
-  --green-mid: #40916C;
-  --green-light: #52B788;
-  --green-pale: #D8F3DC;
-  --green-ultralight: #F0FAF2;
-  --border: #E0DDD5;
-  --red-soft: #FFF0EE;
-  --red: #C44B4B;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Outfit',sans-serif;
-  background:var(--cream);
-  color:var(--ink);
-  line-height:1.6;
-  font-size:16px;
-  -webkit-font-smoothing:antialiased;
-}
-h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2;font-weight:600}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-button{cursor:pointer;font-family:'Outfit',sans-serif}
-
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  background:rgba(250,248,243,0.92);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-}
-.nav-inner{
-  max-width:1200px;margin:0 auto;
-  padding:0 2rem;height:64px;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.nav-logo{
-  display:flex;align-items:center;gap:10px;
-}
-.nav-logo-mark{display:flex;align-items:center}
-.nav-logo-text{
-  font-family:'Playfair Display',serif;
-  font-size:21px;font-weight:600;
-  color:var(--ink);letter-spacing:-0.3px;
-}
-.nav-logo-text .cv{color:var(--green)}
-.logo-nav{height:38px;width:auto;display:block}
-.logo-footer{height:38px;width:auto;display:block}
-.nav-links{display:flex;align-items:center;gap:2rem}
-.nav-links a{
-  font-size:14px;font-weight:500;
-  color:var(--ink-light);
-  transition:color .2s;
-}
-.nav-links a:hover{color:var(--green)}
-.nav-cta{
-  background:var(--green);color:white;
-  padding:10px 22px;border-radius:8px;border:none;
-  font-size:14px;font-weight:600;
-  transition:background .2s,transform .15s;
-  white-space:nowrap;
-}
-.nav-cta:hover{background:var(--green-mid);transform:translateY(-1px)}
-
 /* ── HERO ── */
 .hero{
   padding-top:64px;
@@ -208,7 +130,6 @@ nav{
   color:var(--ink-muted);margin-top:.75rem;
 }
 
-/* ── TRUST BAND ── */
 .trust-band{
   background:var(--ink);
   padding:1rem 2rem;
@@ -691,83 +612,11 @@ nav{
 }
 .final-trust-img:hover{opacity:1}
 
-/* ── FOOTER ── */
-footer{
-  background:var(--ink);
-  padding:4rem 2rem 2rem;
-  color:rgba(255,255,255,0.5);
-}
-.footer-inner{max-width:1200px;margin:0 auto}
-.footer-top{
-  display:grid;grid-template-columns:260px 180px 1fr 1fr;
-  gap:3rem;padding-bottom:3rem;
-  border-bottom:1px solid rgba(255,255,255,0.08);
-}
-.footer-col h4{
-  font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);
-  text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.25rem;
-}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.65rem}
-.footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.4);transition:color .2s}
-.footer-col ul li a:hover{color:var(--green-light)}
-.footer-bottom{
-  padding-top:2rem;
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:1rem;font-size:13px;
-}
-.footer-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
-.footer-legal a{color:rgba(255,255,255,0.3);transition:color .2s}
-.footer-legal a:hover{color:rgba(255,255,255,0.65)}
-.footer-logo-text{
-  font-family:'Playfair Display',serif;
-  font-size:20px;font-weight:600;color:white;
-}
-
-/* Social icons */
-.footer-social{display:flex;gap:.75rem;margin-bottom:1.5rem}
-.social-icon{
-  width:34px;height:34px;border-radius:8px;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.1);
-  display:flex;align-items:center;justify-content:center;
-  color:rgba(255,255,255,0.5);
-  transition:all .2s;
-}
-.social-icon:hover{background:var(--green);border-color:var(--green);color:white}
-.social-icon svg{width:15px;height:15px}
-
-/* Trust logos */
-.footer-trust{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.trust-logo{
-  height:28px;width:auto;
-  filter:brightness(0) invert(1) opacity(0.35);
-  transition:opacity .2s;
-}
-.trust-logo:hover{opacity:.6}
-.trust-badge-rgpd{
-  display:flex;align-items:center;gap:5px;
-  font-size:11px;font-weight:600;letter-spacing:.04em;
-  color:rgba(255,255,255,0.35);
-  border:1px solid rgba(255,255,255,0.12);
-  padding:4px 8px;border-radius:6px;
-}
-
-/* Ratings */
-.footer-stars-row{margin-bottom:.75rem}
-.footer-stars{color:var(--green-light);font-size:16px;letter-spacing:2px}
-.footer-rating-list{display:flex;flex-direction:column;gap:.6rem}
-.rating-item{
-  display:flex;align-items:center;gap:7px;
-  font-size:13px;color:rgba(255,255,255,0.45);
-}
-.rating-item strong{color:rgba(255,255,255,0.7);font-weight:600}
-.rating-item svg{flex-shrink:0}
-
 @media(max-width:1024px){
-  .footer-top{grid-template-columns:1fr 1fr}
+
 }
 @media(max-width:600px){
-  .footer-top{grid-template-columns:1fr}
+
 }
 
 /* ── RESPONSIVE ── */
@@ -781,14 +630,13 @@ footer{
   .testimonials-grid{grid-template-columns:1fr 1fr}
   .candidate-inner{grid-template-columns:1fr}
   .faq-grid{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr 1fr}
+
 }
 @media(max-width:680px){
   .problem-grid{grid-template-columns:1fr}
   .steps-grid{grid-template-columns:1fr}
   .testimonials-grid{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr}
-  .nav-links{display:none}
+
   .hero h1{font-size:2.2rem}
   .hero-content{padding:4rem 1.5rem 3rem}
 }
@@ -806,12 +654,6 @@ footer{
 .hero-trust{animation-delay:.5s}
 .hero-card{animation:fadeInUp .8s .3s ease both}
 </style>
-</head>
-<body>
-
-<!-- ═══════════════════════ NAV ═══════════════════════ -->
-{% include "nav.njk" %}
-
 <!-- ═══════════════════════ HERO ═══════════════════════ -->
 <section class="hero">
   <div class="hero-bg"></div>
@@ -1668,9 +1510,6 @@ footer{
   </div>
 </section>
 
-<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
-{% include "footer.njk" %}
-
 <script>
 // FAQ accordion
 document.querySelectorAll('.faq-q').forEach(btn => {
@@ -1711,6 +1550,3 @@ document.querySelectorAll('.problem-card, .step-card, .pricing-card, .testimonia
   observer.observe(el);
 });
 </script>
-
-</body>
-</html>
