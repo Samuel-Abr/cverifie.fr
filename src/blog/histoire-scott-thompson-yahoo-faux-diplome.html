@@ -1,0 +1,374 @@
+---
+layout: base.njk
+title: "Scott Thompson : le PDG de Yahoo viré après 4 mois pour un diplôme inventé"
+description: "En 2012, Scott Thompson est nommé PDG de Yahoo avec grande fanfare. Quatre mois plus tard, il doit partir — à cause d'un diplôme en informatique qu'il n'a jamais obtenu. La chute la plus rapide de la Silicon Valley."
+---
+<style>
+.story-hero {
+  margin-top:64px;
+  background:#0A0A0A;
+  position:relative;
+  overflow:hidden;
+  padding:5rem 2rem 4rem;
+}
+.story-hero::before {
+  content:'';
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse at 80% 0%, rgba(140,80,180,0.2) 0%, transparent 60%),
+             radial-gradient(ellipse at 5% 70%, rgba(45,106,79,0.1) 0%, transparent 50%);
+}
+.story-hero-inner { max-width:800px; margin:0 auto; position:relative; z-index:1; }
+.story-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(140,80,180,0.2); border:1px solid rgba(180,120,220,0.4);
+  color:#C9A; padding:5px 14px; border-radius:100px;
+  font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  margin-bottom:1.5rem;
+}
+.story-badge::before {
+  content:''; width:6px; height:6px; border-radius:50%; background:#B8A;
+}
+.story-hero h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,4.5vw,3.2rem);
+  color:white; line-height:1.15;
+  letter-spacing:-0.02em; margin-bottom:1.25rem;
+  font-weight:700;
+}
+.story-hero h1 em { color:#C9A; font-style:italic; }
+.story-hero-lead {
+  font-size:1.1rem; color:rgba(255,255,255,0.65);
+  line-height:1.75; max-width:660px; margin-bottom:2rem;
+}
+.story-meta {
+  display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;
+}
+.story-meta-item {
+  font-size:12px; color:rgba(255,255,255,0.4);
+  display:flex; align-items:center; gap:6px;
+}
+.story-meta-item strong { color:rgba(255,255,255,0.65); }
+
+.story-body {
+  max-width:800px; margin:0 auto;
+  padding:4rem 2rem 5rem;
+}
+.story-body h2 {
+  font-family:'Playfair Display',serif;
+  font-size:1.75rem; color:var(--ink);
+  font-weight:700; line-height:1.2;
+  letter-spacing:-0.02em;
+  margin:3rem 0 1.25rem;
+  padding-bottom:.75rem;
+  border-bottom:2px solid #F0EAF8;
+}
+.story-body h3 {
+  font-size:1.1rem; font-weight:700; color:var(--ink);
+  margin:2rem 0 .75rem;
+}
+.story-body p {
+  font-size:1rem; color:var(--ink-light);
+  line-height:1.85; margin-bottom:1.25rem;
+}
+.story-body strong { color:var(--ink); font-weight:600; }
+.story-body ul { padding-left:1.5rem; margin-bottom:1.25rem; }
+.story-body li { font-size:.9375rem; color:var(--ink-light); line-height:1.7; margin-bottom:.5rem; }
+
+.story-pullquote {
+  margin:2.5rem 0;
+  border-left:4px solid #7B3FAF;
+  padding:1.25rem 1.75rem;
+  background:#F8F0FF;
+  border-radius:0 10px 10px 0;
+}
+.story-pullquote p {
+  font-family:'Playfair Display',serif;
+  font-size:1.2rem; color:#3D1070;
+  line-height:1.65; margin:0;
+  font-style:italic;
+}
+.story-pullquote cite {
+  display:block; margin-top:.75rem;
+  font-size:.8rem; color:#888; font-style:normal;
+}
+
+.story-keybox {
+  background:var(--cream-dark); border:1px solid var(--border);
+  border-radius:12px; padding:1.5rem 2rem; margin:2.5rem 0;
+}
+.story-keybox h4 {
+  font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-muted); margin-bottom:1rem;
+}
+.story-keybox ul { padding-left:1.25rem; margin:0; }
+.story-keybox li { font-size:.9rem; color:var(--ink-light); line-height:1.65; margin-bottom:.5rem; }
+
+.story-timeline {
+  margin:2.5rem 0;
+  border-left:2px solid var(--border);
+  padding-left:1.5rem;
+}
+.story-timeline-item { position:relative; margin-bottom:1.5rem; }
+.story-timeline-item::before {
+  content:''; position:absolute; left:-1.75rem; top:4px;
+  width:10px; height:10px; border-radius:50%;
+  background:#7B3FAF; border:2px solid white;
+  box-shadow:0 0 0 2px #7B3FAF;
+}
+.story-timeline-item .tl-date {
+  font-size:.8rem; font-weight:700; color:#7B3FAF;
+  letter-spacing:.05em; text-transform:uppercase;
+  margin-bottom:.25rem; display:block;
+}
+.story-timeline-item p { font-size:.9rem; margin-bottom:0; }
+
+.story-numbers {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1rem;
+  margin:2.5rem 0;
+}
+.story-number-item {
+  background:var(--cream-dark); border:1px solid var(--border);
+  border-radius:10px; padding:1.25rem; text-align:center;
+}
+.story-number-item .num {
+  font-size:1.8rem; font-weight:700; color:var(--ink);
+  font-family:'Playfair Display',serif; line-height:1;
+  margin-bottom:.4rem; display:block;
+}
+.story-number-item .label {
+  font-size:.75rem; color:var(--ink-muted); line-height:1.4;
+}
+
+.story-lesson {
+  background:var(--ink); border-radius:16px;
+  padding:2.5rem; margin:3rem 0;
+  position:relative; overflow:hidden;
+}
+.story-lesson::before {
+  content:''; position:absolute; top:-60px; right:-30px;
+  width:200px; height:200px; border-radius:50%;
+  background:radial-gradient(circle,rgba(45,106,79,0.3) 0%,transparent 70%);
+}
+.story-lesson-inner { position:relative; z-index:1; }
+.story-lesson h3 {
+  font-size:1rem; font-weight:700; color:var(--green-light);
+  letter-spacing:.06em; text-transform:uppercase;
+  margin-bottom:1rem;
+}
+.story-lesson p {
+  font-size:.9375rem; color:rgba(255,255,255,.7);
+  line-height:1.75; margin-bottom:.75rem;
+}
+.story-lesson p:last-child { margin-bottom:0; }
+
+.story-cta {
+  background:white; border:1.5px solid var(--border);
+  border-radius:16px; padding:2rem;
+  display:flex; align-items:center; gap:2rem;
+  margin-top:3rem;
+}
+.story-cta-icon {
+  width:56px; height:56px; background:var(--green-pale);
+  border-radius:50%; display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+.story-cta-icon svg { width:24px; height:24px; stroke:var(--green); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.story-cta-text h4 { font-size:1rem; font-weight:700; color:var(--ink); margin-bottom:.4rem; }
+.story-cta-text p { font-size:.875rem; color:var(--ink-light); line-height:1.6; margin:0; }
+.story-cta-btn {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--green); color:white;
+  padding:11px 22px; border-radius:8px;
+  font-size:13px; font-weight:600;
+  white-space:nowrap; transition:background .2s;
+  flex-shrink:0;
+}
+.story-cta-btn:hover { background:var(--green-mid); }
+
+.story-nav {
+  border-top:1px solid var(--border);
+  padding:2rem 0 0; margin-top:3rem;
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  flex-wrap:wrap;
+}
+.story-nav a {
+  font-size:.875rem; color:var(--green); font-weight:600;
+  display:flex; align-items:center; gap:6px;
+}
+.story-nav a svg { width:14px; height:14px; stroke:currentColor; fill:none; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
+
+@media(max-width:768px) {
+  .story-numbers { grid-template-columns:1fr 1fr; }
+}
+@media(max-width:640px) {
+  .story-hero { padding:3.5rem 1.25rem 3rem; }
+  .story-body { padding:2.5rem 1.25rem 4rem; }
+  .story-cta { flex-direction:column; align-items:flex-start; }
+  .story-numbers { grid-template-columns:1fr; }
+}
+</style>
+
+<!-- HERO -->
+<section class="story-hero">
+  <div class="story-hero-inner">
+    <span class="story-badge">Histoire vraie · Silicon Valley</span>
+    <h1>Scott Thompson :<br><em>PDG de Yahoo viré</em> après 4 mois</h1>
+    <p class="story-hero-lead">Nommé avec le mandat de sauver Yahoo, Scott Thompson avait tout pour plaire : un CV brillant, une réputation de bâtisseur, et un diplôme en informatique de Stonehill College. Problème : ce dernier diplôme n'existait pas. Et dans la Silicon Valley, quelqu'un allait le découvrir.</p>
+    <div class="story-meta">
+      <span class="story-meta-item">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="2" width="10" height="9" rx="1"/><path d="M4 2V1M8 2V1M1 5h10"/></svg>
+        <strong>Mai 2012</strong> · Sunnyvale, Californie
+      </span>
+      <span class="story-meta-item">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="5"/><polyline points="6,3 6,6 8,8"/></svg>
+        11 min de lecture
+      </span>
+      <span class="story-meta-item">Histoires vraies de fraudes CV</span>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE BODY -->
+<article class="story-body">
+
+  <p>Janvier 2012. Yahoo est en crise. L'entreprise qui a longtemps régné sur internet est en train de se noyer — bousculée par Google, rattrapée par Facebook, incapable de trouver une direction. Son conseil d'administration cherche un sauveur. Il croit l'avoir trouvé en la personne de Scott Thompson, l'ancien président de PayPal. Le jour de son annonce, les marchés applaudissent. L'histoire aurait pu s'arrêter là.</p>
+
+  <p>Elle s'arrête quatre mois plus tard, à cause d'une ligne sur un CV.</p>
+
+  <h2>L'ascension — Un CV au millimètre</h2>
+
+  <p>Scott Thompson, 54 ans en 2012, a une carrière solide. Il a grandi dans l'industrie des paiements électroniques, contribué à la montée en puissance de Visa, puis dirigé PayPal — qu'il a transformé en machine à cash sous l'égide d'eBay. Son bilan opérationnel est réel, ses résultats mesurables.</p>
+
+  <p>Sur son CV et dans les documents officiels de Yahoo, il est indiqué qu'il détient un diplôme en comptabilité <em>et</em> en informatique du Stonehill College, une petite université catholique du Massachusetts. C'est ce double diplôme qui lui donne une crédibilité particulière dans la Silicon Valley — être un financier <em>et</em> comprendre la tech, c'est précisément ce que Yahoo cherche.</p>
+
+  <div class="story-numbers">
+    <div class="story-number-item">
+      <span class="num">4</span>
+      <span class="label">mois comme PDG de Yahoo avant la démission forcée</span>
+    </div>
+    <div class="story-number-item">
+      <span class="num">~7 M$</span>
+      <span class="label">de rémunération perçue pendant ces 4 mois</span>
+    </div>
+    <div class="story-number-item">
+      <span class="num">1</span>
+      <span class="label">diplôme inventé — en informatique, jamais obtenu à Stonehill</span>
+    </div>
+  </div>
+
+  <h2>Dan Loeb — Le détective improbable</h2>
+
+  <p>L'ennemi de Thompson ne s'appelle pas un journaliste d'investigation ni un agent du FBI. Il s'appelle Dan Loeb, et c'est un hedge fund manager agressif, fondateur de Third Point LLC, qui détient une participation significative dans Yahoo et veut imposer ses propres candidats au conseil d'administration.</p>
+
+  <p>Dans ce contexte de bras de fer entre l'actionnaire activiste et le conseil d'administration, Loeb et ses équipes passent au crible tout ce qui peut nuire à la crédibilité de Thompson — y compris, méthodiquement, son CV.</p>
+
+  <p>Le 26 avril 2012, Third Point envoie une lettre de 8 pages au conseil d'administration de Yahoo. La lettre est chirurgicale. Elle pointe en particulier un élément : <strong>Stonehill College ne proposait pas de diplôme en informatique en 1979, l'année où Thompson est supposé avoir obtenu le sien.</strong> Le département d'informatique a été créé bien après.</p>
+
+  <div class="story-pullquote">
+    <p>« Ce n'était pas une erreur de bonne foi. Ce diplôme qui n'existe pas apparaît dans des dizaines de documents officiels déposés auprès de la SEC. Cela soulève des questions fondamentales sur l'intégrité du management. »</p>
+    <cite>— Dan Loeb, lettre à Yahoo Board of Directors, 26 avril 2012</cite>
+  </div>
+
+  <h2>La séquence de la chute</h2>
+
+  <p>Ce qui suit est un manuel de gestion de crise raté.</p>
+
+  <p>Dans un premier temps, Yahoo tente de minimiser. Un porte-parole parle d'"inadvertance". Le conseil affirme que Thompson n'est "pas personnellement responsable" de l'inexactitude. On laisse entendre que c'est peut-être la faute du cabinet de chasseurs de têtes, Heidrick & Struggles, qui aurait mal compilé le dossier.</p>
+
+  <p>La presse ne lâche pas. The New York Times, le Wall Street Journal, TechCrunch, tous passent au crible les autres documents officiels de Yahoo : le faux diplôme apparaît dans des <em>proxy statements</em> déposés auprès de la Securities and Exchange Commission — des documents légaux, sous serment.</p>
+
+  <p>En quelques jours, l'affaire dépasse Thompson lui-même : on découvre que Patti Hart, membre du conseil d'administration qui avait validé la nomination de Thompson, avait elle-même des inexactitudes dans son CV officiel sur Yahoo (un diplôme indiqué comme en économie alors qu'il l'était en speech communication). Le conseil est embarrassé à tous les niveaux.</p>
+
+  <div class="story-keybox">
+    <h4>La cascade d'effets de l'affaire Thompson</h4>
+    <ul>
+      <li><strong>Scott Thompson :</strong> Démission forcée le 13 mai 2012. Il invoque officiellement un cancer de la thyroïde récemment diagnostiqué, sans lien avec le scandale selon lui.</li>
+      <li><strong>Patti Hart :</strong> Administratrice qui avait soutenu Thompson. Son propre CV est remis en question. Elle quitte le conseil peu après.</li>
+      <li><strong>Heidrick & Struggles :</strong> Cabinet de chasseurs de têtes, sous pression pour expliquer comment la vérification des diplômes n'a pas révélé l'inexactitude.</li>
+      <li><strong>Yahoo :</strong> Nommera finalement Marissa Mayer comme PDG — une vraie diplômée en informatique de Stanford, dont les qualifications n'ont fait l'objet d'aucun doute.</li>
+    </ul>
+  </div>
+
+  <h2>La vraie question : qui a vérifié ?</h2>
+
+  <p>Scott Thompson avait un vrai diplôme de comptabilité de Stonehill College. Il avait une vraie carrière. Ses résultats chez PayPal étaient réels et documentés. La ligne "informatique" sur son diplôme était, dans le fond, accessoire à sa légitimité réelle.</p>
+
+  <p>Alors pourquoi l'avoir mise ? Vraisemblablement parce que dans la Silicon Valley, "je comprends la tech" c'est bien — mais "j'ai un diplôme en informatique" c'est mieux. Une petite ligne. Une petite amélioration. Un détail.</p>
+
+  <p>Sauf que ce détail a figé dans des documents légaux officiels, répété sur 10 ans dans des dépôts auprès de la SEC, et personne — pas Yahoo, pas les chasseurs de têtes, pas les administrateurs, pas les actionnaires — n'avait pris la peine de demander une simple copie du diplôme.</p>
+
+  <p><strong>L'information aurait été disponible en 30 minutes.</strong> Un appel au bureau des alumni de Stonehill College aurait suffi.</p>
+
+  <div class="story-timeline">
+    <div class="story-timeline-item">
+      <span class="tl-date">Janvier 2012</span>
+      <p>Thompson nommé PDG de Yahoo. Son CV mentionne un double diplôme (comptabilité + informatique) à Stonehill College.</p>
+    </div>
+    <div class="story-timeline-item">
+      <span class="tl-date">26 avril 2012</span>
+      <p>Third Point / Dan Loeb envoie sa lettre explosant l'inexactitude du diplôme au conseil de Yahoo.</p>
+    </div>
+    <div class="story-timeline-item">
+      <span class="tl-date">28 avril – 12 mai 2012</span>
+      <p>Deux semaines de gestion de crise calamiteuse. Yahoo tente de nier, puis de minimiser, puis de diluer les responsabilités.</p>
+    </div>
+    <div class="story-timeline-item">
+      <span class="tl-date">13 mai 2012</span>
+      <p>Thompson démissionne. Officiellement pour raisons de santé (cancer de la thyroïde). Aucune charge pénale.</p>
+    </div>
+    <div class="story-timeline-item">
+      <span class="tl-date">Juillet 2012</span>
+      <p>Marissa Mayer nommée PDG. Le conseil restructuré. Yahoo tente de tourner la page.</p>
+    </div>
+  </div>
+
+  <h2>L'effet domino — Ce que l'affaire Thompson a changé</h2>
+
+  <p>Dans les mois qui ont suivi, plusieurs grandes entreprises américaines ont renforcé leurs procédures de vérification pour les nominations au niveau exécutif. Des cabinets de chasseurs de têtes ont explicitement mentionné la vérification des diplômes comme une étape obligatoire de leurs processus — ce qui, étrangement, n'était pas toujours le cas avant 2012.</p>
+
+  <p>Des études publiées après l'affaire ont révélé que des inexactitudes similaires existaient dans les CV d'un pourcentage non négligeable de dirigeants du Fortune 500 — non pas forcément des faux flagrants, mais des diplômes non obtenus présentés comme tels, des spécialités ajoutées rétrospectivement, des formations partielles transformées en diplômes complets.</p>
+
+  <p>La leçon est inconfortable : <strong>la fraude sur les diplômes n'est pas le fait de candidats sans scrupules aux postes d'entrée.</strong> Elle touche tous les niveaux hiérarchiques, y compris — et peut-être surtout — les postes les plus élevés, où la légitimité symbolique compte le plus et où la vérification rigoureuse est paradoxalement la moins systématique.</p>
+
+  <div class="story-pullquote">
+    <p>« Dans les recrutements de dirigeants, on passe des semaines à analyser les résultats financiers, les références stratégiques, les softs skills. Et on oublie souvent de vérifier si le diplôme inscrit sur le CV existe vraiment. »</p>
+    <cite>— Analyste RH, <em>Harvard Business Review</em>, 2013</cite>
+  </div>
+
+  <div class="story-lesson">
+    <div class="story-lesson-inner">
+      <h3>La leçon pour les recruteurs</h3>
+      <p>L'affaire Thompson illustre une vérité contre-intuitive : les recrutements les plus risqués en matière de fraude sont souvent ceux des postes les plus élevés. Plus le poste est prestigieux, plus la tentation d'embellir un CV est forte — et plus la vérification semble "inconvenante" ou superflue.</p>
+      <p>Un actionnaire activiste hostile n'est pas le meilleur outil de vérification des diplômes. <strong>Vérifier les diplômes de tout candidat, quel que soit son niveau, fait partie de la diligence raisonnable standard.</strong> C'est même plus crucial pour les postes de direction, où les conséquences d'une découverte tardive sont amplifiées.</p>
+      <p>En France, la vérification peut se faire directement auprès des établissements ou via un service dédié. Le coût d'une vérification (14,90 € à 79 €) est dérisoire face aux 7 millions de dollars versés à Thompson pendant ses 4 mois — sans compter le coût d'image pour Yahoo.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="story-cta">
+    <div class="story-cta-icon">
+      <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+    </div>
+    <div class="story-cta-text">
+      <h4>Un appel suffit. Nous le passons pour vous.</h4>
+      <p>CVérifié vérifie diplômes et expériences directement à la source, et vous remet un rapport écrit sous 48h. Sans abonnement, dès 14,90 €.</p>
+    </div>
+    <a href="/commander.html" class="story-cta-btn">
+      Vérifier un candidat
+      <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 13,8"/><polyline points="9,4 13,8 9,12"/></svg>
+    </a>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="story-nav">
+    <a href="/blog/histoire-marilee-jones-faux-diplomes-mit.html">
+      <svg viewBox="0 0 16 16"><polyline points="13,8 3,8"/><polyline points="7,12 3,8 7,4"/></svg>
+      Précédent : Marilee Jones, MIT
+    </a>
+    <a href="/blog/histoires-vraies-fraudes-cv.html">
+      Voir toutes les histoires
+      <svg viewBox="0 0 16 16"><polyline points="3,8 13,8"/><polyline points="9,4 13,8 9,12"/></svg>
+    </a>
+  </nav>
+
+</article>

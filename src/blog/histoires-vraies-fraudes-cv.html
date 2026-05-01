@@ -1,0 +1,470 @@
+---
+layout: base.njk
+title: "Histoires vraies de fraudes CV — Les imposteurs qui ont trompé le monde"
+description: "Médecins imaginaires, diplômes inventés, PDG menteurs. Les histoires vraies les plus folles de fraudes sur CV : Romand, Jones, Thompson. Parce que vérifier, ça compte vraiment."
+---
+<style>
+/* HERO */
+.stories-hero {
+  margin-top:64px;
+  background:#0A0A0F;
+  position:relative; overflow:hidden;
+  padding:6rem 2rem 5rem;
+  text-align:center;
+}
+.stories-hero::before {
+  content:'';
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse at 15% 50%, rgba(180,30,30,0.15) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 50%, rgba(30,80,180,0.15) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 100%, rgba(140,80,180,0.12) 0%, transparent 45%);
+}
+.stories-hero-inner {
+  max-width:760px; margin:0 auto;
+  position:relative; z-index:1;
+}
+.stories-eyebrow {
+  display:inline-flex; align-items:center; gap:10px;
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);
+  color:rgba(255,255,255,0.55); padding:6px 18px; border-radius:100px;
+  font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+  margin-bottom:2rem;
+}
+.stories-eyebrow::before {
+  content:''; width:6px; height:6px; border-radius:50%;
+  background:#E55; box-shadow:0 0 8px rgba(229,85,85,0.7);
+}
+.stories-hero h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.2rem,5vw,3.8rem);
+  color:white; line-height:1.1;
+  letter-spacing:-0.025em;
+  margin-bottom:1.5rem;
+  font-weight:700;
+}
+.stories-hero h1 span {
+  background:linear-gradient(135deg,#E88 0%,#C9A 50%,#8BB 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.stories-hero-sub {
+  font-size:1.1rem; color:rgba(255,255,255,0.55);
+  line-height:1.75; max-width:600px; margin:0 auto 3rem;
+}
+.stories-stats {
+  display:flex; align-items:center; justify-content:center;
+  gap:3rem; flex-wrap:wrap;
+  padding-top:2.5rem;
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+.stories-stat {
+  text-align:center;
+}
+.stories-stat .n {
+  font-size:2rem; font-weight:700; color:white;
+  font-family:'Playfair Display',serif; display:block;
+  line-height:1;
+}
+.stories-stat .l {
+  font-size:.75rem; color:rgba(255,255,255,0.4);
+  text-transform:uppercase; letter-spacing:.1em;
+  margin-top:.4rem; display:block;
+}
+
+/* INTRO BAND */
+.stories-intro {
+  background:var(--cream-dark);
+  border-bottom:1px solid var(--border);
+  padding:2.5rem 2rem;
+  text-align:center;
+}
+.stories-intro-inner { max-width:720px; margin:0 auto; }
+.stories-intro p {
+  font-size:1rem; color:var(--ink-light); line-height:1.8;
+}
+.stories-intro strong { color:var(--ink); }
+
+/* STORIES GRID */
+.stories-main {
+  max-width:1100px; margin:0 auto;
+  padding:4rem 2rem 5rem;
+}
+.stories-label {
+  font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink-muted); margin-bottom:2rem;
+  display:flex; align-items:center; gap:12px;
+}
+.stories-label::after {
+  content:''; flex:1; height:1px; background:var(--border);
+}
+
+.stories-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.75rem;
+  margin-bottom:4rem;
+}
+
+.story-card {
+  border-radius:18px;
+  overflow:hidden;
+  position:relative;
+  display:flex; flex-direction:column;
+  background:#0E0E14;
+  cursor:pointer;
+  transition:transform .3s ease, box-shadow .3s ease;
+  text-decoration:none;
+}
+.story-card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
+.story-card-img {
+  height:220px; overflow:hidden; position:relative;
+}
+.story-card-img img {
+  width:100%; height:100%; object-fit:cover;
+  transition:transform .5s ease;
+  filter:brightness(.55) saturate(.7);
+}
+.story-card:hover .story-card-img img {
+  transform:scale(1.06);
+  filter:brightness(.65) saturate(.85);
+}
+.story-card-img-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to bottom, transparent 40%, rgba(14,14,20,0.95) 100%);
+}
+.story-card-country {
+  position:absolute; top:14px; left:14px;
+  background:rgba(0,0,0,0.55); backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,0.12);
+  color:rgba(255,255,255,0.75);
+  padding:4px 12px; border-radius:100px;
+  font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+}
+.story-card-year {
+  position:absolute; top:14px; right:14px;
+  background:rgba(0,0,0,0.55); backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,0.12);
+  color:rgba(255,255,255,0.55);
+  padding:4px 10px; border-radius:100px;
+  font-size:10px; font-weight:600;
+}
+
+.story-card-body {
+  padding:1.75rem;
+  flex:1; display:flex; flex-direction:column;
+}
+.story-card-tag {
+  font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  margin-bottom:.75rem; display:block;
+}
+.story-card-tag.rouge { color:#E88; }
+.story-card-tag.bleu  { color:#8BB; }
+.story-card-tag.violet{ color:#C9A; }
+
+.story-card-body h2 {
+  font-family:'Playfair Display',serif;
+  font-size:1.25rem; color:white; line-height:1.25;
+  font-weight:700; margin-bottom:.75rem;
+  letter-spacing:-0.01em;
+}
+.story-card-body p {
+  font-size:.875rem; color:rgba(255,255,255,0.5);
+  line-height:1.65; flex:1; margin-bottom:1.5rem;
+}
+.story-card-duration {
+  display:flex; align-items:center; gap:8px;
+  margin-bottom:1.25rem;
+}
+.story-card-duration-badge {
+  background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12);
+  color:rgba(255,255,255,0.6);
+  padding:4px 12px; border-radius:100px;
+  font-size:11px; font-weight:600;
+}
+.story-card-link {
+  display:flex; align-items:center; justify-content:space-between;
+  padding-top:1.25rem;
+  border-top:1px solid rgba(255,255,255,0.08);
+  color:rgba(255,255,255,0.7);
+  font-size:.8rem; font-weight:600;
+  text-transform:uppercase; letter-spacing:.06em;
+  transition:color .2s;
+}
+.story-card:hover .story-card-link { color:white; }
+.story-card-link svg {
+  width:16px; height:16px; stroke:currentColor; fill:none;
+  stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;
+  transition:transform .2s;
+}
+.story-card:hover .story-card-link svg { transform:translateX(4px); }
+
+/* COMING SOON CARDS */
+.story-card-soon {
+  border-radius:18px; overflow:hidden;
+  background:#0E0E14;
+  border:1.5px dashed rgba(255,255,255,0.1);
+  padding:1.75rem;
+  display:flex; flex-direction:column;
+  justify-content:center; align-items:center;
+  text-align:center;
+  min-height:340px;
+}
+.story-card-soon-badge {
+  display:inline-flex; align-items:center; gap:6px;
+  background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);
+  color:rgba(255,255,255,0.4); padding:4px 12px; border-radius:100px;
+  font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  margin-bottom:1.25rem;
+}
+.story-card-soon-badge span {
+  width:5px; height:5px; border-radius:50%; background:var(--green-light);
+  animation:blink 2.5s infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.story-card-soon h3 {
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem; color:rgba(255,255,255,0.5);
+  line-height:1.35; margin-bottom:.75rem;
+}
+.story-card-soon p {
+  font-size:.8rem; color:rgba(255,255,255,0.25); line-height:1.6;
+}
+
+/* MORALE / CTA BAND */
+.stories-morale {
+  background:var(--cream-dark); border:1px solid var(--border);
+  border-radius:20px; padding:3rem;
+  margin-bottom:3rem;
+  display:grid; grid-template-columns:1fr auto;
+  gap:3rem; align-items:center;
+  position:relative; overflow:hidden;
+}
+.stories-morale::before {
+  content:''; position:absolute; top:-80px; right:-40px;
+  width:250px; height:250px; border-radius:50%;
+  background:radial-gradient(circle,rgba(45,106,79,0.08) 0%,transparent 70%);
+}
+.stories-morale-left { position:relative; z-index:1; }
+.stories-morale-left h2 {
+  font-family:'Playfair Display',serif;
+  font-size:1.5rem; color:var(--ink);
+  margin-bottom:.75rem;
+  letter-spacing:-0.015em;
+}
+.stories-morale-left p {
+  font-size:.9375rem; color:var(--ink-light);
+  line-height:1.75; max-width:560px;
+}
+.stories-morale-right {
+  display:flex; flex-direction:column; gap:.75rem;
+  position:relative; z-index:1;
+  min-width:240px;
+}
+.morale-btn {
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  padding:14px 24px; border-radius:10px;
+  font-size:13px; font-weight:600;
+  transition:all .2s; text-align:center;
+}
+.morale-btn.primary { background:var(--green); color:white; }
+.morale-btn.primary:hover { background:var(--green-mid); transform:translateY(-1px); }
+.morale-btn.secondary {
+  background:white; color:var(--ink-light);
+  border:1.5px solid var(--border);
+}
+.morale-btn.secondary:hover { border-color:var(--green); color:var(--green); }
+.morale-btn svg { width:14px; height:14px; stroke:currentColor; fill:none; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+
+/* BACK TO BLOG */
+.stories-back {
+  text-align:center; margin-top:1rem;
+}
+.stories-back a {
+  font-size:.875rem; color:var(--green); font-weight:600;
+  display:inline-flex; align-items:center; gap:6px;
+}
+.stories-back a svg { width:14px; height:14px; stroke:currentColor; fill:none; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .stories-grid { grid-template-columns:1fr 1fr; }
+  .stories-morale { grid-template-columns:1fr; gap:2rem; }
+  .stories-morale-right { min-width:auto; }
+}
+@media(max-width:600px){
+  .stories-hero { padding:4rem 1.25rem 3.5rem; }
+  .stories-main { padding:2.5rem 1.25rem 4rem; }
+  .stories-grid { grid-template-columns:1fr; }
+  .stories-stats { gap:1.5rem; }
+  .stories-morale { padding:2rem 1.5rem; }
+}
+</style>
+
+<!-- HERO -->
+<section class="stories-hero">
+  <div class="stories-hero-inner">
+    <span class="stories-eyebrow">Histoires vraies</span>
+    <h1>Quand les CV<br><span>mentent vraiment</span></h1>
+    <p class="stories-hero-sub">Ces histoires ne sont pas des hypothèses. Ce sont des faits. Des impostures réelles, documentées, parfois tragiques — qui prouvent pourquoi vérifier un CV n'est pas une option.</p>
+    <div class="stories-stats">
+      <div class="stories-stat">
+        <span class="n">18 ans</span>
+        <span class="l">Le plus long mensonge documenté</span>
+      </div>
+      <div class="stories-stat">
+        <span class="n">3</span>
+        <span class="l">Histoires vraies racontées ici</span>
+      </div>
+      <div class="stories-stat">
+        <span class="n">0</span>
+        <span class="l">Vérification faite au départ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO BAND -->
+<div class="stories-intro">
+  <div class="stories-intro-inner">
+    <p>Un faux médecin qui ne va jamais travailler. Une doyenne du MIT sans aucun des diplômes qu'elle déclare. Un PDG de Yahoo viré pour une ligne inventée sur son CV. Ces histoires ont un point commun : <strong>elles auraient toutes pu être évitées par une simple vérification.</strong></p>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="stories-main">
+
+  <p class="stories-label">3 histoires publiées</p>
+
+  <div class="stories-grid">
+
+    <!-- Story 1 — Romand -->
+    <a href="/blog/histoire-jean-claude-romand-faux-medecin.html" class="story-card">
+      <div class="story-card-img">
+        <img
+          src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=700&q=72&fm=webp"
+          alt="Document juridique — affaire Romand"
+          loading="lazy" width="700" height="467">
+        <div class="story-card-img-overlay"></div>
+        <span class="story-card-country">France</span>
+        <span class="story-card-year">1975 – 1993</span>
+      </div>
+      <div class="story-card-body">
+        <span class="story-card-tag rouge">Fraude à l'identité · 18 ans</span>
+        <h2>Jean-Claude Romand, le faux médecin de l'OMS</h2>
+        <p>Il a prétendu être chercheur à l'Organisation Mondiale de la Santé pendant dix-huit ans. Il ne travaillait pas. Il ne sortait de chez lui que pour errer. Quand la vérité allait éclater, il a tué sa femme, ses enfants et ses parents.</p>
+        <div class="story-card-duration">
+          <span class="story-card-duration-badge">18 ans de mensonge</span>
+          <span class="story-card-duration-badge">5 victimes</span>
+        </div>
+        <div class="story-card-link">
+          Lire l'histoire
+          <svg viewBox="0 0 16 16"><polyline points="3,8 13,8"/><polyline points="9,4 13,8 9,12"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- Story 2 — Jones -->
+    <a href="/blog/histoire-marilee-jones-faux-diplomes-mit.html" class="story-card">
+      <div class="story-card-img">
+        <img
+          src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=700&q=72&fm=webp"
+          alt="Remise de diplôme — affaire Jones MIT"
+          loading="lazy" width="700" height="467">
+        <div class="story-card-img-overlay"></div>
+        <span class="story-card-country">États-Unis</span>
+        <span class="story-card-year">1979 – 2007</span>
+      </div>
+      <div class="story-card-body">
+        <span class="story-card-tag bleu">Faux diplômes · 28 ans</span>
+        <h2>Marilee Jones, doyenne du MIT sans diplôme</h2>
+        <p>Pendant 28 ans, elle a dirigé les admissions du MIT — l'une des universités les plus sélectives au monde — sans posséder aucun des trois diplômes de son CV. Elle donnait des conférences sur l'authenticité dans les dossiers universitaires.</p>
+        <div class="story-card-duration">
+          <span class="story-card-duration-badge">28 ans</span>
+          <span class="story-card-duration-badge">3 diplômes inventés</span>
+        </div>
+        <div class="story-card-link">
+          Lire l'histoire
+          <svg viewBox="0 0 16 16"><polyline points="3,8 13,8"/><polyline points="9,4 13,8 9,12"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- Story 3 — Thompson -->
+    <a href="/blog/histoire-scott-thompson-yahoo-faux-diplome.html" class="story-card">
+      <div class="story-card-img">
+        <img
+          src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=700&q=72&fm=webp"
+          alt="Siège social et finance — affaire Thompson Yahoo"
+          loading="lazy" width="700" height="467">
+        <div class="story-card-img-overlay"></div>
+        <span class="story-card-country">Silicon Valley</span>
+        <span class="story-card-year">2012</span>
+      </div>
+      <div class="story-card-body">
+        <span class="story-card-tag violet">Faux diplôme · PDG Fortune 500</span>
+        <h2>Scott Thompson, PDG de Yahoo, 4 mois et dehors</h2>
+        <p>Nommé PDG de Yahoo en grande pompe en janvier 2012, Scott Thompson était censé sauver l'entreprise. Il a quitté son poste en mai, après qu'un actionnaire hostile a découvert que son diplôme en informatique n'existait pas.</p>
+        <div class="story-card-duration">
+          <span class="story-card-duration-badge">4 mois comme PDG</span>
+          <span class="story-card-duration-badge">~7 M$ de rémunération</span>
+        </div>
+        <div class="story-card-link">
+          Lire l'histoire
+          <svg viewBox="0 0 16 16"><polyline points="3,8 13,8"/><polyline points="9,4 13,8 9,12"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- Coming soon 1 -->
+    <div class="story-card-soon">
+      <span class="story-card-soon-badge"><span></span>Prochainement</span>
+      <h3>L'homme qui a dirigé un hôpital sans être médecin</h3>
+      <p>Une histoire bien française, encore plus incroyable. En cours de rédaction.</p>
+    </div>
+
+    <!-- Coming soon 2 -->
+    <div class="story-card-soon">
+      <span class="story-card-soon-badge"><span></span>Prochainement</span>
+      <h3>Le "pilote" qui n'a jamais passé son brevet</h3>
+      <p>Pendant des années, il volait sur des vols commerciaux avec de faux brevets de pilote. À venir.</p>
+    </div>
+
+    <!-- Coming soon 3 -->
+    <div class="story-card-soon">
+      <span class="story-card-soon-badge"><span></span>Prochainement</span>
+      <h3>Le chirurgien aux diplômes du marché noir</h3>
+      <p>Il opérait. Ses patients survivaient, pour la plupart. L'histoire de Frank Abagnale version salle d'opération.</p>
+    </div>
+
+  </div>
+
+  <!-- MORALE / CTA -->
+  <div class="stories-morale">
+    <div class="stories-morale-left">
+      <h2>La morale de toutes ces histoires ?</h2>
+      <p>Chacune de ces affaires aurait pu être évitée par un seul appel téléphonique, un email à l'établissement, ou une vérification sur une base officielle. Le mensonge ne résiste pas à la vérification — il prospère uniquement dans son absence. CVérifié fait ces vérifications pour vous, en 48h, à partir de 14,90 €.</p>
+    </div>
+    <div class="stories-morale-right">
+      <a href="/commander.html" class="morale-btn primary">
+        <svg viewBox="0 0 16 16"><polyline points="3,8 7,12 13,4"/></svg>
+        Vérifier un candidat dès 14,90 €
+      </a>
+      <a href="/blog/" class="morale-btn secondary">
+        <svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1"/><path d="M5 7h6M5 10h4"/></svg>
+        Voir tous nos guides
+      </a>
+    </div>
+  </div>
+
+  <div class="stories-back">
+    <a href="/blog/">
+      <svg viewBox="0 0 16 16"><polyline points="13,8 3,8"/><polyline points="7,12 3,8 7,4"/></svg>
+      Retour au blog CVérifié
+    </a>
+  </div>
+
+</main>

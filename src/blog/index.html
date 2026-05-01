@@ -307,6 +307,123 @@ description: "Guides pratiques, cadre légal, données de marché. Tout ce qu'un
 .blog-cta-btn.secondary:hover{background:rgba(255,255,255,0.12)}
 .blog-cta-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 
+/* STORIES BAND */
+.stories-band {
+  background:#0C0C12;
+  border-radius:20px;
+  padding:2.5rem;
+  margin:3.5rem 0;
+  position:relative; overflow:hidden;
+}
+.stories-band::before {
+  content:''; position:absolute; top:-100px; left:-50px;
+  width:350px; height:350px; border-radius:50%;
+  background:radial-gradient(circle,rgba(180,30,30,0.1) 0%,transparent 65%);
+  pointer-events:none;
+}
+.stories-band::after {
+  content:''; position:absolute; bottom:-80px; right:-40px;
+  width:280px; height:280px; border-radius:50%;
+  background:radial-gradient(circle,rgba(80,30,180,0.1) 0%,transparent 65%);
+  pointer-events:none;
+}
+.stories-band-header {
+  display:flex; align-items:center; justify-content:space-between;
+  margin-bottom:.75rem; position:relative; z-index:1;
+}
+.stories-band-label {
+  display:flex; align-items:center; gap:8px;
+  font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+  color:rgba(255,255,255,0.5);
+}
+.stories-fire { font-size:14px; }
+.stories-band-seeall {
+  font-size:11px; font-weight:600; color:rgba(255,255,255,0.4);
+  display:flex; align-items:center; gap:5px;
+  transition:color .2s;
+}
+.stories-band-seeall:hover { color:rgba(255,255,255,0.7); }
+.stories-band-intro {
+  margin-bottom:2rem; position:relative; z-index:1;
+}
+.stories-band-intro p {
+  font-size:1.4rem; font-family:'Playfair Display',serif;
+  color:white; line-height:1.4; font-weight:600;
+  max-width:640px; letter-spacing:-0.01em;
+}
+.stories-band-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:1.25rem; position:relative; z-index:1;
+  margin-bottom:2rem;
+}
+.sband-card {
+  border-radius:12px; overflow:hidden;
+  background:#16161F;
+  cursor:pointer; display:flex; flex-direction:column;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.sband-card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 16px 40px rgba(0,0,0,0.5);
+}
+.sband-card-img {
+  height:160px; overflow:hidden; position:relative;
+}
+.sband-card-img img {
+  width:100%; height:100%; object-fit:cover;
+  transition:transform .5s ease;
+  filter:brightness(.5) saturate(.6);
+}
+.sband-card:hover .sband-card-img img {
+  transform:scale(1.05);
+  filter:brightness(.6) saturate(.75);
+}
+.sband-card-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to bottom, transparent 30%, rgba(22,22,31,0.9) 100%);
+}
+.sband-badge {
+  position:absolute; bottom:10px; left:12px;
+  padding:3px 10px; border-radius:100px;
+  font-size:10px; font-weight:700; letter-spacing:.08em;
+}
+.sband-badge.rouge { background:rgba(180,30,30,0.8); color:#FFD5D5; }
+.sband-badge.bleu  { background:rgba(30,60,180,0.8); color:#D5E5FF; }
+.sband-badge.violet{ background:rgba(100,30,180,0.8); color:#EEDCFF; }
+.sband-card-body { padding:1.25rem; flex:1; display:flex; flex-direction:column; }
+.sband-card-body h3 {
+  font-size:.95rem; color:white; line-height:1.3;
+  font-weight:700; margin-bottom:.6rem;
+  letter-spacing:-0.01em;
+}
+.sband-card-body p {
+  font-size:.8rem; color:rgba(255,255,255,0.45);
+  line-height:1.6; flex:1; margin-bottom:1rem;
+}
+.sband-read {
+  font-size:.75rem; font-weight:600; color:rgba(255,255,255,0.5);
+  display:flex; align-items:center; gap:5px;
+  text-transform:uppercase; letter-spacing:.08em;
+  transition:color .2s;
+}
+.sband-card:hover .sband-read { color:rgba(255,255,255,0.85); }
+.stories-band-footer {
+  text-align:center; position:relative; z-index:1;
+}
+.stories-band-cta {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12);
+  color:rgba(255,255,255,0.6);
+  padding:12px 24px; border-radius:8px;
+  font-size:13px; font-weight:600;
+  transition:all .2s;
+}
+.stories-band-cta:hover {
+  background:rgba(255,255,255,0.12);
+  color:rgba(255,255,255,0.9);
+  border-color:rgba(255,255,255,0.25);
+}
+
 /* RESPONSIVE */
 @media(max-width:1024px){
 
@@ -315,6 +432,7 @@ description: "Guides pratiques, cadre légal, données de marché. Tout ce qu'un
   .card-featured-img{min-height:260px}
   .blog-cta{grid-template-columns:1fr;gap:2rem}
   .blog-cta-right{min-width:auto}
+  .stories-band-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:640px){
   .blog-masthead{padding:3.5rem 1.5rem 2.5rem}
@@ -324,7 +442,9 @@ description: "Guides pratiques, cadre légal, données de marché. Tout ce qu'un
   .card-featured-body{padding:1.75rem}
   .blog-cta{padding:2rem 1.5rem}
   .masthead-stats{gap:1.25rem}
-
+  .stories-band{padding:1.75rem 1.25rem}
+  .stories-band-grid{grid-template-columns:1fr}
+  .stories-band-intro p{font-size:1.1rem}
 }
 </style>
 <!-- MASTHEAD -->
@@ -673,6 +793,71 @@ description: "Guides pratiques, cadre légal, données de marché. Tout ce qu'un
       </div>
     </a>
 
+  </div>
+
+  <!-- HISTOIRES VRAIES — SECTION SPECIALE -->
+  <div class="stories-band">
+    <div class="stories-band-header">
+      <div class="stories-band-label">
+        <span class="stories-fire">🔥</span>
+        Histoires vraies
+      </div>
+      <a href="/blog/histoires-vraies-fraudes-cv.html" class="stories-band-seeall">
+        Toutes les histoires
+        <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 13,8"/><polyline points="9,4 13,8 9,12"/></svg>
+      </a>
+    </div>
+    <div class="stories-band-intro">
+      <p>Ces histoires ne sont pas des hypothèses. Ce sont des faits — documentés, vérifiés, parfois tragiques.</p>
+    </div>
+    <div class="stories-band-grid">
+
+      <a href="/blog/histoire-jean-claude-romand-faux-medecin.html" class="sband-card">
+        <div class="sband-card-img">
+          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=72&fm=webp" alt="Affaire Romand" loading="lazy" width="600" height="400">
+          <div class="sband-card-overlay"></div>
+          <span class="sband-badge rouge">18 ans · France</span>
+        </div>
+        <div class="sband-card-body">
+          <h3>Jean-Claude Romand — Faux médecin OMS pendant 18 ans</h3>
+          <p>Il passait ses journées dans sa voiture, à errer dans les forêts. Sa femme, ses enfants, ses parents : personne ne savait. Jusqu'au bout.</p>
+          <span class="sband-read">Lire l'histoire <svg viewBox="0 0 12 12" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </a>
+
+      <a href="/blog/histoire-marilee-jones-faux-diplomes-mit.html" class="sband-card">
+        <div class="sband-card-img">
+          <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=72&fm=webp" alt="Affaire Marilee Jones MIT" loading="lazy" width="600" height="400">
+          <div class="sband-card-overlay"></div>
+          <span class="sband-badge bleu">28 ans · MIT</span>
+        </div>
+        <div class="sband-card-body">
+          <h3>Marilee Jones — Doyenne du MIT sans aucun diplôme</h3>
+          <p>Elle jugeait les dossiers de milliers d'étudiants par an. Elle écrivait sur l'authenticité. Ses propres diplômes étaient inventés depuis 1979.</p>
+          <span class="sband-read">Lire l'histoire <svg viewBox="0 0 12 12" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </a>
+
+      <a href="/blog/histoire-scott-thompson-yahoo-faux-diplome.html" class="sband-card">
+        <div class="sband-card-img">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=72&fm=webp" alt="Affaire Scott Thompson Yahoo" loading="lazy" width="600" height="400">
+          <div class="sband-card-overlay"></div>
+          <span class="sband-badge violet">4 mois · Yahoo</span>
+        </div>
+        <div class="sband-card-body">
+          <h3>Scott Thompson — PDG de Yahoo, viré pour un diplôme inventé</h3>
+          <p>Nommé grand sauveur de Yahoo. Parti quatre mois plus tard. La cause : une ligne sur un CV que personne n'avait vérifiée.</p>
+          <span class="sband-read">Lire l'histoire <svg viewBox="0 0 12 12" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+    <div class="stories-band-footer">
+      <a href="/blog/histoires-vraies-fraudes-cv.html" class="stories-band-cta">
+        Voir toutes les histoires — et celles à venir
+        <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 13,8"/><polyline points="9,4 13,8 9,12"/></svg>
+      </a>
+    </div>
   </div>
 
   <!-- CTA -->
