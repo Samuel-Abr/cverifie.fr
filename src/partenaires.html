@@ -1,0 +1,426 @@
+---
+layout: base.njk
+title: "Partenaires & Sources de vérification officielles · CVérifié"
+description: "CVérifié vérifie les CV via des sources officielles : Ministère du Travail, diplome.gouv.fr, CNIL, France Compétences, HEC, Polytechnique et 300+ établissements français."
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Partenaires et sources officielles CVérifié",
+  "description": "Sources officielles et partenaires institutionnels utilisés par CVérifié pour vérifier les diplômes, certifications et expériences professionnelles en France.",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "item": { "@type": "Organization", "name": "Ministère du Travail et de l'Emploi", "url": "https://travail-emploi.gouv.fr" } },
+    { "@type": "ListItem", "position": 2, "item": { "@type": "Organization", "name": "CNIL — Commission Nationale de l'Informatique et des Libertés", "url": "https://www.cnil.fr" } },
+    { "@type": "ListItem", "position": 3, "item": { "@type": "Organization", "name": "France Compétences — Registre National des Certifications Professionnelles", "url": "https://www.francecompetences.fr" } },
+    { "@type": "ListItem", "position": 4, "item": { "@type": "Organization", "name": "diplome.gouv.fr — Service officiel de vérification des diplômes", "url": "https://www.diplomeverification.fr" } },
+    { "@type": "ListItem", "position": 5, "item": { "@type": "Organization", "name": "INRS — Institut National de Recherche et de Sécurité (CACES)", "url": "https://www.inrs.fr" } },
+    { "@type": "ListItem", "position": 6, "item": { "@type": "Organization", "name": "ENIC-NARIC France — Reconnaissance des diplômes étrangers", "url": "https://www.ciep.fr/enic-naric-france" } },
+    { "@type": "ListItem", "position": 7, "item": { "@type": "Organization", "name": "HEC Paris", "url": "https://www.hec.edu" } },
+    { "@type": "ListItem", "position": 8, "item": { "@type": "Organization", "name": "École Polytechnique", "url": "https://www.polytechnique.edu" } },
+    { "@type": "ListItem", "position": 9, "item": { "@type": "Organization", "name": "ESCP Business School", "url": "https://escp.eu" } },
+    { "@type": "ListItem", "position": 10, "item": { "@type": "Organization", "name": "Université Paris 1 Panthéon-Sorbonne", "url": "https://www.pantheonsorbonne.fr" } }
+  ]
+}
+</script>
+
+<style>
+/* ── HERO ── */
+.partners-hero{
+  margin-top:64px;padding:5rem 2rem 4rem;
+  background:var(--ink);position:relative;overflow:hidden;
+}
+.partners-hero::before{
+  content:'';position:absolute;top:-100px;right:-60px;
+  width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(45,106,79,.35) 0%,transparent 65%);
+}
+.partners-hero::after{
+  content:'';position:absolute;bottom:-80px;left:-40px;
+  width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(82,183,136,.12) 0%,transparent 65%);
+}
+.partners-hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1}
+.partners-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--green-light);margin-bottom:1.5rem;
+}
+.partners-hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,4.5vw,3rem);
+  color:white;font-weight:600;
+  line-height:1.15;letter-spacing:-0.02em;
+  max-width:700px;margin-bottom:1.5rem;
+}
+.partners-hero p{
+  font-size:1.1rem;color:rgba(255,255,255,.7);
+  line-height:1.7;max-width:580px;
+}
+
+/* ── LAYOUT ── */
+.partners-section{padding:4.5rem 2rem}
+.partners-inner{max-width:1100px;margin:0 auto}
+.section-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.75rem}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.5rem,2.5vw,2rem);
+  color:var(--ink);margin-bottom:.75rem;letter-spacing:-0.02em;
+}
+.section-body{font-size:1rem;color:var(--ink-light);line-height:1.7;max-width:620px;margin-bottom:2.5rem}
+
+/* ── INSTITUTIONAL PARTNER CARDS ── */
+.inst-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.inst-card{
+  background:white;border:1px solid var(--border);
+  border-radius:16px;padding:2rem;
+  transition:border-color .2s,box-shadow .2s;
+}
+.inst-card:hover{border-color:var(--green);box-shadow:0 4px 20px rgba(45,106,79,.1)}
+.inst-card-logo{
+  height:44px;display:flex;align-items:center;margin-bottom:1.25rem;
+}
+.inst-card-logo img{height:100%;width:auto;max-width:160px;object-fit:contain}
+.inst-card-logo .logo-text{
+  font-size:1rem;font-weight:800;letter-spacing:-.01em;color:var(--ink);
+}
+.inst-card-logo .logo-text .accent{color:var(--green)}
+.inst-card-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--green);background:var(--green-pale);
+  padding:3px 8px;border-radius:6px;margin-bottom:.75rem;
+}
+.inst-card h3{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
+.inst-card p{font-size:.85rem;color:var(--ink-muted);line-height:1.6;margin-bottom:1rem}
+.inst-card a.inst-link{
+  font-size:.8rem;font-weight:600;color:var(--green);
+  display:inline-flex;align-items:center;gap:4px;
+}
+.inst-card a.inst-link:hover{text-decoration:underline}
+.inst-card a.inst-link svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round}
+
+/* ── SCHOOL LOGOS GRID ── */
+.school-section{background:var(--cream-dark)}
+.logos-group-label{
+  font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-muted);margin:2rem 0 1rem;
+}
+.logos-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));
+  gap:.875rem;
+}
+.logo-card{
+  background:white;border:1px solid var(--border);
+  border-radius:12px;padding:1.1rem .75rem;
+  display:flex;align-items:center;justify-content:center;
+  min-height:64px;
+  transition:border-color .2s,box-shadow .2s;
+}
+.logo-card:hover{border-color:var(--green-mid);box-shadow:0 4px 12px rgba(45,106,79,.08)}
+.logo-card img{
+  max-height:32px;width:auto;max-width:110px;
+  object-fit:contain;
+  filter:grayscale(40%) opacity(0.8);
+  transition:filter .25s;
+}
+.logo-card:hover img{filter:grayscale(0%) opacity(1)}
+.logos-more{
+  font-size:.875rem;color:var(--ink-muted);
+  margin-top:1.5rem;padding:.875rem 1rem;
+  background:white;border:1px dashed var(--border);
+  border-radius:10px;text-align:center;
+}
+.logos-more strong{color:var(--ink)}
+
+/* ── CERTIFICATIONS ── */
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.cert-card{
+  background:white;border:1px solid var(--border);
+  border-radius:14px;padding:1.75rem 1.5rem;
+  transition:border-color .2s,box-shadow .2s;
+}
+.cert-card:hover{border-color:var(--green);box-shadow:0 4px 16px rgba(45,106,79,.1)}
+.cert-icon{
+  width:46px;height:46px;border-radius:11px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1rem;font-size:1.3rem;
+}
+.cert-card h3{font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
+.cert-card p{font-size:.83rem;color:var(--ink-muted);line-height:1.6;margin-bottom:1rem}
+.cert-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.cert-tag{
+  font-size:10px;font-weight:600;padding:2px 7px;border-radius:5px;
+  background:var(--cream-dark);color:var(--ink-light);
+}
+
+/* ── COMPLIANCE ── */
+.compliance-section{background:var(--ink)}
+.compliance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.compliance-card{
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;padding:2rem;
+}
+.compliance-card-img{height:36px;margin-bottom:1.25rem;display:flex;align-items:center}
+.compliance-card-img img{height:100%;width:auto;object-fit:contain}
+.compliance-card h3{font-size:.95rem;font-weight:700;color:white;margin-bottom:.6rem}
+.compliance-card p{font-size:.83rem;color:rgba(255,255,255,.6);line-height:1.65}
+.compliance-card a{color:var(--green-light);text-decoration:underline}
+.compliance-title{color:white!important}
+.compliance-label{color:var(--green-light)!important}
+
+/* ── CTA ── */
+.partners-cta{
+  background:var(--green);border-radius:20px;
+  padding:4rem 3rem;text-align:center;
+  margin:5rem auto;max-width:800px;
+}
+.partners-cta h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.5rem,3vw,2rem);
+  color:white;margin-bottom:1rem;letter-spacing:-0.02em;
+}
+.partners-cta p{font-size:1rem;color:rgba(255,255,255,.8);margin-bottom:2rem}
+.partners-cta-btn{
+  display:inline-block;background:white;color:var(--green);
+  padding:14px 36px;border-radius:10px;font-weight:700;font-size:15px;
+  transition:all .2s;
+}
+.partners-cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+
+@media(max-width:1024px){.cert-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+  .inst-grid{grid-template-columns:1fr}
+  .compliance-grid{grid-template-columns:1fr}
+  .cert-grid{grid-template-columns:1fr}
+  .logos-grid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}
+}
+@media(max-width:600px){.partners-cta{padding:2.5rem 1.5rem;border-radius:14px}}
+</style>
+
+<!-- HERO -->
+<section class="partners-hero">
+  <div class="partners-hero-inner">
+    <div class="partners-eyebrow">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L2 3.5V7.5C2 10.2 4.2 12.7 7 13.5C9.8 12.7 12 10.2 12 7.5V3.5L7 1.5Z" fill="#2D6A4F" stroke="#52B788" stroke-width="0.8"/><polyline points="4.5,7 6.5,9 9.5,5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Sources officielles · Conformité réglementaire
+    </div>
+    <h1>Nos partenaires & sources de vérification officielles</h1>
+    <p>CVérifié vérifie chaque diplôme et expérience auprès des sources primaires — établissements émetteurs, registres nationaux et organismes officiels. Voici les institutions avec lesquelles nous travaillons et le cadre dans lequel nous opérons.</p>
+  </div>
+</section>
+
+<!-- PARTENAIRES INSTITUTIONNELS -->
+<section class="partners-section">
+  <div class="partners-inner">
+    <div class="section-label">Partenaires institutionnels</div>
+    <h2 class="section-title">Sources officielles de l'État français</h2>
+    <p class="section-body">CVérifié opère exclusivement via des canaux officiels et réglementés. Chaque vérification s'appuie sur des registres ou organismes reconnus par l'État français.</p>
+
+    <div class="inst-grid">
+
+      <div class="inst-card">
+        <div class="inst-card-logo">
+          <picture>
+            <img src="/images/ministere-travail-black.png" alt="Ministère du Travail et de l'Emploi" width="160" height="44" loading="lazy">
+          </picture>
+        </div>
+        <span class="inst-card-badge">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1L1.5 2.5V5.5C1.5 7.5 3.1 9.2 5 9.8C6.9 9.2 8.5 7.5 8.5 5.5V2.5L5 1Z" fill="#2D6A4F"/></svg>
+          Cadre légal
+        </span>
+        <h3>Ministère du Travail et de l'Emploi</h3>
+        <p>Cadre légal de la vérification de CV en France. L'article L.1221-6 du Code du travail autorise explicitement l'employeur à vérifier les informations déclarées par un candidat.</p>
+        <a href="https://travail-emploi.gouv.fr" target="_blank" rel="noopener" class="inst-link">travail-emploi.gouv.fr <svg viewBox="0 0 12 12"><path d="M7 3h3v3M10 3L5 8M4 3H2v7h7V8"/></svg></a>
+      </div>
+
+      <div class="inst-card">
+        <div class="inst-card-logo">
+          <picture>
+            <img src="/images/rgpd-black.png" alt="RGPD — Règlement Général sur la Protection des Données" width="120" height="44" loading="lazy">
+          </picture>
+        </div>
+        <span class="inst-card-badge">Conformité données</span>
+        <h3>CNIL — Commission Nationale de l'Informatique et des Libertés</h3>
+        <p>CVérifié est conforme au RGPD et aux recommandations de la CNIL. Consentement explicite du candidat requis avant toute vérification. Données hébergées en France. Durées de conservation respectées.</p>
+        <a href="https://www.cnil.fr" target="_blank" rel="noopener" class="inst-link">cnil.fr <svg viewBox="0 0 12 12"><path d="M7 3h3v3M10 3L5 8M4 3H2v7h7V8"/></svg></a>
+      </div>
+
+      <div class="inst-card">
+        <div class="inst-card-logo">
+          <div class="logo-text">diplôme<span class="accent">.gouv.fr</span></div>
+        </div>
+        <span class="inst-card-badge">Diplômes officiels</span>
+        <h3>diplome.gouv.fr — Service de vérification officiel</h3>
+        <p>Service officiel du Ministère de l'Enseignement supérieur. Permet de vérifier authentiquement les diplômes délivrés par les universités françaises depuis 1990 (licence, master, doctorat, BTS).</p>
+        <a href="https://www.diplomeverification.fr" target="_blank" rel="noopener" class="inst-link">diplomeverification.fr <svg viewBox="0 0 12 12"><path d="M7 3h3v3M10 3L5 8M4 3H2v7h7V8"/></svg></a>
+      </div>
+
+      <div class="inst-card">
+        <div class="inst-card-logo">
+          <div class="logo-text">France<span class="accent">Compétences</span></div>
+        </div>
+        <span class="inst-card-badge">Certifications RNCP</span>
+        <h3>France Compétences — Registre National des Certifications</h3>
+        <p>Registre national qui référence toutes les certifications professionnelles reconnues par l'État. CVérifié vérifie via France Compétences la validité des certifications RNCP et des organismes de formation accrédités.</p>
+        <a href="https://www.francecompetences.fr" target="_blank" rel="noopener" class="inst-link">francecompetences.fr <svg viewBox="0 0 12 12"><path d="M7 3h3v3M10 3L5 8M4 3H2v7h7V8"/></svg></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GRANDES ÉCOLES & UNIVERSITÉS -->
+<section class="partners-section school-section">
+  <div class="partners-inner">
+    <div class="section-label">Sources de vérification académiques</div>
+    <h2 class="section-title">Grandes écoles & universités françaises</h2>
+    <p class="section-body">CVérifié contacte directement les établissements émetteurs pour confirmer l'authenticité des diplômes. Voici les principales institutions avec lesquelles nous travaillons régulièrement.</p>
+
+    <div class="logos-group-label">Grandes écoles d'ingénieurs & scientifiques</div>
+    <div class="logos-grid">
+      <div class="logo-card"><img src="/images/logos/polytechnique.png" alt="École Polytechnique" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/mines-paris.png" alt="Mines Paris" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/centralesupelec.png" alt="CentraleSupélec" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/ponts.png" alt="École des Ponts" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/arts-metiers.svg" alt="Arts et Métiers" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/insa-lyon.png" alt="INSA Lyon" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/ens-paris.png" alt="ENS Paris" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/utc.svg" alt="UTC Compiègne" loading="lazy"></div>
+    </div>
+
+    <div class="logos-group-label" style="margin-top:2rem">Écoles de commerce & management</div>
+    <div class="logos-grid">
+      <div class="logo-card"><img src="/images/logos/hec.svg" alt="HEC Paris" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/escp.svg" alt="ESCP Business School" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/edhec.svg" alt="EDHEC Business School" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/emlyon.svg" alt="emlyon business school" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/audencia.svg" alt="Audencia" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/kedge.svg" alt="KEDGE Business School" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/neoma.svg" alt="NEOMA Business School" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/grenoble-em.png" alt="Grenoble EM" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/skema.svg" alt="SKEMA Business School" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/tbs.svg" alt="TBS Education" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/paris-dauphine.png" alt="Paris Dauphine" loading="lazy"></div>
+    </div>
+
+    <div class="logos-group-label" style="margin-top:2rem">Universités françaises</div>
+    <div class="logos-grid">
+      <div class="logo-card"><img src="/images/logos/sorbonne.svg" alt="Université Paris 1 Panthéon-Sorbonne" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/aix-marseille.svg" alt="Université Aix-Marseille" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/bordeaux.png" alt="Université de Bordeaux" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/univ-lyon.svg" alt="Université de Lyon" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/nantes.png" alt="Université de Nantes" loading="lazy"></div>
+      <div class="logo-card"><img src="/images/logos/upec.svg" alt="UPEC" loading="lazy"></div>
+    </div>
+
+    <div class="logos-more">
+      <strong>+ 300 établissements</strong> d'enseignement supérieur français — universités, IUT, lycées professionnels, instituts spécialisés — sont contactés directement selon le diplôme à vérifier.
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS PROFESSIONNELLES -->
+<section class="partners-section">
+  <div class="partners-inner">
+    <div class="section-label">Certifications professionnelles</div>
+    <h2 class="section-title">Sources de vérification des certifications</h2>
+    <p class="section-body">Au-delà des diplômes, CVérifié vérifie les certifications professionnelles critiques via les organismes accrédités.</p>
+
+    <div class="cert-grid">
+
+      <div class="cert-card">
+        <div class="cert-icon" style="background:#FFF3E0">
+          <span style="font-size:1.4rem">🏗️</span>
+        </div>
+        <h3>INRS — CACES & Habilitations</h3>
+        <p>Vérification des CACES (Certificats d'Aptitude à la Conduite En Sécurité) et des habilitations électriques auprès des organismes de formation agréés INRS.</p>
+        <div class="cert-tags">
+          <span class="cert-tag">CACES R389</span>
+          <span class="cert-tag">CACES R486</span>
+          <span class="cert-tag">Habilitation électrique</span>
+          <span class="cert-tag">AIPR</span>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon" style="background:#E3F2FD">
+          <span style="font-size:1.4rem">☁️</span>
+        </div>
+        <h3>Credly & certifications cloud</h3>
+        <p>Vérification des certifications IT via Credly (plateforme officielle de badges numériques), portails AWS, Microsoft Learn, Google Cloud et Cisco Certifications.</p>
+        <div class="cert-tags">
+          <span class="cert-tag">AWS</span>
+          <span class="cert-tag">Azure</span>
+          <span class="cert-tag">Google Cloud</span>
+          <span class="cert-tag">Cisco CCNA/CCNP</span>
+          <span class="cert-tag">PMP</span>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon" style="background:#F3E5F5">
+          <span style="font-size:1.4rem">📋</span>
+        </div>
+        <h3>RNCP & France Compétences</h3>
+        <p>Vérification des certifications RNCP (Répertoire National des Certifications Professionnelles) : titre professionnel, CQP, certification de branche.</p>
+        <div class="cert-tags">
+          <span class="cert-tag">Titres professionnels</span>
+          <span class="cert-tag">CQP</span>
+          <span class="cert-tag">BTS / DUT</span>
+          <span class="cert-tag">Certifications de branche</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONFORMITÉ RÉGLEMENTAIRE -->
+<section class="partners-section compliance-section">
+  <div class="partners-inner">
+    <div class="section-label compliance-label">Cadre réglementaire</div>
+    <h2 class="section-title compliance-title">CVérifié opère dans un cadre légal strict</h2>
+    <p style="font-size:1rem;color:rgba(255,255,255,.65);line-height:1.7;max-width:600px;margin-bottom:0">Chaque vérification CVérifié respecte les textes de loi en vigueur en France et en Europe.</p>
+
+    <div class="compliance-grid">
+
+      <div class="compliance-card">
+        <div class="compliance-card-img">
+          <img src="/images/rgpd-white.png" alt="RGPD" width="80" height="36" loading="lazy">
+        </div>
+        <h3>RGPD — Règlement Européen</h3>
+        <p>Base légale : intérêt légitime (art. 6.1.f). Consentement explicite du candidat requis. Conservation des données limitée à 2 ans. Droits d'accès, rectification et suppression garantis. <a href="https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on" target="_blank" rel="noopener">En savoir plus sur le RGPD →</a></p>
+      </div>
+
+      <div class="compliance-card">
+        <div class="compliance-card-img">
+          <div style="font-size:1rem;font-weight:800;color:rgba(255,255,255,.85);letter-spacing:-.02em">Code du<br>Travail</div>
+        </div>
+        <h3>Article L.1221-6 du Code du travail</h3>
+        <p>Autorise l'employeur à recueillir des informations sur un candidat à condition qu'elles soient directement liées à l'emploi proposé. CVérifié respecte cette condition de pertinence à chaque vérification.</p>
+      </div>
+
+      <div class="compliance-card">
+        <div class="compliance-card-img">
+          <div style="display:flex;align-items:center;gap:8px">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 3L3 7v8c0 5.5 4.6 10.6 11 12.3C20.4 25.6 25 20.5 25 15V7L14 3Z" fill="#2D6A4F" stroke="#52B788" stroke-width="1.2"/><polyline points="9,14 12.5,17.5 19,10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span style="font-size:1rem;font-weight:800;color:rgba(255,255,255,.85)">Made in France</span>
+          </div>
+        </div>
+        <h3>Hébergement & traitement en France</h3>
+        <p>Toutes les données collectées lors d'une vérification CVérifié sont hébergées et traitées sur des serveurs localisés en France, conformément aux exigences de la CNIL et au RGPD.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div style="padding:0 2rem">
+  <div class="partners-cta">
+    <h2>Des sources officielles. Un rapport en 48 h.</h2>
+    <p>Première vérification à partir de 14,90 €. Aucun engagement. Résultat sous 48 heures ouvrées.</p>
+    <a href="/commander.html" class="partners-cta-btn">Lancer une vérification →</a>
+  </div>
+</div>
