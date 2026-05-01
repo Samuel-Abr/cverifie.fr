@@ -41,7 +41,21 @@
       "WebFetch(domain:pagespeed.web.dev)",
       "Bash(grep -o '\"categories\":{\"performance\":{\"id\":\"performance\",\"title\":\"[^\"]*\",\"score\":[0-9.]*' \"/Users/sabraham/Downloads/PageSpeed Insights.html\")",
       "Bash(sort -t: -k2 -n)",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(sips -z 141 300 /Users/sabraham/Desktop/CVérifié.fr/src/images/cverifie-logo-green.png --out /Users/sabraham/Desktop/CVérifié.fr/src/images/cverifie-logo-green-sm.png)",
+      "Bash(sips -s format webp /Users/sabraham/Desktop/CVérifié.fr/src/images/cverifie-logo-green-sm.png --out /Users/sabraham/Desktop/CVérifié.fr/src/images/cverifie-logo-green.webp)",
+      "Bash(cwebp --version)",
+      "Bash(cwebp -q 90 /Users/sabraham/Desktop/CVérifié.fr/src/images/cverifie-logo-green-sm.png -o /Users/sabraham/Desktop/CVérifié.fr/src/images/cverifie-logo-green.webp)",
+      "Bash(sips -z 141 300 /Users/sabraham/Desktop/CVérifié.fr/src/images/cverifie-logo-white.png --out /Users/sabraham/Desktop/CVérifié.fr/src/images/cverifie-logo-white-sm.png)",
+      "Bash(cwebp -q 90 /Users/sabraham/Desktop/CVérifié.fr/src/images/cverifie-logo-white-sm.png -o /Users/sabraham/Desktop/CVérifié.fr/src/images/cverifie-logo-white.webp)",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/sabraham/Desktop/CVérifié.fr/src/images/ministere-travail-white.png\")",
+      "Bash(cwebp -q 90 /Users/sabraham/Desktop/CVérifié.fr/src/images/ministere-travail-white.png -o /Users/sabraham/Desktop/CVérifié.fr/src/images/ministere-travail-white.webp)",
+      "Bash(npx @11ty/eleventy --input=src --output=_site)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(grep -v '<style\\\\|<script\\\\|^$')",
+      "Bash(npx netlify *)"
     ]
   }
 }

@@ -3,6 +3,9 @@ layout: base.njk
 title: "Lancer une vérification · CVérifié"
 description: "Lancez une vérification de CV ou de diplôme en quelques clics. Choisissez votre formule, renseignez les informations du candidat, recevez le rapport sous 48h."
 ---
+<!-- Stripe.js — chargé tôt pour réduire la latence -->
+<script src="https://js.stripe.com/v3/"></script>
+
 <style>
 /* ── PROGRESS ── */
 .progress-wrap{padding-top:64px;background:white;border-bottom:1px solid var(--border)}
@@ -141,60 +144,81 @@ description: "Lancez une vérification de CV ou de diplôme en quelques clics. C
   display:inline-flex;align-items:center;gap:10px;
   margin-bottom:1rem;
 }
-.submit-btn:hover{background:var(--green-mid);transform:translateY(-2px);box-shadow:0 12px 32px rgba(45,106,79,0.25)}
+.submit-btn:hover:not(:disabled){background:var(--green-mid);transform:translateY(-2px);box-shadow:0 12px 32px rgba(45,106,79,0.25)}
+.submit-btn:disabled{opacity:.65;cursor:not-allowed;transform:none}
 .submit-btn svg{width:18px;height:18px;stroke:white;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-.payment-notice{
-  background:var(--cream-dark);border:1px solid var(--border);
-  border-radius:10px;padding:1rem 1.5rem;
-  display:inline-flex;align-items:flex-start;gap:10px;
-  max-width:540px;margin:0 auto;text-align:left;
-}
-.payment-notice svg{width:18px;height:18px;stroke:var(--green);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;margin-top:1px}
-.payment-notice p{font-size:13px;color:var(--ink-light);line-height:1.6}
-.payment-notice strong{color:var(--ink);font-weight:600}
 .trust-logos-form{display:flex;align-items:center;justify-content:center;gap:2.5rem;margin-top:1.75rem;opacity:.65}
 .trust-logos-form img{height:36px;width:auto}
 
-/* ── CONFIRMATION ── */
-.confirm-page{display:none;text-align:center;padding:4rem 2rem}
-.confirm-icon{
-  width:80px;height:80px;border-radius:50%;
-  background:var(--green-pale);margin:0 auto 2rem;
-  display:flex;align-items:center;justify-content:center;
+/* ── STEP 3 : PAIEMENT ── */
+.payment-page{display:none}
+.payment-wrap{max-width:540px;margin:0 auto}
+
+/* Squelette de chargement pendant que le PaymentIntent se crée */
+.payment-loading{
+  text-align:center;padding:3rem 0;
 }
-.confirm-icon svg{width:38px;height:38px;stroke:var(--green);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.confirm-page h2{font-size:2rem;margin-bottom:1rem;letter-spacing:-0.02em}
-.confirm-page p{font-size:1rem;color:var(--ink-light);max-width:480px;margin:0 auto 2.5rem;line-height:1.75}
-.confirm-steps{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;
-  max-width:640px;margin:0 auto 3rem;text-align:left;
+.payment-loading-spinner{
+  width:44px;height:44px;
+  border:3px solid var(--green-pale);
+  border-top-color:var(--green);
+  border-radius:50%;
+  animation:spin .75s linear infinite;
+  margin:0 auto 1.25rem;
 }
-.confirm-step{background:white;border:1px solid var(--border);border-radius:12px;padding:1.25rem}
-.confirm-step-num{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--green);margin-bottom:.5rem}
-.confirm-step h4{font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:.3rem}
-.confirm-step p{font-size:.82rem;color:var(--ink-muted);line-height:1.5}
-.back-home-btn{
-  display:inline-flex;align-items:center;gap:8px;
-  background:white;color:var(--ink);border:1.5px solid var(--border);
-  padding:12px 28px;border-radius:10px;font-size:14px;font-weight:600;
-  transition:all .2s;cursor:pointer;
+@keyframes spin{to{transform:rotate(360deg)}}
+.payment-loading p{color:var(--ink-muted);font-size:.9rem}
+
+/* Contenu paiement */
+.payment-content{display:none}
+#payment-element{margin-bottom:1.25rem}
+.payment-message{
+  min-height:1.4em;
+  font-size:.875rem;
+  color:#dc2626;
+  margin-bottom:.75rem;
+  text-align:center;
 }
-.back-home-btn:hover{border-color:var(--green);color:var(--green);background:var(--green-ultralight)}
+
+/* Zone récap prix */
+.payment-recap{
+  background:var(--green-ultra,#f0faf4);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:1rem 1.25rem;
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:1.5rem;
+}
+.payment-recap-label{font-size:.875rem;color:var(--ink-light)}
+.payment-recap-label strong{color:var(--ink);display:block;font-size:.95rem}
+.payment-recap-price{
+  font-family:'Playfair Display',serif;
+  font-size:1.8rem;font-weight:700;
+  color:var(--green);
+  letter-spacing:-0.02em;
+}
+
+/* Badge sécurité Stripe */
+.stripe-badge{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  font-size:11.5px;color:var(--ink-muted);
+  margin-top:.75rem;
+}
+.stripe-badge svg{width:13px;height:13px;stroke:var(--ink-muted);fill:none;stroke-width:2;stroke-linecap:round}
 
 /* ── RESPONSIVE ── */
 @media(max-width:768px){
   .plan-grid{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
   .uploads-grid{grid-template-columns:1fr}
-  .confirm-steps{grid-template-columns:1fr}
-
   .reassurance{gap:1rem}
 }
 @media(max-width:500px){
-
   .prog-step span{display:none}
+  .submit-btn{padding:16px 28px;font-size:15px}
 }
 </style>
+
 <!-- ═══════════════════════ PROGRESS ═══════════════════════ -->
 <div class="progress-wrap">
   <div class="progress-inner">
@@ -210,7 +234,7 @@ description: "Lancez une vérification de CV ou de diplôme en quelques clics. C
     <div class="prog-connector"></div>
     <div class="prog-step" id="prog-3">
       <div class="prog-num">3</div>
-      <span>Confirmation</span>
+      <span>Paiement</span>
     </div>
   </div>
 </div>
@@ -219,12 +243,12 @@ description: "Lancez une vérification de CV ou de diplôme en quelques clics. C
 <div class="page" id="step-1">
   <div class="step-header">
     <h1>Quelle vérification souhaitez-vous lancer ?</h1>
-    <p>Choisissez la formule adaptée à votre besoin. Aucun paiement maintenant : vous recevrez un lien sécurisé par email.</p>
+    <p>Choisissez la formule adaptée à votre besoin. Paiement sécurisé à l'étape suivante.</p>
   </div>
 
   <div class="plan-grid">
 
-    <div class="plan-card" data-plan="Essentiel" data-price="14,90">
+    <div class="plan-card" data-plan="Essentiel" data-price="14,90" data-cents="1490">
       <div class="plan-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
       <div class="plan-name">Essentiel</div>
       <div class="plan-price"><sup>€</sup>14<span style="font-size:1.4rem">,90</span></div>
@@ -238,7 +262,7 @@ description: "Lancez une vérification de CV ou de diplôme en quelques clics. C
       </ul>
     </div>
 
-    <div class="plan-card" data-plan="Complet" data-price="39,90">
+    <div class="plan-card" data-plan="Complet" data-price="39,90" data-cents="3990">
       <div class="plan-badge">Le plus choisi</div>
       <div class="plan-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
       <div class="plan-name">Complet</div>
@@ -253,7 +277,7 @@ description: "Lancez une vérification de CV ou de diplôme en quelques clics. C
       </ul>
     </div>
 
-    <div class="plan-card" data-plan="Intégral" data-price="79,00">
+    <div class="plan-card" data-plan="Intégral" data-price="79,00" data-cents="7900">
       <div class="plan-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
       <div class="plan-name">Intégral</div>
       <div class="plan-price"><sup>€</sup>79<span style="font-size:1.4rem">,00</span></div>
@@ -290,8 +314,7 @@ description: "Lancez une vérification de CV ou de diplôme en quelques clics. C
     <p>2 minutes pour tout renseigner. On s'occupe du reste.</p>
   </div>
 
-  <!-- Netlify Form : les fichiers sont stockés dans votre dashboard Netlify -->
-  <!-- Pour recevoir les emails sur contact@cverifie.fr : Netlify → Site Settings → Forms → Form notifications -->
+  <!-- Netlify Form : les données sont capturées dans votre dashboard Netlify -->
   <form
     name="verification-request"
     method="POST"
@@ -324,7 +347,7 @@ description: "Lancez une vérification de CV ou de diplôme en quelques clics. C
       </div>
       <div class="form-row single">
         <div class="field">
-          <label for="email_recruteur">Email professionnel <span class="required-star">*</span> <span class="hint">(pour recevoir votre lien de paiement et le rapport)</span></label>
+          <label for="email_recruteur">Email professionnel <span class="required-star">*</span> <span class="hint">(pour recevoir votre rapport)</span></label>
           <input type="email" id="email_recruteur" name="email_recruteur" placeholder="marie.dupont@entreprise.fr" required>
         </div>
       </div>
@@ -379,7 +402,7 @@ description: "Lancez une vérification de CV ou de diplôme en quelques clics. C
 
       <div class="uploads-grid">
 
-        <!-- CV : obligatoire -->
+        <!-- CV -->
         <div class="upload-zone" id="zone-cv">
           <input type="file" name="cv" id="input-cv" accept=".pdf,.doc,.docx" onchange="fileSelected(this,'zone-cv','name-cv')" aria-label="CV du candidat (PDF, DOC, DOCX, max 10 Mo)">
           <span class="upload-optional">Facultatif</span>
@@ -391,7 +414,7 @@ description: "Lancez une vérification de CV ou de diplôme en quelques clics. C
           <div class="upload-filename" id="name-cv"></div>
         </div>
 
-        <!-- Diplôme : facultatif -->
+        <!-- Diplôme -->
         <div class="upload-zone" id="zone-diplome">
           <input type="file" name="diplome" id="input-diplome" accept=".pdf,.jpg,.jpeg,.png" onchange="fileSelected(this,'zone-diplome','name-diplome')" aria-label="Diplôme (PDF, JPG, PNG, max 10 Mo)">
           <span class="upload-optional">Facultatif</span>
@@ -403,7 +426,7 @@ description: "Lancez une vérification de CV ou de diplôme en quelques clics. C
           <div class="upload-filename" id="name-diplome"></div>
         </div>
 
-        <!-- Lettre de motivation : facultatif -->
+        <!-- Lettre de motivation -->
         <div class="upload-zone" id="zone-lm">
           <input type="file" name="lettre_motivation" id="input-lm" accept=".pdf,.doc,.docx" onchange="fileSelected(this,'zone-lm','name-lm')" aria-label="Lettre de motivation (PDF, DOC, DOCX, max 10 Mo)">
           <span class="upload-optional">Facultatif</span>
@@ -429,8 +452,8 @@ description: "Lancez une vérification de CV ou de diplôme en quelques clics. C
         Résultat sous 48h ouvrées
       </div>
       <div class="reassurance-item">
-        <svg viewBox="0 0 16 16"><path d="M2 3h12l-1 8H3L2 3z"/><path d="M5 3V2a1 1 0 012 0v1M9 3V2a1 1 0 012 0v1"/></svg>
-        Aucun paiement maintenant
+        <svg viewBox="0 0 16 16"><rect x="1" y="4" width="14" height="10" rx="2"/><path d="M1 8h14"/><path d="M5 12h2M9 12h2"/></svg>
+        Paiement 100% sécurisé
       </div>
       <div class="reassurance-item">
         <svg viewBox="0 0 16 16"><path d="M14 4l-8 8-4-4"/></svg>
@@ -440,111 +463,314 @@ description: "Lancez une vérification de CV ou de diplôme en quelques clics. C
 
     <!-- SUBMIT -->
     <div class="submit-zone">
-      <button type="submit" class="submit-btn">
+      <button type="submit" class="submit-btn" id="submit-btn">
         <svg viewBox="0 0 18 18"><polyline points="3,9 7,13 15,5"/></svg>
-        Faire vérifier mon candidat maintenant
+        Continuer vers le paiement
       </button>
-
-      <div class="payment-notice">
-        <svg viewBox="0 0 18 18"><rect x="1" y="4" width="16" height="11" rx="2"/><path d="M1 8h16"/></svg>
-        <p>
-          <strong>Aucun paiement maintenant.</strong><br>
-          Après soumission, vous recevrez un lien de paiement sécurisé sur votre email professionnel. La vérification démarre dès confirmation du règlement.
-        </p>
-      </div>
-
-      <div class="trust-logos-form">
-        <img src="/images/ministere-travail-black.png" alt="Ministère du Travail" loading="lazy" width="120" height="38">
-        <img src="/images/rgpd-black.png" alt="RGPD conforme" loading="lazy" width="120" height="38">
-      </div>
     </div>
 
   </form>
 </div>
 
-<!-- ═══════════════════════ STEP 3 : CONFIRMATION ═══════════════════════ -->
-<div class="page confirm-page" id="step-3">
-  <div class="confirm-icon">
-    <svg viewBox="0 0 38 38"><polyline points="6,19 15,28 32,10"/></svg>
-  </div>
-  <h2>Demande envoyée !</h2>
-  <p>
-    Votre demande de vérification a bien été reçue.<br>
-    Vous allez recevoir un <strong>lien de paiement sécurisé</strong> sur votre email professionnel dans les prochaines minutes.
-  </p>
+<!-- ═══════════════════════ STEP 3 : PAIEMENT ═══════════════════════ -->
+<div class="page payment-page" id="step-3">
 
-  <div class="confirm-steps">
-    <div class="confirm-step">
-      <div class="confirm-step-num">1</div>
-      <h4>Lien de paiement</h4>
-      <p>Vérifiez votre email. Cliquez sur le lien pour régler en toute sécurité.</p>
-    </div>
-    <div class="confirm-step">
-      <div class="confirm-step-num">2</div>
-      <h4>Vérification en cours</h4>
-      <p>Notre équipe lance la vérification dès réception du paiement.</p>
-    </div>
-    <div class="confirm-step">
-      <div class="confirm-step-num">3</div>
-      <h4>Rapport PDF sous 48h</h4>
-      <p>Vous recevez votre rapport complet par email dans les 48h ouvrées.</p>
-    </div>
+  <!-- Formule sélectionnée -->
+  <div style="text-align:center;margin-bottom:2.5rem">
+    <span class="selected-plan-pill" id="back-to-form-pill" onclick="goToStep2fromPayment()">
+      <svg viewBox="0 0 12 12"><polyline points="8,2 4,6 8,10"/></svg>
+      Formule <strong id="plan-display-3">Complet</strong> · <span id="price-display-3">39,90</span> €
+    </span>
   </div>
 
-  <button class="back-home-btn" onclick="window.location='index.html'">
-    ← Retour à l'accueil
-  </button>
+  <div class="step-header" style="margin-bottom:2.5rem">
+    <h1>Paiement sécurisé</h1>
+    <p>Votre vérification démarre dès réception du règlement. Rapport sous 48h ouvrées.</p>
+  </div>
+
+  <div class="payment-wrap">
+
+    <!-- Récap prix -->
+    <div class="payment-recap">
+      <div class="payment-recap-label">
+        <strong id="recap-formule">Formule Complet</strong>
+        Vérification complète · 1 candidat
+      </div>
+      <div class="payment-recap-price" id="recap-price">39,90 €</div>
+    </div>
+
+    <!-- Loading skeleton -->
+    <div class="payment-loading" id="payment-loading">
+      <div class="payment-loading-spinner"></div>
+      <p>Préparation du paiement sécurisé…</p>
+    </div>
+
+    <!-- Contenu Stripe (masqué pendant le chargement) -->
+    <div class="payment-content" id="payment-content">
+      <div id="payment-element"></div>
+      <div class="payment-message" id="payment-message"></div>
+      <button class="submit-btn" id="pay-btn" style="width:100%;justify-content:center" onclick="handlePayment()" disabled>
+        <svg viewBox="0 0 18 18"><path d="M8 1.5L2 4v4.5C2 12 4.5 15 8 16c3.5-1 6-4 6-7.5V4L8 1.5z"/><polyline points="5,8 7,10 11,6"/></svg>
+        Payer <span id="pay-amount">39,90 €</span>
+      </button>
+      <div class="stripe-badge">
+        <svg viewBox="0 0 16 16"><path d="M8 1.5L2 4v4.5C2 12 4.5 15 8 16c3.5-1 6-4 6-7.5V4L8 1.5z"/></svg>
+        Paiement sécurisé par Stripe · Chiffrement SSL
+      </div>
+    </div>
+
+    <!-- Erreur de chargement -->
+    <div id="payment-load-error" style="display:none;text-align:center;padding:2rem 0;color:#dc2626;font-size:.9rem"></div>
+
+  </div>
 </div>
 
 <script>
-let selectedPlan = null;
-let selectedPrice = null;
+// ─── CLÉS STRIPE ─────────────────────────────────────────────────────────────
+// ⚠️  Remplacez pk_test_... par votre clé publique (tableau de bord Stripe → Développeurs → Clés API)
+const STRIPE_PK = 'pk_test_51TSJkJV05pjSIKEty9PPU04gA2CD8ZcqQpXX6ychWvKQwCzGCVaPNWYKtdmqJhVoxyPy9RmST29XETPkIkOKQg9Q00140ft902';
 
-// ── Sélection de formule
+// ─── ÉTAT GLOBAL ─────────────────────────────────────────────────────────────
+let selectedPlan  = null;
+let selectedPrice = null;
+let stripeObj     = null;
+let stripeElements = null;
+
+// ─── ÉTAPE 1 : Sélection de formule ──────────────────────────────────────────
 document.querySelectorAll('.plan-card').forEach(card => {
   card.addEventListener('click', () => {
     document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('selected'));
     card.classList.add('selected');
-    selectedPlan = card.dataset.plan;
+    selectedPlan  = card.dataset.plan;
     selectedPrice = card.dataset.price;
     document.getElementById('continue-btn').classList.add('active');
   });
 });
 
-// ── Aller à l'étape 2
 function goToStep2() {
   if (!selectedPlan) return;
   document.getElementById('step-1').style.display = 'none';
   document.getElementById('step-2').style.display = 'block';
-  document.getElementById('plan-display').textContent = selectedPlan;
+  document.getElementById('plan-display').textContent  = selectedPlan;
   document.getElementById('price-display').textContent = selectedPrice;
   document.getElementById('formule-hidden').value = selectedPlan;
-  document.getElementById('prix-hidden').value = selectedPrice + ' €';
+  document.getElementById('prix-hidden').value    = selectedPrice + ' €';
   // Progress
-  document.getElementById('prog-1').classList.remove('active');
+  document.getElementById('prog-1').classList.replace('active', 'done') ||
+  document.getElementById('prog-1').classList.remove('active') ||
   document.getElementById('prog-1').classList.add('done');
   document.getElementById('prog-2').classList.add('active');
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ── Retour à l'étape 1
 function goToStep1() {
   document.getElementById('step-2').style.display = 'none';
   document.getElementById('step-1').style.display = 'block';
   document.getElementById('prog-1').classList.add('active');
   document.getElementById('prog-1').classList.remove('done');
   document.getElementById('prog-2').classList.remove('active');
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ── Drag & Drop
+function goToStep2fromPayment() {
+  document.getElementById('step-3').style.display = 'none';
+  document.getElementById('step-2').style.display = 'block';
+  document.getElementById('prog-2').classList.add('active');
+  document.getElementById('prog-2').classList.remove('done');
+  document.getElementById('prog-3').classList.remove('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─── ÉTAPE 2 : Soumission du formulaire ──────────────────────────────────────
+function handleSubmit(e) {
+  e.preventDefault();
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.innerHTML = `
+    <svg viewBox="0 0 18 18" style="animation:spin .75s linear infinite">
+      <circle cx="9" cy="9" r="7" stroke="rgba(255,255,255,0.3)" stroke-width="2.5" fill="none"/>
+      <path d="M9 2a7 7 0 017 7" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </svg>
+    Envoi en cours…
+  `;
+
+  // Envoi Netlify en arrière-plan (capture des données même si le candidat paie pas)
+  const formData = new FormData(document.getElementById('verif-form'));
+  fetch('/', { method: 'POST', body: formData }).catch(() => {});
+
+  // On passe à l'étape paiement immédiatement
+  showPaymentStep();
+}
+
+function showPaymentStep() {
+  document.getElementById('step-2').style.display  = 'none';
+  document.getElementById('step-3').style.display  = 'block';
+
+  // Mise à jour progress
+  document.getElementById('prog-2').classList.remove('active');
+  document.getElementById('prog-2').classList.add('done');
+  document.getElementById('prog-3').classList.add('active');
+
+  // Mise à jour récap
+  document.getElementById('plan-display-3').textContent = selectedPlan;
+  document.getElementById('price-display-3').textContent = selectedPrice;
+  document.getElementById('recap-formule').textContent = 'Formule ' + selectedPlan;
+  document.getElementById('recap-price').textContent   = selectedPrice + ' €';
+  document.getElementById('pay-amount').textContent    = selectedPrice + ' €';
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  initPayment();
+}
+
+// ─── ÉTAPE 3 : Init Stripe Payment Element ───────────────────────────────────
+async function initPayment() {
+  const email        = document.getElementById('email_recruteur').value;
+  const nom          = document.getElementById('prenom_recruteur').value + ' '
+                     + document.getElementById('nom_recruteur').value;
+  const entreprise   = document.getElementById('entreprise').value;
+  const nom_candidat = document.getElementById('prenom_candidat').value + ' '
+                     + document.getElementById('nom_candidat').value;
+
+  try {
+    const res = await fetch('/.netlify/functions/create-payment-intent', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ formule: selectedPlan, email, nom, entreprise, nom_candidat }),
+    });
+
+    const data = await res.json();
+
+    if (data.error) {
+      showPaymentLoadError(data.error);
+      return;
+    }
+
+    // Init Stripe avec la charte CVérifié
+    stripeObj = Stripe(STRIPE_PK);
+    stripeElements = stripeObj.elements({
+      clientSecret: data.clientSecret,
+      appearance: {
+        theme: 'none',
+        variables: {
+          colorPrimary:         '#2D6A4F',
+          colorBackground:      '#ffffff',
+          colorText:            '#1a1a24',
+          colorTextSecondary:   '#6b7280',
+          colorDanger:          '#dc2626',
+          fontFamily:           "'Outfit', system-ui, sans-serif",
+          borderRadius:         '9px',
+          spacingUnit:          '4px',
+          focusBoxShadow:       '0 0 0 3px rgba(45,106,79,0.15)',
+          focusOutline:         'none',
+        },
+        rules: {
+          '.Input': {
+            border:     '1.5px solid #e5e7eb',
+            padding:    '11px 14px',
+            fontSize:   '15px',
+            boxShadow:  'none',
+            transition: 'border-color .2s, box-shadow .2s',
+          },
+          '.Input:focus': {
+            border:    '1.5px solid #2D6A4F',
+            boxShadow: '0 0 0 3px rgba(45,106,79,0.12)',
+          },
+          '.Input--invalid': {
+            border:    '1.5px solid #dc2626',
+            boxShadow: '0 0 0 3px rgba(220,38,38,0.08)',
+          },
+          '.Label': {
+            fontWeight:   '600',
+            fontSize:     '13px',
+            marginBottom: '5px',
+            color:        '#1a1a24',
+          },
+          '.Error': {
+            fontSize: '12.5px',
+            color:    '#dc2626',
+            marginTop: '4px',
+          },
+          '.Tab': {
+            border:       '1.5px solid #e5e7eb',
+            borderRadius: '9px',
+            boxShadow:    'none',
+          },
+          '.Tab:hover': { borderColor: '#2D6A4F' },
+          '.Tab--selected': {
+            borderColor: '#2D6A4F',
+            boxShadow:   '0 0 0 3px rgba(45,106,79,0.12)',
+          },
+        },
+      },
+    });
+
+    const paymentElement = stripeElements.create('payment', {
+      layout: { type: 'tabs', defaultCollapsed: false },
+    });
+    paymentElement.mount('#payment-element');
+
+    paymentElement.on('ready', () => {
+      // Masquer le loading, afficher le formulaire de paiement
+      document.getElementById('payment-loading').style.display  = 'none';
+      document.getElementById('payment-content').style.display  = 'block';
+      document.getElementById('pay-btn').disabled = false;
+    });
+
+  } catch (err) {
+    showPaymentLoadError('Impossible de charger le formulaire de paiement. Vérifiez votre connexion et réessayez.');
+  }
+}
+
+function showPaymentLoadError(msg) {
+  document.getElementById('payment-loading').style.display   = 'none';
+  document.getElementById('payment-load-error').style.display = 'block';
+  document.getElementById('payment-load-error').innerHTML =
+    msg + '<br><br><button onclick="initPayment()" style="background:var(--green);color:white;border:none;padding:10px 24px;border-radius:8px;cursor:pointer;font-weight:600">Réessayer</button>';
+}
+
+// ─── Paiement : confirmation ──────────────────────────────────────────────────
+async function handlePayment() {
+  const btn = document.getElementById('pay-btn');
+  btn.disabled = true;
+  btn.innerHTML = `
+    <svg viewBox="0 0 18 18" style="animation:spin .75s linear infinite">
+      <circle cx="9" cy="9" r="7" stroke="rgba(255,255,255,0.3)" stroke-width="2.5" fill="none"/>
+      <path d="M9 2a7 7 0 017 7" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </svg>
+    Traitement en cours…
+  `;
+  document.getElementById('payment-message').textContent = '';
+
+  const { error } = await stripeObj.confirmPayment({
+    elements: stripeElements,
+    confirmParams: {
+      return_url: window.location.origin + '/confirmation.html',
+    },
+  });
+
+  // On n'arrive ici QUE si le paiement échoue (succès = redirect Stripe)
+  if (error) {
+    document.getElementById('payment-message').textContent =
+      error.type === 'card_error' || error.type === 'validation_error'
+        ? error.message
+        : 'Une erreur inattendue est survenue. Veuillez réessayer.';
+    btn.disabled = false;
+    btn.innerHTML = `
+      <svg viewBox="0 0 18 18"><path d="M8 1.5L2 4v4.5C2 12 4.5 15 8 16c3.5-1 6-4 6-7.5V4L8 1.5z"/><polyline points="5,8 7,10 11,6"/></svg>
+      Payer ${selectedPrice} €
+    `;
+  }
+}
+
+// ─── Upload & Drag-Drop ───────────────────────────────────────────────────────
 document.querySelectorAll('.upload-zone').forEach(zone => {
-  zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('dragover'); });
-  zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+  zone.addEventListener('dragover',  e => { e.preventDefault(); zone.classList.add('dragover'); });
+  zone.addEventListener('dragleave', ()  => zone.classList.remove('dragover'));
   zone.addEventListener('drop', e => {
     e.preventDefault();
     zone.classList.remove('dragover');
-    const input = zone.querySelector('input[type=file]');
+    const input  = zone.querySelector('input[type=file]');
     const nameEl = zone.querySelector('.upload-filename');
     if (e.dataTransfer.files.length) {
       input.files = e.dataTransfer.files;
@@ -554,38 +780,10 @@ document.querySelectorAll('.upload-zone').forEach(zone => {
   });
 });
 
-// ── Sélection fichier
 function fileSelected(input, zoneId, nameId) {
   if (input.files.length) {
     document.getElementById(zoneId).classList.add('has-file');
     document.getElementById(nameId).textContent = input.files[0].name;
   }
-}
-
-// ── Soumission du formulaire
-function handleSubmit(e) {
-  e.preventDefault();
-  const form = document.getElementById('verif-form');
-  const data = new FormData(form);
-
-  fetch('/', { method: 'POST', body: data })
-    .then(() => {
-      // Succès Netlify
-      showConfirmation();
-    })
-    .catch(() => {
-      // En cas d'erreur réseau, on affiche quand même la confirmation
-      // (Netlify a pu recevoir le formulaire côté serveur)
-      showConfirmation();
-    });
-}
-
-function showConfirmation() {
-  document.getElementById('step-2').style.display = 'none';
-  document.getElementById('step-3').style.display = 'block';
-  document.getElementById('prog-2').classList.remove('active');
-  document.getElementById('prog-2').classList.add('done');
-  document.getElementById('prog-3').classList.add('active', 'done');
-  window.scrollTo({top: 0, behavior: 'smooth'});
 }
 </script>

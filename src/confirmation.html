@@ -1,0 +1,186 @@
+---
+layout: base.njk
+title: "Paiement confirmé · CVérifié"
+description: "Votre vérification de CV a bien été commandée. Vous recevrez votre rapport sous 48h ouvrées."
+---
+<style>
+.confirm-wrap{
+  min-height:70vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:5rem 2rem;
+  margin-top:64px;
+}
+.confirm-card{
+  max-width:600px;width:100%;text-align:center;
+}
+
+/* Icone succès */
+.confirm-icon-wrap{
+  width:84px;height:84px;border-radius:50%;
+  background:var(--green-pale);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 2rem;
+  animation:pop .4s cubic-bezier(0.34,1.56,0.64,1);
+}
+@keyframes pop{from{transform:scale(.5);opacity:0}to{transform:scale(1);opacity:1}}
+.confirm-icon-wrap svg{width:40px;height:40px;stroke:var(--green);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* Icone erreur */
+.confirm-icon-wrap.error{background:#fef2f2}
+.confirm-icon-wrap.error svg{stroke:#dc2626}
+
+.confirm-title{
+  font-size:clamp(1.8rem,4vw,2.4rem);
+  letter-spacing:-0.02em;
+  margin-bottom:.75rem;
+}
+.confirm-sub{
+  font-size:1rem;color:var(--ink-light);
+  max-width:460px;margin:0 auto 2.5rem;
+  line-height:1.75;
+}
+
+/* Étapes suivantes */
+.next-steps{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;
+  margin-bottom:2.5rem;
+  text-align:left;
+}
+.next-step{
+  background:white;border:1px solid var(--border);
+  border-radius:12px;padding:1.25rem 1.125rem;
+}
+.next-step-num{
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem;font-weight:700;
+  color:var(--green);margin-bottom:.4rem;
+}
+.next-step h4{font-size:.875rem;font-weight:600;color:var(--ink);margin-bottom:.3rem}
+.next-step p{font-size:.8rem;color:var(--ink-muted);line-height:1.5}
+
+/* Receipt info */
+.receipt-note{
+  background:var(--green-ultra,#f0faf4);
+  border:1px solid var(--border);
+  border-radius:10px;padding:1rem 1.25rem;
+  font-size:.85rem;color:var(--ink-light);
+  line-height:1.6;margin-bottom:2rem;
+  display:flex;align-items:flex-start;gap:.75rem;
+  text-align:left;
+}
+.receipt-note svg{width:18px;height:18px;stroke:var(--green);fill:none;stroke-width:2;stroke-linecap:round;flex-shrink:0;margin-top:1px}
+
+.back-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:white;color:var(--ink);
+  border:1.5px solid var(--border);
+  padding:12px 28px;border-radius:10px;
+  font-size:14px;font-weight:600;
+  transition:all .2s;cursor:pointer;
+  text-decoration:none;
+}
+.back-btn:hover{border-color:var(--green);color:var(--green);background:var(--green-ultralight)}
+
+/* Loading state */
+.confirm-loading{
+  width:44px;height:44px;
+  border:3px solid var(--green-pale);
+  border-top-color:var(--green);
+  border-radius:50%;
+  animation:spin .75s linear infinite;
+  margin:0 auto 1.25rem;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+@media(max-width:600px){
+  .next-steps{grid-template-columns:1fr}
+}
+</style>
+
+<div class="confirm-wrap">
+  <div class="confirm-card">
+
+    <!-- État de chargement (pendant vérification Stripe) -->
+    <div id="state-loading">
+      <div class="confirm-loading"></div>
+      <p style="color:var(--ink-muted);font-size:.95rem">Vérification du paiement…</p>
+    </div>
+
+    <!-- Succès -->
+    <div id="state-success" style="display:none">
+      <div class="confirm-icon-wrap">
+        <svg viewBox="0 0 42 42"><polyline points="7,21 17,31 35,11"/></svg>
+      </div>
+      <h1 class="confirm-title">Paiement confirmé !</h1>
+      <p class="confirm-sub">
+        Votre vérification est lancée. Notre équipe va contacter le candidat
+        et les établissements pour valider chaque élément de son dossier.
+      </p>
+
+      <div class="receipt-note">
+        <svg viewBox="0 0 18 18"><rect x="1" y="4" width="16" height="11" rx="2"/><path d="M1 8h16"/></svg>
+        <span>Un <strong>reçu de paiement</strong> vous a été envoyé automatiquement par Stripe sur votre email.
+        Votre <strong>rapport PDF</strong> vous parviendra sur ce même email sous 48h ouvrées.</span>
+      </div>
+
+      <div class="next-steps">
+        <div class="next-step">
+          <div class="next-step-num">1</div>
+          <h4>Contact candidat</h4>
+          <p>On envoie au candidat un formulaire de consentement RGPD dans l'heure.</p>
+        </div>
+        <div class="next-step">
+          <div class="next-step-num">2</div>
+          <h4>Vérification en cours</h4>
+          <p>Diplômes, expériences, références : on contacte les sources officielles.</p>
+        </div>
+        <div class="next-step">
+          <div class="next-step-num">3</div>
+          <h4>Rapport sous 48h</h4>
+          <p>Vous recevez votre rapport complet par email en 48h ouvrées maximum.</p>
+        </div>
+      </div>
+
+      <a href="/" class="back-btn">← Retour à l'accueil</a>
+    </div>
+
+    <!-- Échec / paiement annulé -->
+    <div id="state-failure" style="display:none">
+      <div class="confirm-icon-wrap error">
+        <svg viewBox="0 0 42 42"><line x1="12" y1="12" x2="30" y2="30"/><line x1="30" y1="12" x2="12" y2="30"/></svg>
+      </div>
+      <h1 class="confirm-title">Paiement non abouti</h1>
+      <p class="confirm-sub" id="failure-msg">
+        Votre paiement n'a pas pu être traité. Aucun montant n'a été débité.
+        Vous pouvez réessayer ci-dessous.
+      </p>
+      <a href="/commander.html" class="back-btn" style="background:var(--green);color:white;border-color:var(--green)">
+        Réessayer le paiement
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(async () => {
+  const params = new URLSearchParams(window.location.search);
+  const status = params.get('redirect_status');
+  const clientSecret = params.get('payment_intent_client_secret');
+
+  if (!status && !clientSecret) {
+    // Accès direct à la page sans passer par Stripe → rediriger
+    window.location.href = '/commander.html';
+    return;
+  }
+
+  document.getElementById('state-loading').style.display = 'none';
+
+  if (status === 'succeeded') {
+    document.getElementById('state-success').style.display = 'block';
+  } else {
+    // failed, requires_payment_method, etc.
+    document.getElementById('state-failure').style.display = 'block';
+  }
+})();
+</script>
