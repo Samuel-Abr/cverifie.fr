@@ -36,7 +36,8 @@
       "Bash(python3 /tmp/process_pages_v2.py)",
       "Bash(python3 -)",
       "Bash(grep -v \":0$\")",
-      "Bash(git -C /Users/sabraham/Desktop/CVérifié.fr status --short)"
+      "Bash(git -C /Users/sabraham/Desktop/CVérifié.fr status --short)",
+      "Bash(xargs sed *)"
     ]
   }
 }
