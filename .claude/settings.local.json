@@ -37,7 +37,11 @@
       "Bash(python3 -)",
       "Bash(grep -v \":0$\")",
       "Bash(git -C /Users/sabraham/Desktop/CVérifié.fr status --short)",
-      "Bash(xargs sed *)"
+      "Bash(xargs sed *)",
+      "WebFetch(domain:pagespeed.web.dev)",
+      "Bash(grep -o '\"categories\":{\"performance\":{\"id\":\"performance\",\"title\":\"[^\"]*\",\"score\":[0-9.]*' \"/Users/sabraham/Downloads/PageSpeed Insights.html\")",
+      "Bash(sort -t: -k2 -n)",
+      "Bash(python3 -c ' *)"
     ]
   }
 }

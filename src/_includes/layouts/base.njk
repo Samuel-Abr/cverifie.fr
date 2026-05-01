@@ -5,10 +5,38 @@
 <link rel="icon" type="image/png" href="/images/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ title if title else "CVérifié · Vérification de CV & Diplômes en 48h" }}</title>
-<meta name="description" content="{{ description if description else '' }}">
+<meta name="description" content="{{ description if description else 'CVérifié vérifie les CV et diplômes de vos candidats en 48h. Service 100% en ligne, sans engagement, à partir de 14,90€.' }}">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://cverifie.fr{{ page.url }}">
+
+<!-- Open Graph -->
+<meta property="og:type" content="{{ ogType if ogType else 'website' }}">
+<meta property="og:title" content="{{ title if title else 'CVérifié · Vérification de CV & Diplômes en 48h' }}">
+<meta property="og:description" content="{{ description if description else 'CVérifié vérifie les CV et diplômes de vos candidats en 48h. Service 100% en ligne, sans engagement, à partir de 14,90€.' }}">
+<meta property="og:url" content="https://cverifie.fr{{ page.url }}">
+<meta property="og:image" content="{{ ogImage if ogImage else 'https://cverifie.fr/images/cverifie-og.png' }}">
+<meta property="og:site_name" content="CVérifié">
+<meta property="og:locale" content="fr_FR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ title if title else 'CVérifié · Vérification de CV & Diplômes en 48h' }}">
+<meta name="twitter:description" content="{{ description if description else 'CVérifié vérifie les CV et diplômes de vos candidats en 48h. Service 100% en ligne, sans engagement, à partir de 14,90€.' }}">
+<meta name="twitter:image" content="{{ ogImage if ogImage else 'https://cverifie.fr/images/cverifie-og.png' }}">
+
+<!-- Preconnect -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="dns-prefetch" href="https://images.unsplash.com">
+
+<!-- Fonts: display=swap évite le render-blocking -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+
+<!-- Preload LCP image si définie dans le front matter -->
+{% if preloadImage %}<link rel="preload" as="image" href="{{ preloadImage }}" fetchpriority="high">{% endif %}
 <style>
 /* ── VARIABLES ── */
 :root {
