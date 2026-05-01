@@ -571,7 +571,7 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
   letter-spacing:-0.02em;
 }
 .final-cta p{
-  font-size:1.1rem;color:rgba(255,255,255,0.75);
+  font-size:1.1rem;color:rgba(255,255,255,0.92);
   max-width:540px;margin:0 auto 2.5rem;
   line-height:1.7;font-weight:300;
 }
@@ -599,7 +599,7 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
 }
 .guarantee-item{
   display:flex;align-items:center;gap:6px;
-  color:rgba(255,255,255,0.65);font-size:13px;
+  color:rgba(255,255,255,0.88);font-size:13px;
 }
 .guarantee-item svg{width:14px;height:14px;stroke:rgba(255,255,255,0.8);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .final-trust-logos{
@@ -1036,13 +1036,13 @@ preloadImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto
             <span style="font-size:14px;font-weight:600;color:var(--ink)">Salaire brut annuel</span>
             <span id="mini-label-sal" style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--green)">45 000 €</span>
           </div>
-          <input type="range" id="mini-sl-sal" min="20000" max="130000" step="1000" value="45000" oninput="miniCalc()">
+          <input type="range" id="mini-sl-sal" aria-label="Salaire brut annuel" min="20000" max="130000" step="1000" value="45000" oninput="miniCalc()">
           <div style="display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink-muted);margin-top:.45rem"><span>20 000 €</span><span>130 000 €</span></div>
         </div>
 
         <!-- Niveau du poste -->
         <div style="margin-bottom:1.75rem">
-          <label style="display:block;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:.8rem">Niveau du poste</label>
+          <label for="mini-sel-niv" style="display:block;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:.8rem">Niveau du poste</label>
           <select id="mini-sel-niv" onchange="miniCalc()">
             <option value="employe">Employé / Assistant</option>
             <option value="technicien" selected>Technicien / Commercial</option>
