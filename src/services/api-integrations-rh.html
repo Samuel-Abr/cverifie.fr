@@ -8,7 +8,7 @@ hasFaq: true
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "API CVérifié — Intégration vérification CV",
+  "name": "API CVérifié : intégration vérification CV",
   "description": "API REST permettant d'intégrer la vérification de CV dans un ATS, SIRH ou workflow RH. Authentification OAuth2, webhooks, résultats JSON, sandbox de test. Même tarif que le service web.",
   "provider": { "@type": "Organization", "name": "CVérifié", "url": "https://cverifie.fr" },
   "areaServed": { "@type": "Country", "name": "FR" },
@@ -164,7 +164,7 @@ hasFaq: true
         </div>
         <div>
           <h4>Résultats directement dans votre interface</h4>
-          <p>Via webhook, CVérifié envoie le rapport JSON dès que la vérification est terminée. Votre intégration peut afficher le statut du rapport directement dans la fiche candidat de votre ATS : diplôme confirmé, expériences vérifiées, score de références — sans quitter votre interface.</p>
+          <p>Via webhook, CVérifié envoie le rapport JSON dès que la vérification est terminée. Votre intégration peut afficher le statut du rapport directement dans la fiche candidat de votre ATS : diplôme confirmé, expériences vérifiées, score de références, sans quitter votre interface.</p>
         </div>
       </div>
       <div class="check-item">
@@ -173,7 +173,7 @@ hasFaq: true
         </div>
         <div>
           <h4>Consentement RGPD géré par l'API</h4>
-          <p>L'API CVérifié gère intégralement le flux de consentement : l'email d'information au candidat, la page de consentement, la confirmation horodatée. Vous n'avez qu'à passer l'adresse email du candidat dans votre requête API — tout le reste est pris en charge conformément au RGPD.</p>
+          <p>L'API CVérifié gère intégralement le flux de consentement : l'email d'information au candidat, la page de consentement, la confirmation horodatée. Vous n'avez qu'à passer l'adresse email du candidat dans votre requête API. Tout le reste est pris en charge conformément au RGPD.</p>
         </div>
       </div>
       <div class="check-item">
@@ -253,7 +253,7 @@ hasFaq: true
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-num">1</div>
-        <h3>POST /verifications — Soumission du dossier</h3>
+        <h3>POST /verifications : soumission du dossier</h3>
         <p>Envoyez une requête POST avec les données du candidat (nom, email, diplômes et/ou expériences à vérifier). CVérifié déclenche le processus de consentement et retourne un <code style="color:var(--green-light);font-size:.8rem">verification_id</code>. Délai de réponse API : moins de 200 ms.</p>
       </div>
       <div class="step-card">
@@ -263,7 +263,7 @@ hasFaq: true
       </div>
       <div class="step-card">
         <div class="step-num">3</div>
-        <h3>Webhook POST — Résultats JSON livrés</h3>
+        <h3>Webhook POST : résultats JSON livrés</h3>
         <p>À la clôture du rapport, CVérifié envoie un POST vers votre URL de webhook avec le rapport complet en JSON (ou un lien vers le PDF). Le payload inclut le statut de chaque vérification et le lien de téléchargement du rapport PDF signé.</p>
       </div>
     </div>
@@ -357,7 +357,7 @@ hasFaq: true
     <p class="svc-body">L'accès à l'API CVérifié est gratuit. Vous ne payez que les vérifications réellement effectuées, au même tarif unitaire que le service web. Pas de frais d'installation, pas d'abonnement.</p>
 
     <div class="api-pricing">
-      <p style="font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.5rem">Tarification à l'usage — identique au service web</p>
+      <p style="font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.5rem">Tarification à l'usage, identique au service web</p>
       <p style="font-size:.9rem;color:var(--ink-muted);margin-bottom:1.5rem">Accès API gratuit. Facturation uniquement sur les vérifications lancées.</p>
 
       <div class="api-pricing-tiers">
@@ -410,7 +410,7 @@ hasFaq: true
       </div>
       <div class="faq-item">
         <h3>Quel est le délai de réponse de l'API CVérifié ?</h3>
-        <p>L'API CVérifié répond à toutes les requêtes de soumission et de statut en moins de 200 ms (p95). Ce délai correspond au temps de réponse de l'API elle-même, pas au délai de traitement de la vérification. La vérification effective (contact des sources, rapport) prend 48 à 72 heures selon le type de vérification commandée. Vous êtes notifié de la livraison du rapport via webhook — vous n'avez donc pas à poller l'API en boucle pour suivre l'avancement.</p>
+        <p>L'API CVérifié répond à toutes les requêtes de soumission et de statut en moins de 200 ms (p95). Ce délai correspond au temps de réponse de l'API elle-même, pas au délai de traitement de la vérification. La vérification effective (contact des sources, rapport) prend 48 à 72 heures selon le type de vérification commandée. Vous êtes notifié de la livraison du rapport via webhook. Vous n'avez donc pas à poller l'API en boucle pour suivre l'avancement.</p>
       </div>
       <div class="faq-item">
         <h3>Y a-t-il des coûts supplémentaires pour l'accès à l'API ?</h3>
