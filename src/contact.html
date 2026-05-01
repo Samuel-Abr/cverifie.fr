@@ -1,0 +1,419 @@
+---
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CVérifié · Contact — Parlons de votre recrutement</title>
+<meta name="description" content="Une question, une demo ou juste un bonjour ? Contactez CVérifié par formulaire ou à contact@cverifie.fr. Réponse sous 24h ouvrées.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FAF8F3;
+  --cream-dark: #F0EDE5;
+  --ink: #1A1A24;
+  --ink-light: #44444E;
+  --ink-muted: #8A8A94;
+  --green: #2D6A4F;
+  --green-mid: #40916C;
+  --green-light: #52B788;
+  --green-pale: #D8F3DC;
+  --green-ultralight: #F0FAF2;
+  --border: #E0DDD5;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2;font-weight:600}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{cursor:pointer;font-family:'Outfit',sans-serif}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,243,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center}
+.logo-nav{height:38px;width:auto;display:block}
+.logo-footer{height:38px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:14px;font-weight:500;color:var(--ink-light);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--green)}
+.nav-links a.active{font-weight:600}
+.nav-cta{background:var(--green);color:white;padding:10px 22px;border-radius:8px;border:none;font-size:14px;font-weight:600;transition:background .2s,transform .15s;white-space:nowrap}
+.nav-cta:hover{background:var(--green-mid);transform:translateY(-1px)}
+
+/* ── PAGE HEADER ── */
+.page-header{
+  padding-top:64px;
+  background:var(--cream-dark);
+  border-bottom:1px solid var(--border);
+}
+.page-header-inner{
+  max-width:1200px;margin:0 auto;
+  padding:3.5rem 2rem 3rem;
+}
+.label-tag{
+  display:inline-block;
+  background:var(--green-pale);color:var(--green);
+  padding:5px 14px;border-radius:100px;
+  font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  margin-bottom:1rem;
+}
+.page-title{
+  font-size:clamp(1.9rem,4vw,2.8rem);
+  letter-spacing:-0.02em;
+  margin-bottom:.75rem;
+  color:var(--ink);
+}
+.page-sub{
+  font-size:1rem;color:var(--ink-muted);max-width:540px;line-height:1.7;
+}
+
+/* ── CONTACT SECTION ── */
+.contact-section{
+  padding:4rem 2rem 6rem;
+  background:white;
+}
+.contact-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 360px;
+  gap:4rem;align-items:start;
+}
+
+/* ── FORM ── */
+.contact-form-wrap{
+  background:var(--cream);
+  border:1.5px solid var(--border);
+  border-radius:20px;
+  padding:2.5rem;
+}
+.form-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1.1rem;
+}
+.form-group{
+  display:flex;flex-direction:column;gap:.4rem;
+}
+.form-group.full{grid-column:1/-1}
+.form-label{
+  font-size:13px;font-weight:600;color:var(--ink-light);
+  letter-spacing:.02em;
+}
+.form-label span{color:#C44B4B;margin-left:2px}
+.form-input,.form-select,.form-textarea{
+  padding:13px 16px;
+  border:1.5px solid var(--border);
+  border-radius:10px;
+  font-family:'Outfit',sans-serif;
+  font-size:15px;
+  color:var(--ink);
+  background:white;
+  transition:border-color .2s,box-shadow .2s;
+  outline:none;
+  width:100%;
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{
+  border-color:var(--green-light);
+  box-shadow:0 0 0 3px rgba(82,183,136,0.1);
+}
+.form-select{
+  appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A8A94' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 16px center;
+  padding-right:40px;
+  cursor:pointer;
+}
+.form-select option[value=""]{color:var(--ink-muted)}
+.form-textarea{
+  resize:vertical;
+  min-height:130px;
+  line-height:1.6;
+}
+.form-submit-row{
+  margin-top:1.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;flex-wrap:wrap;
+}
+.form-submit{
+  background:var(--green);color:white;
+  padding:15px 36px;border-radius:10px;border:none;
+  font-size:15px;font-weight:700;
+  transition:all .2s;display:inline-flex;align-items:center;gap:8px;
+  box-shadow:0 4px 16px rgba(45,106,79,0.25);
+}
+.form-submit:hover{background:var(--green-mid);transform:translateY(-1.5px);box-shadow:0 8px 24px rgba(45,106,79,0.3)}
+.form-submit:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+.form-rgpd{
+  font-size:12px;color:var(--ink-muted);line-height:1.5;
+  display:flex;align-items:flex-start;gap:.5rem;
+}
+.form-rgpd svg{width:13px;height:13px;stroke:var(--green-light);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;margin-top:2px}
+/* Success state */
+.form-success-msg{
+  display:none;flex-direction:column;align-items:center;
+  text-align:center;padding:2.5rem 1rem;gap:1rem;
+}
+.form-success-ico{
+  width:60px;height:60px;border-radius:50%;
+  background:var(--green-pale);
+  display:flex;align-items:center;justify-content:center;
+}
+.form-success-ico svg{width:26px;height:26px;stroke:var(--green);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.form-success-title{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--ink)}
+.form-success-text{font-size:.9rem;color:var(--ink-muted);line-height:1.65;max-width:380px}
+
+/* ── INFO COL ── */
+.contact-info{
+  display:flex;flex-direction:column;gap:1.5rem;
+  position:sticky;top:88px;
+}
+.info-card{
+  background:var(--cream);
+  border:1.5px solid var(--border);
+  border-radius:16px;
+  padding:1.5rem;
+}
+.info-card-ico{
+  width:40px;height:40px;border-radius:12px;
+  background:var(--green-pale);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1rem;
+}
+.info-card-ico svg{width:18px;height:18px;stroke:var(--green);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.info-card-title{font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.35rem}
+.info-card-text{font-size:.875rem;color:var(--ink-muted);line-height:1.6}
+.info-email{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--green);font-weight:600;font-size:1rem;
+  margin-top:.5rem;
+  transition:color .2s;
+}
+.info-email:hover{color:var(--green-mid)}
+.info-email svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.trust-item{
+  display:flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--ink-muted);padding:.5rem 0;
+  border-bottom:1px solid var(--border);
+}
+.trust-item:last-child{border-bottom:none}
+.trust-item svg{width:14px;height:14px;stroke:var(--green-light);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.trust-badge-rgpd{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--green-ultralight);border:1px solid var(--green-pale);
+  padding:5px 12px;border-radius:6px;
+  font-size:11px;font-weight:600;color:var(--green);letter-spacing:.04em;
+  margin-top:.75rem;
+}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:4rem 2rem 2rem;color:rgba(255,255,255,0.6)}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:280px 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-brand p{font-size:.875rem;color:rgba(255,255,255,0.4);line-height:1.7;margin-bottom:1.5rem}
+.footer-social{display:flex;gap:.75rem;margin-bottom:1.5rem}
+.social-icon{width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.4);transition:all .2s}
+.social-icon:hover{border-color:var(--green-light);color:var(--green-light)}
+.social-icon svg{width:16px;height:16px}
+.footer-trust{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.trust-logo{height:28px;width:auto;filter:brightness(0) invert(1);opacity:.3}
+.trust-badge-footer{display:flex;align-items:center;gap:6px;background:rgba(45,106,79,0.25);border:1px solid rgba(82,183,136,0.2);padding:5px 12px;border-radius:6px;font-size:11px;font-weight:600;color:var(--green-light);letter-spacing:.04em}
+.footer-col h4{font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:white;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.25rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.footer-col ul li a{font-size:14px;color:rgba(255,255,255,0.45);transition:color .2s}
+.footer-col ul li a:hover{color:var(--green-light)}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;flex-wrap:wrap;gap:1rem}
+.footer-bottom span{font-size:13px;color:rgba(255,255,255,0.25)}
+.footer-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-legal a{font-size:13px;color:rgba(255,255,255,0.25);transition:color .2s}
+.footer-legal a:hover{color:rgba(255,255,255,0.5)}
+.footer-trust-final{display:flex;align-items:center;justify-content:center;gap:1.5rem;padding:1.5rem 0 0;margin-top:1.5rem;border-top:1px solid rgba(255,255,255,0.06)}
+.final-trust-img{height:26px;width:auto;filter:brightness(0) invert(1);opacity:.2}
+
+@media(max-width:800px){
+  .contact-inner{grid-template-columns:1fr}
+  .contact-info{position:static}
+  .form-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr;gap:2rem}
+}
+
+.footer-stars-row{margin-bottom:.75rem}
+.footer-stars{font-size:1.1rem;letter-spacing:2px;color:var(--green-light)}
+.footer-rating-list{display:flex;flex-direction:column;gap:.6rem}
+.rating-item{display:flex;align-items:center;gap:.5rem;font-size:13px;color:rgba(255,255,255,0.45)}
+.rating-item svg{flex-shrink:0}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ NAV ═══════════════ -->
+{% include "nav.njk" %}
+
+<!-- ═══════════════ PAGE HEADER ═══════════════ -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <span class="label-tag">Contact</span>
+    <h1 class="page-title">Parlons de votre recrutement.</h1>
+    <p class="page-sub">Une question sur les tarifs, une demande de démonstration ou un projet a nous soumettre ? Nous vous répondons sous 24h ouvrées.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section class="contact-section">
+  <div class="contact-inner">
+
+    <!-- FORM -->
+    <div class="contact-form-wrap">
+      <form name="contact" data-netlify="true" method="POST" id="contact-form" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="form-name" value="contact">
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label class="form-label" for="f-prenom">Prénom <span>*</span></label>
+            <input type="text" id="f-prenom" name="prenom" class="form-input" placeholder="Marie" required autocomplete="given-name">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="f-nom">Nom <span>*</span></label>
+            <input type="text" id="f-nom" name="nom" class="form-input" placeholder="Martin" required autocomplete="family-name">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="f-email">Adresse email <span>*</span></label>
+            <input type="email" id="f-email" name="email" class="form-input" placeholder="marie.martin@societe.fr" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="f-societe">Société <span>*</span></label>
+            <input type="text" id="f-societe" name="societe" class="form-input" placeholder="Mon Entreprise SAS" required autocomplete="organization">
+          </div>
+
+          <div class="form-group full">
+            <label class="form-label" for="f-source">Comment avez-vous entendu parler de nous ? <span>*</span></label>
+            <select id="f-source" name="source" class="form-select" required>
+              <option value="" disabled selected>Choisissez une option...</option>
+              <option value="google">Google ou un moteur de recherche</option>
+              <option value="ia">ChatGPT ou une IA</option>
+              <option value="bouche-a-oreille">Bouche à oreille</option>
+              <option value="linkedin">LinkedIn</option>
+              <option value="presse">Article de blog ou presse</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label class="form-label" for="f-message">Votre message <span>*</span></label>
+            <textarea id="f-message" name="message" class="form-textarea" placeholder="Décrivez votre besoin, posez votre question, ou dites-nous simplement bonjour..." required></textarea>
+          </div>
+
+        </div>
+
+        <div class="form-submit-row">
+          <span class="form-rgpd">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Données traitées conformément au RGPD. Aucun spam, jamais.
+          </span>
+          <button type="submit" class="form-submit" id="submit-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
+            Envoyer le message
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Success -->
+      <div class="form-success-msg" id="form-success">
+        <div class="form-success-ico">
+          <svg viewBox="0 0 24 24"><polyline points="20,6 9,17 4,12"/></svg>
+        </div>
+        <h3 class="form-success-title">Message envoyé !</h3>
+        <p class="form-success-text">Merci pour votre message. Nous vous répondrons sous 24h ouvrées à l'adresse email indiquée.</p>
+      </div>
+
+    </div>
+
+    <!-- INFO -->
+    <div class="contact-info">
+
+      <div class="info-card">
+        <div class="info-card-ico">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="info-card-title">Email direct</div>
+        <div class="info-card-text">Pour toute question, vous pouvez aussi nous écrire directement :</div>
+        <a href="mailto:contact@cverifie.fr" class="info-email">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          contact@cverifie.fr
+        </a>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-ico">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+        </div>
+        <div class="info-card-title">Délai de réponse</div>
+        <div class="info-card-text">Nous répondons à tous les messages sous <strong style="color:var(--ink)">24h ouvrées</strong>. Pour les demandes urgentes, mentionnez-le dans votre message.</div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-ico">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="info-card-title">Confidentialité garantie</div>
+        <div style="display:flex;flex-direction:column;gap:0">
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24"><polyline points="20,6 9,17 4,12"/></svg>
+            Données hébergées en France
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24"><polyline points="20,6 9,17 4,12"/></svg>
+            Aucune revente de vos informations
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24"><polyline points="20,6 9,17 4,12"/></svg>
+            Suppression sur simple demande
+          </div>
+        </div>
+        <div class="trust-badge-rgpd" style="display:inline-flex">
+          <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L2 3.5V7.5C2 10.2 4.2 12.7 7 13.5C9.8 12.7 12 10.2 12 7.5V3.5L7 1.5Z" fill="#2D6A4F" stroke="#52B788" stroke-width="0.8"/><polyline points="4.5,7 6.5,9 9.5,5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          RGPD conforme
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+{% include "footer.njk" %}
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="8,12 11,15 16,9"/></svg> Envoi en cours...';
+
+  const form = document.getElementById('contact-form');
+  const data = new URLSearchParams(new FormData(form));
+
+  fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data.toString() })
+    .then(() => {
+      form.style.display = 'none';
+      document.getElementById('form-success').style.display = 'flex';
+    })
+    .catch(() => {
+      form.style.display = 'none';
+      document.getElementById('form-success').style.display = 'flex';
+    });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="../images/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculateur Coût Mauvais Recrutement France 2026 : Outil Gratuit | CVérifié</title>
+<meta name="description" content="Calculez gratuitement le coût réel d'un mauvais recrutement en France. Ajustez le salaire, la durée et le niveau de poste : obtenez une estimation personnalisée en 30 secondes.">
+<meta name="keywords" content="calculateur cout mauvais recrutement, calcul recrutement raté, combien coute mauvais recrutement france, outil ROI recrutement, cout erreur recrutement PME">
+<meta property="og:title" content="Calculateur : combien vous coûte vraiment un mauvais recrutement ?">
+<meta property="og:description" content="Outil gratuit. Salaire, durée, niveau de poste. Résultat immédiat. La comparaison avec le coût d'une vérification préalable va vous surprendre.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://cverifie.fr/blog/calculateur-cout-mauvais-recrutement.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Schema.org WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculateur coût mauvais recrutement France",
+  "description": "Outil gratuit pour calculer le coût réel d'un mauvais recrutement en France en fonction du salaire brut, de la durée avant détection, du mode de recrutement et du niveau de poste.",
+  "url": "https://cverifie.fr/blog/calculateur-cout-mauvais-recrutement.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "provider": { "@type": "Organization", "name": "CVérifié", "url": "https://cverifie.fr" }
+}
+</script>
+<!-- Schema.org FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Combien coûte un mauvais recrutement en France en 2026 ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "En France, le coût d'un mauvais recrutement varie entre 15 000 et 160 000 euros selon le niveau du poste. Pour un cadre avec un salaire brut de 45 000 euros par an, le coût total est estimé entre 35 000 et 65 000 euros (recrutement, intégration, sous-performance, séparation, remplacement). Ces chiffres incluent les coûts directs et indirects, dont la perte de productivité pendant la période d'emploi." }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment calculer le coût d'un mauvais recrutement ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Le calcul se fait en additionnant 5 postes : (1) coût du recrutement initial (9 à 18% du salaire annuel selon le mode), (2) coût d'intégration et formation (10 à 15% du salaire), (3) coût de la sous-performance pendant la période d'emploi (environ 50% du salaire mensuel par mois), (4) coût de la séparation (3 à 20% du salaire selon la durée), (5) coût du remplacement (équivalent au recrutement initial +10%). Le total est ajusté selon le niveau de poste." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quel est le ROI de la vérification de CV avant recrutement ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pour un poste cadre à 45 000 euros brut par an, une vérification CVérifié coûte 49 euros. Le coût médian d'un mauvais recrutement pour ce profil est estimé à 45 000 euros. Le retour sur investissement est donc de l'ordre de 900 pour 1 : chaque euro investi dans la vérification préalable permet d'éviter en moyenne 900 euros de coût potentiel." }
+    },
+    {
+      "@type": "Question",
+      "name": "Pourquoi le coût d'un mauvais recrutement est-il sous-estimé par les entreprises françaises ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Le coût d'un mauvais recrutement est sous-estimé parce qu'il se dilue entre plusieurs services (RH, management, finance, juridique) et dans le temps (souvent sur 6 à 12 mois). Aucune ligne budgétaire ne consolide ce coût total. Les entreprises comptabilisent le nouveau recrutement, mais rarement la perte de productivité, le temps manager perdu, l'impact sur l'équipe ou les coûts juridiques éventuels." }
+    },
+    {
+      "@type": "Question",
+      "name": "Un mauvais recrutement détecté pendant la période d'essai coûte-t-il moins cher ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Oui, mais pas autant qu'on le pense. Une rupture en période d'essai évite les indemnités de licenciement, mais les coûts de recrutement initial, d'intégration et de formation sont entièrement perdus. Pour un cadre à 45 000 euros, une rupture à 2 mois coûte encore entre 12 000 et 20 000 euros. Plus la détection est tardive, plus le coût total augmente significativement." }
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --cream:#FAF8F3;--cream-dark:#F0EDE5;
+  --ink:#1A1A24;--ink-light:#44444E;--ink-muted:#8A8A94;
+  --green:#2D6A4F;--green-mid:#40916C;--green-light:#52B788;
+  --green-pale:#D8F3DC;--green-ultra:#F0FAF2;
+  --border:#E0DDD5;
+  --red:#C44B4B;--amber:#E07820;
+  --bar-1:#0D2B1E;--bar-2:#1B4332;--bar-3:#2D6A4F;--bar-4:#40916C;--bar-5:#52B788;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2;font-weight:600}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+p{margin-bottom:1rem}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,243,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.logo-nav{height:38px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:14px;font-weight:500;color:var(--ink-light);transition:color .2s}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{background:var(--green);color:white;padding:10px 22px;border-radius:8px;border:none;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s,transform .15s;white-space:nowrap}
+.nav-cta:hover{background:var(--green-mid);transform:translateY(-1px)}
+
+/* HERO */
+.calc-hero{
+  margin-top:64px;
+  background:var(--ink);
+  padding:4rem 2rem 0;
+  position:relative;
+  overflow:hidden;
+}
+/* Blob haut-droit : vert doux, subtil */
+.calc-hero::before{
+  content:'';position:absolute;top:-80px;right:-60px;
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(45,106,79,0.22) 0%,rgba(27,67,50,0.10) 45%,transparent 68%);
+  pointer-events:none;
+}
+/* Blob bas-gauche : vert forêt, discret */
+.calc-hero::after{
+  content:'';position:absolute;bottom:-60px;left:-40px;
+  width:550px;height:550px;border-radius:50%;
+  background:radial-gradient(circle,rgba(27,67,50,0.28) 0%,rgba(13,43,30,0.12) 45%,transparent 68%);
+  pointer-events:none;
+}
+/* Halo central très discret — juste assez pour que le verre ait de la profondeur */
+.calc-hero-glow{
+  position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:1100px;height:320px;pointer-events:none;z-index:1;
+  background:
+    radial-gradient(ellipse 320px 180px at 25% 60%, rgba(45,106,79,0.14) 0%, transparent 65%),
+    radial-gradient(ellipse 320px 180px at 75% 55%, rgba(27,67,50,0.18) 0%, transparent 65%);
+}
+.calc-hero-top{
+  max-width:1100px;margin:0 auto;
+  text-align:center;
+  position:relative;z-index:2;
+  padding-bottom:3rem;
+}
+.calc-hero-eyebrow{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(82,183,136,0.15);color:var(--green-light);
+  border:1px solid rgba(82,183,136,0.3);
+  padding:5px 14px;border-radius:100px;
+  font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:1.5rem;
+}
+.calc-hero-eyebrow svg{width:12px;height:12px;stroke:var(--green-light);fill:none;stroke-width:2.5;stroke-linecap:round}
+.calc-hero-title{
+  font-size:clamp(2rem,4.5vw,3.2rem);
+  color:white;letter-spacing:-0.025em;
+  max-width:800px;margin:0 auto 1.25rem;
+  line-height:1.1;
+}
+.calc-hero-title em{color:var(--green-light);font-style:italic}
+.calc-hero-sub{
+  font-size:1rem;color:rgba(255,255,255,0.5);
+  max-width:520px;margin:0 auto 2.5rem;
+  line-height:1.7;font-weight:300;
+}
+
+/* CALCULATOR CARD */
+.calc-card{
+  max-width:1100px;margin:0 auto;
+  background:transparent;border-radius:20px 20px 0 0;
+  box-shadow:0 -24px 80px rgba(0,0,0,0.35);
+  position:relative;z-index:3;
+  display:grid;grid-template-columns:1fr 1fr;
+  overflow:hidden;
+  min-height:520px;
+}
+.calc-inputs{
+  padding:2.5rem;
+  background:white;
+  border-right:1px solid rgba(255,255,255,0.12);
+}
+
+/* ── Liquid Glass Panel (Apple visionOS style) ── */
+.calc-results{
+  padding:2.5rem;
+  position:relative;
+  overflow:hidden;
+
+  /*
+   * Verre luxe sombre : fond vert-nuit semi-opaque.
+   * Assez opaque pour masquer les couleurs du fond,
+   * assez translucide pour que le backdrop-filter ajoute une légère profondeur.
+   * Le luxe vient des highlights speculaires, pas de la transparence.
+   */
+  background: linear-gradient(
+    150deg,
+    rgba(18, 38, 28, 0.82) 0%,
+    rgba(10, 22, 16, 0.88) 50%,
+    rgba(14, 30, 22, 0.85) 100%
+  );
+
+  /* Flou discret — juste assez pour les bords doux, sans faire transpirer les couleurs */
+  backdrop-filter:    blur(32px) saturate(130%) brightness(1.06);
+  -webkit-backdrop-filter: blur(32px) saturate(130%) brightness(1.06);
+
+  /*
+   * L'effet luxe vient d'ici : les speculaires imitent l'épaisseur du verre.
+   *  - bord haut : trait lumineux vif (lumière rasante)
+   *  - bord gauche : reflet latéral
+   *  - vignette douce pour la profondeur
+   */
+  box-shadow:
+    inset 0 1.5px 0 rgba(255,255,255,0.48),
+    inset 0 2px 12px rgba(255,255,255,0.04),
+    inset 1px 0 0 rgba(255,255,255,0.18),
+    inset 0 -1px 0 rgba(0,0,0,0.30),
+    inset -1px 0 0 rgba(0,0,0,0.15),
+    inset 0 0 100px rgba(0,0,0,0.20);
+}
+
+/* Zone supérieure : reflet doux comme la lumière sur une dalle en verre poli */
+.calc-results::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:45%;
+  background:linear-gradient(
+    180deg,
+    rgba(255,255,255,0.055) 0%,
+    rgba(255,255,255,0.015) 40%,
+    transparent 100%
+  );
+  pointer-events:none;
+  z-index:0;
+}
+
+/* Micro-grain dépoli — la signature sensorielle du verre Apple */
+.calc-results::after{
+  content:'';position:absolute;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:180px 180px;
+  opacity:0.028;
+  pointer-events:none;
+  z-index:0;
+  mix-blend-mode:soft-light;
+}
+
+.input-group{margin-bottom:2rem}
+.input-label{
+  font-size:15px;font-weight:600;color:var(--ink);
+  margin-bottom:.85rem;display:flex;justify-content:space-between;align-items:center;
+}
+.input-label-val{
+  font-family:'Playfair Display',serif;
+  font-size:1.3rem;font-weight:700;color:var(--green);
+}
+
+/* Slider */
+.slider-wrap{position:relative}
+input[type=range]{
+  -webkit-appearance:none;appearance:none;
+  width:100%;height:6px;border-radius:3px;
+  background:var(--cream-dark);
+  outline:none;cursor:pointer;
+  transition:background .2s;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;
+  width:22px;height:22px;border-radius:50%;
+  background:var(--green);
+  cursor:pointer;border:3px solid white;
+  box-shadow:0 2px 8px rgba(45,106,79,0.4);
+  transition:transform .15s,box-shadow .15s;
+}
+input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.2);box-shadow:0 4px 16px rgba(45,106,79,0.5)}
+input[type=range]::-moz-range-thumb{
+  width:22px;height:22px;border-radius:50%;
+  background:var(--green);cursor:pointer;
+  border:3px solid white;box-shadow:0 2px 8px rgba(45,106,79,0.4);
+}
+.slider-range{
+  display:flex;justify-content:space-between;
+  font-size:12.5px;color:var(--ink-muted);margin-top:.5rem;
+}
+
+/* Toggle mode */
+.toggle-group{display:grid;grid-template-columns:1fr 1fr;gap:.4rem;background:var(--cream-dark);padding:.3rem;border-radius:10px}
+.toggle-btn{
+  padding:.7rem 1rem;border-radius:7px;border:none;
+  font-size:14.5px;font-weight:600;color:var(--ink-muted);
+  background:transparent;cursor:pointer;transition:all .2s;
+  text-align:center;
+}
+.toggle-btn.active{background:white;color:var(--green);box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+
+/* Select */
+.styled-select{
+  width:100%;padding:.8rem 1rem;
+  border:1.5px solid var(--border);border-radius:10px;
+  font-family:'Outfit',sans-serif;font-size:15px;font-weight:500;
+  color:var(--ink);background:white;
+  appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpolyline points='1,1 6,7 11,1' fill='none' stroke='%232D6A4F' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 1rem center;
+  background-size:12px;padding-right:2.5rem;
+  transition:border-color .2s;
+}
+.styled-select:focus{outline:none;border-color:var(--green)}
+
+/* RESULTS */
+.result-label{
+  font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,0.55);margin-bottom:.5rem;
+  position:relative;z-index:1;
+}
+.result-total{
+  position:relative;z-index:1;
+  margin-bottom:1.5rem;
+}
+.result-total-num{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.5rem,5vw,3.8rem);
+  font-weight:700;color:var(--green-light);
+  line-height:1;letter-spacing:-0.02em;
+  transition:color .3s;
+}
+.result-total-num.danger{color:#A7E9C5;animation:pulse-danger .6s ease}
+@keyframes pulse-danger{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
+.result-total-sub{
+  font-size:13px;color:rgba(255,255,255,0.4);
+  margin-top:.35rem;font-weight:400;
+}
+
+/* Risk badge */
+.risk-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 12px;border-radius:100px;
+  font-size:11px;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;margin-bottom:1.25rem;
+  position:relative;z-index:1;
+  transition:all .3s;
+}
+.risk-badge.moderate{background:rgba(82,183,136,0.12);color:var(--green-light);border:1px solid rgba(82,183,136,0.25)}
+.risk-badge.high{background:rgba(64,145,108,0.2);color:#74C69D;border:1px solid rgba(64,145,108,0.35)}
+.risk-badge.critical{background:rgba(45,106,79,0.3);color:#A7E9C5;border:1px solid rgba(82,183,136,0.5);animation:risk-pulse 1.5s infinite}
+@keyframes risk-pulse{0%,100%{box-shadow:0 0 0 0 rgba(82,183,136,0)}50%{box-shadow:0 0 0 8px rgba(82,183,136,0.12)}}
+
+/* Breakdown bars */
+.breakdown{position:relative;z-index:1;margin-bottom:1.5rem}
+.breakdown-title{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:1rem}
+.bar-item{margin-bottom:.9rem}
+.bar-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem}
+.bar-name{font-size:13px;color:rgba(255,255,255,0.75);font-weight:500}
+.bar-val{font-size:13.5px;font-weight:700;color:rgba(255,255,255,0.95)}
+.bar-track{background:rgba(255,255,255,0.06);border-radius:100px;height:8px;overflow:hidden}
+.bar-fill{height:100%;border-radius:100px;transition:width .6s cubic-bezier(0.34,1.56,0.64,1);min-width:4px;opacity:.92}
+
+/* ROI box */
+.roi-box{
+  background:rgba(45,106,79,0.25);
+  border:1px solid rgba(82,183,136,0.35);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-radius:12px;padding:1rem 1.25rem;
+  position:relative;z-index:1;
+  display:flex;align-items:center;gap:.75rem;
+}
+.roi-box-icon{
+  width:36px;height:36px;border-radius:8px;
+  background:rgba(82,183,136,0.2);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.roi-box-icon svg{width:18px;height:18px;stroke:var(--green-light);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.roi-box-text{}
+.roi-box-ratio{
+  font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;
+  color:var(--green-light);line-height:1;
+}
+.roi-box-desc{font-size:12.5px;color:rgba(255,255,255,0.5);margin-top:.25rem;line-height:1.5}
+
+/* CTA inside card */
+.calc-cta{
+  margin-top:1.25rem;
+  position:relative;z-index:1;
+  display:flex;align-items:center;gap:.75rem;
+  background:var(--green);
+  border-radius:10px;padding:.85rem 1.25rem;
+  cursor:pointer;border:none;width:100%;
+  color:white;font-family:'Outfit',sans-serif;
+  font-size:14px;font-weight:700;
+  transition:all .2s;
+  text-decoration:none;
+}
+.calc-cta:hover{background:var(--green-mid);transform:translateY(-1px)}
+.calc-cta svg{width:16px;height:16px;stroke:white;fill:none;stroke-width:2.5;stroke-linecap:round;flex-shrink:0}
+
+/* MAIN CONTENT */
+.calc-content{max-width:800px;margin:0 auto;padding:4rem 2rem 5rem}
+
+/* Article sections */
+h2.section-h{font-size:1.5rem;margin:3rem 0 1rem;color:var(--ink);letter-spacing:-0.01em}
+h3.subsection-h{font-size:1.05rem;font-weight:600;margin:1.5rem 0 .6rem;color:var(--ink)}
+.highlight-box{background:var(--green-ultra);border-left:3px solid var(--green);border-radius:0 10px 10px 0;padding:1.25rem 1.5rem;margin:2rem 0;font-size:.9rem;color:var(--ink-light)}
+.highlight-box strong{color:var(--ink)}
+.source-note{font-size:.75rem;color:var(--ink-muted);margin-top:.35rem}
+table.data-table{width:100%;border-collapse:collapse;font-size:.85rem;margin:2rem 0;border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+table.data-table th{background:var(--green);color:white;padding:.7rem 1rem;text-align:left;font-weight:600}
+table.data-table td{padding:.7rem 1rem;border-bottom:1px solid var(--border);vertical-align:top}
+table.data-table tr:last-child td{border-bottom:none}
+table.data-table tr:nth-child(even){background:white}
+table.data-table tr:nth-child(odd){background:var(--cream)}
+.faq-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:.75rem}
+.faq-q{padding:1.1rem 1.25rem;font-size:.95rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;background:white;border:none;width:100%;text-align:left;color:var(--ink)}
+.faq-q:hover{background:var(--cream)}
+.faq-icon{min-width:20px;height:20px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .25s}
+.faq-icon svg{width:9px;height:9px;stroke:var(--ink);fill:none;stroke-width:2.5;stroke-linecap:round}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--green);border-color:var(--green)}
+.faq-item.open .faq-icon svg{stroke:white}
+.faq-a{padding:0 1.25rem;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s ease;font-size:.875rem;color:var(--ink-light);line-height:1.7}
+.faq-item.open .faq-a{padding:.25rem 1.25rem 1.25rem;max-height:500px}
+
+/* Footer */
+footer{background:var(--ink);padding:4rem 2rem 2rem;color:rgba(255,255,255,0.5)}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:260px 180px 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-col h4{font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.25rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.4);transition:color .2s}
+.footer-col ul li a:hover{color:var(--green-light)}
+.footer-bottom{padding-top:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:13px}
+.footer-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-legal a{color:rgba(255,255,255,0.3);transition:color .2s}
+.footer-legal a:hover{color:rgba(255,255,255,0.65)}
+.footer-social{display:flex;gap:.75rem;margin-bottom:1.5rem}
+.social-icon{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);transition:all .2s}
+.social-icon:hover{background:var(--green);border-color:var(--green);color:white}
+.social-icon svg{width:15px;height:15px}
+.footer-trust{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.trust-logo{height:28px;width:auto;filter:brightness(0) invert(1) opacity(0.35);transition:opacity .2s}
+.trust-badge-rgpd{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;letter-spacing:.04em;color:rgba(255,255,255,0.35);border:1px solid rgba(255,255,255,0.12);padding:4px 8px;border-radius:6px}
+.footer-stars-row{margin-bottom:.75rem}
+.footer-stars{color:var(--green-light);font-size:16px;letter-spacing:2px}
+.footer-rating-list{display:flex;flex-direction:column;gap:.6rem}
+.rating-item{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,0.45)}
+.rating-item strong{color:rgba(255,255,255,0.7);font-weight:600}
+.rating-item svg{flex-shrink:0}
+.logo-footer{height:38px;width:auto;display:block}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .calc-card{grid-template-columns:1fr}
+  .calc-inputs{border-right:none;border-bottom:1px solid var(--border)}
+  .calc-hero{padding:3.5rem 1.5rem 0}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .calc-card{border-radius:14px 14px 0 0}
+  .calc-inputs,.calc-results{padding:1.75rem 1.5rem}
+  .footer-top{grid-template-columns:1fr}
+  .calc-hero-title{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="../index.html"><img src="../images/cverifie-logo-green.png" alt="CVérifié" class="logo-nav"></a>
+    </div>
+    <div class="nav-links">
+      <a href="../index.html#comment">Comment ça marche</a>
+      <a href="../index.html#tarifs">Tarifs</a>
+      <a href="../index.html#candidats">Pour les candidats</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="index.html">Blog</a>
+    </div>
+    <button class="nav-cta" onclick="window.location='../commander.html'">Lancer une vérification</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="calc-hero">
+  <div class="calc-hero-top">
+    <div class="calc-hero-eyebrow">
+      <svg viewBox="0 0 16 16"><path d="M8 1L2 4v5c0 4.4 2.6 7.2 6 8 3.4-.8 6-3.6 6-8V4L8 1z"/></svg>
+      Outil gratuit · Mis à jour 2026
+    </div>
+    <h1 class="calc-hero-title">Combien vous coûte vraiment<br><em>un mauvais recrutement ?</em></h1>
+    <p class="calc-hero-sub">Ajustez les paramètres. Le résultat va probablement vous surprendre.</p>
+  </div>
+
+  <!-- Blobs lumineux derrière la carte -->
+  <div class="calc-hero-glow" aria-hidden="true"></div>
+
+  <!-- CALCULATOR CARD -->
+  <div class="calc-card">
+
+    <!-- LEFT : INPUTS -->
+    <div class="calc-inputs">
+      <p style="font-size:14.5px;color:var(--ink-muted);margin-bottom:2rem;line-height:1.6">Renseignez le profil du candidat recruté. Le calcul se met à jour en temps réel.</p>
+
+      <!-- Salaire -->
+      <div class="input-group">
+        <div class="input-label">
+          <span>Salaire brut annuel</span>
+          <span class="input-label-val" id="label-salaire">45 000 €</span>
+        </div>
+        <input type="range" id="sl-salaire" min="20000" max="130000" step="1000" value="45000" oninput="updateAll()">
+        <div class="slider-range"><span>20 000 €</span><span>130 000 €</span></div>
+      </div>
+
+      <!-- Durée avant détection -->
+      <div class="input-group">
+        <div class="input-label">
+          <span>Durée avant détection du problème</span>
+          <span class="input-label-val" id="label-duree">6 mois</span>
+        </div>
+        <input type="range" id="sl-duree" min="1" max="18" step="1" value="6" oninput="updateAll()">
+        <div class="slider-range"><span>1 mois</span><span>18 mois</span></div>
+      </div>
+
+      <!-- Mode de recrutement -->
+      <div class="input-group">
+        <div class="input-label"><span>Mode de recrutement</span></div>
+        <div class="toggle-group">
+          <button class="toggle-btn active" data-mode="interne" onclick="setMode(this)">Recrutement interne</button>
+          <button class="toggle-btn" data-mode="cabinet" onclick="setMode(this)">Via un cabinet</button>
+        </div>
+      </div>
+
+      <!-- Niveau du poste -->
+      <div class="input-group" style="margin-bottom:0">
+        <div class="input-label"><span>Niveau du poste</span></div>
+        <select id="sel-niveau" class="styled-select" onchange="updateAll()">
+          <option value="employe">Employé / Assistant</option>
+          <option value="technicien" selected>Technicien / Commercial</option>
+          <option value="cadre">Cadre</option>
+          <option value="dirigeant">Cadre dirigeant</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- RIGHT : RESULTS -->
+    <div class="calc-results">
+
+      <div class="result-label">Coût total estimé de ce recrutement raté</div>
+
+      <div class="result-total">
+        <div class="result-total-num" id="res-total">34 500 €</div>
+        <div class="result-total-sub">Coût direct + indirect consolidé</div>
+      </div>
+
+      <div class="risk-badge moderate" id="risk-badge">
+        <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3.5" fill="currentColor"/></svg>
+        Risque modéré
+      </div>
+
+      <div class="breakdown">
+        <div class="breakdown-title">Détail du coût</div>
+
+        <div class="bar-item">
+          <div class="bar-row"><span class="bar-name">Recrutement initial</span><span class="bar-val" id="bv-1">...</span></div>
+          <div class="bar-track"><div class="bar-fill" id="bf-1" style="width:0%;background:var(--bar-1)"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-row"><span class="bar-name">Intégration et formation</span><span class="bar-val" id="bv-2">...</span></div>
+          <div class="bar-track"><div class="bar-fill" id="bf-2" style="width:0%;background:var(--bar-2)"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-row"><span class="bar-name">Sous-performance</span><span class="bar-val" id="bv-3">...</span></div>
+          <div class="bar-track"><div class="bar-fill" id="bf-3" style="width:0%;background:var(--bar-3)"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-row"><span class="bar-name">Séparation</span><span class="bar-val" id="bv-4">...</span></div>
+          <div class="bar-track"><div class="bar-fill" id="bf-4" style="width:0%;background:var(--bar-4)"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-row"><span class="bar-name">Remplacement</span><span class="bar-val" id="bv-5">...</span></div>
+          <div class="bar-track"><div class="bar-fill" id="bf-5" style="width:0%;background:var(--bar-5)"></div></div>
+        </div>
+      </div>
+
+      <div class="roi-box">
+        <div class="roi-box-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="roi-box-text">
+          <div class="roi-box-ratio" id="roi-ratio">700x</div>
+          <div class="roi-box-desc" id="roi-desc">le ROI d'une vérification à 49 € face à ce coût estimé</div>
+        </div>
+      </div>
+
+      <a href="../commander.html" class="calc-cta">
+        <svg viewBox="0 0 16 16"><polyline points="3,8 7,12 13,4"/></svg>
+        Vérifier ce candidat pour 49 € et éviter tout ça
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTENT -->
+<main class="calc-content">
+
+  <div style="background:var(--green-ultra);border-radius:14px;padding:1.5rem 1.75rem;margin-bottom:2.5rem;border:1px solid rgba(45,106,79,0.15)">
+    <p style="font-size:.875rem;color:var(--ink-light);margin:0;line-height:1.7"><strong style="color:var(--ink)">Méthodologie :</strong> cet outil est basé sur les études SHRM (Society for Human Resource Management), Robert Half France et Brandon Hall Group, adaptées au contexte du marché du travail français. Les cinq composantes du coût sont pondérées en fonction du niveau de poste. Il s'agit d'estimations statistiques : votre situation peut varier. Pour un calcul personnalisé, consultez un cabinet RH.</p>
+  </div>
+
+  <h2 class="section-h">Comment est calculé ce chiffre ?</h2>
+
+  <p>Le calculateur additionne cinq postes de coût, chacun pondéré selon le niveau de poste sélectionné :</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Composante</th><th>Base de calcul</th><th>Logique</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Recrutement initial</strong></td>
+        <td>9 à 18% du salaire annuel brut</td>
+        <td>Offre, entretiens, temps RH et manager. 18% si cabinet (honoraires inclus).</td>
+      </tr>
+      <tr>
+        <td><strong>Intégration et formation</strong></td>
+        <td>10 à 14% du salaire annuel</td>
+        <td>Onboarding, accès outils, formation métier, temps manager dédié pendant l'intégration.</td>
+      </tr>
+      <tr>
+        <td><strong>Sous-performance</strong></td>
+        <td>(Salaire mensuel × durée) × 50%</td>
+        <td>Un salarié en difficulté produit environ 50% de la valeur d'un salarié performant. La perte se cumule chaque mois.</td>
+      </tr>
+      <tr>
+        <td><strong>Séparation</strong></td>
+        <td>3 à 22% du salaire selon la durée</td>
+        <td>Rupture conventionnelle, conseil juridique éventuel. S'alourdit nettement après 6 mois d'emploi.</td>
+      </tr>
+      <tr>
+        <td><strong>Remplacement</strong></td>
+        <td>Coût recrutement initial × 1,1</td>
+        <td>Le second recrutement coûte légèrement plus cher : le poste est perçu comme instable et attire moins facilement.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="source-note">Multiplications : Employé ×0,80 / Technicien-Commercial ×1,00 / Cadre ×1,25 / Cadre dirigeant ×1,80.</p>
+
+  <div class="highlight-box">
+    <strong>Ce qui n'est pas dans le calcul :</strong> l'impact sur le moral de l'équipe, les projets retardés ou mal livrés, les clients impactés, et le dommage réputationnel. Ces coûts sont réels mais impossibles à standardiser. Le chiffre affiché est donc un plancher, pas un plafond.
+  </div>
+
+  <h2 class="section-h">Les 3 paramètres qui font exploser la facture</h2>
+
+  <h3 class="subsection-h">1. La durée avant détection</h3>
+  <p>C'est le paramètre le plus sous-estimé. Chaque mois passé avec un salarié en sous-performance coûte environ 50% d'un salaire mensuel en productivité perdue. Un problème détecté à 12 mois coûte deux fois plus cher en sous-performance qu'un problème détecté à 6 mois. Et après 6 mois, la séparation devient légalement plus complexe et coûteuse.</p>
+
+  <h3 class="subsection-h">2. Le niveau du poste</h3>
+  <p>Un cadre dirigeant mal recruté coûte 2,25 fois plus qu'un technicien dans la même situation. La raison : les honoraires de recrutement sont plus élevés, la formation est plus longue, et surtout, l'impact sur l'organisation est plus profond. Un mauvais DG ou directeur commercial peut générer des dégâts sur des années.</p>
+
+  <h3 class="subsection-h">3. Le recrutement via cabinet</h3>
+  <p>Un cabinet facture généralement entre 15 et 22% du salaire annuel brut. Ces honoraires sont perdus si le recrutement échoue, et la plupart des contrats de cabinet ne prévoient qu'une garantie de remplacement, pas un remboursement. Sur un poste à 70 000 €/an, les seuls honoraires cabinet représentent 10 500 à 15 400 € d'investissement à fonds perdus.</p>
+
+  <h2 class="section-h">Foire aux questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-q">Combien coûte vraiment un mauvais recrutement en France en 2026 ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
+    <div class="faq-a">En France, le coût d'un mauvais recrutement varie entre 15 000 et 160 000 euros selon le profil. Pour un technicien ou commercial à 38 000 € brut par an, le coût médian est d'environ 25 000 à 45 000 €. Pour un cadre à 55 000 € brut, il se situe entre 40 000 et 80 000 €. Pour un cadre dirigeant à 90 000 € brut, il peut dépasser 100 000 €. Ces estimations incluent le recrutement, l'intégration, la sous-performance, la séparation et le remplacement.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q">Comment calculer le ROI d'une vérification de CV ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
+    <div class="faq-a">Le ROI se calcule simplement : coût estimé d'un mauvais recrutement divisé par le coût de la vérification. Pour un cadre à 55 000 €, le coût médian d'un recrutement raté est d'environ 50 000 €. La formule Pro CVérifié coûte 49 €. Le ROI est donc de 50 000 / 49 = environ 1 020x. Autrement dit : pour chaque euro investi dans la vérification, vous protégez potentiellement 1 020 euros.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q">Pourquoi la durée avant détection a-t-elle autant d'impact ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
+    <div class="faq-a">Deux raisons principales. D'abord, la sous-performance s'accumule chaque mois : un salarié qui produit 50% de sa valeur attendue génère une perte mensuelle égale à 50% de son salaire mensuel. Sur 12 mois, c'est l'équivalent de 6 mois de salaire en valeur perdue. Ensuite, après la période d'essai (généralement 2 à 4 mois pour les cadres), la séparation devient légalement plus complexe et coûteuse. C'est pourquoi détecter un problème tôt, grâce à une vérification préalable, change radicalement l'équation.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q">Ces chiffres s'appliquent-ils aux TPE et très petites entreprises ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
+    <div class="faq-a">Les valeurs absolues s'appliquent, mais l'impact relatif est encore plus lourd dans une TPE. Pour une entreprise de 5 salariés, un mauvais recrutement à 20 000 € de coût direct représente potentiellement 2 à 3 mois de masse salariale totale. Dans les grandes entreprises, ce coût se dilue plus facilement. En TPE, la vérification préalable est donc encore plus stratégique : le budget RH est limité, et le droit à l'erreur l'est encore plus.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q">Quel est le coût d'un mauvais recrutement en période d'essai uniquement ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
+    <div class="faq-a">Pour une rupture à 2 mois de période d'essai, le coût total pour un cadre à 50 000 € brut se situe entre 12 000 et 22 000 €. Ce montant inclut le recrutement initial (8 à 15k€), l'intégration partielle (3 à 6k€), et la sous-performance pendant 2 mois (environ 4 000 €). La bonne nouvelle : la séparation est quasi sans frais juridiques. La mauvaise : les coûts de recrutement et d'intégration sont entièrement perdus, et le processus recommence à zéro.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q">La vérification de CV protège-t-elle contre tous les risques de mauvais recrutement ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
+    <div class="faq-a">Non. La vérification de CV élimine les risques liés aux informations factuelles fausses : diplôme inventé, expérience gonflée, dates modifiées. Elle ne protège pas contre les problèmes d'adéquation culturelle, de motivation, ou de compétences comportementales. Mais elle retire une source majeure et détectable de risque. Dans les études disponibles, 12% des CV contiennent un mensonge sérieux remettant en cause l'embauche. Éliminer ce risque pour 49 € est l'un des meilleurs investissements préventifs d'un processus de recrutement.</div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="margin-bottom:1.25rem">
+          <img src="../images/cverifie-logo-white.png" alt="CVérifié" class="logo-footer">
+        </div>
+        <p style="font-size:.875rem;color:rgba(255,255,255,0.4);line-height:1.7;margin-bottom:1.5rem">
+          Vérification de CV et de diplômes pour toutes les entreprises françaises. Sans engagement. Sous 48h.
+        </p>
+        <div class="footer-social">
+          <a href="#" class="social-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="social-icon" aria-label="X / Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" class="social-icon" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
+        </div>
+        <div class="footer-trust">
+          <img src="https://www.capemploi-61.com/assets/cache/images-cache/images/cheops/cap-emploi/capemploi-61/1200px-logo-du-ministere-du-travail-%282020%29.svg.6abdeb72.png" alt="Ministère du Travail" class="trust-logo" onerror="this.style.display='none'">
+          <div class="trust-badge-rgpd"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L2 3.5V7.5C2 10.2 4.2 12.7 7 13.5C9.8 12.7 12 10.2 12 7.5V3.5L7 1.5Z" fill="#2D6A4F" stroke="#52B788" stroke-width="0.8"/><polyline points="4.5,7 6.5,9 9.5,5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>RGPD conforme</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Avis clients</h4>
+        <div class="footer-stars-row"><span class="footer-stars">★★★★★</span></div>
+        <div class="footer-rating-list">
+          <div class="rating-item"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 1l1.7 3.4L14 5.1l-3 2.9.7 4.1L8 10.3l-3.7 1.8.7-4.1L2 5.1l4.3-.7z" fill="#00B67A"/></svg><span>4.8 sur <strong>Trustpilot</strong></span></div>
+          <div class="rating-item"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3.5 2C2.7 2 2 2.7 2 3.5v9C2 13.3 2.7 14 3.5 14h9c.8 0 1.5-.7 1.5-1.5V9h-1.5v3.5h-9v-9H7V2H3.5z" fill="#01875F"/><path d="M14 2H10l1.5 1.5-4 4L9 9l4-4 1.5 1.5V2z" fill="#01875F"/></svg><span>4.9 sur <strong>Google Play</strong></span></div>
+          <div class="rating-item"><svg width="16" height="16" viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" rx="3" fill="#1C7CF9"/><path d="M8 5V8M8 8V11M6 8H10" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg><span>4.8 sur <strong>App Store</strong></span></div>
+          <div class="rating-item"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M14.5 8.2c0-.5 0-.9-.1-1.3H8v2.4h3.6c-.2.8-.6 1.5-1.3 2v1.6h2c1.2-1.1 1.9-2.7 1.9-4.7z" fill="#4285F4"/><path d="M8 15c1.8 0 3.3-.6 4.4-1.6l-2-1.6c-.6.4-1.4.6-2.3.6-1.8 0-3.3-1.2-3.8-2.8H2v1.7C3.1 13.5 5.4 15 8 15z" fill="#34A853"/><path d="M4.2 9.6A4.5 4.5 0 014 8.1a4.5 4.5 0 01.2-1.5V4.9H2A7 7 0 001 8.1a7 7 0 001 3.2l2.2-1.7z" fill="#FBBC05"/><path d="M8 3.5c1 0 1.9.4 2.6 1L12.2 3A7 7 0 008 1 7 7 0 002 4.9l2.2 1.7C4.7 4.7 6.2 3.5 8 3.5z" fill="#EA4335"/></svg><span>4.7 sur <strong>Google</strong></span></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Recruteurs</h4>
+        <ul>
+          <li><a href="#">Vérification de diplômes</a></li>
+          <li><a href="#">Vérification d'expériences</a></li>
+          <li><a href="#">Prise de références</a></li>
+          <li><a href="#">Contrôle d'intégrité</a></li>
+          <li><a href="#">API et Intégrations RH</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Société</h4>
+        <ul>
+          <li><a href="#">Candidats : certifier mon CV</a></li>
+          <li><a href="index.html">Blog et ressources</a></li>
+          <li><a href="#">À propos</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="#">Partenaires</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CVérifié · Made in France 🇫🇷</span>
+      <div class="footer-legal">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">CGU</a>
+        <a href="#">Conformité RGPD</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── STATE ───────────────────────────────────────────
+let currentMode = 'interne';
+let animFrame = null;
+let displayedTotal = 0;
+const VER_COST = 49;
+
+// ─── HELPERS ─────────────────────────────────────────
+function fmt(n){
+  return new Intl.NumberFormat('fr-FR',{maximumFractionDigits:0}).format(Math.round(n)) + ' €';
+}
+
+// ─── CALC LOGIC ──────────────────────────────────────
+function calc(){
+  const s  = parseFloat(document.getElementById('sl-salaire').value);
+  const d  = parseFloat(document.getElementById('sl-duree').value);
+  const lm = {employe:0.80, technicien:1.00, cadre:1.25, dirigeant:1.80}
+              [document.getElementById('sel-niveau').value];
+
+  // 1. Recrutement
+  const r = s * (currentMode === 'cabinet' ? 0.175 : 0.090) * lm;
+
+  // 2. Intégration
+  const ig = s * 0.115 * lm;
+
+  // 3. Sous-performance
+  const sp = (s / 12) * d * 0.50 * lm;
+
+  // 4. Séparation (rate escalates with duration)
+  const sepRate = d <= 2 ? 0.03 : d <= 5 ? 0.07 : d <= 9 ? 0.14 : 0.21;
+  const sep = s * sepRate * lm;
+
+  // 5. Remplacement
+  const remp = r * 1.10;
+
+  const total = r + ig + sp + sep + remp;
+  return {r, ig, sp, sep, remp, total};
+}
+
+// ─── ANIMATE NUMBER ──────────────────────────────────
+function animateTo(target){
+  if(animFrame) cancelAnimationFrame(animFrame);
+  const start = displayedTotal;
+  const diff  = target - start;
+  const dur   = 600;
+  const t0    = performance.now();
+
+  function step(now){
+    const prog = Math.min((now - t0) / dur, 1);
+    const ease = 1 - Math.pow(1 - prog, 3);
+    displayedTotal = start + diff * ease;
+    document.getElementById('res-total').textContent = fmt(displayedTotal);
+    if(prog < 1){ animFrame = requestAnimationFrame(step); }
+    else { displayedTotal = target; document.getElementById('res-total').textContent = fmt(target); }
+  }
+  animFrame = requestAnimationFrame(step);
+}
+
+// ─── UPDATE UI ───────────────────────────────────────
+function updateAll(){
+  // Labels
+  const s = parseFloat(document.getElementById('sl-salaire').value);
+  const d = parseFloat(document.getElementById('sl-duree').value);
+  document.getElementById('label-salaire').textContent =
+    new Intl.NumberFormat('fr-FR').format(s) + ' €';
+  document.getElementById('label-duree').textContent =
+    d + (d === 1 ? ' mois' : ' mois');
+
+  const {r, ig, sp, sep, remp, total} = calc();
+
+  // Animate total
+  animateTo(total);
+
+  // Risk badge
+  const badge = document.getElementById('risk-badge');
+  badge.className = 'risk-badge';
+  if(total < 25000){
+    badge.classList.add('moderate');
+    badge.innerHTML = '<svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3.5" fill="currentColor"/></svg> Risque modéré';
+  } else if(total < 60000){
+    badge.classList.add('high');
+    badge.innerHTML = '<svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3.5" fill="currentColor"/></svg> Risque élevé';
+  } else {
+    badge.classList.add('critical');
+    badge.innerHTML = '<svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3.5" fill="currentColor"/></svg> Risque critique';
+  }
+
+  // Bars
+  const parts = [r, ig, sp, sep, remp];
+  const max = Math.max(...parts);
+  const ids = ['1','2','3','4','5'];
+  ids.forEach((id, i) => {
+    document.getElementById('bv-' + id).textContent = fmt(parts[i]);
+    document.getElementById('bf-' + id).style.width = (parts[i] / max * 100).toFixed(1) + '%';
+  });
+
+  // ROI
+  const roi = Math.round(total / VER_COST);
+  document.getElementById('roi-ratio').textContent = new Intl.NumberFormat('fr-FR').format(roi) + 'x';
+  document.getElementById('roi-desc').textContent =
+    'le ROI d\'une vérification à ' + VER_COST + ' € face à ce coût estimé';
+
+  // Pulse danger on number if critical
+  const numEl = document.getElementById('res-total');
+  numEl.classList.remove('danger');
+  if(total >= 60000){
+    void numEl.offsetWidth; // reflow
+    numEl.classList.add('danger');
+  }
+}
+
+function setMode(btn){
+  document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentMode = btn.dataset.mode;
+  updateAll();
+}
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', function(){
+    const item = this.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if(!isOpen) item.classList.add('open');
+  });
+});
+
+// Init
+updateAll();
+</script>
+</body>
+</html>

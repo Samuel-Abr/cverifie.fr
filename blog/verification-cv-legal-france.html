@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="../images/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vérification de CV en France : ce que dit la loi | CVérifié</title>
+<meta name="description" content="Guide complet sur le cadre légal de la vérification de CV en France. Article L.1221-6, consentement candidat, RGPD, jurisprudences. Ce que vous avez le droit de vérifier et comment le faire légalement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FAF8F3;--cream-dark:#F0EDE5;
+  --ink:#1A1A24;--ink-light:#44444E;--ink-muted:#8A8A94;
+  --green:#2D6A4F;--green-mid:#40916C;--green-light:#52B788;
+  --green-pale:#D8F3DC;--green-ultra:#F0FAF2;
+  --border:#E0DDD5;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.25;font-weight:600}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+p{margin-bottom:1.25rem}
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,248,243,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;
+  padding:0 2rem;height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{
+  display:flex;align-items:center;gap:10px;
+}
+.nav-logo-mark{display:flex;align-items:center}
+.nav-logo-text{
+  font-family:'Playfair Display',serif;
+  font-size:21px;font-weight:600;
+  color:var(--ink);letter-spacing:-0.3px;
+}
+.nav-logo-text .cv{color:var(--green)}
+.logo-nav{height:38px;width:auto;display:block}
+.logo-footer{height:38px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{
+  font-size:14px;font-weight:500;
+  color:var(--ink-light);
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{
+  background:var(--green);color:white;
+  padding:10px 22px;border-radius:8px;border:none;
+  font-size:14px;font-weight:600;
+  transition:background .2s,transform .15s;
+  white-space:nowrap;
+}
+.nav-cta:hover{background:var(--green-mid);transform:translateY(-1px)}
+.hero-blog{margin-top:64px;height:420px;overflow:hidden;position:relative}
+.hero-blog img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-blog::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom, rgba(26,26,36,0.25) 0%, rgba(26,26,36,0.55) 100%)}
+.hero-text{position:absolute;bottom:0;left:0;right:0;padding:3rem;z-index:2;max-width:900px;margin:0 auto}
+.article-wrap{max-width:760px;margin:0 auto;padding:3rem 2rem 5rem}
+.breadcrumb{font-size:12px;color:var(--ink-muted);margin-bottom:2rem;display:flex;align-items:center;gap:6px}
+.breadcrumb a{color:var(--green);transition:color .2s}
+.breadcrumb a:hover{color:var(--green-mid)}
+.breadcrumb span{color:var(--border)}
+.article-meta{display:flex;align-items:center;gap:1rem;font-size:13px;color:var(--ink-muted);margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.article-meta .tag{background:var(--green-pale);color:var(--green);padding:3px 10px;border-radius:100px;font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+h1.article-title{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:1rem;letter-spacing:-0.02em;color:var(--ink)}
+.article-intro{font-size:1.1rem;color:var(--ink-light);line-height:1.75;margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid var(--border)}
+h2.section-h{font-size:1.5rem;margin:2.5rem 0 1rem;color:var(--ink);letter-spacing:-0.01em}
+h3.subsection-h{font-size:1.1rem;font-weight:600;margin:1.75rem 0 .75rem;color:var(--ink)}
+.highlight-box{background:var(--green-ultra);border-left:3px solid var(--green);border-radius:0 10px 10px 0;padding:1.25rem 1.5rem;margin:2rem 0;font-size:.95rem;color:var(--ink-light)}
+.highlight-box strong{color:var(--ink)}
+.warning-box{background:#FFF8F0;border-left:3px solid #E07820;border-radius:0 10px 10px 0;padding:1.25rem 1.5rem;margin:2rem 0;font-size:.95rem;color:#5A3A10}
+.stat-band{background:var(--green);border-radius:14px;padding:2rem;margin:2.5rem 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;text-align:center}
+.stat-band .stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:white;line-height:1}
+.stat-band .stat-label{font-size:.8rem;color:rgba(255,255,255,0.75);margin-top:.3rem}
+.article-img{border-radius:12px;overflow:hidden;margin:2.5rem 0}
+.article-img img{width:100%;height:280px;object-fit:cover}
+.article-img figcaption{font-size:12px;color:var(--ink-muted);padding:.5rem 0 0;text-align:center}
+table.data-table{width:100%;border-collapse:collapse;font-size:.875rem;margin:2rem 0;border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+table.data-table th{background:var(--green);color:white;padding:.75rem 1rem;text-align:left;font-weight:600;font-family:'Outfit',sans-serif}
+table.data-table td{padding:.75rem 1rem;border-bottom:1px solid var(--border)}
+table.data-table tr:last-child td{border-bottom:none}
+table.data-table tr:nth-child(even){background:white}
+table.data-table tr:nth-child(odd){background:var(--cream)}
+.check-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:.75rem;font-size:.9rem}
+.check-item svg{width:16px;height:16px;stroke:var(--green);fill:none;stroke-width:2.5;stroke-linecap:round;flex-shrink:0;margin-top:2px}
+.cross-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:.75rem;font-size:.9rem}
+.cross-item svg{width:16px;height:16px;stroke:#C44B4B;fill:none;stroke-width:2.5;stroke-linecap:round;flex-shrink:0;margin-top:2px}
+.cta-block{background:var(--ink);border-radius:16px;padding:2.5rem;text-align:center;margin:3rem 0;position:relative;overflow:hidden}
+.cta-block::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(45,106,79,.4) 0%,transparent 70%)}
+.cta-block h3{font-size:1.4rem;color:white;margin-bottom:.75rem;position:relative}
+.cta-block p{font-size:.9rem;color:rgba(255,255,255,.65);margin-bottom:1.5rem;position:relative}
+.cta-block a.btn{display:inline-flex;align-items:center;gap:8px;background:var(--green-light);color:white;padding:14px 32px;border-radius:10px;font-size:15px;font-weight:700;transition:all .2s;position:relative}
+.cta-block a.btn:hover{background:#62C898;transform:translateY(-2px)}
+.cta-block a.btn svg{width:16px;height:16px;stroke:white;fill:none;stroke-width:2.5;stroke-linecap:round}
+.faq-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:.75rem}
+.faq-q{padding:1.1rem 1.25rem;font-size:.95rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;background:white;border:none;width:100%;text-align:left;color:var(--ink)}
+.faq-q:hover{background:var(--cream)}
+.faq-icon{min-width:20px;height:20px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .25s}
+.faq-icon svg{width:9px;height:9px;stroke:var(--ink);fill:none;stroke-width:2.5;stroke-linecap:round}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--green);border-color:var(--green)}
+.faq-item.open .faq-icon svg{stroke:white}
+.faq-a{padding:0 1.25rem;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s ease;font-size:.875rem;color:var(--ink-light);line-height:1.7}
+.faq-item.open .faq-a{padding:.25rem 1.25rem 1.25rem;max-height:400px}
+.page-footer{background:var(--ink);padding:3rem 2rem;margin-top:5rem}
+.page-footer-inner{max-width:760px;margin:0 auto}
+.footer-trust-strip{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:1.5rem}
+.footer-trust-logos{display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.footer-trust-logo{height:30px;width:auto;filter:brightness(0) invert(1) opacity(.8)}
+.footer-bottom-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:12px;color:rgba(255,255,255,.4)}
+.footer-links{display:flex;gap:1.25rem}
+.footer-links a{color:rgba(255,255,255,.35);transition:color .2s}
+.footer-links a:hover{color:rgba(255,255,255,.7)}
+@media(max-width:600px){.stat-band{grid-template-columns:1fr 1fr}.hero-blog{height:280px}.hero-text{padding:1.5rem}.article-wrap{padding:2rem 1.25rem 4rem}}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);
+  padding:4rem 2rem 2rem;
+  color:rgba(255,255,255,0.5);
+}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{
+  display:grid;grid-template-columns:260px 180px 1fr 1fr;
+  gap:3rem;padding-bottom:3rem;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.footer-col h4{
+  font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);
+  text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.25rem;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.4);transition:color .2s}
+.footer-col ul li a:hover{color:var(--green-light)}
+.footer-bottom{
+  padding-top:2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;font-size:13px;
+}
+.footer-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-legal a{color:rgba(255,255,255,0.3);transition:color .2s}
+.footer-legal a:hover{color:rgba(255,255,255,0.65)}
+.footer-logo-text{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:600;color:white;
+}
+
+/* Social icons */
+.footer-social{display:flex;gap:.75rem;margin-bottom:1.5rem}
+.social-icon{
+  width:34px;height:34px;border-radius:8px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.1);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,0.5);
+  transition:all .2s;
+}
+.social-icon:hover{background:var(--green);border-color:var(--green);color:white}
+.social-icon svg{width:15px;height:15px}
+
+/* Trust logos */
+.footer-trust{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.trust-logo{
+  height:28px;width:auto;
+  filter:brightness(0) invert(1) opacity(0.35);
+  transition:opacity .2s;
+}
+.trust-logo:hover{opacity:.6}
+.trust-badge-rgpd{
+  display:flex;align-items:center;gap:5px;
+  font-size:11px;font-weight:600;letter-spacing:.04em;
+  color:rgba(255,255,255,0.35);
+  border:1px solid rgba(255,255,255,0.12);
+  padding:4px 8px;border-radius:6px;
+}
+
+/* Ratings */
+.footer-stars-row{margin-bottom:.75rem}
+.footer-stars{color:var(--green-light);font-size:16px;letter-spacing:2px}
+.footer-rating-list{display:flex;flex-direction:column;gap:.6rem}
+.rating-item{
+  display:flex;align-items:center;gap:7px;
+  font-size:13px;color:rgba(255,255,255,0.45);
+}
+.rating-item strong{color:rgba(255,255,255,0.7);font-weight:600}
+.rating-item svg{flex-shrink:0}
+
+@media(max-width:1024px){
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .footer-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="../index.html"><img src="../images/cverifie-logo-green.png" alt="CVérifié" class="logo-nav"></a>
+    </div>
+    <div class="nav-links">
+      <a href="../index.html#comment">Comment ça marche</a>
+      <a href="../index.html#tarifs">Tarifs</a>
+      <a href="../index.html#candidats">Pour les candidats</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="index.html">Blog</a>
+    </div>
+    <button class="nav-cta" onclick="window.location='../commander.html'">Lancer une vérification</button>
+  </div>
+</nav>
+
+<div class="hero-blog">
+  <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=80" alt="Signature de contrat de travail">
+  <div class="hero-text">
+    <span style="background:rgba(82,183,136,0.25);color:#7DCFAA;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:4px 12px;border-radius:100px;border:1px solid rgba(82,183,136,0.4);margin-bottom:1rem;display:inline-block">Guide juridique</span>
+    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);color:white;font-weight:600;margin-top:.75rem;max-width:680px;line-height:1.2">Vérification de CV en France : ce que dit la loi</h1>
+  </div>
+</div>
+
+<div class="article-wrap">
+
+  <div class="breadcrumb">
+    <a href="../index.html">Accueil</a>
+    <span>/</span>
+    <a href="#">Blog</a>
+    <span>/</span>
+    <span style="color:var(--ink-muted)">Cadre légal</span>
+  </div>
+
+  <div class="article-meta">
+    <span class="tag">Droit du travail</span>
+    <span>Mis à jour en 2025</span>
+    <span>8 min de lecture</span>
+  </div>
+
+  <h1 class="article-title">Vérifier le CV de vos candidats en France : droits, obligations et pièges à éviter</h1>
+
+  <div class="article-intro">
+    En France, un employeur a non seulement le droit de vérifier le CV de ses candidats, mais il a aussi intérêt à le faire avant la signature du contrat de travail. Une fois le contrat signé, la loi complique considérablement les recours en cas de mensonge découvert. Ce guide explique exactement ce que vous pouvez vérifier, comment l'obtenir légalement, et pourquoi faire vos vérifications maintenant plutôt que trop tard.
+  </div>
+
+  <div class="stat-band">
+    <div><div class="stat-num">65%</div><div class="stat-label">des CV contiennent au moins un écart avec la réalité</div></div>
+    <div><div class="stat-num">12%</div><div class="stat-label">des CV contiennent un mensonge majeur remettant en cause le recrutement</div></div>
+    <div><div class="stat-num">70%</div><div class="stat-label">des employeurs français ne font aucune vérification avant d'embaucher</div></div>
+  </div>
+
+  <h2 class="section-h">Ce que dit le Code du Travail</h2>
+
+  <p>Le cadre légal de la vérification de CV en France repose principalement sur l'article L.1221-6 du Code du Travail. Cet article pose le principe fondamental : les informations demandées à un candidat ne peuvent avoir pour seule finalité que d'apprécier sa capacité à occuper le poste proposé. En clair, vous avez le droit de vérifier tout ce qui est directement lié aux compétences requises pour le poste.</p>
+
+  <p>Ce que beaucoup ignorent, c'est que la loi ne dit pas seulement "vous pouvez vérifier". Elle dit implicitement que vous devriez. La jurisprudence de 1999 (Cass. soc., 30 mars 1999) a établi un principe lourd de conséquences : une fois le contrat de travail signé, les mensonges du candidat deviennent beaucoup plus difficiles à sanctionner. Le contrat signé "purge" les irrégularités antérieures à l'embauche.</p>
+
+  <div class="highlight-box">
+    <strong>Ce que ça veut dire concrètement :</strong> si vous découvrez après signature qu'un candidat a menti sur son diplôme, vous devrez prouver que ce mensonge a été "déterminant" dans votre décision d'embauche ET qu'il a causé un préjudice réel. Sans vérification préalable, vous avez vous-même contribué à l'erreur. Les tribunaux ne sont pas toujours cléments avec les employeurs qui n'ont pas fait leur part.
+  </div>
+
+  <h2 class="section-h">Ce que vous avez le droit de vérifier</h2>
+
+  <p>La liste de ce qui est vérifiable est plus large qu'on ne le croit. Elle inclut tous les éléments factuels du parcours du candidat qui ont un lien direct avec le poste à pourvoir.</p>
+
+  <div class="check-item"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>Les diplômes obtenus : titre exact, établissement, année d'obtention</div>
+  <div class="check-item"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>Les expériences professionnelles : dates de début et de fin, intitulé exact du poste, type de contrat (CDI, CDD, alternance)</div>
+  <div class="check-item"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>Le motif de fin de contrat, dans certains cas</div>
+  <div class="check-item"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>Les certifications professionnelles directement liées au poste</div>
+  <div class="check-item"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>L'identité du candidat</div>
+
+  <p style="margin-top:1.25rem">En revanche, plusieurs éléments sont formellement interdits :</p>
+
+  <div class="cross-item"><svg viewBox="0 0 12 12"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg>La vie privée du candidat (situation familiale, opinions politiques, religion)</div>
+  <div class="cross-item"><svg viewBox="0 0 12 12"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg>Les fiches de paie ou le niveau de rémunération chez les anciens employeurs</div>
+  <div class="cross-item"><svg viewBox="0 0 12 12"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg>Le casier judiciaire (sauf exception légale pour certains postes réglementés)</div>
+  <div class="cross-item"><svg viewBox="0 0 12 12"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg>Les activités extra-professionnelles ou engagements associatifs non liés au poste</div>
+  <div class="cross-item"><svg viewBox="0 0 12 12"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg>Tout élément pouvant constituer une discrimination (origine, santé, grossesse)</div>
+
+  <figure class="article-img">
+    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" alt="Recruteur en entretien professionnel">
+    <figcaption>La vérification du parcours candidat doit toujours se faire avec son consentement écrit préalable.</figcaption>
+  </figure>
+
+  <h2 class="section-h">L'obligation de consentement : la règle que tout le monde oublie</h2>
+
+  <p>C'est probablement le point le plus souvent négligé par les recruteurs en France. Les articles L.1221-8 et L.1221-9 du Code du Travail sont explicites : toute vérification effectuée auprès de tiers (anciens employeurs, établissements scolaires) doit être précédée d'une autorisation écrite du candidat.</p>
+
+  <p>Même si le candidat vous a lui-même communiqué des noms de référents, vous ne pouvez pas les contacter sans avoir au préalable une autorisation formelle. Et cette autorisation doit être spécifique : elle ne peut pas être une clause générale enfouie dans le formulaire de candidature. Le candidat doit savoir clairement ce que vous allez vérifier, auprès de qui, et comment.</p>
+
+  <div class="warning-box">
+    <strong>Erreur fréquente :</strong> appeler directement un ancien employeur "pour avoir une impression générale" sans avoir prévenu le candidat. C'est une infraction au Code du Travail, et si le candidat s'en aperçoit, vous vous exposez à une plainte et à l'annulation d'un éventuel licenciement basé sur ces informations.
+  </div>
+
+  <h2 class="section-h">Le RGPD s'applique aussi aux vérifications</h2>
+
+  <p>La collecte d'informations sur un candidat, même dans le cadre d'un recrutement, constitue un traitement de données personnelles au sens du Règlement Général sur la Protection des Données. Plusieurs principes s'appliquent donc :</p>
+
+  <p>Les données collectées doivent être strictement limitées à ce qui est nécessaire pour évaluer les aptitudes du candidat pour le poste. Vous ne pouvez pas conserver les informations collectées pendant plus de deux ans après le processus de recrutement. Le candidat doit être informé du fait que ses données font l'objet d'un traitement, de la finalité de ce traitement, et de ses droits (accès, rectification, effacement).</p>
+
+  <p>En pratique, cela signifie que si vous externalisez vos vérifications à un prestataire, ce prestataire doit opérer en tant que sous-traitant au sens du RGPD et vous garantir la conformité de son traitement.</p>
+
+  <div class="cta-block">
+    <h3>CVérifié gère tout le cadre légal pour vous</h3>
+    <p>Consentement RGPD automatisé, conformité Code du Travail, données hébergées en France. Vous lancez la vérification en 2 minutes.</p>
+    <a href="../commander.html" class="btn">
+      <svg viewBox="0 0 16 16"><polyline points="3,8 7,12 13,4"/></svg>
+      Vérifier un candidat dès 14,90 €
+    </a>
+  </div>
+
+  <h2 class="section-h">Les conséquences d'un faux diplôme : ce que dit le Code Pénal</h2>
+
+  <p>Présenter un faux diplôme dans le cadre d'un recrutement ne relève pas seulement du droit du travail. L'article 441-1 du Code Pénal qualifie ce type de comportement de "faux et usage de faux", passible de trois ans d'emprisonnement et de 45 000 euros d'amende.</p>
+
+  <p>Pour les professions réglementées, les conséquences sont encore plus graves. Un faux médecin, un faux avocat ou un faux expert-comptable s'expose à des poursuites pénales sévères, indépendamment des suites en droit du travail. L'employeur qui n'a pas vérifié peut également se voir reprocher une négligence si le préjudice causé à des tiers est établi.</p>
+
+  <h2 class="section-h">Tableau récapitulatif : autorisé, interdit, obligatoire</h2>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Élément</th><th>Statut</th><th>Condition</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Diplômes et certifications</td><td style="color:var(--green);font-weight:600">Autorisé</td><td>Avec consentement écrit</td></tr>
+      <tr><td>Dates et intitulés de poste</td><td style="color:var(--green);font-weight:600">Autorisé</td><td>Avec consentement écrit</td></tr>
+      <tr><td>Prise de références</td><td style="color:var(--green);font-weight:600">Autorisé</td><td>Avec consentement écrit et référents désignés</td></tr>
+      <tr><td>Motif de fin de contrat</td><td style="color:#E07820;font-weight:600">Encadré</td><td>Lien direct avec le poste requis</td></tr>
+      <tr><td>Casier judiciaire</td><td style="color:#E07820;font-weight:600">Encadré</td><td>Uniquement pour postes réglementés</td></tr>
+      <tr><td>Fiches de paie</td><td style="color:#C44B4B;font-weight:600">Interdit</td><td>Aucune exception</td></tr>
+      <tr><td>Situation familiale</td><td style="color:#C44B4B;font-weight:600">Interdit</td><td>Aucune exception</td></tr>
+      <tr><td>Opinions politiques / religion</td><td style="color:#C44B4B;font-weight:600">Interdit</td><td>Aucune exception</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-h">Ce qu'il faut faire avant de signer</h2>
+
+  <p>La règle d'or est simple : vérifiez avant de signer le contrat. Pas après. Une fois la signature apposée, votre marge de manoeuvre se réduit considérablement. La vérification doit donc faire partie intégrante de votre processus de sélection, idéalement après l'entretien final et avant la proposition ferme.</p>
+
+  <p>Pour les postes à responsabilité, les postes impliquant une gestion de fonds, ou les postes dans des secteurs réglementés (santé, finance, sécurité), la vérification n'est pas une option. C'est une protection juridique pour votre entreprise.</p>
+
+  <div class="cta-block">
+    <h3>Prêt à vérifier votre prochain candidat ?</h3>
+    <p>Aucun abonnement, aucun commercial. Vous soumettez, nous vérifions, rapport PDF sous 48h.</p>
+    <a href="../commander.html" class="btn">
+      <svg viewBox="0 0 16 16"><polyline points="3,8 7,12 13,4"/></svg>
+      Lancer une vérification maintenant
+    </a>
+  </div>
+
+  <h2 class="section-h">Questions fréquentes</h2>
+
+  <div class="faq-item">
+    <button class="faq-q">Un candidat peut-il refuser la vérification de son CV ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
+    <div class="faq-a">Oui, un candidat peut refuser de donner son consentement à la vérification. Vous ne pouvez pas le forcer. En revanche, vous pouvez décider de ne pas poursuivre sa candidature si la vérification est une étape obligatoire de votre processus. Dans les faits, un refus de vérification est souvent lui-même un signal d'alerte.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q">Peut-on vérifier le CV d'un salarié déjà en poste ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
+    <div class="faq-a">C'est possible mais beaucoup plus complexe juridiquement. Si vous découvrez un mensonge après embauche, vous devrez prouver que ce mensonge était "déterminant" dans votre décision et qu'il constitue un dol. Sans preuve solide et sans l'appui d'un avocat, le licenciement sur ce motif est risqué. C'est pourquoi il est fortement recommandé de vérifier avant l'embauche.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q">Combien de temps puis-je conserver les données collectées ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
+    <div class="faq-a">Le RGPD fixe la durée de conservation des données de recrutement à deux ans maximum à compter de la fin du processus de sélection. Au-delà, vous devez supprimer les données collectées, sauf si le candidat a donné un accord explicite pour une conservation plus longue (par exemple pour une future opportunité).</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q">La plateforme diplome.gouv.fr est-elle suffisante ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
+    <div class="faq-a">diplome.gouv.fr permet de vérifier les diplômes d'État délivrés depuis 2011 (baccalauréat, BTS, licences, masters...). C'est un outil gratuit et utile, mais il ne couvre pas les diplômes privés, les formations en ligne, les certifications professionnelles, ni les expériences professionnelles. Pour une vérification complète du CV, il faut aller au-delà de cet outil.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q">En cas de faux diplôme, peut-on annuler le contrat de travail ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
+    <div class="faq-a">Oui, dans certains cas. Une jurisprudence de 1995 (Cass. soc., 17 oct. 1995) a validé l'annulation d'un contrat lorsque le diplôme prétendu avait été déterminant dans la décision de recrutement. Mais la preuve du "dol" reste à la charge de l'employeur. Sans vérification préalable documentée, cette preuve est plus difficile à apporter. Un avocat spécialisé en droit du travail est indispensable dans ce cas.</div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <!-- Logo -->
+        <div style="margin-bottom:1.25rem">
+          <img src="../images/cverifie-logo-white.png" alt="CVérifié" class="logo-footer">
+        </div>
+
+        <p style="font-size:.875rem;color:rgba(255,255,255,0.4);line-height:1.7;margin-bottom:1.5rem">
+          Vérification de CV et de diplômes pour toutes les entreprises françaises. Sans engagement. Sous 48h.
+        </p>
+
+        <!-- Social icons -->
+        <div class="footer-social">
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="X / Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+          </a>
+        </div>
+
+        <!-- Trust logos -->
+        <div class="footer-trust">
+          <img src="https://www.capemploi-61.com/assets/cache/images-cache/images/cheops/cap-emploi/capemploi-61/1200px-logo-du-ministere-du-travail-%282020%29.svg.6abdeb72.png"
+               alt="Ministère du Travail"
+               class="trust-logo"
+               onerror="this.style.display='none'">
+          <div class="trust-badge-rgpd">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L2 3.5V7.5C2 10.2 4.2 12.7 7 13.5C9.8 12.7 12 10.2 12 7.5V3.5L7 1.5Z" fill="#2D6A4F" stroke="#52B788" stroke-width="0.8"/><polyline points="4.5,7 6.5,9 9.5,5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            RGPD conforme
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Ratings column (like PennyLane) -->
+      <div class="footer-col">
+        <h4>Avis clients</h4>
+        <div class="footer-stars-row">
+          <span class="footer-stars">★★★★★</span>
+        </div>
+        <div class="footer-rating-list">
+          <div class="rating-item">
+            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 1l1.7 3.4L14 5.1l-3 2.9.7 4.1L8 10.3l-3.7 1.8.7-4.1L2 5.1l4.3-.7z" fill="#00B67A"/></svg>
+            <span>4.8 sur <strong>Trustpilot</strong></span>
+          </div>
+          <div class="rating-item">
+            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3.5 2C2.7 2 2 2.7 2 3.5v9C2 13.3 2.7 14 3.5 14h9c.8 0 1.5-.7 1.5-1.5V9h-1.5v3.5h-9v-9H7V2H3.5z" fill="#01875F"/><path d="M14 2H10l1.5 1.5-4 4L9 9l4-4 1.5 1.5V2z" fill="#01875F"/></svg>
+            <span>4.9 sur <strong>Google Play</strong></span>
+          </div>
+          <div class="rating-item">
+            <svg width="16" height="16" viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" rx="3" fill="#1C7CF9"/><path d="M8 5V8M8 8V11M6 8H10" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>4.8 sur <strong>App Store</strong></span>
+          </div>
+          <div class="rating-item">
+            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M14.5 8.2c0-.5 0-.9-.1-1.3H8v2.4h3.6c-.2.8-.6 1.5-1.3 2v1.6h2c1.2-1.1 1.9-2.7 1.9-4.7z" fill="#4285F4"/><path d="M8 15c1.8 0 3.3-.6 4.4-1.6l-2-1.6c-.6.4-1.4.6-2.3.6-1.8 0-3.3-1.2-3.8-2.8H2v1.7C3.1 13.5 5.4 15 8 15z" fill="#34A853"/><path d="M4.2 9.6A4.5 4.5 0 014 8.1a4.5 4.5 0 01.2-1.5V4.9H2A7 7 0 001 8.1a7 7 0 001 3.2l2.2-1.7z" fill="#FBBC05"/><path d="M8 3.5c1 0 1.9.4 2.6 1L12.2 3A7 7 0 008 1 7 7 0 002 4.9l2.2 1.7C4.7 4.7 6.2 3.5 8 3.5z" fill="#EA4335"/></svg>
+            <span>4.7 sur <strong>Google</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Recruteurs</h4>
+        <ul>
+          <li><a href="#">Vérification de diplômes</a></li>
+          <li><a href="#">Vérification d'expériences</a></li>
+          <li><a href="#">Prise de références</a></li>
+          <li><a href="#">Contrôle d'intégrité</a></li>
+          <li><a href="#">API & Intégrations RH</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Société</h4>
+        <ul>
+          <li><a href="#">Candidats : certifier mon CV</a></li>
+          <li><a href="#">À propos</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="#">Partenaires</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CVérifié · Made in France 🇫🇷</span>
+      <div class="footer-legal">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">CGU</a>
+        <a href="#">Conformité RGPD</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', function(){
+    const item = this.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if(!isOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>

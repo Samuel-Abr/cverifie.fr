@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="../images/favicon.png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Faux CV : 15 signaux d'alerte pour détecter un mensonge | CVérifié</title>
+<meta name="description" content="75 % des recruteurs ont détecté un mensonge sur un CV. Découvrez les 15 signaux d'alerte concrets (dates incohérentes, diplômes suspects, expériences gonflées) et comment réagir.">
+<link rel="canonical" href="https://xn--cvrifi-cxa2g.fr/blog/faux-cv-exemples-detecter-signaux.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FAF8F3;--cream-dark:#F0EDE5;--ink:#1A1A24;--ink-light:#44444E;--ink-muted:#8A8A94;--green:#2D6A4F;--green-mid:#40916C;--green-light:#52B788;--green-pale:#D8F3DC;--green-ultra:#F0FAF2;--border:#E0DDD5;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;}
+a{color:var(--green);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,243,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:36px;display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--ink-light);}
+.nav-links a:hover{color:var(--green);text-decoration:none;}
+.nav-cta{background:var(--green);color:#fff !important;padding:9px 20px;border-radius:6px;font-weight:600;border:none;cursor:pointer;font-family:inherit;font-size:.9rem;}
+.nav-cta:hover{background:var(--green-mid);text-decoration:none !important;}
+
+/* HERO */
+.hero-blog{position:relative;height:420px;overflow:hidden;margin-top:64px;}
+.hero-blog img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-blog::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,26,36,.35) 0%,rgba(26,26,36,.72) 100%);}
+.hero-text{position:absolute;bottom:48px;left:50%;transform:translateX(-50%);width:100%;max-width:760px;padding:0 24px;z-index:2;color:#fff;}
+.hero-cat{display:inline-block;background:var(--green-light);color:#fff;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px;}
+.hero-text h1{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.2;color:#fff;}
+
+/* ARTICLE */
+.article-wrap{max-width:760px;margin:0 auto;padding:48px 24px 80px;}
+.breadcrumb{font-size:.8rem;color:var(--ink-muted);margin-bottom:20px;}
+.breadcrumb a{color:var(--ink-muted);}
+.breadcrumb a:hover{color:var(--green);}
+.article-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:24px;}
+.tag{background:var(--green-pale);color:var(--green);font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.05em;}
+.meta-sep{color:var(--border);}
+.meta-date,.meta-read{font-size:.83rem;color:var(--ink-muted);}
+.article-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);line-height:1.25;margin-bottom:20px;}
+.article-intro{font-size:1.1rem;color:var(--ink-light);line-height:1.75;padding-bottom:28px;border-bottom:1px solid var(--border);margin-bottom:40px;}
+
+/* STAT BAND */
+.stat-band{background:var(--green);color:#fff;border-radius:12px;padding:32px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:40px 0;text-align:center;}
+.stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;display:block;}
+.stat-label{font-size:.82rem;opacity:.88;margin-top:4px;line-height:1.4;}
+
+/* SECTIONS */
+.section-h{font-family:'Playfair Display',serif;font-size:1.55rem;margin:48px 0 16px;color:var(--ink);}
+.subsection-h{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:600;margin:28px 0 10px;color:var(--ink);}
+p{margin-bottom:16px;color:var(--ink-light);}
+
+/* CALLOUT BOXES */
+.highlight-box{background:var(--green-ultra);border-left:4px solid var(--green-light);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;}
+.highlight-box strong{color:var(--green);display:block;margin-bottom:6px;}
+.warning-box{background:#fff8ed;border-left:4px solid #f4a022;border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;}
+.warning-box strong{color:#c97d10;display:block;margin-bottom:6px;}
+.danger-box{background:#fff3f3;border-left:4px solid #e05c5c;border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;}
+.danger-box strong{color:#c13737;display:block;margin-bottom:6px;}
+
+/* DATA TABLE */
+.data-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.9rem;}
+.data-table th{background:var(--green);color:#fff;padding:11px 14px;text-align:left;font-weight:600;}
+.data-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--ink-light);}
+.data-table tr:nth-child(even) td{background:var(--cream-dark);}
+
+/* CHECK/CROSS */
+.check-item,.cross-item{display:flex;gap:10px;align-items:flex-start;margin:8px 0;font-size:.95rem;color:var(--ink-light);}
+.check-item::before{content:'✓';color:var(--green-light);font-weight:700;flex-shrink:0;margin-top:2px;}
+.cross-item::before{content:'✗';color:#e05c5c;font-weight:700;flex-shrink:0;margin-top:2px;}
+
+/* SIGNAL CARDS */
+.signal-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0;}
+.signal-card{border-radius:10px;padding:16px 18px;border:1px solid var(--border);}
+.signal-card.danger{background:#fff3f3;border-color:#e8c5c5;}
+.signal-card.warning{background:#fff8ed;border-color:#f0d5a5;}
+.signal-card.watch{background:var(--green-ultra);border-color:var(--green-pale);}
+.signal-num{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+.signal-card.danger .signal-num{color:#c13737;}
+.signal-card.warning .signal-num{color:#c97d10;}
+.signal-card.watch .signal-num{color:var(--green);}
+.signal-card h4{font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:4px;}
+.signal-card p{font-size:.83rem;color:var(--ink-muted);margin:0;}
+
+/* CTA */
+.cta-block{background:var(--ink);color:#fff;border-radius:12px;padding:40px 32px;text-align:center;margin:48px 0;}
+.cta-block h3{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:12px;color:#fff;}
+.cta-block p{color:rgba(255,255,255,.75);margin-bottom:24px;}
+.btn-cta{display:inline-block;background:var(--green-light);color:#fff;font-weight:600;padding:14px 32px;border-radius:8px;font-size:1rem;cursor:pointer;border:none;}
+.btn-cta:hover{background:var(--green-mid);text-decoration:none;color:#fff;}
+
+/* FAQ */
+.faq-list{margin:24px 0;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:18px 0;font-size:1rem;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:'Outfit',sans-serif;}
+.faq-q::after{content:'+';font-size:1.3rem;color:var(--green-light);flex-shrink:0;transition:transform .25s;}
+.faq-item.open .faq-q::after{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-item.open .faq-a{max-height:400px;}
+.faq-a p{padding-bottom:18px;color:var(--ink-light);}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 24px 32px;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+.footer-brand img{height:32px;margin-bottom:16px;filter:brightness(0) invert(1);}
+.footer-brand p{font-size:.88rem;line-height:1.65;opacity:.7;}
+.footer-col h4{font-size:.85rem;font-weight:600;color:#fff;letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px;}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:8px;}
+.footer-col a{font-size:.88rem;color:rgba(255,255,255,.6);}
+.footer-col a:hover{color:#fff;text-decoration:none;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.82rem;}
+@media(max-width:640px){
+  .signal-grid{grid-template-columns:1fr;}
+  .stat-band{grid-template-columns:1fr;gap:24px;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"Faux CV : 15 signaux d'alerte pour détecter un mensonge",
+  "description":"75 % des recruteurs ont détecté un mensonge sur un CV. Découvrez les 15 signaux d'alerte concrets pour identifier un faux CV avant d'embaucher.",
+  "image":"https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1400&q=80",
+  "author":{"@type":"Organization","name":"CVérifié"},
+  "publisher":{"@type":"Organization","name":"CVérifié","logo":{"@type":"ImageObject","url":"https://xn--cvrifi-cxa2g.fr/images/cverifie-logo-green.png"}},
+  "datePublished":"2024-09-05",
+  "dateModified":"2025-01-15"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Peut-on détecter un faux CV sans vérification externe ?","acceptedAnswer":{"@type":"Answer","text":"Oui, mais partiellement. Des signaux comme les trous temporels, les incohérences de dates ou les fautes dans les noms d'entreprises sont détectables à la lecture. Pour les diplômes et les expériences, une vérification externe reste indispensable."}},
+    {"@type":"Question","name":"Quels sont les mensonges les plus fréquents sur un CV ?","acceptedAnswer":{"@type":"Answer","text":"Les quatre mensonges les plus courants : dates d'emploi gonflées (31 %), niveau de diplôme surévalué (26 %), intitulé de poste embelli (22 %), et compétences techniques surestimées (21 %)."}},
+    {"@type":"Question","name":"Est-il légal de vérifier les informations d'un CV ?","acceptedAnswer":{"@type":"Answer","text":"Oui, sous réserve que la vérification soit en lien avec le poste, proportionnée, et que le candidat soit informé. La base légale est l'intérêt légitime (art. 6.1.f RGPD)."}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="../index.html"><img src="../images/cverifie-logo-green.png" alt="CVérifié" class="logo-nav"></a>
+    </div>
+    <div class="nav-links">
+      <a href="../index.html#comment">Comment ça marche</a>
+      <a href="../index.html#tarifs">Tarifs</a>
+      <a href="../index.html#candidats">Pour les candidats</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="index.html">Blog</a>
+    </div>
+    <button class="nav-cta" onclick="window.location='../commander.html'">Lancer une vérification</button>
+  </div>
+</nav>
+
+<div class="hero-blog">
+  <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1400&q=80" alt="Dossier de recrutement sur un bureau, signaux d'alerte faux CV">
+  <div class="hero-text">
+    <span class="hero-cat">Guide pratique</span>
+    <h1>Faux CV : 15 signaux d'alerte pour détecter un mensonge</h1>
+  </div>
+</div>
+
+<div class="article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">Accueil</a> &rsaquo; <a href="index.html">Blog</a> &rsaquo; Faux CV : signaux d'alerte
+  </div>
+
+  <div class="article-meta">
+    <span class="tag">Guide pratique</span>
+    <span class="meta-sep">|</span>
+    <span class="meta-date">5 septembre 2024</span>
+    <span class="meta-sep">|</span>
+    <span class="meta-read">9 min de lecture</span>
+  </div>
+
+  <h1 class="article-title">Faux CV : 15 signaux d'alerte pour détecter un mensonge avant d'embaucher</h1>
+
+  <div class="article-intro">
+    Trois quarts des recruteurs professionnels ont déjà détecté un mensonge sur un CV. Pourtant, la plupart de ces mensonges auraient pu être repérés dès la première lecture. Ce guide recense les 15 signaux d'alerte les plus fiables, classés par niveau de risque, avec les actions concrètes à entreprendre pour chacun.
+  </div>
+
+  <div class="stat-band">
+    <div>
+      <span class="stat-num">75 %</span>
+      <div class="stat-label">des recruteurs ont déjà détecté un mensonge sur un CV</div>
+    </div>
+    <div>
+      <span class="stat-num">30 %</span>
+      <div class="stat-label">des candidats modifient leurs dates d'emploi</div>
+    </div>
+    <div>
+      <span class="stat-num">15</span>
+      <div class="stat-label">signaux d'alerte concrets à connaître absolument</div>
+    </div>
+  </div>
+
+  <h2 class="section-h">Pourquoi les candidats mentent-ils sur leur CV ?</h2>
+
+  <p>La pression du marché de l'emploi pousse certains candidats à embellir leur parcours. Les mensonges les plus courants visent à combler des lacunes perçues comme éliminatoires : une période de chômage jugée trop longue, un diplôme légèrement inférieur à celui exigé, ou des responsabilités moins importantes qu'annoncé.</p>
+
+  <div class="highlight-box">
+    <strong>Les quatre mensonges les plus fréquents</strong>
+    <div class="check-item">Dates d'emploi gonflées pour masquer un trou : 31 % des cas</div>
+    <div class="check-item">Niveau de diplôme surévalué (Bac+3 présenté comme Bac+5) : 26 %</div>
+    <div class="check-item">Intitulé de poste embelli (chargé de mission présenté comme responsable) : 22 %</div>
+    <div class="check-item">Compétences techniques surestimées (niveau Excel "avancé" sans le maîtriser) : 21 %</div>
+  </div>
+
+  <p>Ce qui rend ces mensonges dangereux pour votre entreprise : ils concernent précisément les éléments sur lesquels vous allez fonder votre décision d'embauche et définir la rémunération proposée.</p>
+
+  <h2 class="section-h">Signaux de niveau rouge : risque élevé</h2>
+
+  <p>Ces signaux indiquent un mensonge probable sur un élément critique. Ils nécessitent une vérification externe systématique avant toute décision d'embauche.</p>
+
+  <div class="signal-grid">
+    <div class="signal-card danger">
+      <div class="signal-num">Signal 1 - Risque élevé</div>
+      <h4>Diplôme sans numéro ou sans établissement précis</h4>
+      <p>Un candidat sérieux connaît l'intitulé exact de son diplôme, l'année d'obtention et l'établissement. Le flou est un signe d'alerte.</p>
+    </div>
+    <div class="signal-card danger">
+      <div class="signal-num">Signal 2 - Risque élevé</div>
+      <h4>Dates qui ne s'additionnent pas</h4>
+      <p>Calculez la durée totale des expériences. Si le total dépasse l'âge professionnel du candidat, il y a manipulation de dates.</p>
+    </div>
+    <div class="signal-card danger">
+      <div class="signal-num">Signal 3 - Risque élevé</div>
+      <h4>Entreprise introuvable sur LinkedIn ou Infogreffe</h4>
+      <p>Une société déclarée employeur peut ne pas exister, avoir été radiée, ou avoir un nom légèrement différent de celui indiqué.</p>
+    </div>
+    <div class="signal-card danger">
+      <div class="signal-num">Signal 4 - Risque élevé</div>
+      <h4>Poste de direction dans une PME sans trace publique</h4>
+      <p>Les dirigeants de PME apparaissent dans les actes KBIS et les annonces légales. L'absence de toute trace est suspecte.</p>
+    </div>
+    <div class="signal-card danger">
+      <div class="signal-num">Signal 5 - Risque élevé</div>
+      <h4>Certification technique sans date ni organisme certificateur</h4>
+      <p>AWS, Google, Microsoft et autres grands certificateurs publient des registres vérifiables. L'absence d'identifiant de certification est révélatrice.</p>
+    </div>
+  </div>
+
+  <div class="danger-box">
+    <strong>Action immédiate requise</strong>
+    Pour ces 5 signaux, ne poursuivez pas le processus sans vérification externe. Le coût d'un recrutement raté (entre 25 000 et 150 000 euros selon le poste) est sans commune mesure avec celui d'une vérification préalable.
+  </div>
+
+  <h2 class="section-h">Signaux de niveau orange : vigilance renforcée</h2>
+
+  <p>Ces signaux n'indiquent pas un mensonge certain, mais ils appellent une investigation approfondie lors de l'entretien ou une vérification ciblée.</p>
+
+  <div class="signal-grid">
+    <div class="signal-card warning">
+      <div class="signal-num">Signal 6 - Vigilance</div>
+      <h4>Trou temporel non expliqué de plus de 3 mois</h4>
+      <p>Un congé sabbatique, une maladie ou une période de formation mérite d'être mentionné. Le silence peut masquer un licenciement pour faute.</p>
+    </div>
+    <div class="signal-card warning">
+      <div class="signal-num">Signal 7 - Vigilance</div>
+      <h4>Progression de carrière trop rapide</h4>
+      <p>Passer de stagiaire à directeur en 3 ans dans la même entreprise sans promotion clairement justifiée est statistiquement rare.</p>
+    </div>
+    <div class="signal-card warning">
+      <div class="signal-num">Signal 8 - Vigilance</div>
+      <h4>Missions trop vagues pour le niveau prétendu</h4>
+      <p>"Participation à des projets stratégiques" sans détail ni chiffre sur un poste senior révèle souvent un poste surévalué.</p>
+    </div>
+    <div class="signal-card warning">
+      <div class="signal-num">Signal 9 - Vigilance</div>
+      <h4>Références inexistantes ou non contactables</h4>
+      <p>Un candidat qui ne peut fournir aucun ancien manager joignable après plusieurs années d'expérience pose question.</p>
+    </div>
+    <div class="signal-card warning">
+      <div class="signal-num">Signal 10 - Vigilance</div>
+      <h4>Formation continue sans organisme identifié</h4>
+      <p>Les certifications professionnelles délivrées par des organismes sérieux ont un numéro de certification vérifiable.</p>
+    </div>
+  </div>
+
+  <div class="warning-box">
+    <strong>Comment creuser en entretien</strong>
+    Pour chaque signal orange, posez des questions ouvertes précises : "Pouvez-vous me décrire votre organigramme chez X ?" ou "Quel était l'effectif de l'équipe que vous encadriez ?" Les détails concrets discriminent les vrais parcours des faux.
+  </div>
+
+  <h2 class="section-h">Signaux de niveau vert : points d'attention</h2>
+
+  <p>Ces signaux sont souvent bénins, mais méritent une clarification lors de l'entretien pour éviter les malentendus.</p>
+
+  <div class="signal-grid">
+    <div class="signal-card watch">
+      <div class="signal-num">Signal 11 - A clarifier</div>
+      <h4>Changement de secteur sans explication</h4>
+      <p>Une reconversion est légitime mais doit être expliquée. Son absence peut signaler une omission volontaire d'une expérience défavorable.</p>
+    </div>
+    <div class="signal-card watch">
+      <div class="signal-num">Signal 12 - A clarifier</div>
+      <h4>Missions identiques dans des entreprises différentes</h4>
+      <p>Un copier-coller de fiches de poste peut indiquer que le candidat n'a pas réellement occupé ces fonctions dans tous ces contextes.</p>
+    </div>
+    <div class="signal-card watch">
+      <div class="signal-num">Signal 13 - A clarifier</div>
+      <h4>Niveau de langue non certifié</h4>
+      <p>"Anglais courant" sans TOEIC ou TOEFL sur un poste exigeant de l'anglais professionnel est un signal à tester lors de l'entretien.</p>
+    </div>
+    <div class="signal-card watch">
+      <div class="signal-num">Signal 14 - A clarifier</div>
+      <h4>Logiciels métier listés sans version ni contexte</h4>
+      <p>Lister "Excel, Word, PowerPoint" comme compétences techniques sur un poste cadre peut masquer un niveau basique présenté comme avancé.</p>
+    </div>
+    <div class="signal-card watch">
+      <div class="signal-num">Signal 15 - A clarifier</div>
+      <h4>Nom d'entreprise légèrement différent</h4>
+      <p>Une lettre changée, un trait d'union déplacé : parfois anodin, parfois intentionnel pour rendre la vérification difficile.</p>
+    </div>
+  </div>
+
+  <h2 class="section-h">Que faire selon le niveau de risque ?</h2>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Niveau</th>
+        <th>Signaux concernés</th>
+        <th>Action recommandée</th>
+        <th>Délai</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong style="color:#c13737;">Rouge</strong></td>
+        <td>1 à 5</td>
+        <td>Vérification externe avant décision</td>
+        <td>Avant 2e entretien</td>
+      </tr>
+      <tr>
+        <td><strong style="color:#c97d10;">Orange</strong></td>
+        <td>6 à 10</td>
+        <td>Entretien approfondi + vérification ciblée</td>
+        <td>Avant offre</td>
+      </tr>
+      <tr>
+        <td><strong style="color:var(--green);">Vert</strong></td>
+        <td>11 à 15</td>
+        <td>Clarification lors de l'entretien</td>
+        <td>Lors du 1er entretien</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-h">Comment structurer la vérification</h2>
+
+  <p>Une vérification efficace suit une séquence logique qui va du général au particulier :</p>
+
+  <div class="highlight-box">
+    <strong>Séquence de vérification recommandée</strong>
+    <div class="check-item">Etape 1 : lecture critique du CV (repérage des 15 signaux)</div>
+    <div class="check-item">Etape 2 : recherche libre (LinkedIn, Infogreffe, Google)</div>
+    <div class="check-item">Etape 3 : entretien structuré avec questions sur les points suspects</div>
+    <div class="check-item">Etape 4 : vérification des références par téléphone</div>
+    <div class="check-item">Etape 5 (si signaux rouges) : vérification externe des diplômes et expériences</div>
+  </div>
+
+  <p>La vérification externe (étape 5) est particulièrement importante pour les postes à responsabilité, les fonctions sensibles (accès aux finances, aux données personnelles, aux enfants) ou lorsque plusieurs signaux d'alerte sont cumulés.</p>
+
+  <div class="cta-block">
+    <h3>Vous avez identifié des signaux d'alerte ?</h3>
+    <p>CVérifié vérifie diplômes et expériences professionnelles directement auprès des établissements et employeurs. Résultat en 3 à 5 jours ouvrés.</p>
+    <button class="btn-cta" onclick="window.location='../commander.html'">Lancer une vérification</button>
+  </div>
+
+  <h2 class="section-h">Questions fréquentes</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">Peut-on détecter un faux CV sans vérification externe ?</button>
+      <div class="faq-a"><p>Oui, mais partiellement. Des signaux comme les trous temporels, les incohérences de dates ou les fautes dans les noms d'entreprises sont détectables à la lecture. Pour les diplômes et les expériences professionnelles, une vérification externe reste indispensable pour obtenir une confirmation formelle.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Quels sont les mensonges les plus fréquents sur un CV ?</button>
+      <div class="faq-a"><p>Les quatre mensonges les plus courants : dates d'emploi gonflées pour masquer un trou (31 %), niveau de diplôme surévalué (26 %), intitulé de poste embelli (22 %), et compétences techniques surestimées (21 %). Les secteurs les plus touchés sont la tech, la finance et les fonctions commerciales.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Est-il légal de vérifier les informations d'un CV ?</button>
+      <div class="faq-a"><p>Oui, sous réserve que la vérification soit en lien avec le poste, proportionnée à ses enjeux, et que le candidat soit informé de la démarche. La base légale est l'intérêt légitime (art. 6.1.f RGPD). Pour un poste comptable ou financier, vérifier les diplômes en comptabilité est pleinement justifié.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Faut-il vérifier tous les CV ou seulement certains ?</button>
+      <div class="faq-a"><p>La vérification exhaustive de tous les CV est rarement nécessaire pour les postes sans enjeu particulier. En revanche, pour les postes d'encadrement, les fonctions sensibles (finances, IT, enfants, santé) ou les recrutements à fort enjeu, la vérification est fortement recommandée. La détection des signaux d'alerte permet de cibler les vérifications de manière efficace.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Que faire si l'on découvre un mensonge après l'embauche ?</button>
+      <div class="faq-a"><p>Un mensonge sur un élément déterminant de l'embauche constitue une cause réelle et sérieuse de licenciement, voire une faute grave si le poste implique des responsabilités importantes. Il est conseillé de consulter un avocat spécialisé en droit social avant d'agir, pour s'assurer de la procédure et de la proportionnalité de la sanction.</p></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="../images/cverifie-logo-white.png" alt="CVérifié">
+        <p>Le service de vérification de CV et diplômes pour les recruteurs français. Résultats certifiés en 3 à 5 jours ouvrés.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Service</h4>
+        <ul>
+          <li><a href="../index.html#comment-ca-marche">Comment ça marche</a></li>
+          <li><a href="../index.html#tarifs">Tarifs</a></li>
+          <li><a href="../commander.html">Commander</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="index.html">Blog</a></li>
+          <li><a href="verification-cv-legal-france.html">Cadre légal</a></li>
+          <li><a href="statistiques-mensonges-cv-france.html">Statistiques</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../index.html#legal">Mentions légales</a></li>
+          <li><a href="../index.html#confidentialite">Confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 CVérifié. Tous droits réservés.</span>
+      <span>Vérification CV et diplômes en France</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;
+    const wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
+    if(!wasOpen)item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>

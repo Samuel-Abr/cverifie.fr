@@ -1,0 +1,120 @@
+<style>
+/* Mobile nav additions */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 201;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: all .3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26,26,36,0.97);
+  backdrop-filter: blur(16px);
+  z-index: 200;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  transition: color .2s;
+}
+.mobile-menu a:hover { color: var(--green-light); }
+.mobile-menu .mobile-cta {
+  margin-top: 1rem;
+  background: var(--green);
+  color: white;
+  padding: 16px 40px;
+  border-radius: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.mobile-menu-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.2);
+}
+@media(max-width:768px) {
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .hamburger { display: flex; }
+}
+</style>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="/"><img src="/images/cverifie-logo-green.png" alt="CVérifié" class="logo-nav"></a>
+    </div>
+    <div class="nav-links">
+      <a href="/#comment">Comment ça marche</a>
+      <a href="/#tarifs">Tarifs</a>
+      <a href="/#candidats">Pour les candidats</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/blog/" class="{{ 'active' if '/blog' in page.url else '' }}">Blog</a>
+    </div>
+    <button class="nav-cta" onclick="window.location='/commander.html'">Lancer une vérification</button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="mobileClose">&#x2715;</button>
+  <a href="/" onclick="closeMobileMenu()">Accueil</a>
+  <a href="/#comment" onclick="closeMobileMenu()">Comment ça marche</a>
+  <a href="/#tarifs" onclick="closeMobileMenu()">Tarifs</a>
+  <a href="/#candidats" onclick="closeMobileMenu()">Pour les candidats</a>
+  <a href="/#faq" onclick="closeMobileMenu()">FAQ</a>
+  <a href="/blog/" onclick="closeMobileMenu()">Blog</a>
+  <a href="/commander.html" class="mobile-cta">Lancer une vérification</a>
+</div>
+
+<script>
+var hamburger = document.getElementById('hamburger');
+var mobileMenu = document.getElementById('mobileMenu');
+var mobileClose = document.getElementById('mobileClose');
+function openMobileMenu(){ hamburger.classList.add('open'); mobileMenu.classList.add('open'); document.body.style.overflow='hidden'; }
+function closeMobileMenu(){ hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); document.body.style.overflow=''; }
+hamburger.addEventListener('click', function(){ mobileMenu.classList.contains('open') ? closeMobileMenu() : openMobileMenu(); });
+mobileClose.addEventListener('click', closeMobileMenu);
+</script>

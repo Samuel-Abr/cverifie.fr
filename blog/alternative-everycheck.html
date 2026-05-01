@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="../images/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EveryCheck, VerifCV, CVérifié : comparatif des services de vérification de CV en France</title>
+<meta name="description" content="Comparatif objectif des services de vérification de CV en France : EveryCheck, VerifCV, Verifdiploma, CVérifié. Prix, délais, self-service, adapté aux PME.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>:root{
+  --cream:#FAF8F3;--cream-dark:#F0EDE5;
+  --ink:#1A1A24;--ink-light:#44444E;--ink-muted:#8A8A94;
+  --green:#2D6A4F;--green-mid:#40916C;--green-light:#52B788;
+  --green-pale:#D8F3DC;--green-ultra:#F0FAF2;
+  --border:#E0DDD5;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.25;font-weight:600}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+p{margin-bottom:1.25rem}
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,248,243,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;
+  padding:0 2rem;height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{
+  display:flex;align-items:center;gap:10px;
+}
+.nav-logo-mark{display:flex;align-items:center}
+.nav-logo-text{
+  font-family:'Playfair Display',serif;
+  font-size:21px;font-weight:600;
+  color:var(--ink);letter-spacing:-0.3px;
+}
+.nav-logo-text .cv{color:var(--green)}
+.logo-nav{height:38px;width:auto;display:block}
+.logo-footer{height:38px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{
+  font-size:14px;font-weight:500;
+  color:var(--ink-light);
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{
+  background:var(--green);color:white;
+  padding:10px 22px;border-radius:8px;border:none;
+  font-size:14px;font-weight:600;
+  transition:background .2s,transform .15s;
+  white-space:nowrap;
+}
+.nav-cta:hover{background:var(--green-mid);transform:translateY(-1px)}
+.hero-blog{margin-top:64px;height:420px;overflow:hidden;position:relative}
+.hero-blog img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-blog::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom, rgba(26,26,36,0.25) 0%, rgba(26,26,36,0.55) 100%)}
+.hero-text{position:absolute;bottom:0;left:0;right:0;padding:3rem;z-index:2;max-width:900px;margin:0 auto}
+.article-wrap{max-width:760px;margin:0 auto;padding:3rem 2rem 5rem}
+.breadcrumb{font-size:12px;color:var(--ink-muted);margin-bottom:2rem;display:flex;align-items:center;gap:6px}
+.breadcrumb a{color:var(--green);transition:color .2s}
+.breadcrumb a:hover{color:var(--green-mid)}
+.breadcrumb span{color:var(--border)}
+.article-meta{display:flex;align-items:center;gap:1rem;font-size:13px;color:var(--ink-muted);margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.article-meta .tag{background:var(--green-pale);color:var(--green);padding:3px 10px;border-radius:100px;font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+h1.article-title{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:1rem;letter-spacing:-0.02em;color:var(--ink)}
+.article-intro{font-size:1.1rem;color:var(--ink-light);line-height:1.75;margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid var(--border)}
+h2.section-h{font-size:1.5rem;margin:2.5rem 0 1rem;color:var(--ink);letter-spacing:-0.01em}
+h3.subsection-h{font-size:1.1rem;font-weight:600;margin:1.75rem 0 .75rem;color:var(--ink)}
+.highlight-box{background:var(--green-ultra);border-left:3px solid var(--green);border-radius:0 10px 10px 0;padding:1.25rem 1.5rem;margin:2rem 0;font-size:.95rem;color:var(--ink-light)}
+.highlight-box strong{color:var(--ink)}
+.warning-box{background:#FFF8F0;border-left:3px solid #E07820;border-radius:0 10px 10px 0;padding:1.25rem 1.5rem;margin:2rem 0;font-size:.95rem;color:#5A3A10}
+.stat-band{background:var(--green);border-radius:14px;padding:2rem;margin:2.5rem 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;text-align:center}
+.stat-band .stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:white;line-height:1}
+.stat-band .stat-label{font-size:.8rem;color:rgba(255,255,255,0.75);margin-top:.3rem}
+.article-img{border-radius:12px;overflow:hidden;margin:2.5rem 0}
+.article-img img{width:100%;height:280px;object-fit:cover}
+.article-img figcaption{font-size:12px;color:var(--ink-muted);padding:.5rem 0 0;text-align:center}
+table.data-table{width:100%;border-collapse:collapse;font-size:.875rem;margin:2rem 0;border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+table.data-table th{background:var(--green);color:white;padding:.75rem 1rem;text-align:left;font-weight:600;font-family:'Outfit',sans-serif}
+table.data-table td{padding:.75rem 1rem;border-bottom:1px solid var(--border)}
+table.data-table tr:last-child td{border-bottom:none}
+table.data-table tr:nth-child(even){background:white}
+table.data-table tr:nth-child(odd){background:var(--cream)}
+.check-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:.75rem;font-size:.9rem}
+.check-item svg{width:16px;height:16px;stroke:var(--green);fill:none;stroke-width:2.5;stroke-linecap:round;flex-shrink:0;margin-top:2px}
+.cross-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:.75rem;font-size:.9rem}
+.cross-item svg{width:16px;height:16px;stroke:#C44B4B;fill:none;stroke-width:2.5;stroke-linecap:round;flex-shrink:0;margin-top:2px}
+.cta-block{background:var(--ink);border-radius:16px;padding:2.5rem;text-align:center;margin:3rem 0;position:relative;overflow:hidden}
+.cta-block::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(45,106,79,.4) 0%,transparent 70%)}
+.cta-block h3{font-size:1.4rem;color:white;margin-bottom:.75rem;position:relative}
+.cta-block p{font-size:.9rem;color:rgba(255,255,255,.65);margin-bottom:1.5rem;position:relative}
+.cta-block a.btn{display:inline-flex;align-items:center;gap:8px;background:var(--green-light);color:white;padding:14px 32px;border-radius:10px;font-size:15px;font-weight:700;transition:all .2s;position:relative}
+.cta-block a.btn:hover{background:#62C898;transform:translateY(-2px)}
+.cta-block a.btn svg{width:16px;height:16px;stroke:white;fill:none;stroke-width:2.5;stroke-linecap:round}
+.faq-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:.75rem}
+.faq-q{padding:1.1rem 1.25rem;font-size:.95rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;background:white;border:none;width:100%;text-align:left;color:var(--ink)}
+.faq-q:hover{background:var(--cream)}
+.faq-icon{min-width:20px;height:20px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .25s}
+.faq-icon svg{width:9px;height:9px;stroke:var(--ink);fill:none;stroke-width:2.5;stroke-linecap:round}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--green);border-color:var(--green)}
+.faq-item.open .faq-icon svg{stroke:white}
+.faq-a{padding:0 1.25rem;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s ease;font-size:.875rem;color:var(--ink-light);line-height:1.7}
+.faq-item.open .faq-a{padding:.25rem 1.25rem 1.25rem;max-height:400px}
+.page-footer{background:var(--ink);padding:3rem 2rem;margin-top:5rem}
+.page-footer-inner{max-width:760px;margin:0 auto}
+.footer-trust-strip{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:1.5rem}
+.footer-trust-logos{display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.footer-trust-logo{height:30px;width:auto;filter:brightness(0) invert(1) opacity(.8)}
+.footer-bottom-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:12px;color:rgba(255,255,255,.4)}
+.footer-links{display:flex;gap:1.25rem}
+.footer-links a{color:rgba(255,255,255,.35);transition:color .2s}
+.footer-links a:hover{color:rgba(255,255,255,.7)}
+@media(max-width:600px){.stat-band{grid-template-columns:1fr 1fr}.hero-blog{height:280px}.hero-text{padding:1.5rem}.article-wrap{padding:2rem 1.25rem 4rem}}
+
+.compare-card{background:white;border:1.5px solid var(--border);border-radius:14px;padding:1.75rem;margin-bottom:1.25rem}
+.compare-card.featured{border-color:var(--green);background:var(--green-ultra)}
+.compare-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem;color:var(--ink)}
+.compare-card .badge{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:2px 9px;border-radius:100px;margin-bottom:.75rem}
+.badge-green{background:var(--green-pale);color:var(--green)}
+.badge-gray{background:var(--cream-dark);color:var(--ink-muted)}
+.compare-card p{font-size:.875rem;color:var(--ink-light);margin-bottom:.75rem}
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.75rem}
+.pros-cons div{font-size:.82rem}
+.pros-cons div strong{display:block;margin-bottom:.4rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);
+  padding:4rem 2rem 2rem;
+  color:rgba(255,255,255,0.5);
+}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{
+  display:grid;grid-template-columns:260px 180px 1fr 1fr;
+  gap:3rem;padding-bottom:3rem;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.footer-col h4{
+  font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);
+  text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.25rem;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.4);transition:color .2s}
+.footer-col ul li a:hover{color:var(--green-light)}
+.footer-bottom{
+  padding-top:2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;font-size:13px;
+}
+.footer-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-legal a{color:rgba(255,255,255,0.3);transition:color .2s}
+.footer-legal a:hover{color:rgba(255,255,255,0.65)}
+.footer-logo-text{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:600;color:white;
+}
+
+/* Social icons */
+.footer-social{display:flex;gap:.75rem;margin-bottom:1.5rem}
+.social-icon{
+  width:34px;height:34px;border-radius:8px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.1);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,0.5);
+  transition:all .2s;
+}
+.social-icon:hover{background:var(--green);border-color:var(--green);color:white}
+.social-icon svg{width:15px;height:15px}
+
+/* Trust logos */
+.footer-trust{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.trust-logo{
+  height:28px;width:auto;
+  filter:brightness(0) invert(1) opacity(0.35);
+  transition:opacity .2s;
+}
+.trust-logo:hover{opacity:.6}
+.trust-badge-rgpd{
+  display:flex;align-items:center;gap:5px;
+  font-size:11px;font-weight:600;letter-spacing:.04em;
+  color:rgba(255,255,255,0.35);
+  border:1px solid rgba(255,255,255,0.12);
+  padding:4px 8px;border-radius:6px;
+}
+
+/* Ratings */
+.footer-stars-row{margin-bottom:.75rem}
+.footer-stars{color:var(--green-light);font-size:16px;letter-spacing:2px}
+.footer-rating-list{display:flex;flex-direction:column;gap:.6rem}
+.rating-item{
+  display:flex;align-items:center;gap:7px;
+  font-size:13px;color:rgba(255,255,255,0.45);
+}
+.rating-item strong{color:rgba(255,255,255,0.7);font-weight:600}
+.rating-item svg{flex-shrink:0}
+
+@media(max-width:1024px){
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .footer-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="../index.html"><img src="../images/cverifie-logo-green.png" alt="CVérifié" class="logo-nav"></a>
+    </div>
+    <div class="nav-links">
+      <a href="../index.html#comment">Comment ça marche</a>
+      <a href="../index.html#tarifs">Tarifs</a>
+      <a href="../index.html#candidats">Pour les candidats</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="index.html">Blog</a>
+    </div>
+    <button class="nav-cta" onclick="window.location='../commander.html'">Lancer une vérification</button>
+  </div>
+</nav>
+
+<div class="hero-blog">
+  <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=80" alt="Choix d'outil de recrutement">
+  <div class="hero-text">
+    <span style="background:rgba(82,183,136,0.25);color:#7DCFAA;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:4px 12px;border-radius:100px;border:1px solid rgba(82,183,136,0.4);margin-bottom:1rem;display:inline-block">Comparatif</span>
+    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);color:white;font-weight:600;margin-top:.75rem;max-width:680px;line-height:1.2">EveryCheck, VerifCV, CVérifié : quel service choisir en France ?</h1>
+  </div>
+</div>
+
+<div class="article-wrap">
+
+  <div class="breadcrumb">
+    <a href="../index.html">Accueil</a>
+    <span>/</span>
+    <a href="#">Blog</a>
+    <span>/</span>
+    <span style="color:var(--ink-muted)">Comparatif</span>
+  </div>
+
+  <div class="article-meta">
+    <span class="tag">Comparatif</span>
+    <span>Mis à jour en 2025</span>
+    <span>6 min de lecture</span>
+  </div>
+
+  <h1 class="article-title">Vérification de CV en France : comparatif des services disponibles</h1>
+
+  <div class="article-intro">
+    Le marché de la vérification de CV en France reste peu développé. Quelques acteurs se partagent un marché encore largement inexploité, avec des positionnements très différents. Ce comparatif factuel vous aide à choisir le bon service selon la taille de votre entreprise, votre volume de recrutement et votre besoin de simplicité.
+  </div>
+
+  <h2 class="section-h">Tableau de comparaison rapide</h2>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Service</th><th>Prix indicatif</th><th>Self-service</th><th>PME-friendly</th><th>Délai</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>CVérifié</strong></td><td>Dès 14,90 €</td><td style="color:var(--green);font-weight:600">Oui</td><td style="color:var(--green);font-weight:600">Oui</td><td>48h</td></tr>
+      <tr><td>EveryCheck</td><td>Sur devis (60-150 €)</td><td style="color:#C44B4B">Non</td><td style="color:#C44B4B">Non</td><td>48-72h</td></tr>
+      <tr><td>VerifCV</td><td>Sur devis</td><td style="color:#C44B4B">Non</td><td style="color:#E07820">Partiel</td><td>Variable</td></tr>
+      <tr><td>Verifdiploma</td><td>Sur devis</td><td style="color:#C44B4B">Non</td><td style="color:#E07820">Partiel</td><td>Variable</td></tr>
+      <tr><td>diplome.gouv.fr</td><td>Gratuit</td><td style="color:var(--green);font-weight:600">Oui</td><td style="color:var(--green);font-weight:600">Oui</td><td>Immédiat</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:.8rem;color:var(--ink-muted);margin-top:-.5rem">Prix et délais indicatifs basés sur les informations publiques disponibles. diplome.gouv.fr couvre uniquement les diplômes d'État délivrés depuis 2011.</p>
+
+  <h2 class="section-h">Les acteurs en détail</h2>
+
+  <div class="compare-card">
+    <span class="badge badge-gray">Grands comptes</span>
+    <h3>EveryCheck</h3>
+    <p>EveryCheck est le leader français de la vérification de CV. Fondé à Paris, il s'est positionné sur les grands comptes et cabinets de recrutement, avec une offre complète qui inclut vérification de diplômes, d'expériences, prise de références automatisée et contrôles de sécurité avancés. Leur process est solide et leur conformité RGPD bien établie.</p>
+    <p>La limite principale pour une PME : EveryCheck fonctionne sur devis et nécessite un commercial. Il n'existe pas de formule en self-service avec paiement à l'unité transparent. Pour une entreprise qui recrute 2 à 5 personnes par an, le process d'onboarding commercial n'est pas justifié.</p>
+    <div class="pros-cons">
+      <div><strong style="color:var(--green)">Points forts</strong>
+        <div class="check-item"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>Vérifications très complètes</div>
+        <div class="check-item"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>Offre enterprise mature</div>
+      </div>
+      <div><strong style="color:#C44B4B">Limites</strong>
+        <div class="cross-item"><svg viewBox="0 0 12 12"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg>Pas de self-service PME</div>
+        <div class="cross-item"><svg viewBox="0 0 12 12"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg>Prix opaques sans devis</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="compare-card">
+    <span class="badge badge-gray">Établissements scolaires</span>
+    <h3>VerifCV et Verifdiploma</h3>
+    <p>Ces deux services, liés au groupe Verifdiploma basé à Tours, sont spécialisés dans la vérification de diplômes en s'appuyant sur une base de données de partenariats avec les établissements d'enseignement supérieur. Ils couvrent un large périmètre d'écoles et d'universités françaises et traitent un volume important de vérifications chaque année.</p>
+    <p>Leur positionnement reste orienté vers les établissements eux-mêmes et les grandes entreprises. L'accès direct pour une PME sans contrat préalable est peu mis en avant, et les prix affichés publiquement sont rares.</p>
+    <div class="pros-cons">
+      <div><strong style="color:var(--green)">Points forts</strong>
+        <div class="check-item"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>Bonne couverture écoles FR</div>
+        <div class="check-item"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>Acteur établi (20 ans)</div>
+      </div>
+      <div><strong style="color:#C44B4B">Limites</strong>
+        <div class="cross-item"><svg viewBox="0 0 12 12"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg>Diplômes uniquement</div>
+        <div class="cross-item"><svg viewBox="0 0 12 12"><line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/></svg>Pas d'expériences pro</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="compare-card featured">
+    <span class="badge badge-green">PME et TPE</span>
+    <h3>CVérifié</h3>
+    <p>CVérifié est le seul service français pensé pour les PME, TPE, startups et cabinets de recrutement indépendants. Le principe est simple : prix affichés, paiement à l'acte, aucun commercial, aucun abonnement. Vous soumettez le CV en 2 minutes, CVérifié gère le consentement RGPD et les vérifications, vous recevez un rapport PDF sous 48h ouvrées.</p>
+    <p>Trois formules couvrent du diplôme seul à la vérification complète avec références et contrôles d'intégrité, avec des prix transparents dès 14,90 €.</p>
+    <div class="pros-cons">
+      <div><strong style="color:var(--green)">Points forts</strong>
+        <div class="check-item"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>Self-service, prix affichés</div>
+        <div class="check-item"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>Aucun abonnement</div>
+        <div class="check-item"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>RGPD géré automatiquement</div>
+      </div>
+      <div><strong style="color:var(--ink-muted)">Pour qui</strong>
+        <div class="check-item"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>PME et TPE (1-200 salariés)</div>
+        <div class="check-item"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>Cabinets de recrutement</div>
+        <div class="check-item"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>Startups et scale-ups</div>
+      </div>
+    </div>
+  </div>
+
+  <figure class="article-img">
+    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="Équipe en réunion de recrutement">
+    <figcaption>Le bon outil dépend de votre volume et de la taille de votre équipe. Une PME n'a pas les mêmes besoins qu'une multinationale.</figcaption>
+  </figure>
+
+  <h2 class="section-h">Comment choisir ?</h2>
+
+  <p>Si vous recrutez plus de 100 personnes par an et que vous avez une équipe RH dédiée, EveryCheck ou VerifCV peuvent vous proposer une offre adaptée à ce volume.</p>
+
+  <p>Si vous recrutez entre 1 et 50 personnes par an, que vous gérez le recrutement sans équipe RH dédiée, et que vous voulez vérifier un candidat sans signer un contrat ou passer par un commercial, CVérifié est fait pour vous.</p>
+
+  <p>Si vous avez seulement besoin de vérifier un diplôme d'État français récent (bac, BTS, licence, master) et que vous avez la clé de contrôle fournie par le candidat, diplome.gouv.fr est gratuit et instantané.</p>
+
+  <div class="cta-block">
+    <h3>Essayez CVérifié sans engagement</h3>
+    <p>Aucun abonnement, aucune signature. Prix transparent dès 14,90 €. Rapport PDF sous 48h.</p>
+    <a href="../commander.html" class="btn">
+      <svg viewBox="0 0 16 16"><polyline points="3,8 7,12 13,4"/></svg>
+      Lancer ma première vérification
+    </a>
+  </div>
+
+  <h2 class="section-h">Questions fréquentes</h2>
+
+  <div class="faq-item">
+    <button class="faq-q">EveryCheck propose-t-il une formule pour les PME sans abonnement ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
+    <div class="faq-a">D'après les informations publiques disponibles, EveryCheck fonctionne principalement sur des contrats et devis. Il n'existe pas, à notre connaissance, de formule self-service à l'unité accessible directement en ligne sans passer par une phase commerciale. Pour les PME qui recrutent ponctuellement, cette friction est souvent rédhibitoire.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q">diplome.gouv.fr suffit-il pour une vérification complète ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
+    <div class="faq-a">Non, et c'est une erreur courante. diplome.gouv.fr couvre uniquement les diplômes d'État délivrés depuis 2011. Il ne couvre pas les diplômes privés, les certifications professionnelles, les formations en ligne, les diplômes étrangers, et surtout pas les expériences professionnelles. C'est un premier outil utile, pas une vérification complète.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q">Peut-on vérifier des diplômes d'écoles de commerce ou d'ingénieurs avec ces services ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
+    <div class="faq-a">Oui. Les grandes écoles françaises (HEC, ESSEC, Polytechnique, CentraleSupélec, Sciences Po...) peuvent généralement être contactées directement, avec l'accord du candidat, pour confirmer l'obtention d'un diplôme. CVérifié contacte ces établissements dans le cadre de ses vérifications, en plus des universités publiques.</div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <!-- Logo -->
+        <div style="margin-bottom:1.25rem">
+          <img src="../images/cverifie-logo-white.png" alt="CVérifié" class="logo-footer">
+        </div>
+
+        <p style="font-size:.875rem;color:rgba(255,255,255,0.4);line-height:1.7;margin-bottom:1.5rem">
+          Vérification de CV et de diplômes pour toutes les entreprises françaises. Sans engagement. Sous 48h.
+        </p>
+
+        <!-- Social icons -->
+        <div class="footer-social">
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="X / Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+          </a>
+        </div>
+
+        <!-- Trust logos -->
+        <div class="footer-trust">
+          <img src="https://www.capemploi-61.com/assets/cache/images-cache/images/cheops/cap-emploi/capemploi-61/1200px-logo-du-ministere-du-travail-%282020%29.svg.6abdeb72.png"
+               alt="Ministère du Travail"
+               class="trust-logo"
+               onerror="this.style.display='none'">
+          <div class="trust-badge-rgpd">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L2 3.5V7.5C2 10.2 4.2 12.7 7 13.5C9.8 12.7 12 10.2 12 7.5V3.5L7 1.5Z" fill="#2D6A4F" stroke="#52B788" stroke-width="0.8"/><polyline points="4.5,7 6.5,9 9.5,5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            RGPD conforme
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Ratings column (like PennyLane) -->
+      <div class="footer-col">
+        <h4>Avis clients</h4>
+        <div class="footer-stars-row">
+          <span class="footer-stars">★★★★★</span>
+        </div>
+        <div class="footer-rating-list">
+          <div class="rating-item">
+            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 1l1.7 3.4L14 5.1l-3 2.9.7 4.1L8 10.3l-3.7 1.8.7-4.1L2 5.1l4.3-.7z" fill="#00B67A"/></svg>
+            <span>4.8 sur <strong>Trustpilot</strong></span>
+          </div>
+          <div class="rating-item">
+            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3.5 2C2.7 2 2 2.7 2 3.5v9C2 13.3 2.7 14 3.5 14h9c.8 0 1.5-.7 1.5-1.5V9h-1.5v3.5h-9v-9H7V2H3.5z" fill="#01875F"/><path d="M14 2H10l1.5 1.5-4 4L9 9l4-4 1.5 1.5V2z" fill="#01875F"/></svg>
+            <span>4.9 sur <strong>Google Play</strong></span>
+          </div>
+          <div class="rating-item">
+            <svg width="16" height="16" viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" rx="3" fill="#1C7CF9"/><path d="M8 5V8M8 8V11M6 8H10" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>4.8 sur <strong>App Store</strong></span>
+          </div>
+          <div class="rating-item">
+            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M14.5 8.2c0-.5 0-.9-.1-1.3H8v2.4h3.6c-.2.8-.6 1.5-1.3 2v1.6h2c1.2-1.1 1.9-2.7 1.9-4.7z" fill="#4285F4"/><path d="M8 15c1.8 0 3.3-.6 4.4-1.6l-2-1.6c-.6.4-1.4.6-2.3.6-1.8 0-3.3-1.2-3.8-2.8H2v1.7C3.1 13.5 5.4 15 8 15z" fill="#34A853"/><path d="M4.2 9.6A4.5 4.5 0 014 8.1a4.5 4.5 0 01.2-1.5V4.9H2A7 7 0 001 8.1a7 7 0 001 3.2l2.2-1.7z" fill="#FBBC05"/><path d="M8 3.5c1 0 1.9.4 2.6 1L12.2 3A7 7 0 008 1 7 7 0 002 4.9l2.2 1.7C4.7 4.7 6.2 3.5 8 3.5z" fill="#EA4335"/></svg>
+            <span>4.7 sur <strong>Google</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Recruteurs</h4>
+        <ul>
+          <li><a href="#">Vérification de diplômes</a></li>
+          <li><a href="#">Vérification d'expériences</a></li>
+          <li><a href="#">Prise de références</a></li>
+          <li><a href="#">Contrôle d'intégrité</a></li>
+          <li><a href="#">API & Intégrations RH</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Société</h4>
+        <ul>
+          <li><a href="#">Candidats : certifier mon CV</a></li>
+          <li><a href="#">À propos</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="#">Partenaires</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CVérifié · Made in France 🇫🇷</span>
+      <div class="footer-legal">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">CGU</a>
+        <a href="#">Conformité RGPD</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll(".faq-q").forEach(btn => {
+  btn.addEventListener("click", function(){
+    const item = this.closest(".faq-item");
+    const isOpen = item.classList.contains("open");
+    document.querySelectorAll(".faq-item").forEach(i => i.classList.remove("open"));
+    if(!isOpen) item.classList.add("open");
+  });
+});
+</script>
+</body>
+</html>

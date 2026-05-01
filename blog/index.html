@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<link rel="icon" type="image/png" href="../images/favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog CVérifié · Ressources pour recruteurs</title>
+<meta name="description" content="Guides pratiques, cadre légal, données de marché. Tout ce qu'un recruteur français doit savoir sur la vérification de CV et de diplômes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FAF8F3;--cream-dark:#F0EDE5;
+  --ink:#1A1A24;--ink-light:#44444E;--ink-muted:#8A8A94;
+  --green:#2D6A4F;--green-mid:#40916C;--green-light:#52B788;
+  --green-pale:#D8F3DC;--green-ultra:#F0FAF2;
+  --border:#E0DDD5;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2;font-weight:600}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{cursor:pointer;font-family:'Outfit',sans-serif}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,248,243,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;
+  padding:0 2rem;height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.logo-nav{height:38px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:14px;font-weight:500;color:var(--ink-light);transition:color .2s}
+.nav-links a:hover{color:var(--green)}
+.nav-links a.active{color:var(--green);font-weight:600}
+.nav-cta{
+  background:var(--green);color:white;
+  padding:10px 22px;border-radius:8px;border:none;
+  font-size:14px;font-weight:600;
+  transition:background .2s,transform .15s;
+  white-space:nowrap;
+}
+.nav-cta:hover{background:var(--green-mid);transform:translateY(-1px)}
+
+/* BLOG MASTHEAD */
+.blog-masthead{
+  margin-top:64px;
+  padding:5rem 2rem 3.5rem;
+  background:var(--ink);
+  position:relative;
+  overflow:hidden;
+}
+.blog-masthead::before{
+  content:'';position:absolute;top:-120px;right:-80px;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle, rgba(45,106,79,0.35) 0%, transparent 70%);
+}
+.blog-masthead::after{
+  content:'';position:absolute;bottom:-60px;left:20%;
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle, rgba(82,183,136,0.12) 0%, transparent 70%);
+}
+.blog-masthead-inner{
+  max-width:1200px;margin:0 auto;
+  position:relative;z-index:2;
+}
+.label-tag{
+  display:inline-block;
+  background:rgba(82,183,136,0.15);
+  color:var(--green-light);
+  border:1px solid rgba(82,183,136,0.3);
+  padding:5px 14px;border-radius:100px;
+  font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:1.5rem;
+}
+.blog-masthead h1{
+  font-size:clamp(2rem,4.5vw,3.2rem);
+  color:white;
+  max-width:700px;
+  line-height:1.15;
+  letter-spacing:-0.02em;
+  margin-bottom:1.25rem;
+}
+.blog-masthead h1 em{color:var(--green-light);font-style:italic}
+.blog-masthead-sub{
+  font-size:1.05rem;color:rgba(255,255,255,0.6);
+  max-width:560px;line-height:1.7;font-weight:300;
+  margin-bottom:2.5rem;
+}
+.masthead-stats{
+  display:flex;align-items:center;gap:2rem;flex-wrap:wrap;
+}
+.masthead-stat{
+  display:flex;align-items:center;gap:8px;
+  font-size:13px;color:rgba(255,255,255,0.45);
+}
+.masthead-stat svg{width:14px;height:14px;stroke:var(--green-light);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.masthead-stat strong{color:rgba(255,255,255,0.7);font-weight:600}
+
+/* FILTER BAR */
+.filter-bar{
+  border-bottom:1px solid var(--border);
+  background:white;
+  position:sticky;top:64px;z-index:50;
+}
+.filter-bar-inner{
+  max-width:1200px;margin:0 auto;
+  padding:0 2rem;
+  display:flex;align-items:center;gap:.5rem;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.filter-bar-inner::-webkit-scrollbar{display:none}
+.filter-btn{
+  flex-shrink:0;
+  padding:14px 18px;
+  background:none;border:none;
+  font-size:13px;font-weight:500;color:var(--ink-muted);
+  border-bottom:2px solid transparent;
+  transition:all .2s;
+  white-space:nowrap;
+}
+.filter-btn:hover{color:var(--ink)}
+.filter-btn.active{
+  color:var(--green);font-weight:600;
+  border-bottom-color:var(--green);
+}
+
+/* BLOG MAIN */
+.blog-main{
+  max-width:1200px;margin:0 auto;
+  padding:3rem 2rem 5rem;
+}
+
+/* FEATURED CARD */
+.card-featured{
+  display:grid;grid-template-columns:1fr 420px;
+  gap:0;
+  background:white;
+  border:1.5px solid var(--border);
+  border-radius:18px;
+  overflow:hidden;
+  margin-bottom:2.5rem;
+  transition:box-shadow .25s,transform .25s;
+  cursor:pointer;
+}
+.card-featured:hover{
+  box-shadow:0 12px 40px rgba(26,26,36,0.1);
+  transform:translateY(-3px);
+}
+.card-featured-img{
+  height:100%;min-height:340px;
+  overflow:hidden;
+}
+.card-featured-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .4s ease;
+}
+.card-featured:hover .card-featured-img img{transform:scale(1.03)}
+.card-featured-body{
+  padding:2.5rem;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.card-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--green-pale);color:var(--green);
+  padding:4px 12px;border-radius:100px;
+  font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  margin-bottom:1.25rem;
+  width:fit-content;
+}
+.card-featured-body h2{
+  font-size:1.6rem;color:var(--ink);
+  line-height:1.25;margin-bottom:1rem;
+  letter-spacing:-0.02em;
+}
+.card-featured-body p{
+  font-size:.95rem;color:var(--ink-light);
+  line-height:1.7;margin-bottom:2rem;
+  flex:1;
+}
+.card-meta{
+  display:flex;align-items:center;gap:1rem;
+  font-size:12px;color:var(--ink-muted);
+}
+.card-meta-dot{width:3px;height:3px;border-radius:50%;background:var(--border)}
+.card-read-more{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--green);color:white;
+  padding:12px 22px;border-radius:8px;
+  font-size:13px;font-weight:600;
+  transition:background .2s,transform .15s;
+  width:fit-content;
+  margin-top:1.5rem;
+}
+.card-read-more:hover{background:var(--green-mid);transform:translateY(-1px)}
+.card-read-more svg{width:14px;height:14px;stroke:white;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* CARDS GRID */
+.cards-section-title{
+  font-size:1.05rem;font-weight:600;color:var(--ink-muted);
+  letter-spacing:.04em;text-transform:uppercase;font-size:11px;
+  margin-bottom:1.5rem;
+  padding-bottom:.75rem;
+  border-bottom:1px solid var(--border);
+  font-family:'Outfit',sans-serif;
+}
+.cards-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+.card{
+  background:white;
+  border:1.5px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+  transition:box-shadow .25s,transform .25s;
+  cursor:pointer;
+  display:flex;flex-direction:column;
+}
+.card:hover{
+  box-shadow:0 8px 30px rgba(26,26,36,0.09);
+  transform:translateY(-3px);
+}
+.card-img{height:180px;overflow:hidden;flex-shrink:0}
+.card-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .4s ease;
+}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-body{padding:1.5rem;flex:1;display:flex;flex-direction:column}
+.card-body h3{
+  font-size:1.1rem;color:var(--ink);
+  line-height:1.3;margin-bottom:.75rem;
+  letter-spacing:-0.01em;
+}
+.card-body p{
+  font-size:.875rem;color:var(--ink-light);
+  line-height:1.65;margin-bottom:1.25rem;
+  flex:1;
+}
+.card-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+  margin-top:auto;
+}
+.card-footer-meta{font-size:12px;color:var(--ink-muted)}
+.card-arrow{
+  width:30px;height:30px;border-radius:50%;
+  background:var(--green-ultra);
+  border:1.5px solid var(--green-pale);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;
+}
+.card:hover .card-arrow{background:var(--green);border-color:var(--green)}
+.card-arrow svg{width:11px;height:11px;stroke:var(--green);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s}
+.card:hover .card-arrow svg{stroke:white}
+
+/* COMING SOON CARD */
+.card-coming{
+  background:var(--cream-dark);
+  border:1.5px dashed var(--border);
+  border-radius:14px;
+  padding:1.75rem;
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+  min-height:300px;
+}
+.card-coming-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:white;
+  border:1px solid var(--border);
+  padding:4px 10px;border-radius:100px;
+  font-size:11px;font-weight:600;color:var(--ink-muted);
+  letter-spacing:.05em;
+  width:fit-content;
+  margin-bottom:1.25rem;
+}
+.card-coming-badge span{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--green-light);
+  animation:pulse 2.5s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.card-coming h3{
+  font-size:1.05rem;color:var(--ink-light);
+  line-height:1.3;margin-bottom:.75rem;
+}
+.card-coming p{
+  font-size:.8rem;color:var(--ink-muted);
+  line-height:1.6;
+}
+.card-coming-tag{
+  display:inline-block;
+  background:white;color:var(--ink-muted);
+  border:1px solid var(--border);
+  padding:3px 10px;border-radius:100px;
+  font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;
+  margin-top:1.5rem;
+  width:fit-content;
+}
+
+/* NEWSLETTER / CTA */
+.blog-cta{
+  background:var(--ink);
+  border-radius:20px;
+  padding:3.5rem;
+  margin:4rem 0 0;
+  display:grid;grid-template-columns:1fr auto;
+  gap:3rem;
+  align-items:center;
+  position:relative;overflow:hidden;
+}
+.blog-cta::before{
+  content:'';position:absolute;top:-80px;right:100px;
+  width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(45,106,79,0.4) 0%,transparent 70%);
+}
+.blog-cta-left{position:relative;z-index:2}
+.blog-cta-left h3{
+  font-size:1.6rem;color:white;margin-bottom:.75rem;
+}
+.blog-cta-left p{font-size:.9rem;color:rgba(255,255,255,0.55);line-height:1.7}
+.blog-cta-right{
+  display:flex;flex-direction:column;gap:1rem;
+  position:relative;z-index:2;
+  min-width:280px;
+}
+.blog-cta-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:15px 28px;border-radius:10px;
+  font-size:14px;font-weight:600;
+  transition:all .2s;
+  border:none;
+  text-align:center;
+}
+.blog-cta-btn.primary{background:var(--green-light);color:white}
+.blog-cta-btn.primary:hover{background:#62C898;transform:translateY(-1px)}
+.blog-cta-btn.secondary{
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.15);
+  color:rgba(255,255,255,0.7);
+}
+.blog-cta-btn.secondary:hover{background:rgba(255,255,255,0.12)}
+.blog-cta-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* FOOTER */
+footer{background:var(--ink);padding:4rem 2rem 2rem;color:rgba(255,255,255,0.5)}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{
+  display:grid;grid-template-columns:260px 180px 1fr 1fr;
+  gap:3rem;padding-bottom:3rem;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.footer-col h4{
+  font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);
+  text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.25rem;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.4);transition:color .2s}
+.footer-col ul li a:hover{color:var(--green-light)}
+.footer-bottom{
+  padding-top:2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;font-size:13px;
+}
+.footer-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-legal a{color:rgba(255,255,255,0.3);transition:color .2s}
+.footer-legal a:hover{color:rgba(255,255,255,0.65)}
+.footer-social{display:flex;gap:.75rem;margin-bottom:1.5rem}
+.social-icon{
+  width:34px;height:34px;border-radius:8px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.1);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,0.5);
+  transition:all .2s;
+}
+.social-icon:hover{background:var(--green);border-color:var(--green);color:white}
+.social-icon svg{width:15px;height:15px}
+.footer-trust{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.trust-badge-rgpd{
+  display:flex;align-items:center;gap:5px;
+  font-size:11px;font-weight:600;letter-spacing:.04em;
+  color:rgba(255,255,255,0.35);
+  border:1px solid rgba(255,255,255,0.12);
+  padding:4px 8px;border-radius:6px;
+}
+.footer-stars-row{margin-bottom:.75rem}
+.footer-stars{color:var(--green-light);font-size:16px;letter-spacing:2px}
+.footer-rating-list{display:flex;flex-direction:column;gap:.6rem}
+.rating-item{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,0.45)}
+.rating-item strong{color:rgba(255,255,255,0.7);font-weight:600}
+.trust-logo{height:28px;width:auto;filter:brightness(0) invert(1) opacity(0.35);transition:opacity .2s}
+.trust-logo:hover{opacity:.6}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .footer-top{grid-template-columns:1fr 1fr}
+  .cards-grid{grid-template-columns:repeat(2,1fr)}
+  .card-featured{grid-template-columns:1fr}
+  .card-featured-img{min-height:260px}
+  .blog-cta{grid-template-columns:1fr;gap:2rem}
+  .blog-cta-right{min-width:auto}
+}
+@media(max-width:640px){
+  .blog-masthead{padding:3.5rem 1.5rem 2.5rem}
+  .blog-masthead h1{font-size:2rem}
+  .blog-main{padding:2rem 1.25rem 4rem}
+  .cards-grid{grid-template-columns:1fr}
+  .card-featured-body{padding:1.75rem}
+  .blog-cta{padding:2rem 1.5rem}
+  .masthead-stats{gap:1.25rem}
+  .footer-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="../index.html"><img src="../images/cverifie-logo-green.png" alt="CVérifié" class="logo-nav"></a>
+    </div>
+    <div class="nav-links">
+      <a href="../index.html#comment">Comment ça marche</a>
+      <a href="../index.html#tarifs">Tarifs</a>
+      <a href="../index.html#candidats">Pour les candidats</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="index.html" class="active">Blog</a>
+    </div>
+    <button class="nav-cta" onclick="window.location='../commander.html'">Lancer une vérification</button>
+  </div>
+</nav>
+
+<!-- MASTHEAD -->
+<header class="blog-masthead">
+  <canvas id="masthead-canvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;display:block"></canvas>
+  <div class="blog-masthead-inner">
+    <span class="label-tag">Ressources recruteurs</span>
+    <h1>Le guide du recrutement<br><em>sans mauvaises surprises</em></h1>
+    <p class="blog-masthead-sub">Cadre legal, methodes pratiques, donnees de marche. Tout ce qu'un recruteur francais doit savoir sur la verification de CV et de diplomes.</p>
+    <div class="masthead-stats">
+      <span class="masthead-stat">
+        <svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M5 3V2M11 3V2M2 7h12"/></svg>
+        <strong>17 articles + 1 outil</strong> publiés
+      </span>
+      <span class="masthead-stat">
+        <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><polyline points="8,5 8,8 10,10"/></svg>
+        Mis a jour en 2026
+      </span>
+      <span class="masthead-stat">
+        <svg viewBox="0 0 16 16"><path d="M8 2C5.8 2 4 3.8 4 6c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4zm0 5.5c-.8 0-1.5-.7-1.5-1.5S7.2 4.5 8 4.5s1.5.7 1.5 1.5S8.8 7.5 8 7.5z"/></svg>
+        Cite par ChatGPT et Claude
+      </span>
+    </div>
+  </div>
+</header>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-bar-inner">
+    <button class="filter-btn active" data-filter="all">Tous les articles</button>
+    <button class="filter-btn" data-filter="droit">Droit du travail</button>
+    <button class="filter-btn" data-filter="guide">Guide pratique</button>
+    <button class="filter-btn" data-filter="comparatif">Comparatif</button>
+    <button class="filter-btn" data-filter="donnees">Donnees</button>
+    <button class="filter-btn" data-filter="sectoriel">Par secteur</button>
+  </div>
+</div>
+
+<!-- ARTICLES -->
+<main class="blog-main">
+
+  <!-- FEATURED : article légal -->
+  <a href="verification-cv-legal-france.html" class="card-featured" data-category="droit">
+    <div class="card-featured-img">
+      <img
+        src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80"
+        alt="Contrat de travail et documents juridiques">
+    </div>
+    <div class="card-featured-body">
+      <div>
+        <span class="card-tag">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1L2 3.5V5.5C2 7.5 3.3 9.3 5 10C6.7 9.3 8 7.5 8 5.5V3.5L5 1Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Droit du travail
+        </span>
+        <h2>Verification de CV en France : ce que dit la loi</h2>
+        <p>Article L.1221-6, consentement obligatoire, RGPD, jurisprudences. Ce guide explique exactement ce que vous pouvez verifier, comment l'obtenir legalement, et pourquoi le faire avant la signature du contrat.</p>
+      </div>
+      <div>
+        <div class="card-meta">
+          <span>Mis a jour en 2026</span>
+          <span class="card-meta-dot"></span>
+          <span>8 min de lecture</span>
+        </div>
+        <span class="card-read-more">
+          Lire le guide
+          <svg viewBox="0 0 16 16"><polyline points="3,8 13,8"/><polyline points="9,4 13,8 9,12"/></svg>
+        </span>
+      </div>
+    </div>
+  </a>
+
+  <!-- GRID : tous les articles -->
+  <p class="cards-section-title">Tous les guides</p>
+  <div class="cards-grid">
+
+    <!-- Guide PME -->
+    <a href="comment-verifier-cv-diplome-pme.html" class="card" data-category="guide">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=700&q=80" alt="Equipe en reunion dans une PME">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Guide pratique</span>
+        <h3>Comment verifier un CV quand on est une PME (sans service RH)</h3>
+        <p>Methodes gratuites, semi-manuelles et externalisees. Le process en 5 etapes qu'une petite entreprise peut suivre immediatement.</p>
+        <div class="card-footer">
+          <span class="card-footer-meta">10 min de lecture</span>
+          <span class="card-arrow"><svg viewBox="0 0 12 12"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Comparatif -->
+    <a href="alternative-everycheck.html" class="card" data-category="comparatif">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=700&q=80" alt="Comparaison de services de verification">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Comparatif</span>
+        <h3>EveryCheck, VerifCV, CVverifie : quel service choisir ?</h3>
+        <p>Tableau comparatif factuel : prix affiches, self-service, delais, formule sans engagement. Qui est fait pour les PME, qui est fait pour les grands comptes.</p>
+        <div class="card-footer">
+          <span class="card-footer-meta">6 min de lecture</span>
+          <span class="card-arrow"><svg viewBox="0 0 12 12"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Statistiques -->
+    <a href="statistiques-mensonges-cv-france.html" class="card" data-category="donnees">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80" alt="Graphiques et donnees de recrutement">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Donnees</span>
+        <h3>Mensonges sur les CV en France : les chiffres que tout recruteur devrait connaitre</h3>
+        <p>65% des CV contiennent un ecart. 12% cachent un mensonge majeur. Ce que revelent vraiment les donnees issues des etudes francaises et europeennes.</p>
+        <div class="card-footer">
+          <span class="card-footer-meta">7 min de lecture</span>
+          <span class="card-arrow"><svg viewBox="0 0 12 12"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Verifier diplome francais -->
+    <a href="comment-verifier-diplome-francais-etape-par-etape.html" class="card" data-category="guide">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=700&q=80" alt="Remise de diplome universitaire">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Guide pratique</span>
+        <h3>Verifier un diplome francais etape par etape</h3>
+        <p>diplome.gouv.fr, grandes ecoles, BTS, certifications RNCP. La methode complete avec les sources officielles et les delais reels.</p>
+        <div class="card-footer">
+          <span class="card-footer-meta">10 min de lecture</span>
+          <span class="card-arrow"><svg viewBox="0 0 12 12"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Combien ca coute -->
+    <a href="combien-coute-verification-cv-entreprise.html" class="card" data-category="guide">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=700&q=80" alt="Calculatrice et budget entreprise">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Prix et ROI</span>
+        <h3>Combien coute la verification de CV en entreprise ?</h3>
+        <p>De 0 EUR en DIY a 14,90 EUR par candidat en service. Calcul du ROI face au cout d'un mauvais recrutement : 6 500 EUR en moyenne.</p>
+        <div class="card-footer">
+          <span class="card-footer-meta">9 min de lecture</span>
+          <span class="card-arrow"><svg viewBox="0 0 12 12"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Candidat qui ment -->
+    <a href="que-faire-candidat-ment-sur-cv.html" class="card" data-category="droit">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=700&q=80" alt="Document juridique et contrat de travail">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Droit du travail</span>
+        <h3>Un candidat a menti sur son CV : que dit la loi et que faire ?</h3>
+        <p>Avant contrat, apres signature, en periode d'essai. Sanctions, licenciement pour faute grave, jurisprudences et arbre de decision.</p>
+        <div class="card-footer">
+          <span class="card-footer-meta">11 min de lecture</span>
+          <span class="card-arrow"><svg viewBox="0 0 12 12"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Verifier experiences pro -->
+    <a href="comment-verifier-experiences-professionnelles-candidat.html" class="card" data-category="guide">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=700&q=80" alt="Equipe professionnelle en reunion">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Guide pratique</span>
+        <h3>Comment verifier les experiences professionnelles d'un candidat</h3>
+        <p>LinkedIn, appels employeurs, references externes : les methodes legales avec scripts prets a l'emploi et questions interdites.</p>
+        <div class="card-footer">
+          <span class="card-footer-meta">12 min de lecture</span>
+          <span class="card-arrow"><svg viewBox="0 0 12 12"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Sante medical -->
+    <a href="verification-cv-secteur-sante-medical.html" class="card" data-category="sectoriel">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=80" alt="Professionnels de sante">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Sectoriel</span>
+        <h3>Verification CV Sante et Medical : RPPS, ARS et Ordres professionnels</h3>
+        <p>Medecins, infirmiers, pharmaciens, kines : chaque profession a ses registres officiels. Guide complet par profession.</p>
+        <div class="card-footer">
+          <span class="card-footer-meta">11 min de lecture</span>
+          <span class="card-arrow"><svg viewBox="0 0 12 12"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 15 signaux faux CV -->
+    <a href="faux-cv-exemples-detecter-signaux.html" class="card" data-category="guide">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=700&q=80" alt="Examen de documents de candidature">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Guide pratique</span>
+        <h3>15 signaux concrets qui trahissent un faux CV</h3>
+        <p>Dates impossibles, diplomes introuvables, LinkedIn qui contredit le papier. Classe par niveau de risque avec actions immediates.</p>
+        <div class="card-footer">
+          <span class="card-footer-meta">10 min de lecture</span>
+          <span class="card-arrow"><svg viewBox="0 0 12 12"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- RGPD -->
+    <a href="rgpd-verification-candidat-guide-complet.html" class="card" data-category="droit">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&w=700&q=80" alt="Protection des donnees et RGPD">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Droit du travail</span>
+        <h3>RGPD et verification de candidat : guide complet pour les employeurs</h3>
+        <p>Base legale, duree de conservation, droits du candidat, role du DPO. Tout ce que votre entreprise doit savoir avant de verifier un CV.</p>
+        <div class="card-footer">
+          <span class="card-footer-meta">12 min de lecture</span>
+          <span class="card-arrow"><svg viewBox="0 0 12 12"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Diplome etranger -->
+    <a href="verification-diplome-etranger-france.html" class="card" data-category="guide">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=700&q=80" alt="Globe terrestre et documents internationaux">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Guide pratique</span>
+        <h3>Verifier un diplome etranger en France : ENIC-NARIC, apostille et zones geo</h3>
+        <p>Maghreb, UE, USA, Inde, Chine : chaque zone a ses procedures. Tableau de reference par pays avec delais et niveaux de difficulte.</p>
+        <div class="card-footer">
+          <span class="card-footer-meta">11 min de lecture</span>
+          <span class="card-arrow"><svg viewBox="0 0 12 12"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Tech et developpeur -->
+    <a href="verification-cv-tech-startup-developpeur.html" class="card" data-category="sectoriel">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=700&q=80" alt="Developpeur travaillant sur du code">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Sectoriel</span>
+        <h3>Verification CV Tech et Developpeur : 42, Le Wagon, GitHub, certifications cloud</h3>
+        <p>Bootcamps, RNCP, AWS et certifications cloud toutes verifiables en ligne. Ce qui compte vraiment dans un CV tech.</p>
+        <div class="card-footer">
+          <span class="card-footer-meta">10 min de lecture</span>
+          <span class="card-arrow"><svg viewBox="0 0 12 12"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Finance banque conseil -->
+    <a href="verification-cv-finance-banque-conseil.html" class="card" data-category="sectoriel">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=700&q=80" alt="Professionnels de la finance">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Sectoriel</span>
+        <h3>Verification CV Finance, Banque et Conseil : MBA, CFA, grandes ecoles</h3>
+        <p>HEC, ESSEC, Polytechnique, CFA, ACCA : tous les elements cles du secteur sont verifiables directement. Guide complet avec contacts officiels.</p>
+        <div class="card-footer">
+          <span class="card-footer-meta">11 min de lecture</span>
+          <span class="card-arrow"><svg viewBox="0 0 12 12"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- CALCULATEUR (carte spéciale) -->
+    <a href="calculateur-cout-mauvais-recrutement.html" class="card" data-category="donnees" style="border:2px solid var(--green);position:relative">
+      <div style="position:absolute;top:12px;right:12px;background:var(--green);color:white;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:100px;z-index:2">Outil interactif</div>
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=700&q=80" alt="Calculateur cout mauvais recrutement">
+      </div>
+      <div class="card-body">
+        <span class="card-tag" style="background:var(--green-pale);color:var(--green)">Calculateur gratuit</span>
+        <h3>Calculateur : combien vous coute vraiment un mauvais recrutement ?</h3>
+        <p>Sliders interactifs : salaire, duree, niveau de poste. Calcul en temps reel. Le resultat va vous surprendre.</p>
+        <div class="card-footer">
+          <span class="card-footer-meta">Resultat en 30 secondes</span>
+          <span class="card-arrow"><svg viewBox="0 0 12 12"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Cout mauvais recrutement -->
+    <a href="cout-mauvais-recrutement-france.html" class="card" data-category="donnees">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=700&q=80" alt="Calculatrice et budget d'entreprise">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Donnees et ROI</span>
+        <h3>Cout d'un mauvais recrutement en France : le vrai calcul (avec exemples chiffres)</h3>
+        <p>De 15 000 a 160 000 euros selon le poste. Les 5 composantes du cout, un exemple concret et le ROI de la verification prealabl : 430x a 900x.</p>
+        <div class="card-footer">
+          <span class="card-footer-meta">9 min de lecture</span>
+          <span class="card-arrow"><svg viewBox="0 0 12 12"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Faux diplome grande ecole -->
+    <a href="faux-diplome-grande-ecole-hec-sciences-po.html" class="card" data-category="donnees">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=700&q=80" alt="Ceremonie de remise de diplomes">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Donnees et chiffres</span>
+        <h3>Faux diplome de grande ecole : HEC, Sciences Po, ESSEC... ce que risque votre entreprise</h3>
+        <p>Comment les grands diplomes sont falsifies, ce que risque l'employeur et comment verifier officiellement aupres de chaque etablissement.</p>
+        <div class="card-footer">
+          <span class="card-footer-meta">10 min de lecture</span>
+          <span class="card-arrow"><svg viewBox="0 0 12 12"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Certifications CACES IT -->
+    <a href="verifier-certifications-professionnelles-caces-it.html" class="card" data-category="guide">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=700&q=80" alt="Entrepot logistique et certifications professionnelles">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Guide pratique</span>
+        <h3>Verifier les certifications professionnelles : CACES, habilitations electriques, certifications IT</h3>
+        <p>AWS, Azure, Cisco verifiables en 3 minutes. CACES, habilitations electriques, RNCP : methodes, contacts et tableau de reference complet.</p>
+        <div class="card-footer">
+          <span class="card-footer-meta">11 min de lecture</span>
+          <span class="card-arrow"><svg viewBox="0 0 12 12"><polyline points="2,6 10,6"/><polyline points="7,3 10,6 7,9"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="blog-cta">
+    <div class="blog-cta-left">
+      <h3>Pret a verifier votre prochain candidat ?</h3>
+      <p>Lancez votre premiere verification en 2 minutes. Sans inscription, sans engagement. Resultat garanti sous 48h ouvrees.</p>
+    </div>
+    <div class="blog-cta-right">
+      <a href="../commander.html" class="blog-cta-btn primary">
+        <svg viewBox="0 0 16 16"><polyline points="3,8 7,12 13,4"/></svg>
+        Verifier un candidat des 14,90 EUR
+      </a>
+      <a href="../index.html#comment" class="blog-cta-btn secondary">
+        <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><polyline points="8,5 8,8 10,10"/></svg>
+        Voir comment ca marche
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+
+      <div class="footer-col" style="grid-column:1">
+        <div style="margin-bottom:1.25rem">
+          <img src="../images/cverifie-logo-white.png" alt="CVverifie" style="height:38px;width:auto;display:block">
+        </div>
+        <p style="font-size:.875rem;color:rgba(255,255,255,0.4);line-height:1.7;margin-bottom:1.5rem">
+          Verification de CV et de diplomes pour toutes les entreprises francaises. Sans engagement. Sous 48h.
+        </p>
+        <div class="footer-social">
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="X">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+        <div class="footer-trust">
+          <img src="https://www.capemploi-61.com/assets/cache/images-cache/images/cheops/cap-emploi/capemploi-61/1200px-logo-du-ministere-du-travail-%282020%29.svg.6abdeb72.png"
+               alt="Ministere du Travail" class="trust-logo" onerror="this.style.display='none'">
+          <div class="trust-badge-rgpd">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L2 3.5V7.5C2 10.2 4.2 12.7 7 13.5C9.8 12.7 12 10.2 12 7.5V3.5L7 1.5Z" fill="#2D6A4F" stroke="#52B788" stroke-width="0.8"/><polyline points="4.5,7 6.5,9 9.5,5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            RGPD conforme
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Avis clients</h4>
+        <div class="footer-stars-row">
+          <span class="footer-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </div>
+        <div class="footer-rating-list">
+          <div class="rating-item">
+            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 1l1.7 3.4L14 5.1l-3 2.9.7 4.1L8 10.3l-3.7 1.8.7-4.1L2 5.1l4.3-.7z" fill="#00B67A"/></svg>
+            <span>4.8 sur <strong>Trustpilot</strong></span>
+          </div>
+          <div class="rating-item">
+            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M14.5 8.2c0-.5 0-.9-.1-1.3H8v2.4h3.6c-.2.8-.6 1.5-1.3 2v1.6h2c1.2-1.1 1.9-2.7 1.9-4.7z" fill="#4285F4"/><path d="M8 15c1.8 0 3.3-.6 4.4-1.6l-2-1.6c-.6.4-1.4.6-2.3.6-1.8 0-3.3-1.2-3.8-2.8H2v1.7C3.1 13.5 5.4 15 8 15z" fill="#34A853"/><path d="M4.2 9.6A4.5 4.5 0 014 8.1a4.5 4.5 0 01.2-1.5V4.9H2A7 7 0 001 8.1a7 7 0 001 3.2l2.2-1.7z" fill="#FBBC05"/><path d="M8 3.5c1 0 1.9.4 2.6 1L12.2 3A7 7 0 008 1 7 7 0 002 4.9l2.2 1.7C4.7 4.7 6.2 3.5 8 3.5z" fill="#EA4335"/></svg>
+            <span>4.7 sur <strong>Google</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Recruteurs</h4>
+        <ul>
+          <li><a href="#">Verification de diplomes</a></li>
+          <li><a href="#">Verification d'experiences</a></li>
+          <li><a href="#">Prise de references</a></li>
+          <li><a href="#">Controle d'integrite</a></li>
+          <li><a href="#">API et Integrations RH</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Societe</h4>
+        <ul>
+          <li><a href="#">Candidats : certifier mon CV</a></li>
+          <li><a href="index.html">Blog et ressources</a></li>
+          <li><a href="#">A propos</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="#">Partenaires</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <span>&#169; 2026 CVverifie &middot; Made in France &#127467;&#127479;</span>
+      <div class="footer-legal">
+        <a href="#">Mentions legales</a>
+        <a href="#">Politique de confidentialite</a>
+        <a href="#">CGU</a>
+        <a href="#">Conformite RGPD</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Filter tabs
+const filterBtns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('[data-category]');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', function() {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    const filter = this.dataset.filter;
+
+    cards.forEach(card => {
+      if (filter === 'all' || card.dataset.category === filter) {
+        card.style.display = '';
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(12px)';
+        requestAnimationFrame(() => {
+          card.style.transition = 'opacity .3s ease, transform .3s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        });
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.card, .card-coming, .card-featured').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(18px)';
+  el.style.transition = 'opacity .45s ease, transform .45s ease';
+  observer.observe(el);
+});
+</script>
+
+<script>
+(function () {
+  const canvas = document.getElementById('masthead-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  const G = [82, 183, 136]; /* --green-light */
+
+  const CFG = {
+    n:           42,    /* node count          */
+    connectDist: 150,   /* px – link threshold */
+    speed:       0.18,  /* drift speed         */
+    nodeR:       [1.5, 3.5], /* min/max radius */
+  };
+
+  let nodes = [], cW, cH;
+
+  function resize() {
+    cW = canvas.width  = canvas.offsetWidth;
+    cH = canvas.height = canvas.offsetHeight;
+  }
+
+  function seed() {
+    nodes = Array.from({ length: CFG.n }, () => ({
+      x:  Math.random() * cW,
+      y:  Math.random() * cH,
+      vx: (Math.random() - 0.5) * CFG.speed * 2,
+      vy: (Math.random() - 0.5) * CFG.speed * 2,
+      r:  CFG.nodeR[0] + Math.random() * (CFG.nodeR[1] - CFG.nodeR[0]),
+    }));
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, cW, cH);
+
+    /* Connection lines */
+    for (let i = 0; i < nodes.length - 1; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const d  = Math.sqrt(dx * dx + dy * dy);
+        if (d >= CFG.connectDist) continue;
+        const prox  = 1 - d / CFG.connectDist;
+        ctx.beginPath();
+        ctx.moveTo(nodes[i].x, nodes[i].y);
+        ctx.lineTo(nodes[j].x, nodes[j].y);
+        ctx.strokeStyle = `rgba(${G},${(prox * 0.18).toFixed(3)})`;
+        ctx.lineWidth   = prox * 0.8;
+        ctx.stroke();
+      }
+    }
+
+    /* Nodes */
+    for (const n of nodes) {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${G},0.45)`;
+      ctx.fill();
+    }
+
+    /* Advance */
+    for (const n of nodes) {
+      n.x += n.vx;
+      n.y += n.vy;
+      if (n.x < -25)       n.x = cW + 25;
+      else if (n.x > cW + 25) n.x = -25;
+      if (n.y < -25)       n.y = cH + 25;
+      else if (n.y > cH + 25) n.y = -25;
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  const ro = new ResizeObserver(() => { resize(); seed(); });
+  ro.observe(canvas.parentElement);
+  resize();
+  seed();
+  requestAnimationFrame(draw);
+})();
+</script>
+
+</body>
+</html>

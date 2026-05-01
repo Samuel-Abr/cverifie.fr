@@ -1,0 +1,381 @@
+---
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mensonges sur les CV en France : les chiffres clés 2025 | CVérifié</title>
+<meta name="description" content="Statistiques complètes sur la fraude aux CV et diplômes en France. Que mentent vraiment les candidats, dans quels secteurs, et ce que ça coûte aux entreprises.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>:root{
+  --cream:#FAF8F3;--cream-dark:#F0EDE5;
+  --ink:#1A1A24;--ink-light:#44444E;--ink-muted:#8A8A94;
+  --green:#2D6A4F;--green-mid:#40916C;--green-light:#52B788;
+  --green-pale:#D8F3DC;--green-ultra:#F0FAF2;
+  --border:#E0DDD5;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.25;font-weight:600}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+p{margin-bottom:1.25rem}
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,248,243,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;
+  padding:0 2rem;height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{
+  display:flex;align-items:center;gap:10px;
+}
+.nav-logo-mark{display:flex;align-items:center}
+.nav-logo-text{
+  font-family:'Playfair Display',serif;
+  font-size:21px;font-weight:600;
+  color:var(--ink);letter-spacing:-0.3px;
+}
+.nav-logo-text .cv{color:var(--green)}
+.logo-nav{height:38px;width:auto;display:block}
+.logo-footer{height:38px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{
+  font-size:14px;font-weight:500;
+  color:var(--ink-light);
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{
+  background:var(--green);color:white;
+  padding:10px 22px;border-radius:8px;border:none;
+  font-size:14px;font-weight:600;
+  transition:background .2s,transform .15s;
+  white-space:nowrap;
+}
+.nav-cta:hover{background:var(--green-mid);transform:translateY(-1px)}
+.hero-blog{margin-top:64px;height:420px;overflow:hidden;position:relative}
+.hero-blog img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-blog::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom, rgba(26,26,36,0.25) 0%, rgba(26,26,36,0.55) 100%)}
+.hero-text{position:absolute;bottom:0;left:0;right:0;padding:3rem;z-index:2;max-width:900px;margin:0 auto}
+.article-wrap{max-width:760px;margin:0 auto;padding:3rem 2rem 5rem}
+.breadcrumb{font-size:12px;color:var(--ink-muted);margin-bottom:2rem;display:flex;align-items:center;gap:6px}
+.breadcrumb a{color:var(--green);transition:color .2s}
+.breadcrumb a:hover{color:var(--green-mid)}
+.breadcrumb span{color:var(--border)}
+.article-meta{display:flex;align-items:center;gap:1rem;font-size:13px;color:var(--ink-muted);margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.article-meta .tag{background:var(--green-pale);color:var(--green);padding:3px 10px;border-radius:100px;font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+h1.article-title{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:1rem;letter-spacing:-0.02em;color:var(--ink)}
+.article-intro{font-size:1.1rem;color:var(--ink-light);line-height:1.75;margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid var(--border)}
+h2.section-h{font-size:1.5rem;margin:2.5rem 0 1rem;color:var(--ink);letter-spacing:-0.01em}
+h3.subsection-h{font-size:1.1rem;font-weight:600;margin:1.75rem 0 .75rem;color:var(--ink)}
+.highlight-box{background:var(--green-ultra);border-left:3px solid var(--green);border-radius:0 10px 10px 0;padding:1.25rem 1.5rem;margin:2rem 0;font-size:.95rem;color:var(--ink-light)}
+.highlight-box strong{color:var(--ink)}
+.warning-box{background:#FFF8F0;border-left:3px solid #E07820;border-radius:0 10px 10px 0;padding:1.25rem 1.5rem;margin:2rem 0;font-size:.95rem;color:#5A3A10}
+.stat-band{background:var(--green);border-radius:14px;padding:2rem;margin:2.5rem 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;text-align:center}
+.stat-band .stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:white;line-height:1}
+.stat-band .stat-label{font-size:.8rem;color:rgba(255,255,255,0.75);margin-top:.3rem}
+.article-img{border-radius:12px;overflow:hidden;margin:2.5rem 0}
+.article-img img{width:100%;height:280px;object-fit:cover}
+.article-img figcaption{font-size:12px;color:var(--ink-muted);padding:.5rem 0 0;text-align:center}
+table.data-table{width:100%;border-collapse:collapse;font-size:.875rem;margin:2rem 0;border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+table.data-table th{background:var(--green);color:white;padding:.75rem 1rem;text-align:left;font-weight:600;font-family:'Outfit',sans-serif}
+table.data-table td{padding:.75rem 1rem;border-bottom:1px solid var(--border)}
+table.data-table tr:last-child td{border-bottom:none}
+table.data-table tr:nth-child(even){background:white}
+table.data-table tr:nth-child(odd){background:var(--cream)}
+.check-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:.75rem;font-size:.9rem}
+.check-item svg{width:16px;height:16px;stroke:var(--green);fill:none;stroke-width:2.5;stroke-linecap:round;flex-shrink:0;margin-top:2px}
+.cross-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:.75rem;font-size:.9rem}
+.cross-item svg{width:16px;height:16px;stroke:#C44B4B;fill:none;stroke-width:2.5;stroke-linecap:round;flex-shrink:0;margin-top:2px}
+.cta-block{background:var(--ink);border-radius:16px;padding:2.5rem;text-align:center;margin:3rem 0;position:relative;overflow:hidden}
+.cta-block::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(45,106,79,.4) 0%,transparent 70%)}
+.cta-block h3{font-size:1.4rem;color:white;margin-bottom:.75rem;position:relative}
+.cta-block p{font-size:.9rem;color:rgba(255,255,255,.65);margin-bottom:1.5rem;position:relative}
+.cta-block a.btn{display:inline-flex;align-items:center;gap:8px;background:var(--green-light);color:white;padding:14px 32px;border-radius:10px;font-size:15px;font-weight:700;transition:all .2s;position:relative}
+.cta-block a.btn:hover{background:#62C898;transform:translateY(-2px)}
+.cta-block a.btn svg{width:16px;height:16px;stroke:white;fill:none;stroke-width:2.5;stroke-linecap:round}
+.faq-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:.75rem}
+.faq-q{padding:1.1rem 1.25rem;font-size:.95rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;background:white;border:none;width:100%;text-align:left;color:var(--ink)}
+.faq-q:hover{background:var(--cream)}
+.faq-icon{min-width:20px;height:20px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .25s}
+.faq-icon svg{width:9px;height:9px;stroke:var(--ink);fill:none;stroke-width:2.5;stroke-linecap:round}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--green);border-color:var(--green)}
+.faq-item.open .faq-icon svg{stroke:white}
+.faq-a{padding:0 1.25rem;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s ease;font-size:.875rem;color:var(--ink-light);line-height:1.7}
+.faq-item.open .faq-a{padding:.25rem 1.25rem 1.25rem;max-height:400px}
+.page-footer{background:var(--ink);padding:3rem 2rem;margin-top:5rem}
+.page-footer-inner{max-width:760px;margin:0 auto}
+.footer-trust-strip{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:1.5rem}
+.footer-trust-logos{display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.footer-trust-logo{height:30px;width:auto;filter:brightness(0) invert(1) opacity(.8)}
+.footer-bottom-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:12px;color:rgba(255,255,255,.4)}
+.footer-links{display:flex;gap:1.25rem}
+.footer-links a{color:rgba(255,255,255,.35);transition:color .2s}
+.footer-links a:hover{color:rgba(255,255,255,.7)}
+@media(max-width:600px){.stat-band{grid-template-columns:1fr 1fr}.hero-blog{height:280px}.hero-text{padding:1.5rem}.article-wrap{padding:2rem 1.25rem 4rem}}
+
+.chart-bar-wrap{margin:2rem 0}
+.chart-bar-item{margin-bottom:1rem}
+.chart-bar-label{font-size:.875rem;color:var(--ink);margin-bottom:.35rem;display:flex;justify-content:space-between}
+.chart-bar-track{background:var(--cream-dark);border-radius:100px;height:12px;overflow:hidden}
+.chart-bar-fill{height:100%;border-radius:100px;background:var(--green);transition:width 1s ease}
+.source-note{font-size:.75rem;color:var(--ink-muted);margin-top:.25rem}
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);
+  padding:4rem 2rem 2rem;
+  color:rgba(255,255,255,0.5);
+}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{
+  display:grid;grid-template-columns:260px 180px 1fr 1fr;
+  gap:3rem;padding-bottom:3rem;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.footer-col h4{
+  font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);
+  text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.25rem;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.4);transition:color .2s}
+.footer-col ul li a:hover{color:var(--green-light)}
+.footer-bottom{
+  padding-top:2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;font-size:13px;
+}
+.footer-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-legal a{color:rgba(255,255,255,0.3);transition:color .2s}
+.footer-legal a:hover{color:rgba(255,255,255,0.65)}
+.footer-logo-text{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:600;color:white;
+}
+
+/* Social icons */
+.footer-social{display:flex;gap:.75rem;margin-bottom:1.5rem}
+.social-icon{
+  width:34px;height:34px;border-radius:8px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.1);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,0.5);
+  transition:all .2s;
+}
+.social-icon:hover{background:var(--green);border-color:var(--green);color:white}
+.social-icon svg{width:15px;height:15px}
+
+/* Trust logos */
+.footer-trust{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.trust-logo{
+  height:28px;width:auto;
+  filter:brightness(0) invert(1) opacity(0.35);
+  transition:opacity .2s;
+}
+.trust-logo:hover{opacity:.6}
+.trust-badge-rgpd{
+  display:flex;align-items:center;gap:5px;
+  font-size:11px;font-weight:600;letter-spacing:.04em;
+  color:rgba(255,255,255,0.35);
+  border:1px solid rgba(255,255,255,0.12);
+  padding:4px 8px;border-radius:6px;
+}
+
+/* Ratings */
+.footer-stars-row{margin-bottom:.75rem}
+.footer-stars{color:var(--green-light);font-size:16px;letter-spacing:2px}
+.footer-rating-list{display:flex;flex-direction:column;gap:.6rem}
+.rating-item{
+  display:flex;align-items:center;gap:7px;
+  font-size:13px;color:rgba(255,255,255,0.45);
+}
+.rating-item strong{color:rgba(255,255,255,0.7);font-weight:600}
+.rating-item svg{flex-shrink:0}
+
+@media(max-width:1024px){
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .footer-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+{% include "nav.njk" %}
+
+<div class="hero-blog">
+  <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1400&q=80" alt="Analyse de données recrutement">
+  <div class="hero-text">
+    <span style="background:rgba(82,183,136,0.25);color:#7DCFAA;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:4px 12px;border-radius:100px;border:1px solid rgba(82,183,136,0.4);margin-bottom:1rem;display:inline-block">Données et chiffres</span>
+    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);color:white;font-weight:600;margin-top:.75rem;max-width:680px;line-height:1.2">Mensonges sur les CV en France : les chiffres que tout recruteur devrait connaître</h1>
+  </div>
+</div>
+
+<div class="article-wrap">
+
+  <div class="breadcrumb">
+    <a href="/">Accueil</a>
+    <span>/</span>
+    <a href="#">Blog</a>
+    <span>/</span>
+    <span style="color:var(--ink-muted)">Statistiques</span>
+  </div>
+
+  <div class="article-meta">
+    <span class="tag">Études et données</span>
+    <span>Mis à jour en 2025</span>
+    <span>6 min de lecture</span>
+  </div>
+
+  <h1 class="article-title">Fraude aux CV en France : statistiques, types de mensonges et coût pour les entreprises</h1>
+
+  <div class="article-intro">
+    Un candidat sur huit contient un mensonge majeur. Sept recruteurs sur dix n'effectuent aucun contrôle avant d'embaucher. Ce n'est pas une intuition : ce sont les résultats d'études menées sur le marché du travail français. Voici toutes les données utiles, sans embellissement.
+  </div>
+
+  <div class="stat-band">
+    <div><div class="stat-num">65%</div><div class="stat-label">des CV contiennent au moins un écart avec la réalité</div></div>
+    <div><div class="stat-num">12%</div><div class="stat-label">des CV présentent un mensonge sérieux remettant en cause le recrutement</div></div>
+    <div><div class="stat-num">70%</div><div class="stat-label">des employeurs ne vérifient rien avant de signer le contrat</div></div>
+  </div>
+
+  <h2 class="section-h">La réalité du marché français</h2>
+
+  <p>Deux études indépendantes menées sur le marché français convergent sur le même constat. L'Institut Florian Mantione, cabinet de recrutement lyonnais, analyse depuis plusieurs années les écarts entre CV et réalité. Leurs données montrent que 65% des CV en circulation sur le marché de l'emploi contiennent au moins un élément inexact ou exagéré. Ce taux est stable depuis plusieurs années, ce qui suggère qu'il ne s'agit pas d'une tendance passagère.</p>
+
+  <p>Ces données rejoignent celles collectées par Robert Half France, cabinet de recrutement international présent en France, qui estime que 47% des recruteurs interrogés ont déjà éliminé un candidat finaliste après avoir découvert des informations erronées dans son CV. Ce qui est frappant, c'est que ces recruteurs ont identifié le problème par hasard ou au cours de l'entretien, pas via un processus de vérification structuré.</p>
+
+  <h2 class="section-h">Ce sur quoi les candidats mentent le plus</h2>
+
+  <p>Les données disponibles permettent d'identifier des zones de fraude récurrentes :</p>
+
+  <div class="chart-bar-wrap">
+    <div class="chart-bar-item">
+      <div class="chart-bar-label"><span>Expériences professionnelles (dates, intitulés)</span><span>58%</span></div>
+      <div class="chart-bar-track"><div class="chart-bar-fill" style="width:58%"></div></div>
+    </div>
+    <div class="chart-bar-item">
+      <div class="chart-bar-label"><span>Diplômes et formations</span><span>53%</span></div>
+      <div class="chart-bar-track"><div class="chart-bar-fill" style="width:53%"></div></div>
+    </div>
+    <div class="chart-bar-item">
+      <div class="chart-bar-label"><span>Niveau de responsabilité</span><span>38%</span></div>
+      <div class="chart-bar-track"><div class="chart-bar-fill" style="width:38%"></div></div>
+    </div>
+    <div class="chart-bar-item">
+      <div class="chart-bar-label"><span>Compétences techniques</span><span>31%</span></div>
+      <div class="chart-bar-track"><div class="chart-bar-fill" style="width:31%"></div></div>
+    </div>
+    <div class="chart-bar-item">
+      <div class="chart-bar-label"><span>Motif de fin de contrat</span><span>24%</span></div>
+      <div class="chart-bar-track"><div class="chart-bar-fill" style="width:24%"></div></div>
+    </div>
+  </div>
+  <p class="source-note">Sources : Robert Half France, Florian Mantione Institut, données agrégées.</p>
+
+  <h2 class="section-h">Les formes de mensonge les plus fréquentes</h2>
+
+  <p>Les mensonges sur CV ne se limitent pas aux faux diplômes achetés en ligne, même si ce phénomène existe. Les formes les plus courantes sont plus subtiles.</p>
+
+  <p>L'embellissement des dates est très répandu : un candidat qui a quitté un emploi en mars l'indique jusqu'en décembre pour masquer une rupture ou combler un trou. Ce type d'écart est souvent considéré comme anodin par le candidat, mais il peut avoir des conséquences importantes pour l'employeur, notamment pour les postes où la continuité de l'expérience compte.</p>
+
+  <p>Le gonflement du niveau hiérarchique est également courant. Un candidat qui était assistant manager se décrit comme manager, ou un consultant junior se présente comme consultant senior. Ces exagérations passent facilement inaperçues à l'entretien mais faussent l'évaluation réelle du profil.</p>
+
+  <p>Enfin, les faux diplômes proprement dits sont une réalité facilitée par la prolifération de certifications privées et de formations en ligne dont la valeur réelle est difficile à évaluer. Le mot-clé "faire un faux diplôme" génèrerait entre 1 000 et 10 000 recherches mensuelles en France selon les données disponibles.</p>
+
+  <figure class="article-img">
+    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Recruteur analysant un dossier de candidature">
+    <figcaption>La vérification systématique protège les recruteurs et valorise les candidats honnêtes qui ont réellement les parcours qu'ils revendiquent.</figcaption>
+  </figure>
+
+  <h2 class="section-h">La France en retard sur ses voisins</h2>
+
+  <p>Le contraste avec les pays anglo-saxons est saisissant. Aux États-Unis, une enquête conduit le secteur de background check à traiter des dizaines de millions de vérifications par an, et 94% des entreprises déclarent procéder à des vérifications pré-emploi de manière systématique. Au Royaume-Uni, la vérification des références est une étape standard pour pratiquement tous les recrutements formels.</p>
+
+  <p>En France, on estime que seulement 30% des employeurs effectuent une forme de vérification avant embauche, et que moins de 10% le font de manière structurée avec une trace documentée. Cette situation n'est pas liée à la loi, qui autorise et encourage la vérification. Elle est liée au manque d'outils adaptés et accessibles aux PME.</p>
+
+  <div class="highlight-box">
+    <strong>Ce que cette asymétrie crée :</strong> les candidats qui mentent ont un avantage structurel sur ceux qui ne mentent pas. Dans un marché où la vérification est rare, exagérer son parcours devient une stratégie rationnelle à court terme pour le candidat. La généralisation des vérifications protège les candidats honnêtes autant qu'elle protège les employeurs.
+  </div>
+
+  <h2 class="section-h">Ce qu'un mauvais recrutement coûte vraiment</h2>
+
+  <p>Le coût d'un recrutement raté est régulièrement sous-estimé car il se dilue dans le temps et entre plusieurs lignes budgétaires. Voici une estimation réaliste pour une PME :</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Poste de coût</th><th>Estimation pour un cadre à 50 000 €/an</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Temps de recrutement (offre, entretiens, onboarding)</td><td>5 000 à 15 000 €</td></tr>
+      <tr><td>Perte de productivité pendant la période d'essai</td><td>10 000 à 25 000 €</td></tr>
+      <tr><td>Formation et intégration perdues</td><td>3 000 à 8 000 €</td></tr>
+      <tr><td>Procédure de rupture (conseil, indemnités éventuelles)</td><td>2 000 à 15 000 €</td></tr>
+      <tr><td>Nouveau recrutement</td><td>5 000 à 15 000 €</td></tr>
+      <tr><td><strong>Total estimé</strong></td><td><strong>25 000 à 78 000 €</strong></td></tr>
+    </tbody>
+  </table>
+
+  <p>Pour un poste à responsabilité (direction, finance, technique), la fourchette haute est facilement dépassée quand on intègre les conséquences sur les projets en cours, la crédibilité de l'équipe et les éventuelles responsabilités juridiques.</p>
+
+  <h2 class="section-h">La vérification préventive : un investissement minimal</h2>
+
+  <p>Mettre en perspective le coût d'un mauvais recrutement (25 000 à 78 000 euros minimum) et le coût d'une vérification préalable (14,90 à 79 euros selon la formule) illustre l'écart entre le risque et le coût de prévention. Une vérification de CV représente, dans le pire des cas, 0,3% du coût d'un mauvais recrutement.</p>
+
+  <p>Ce n'est pas une assurance contre tous les problèmes de recrutement. Un candidat peut avoir un parcours authentique et se révéler incompatible avec la culture d'entreprise. Mais éliminer les mensonges factuels sur les diplômes et les expériences, c'est retirer une source majeure de risque du processus.</p>
+
+  <div class="cta-block">
+    <h3>Vérifiez avant de recruter. Dès 14,90 €.</h3>
+    <p>Rapport PDF complet sous 48h. Consentement RGPD géré automatiquement. Aucun abonnement.</p>
+    <a href="/commander.html" class="btn">
+      <svg viewBox="0 0 16 16"><polyline points="3,8 7,12 13,4"/></svg>
+      Faire vérifier mon candidat
+    </a>
+  </div>
+
+  <h2 class="section-h">Questions fréquentes</h2>
+
+  <div class="faq-item">
+    <button class="faq-q">Ces statistiques sont-elles représentatives du marché actuel ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
+    <div class="faq-a">Les études citées (Florian Mantione Institut 2018, Robert Half France 2018) datent de plusieurs années, mais les professionnels du secteur confirment des niveaux comparables aujourd'hui. La prolifération des certifications en ligne et des parcours hybrides depuis 2020 a potentiellement augmenté certaines zones de flou, notamment sur les compétences techniques. Les chiffres doivent donc être lus comme des ordres de grandeur, pas comme des valeurs absolues.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q">Les mensonges sont-ils plus fréquents pour certains types de postes ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
+    <div class="faq-a">Les données disponibles suggèrent que les postes avec des prérequis de diplôme formels (ingénieurs, médecins, avocats, comptables) sont particulièrement exposés aux falsifications, précisément parce que le diplôme est un critère discriminant dur. Les postes techniques dans la tech (développeurs, data scientists) connaissent une forte augmentation des exagérations de compétences depuis 5 ans avec la croissance de l'auto-certification en ligne.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q">La vérification décourage-t-elle les bons candidats ?<div class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="2" x2="5" y2="8"/><line x1="2" y1="5" x2="8" y2="5"/></svg></div></button>
+    <div class="faq-a">Non, c'est l'inverse. Les candidats qui ont un parcours authentique accueillent généralement la vérification positivement : elle leur permet de se différencier des candidats qui ont menti, et elle signale que l'employeur prend son processus de sélection au sérieux. Certains candidats proactifs demandent même à faire vérifier leur propre parcours avant de le soumettre, comme une forme de certification.</div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+{% include "footer.njk" %}
+
+<script>
+document.querySelectorAll(".faq-q").forEach(btn => {
+  btn.addEventListener("click", function(){
+    const item = this.closest(".faq-item");
+    const isOpen = item.classList.contains("open");
+    document.querySelectorAll(".faq-item").forEach(i => i.classList.remove("open"));
+    if(!isOpen) item.classList.add("open");
+  });
+});
+</script>
+</body>
+</html>

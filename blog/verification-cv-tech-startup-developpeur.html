@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="../images/favicon.png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vérification CV Tech : bootcamps, 42, GitHub et certifications cloud | CVérifié</title>
+<meta name="description" content="Comment vérifier un CV de développeur : diplômes 42 et Le Wagon, certifications AWS/GCP/Azure, GitHub, bootcamps. Guide pratique pour recruteurs tech en France.">
+<link rel="canonical" href="https://xn--cvrifi-cxa2g.fr/blog/verification-cv-tech-startup-developpeur.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FAF8F3;--cream-dark:#F0EDE5;--ink:#1A1A24;--ink-light:#44444E;--ink-muted:#8A8A94;--green:#2D6A4F;--green-mid:#40916C;--green-light:#52B788;--green-pale:#D8F3DC;--green-ultra:#F0FAF2;--border:#E0DDD5;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;}
+a{color:var(--green);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,243,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:36px;display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--ink-light);}
+.nav-links a:hover{color:var(--green);text-decoration:none;}
+.nav-cta{background:var(--green);color:#fff !important;padding:9px 20px;border-radius:6px;font-weight:600;border:none;cursor:pointer;font-family:inherit;font-size:.9rem;}
+.nav-cta:hover{background:var(--green-mid);text-decoration:none !important;}
+
+.hero-blog{position:relative;height:420px;overflow:hidden;margin-top:64px;}
+.hero-blog img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-blog::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,26,36,.35) 0%,rgba(26,26,36,.72) 100%);}
+.hero-text{position:absolute;bottom:48px;left:50%;transform:translateX(-50%);width:100%;max-width:760px;padding:0 24px;z-index:2;color:#fff;}
+.hero-cat{display:inline-block;background:var(--green-light);color:#fff;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px;}
+.hero-text h1{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.2;color:#fff;}
+
+.article-wrap{max-width:760px;margin:0 auto;padding:48px 24px 80px;}
+.breadcrumb{font-size:.8rem;color:var(--ink-muted);margin-bottom:20px;}
+.breadcrumb a{color:var(--ink-muted);}
+.breadcrumb a:hover{color:var(--green);}
+.article-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:24px;}
+.tag{background:var(--green-pale);color:var(--green);font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.05em;}
+.meta-sep{color:var(--border);}
+.meta-date,.meta-read{font-size:.83rem;color:var(--ink-muted);}
+.article-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);line-height:1.25;margin-bottom:20px;}
+.article-intro{font-size:1.1rem;color:var(--ink-light);line-height:1.75;padding-bottom:28px;border-bottom:1px solid var(--border);margin-bottom:40px;}
+
+.stat-band{background:var(--green);color:#fff;border-radius:12px;padding:32px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:40px 0;text-align:center;}
+.stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;display:block;}
+.stat-label{font-size:.82rem;opacity:.88;margin-top:4px;line-height:1.4;}
+
+.section-h{font-family:'Playfair Display',serif;font-size:1.55rem;margin:48px 0 16px;color:var(--ink);}
+.subsection-h{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:600;margin:28px 0 10px;color:var(--ink);}
+p{margin-bottom:16px;color:var(--ink-light);}
+
+.highlight-box{background:var(--green-ultra);border-left:4px solid var(--green-light);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;}
+.highlight-box strong{color:var(--green);display:block;margin-bottom:6px;}
+.warning-box{background:#fff8ed;border-left:4px solid #f4a022;border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;}
+.warning-box strong{color:#c97d10;display:block;margin-bottom:6px;}
+.danger-box{background:#fff3f3;border-left:4px solid #e05c5c;border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;}
+.danger-box strong{color:#c13737;display:block;margin-bottom:6px;}
+
+.data-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.9rem;}
+.data-table th{background:var(--green);color:#fff;padding:11px 14px;text-align:left;font-weight:600;}
+.data-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--ink-light);}
+.data-table tr:nth-child(even) td{background:var(--cream-dark);}
+
+.check-item,.cross-item{display:flex;gap:10px;align-items:flex-start;margin:8px 0;font-size:.95rem;color:var(--ink-light);}
+.check-item::before{content:'✓';color:var(--green-light);font-weight:700;flex-shrink:0;margin-top:2px;}
+.cross-item::before{content:'✗';color:#e05c5c;font-weight:700;flex-shrink:0;margin-top:2px;}
+
+/* SCHOOL CARDS */
+.school-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0;}
+.school-card{border-radius:10px;padding:18px;border:1px solid var(--border);background:#fff;}
+.school-card h4{font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.school-type{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:10px;margin-bottom:8px;}
+.school-type.public{background:var(--green-pale);color:var(--green);}
+.school-type.bootcamp{background:#e8f4ff;color:#1a6fb5;}
+.school-type.online{background:#f0e8ff;color:#6b21a8;}
+.school-card p{font-size:.83rem;color:var(--ink-muted);margin:0;}
+
+/* CODE BLOCK */
+.code-block{background:#1e1e2e;border-radius:10px;padding:20px 24px;margin:24px 0;overflow-x:auto;}
+.code-block pre{font-family:'Courier New',monospace;font-size:.82rem;color:#cdd6f4;line-height:1.6;white-space:pre-wrap;}
+.code-block .comment{color:#6c7086;}
+.code-block .url{color:#89dceb;}
+
+.cta-block{background:var(--ink);color:#fff;border-radius:12px;padding:40px 32px;text-align:center;margin:48px 0;}
+.cta-block h3{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:12px;color:#fff;}
+.cta-block p{color:rgba(255,255,255,.75);margin-bottom:24px;}
+.btn-cta{display:inline-block;background:var(--green-light);color:#fff;font-weight:600;padding:14px 32px;border-radius:8px;font-size:1rem;cursor:pointer;border:none;}
+.btn-cta:hover{background:var(--green-mid);text-decoration:none;color:#fff;}
+
+.faq-list{margin:24px 0;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:18px 0;font-size:1rem;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:'Outfit',sans-serif;}
+.faq-q::after{content:'+';font-size:1.3rem;color:var(--green-light);flex-shrink:0;transition:transform .25s;}
+.faq-item.open .faq-q::after{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-item.open .faq-a{max-height:400px;}
+.faq-a p{padding-bottom:18px;color:var(--ink-light);}
+
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 24px 32px;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+.footer-brand img{height:32px;margin-bottom:16px;filter:brightness(0) invert(1);}
+.footer-brand p{font-size:.88rem;line-height:1.65;opacity:.7;}
+.footer-col h4{font-size:.85rem;font-weight:600;color:#fff;letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px;}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:8px;}
+.footer-col a{font-size:.88rem;color:rgba(255,255,255,.6);}
+.footer-col a:hover{color:#fff;text-decoration:none;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.82rem;}
+@media(max-width:640px){
+  .school-grid{grid-template-columns:1fr;}
+  .stat-band{grid-template-columns:1fr;gap:24px;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"Vérification CV Tech : bootcamps, 42, GitHub et certifications cloud",
+  "description":"Comment vérifier un CV de développeur : diplômes 42 et Le Wagon, certifications AWS/GCP/Azure, GitHub, bootcamps. Guide pratique pour recruteurs tech.",
+  "image":"https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1400&q=80",
+  "author":{"@type":"Organization","name":"CVérifié"},
+  "publisher":{"@type":"Organization","name":"CVérifié","logo":{"@type":"ImageObject","url":"https://xn--cvrifi-cxa2g.fr/images/cverifie-logo-green.png"}},
+  "datePublished":"2024-09-19",
+  "dateModified":"2025-01-15"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Comment vérifier un diplôme de l'école 42 ?","acceptedAnswer":{"@type":"Answer","text":"42 délivre une attestation de niveau (équivalent Bac+3 ou Bac+5 selon le parcours) reconnu par l'Etat. La vérification s'effectue en contactant directement le service des admissions de 42 Paris ou de l'antenne concernée. 42 ne dispose pas de registre public en ligne : la confirmation passe obligatoirement par un contact officiel."}},
+    {"@type":"Question","name":"Les certifications AWS, Azure ou GCP sont-elles vérifiables ?","acceptedAnswer":{"@type":"Answer","text":"Oui, toutes les trois disposent de registres publics vérifiables en ligne. AWS : aws.amazon.com/verification, Azure : learn.microsoft.com/certifications, Google Cloud : google.accredible.com. La vérification prend moins de 5 minutes et ne nécessite que le numéro de certification ou le nom complet du candidat."}},
+    {"@type":"Question","name":"Un profil GitHub suffit-il à vérifier les compétences techniques d'un développeur ?","acceptedAnswer":{"@type":"Answer","text":"GitHub confirme l'activité réelle d'un développeur, mais ne vérifie pas les diplômes ou expériences. Un profil GitHub actif avec des projets pertinents est un indicateur sérieux, mais il peut être fabriqué (commits artificiels, fork sans contribution réelle). Il complète, sans remplacer, la vérification des formations et expériences."}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="../index.html"><img src="../images/cverifie-logo-green.png" alt="CVérifié" class="logo-nav"></a>
+    </div>
+    <div class="nav-links">
+      <a href="../index.html#comment">Comment ça marche</a>
+      <a href="../index.html#tarifs">Tarifs</a>
+      <a href="../index.html#candidats">Pour les candidats</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="index.html">Blog</a>
+    </div>
+    <button class="nav-cta" onclick="window.location='../commander.html'">Lancer une vérification</button>
+  </div>
+</nav>
+
+<div class="hero-blog">
+  <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1400&q=80" alt="Ecran de code dans un bureau de startup tech">
+  <div class="hero-text">
+    <span class="hero-cat">Sectoriel</span>
+    <h1>Vérification CV Tech : bootcamps, 42, GitHub et certifications cloud</h1>
+  </div>
+</div>
+
+<div class="article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">Accueil</a> &rsaquo; <a href="index.html">Blog</a> &rsaquo; Vérification CV Tech
+  </div>
+
+  <div class="article-meta">
+    <span class="tag">Sectoriel</span>
+    <span class="meta-sep">|</span>
+    <span class="meta-date">19 septembre 2024</span>
+    <span class="meta-sep">|</span>
+    <span class="meta-read">8 min de lecture</span>
+  </div>
+
+  <h1 class="article-title">Vérification CV Tech : bootcamps, 42, GitHub et certifications cloud</h1>
+
+  <div class="article-intro">
+    Le secteur tech concentre un paradoxe : des recruteurs très exigeants sur les compétences, mais peu habitués à vérifier formellement les parcours. Bootcamps, écoles alternatives, certifications cloud et profils GitHub forment un écosystème de formation difficile à évaluer. Ce guide donne les outils concrets pour vérifier chaque type de formation tech.
+  </div>
+
+  <div class="stat-band">
+    <div>
+      <span class="stat-num">42 %</span>
+      <div class="stat-label">des développeurs en France sont autodidactes ou issus de bootcamps</div>
+    </div>
+    <div>
+      <span class="stat-num">3x</span>
+      <div class="stat-label">plus de mensonges sur les compétences techniques que dans les autres secteurs</div>
+    </div>
+    <div>
+      <span class="stat-num">15 min</span>
+      <div class="stat-label">suffisent pour vérifier une certification AWS, Azure ou GCP en ligne</div>
+    </div>
+  </div>
+
+  <h2 class="section-h">Les écoles alternatives : 42, Le Wagon, Epitech</h2>
+
+  <p>L'écosystème tech français compte plusieurs formations dont les diplômes et attestations ne ressemblent pas aux parcours universitaires classiques. Voici comment vérifier chacune.</p>
+
+  <div class="school-grid">
+    <div class="school-card">
+      <span class="school-type public">Reconnu Etat</span>
+      <h4>42 (Paris et antennes)</h4>
+      <p>Délivre une certification reconnue par l'Etat (niveau 6 ou 7 selon le parcours). Vérification par contact direct avec 42 Paris. Pas de registre public : email à admissions@42.fr avec le nom du candidat.</p>
+    </div>
+    <div class="school-card">
+      <span class="school-type bootcamp">Bootcamp</span>
+      <h4>Le Wagon</h4>
+      <p>Formation intensive de 9 semaines. Délivre une attestation de fin de formation, pas un diplôme d'Etat. Vérifiable via l'intranet alumni ou par contact avec alumni@lewagon.com.</p>
+    </div>
+    <div class="school-card">
+      <span class="school-type public">Reconnu Etat</span>
+      <h4>Epitech</h4>
+      <p>Grande école d'informatique privée, diplôme visé Bac+5 reconnu par l'Etat. Vérification via le service scolarité : scolarite@epitech.eu. Les diplômes ont un numéro traçable.</p>
+    </div>
+    <div class="school-card">
+      <span class="school-type public">Ecole d'ingénieurs</span>
+      <h4>INSA (5 campus)</h4>
+      <p>Ecoles d'ingénieurs publiques, diplômes CTI. Chaque campus gère ses propres vérifications. Vérification par contact direct avec le service scolarité du campus concerné.</p>
+    </div>
+    <div class="school-card">
+      <span class="school-type online">En ligne</span>
+      <h4>OpenClassrooms</h4>
+      <p>Formations certifiantes reconnues RNCP. Vérification possible via France Compétences (francecompetences.fr) pour les certifications enregistrées au RNCP.</p>
+    </div>
+    <div class="school-card">
+      <span class="school-type bootcamp">Bootcamp</span>
+      <h4>Autres bootcamps</h4>
+      <p>Wild Code School, Ironhack, BeCode, etc. Délivrent des attestations de fin de formation. Vérifier directement auprès de l'organisme et contrôler leur enregistrement QUALIOPI.</p>
+    </div>
+  </div>
+
+  <div class="warning-box">
+    <strong>Attention aux bootcamps non certifiants</strong>
+    Un bootcamp sans certification RNCP ou QUALIOPI délivre une attestation de formation, pas un diplôme. Ce n'est pas un mensonge si le candidat présente cela comme une formation, mais l'intitulé "diplômé de X" pour un bootcamp non reconnu est une surévaluation à signaler lors de l'entretien.
+  </div>
+
+  <h2 class="section-h">Certifications cloud : vérification en 15 minutes</h2>
+
+  <p>Les certifications des grands fournisseurs cloud sont parmi les plus faciles à vérifier : elles disposent toutes de registres publics accessibles en ligne, souvent avec un lien de partage inclus dans le badge numérique.</p>
+
+  <div class="code-block">
+    <pre><span class="comment"># URLs de vérification des certifications cloud</span>
+
+<span class="comment"># AWS (Amazon Web Services)</span>
+<span class="url">aws.amazon.com/verification</span>
+<span class="comment"># Saisir le numéro de validation (format : AWS0XXXXXXX)</span>
+
+<span class="comment"># Microsoft Azure</span>
+<span class="url">learn.microsoft.com/api/credentials/share/fr-fr/</span>
+<span class="comment"># Lien de partage fourni par le candidat, ou via learn.microsoft.com</span>
+
+<span class="comment"># Google Cloud</span>
+<span class="url">google.accredible.com</span>
+<span class="comment"># Badge Credly ou Accredible vérifiable avec nom + prénom</span>
+
+<span class="comment"># Kubernetes (CKA/CKAD)</span>
+<span class="url">training.linuxfoundation.org/certification/verify/</span>
+
+<span class="comment"># Autres certifications tech courantes</span>
+<span class="comment"># Cisco : learningnetwork.cisco.com (verification)</span>
+<span class="comment"># CompTIA : verify.comptia.org</span>
+<span class="comment"># Salesforce : trailhead.salesforce.com (profil public)</span></pre>
+  </div>
+
+  <div class="highlight-box">
+    <strong>Le badge numérique : un raccourci de vérification</strong>
+    La plupart des certifications tech génèrent un "badge numérique" (via Credly, Accredible ou Badgr). Si le candidat partage ce lien, la vérification est instantanée : le badge affiche le nom, la date d'obtention et la date d'expiration. Demandez systématiquement le lien de partage du badge plutôt que le PDF.
+  </div>
+
+  <h2 class="section-h">GitHub et Stack Overflow : indicateurs complémentaires</h2>
+
+  <p>Un profil GitHub actif est un indicateur sérieux pour un développeur, mais il doit être analysé avec méthode pour distinguer une activité réelle d'une présentation gonflée.</p>
+
+  <h3 class="subsection-h">Ce qu'un profil GitHub peut confirmer</h3>
+
+  <div class="check-item">Activité réelle sur une période donnée (contribution graph)</div>
+  <div class="check-item">Langages utilisés en pratique (statistiques de repos)</div>
+  <div class="check-item">Qualité du code (lisibilité, commentaires, structure)</div>
+  <div class="check-item">Contributions à des projets open source connus</div>
+
+  <h3 class="subsection-h">Ce qu'un profil GitHub ne prouve pas</h3>
+
+  <div class="cross-item">La réalité des expériences professionnelles déclarées</div>
+  <div class="cross-item">Le niveau des diplômes ou formations indiqués</div>
+  <div class="cross-item">L'authorship réel du code (commits artificiels, code copié)</div>
+  <div class="cross-item">Les compétences déclarées non représentées dans les repos publics</div>
+
+  <h2 class="section-h">Vérification par type de formation</h2>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Type de formation</th>
+        <th>Vérifiable par qui</th>
+        <th>Délai</th>
+        <th>Niveau de confiance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Diplôme ingénieur (INSA, Epitech visé)</td>
+        <td>Service scolarité de l'école</td>
+        <td>2 à 5 jours</td>
+        <td>Elevé</td>
+      </tr>
+      <tr>
+        <td>42 (certification Etat)</td>
+        <td>42 Paris directement</td>
+        <td>3 à 7 jours</td>
+        <td>Elevé</td>
+      </tr>
+      <tr>
+        <td>Certifications AWS/Azure/GCP</td>
+        <td>Registres publics en ligne</td>
+        <td>Immédiat</td>
+        <td>Très élevé</td>
+      </tr>
+      <tr>
+        <td>Bootcamp (Le Wagon, Wild Code School)</td>
+        <td>Service alumni de l'organisme</td>
+        <td>2 à 5 jours</td>
+        <td>Moyen</td>
+      </tr>
+      <tr>
+        <td>RNCP / OpenClassrooms</td>
+        <td>francecompetences.fr</td>
+        <td>Immédiat</td>
+        <td>Elevé</td>
+      </tr>
+      <tr>
+        <td>Expériences professionnelles</td>
+        <td>Employeurs précédents</td>
+        <td>3 à 7 jours</td>
+        <td>Elevé</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="danger-box">
+    <strong>Les mensonges les plus courants dans les CV tech</strong>
+    Dans le secteur tech, les mensonges portent davantage sur les compétences que sur les diplômes : niveau de maîtrise d'un langage exagéré ("expert Python" pour un niveau intermédiaire), certifications expirées présentées comme valides, participation à un projet open source réduite à quelques commits présentée comme une contribution majeure, et expériences de freelance fictives difficiles à vérifier.
+  </div>
+
+  <div class="cta-block">
+    <h3>Recrutement tech : vérifiez avant d'embaucher</h3>
+    <p>CVérifié vérifie les expériences professionnelles, les diplômes et les formations auprès des sources officielles. Nos analystes connaissent l'écosystème tech français et international.</p>
+    <button class="btn-cta" onclick="window.location='../commander.html'">Vérifier un profil tech</button>
+  </div>
+
+  <h2 class="section-h">Questions fréquentes</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">Comment vérifier un diplôme de l'école 42 ?</button>
+      <div class="faq-a"><p>42 délivre une attestation de niveau (équivalent Bac+3 ou Bac+5 selon le parcours) reconnue par l'Etat. La vérification s'effectue en contactant directement le service des admissions de 42 Paris ou de l'antenne concernée. 42 ne dispose pas de registre public en ligne : la confirmation passe obligatoirement par un contact officiel avec l'école.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Les certifications AWS, Azure ou GCP sont-elles vérifiables ?</button>
+      <div class="faq-a"><p>Oui, toutes les trois disposent de registres publics vérifiables en ligne. AWS : aws.amazon.com/verification, Azure : learn.microsoft.com/certifications, Google Cloud : google.accredible.com. La vérification prend moins de 5 minutes. Demandez au candidat le lien de partage de son badge numérique pour aller encore plus vite.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Un profil GitHub suffit-il à vérifier les compétences d'un développeur ?</button>
+      <div class="faq-a"><p>GitHub confirme l'activité réelle d'un développeur, mais ne vérifie pas les diplômes ou expériences déclarées. Un profil GitHub actif avec des projets pertinents est un indicateur sérieux, mais il peut être partiellement fabriqué. Il complète sans remplacer la vérification formelle des formations et expériences professionnelles.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Comment distinguer un vrai bootcamp d'une formation sans valeur ?</button>
+      <div class="faq-a"><p>Vérifiez trois éléments : (1) l'enregistrement QUALIOPI de l'organisme (obligatoire pour les formations financées par le CPF), (2) l'enregistrement au RNCP sur francecompetences.fr si le candidat parle de "certification", (3) les avis vérifiés et le taux de placement des anciens élèves. Un bootcamp sérieux peut vous fournir ces informations sans hésitation.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Faut-il vérifier les expériences de freelance sur un CV tech ?</button>
+      <div class="faq-a"><p>Oui, et c'est souvent plus difficile que pour un emploi salarié. Pour les missions freelance, demandez des références clients contactables, des extraits de contrats (avec données confidentielles masquées), ou des rapports de mission. La vérification via un service externe peut confirmer l'existence des sociétés clientes et contacter les interlocuteurs désignés.</p></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="../images/cverifie-logo-white.png" alt="CVérifié">
+        <p>Le service de vérification de CV et diplômes pour les recruteurs français. Résultats certifiés en 3 à 5 jours ouvrés.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Service</h4>
+        <ul>
+          <li><a href="../index.html#comment-ca-marche">Comment ça marche</a></li>
+          <li><a href="../index.html#tarifs">Tarifs</a></li>
+          <li><a href="../commander.html">Commander</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="index.html">Blog</a></li>
+          <li><a href="verification-cv-legal-france.html">Cadre légal</a></li>
+          <li><a href="statistiques-mensonges-cv-france.html">Statistiques</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../index.html#legal">Mentions légales</a></li>
+          <li><a href="../index.html#confidentialite">Confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 CVérifié. Tous droits réservés.</span>
+      <span>Vérification CV et diplômes en France</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;
+    const wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
+    if(!wasOpen)item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CVérifié · Vérification de CV & Diplômes en 48h</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FAF8F3;
+  --cream-dark: #F0EDE5;
+  --ink: #1A1A24;
+  --ink-light: #44444E;
+  --ink-muted: #8A8A94;
+  --green: #2D6A4F;
+  --green-mid: #40916C;
+  --green-light: #52B788;
+  --green-pale: #D8F3DC;
+  --green-ultralight: #F0FAF2;
+  --border: #E0DDD5;
+  --red-soft: #FFF0EE;
+  --red: #C44B4B;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.6;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2;font-weight:600}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{cursor:pointer;font-family:'Outfit',sans-serif}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,248,243,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;
+  padding:0 2rem;height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{
+  display:flex;align-items:center;gap:10px;
+}
+.nav-logo-mark{display:flex;align-items:center}
+.nav-logo-text{
+  font-family:'Playfair Display',serif;
+  font-size:21px;font-weight:600;
+  color:var(--ink);letter-spacing:-0.3px;
+}
+.nav-logo-text .cv{color:var(--green)}
+.logo-nav{height:38px;width:auto;display:block}
+.logo-footer{height:38px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{
+  font-size:14px;font-weight:500;
+  color:var(--ink-light);
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{
+  background:var(--green);color:white;
+  padding:10px 22px;border-radius:8px;border:none;
+  font-size:14px;font-weight:600;
+  transition:background .2s,transform .15s;
+  white-space:nowrap;
+}
+.nav-cta:hover{background:var(--green-mid);transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{
+  padding-top:64px;
+  min-height:100vh;
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background-image:url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1600&q=80');
+  background-size:cover;background-position:center 30%;
+  filter:brightness(0.35) saturate(0.6);
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg, rgba(26,26,36,0.9) 0%, rgba(45,106,79,0.4) 100%);
+}
+.hero-content{
+  position:relative;z-index:2;
+  max-width:1200px;margin:0 auto;
+  padding:6rem 2rem 5rem;
+  display:grid;grid-template-columns:1fr 420px;
+  gap:4rem;align-items:center;
+}
+.hero-left{}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(82,183,136,0.12);
+  border:1px solid rgba(82,183,136,0.35);
+  padding:7px 14px;border-radius:100px;
+  margin-bottom:1.5rem;
+}
+.hero-badge-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:#52B788;
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero h1{
+  font-size:clamp(2.4rem,5vw,3.8rem);
+  color:white;line-height:1.12;
+  margin-bottom:1.5rem;
+  letter-spacing:-0.02em;
+}
+.hero h1 em{
+  color:var(--green-light);
+  font-style:italic;
+}
+.hero-sub{
+  font-size:1.15rem;color:rgba(255,255,255,0.75);
+  max-width:540px;margin-bottom:2.5rem;
+  line-height:1.7;font-weight:300;
+}
+.hero-ctas{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.btn-primary{
+  background:var(--green-light);color:var(--ink);
+  padding:16px 32px;border-radius:10px;border:none;
+  font-size:15px;font-weight:700;
+  transition:all .2s;
+  display:flex;align-items:center;gap:8px;
+}
+.btn-primary:hover{background:#6BC99A;transform:translateY(-2px);box-shadow:0 8px 24px rgba(82,183,136,0.35)}
+.btn-secondary{
+  background:rgba(255,255,255,0.1);
+  border:1.5px solid rgba(255,255,255,0.3);
+  color:white;
+  padding:16px 28px;border-radius:10px;
+  font-size:15px;font-weight:500;
+  transition:all .2s;
+  backdrop-filter:blur(4px);
+}
+.btn-secondary:hover{background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.5)}
+.hero-trust{
+  margin-top:2.5rem;
+  display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;
+}
+.hero-trust-item{
+  display:flex;align-items:center;gap:6px;
+  color:rgba(255,255,255,0.55);font-size:12px;font-weight:400;
+}
+.hero-trust-item svg{width:14px;height:14px;stroke:var(--green-light);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* Hero card flottante */
+.hero-card{
+  background:rgba(250,248,243,0.97);
+  border-radius:20px;
+  padding:2rem;
+  box-shadow:0 40px 80px rgba(0,0,0,0.35);
+}
+.hero-card-title{
+  font-size:13px;font-weight:600;color:var(--ink-muted);
+  text-transform:uppercase;letter-spacing:0.08em;
+  margin-bottom:1.25rem;
+}
+.stat-row{
+  display:flex;flex-direction:column;gap:.85rem;
+  margin-bottom:1.5rem;
+}
+.stat-item{
+  display:flex;align-items:center;gap:12px;
+  padding:.85rem 1rem;
+  border-radius:10px;
+  background:var(--cream);
+  border:1px solid var(--border);
+}
+.stat-num{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;font-weight:700;
+  color:var(--green);line-height:1;
+  min-width:56px;
+}
+.stat-label{font-size:13px;color:var(--ink-light);line-height:1.4}
+.stat-label strong{display:block;color:var(--ink);font-weight:600;font-size:14px}
+.hero-card-cta{
+  width:100%;
+  background:var(--green);color:white;
+  padding:15px;border-radius:10px;border:none;
+  font-size:15px;font-weight:600;
+  transition:background .2s,transform .15s;
+  text-align:center;display:block;
+}
+.hero-card-cta:hover{background:var(--green-mid);transform:translateY(-1px)}
+.hero-card-note{
+  text-align:center;font-size:12px;
+  color:var(--ink-muted);margin-top:.75rem;
+}
+
+/* ── TRUST BAND ── */
+.trust-band{
+  background:var(--ink);
+  padding:1rem 2rem;
+}
+.trust-band-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;
+  gap:3rem;flex-wrap:wrap;
+}
+.trust-item{
+  display:flex;align-items:center;gap:8px;
+  color:rgba(255,255,255,0.65);
+  font-size:13px;font-weight:400;
+}
+.trust-item svg{width:15px;height:15px;stroke:var(--green-light);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ── PROBLEM SECTION ── */
+.section{padding:6rem 2rem}
+.section-inner{max-width:1200px;margin:0 auto}
+.label-tag{
+  display:inline-block;
+  background:var(--green-pale);color:var(--green);
+  padding:5px 14px;border-radius:100px;
+  font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+  margin-bottom:1.25rem;
+}
+.section-title{
+  font-size:clamp(2rem,4vw,3rem);
+  margin-bottom:1.25rem;
+  letter-spacing:-0.02em;
+}
+.section-sub{
+  font-size:1.05rem;color:var(--ink-light);
+  max-width:580px;line-height:1.75;
+}
+
+.problem-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:1.5rem;
+  margin-top:3.5rem;
+}
+.problem-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:2rem 1.75rem;
+}
+.problem-num{
+  font-family:'Playfair Display',serif;
+  font-size:3.5rem;font-weight:700;
+  color:var(--green);
+  line-height:1;margin-bottom:.5rem;
+  letter-spacing:-0.03em;
+}
+.problem-label{
+  font-size:1rem;font-weight:600;color:var(--ink);
+  margin-bottom:.5rem;
+}
+.problem-desc{font-size:.9rem;color:var(--ink-light);line-height:1.6}
+
+.problem-image-wrap{
+  margin-top:4rem;
+  border-radius:20px;overflow:hidden;
+  position:relative;height:360px;
+}
+.problem-image-wrap img{
+  width:100%;height:100%;object-fit:cover;
+  object-position:center 40%;
+}
+.problem-image-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to right, rgba(26,26,36,0.85) 40%, transparent 100%);
+  display:flex;align-items:center;padding:3rem;
+}
+.problem-quote{
+  max-width:460px;
+}
+.problem-quote blockquote{
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem;font-style:italic;
+  color:white;line-height:1.5;
+  margin-bottom:1rem;
+}
+.problem-quote cite{
+  font-size:13px;color:rgba(255,255,255,0.55);
+  font-style:normal;
+}
+
+/* ── TIMELINE ── */
+.timeline-wrap{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;margin-top:4rem;position:relative;
+}
+.timeline-wrap::before{
+  content:'';position:absolute;
+  top:27px;left:calc(12.5% + 4px);right:calc(12.5% + 4px);
+  height:1px;background:var(--border);z-index:0;
+}
+.tl-step{
+  display:flex;flex-direction:column;align-items:center;
+  padding:0 1rem;position:relative;z-index:1;
+}
+.tl-num{
+  width:54px;height:54px;border-radius:50%;
+  background:white;border:1.5px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-size:1.3rem;
+  font-weight:600;color:var(--green);
+  margin-bottom:1.25rem;
+}
+.tl-step.tl-active .tl-num{background:var(--green);color:white;border-color:var(--green)}
+.tl-icon{margin-bottom:.75rem}
+.tl-icon svg{width:36px;height:36px;stroke:var(--green);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.tl-step h3{font-size:.95rem;font-weight:600;color:var(--ink);text-align:center;margin-bottom:.35rem}
+.tl-step p{font-size:.8rem;color:var(--ink-muted);text-align:center;line-height:1.5;margin-bottom:.75rem;flex:1}
+.tl-time{
+  display:inline-block;
+  background:var(--green-pale);color:var(--green);
+  padding:4px 12px;border-radius:100px;
+  font-size:11px;font-weight:700;letter-spacing:.05em;
+}
+.tl-step.tl-active .tl-time{background:var(--green);color:white}
+@media(max-width:768px){
+  .timeline-wrap{grid-template-columns:1fr 1fr;gap:2rem}
+  .timeline-wrap::before{display:none}
+}
+@media(max-width:480px){.timeline-wrap{grid-template-columns:1fr}}
+
+.logos-section{
+  padding:3.5rem 2rem;
+  background:var(--cream-dark);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.logos-title{
+  text-align:center;
+  font-size:12px;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.12em;
+  color:var(--ink-muted);
+  margin-bottom:2rem;
+}
+.logos-grid{
+  display:flex;
+  align-items:center;justify-content:center;
+  gap:1.5rem 2.5rem;flex-wrap:wrap;
+  max-width:1100px;margin:0 auto;
+}
+.logo-item{
+  display:flex;align-items:center;justify-content:center;
+  height:26px;
+  transition:opacity .25s,filter .25s;
+}
+.logo-item img{
+  height:24px;width:auto;max-width:110px;
+  object-fit:contain;
+  filter:brightness(0) saturate(100%) invert(28%) sepia(44%) saturate(554%) hue-rotate(117deg) brightness(88%);
+  opacity:0.6;
+  transition:filter .25s,opacity .25s;
+}
+.logo-item:hover img{
+  filter:brightness(0) saturate(100%) invert(28%) sepia(44%) saturate(554%) hue-rotate(117deg) brightness(100%);
+  opacity:1;
+}
+.logo-text-fb{
+  display:none;
+  font-family:'Outfit',sans-serif;
+  font-size:11px;font-weight:600;
+  color:var(--green);
+  opacity:0.55;
+  letter-spacing:-0.01em;
+  white-space:nowrap;
+}
+
+/* ── PRICING ── */
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+  margin-top:3.5rem;
+}
+.pricing-card{
+  background:white;
+  border:1.5px solid var(--border);
+  border-radius:18px;
+  padding:2rem 1.75rem;
+  position:relative;
+  transition:transform .25s,box-shadow .25s;
+  display:flex;flex-direction:column;
+}
+.pricing-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(45,106,79,0.1)}
+.pricing-card.featured{
+  border-color:var(--green);
+  background:var(--ink);
+}
+.pricing-badge{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:var(--green-light);color:var(--ink);
+  padding:4px 16px;border-radius:100px;
+  font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+  white-space:nowrap;
+}
+.pricing-plan{
+  font-size:12px;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.1em;
+  color:var(--ink-muted);margin-bottom:.75rem;
+}
+.pricing-card.featured .pricing-plan{color:rgba(255,255,255,0.5)}
+.pricing-price{
+  font-family:'Playfair Display',serif;
+  font-size:3rem;font-weight:700;
+  color:var(--ink);line-height:1;
+  margin-bottom:.25rem;letter-spacing:-0.03em;
+}
+.pricing-card.featured .pricing-price{color:white}
+.pricing-price sup{font-size:1.5rem;vertical-align:super}
+.pricing-per{font-size:14px;color:var(--ink-muted);margin-bottom:1.5rem}
+.pricing-card.featured .pricing-per{color:rgba(255,255,255,0.45)}
+.pricing-desc{
+  font-size:.9rem;color:var(--ink-light);
+  margin-bottom:1.5rem;line-height:1.6;
+  padding-bottom:1.5rem;
+  border-bottom:1px solid var(--border);
+}
+.pricing-card.featured .pricing-desc{color:rgba(255,255,255,0.6);border-bottom-color:rgba(255,255,255,0.12)}
+.pricing-features{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem;flex:1}
+.pricing-features li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:.9rem;color:var(--ink-light);
+}
+.pricing-card.featured .pricing-features li{color:rgba(255,255,255,0.7)}
+.check-icon{
+  width:18px;height:18px;min-width:18px;
+  border-radius:50%;
+  background:var(--green-pale);
+  display:flex;align-items:center;justify-content:center;
+  margin-top:2px;
+}
+.check-icon svg{width:10px;height:10px;stroke:var(--green);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.pricing-card.featured .check-icon{background:rgba(82,183,136,0.2)}
+.pricing-card.featured .check-icon svg{stroke:var(--green-light)}
+.pricing-btn{
+  width:100%;padding:14px;border-radius:10px;border:none;
+  font-size:14px;font-weight:600;
+  transition:all .2s;
+  cursor:pointer;
+}
+.pricing-btn.outline{
+  background:transparent;
+  border:1.5px solid var(--border);
+  color:var(--ink);
+}
+.pricing-btn.outline:hover{border-color:var(--green);color:var(--green);background:var(--green-ultralight)}
+.pricing-btn.solid{
+  background:var(--green-light);color:var(--ink);
+}
+.pricing-btn.solid:hover{background:#6BC99A;transform:translateY(-1px)}
+.pricing-btn.white{
+  background:white;color:var(--ink);
+}
+.pricing-btn.white:hover{background:var(--cream);transform:translateY(-1px)}
+.pricing-note{
+  text-align:center;font-size:13px;color:var(--ink-muted);
+  margin-top:1.5rem;
+}
+.pricing-note a{color:var(--green);text-decoration:underline}
+
+/* ── TESTIMONIALS ── */
+.testimonials-section{background:var(--cream-dark);padding:6rem 2rem;border-top:1px solid var(--border)}
+.testimonials-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;margin-top:3.5rem;
+}
+.testimonial-card{
+  background:white;border:1px solid var(--border);
+  border-radius:16px;padding:1.75rem;
+  display:flex;flex-direction:column;
+}
+.testimonial-stars{color:var(--green);font-size:14px;margin-bottom:1rem;letter-spacing:2px}
+.testimonial-text{
+  font-size:.95rem;color:var(--ink-light);
+  line-height:1.7;margin-bottom:1.5rem;
+  font-style:italic;flex:1;
+}
+.testimonial-author{
+  display:flex;align-items:center;gap:10px;
+  margin-top:auto;
+}
+.author-avatar{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--green-pale);
+  overflow:hidden;flex-shrink:0;
+}
+.author-avatar img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;
+}
+.author-name{font-size:14px;font-weight:600;color:var(--ink)}
+.author-title{font-size:12px;color:var(--ink-muted)}
+
+/* ── CANDIDATE SECTION ── */
+.candidate-section{
+  padding:6rem 2rem;
+  background:var(--ink);
+  overflow:hidden;position:relative;
+}
+.candidate-section::before{
+  content:'';position:absolute;
+  top:-200px;right:-200px;
+  width:600px;height:600px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(45,106,79,0.3) 0%, transparent 70%);
+}
+.candidate-inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:center;
+  position:relative;z-index:1;
+}
+.candidate-label{
+  display:inline-block;
+  background:rgba(82,183,136,0.15);
+  border:1px solid rgba(82,183,136,0.3);
+  color:var(--green-light);
+  padding:5px 14px;border-radius:100px;
+  font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+  margin-bottom:1.25rem;
+}
+.candidate-title{
+  font-size:clamp(1.8rem,3.5vw,2.8rem);
+  color:white;margin-bottom:1.25rem;
+  letter-spacing:-0.02em;
+}
+.candidate-title em{color:var(--green-light);font-style:italic}
+.candidate-sub{
+  font-size:1rem;color:rgba(255,255,255,0.6);
+  line-height:1.75;margin-bottom:2.5rem;font-weight:300;
+}
+.candidate-feats{display:flex;flex-direction:column;gap:.85rem;margin-bottom:2.5rem}
+.candidate-feat{
+  display:flex;align-items:center;gap:12px;
+  color:rgba(255,255,255,0.8);font-size:.95rem;
+}
+.feat-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--green-light);min-width:8px;
+}
+.candidate-cta-btn{
+  background:white;color:var(--ink);
+  padding:16px 32px;border-radius:10px;border:none;
+  font-size:15px;font-weight:600;
+  transition:all .2s;display:inline-block;
+}
+.candidate-cta-btn:hover{background:var(--cream);transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,255,255,0.15)}
+
+.badge-preview{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:20px;
+  padding:2rem;
+}
+.badge-card{
+  background:white;border-radius:16px;
+  padding:1.75rem;margin-bottom:1.25rem;
+}
+.badge-top{
+  display:flex;align-items:center;gap:12px;margin-bottom:1.25rem;
+}
+.badge-avatar{
+  width:52px;height:52px;border-radius:50%;
+  background:var(--green-pale);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:600;color:var(--green);
+}
+.badge-person{font-size:15px;font-weight:600;color:var(--ink)}
+.badge-person-sub{font-size:13px;color:var(--ink-muted)}
+.badge-items{display:flex;flex-direction:column;gap:.6rem}
+.badge-item{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.6rem .85rem;background:var(--cream);border-radius:8px;
+}
+.badge-item-label{font-size:13px;color:var(--ink-light)}
+.badge-status{
+  display:flex;align-items:center;gap:5px;
+  font-size:12px;font-weight:600;color:var(--green);
+}
+.badge-status-dot{width:6px;height:6px;border-radius:50%;background:var(--green-light)}
+.badge-cta-note{
+  text-align:center;
+  font-size:13px;color:rgba(255,255,255,0.5);
+}
+.badge-cta-note strong{color:rgba(255,255,255,0.8);font-weight:500}
+
+/* ── FAQ ── */
+.faq-section{padding:6rem 2rem;background:white}
+.faq-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1rem;margin-top:3.5rem;
+  align-items:start;
+}
+.faq-item{
+  border:1px solid var(--border);border-radius:12px;
+  overflow:hidden;
+}
+.faq-q{
+  padding:1.25rem 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;cursor:pointer;
+  font-size:15px;font-weight:600;color:var(--ink);
+  background:white;border:none;width:100%;text-align:left;
+}
+.faq-q:hover{background:var(--cream)}
+.faq-icon{
+  min-width:22px;height:22px;
+  border-radius:50%;border:1.5px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .25s,background .2s,border-color .2s;
+}
+.faq-icon svg{width:10px;height:10px;stroke:var(--ink);fill:none;stroke-width:2.5;stroke-linecap:round}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--green);border-color:var(--green)}
+.faq-item.open .faq-icon svg{stroke:white}
+.faq-a{
+  padding:0 1.5rem;
+  max-height:0;overflow:hidden;
+  transition:max-height .35s ease,padding .25s ease;
+  font-size:.9rem;color:var(--ink-light);line-height:1.7;
+}
+.faq-item.open .faq-a{padding:0 1.5rem 1.5rem;max-height:400px}
+
+/* ── FINAL CTA ── */
+.final-cta{
+  background:var(--green);
+  padding:6rem 2rem;text-align:center;
+}
+.final-cta h2{
+  font-size:clamp(2rem,4vw,3rem);
+  color:white;margin-bottom:1rem;
+  letter-spacing:-0.02em;
+}
+.final-cta p{
+  font-size:1.1rem;color:rgba(255,255,255,0.75);
+  max-width:540px;margin:0 auto 2.5rem;
+  line-height:1.7;font-weight:300;
+}
+.final-ctas{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap}
+.btn-white{
+  background:white;color:var(--green);
+  padding:16px 32px;border-radius:10px;border:none;
+  font-size:15px;font-weight:700;
+  transition:all .2s;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-white:hover{background:var(--cream);transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,0.15)}
+.btn-ghost-white{
+  background:transparent;
+  border:1.5px solid rgba(255,255,255,0.45);
+  color:white;
+  padding:16px 28px;border-radius:10px;
+  font-size:15px;font-weight:500;
+  transition:all .2s;
+}
+.btn-ghost-white:hover{border-color:white;background:rgba(255,255,255,0.1)}
+.final-guarantee{
+  margin-top:2rem;
+  display:flex;align-items:center;justify-content:center;gap:2rem;
+  flex-wrap:wrap;
+}
+.guarantee-item{
+  display:flex;align-items:center;gap:6px;
+  color:rgba(255,255,255,0.65);font-size:13px;
+}
+.guarantee-item svg{width:14px;height:14px;stroke:rgba(255,255,255,0.8);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.final-trust-logos{
+  display:flex;align-items:center;justify-content:center;gap:3rem;
+  margin-top:2.5rem;
+}
+.final-trust-img{
+  height:44px;width:auto;
+  opacity:0.92;
+  transition:opacity .2s;
+}
+.final-trust-img:hover{opacity:1}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);
+  padding:4rem 2rem 2rem;
+  color:rgba(255,255,255,0.5);
+}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{
+  display:grid;grid-template-columns:260px 180px 1fr 1fr;
+  gap:3rem;padding-bottom:3rem;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.footer-col h4{
+  font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);
+  text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.25rem;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.4);transition:color .2s}
+.footer-col ul li a:hover{color:var(--green-light)}
+.footer-bottom{
+  padding-top:2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;font-size:13px;
+}
+.footer-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-legal a{color:rgba(255,255,255,0.3);transition:color .2s}
+.footer-legal a:hover{color:rgba(255,255,255,0.65)}
+.footer-logo-text{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:600;color:white;
+}
+
+/* Social icons */
+.footer-social{display:flex;gap:.75rem;margin-bottom:1.5rem}
+.social-icon{
+  width:34px;height:34px;border-radius:8px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.1);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,0.5);
+  transition:all .2s;
+}
+.social-icon:hover{background:var(--green);border-color:var(--green);color:white}
+.social-icon svg{width:15px;height:15px}
+
+/* Trust logos */
+.footer-trust{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.trust-logo{
+  height:28px;width:auto;
+  filter:brightness(0) invert(1) opacity(0.35);
+  transition:opacity .2s;
+}
+.trust-logo:hover{opacity:.6}
+.trust-badge-rgpd{
+  display:flex;align-items:center;gap:5px;
+  font-size:11px;font-weight:600;letter-spacing:.04em;
+  color:rgba(255,255,255,0.35);
+  border:1px solid rgba(255,255,255,0.12);
+  padding:4px 8px;border-radius:6px;
+}
+
+/* Ratings */
+.footer-stars-row{margin-bottom:.75rem}
+.footer-stars{color:var(--green-light);font-size:16px;letter-spacing:2px}
+.footer-rating-list{display:flex;flex-direction:column;gap:.6rem}
+.rating-item{
+  display:flex;align-items:center;gap:7px;
+  font-size:13px;color:rgba(255,255,255,0.45);
+}
+.rating-item strong{color:rgba(255,255,255,0.7);font-weight:600}
+.rating-item svg{flex-shrink:0}
+
+@media(max-width:1024px){
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .footer-top{grid-template-columns:1fr}
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .hero-content{grid-template-columns:1fr;gap:3rem}
+  .hero-card{max-width:500px}
+  .problem-grid{grid-template-columns:1fr 1fr}
+  .steps-grid{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .steps-grid::before{display:none}
+  .pricing-grid{grid-template-columns:1fr}
+  .testimonials-grid{grid-template-columns:1fr 1fr}
+  .candidate-inner{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .problem-grid{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:1fr}
+  .testimonials-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .hero h1{font-size:2.2rem}
+  .hero-content{padding:4rem 1.5rem 3rem}
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.hero-left>*{animation:fadeInUp .7s ease both}
+.hero-badge{animation-delay:.1s}
+.hero h1{animation-delay:.2s}
+.hero-sub{animation-delay:.3s}
+.hero-ctas{animation-delay:.4s}
+.hero-trust{animation-delay:.5s}
+.hero-card{animation:fadeInUp .8s .3s ease both}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════ NAV ═══════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="index.html"><img src="images/cverifie-logo-green.png" alt="CVérifié" class="logo-nav"></a>
+    </div>
+    <div class="nav-links">
+      <a href="#comment">Comment ça marche</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#candidats">Pour les candidats</a>
+      <a href="#faq">FAQ</a>
+      <a href="demo.html" style="color:var(--green);font-weight:600">Tester</a>
+      <a href="blog/index.html">Blog</a>
+    </div>
+    <button class="nav-cta" onclick="window.location='commander.html'">
+      Lancer une vérification
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><path d="M7 1.2L2 3.4V7.6C2 10.5 4.2 13.1 7 14C9.8 13.1 12 10.5 12 7.6V3.4L7 1.2Z" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.7)" stroke-width="0.8"/><polyline points="4.5,7 6.5,9.2 9.8,5" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        <span style="font-size:11px;font-weight:600;letter-spacing:.06em;color:rgba(255,255,255,0.85)">RGPD conforme</span>
+      </div>
+      <h1>
+        1 CV sur 8<br>
+        cache un mensonge <em>majeur.</em><br>
+        Vérifiez en 2 minutes.
+      </h1>
+      <p class="hero-sub">
+        La vérification de diplômes et d'expériences professionnelles sans commercial, sans engagement, et sans ralentir votre recrutement. Résultat sous 48h ouvrées.
+      </p>
+      <div class="hero-ctas">
+        <button class="btn-primary" onclick="window.location='commander.html'">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 7,12 13,4"/></svg>
+          Vérifier un candidat
+        </button>
+        <button class="btn-secondary" onclick="document.getElementById('comment').scrollIntoView({behavior:'smooth'})">
+          Voir comment ça marche
+        </button>
+      </div>
+      <div class="hero-trust">
+        <span class="hero-trust-item">
+          <svg viewBox="0 0 16 16"><path d="M8 2L9.6 6.4H14.4L10.4 8.8L12 13.2L8 10.8L4 13.2L5.6 8.8L1.6 6.4H6.4Z"/></svg>
+          Données hébergées en France
+        </span>
+        <span class="hero-trust-item">
+          <svg viewBox="0 0 16 16"><rect x="3" y="7" width="10" height="7" rx="1"/><path d="M5 7V5a3 3 0 016 0v2"/></svg>
+          ISO 27001 · CNIL
+        </span>
+        <span class="hero-trust-item">
+          <svg viewBox="0 0 16 16"><polyline points="3,8 7,12 13,4"/></svg>
+          Sans abonnement
+        </span>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <p class="hero-card-title">Pourquoi c'est urgent</p>
+      <div class="stat-row">
+        <div class="stat-item">
+          <span class="stat-num">1/8</span>
+          <div class="stat-label">
+            <strong>Mensonge majeur</strong>
+            faux diplôme, dates inventées, poste inexistant
+          </div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">65%</span>
+          <div class="stat-label">
+            <strong>Des CV comportent un écart</strong>
+            mineur ou majeur avec la réalité
+          </div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">6 500€</span>
+          <div class="stat-label">
+            <strong>Coût minimum</strong>
+            d'une mauvaise embauche pour votre entreprise
+          </div>
+        </div>
+      </div>
+      <a href="#tarifs" class="hero-card-cta">
+        Lancer une vérification dès 14,90 €
+      </a>
+      <p class="hero-card-note">Sans inscription. Résultat garanti sous 48h ouvrées.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ TRUST BAND ═══════════════════════ -->
+<div class="trust-band">
+  <div class="trust-band-inner">
+    <span class="trust-item">
+      <svg viewBox="0 0 16 16"><path d="M8 1L9.6 5.4H14.4L10.4 7.8L12 12.2L8 9.8L4 12.2L5.6 7.8L1.6 5.4H6.4Z"/></svg>
+      100% conforme RGPD & Code du Travail
+    </span>
+    <span class="trust-item">
+      <svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="10" rx="1"/><polyline points="2,7 8,11 14,7"/></svg>
+      Consentement candidat géré automatiquement
+    </span>
+    <span class="trust-item">
+      <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><polyline points="8,5 8,8 10,10"/></svg>
+      48h ouvrées garanti
+    </span>
+    <span class="trust-item">
+      <svg viewBox="0 0 16 16"><path d="M8 2c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 10c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/></svg>
+      Données stockées exclusivement en France
+    </span>
+  </div>
+</div>
+
+<!-- ═══════════════════════ THE PROBLEM ═══════════════════════ -->
+<section class="section" id="probleme">
+  <div class="section-inner">
+    <span class="label-tag">Le problème</span>
+    <h2 class="section-title">
+      Les recruteurs font confiance.<br>
+      Les chiffres disent autre chose.
+    </h2>
+    <p class="section-sub">
+      En France, 70% des employeurs ne vérifient pas les CV, faute de temps, de méthode, et d'outil accessible. C'est exactement là que CVérifié intervient.
+    </p>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-num">65%</div>
+        <div class="problem-label">des CV comportent au moins un écart</div>
+        <p class="problem-desc">Dates approximatives, intitulés gonflés, missions exagérées. L'écart "mineur" qui devient un problème majeur après l'embauche.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">12%</div>
+        <div class="problem-label">contiennent un mensonge flagrant</div>
+        <p class="problem-desc">Faux diplôme, entreprise inexistante, poste jamais occupé. 1 candidat sur 8 ment sur un élément fondamental de son parcours.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">70%</div>
+        <div class="problem-label">des employeurs ne vérifient rien</div>
+        <p class="problem-desc">Parce que c'est chronophage, légalement complexe, et qu'il n'existait pas d'outil simple pour les entreprises sans DRH dédié.</p>
+      </div>
+    </div>
+
+    <div class="problem-image-wrap">
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80" alt="Recruteur analysant des documents">
+      <div class="problem-image-overlay">
+        <div class="problem-quote">
+          <blockquote>« Un faux diplôme est aujourd'hui indiscernable d'un vrai à l'œil nu. Même moi, après 20 ans dans le métier, je ne pourrais pas vous dire lequel est authentique. »</blockquote>
+          <cite>Emmanuel C., fondateur d'un cabinet de vérification, Le Figaro</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ HOW IT WORKS ═══════════════════════ -->
+<section style="background:white;padding:6rem 2rem" id="comment">
+  <div class="section-inner">
+    <span class="label-tag">Comment ça marche</span>
+    <h2 class="section-title">De zéro au rapport en 48h.<br>Vous faites 2 minutes de travail.</h2>
+    <p class="section-sub">On gère tout : le formulaire légal, le consentement candidat, les vérifications, le rapport.</p>
+
+    <div class="timeline-wrap">
+
+      <div class="tl-step tl-active">
+        <div class="tl-num">1</div>
+        <div class="tl-icon">
+          <svg viewBox="0 0 36 36">
+            <rect x="4" y="6" width="28" height="24" rx="3"/>
+            <path d="M12 6V4M24 6V4"/>
+            <line x1="9" y1="16" x2="27" y2="16"/>
+            <path d="M18 21 L18 28 M15 25 L18 28 L21 25"/>
+          </svg>
+        </div>
+        <h3>Vous soumettez</h3>
+        <p>CV + email du candidat. Paiement CB sécurisé. C'est tout.</p>
+        <span class="tl-time">2 minutes</span>
+      </div>
+
+      <div class="tl-step">
+        <div class="tl-num">2</div>
+        <div class="tl-icon">
+          <svg viewBox="0 0 36 36">
+            <rect x="4" y="8" width="28" height="20" rx="3"/>
+            <polyline points="4,11 18,21 32,11"/>
+            <circle cx="28" cy="26" r="5" fill="var(--green-pale)" stroke="var(--green)" stroke-width="1.5"/>
+            <polyline points="25.5,26 27.5,28 30.5,24" stroke="var(--green)" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <h3>Accord automatique</h3>
+        <p>Le candidat reçoit et signe le consentement RGPD. Aucune action de votre part.</p>
+        <span class="tl-time">Automatique</span>
+      </div>
+
+      <div class="tl-step">
+        <div class="tl-num">3</div>
+        <div class="tl-icon">
+          <svg viewBox="0 0 36 36">
+            <circle cx="16" cy="16" r="10"/>
+            <line x1="23" y1="23" x2="31" y2="31"/>
+            <polyline points="11,16 15,20 21,12" stroke="var(--green)" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>Nous vérifions</h3>
+        <p>Universités, anciens employeurs, bases de données. Diplômes et expériences contrôlés.</p>
+        <span class="tl-time">En cours</span>
+      </div>
+
+      <div class="tl-step">
+        <div class="tl-num">4</div>
+        <div class="tl-icon">
+          <svg viewBox="0 0 36 36">
+            <rect x="6" y="3" width="24" height="30" rx="3"/>
+            <line x1="12" y1="13" x2="24" y2="13"/>
+            <line x1="12" y1="18" x2="24" y2="18"/>
+            <line x1="12" y1="23" x2="19" y2="23"/>
+            <circle cx="27" cy="27" r="6" fill="var(--green)" stroke="none"/>
+            <polyline points="24.5,27 26.5,29 29.5,24.5" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Rapport livré</h3>
+        <p>Chaque point : Confirmé, Écart détecté, ou Non vérifiable. Lisible en 30 secondes.</p>
+        <span class="tl-time">Sous 48h ✓</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ DEMO TEASER ═══════════════════════ -->
+<section style="background:var(--ink);padding:5rem 2rem;position:relative;overflow:hidden">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 400px;gap:4rem;align-items:center">
+
+    <div style="position:relative;z-index:1">
+      <span style="display:inline-block;background:rgba(82,183,136,0.12);border:1px solid rgba(82,183,136,0.3);color:var(--green-light);padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.5rem">Essayez en direct</span>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,2.9rem);color:white;margin-bottom:1.25rem;letter-spacing:-0.02em;line-height:1.15">
+        Testez l'interface<br><em style="color:var(--green-light);font-style:italic">gratuitement.</em>
+      </h2>
+      <p style="font-size:1.05rem;color:rgba(255,255,255,0.55);line-height:1.75;max-width:480px;margin-bottom:2rem;font-weight:300">
+        Deposez n'importe quel CV et voyez comment CVérifié extrait les informations, interroge les bases de donnees et detecte les ecarts en 30 secondes. Sans inscription.
+      </p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="demo.html" style="background:var(--green-light);color:var(--ink);padding:15px 32px;border-radius:10px;font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:8px;text-decoration:none;box-shadow:0 4px 20px rgba(82,183,136,0.3)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polygon points="5,3 19,12 5,21"/></svg>
+          Tester l'interface
+        </a>
+        <a href="#tarifs" style="background:rgba(255,255,255,0.07);border:1.5px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.75);padding:15px 28px;border-radius:10px;font-size:15px;font-weight:500;display:inline-flex;align-items:center;text-decoration:none">
+          Voir les tarifs
+        </a>
+      </div>
+      <p style="margin-top:1.25rem;font-size:12px;color:rgba(255,255,255,0.25)">
+        Demonstration uniquement &mdash; donnees entierement fictives
+      </p>
+    </div>
+
+    <!-- Mini dashboard preview card -->
+    <div style="background:rgba(250,248,243,0.97);border-radius:20px;padding:1.6rem;box-shadow:0 40px 80px rgba(0,0,0,0.45);position:relative;z-index:1">
+      <!-- Score header -->
+      <div style="background:var(--ink);border-radius:14px;padding:1rem 1.2rem;display:flex;align-items:center;gap:1.1rem;margin-bottom:1rem">
+        <div style="position:relative;width:68px;height:68px;flex-shrink:0">
+          <svg viewBox="0 0 70 70" width="68" height="68">
+            <circle cx="35" cy="35" r="28" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="5"/>
+            <circle cx="35" cy="35" r="28" fill="none" stroke="#52B788" stroke-width="5"
+              stroke-dasharray="175.93" stroke-dashoffset="15.83" stroke-linecap="round"
+              transform="rotate(-90 35 35)"/>
+          </svg>
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
+            <span style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:white;line-height:1">91</span>
+            <span style="font-size:9px;color:rgba(255,255,255,0.4)">/100</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:.07em;text-transform:uppercase;margin-bottom:.2rem">Analyse · Simulee</div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.05rem;color:white;margin-bottom:.35rem">Sarah Lambert</div>
+          <span style="display:inline-flex;align-items:center;gap:5px;background:rgba(82,183,136,0.18);border:1px solid rgba(82,183,136,0.3);padding:2px 10px;border-radius:100px;font-size:10px;font-weight:600;color:#52B788">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,4 3,6 7,2"/></svg>
+            Risque faible
+          </span>
+        </div>
+      </div>
+      <!-- Items -->
+      <div style="display:flex;flex-direction:column;gap:.45rem">
+        <div style="display:flex;align-items:center;gap:.65rem;padding:.6rem .8rem;border-radius:9px;border:1px solid var(--border);background:white">
+          <div style="width:22px;height:22px;border-radius:50%;background:var(--green-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:.77rem;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Master GE &middot; HEC Paris &middot; 2014</div>
+            <div style="font-size:.7rem;color:var(--ink-muted)">Confirme par l'etablissement</div>
+          </div>
+          <span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:100px;background:var(--green-pale);color:var(--green);white-space:nowrap">Confirme</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:.65rem;padding:.6rem .8rem;border-radius:9px;border:1px solid var(--border);background:white">
+          <div style="width:22px;height:22px;border-radius:50%;background:var(--green-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:.77rem;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Directrice Marketing &middot; Groupe Innovance</div>
+            <div style="font-size:.7rem;color:var(--ink-muted)">Poste et dates confirmes</div>
+          </div>
+          <span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:100px;background:var(--green-pale);color:var(--green);white-space:nowrap">Confirme</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:.65rem;padding:.6rem .8rem;border-radius:9px;border:1px solid rgba(212,134,10,0.25);background:#FFF8EC">
+          <div style="width:22px;height:22px;border-radius:50%;background:rgba(212,134,10,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D4860A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/></svg>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:.77rem;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Start-Up Nexalia &middot; duree declaree 3 ans</div>
+            <div style="font-size:.7rem;color:#7A5000">Duree reelle : 19 mois detectes</div>
+          </div>
+          <span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:100px;border:1px solid rgba(212,134,10,0.25);color:#D4860A;white-space:nowrap;background:transparent">Ecart</span>
+        </div>
+      </div>
+      <a href="demo.html" style="display:block;text-align:center;margin-top:.9rem;padding:.8rem;background:var(--green);color:white;border-radius:10px;font-size:13px;font-weight:700;text-decoration:none">
+        Voir le rapport complet &rarr;
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ LOGOS / PARTENAIRES ═══════════════════════ -->
+<div class="logos-section">
+  <p class="logos-title">Nous vérifions auprès des sources officielles : établissements d'enseignement supérieur, Ministère du Travail &amp; CNIL</p>
+  <div class="logos-grid">
+
+    <div class="logo-item"><img src="images/logos/hec.svg" alt="HEC Paris" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">HEC Paris</span></div>
+    <div class="logo-item"><span class="logo-text-fb" style="display:flex">Sciences Po</span></div>
+    <div class="logo-item"><img src="images/logos/polytechnique.png" alt="Polytechnique" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Polytechnique</span></div>
+    <div class="logo-item"><span class="logo-text-fb" style="display:flex">ESSEC</span></div>
+    <div class="logo-item"><img src="images/logos/escp.svg" alt="ESCP" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">ESCP</span></div>
+    <div class="logo-item"><img src="images/logos/centralesupelec.png" alt="CentraleSupélec" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">CentraleSupélec</span></div>
+    <div class="logo-item"><img src="images/logos/sorbonne.svg" alt="Sorbonne Université" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Sorbonne</span></div>
+    <div class="logo-item"><span class="logo-text-fb" style="display:flex">Paris 1</span></div>
+    <div class="logo-item"><img src="images/logos/edhec.svg" alt="EDHEC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">EDHEC</span></div>
+    <div class="logo-item"><img src="images/logos/emlyon.svg" alt="emlyon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">emlyon</span></div>
+    <div class="logo-item"><img src="images/logos/grenoble-em.png" alt="Grenoble EM" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Grenoble EM</span></div>
+    <div class="logo-item"><img src="images/logos/kedge.svg" alt="KEDGE" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">KEDGE</span></div>
+    <div class="logo-item"><img src="images/logos/neoma.svg" alt="NEOMA" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">NEOMA</span></div>
+    <div class="logo-item"><img src="images/logos/skema.svg" alt="SKEMA" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">SKEMA</span></div>
+    <div class="logo-item"><span class="logo-text-fb" style="display:flex">Dauphine</span></div>
+    <div class="logo-item"><img src="images/logos/ens-paris.png" alt="ENS Paris" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">ENS Paris</span></div>
+    <div class="logo-item"><img src="images/logos/mines-paris.png" alt="Mines ParisTech" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Mines Paris</span></div>
+    <div class="logo-item"><span class="logo-text-fb" style="display:flex">Télécom Paris</span></div>
+    <div class="logo-item"><img src="images/logos/insa-lyon.png" alt="INSA Lyon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">INSA Lyon</span></div>
+    <div class="logo-item"><img src="images/logos/univ-lyon.svg" alt="Université de Lyon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Univ. Lyon</span></div>
+    <div class="logo-item"><img src="images/logos/aix-marseille.svg" alt="Aix-Marseille" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Aix-Marseille</span></div>
+    <div class="logo-item"><img src="images/logos/bordeaux.png" alt="Bordeaux" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Bordeaux</span></div>
+    <div class="logo-item"><span class="logo-text-fb" style="display:flex">Strasbourg</span></div>
+    <div class="logo-item"><img src="images/logos/nantes.png" alt="Nantes" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Univ. Nantes</span></div>
+    <div class="logo-item"><img src="images/logos/upec.svg" alt="UPEC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Paris-Est</span></div>
+    <div class="logo-item"><span class="logo-text-fb" style="display:flex">Rennes SB</span></div>
+    <div class="logo-item"><img src="images/logos/tbs.svg" alt="TBS Education" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">TBS</span></div>
+    <div class="logo-item"><img src="images/logos/audencia.svg" alt="Audencia" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Audencia</span></div>
+    <div class="logo-item"><span class="logo-text-fb" style="display:flex">INSEAD</span></div>
+    <div class="logo-item"><img src="images/logos/arts-metiers.svg" alt="Arts et Métiers" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">Arts et Métiers</span></div>
+    <div class="logo-item"><img src="images/logos/ponts.png" alt="École des Ponts" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">École des Ponts</span></div>
+    <div class="logo-item"><img src="images/logos/utc.svg" alt="UTC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="logo-text-fb">UTC</span></div>
+    <div class="logo-item"><span class="logo-text-fb" style="display:flex">ESPCI Paris</span></div>
+    <div class="logo-item"><span class="logo-text-fb" style="display:flex">Min. Travail</span></div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════ MINI CALCULATEUR ROI ═══════════════════════ -->
+<section id="roi-estimateur" style="background:white;padding:5rem 2rem;position:relative;overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+
+  <div style="max-width:860px;margin:0 auto;position:relative;z-index:1">
+
+    <!-- En-tête -->
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <span style="display:inline-flex;align-items:center;gap:7px;background:var(--green-pale);color:var(--green);padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.25rem">
+        <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="2" y="3" width="12" height="10" rx="2"/><path d="M8 7v3M6 9h4"/></svg>
+        Outil interactif gratuit
+      </span>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.75rem,3.5vw,2.4rem);color:var(--ink);margin-bottom:.85rem;letter-spacing:-0.02em;line-height:1.2">
+        Combien coûte <em style="color:var(--green);font-style:italic">un mauvais recrutement</em> ?
+      </h2>
+      <p style="font-size:.9rem;color:var(--ink-muted);font-weight:400">Deux paramètres. Résultat en temps réel.</p>
+    </div>
+
+    <!-- Carte calculateur -->
+    <div id="mini-calc-grid" style="display:grid;grid-template-columns:1fr 1fr;border-radius:18px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.10),0 1px 0 rgba(0,0,0,0.06);border:1px solid var(--border)">
+
+      <!-- GAUCHE : inputs -->
+      <div style="background:var(--cream);padding:2.25rem 2rem;border-right:1px solid var(--border)">
+
+        <!-- Salaire -->
+        <div style="margin-bottom:1.75rem">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem">
+            <span style="font-size:14px;font-weight:600;color:var(--ink)">Salaire brut annuel</span>
+            <span id="mini-label-sal" style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--green)">45 000 €</span>
+          </div>
+          <input type="range" id="mini-sl-sal" min="20000" max="130000" step="1000" value="45000" oninput="miniCalc()">
+          <div style="display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink-muted);margin-top:.45rem"><span>20 000 €</span><span>130 000 €</span></div>
+        </div>
+
+        <!-- Niveau du poste -->
+        <div style="margin-bottom:1.75rem">
+          <label style="display:block;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:.8rem">Niveau du poste</label>
+          <select id="mini-sel-niv" onchange="miniCalc()">
+            <option value="employe">Employé / Assistant</option>
+            <option value="technicien" selected>Technicien / Commercial</option>
+            <option value="cadre">Cadre</option>
+            <option value="dirigeant">Cadre dirigeant</option>
+          </select>
+        </div>
+
+        <!-- Note paramètres fixes -->
+        <p style="font-size:11.5px;color:var(--ink-muted);line-height:1.65">
+          Basé sur 6 mois avant détection, recrutement interne.
+          <a href="blog/calculateur-cout-mauvais-recrutement.html" style="color:var(--green);font-weight:600">Ajuster tous les paramètres</a>
+        </p>
+      </div>
+
+      <!-- DROITE : résultat (verre sombre) -->
+      <div style="position:relative;overflow:hidden;padding:2.25rem 2rem;background:linear-gradient(150deg,rgba(18,38,28,0.95) 0%,rgba(10,22,16,0.98) 50%,rgba(14,30,22,0.96) 100%);box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.42),inset 1px 0 0 rgba(255,255,255,0.16),inset 0 -1px 0 rgba(0,0,0,0.28),inset 0 0 90px rgba(0,0,0,0.16)">
+
+        <!-- Reflet supérieur -->
+        <div style="position:absolute;top:0;left:0;right:0;height:42%;background:linear-gradient(180deg,rgba(255,255,255,0.048) 0%,transparent 100%);pointer-events:none"></div>
+
+        <div style="position:relative;z-index:1">
+
+          <p style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.42);margin-bottom:.45rem">Coût total estimé</p>
+          <div id="mini-res-total" style="font-family:'Playfair Display',serif;font-size:clamp(2.2rem,3.8vw,2.9rem);font-weight:700;color:var(--green-light);line-height:1;letter-spacing:-0.02em;margin-bottom:.35rem;transition:all .3s">31 230 €</div>
+          <p style="font-size:12px;color:rgba(255,255,255,0.32);margin-bottom:1.4rem">pour ce profil, sur 6 mois</p>
+
+          <!-- ROI -->
+          <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:1.2rem;margin-bottom:1.3rem">
+            <div style="display:flex;align-items:center;gap:.65rem">
+              <div style="width:30px;height:30px;border-radius:8px;background:rgba(82,183,136,0.14);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </div>
+              <div>
+                <div id="mini-roi" style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--green-light);line-height:1">637x</div>
+                <div style="font-size:11.5px;color:rgba(255,255,255,0.38);margin-top:.15rem">le ROI d'une vérification à 49 €</div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div><!-- /mini-calc-grid -->
+
+    <div style="text-align:center;margin-top:2rem">
+      <a href="blog/calculateur-cout-mauvais-recrutement.html" style="font-size:.95rem;font-weight:500;color:var(--green);text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--green-light);letter-spacing:.01em">Voir le calcul détaillé avec tous les paramètres &rarr;</a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function(){
+  /* Styles du slider et du select */
+  var s=document.createElement('style');
+  s.textContent='#mini-sl-sal{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:3px;background:#F0EDE5;outline:none;cursor:pointer}'
+    +'#mini-sl-sal::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:#2D6A4F;cursor:pointer;border:3px solid white;box-shadow:0 2px 6px rgba(45,106,79,0.4)}'
+    +'#mini-sl-sal::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#2D6A4F;cursor:pointer;border:3px solid white;box-shadow:0 2px 6px rgba(45,106,79,0.4);border:3px solid white}'
+    +'#mini-sel-niv{width:100%;padding:.72rem 2.4rem .72rem 1rem;border:1.5px solid #E0DDD5;border-radius:10px;font-family:inherit;font-size:14px;font-weight:500;color:#1A1A24;background:white;-webkit-appearance:none;appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'8\' viewBox=\'0 0 12 8\'%3E%3Cpolyline points=\'1,1 6,7 11,1\' fill=\'none\' stroke=\'%232D6A4F\' stroke-width=\'2\' stroke-linecap=\'round\'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;background-size:12px}'
+    +'#mini-sel-niv:focus{outline:none;border-color:#2D6A4F}'
+    +'#mini-cta-link:hover{background:rgba(45,106,79,0.42)!important}'
+    +'@media(max-width:640px){#mini-calc-grid{grid-template-columns:1fr!important}}';
+  document.head.appendChild(s);
+
+  /* Calcul */
+  window.miniCalc=function(){
+    var sal=parseInt(document.getElementById('mini-sl-sal').value);
+    var niv=document.getElementById('mini-sel-niv').value;
+    var lm={employe:0.80,technicien:1.00,cadre:1.25,dirigeant:1.80}[niv];
+    var r=sal*0.090*lm;
+    var ig=sal*0.115*lm;
+    var sp=(sal/12)*6*0.50*lm;
+    var sep=sal*0.14*lm;
+    var remp=r*1.10;
+    var total=Math.round(r+ig+sp+sep+remp);
+    var roi=Math.round(total/49);
+    var fmt=new Intl.NumberFormat('fr-FR');
+    document.getElementById('mini-label-sal').textContent=fmt.format(sal)+' \u20ac';
+    document.getElementById('mini-res-total').textContent=fmt.format(total)+' \u20ac';
+    document.getElementById('mini-roi').textContent=roi+'x';
+  };
+
+  /* Init au chargement */
+  document.addEventListener('DOMContentLoaded',function(){miniCalc();});
+  if(document.readyState!=='loading'){miniCalc();}
+})();
+</script>
+
+<!-- ═══════════════════════ PRICING ═══════════════════════ -->
+<section class="section" id="tarifs">
+  <div class="section-inner">
+    <span class="label-tag">Tarifs clairs</span>
+    <h2 class="section-title">Vérifier coûte <em style="color:var(--green);font-style:normal">14,90 €</em><br>Se tromper coûte 45 000 €</h2>
+    <p class="section-sub">
+      Pas de commercial à appeler, pas d'abonnement forcé, pas de frais cachés. Vous payez par vérification, point final.
+    </p>
+
+    <div class="pricing-grid">
+
+      <!-- Essentiel -->
+      <div class="pricing-card">
+        <p class="pricing-plan">Essentiel</p>
+        <div class="pricing-price"><sup>€</sup>14<span style="font-size:1.8rem">,90</span></div>
+        <p class="pricing-per">par vérification</p>
+        <p class="pricing-desc">Pour vérifier rapidement qu'un diplôme a bien été obtenu. La vérification de base, idéale pour un premier filtre.</p>
+        <ul class="pricing-features">
+          <li>
+            <div class="check-icon"><svg viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+            Vérification du diplôme (titre + établissement + année)
+          </li>
+          <li>
+            <div class="check-icon"><svg viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+            Confirmation de l'identité du candidat
+          </li>
+          <li>
+            <div class="check-icon"><svg viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+            Gestion du consentement RGPD automatisée
+          </li>
+          <li>
+            <div class="check-icon"><svg viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+            Rapport PDF sous 48h ouvrées
+          </li>
+        </ul>
+        <button class="pricing-btn outline">Lancer une vérification</button>
+      </div>
+
+      <!-- Complet — FEATURED -->
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Le plus choisi</div>
+        <p class="pricing-plan">Complet</p>
+        <div class="pricing-price" style="color:white"><sup style="color:rgba(255,255,255,0.7)">€</sup>39<span style="font-size:1.8rem">,90</span></div>
+        <p class="pricing-per">par vérification</p>
+        <p class="pricing-desc">Vérification complète du parcours : diplômes + expériences professionnelles. Le standard pour tout poste à responsabilité.</p>
+        <ul class="pricing-features">
+          <li>
+            <div class="check-icon"><svg viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+            Tout l'Essentiel inclus
+          </li>
+          <li>
+            <div class="check-icon"><svg viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+            Vérification de toutes les expériences du CV (dates, postes, motifs de départ)
+          </li>
+          <li>
+            <div class="check-icon"><svg viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+            Contact direct auprès des anciens employeurs
+          </li>
+          <li>
+            <div class="check-icon"><svg viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+            Rapport détaillé avec signalement des écarts
+          </li>
+          <li>
+            <div class="check-icon"><svg viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+            Rapport PDF professionnel livré sous 48h ouvrées
+          </li>
+        </ul>
+        <button class="pricing-btn solid">Lancer une vérification complète</button>
+      </div>
+
+      <!-- Intégral -->
+      <div class="pricing-card">
+        <p class="pricing-plan">Intégral</p>
+        <div class="pricing-price"><sup>€</sup>79<span style="font-size:1.8rem">,00</span></div>
+        <p class="pricing-per">par vérification</p>
+        <p class="pricing-desc">Pour les postes sensibles : managers, accès aux données, fonctions financières. Inclut les vérifications d'intégrité avancées.</p>
+        <ul class="pricing-features">
+          <li>
+            <div class="check-icon"><svg viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+            Tout le Complet inclus
+          </li>
+          <li>
+            <div class="check-icon"><svg viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+            Prise de références auprès d'anciens managers (automatisée)
+          </li>
+          <li>
+            <div class="check-icon"><svg viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+            Vérification listes de sanctions et PEP
+          </li>
+          <li>
+            <div class="check-icon"><svg viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+            Réputation en ligne & veille médiatique
+          </li>
+          <li>
+            <div class="check-icon"><svg viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>
+            Rapport exécutif + recommandation de recrutement
+          </li>
+        </ul>
+        <button class="pricing-btn outline">Commencer</button>
+      </div>
+
+    </div>
+
+    <p class="pricing-note">
+      Besoin de volume ? <a href="#">Packs 10, 20 ou 50 vérifications</a> avec tarif dégressif. 
+      Intégration API disponible pour les plateformes RH. <a href="#">Nous contacter.</a>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ TESTIMONIALS ═══════════════════════ -->
+<section class="testimonials-section">
+  <div class="section-inner">
+    <span class="label-tag">Ils nous font confiance</span>
+    <h2 class="section-title">Ce que disent nos clients</h2>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">« On a découvert grâce à CVérifié que notre candidat finaliste n'avait jamais obtenu son Master 2. Il l'avait juste "en cours" depuis 6 ans. Ça nous a évité une catastrophe pour un poste de direction. »</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=84&h=84&q=80" alt="Sophie L." loading="lazy">
+          </div>
+          <div>
+            <div class="author-name">Sophie L.</div>
+            <div class="author-title">Dirigeante, PME Lyon (45 salariés)</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">« En tant que cabinet de recrutement, on cherchait quelque chose à proposer à nos clients PME. CVérifié c'est exactement ça : self-service, prix clair, aucune complexité. On l'intègre systématiquement pour nos placements cadres. »</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=84&h=84&q=80" alt="Marc B." loading="lazy">
+          </div>
+          <div>
+            <div class="author-name">Marc B.</div>
+            <div class="author-title">Consultant RH, Cabinet indépendant</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">« On a eu une mauvaise expérience avec un "ingénieur" qui n'avait pas son diplôme d'école. Depuis, on vérifie tous nos candidats tech avant la période d'essai. CVérifié est fluide et le rapport est vraiment actionnable. »</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=84&h=84&q=80" alt="Amira K." loading="lazy">
+          </div>
+          <div>
+            <div class="author-name">Amira K.</div>
+            <div class="author-title">CTO, Startup SaaS Paris (12 salariés)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ POUR LES CANDIDATS ═══════════════════════ -->
+<section class="candidate-section" id="candidats">
+  <div class="candidate-inner">
+    <div>
+      <span class="candidate-label">Pour les candidats</span>
+      <h2 class="candidate-title">
+        Prenez l'avantage <em>avant</em><br>même l'entretien.
+      </h2>
+      <p class="candidate-sub">
+        CVérifié n'est pas réservé aux recruteurs. En tant que candidat, vous pouvez pré-certifier votre propre parcours et l'afficher comme badge vérifié sur votre CV et votre LinkedIn. Un signal fort d'honnêteté dans un marché où 65% des CV mentent.
+      </p>
+      <div class="candidate-feats">
+        <div class="candidate-feat">
+          <span class="feat-dot"></span>
+          Certification de vos diplômes et expériences en 48h
+        </div>
+        <div class="candidate-feat">
+          <span class="feat-dot"></span>
+          Badge numérique vérifiable partageable sur LinkedIn
+        </div>
+        <div class="candidate-feat">
+          <span class="feat-dot"></span>
+          Rapport PDF à joindre à votre candidature
+        </div>
+        <div class="candidate-feat">
+          <span class="feat-dot"></span>
+          Démarquez-vous des autres candidats sur des postes compétitifs
+        </div>
+      </div>
+      <a href="#" class="candidate-cta-btn">
+        Certifier mon parcours · 24,90 €
+      </a>
+    </div>
+
+    <div class="badge-preview">
+      <div class="badge-card">
+        <div class="badge-top">
+          <div class="badge-avatar">CM</div>
+          <div>
+            <div class="badge-person">Camille Martin</div>
+            <div class="badge-person-sub">Manager Supply Chain · HEC Paris 2019</div>
+          </div>
+        </div>
+        <div class="badge-items">
+          <div class="badge-item">
+            <span class="badge-item-label">Master Management, HEC Paris</span>
+            <span class="badge-status">
+              <span class="badge-status-dot"></span>
+              Vérifié
+            </span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-item-label">Responsable Logistique, Carrefour</span>
+            <span class="badge-status">
+              <span class="badge-status-dot"></span>
+              Vérifié
+            </span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-item-label">Chef de projet, Schneider Electric</span>
+            <span class="badge-status">
+              <span class="badge-status-dot"></span>
+              Vérifié
+            </span>
+          </div>
+        </div>
+      </div>
+      <p class="badge-cta-note">
+        <strong>cverifie.fr/badge/CM-2024</strong><br>
+        Ce profil a été vérifié par CVérifié le 08 avril 2025
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FAQ ═══════════════════════ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <span class="label-tag">Questions fréquentes</span>
+    <h2 class="section-title">Tout ce que vous voulez savoir.</h2>
+
+    <div class="faq-grid">
+      <div class="faq-item open">
+        <button class="faq-q">
+          Est-ce que je dois obtenir l'accord du candidat ?
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span>
+        </button>
+        <div class="faq-a">
+          Oui, c'est une obligation légale en France (articles L.1221-8 et L.1221-9 du Code du Travail). Mais bonne nouvelle : CVérifié gère entièrement ce processus pour vous. Dès que vous lancez une vérification, votre candidat reçoit automatiquement un email de consentement RGPD signable en ligne. Vous n'avez rien à faire.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Que se passe-t-il si le candidat refuse ?
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span>
+        </button>
+        <div class="faq-a">
+          Si le candidat refuse de donner son consentement, nous vous remboursons intégralement ou vous offrons un crédit. En pratique, un refus est lui-même un signal : dans notre expérience, un refus accompagne souvent un écart dans le CV. Nous vous notifions immédiatement du refus.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Que peut-on légalement vérifier en France ?
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span>
+        </button>
+        <div class="faq-a">
+          La loi française autorise la vérification des éléments factuels du CV en lien direct avec le poste : diplômes obtenus, dates et intitulés de poste, motifs de fin de contrat. Il est interdit de vérifier la vie privée, les opinions politiques ou religieuses, ou tout élément sans rapport avec le poste. CVérifié opère exclusivement dans ce cadre légal.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Comment sont protégées les données du candidat ?
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span>
+        </button>
+        <div class="faq-a">
+          Toutes les données sont hébergées en France sur des serveurs certifiés ISO 27001. Aucune donnée n'est transmise hors de l'UE. Les données sont conservées 2 ans conformément au RGPD, puis supprimées définitivement. Le candidat peut exercer ses droits d'accès, de rectification et de suppression à tout moment.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Puis-je vérifier un candidat international ?
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span>
+        </button>
+        <div class="faq-a">
+          Oui. Nous couvrons les établissements d'enseignement supérieur en France et dans plus de 80 pays. Pour les expériences professionnelles internationales, nous disposons de relais locaux dans les principaux pays européens. Les délais peuvent être légèrement plus longs (3-5 jours ouvrés) pour les vérifications internationales.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Y a-t-il un abonnement ou un engagement minimum ?
+          <span class="faq-icon"><svg viewBox="0 0 10 10"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span>
+        </button>
+        <div class="faq-a">
+          Non. CVérifié fonctionne en pay-per-check : vous payez uniquement lorsque vous lancez une vérification. Pas d'abonnement, pas de minimum mensuel, pas de frais d'installation. Pour les volumes importants (10+ vérifications/mois), nous proposons des packs dégressifs. Tout est transparent, tout est affiché.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ BLOG / RESSOURCES ═══════════════════════ -->
+<section id="ressources" class="section" style="background:var(--cream-dark);padding:5rem 2rem">
+  <div class="section-inner">
+    <span class="label-tag">Ressources</span>
+    <h2 class="section-title">Tout ce que vous devez savoir</h2>
+    <p class="section-sub">Guides pratiques, cadre légal et données pour recruter en confiance.</p>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:3rem">
+
+      <a href="blog/verification-cv-legal-france.html" style="background:white;border:1.5px solid var(--border);border-radius:14px;padding:1.75rem;display:block;transition:all .2s;text-decoration:none">
+        <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--green);background:var(--green-pale);padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:.75rem">Droit du travail</span>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.5rem;line-height:1.3">Vérification de CV en France : ce que dit la loi</h3>
+        <p style="font-size:.85rem;color:var(--ink-muted);line-height:1.5">Article L.1221-6, consentement, RGPD et jurisprudences expliqués simplement.</p>
+      </a>
+
+      <a href="blog/comment-verifier-cv-diplome-pme.html" style="background:white;border:1.5px solid var(--border);border-radius:14px;padding:1.75rem;display:block;transition:all .2s;text-decoration:none">
+        <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--green);background:var(--green-pale);padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:.75rem">Guide pratique</span>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.5rem;line-height:1.3">Comment vérifier un CV quand on est une PME</h3>
+        <p style="font-size:.85rem;color:var(--ink-muted);line-height:1.5">Méthodes, délais, coûts et erreurs à éviter. Le process complet en 5 étapes.</p>
+      </a>
+
+      <a href="blog/alternative-everycheck.html" style="background:white;border:1.5px solid var(--border);border-radius:14px;padding:1.75rem;display:block;transition:all .2s;text-decoration:none">
+        <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--green);background:var(--green-pale);padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:.75rem">Comparatif</span>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.5rem;line-height:1.3">EveryCheck, VerifCV, CVérifié : quel service choisir ?</h3>
+        <p style="font-size:.85rem;color:var(--ink-muted);line-height:1.5">Comparatif factuel des services disponibles en France. Prix, délais, adapté PME.</p>
+      </a>
+
+      <a href="blog/statistiques-mensonges-cv-france.html" style="background:white;border:1.5px solid var(--border);border-radius:14px;padding:1.75rem;display:block;transition:all .2s;text-decoration:none">
+        <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--green);background:var(--green-pale);padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:.75rem">Données</span>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.5rem;line-height:1.3">Mensonges sur les CV : les chiffres clés en France</h3>
+        <p style="font-size:.85rem;color:var(--ink-muted);line-height:1.5">65% des CV contiennent un écart. Ce que révèlent vraiment les données.</p>
+      </a>
+
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="blog/index.html" style="font-size:.95rem;font-weight:500;color:var(--green);text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--green-light);letter-spacing:.01em">Voir tous les articles &rarr;</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ FINAL CTA ═══════════════════════ -->
+<section class="final-cta">
+  <h2>Recrutez en toute confiance.<br>Vérifiez avant d'embaucher.</h2>
+  <p>Lancez votre première vérification maintenant. En 2 minutes, c'est en route. Résultat garanti sous 48h ouvrées.</p>
+  <div class="final-ctas">
+    <button class="btn-white">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 7,12 13,4"/></svg>
+      Vérifier un candidat dès 14,90 €
+    </button>
+    <button class="btn-ghost-white">
+      Certifier mon propre CV
+    </button>
+  </div>
+  <div class="final-guarantee">
+    <span class="guarantee-item">
+      <svg viewBox="0 0 16 16"><polyline points="3,8 7,12 13,4"/></svg>
+      Remboursé si le candidat refuse
+    </span>
+    <span class="guarantee-item">
+      <svg viewBox="0 0 16 16"><polyline points="3,8 7,12 13,4"/></svg>
+      Aucun abonnement, aucun engagement
+    </span>
+    <span class="guarantee-item">
+      <svg viewBox="0 0 16 16"><polyline points="3,8 7,12 13,4"/></svg>
+      Données hébergées en France
+    </span>
+    <span class="guarantee-item">
+      <svg viewBox="0 0 16 16"><polyline points="3,8 7,12 13,4"/></svg>
+      Support humain disponible 7j/7
+    </span>
+  </div>
+
+  <div class="final-trust-logos">
+    <img src="images/ministere-travail-white.png"
+         alt="Ministère du Travail"
+         class="final-trust-img">
+    <img src="images/rgpd-white.png"
+         alt="RGPD conforme"
+         class="final-trust-img">
+  </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <!-- Logo -->
+        <div style="margin-bottom:1.25rem">
+          <img src="images/cverifie-logo-white.png" alt="CVérifié" class="logo-footer">
+        </div>
+
+        <p style="font-size:.875rem;color:rgba(255,255,255,0.4);line-height:1.7;margin-bottom:1.5rem">
+          Vérification de CV et de diplômes pour toutes les entreprises françaises. Sans engagement. Sous 48h.
+        </p>
+
+        <!-- Social icons -->
+        <div class="footer-social">
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="X / Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+          </a>
+        </div>
+
+        <!-- Trust logos -->
+        <div class="footer-trust">
+          <img src="https://www.capemploi-61.com/assets/cache/images-cache/images/cheops/cap-emploi/capemploi-61/1200px-logo-du-ministere-du-travail-%282020%29.svg.6abdeb72.png"
+               alt="Ministère du Travail"
+               class="trust-logo"
+               onerror="this.style.display='none'">
+          <div class="trust-badge-rgpd">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5L2 3.5V7.5C2 10.2 4.2 12.7 7 13.5C9.8 12.7 12 10.2 12 7.5V3.5L7 1.5Z" fill="#2D6A4F" stroke="#52B788" stroke-width="0.8"/><polyline points="4.5,7 6.5,9 9.5,5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            RGPD conforme
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Ratings column (like PennyLane) -->
+      <div class="footer-col">
+        <h4>Avis clients</h4>
+        <div class="footer-stars-row">
+          <span class="footer-stars">★★★★★</span>
+        </div>
+        <div class="footer-rating-list">
+          <div class="rating-item">
+            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 1l1.7 3.4L14 5.1l-3 2.9.7 4.1L8 10.3l-3.7 1.8.7-4.1L2 5.1l4.3-.7z" fill="#00B67A"/></svg>
+            <span>4.8 sur <strong>Trustpilot</strong></span>
+          </div>
+          <div class="rating-item">
+            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3.5 2C2.7 2 2 2.7 2 3.5v9C2 13.3 2.7 14 3.5 14h9c.8 0 1.5-.7 1.5-1.5V9h-1.5v3.5h-9v-9H7V2H3.5z" fill="#01875F"/><path d="M14 2H10l1.5 1.5-4 4L9 9l4-4 1.5 1.5V2z" fill="#01875F"/></svg>
+            <span>4.9 sur <strong>Google Play</strong></span>
+          </div>
+          <div class="rating-item">
+            <svg width="16" height="16" viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" rx="3" fill="#1C7CF9"/><path d="M8 5V8M8 8V11M6 8H10" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>4.8 sur <strong>App Store</strong></span>
+          </div>
+          <div class="rating-item">
+            <svg width="16" height="16" viewBox="0 0 16 16"><path d="M14.5 8.2c0-.5 0-.9-.1-1.3H8v2.4h3.6c-.2.8-.6 1.5-1.3 2v1.6h2c1.2-1.1 1.9-2.7 1.9-4.7z" fill="#4285F4"/><path d="M8 15c1.8 0 3.3-.6 4.4-1.6l-2-1.6c-.6.4-1.4.6-2.3.6-1.8 0-3.3-1.2-3.8-2.8H2v1.7C3.1 13.5 5.4 15 8 15z" fill="#34A853"/><path d="M4.2 9.6A4.5 4.5 0 014 8.1a4.5 4.5 0 01.2-1.5V4.9H2A7 7 0 001 8.1a7 7 0 001 3.2l2.2-1.7z" fill="#FBBC05"/><path d="M8 3.5c1 0 1.9.4 2.6 1L12.2 3A7 7 0 008 1 7 7 0 002 4.9l2.2 1.7C4.7 4.7 6.2 3.5 8 3.5z" fill="#EA4335"/></svg>
+            <span>4.7 sur <strong>Google</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Recruteurs</h4>
+        <ul>
+          <li><a href="#">Vérification de diplômes</a></li>
+          <li><a href="#">Vérification d'expériences</a></li>
+          <li><a href="#">Prise de références</a></li>
+          <li><a href="#">Contrôle d'intégrité</a></li>
+          <li><a href="#">API & Intégrations RH</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Société</h4>
+        <ul>
+          <li><a href="#">Candidats : certifier mon CV</a></li>
+          <li><a href="#">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Partenaires</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CVérifié · Made in France 🇫🇷</span>
+      <div class="footer-legal">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">CGU</a>
+        <a href="#">Conformité RGPD</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', function(){
+    const item = this.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if(!isOpen) item.classList.add('open');
+  });
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e){
+    const id = this.getAttribute('href');
+    if(id.length > 1){
+      e.preventDefault();
+      const el = document.querySelector(id);
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  });
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, {threshold: 0.1});
+
+document.querySelectorAll('.problem-card, .step-card, .pricing-card, .testimonial-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>

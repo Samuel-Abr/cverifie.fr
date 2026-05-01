@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="../images/favicon.png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RGPD et vérification de CV : guide complet pour recruteurs | CVérifié</title>
+<meta name="description" content="Vérifier un CV est légal sous RGPD via l'intérêt légitime (art. 6.1.f). Guide complet : bases légales, conservation des données, droits des candidats, obligations CNIL.">
+<link rel="canonical" href="https://xn--cvrifi-cxa2g.fr/blog/rgpd-verification-candidat-guide-complet.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FAF8F3;--cream-dark:#F0EDE5;--ink:#1A1A24;--ink-light:#44444E;--ink-muted:#8A8A94;--green:#2D6A4F;--green-mid:#40916C;--green-light:#52B788;--green-pale:#D8F3DC;--green-ultra:#F0FAF2;--border:#E0DDD5;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;}
+a{color:var(--green);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,243,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:36px;display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--ink-light);}
+.nav-links a:hover{color:var(--green);text-decoration:none;}
+.nav-cta{background:var(--green);color:#fff !important;padding:9px 20px;border-radius:6px;font-weight:600;border:none;cursor:pointer;font-family:inherit;font-size:.9rem;}
+.nav-cta:hover{background:var(--green-mid);text-decoration:none !important;}
+
+.hero-blog{position:relative;height:420px;overflow:hidden;margin-top:64px;}
+.hero-blog img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-blog::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,26,36,.35) 0%,rgba(26,26,36,.72) 100%);}
+.hero-text{position:absolute;bottom:48px;left:50%;transform:translateX(-50%);width:100%;max-width:760px;padding:0 24px;z-index:2;color:#fff;}
+.hero-cat{display:inline-block;background:var(--green-light);color:#fff;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px;}
+.hero-text h1{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.2;color:#fff;}
+
+.article-wrap{max-width:760px;margin:0 auto;padding:48px 24px 80px;}
+.breadcrumb{font-size:.8rem;color:var(--ink-muted);margin-bottom:20px;}
+.breadcrumb a{color:var(--ink-muted);}
+.breadcrumb a:hover{color:var(--green);}
+.article-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:24px;}
+.tag{background:var(--green-pale);color:var(--green);font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.05em;}
+.meta-sep{color:var(--border);}
+.meta-date,.meta-read{font-size:.83rem;color:var(--ink-muted);}
+.article-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);line-height:1.25;margin-bottom:20px;}
+.article-intro{font-size:1.1rem;color:var(--ink-light);line-height:1.75;padding-bottom:28px;border-bottom:1px solid var(--border);margin-bottom:40px;}
+
+.stat-band{background:var(--green);color:#fff;border-radius:12px;padding:32px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:40px 0;text-align:center;}
+.stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;display:block;}
+.stat-label{font-size:.82rem;opacity:.88;margin-top:4px;line-height:1.4;}
+
+.section-h{font-family:'Playfair Display',serif;font-size:1.55rem;margin:48px 0 16px;color:var(--ink);}
+.subsection-h{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:600;margin:28px 0 10px;color:var(--ink);}
+p{margin-bottom:16px;color:var(--ink-light);}
+
+.highlight-box{background:var(--green-ultra);border-left:4px solid var(--green-light);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;}
+.highlight-box strong{color:var(--green);display:block;margin-bottom:6px;}
+.warning-box{background:#fff8ed;border-left:4px solid #f4a022;border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;}
+.warning-box strong{color:#c97d10;display:block;margin-bottom:6px;}
+.danger-box{background:#fff3f3;border-left:4px solid #e05c5c;border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;}
+.danger-box strong{color:#c13737;display:block;margin-bottom:6px;}
+
+.data-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.9rem;}
+.data-table th{background:var(--green);color:#fff;padding:11px 14px;text-align:left;font-weight:600;}
+.data-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--ink-light);}
+.data-table tr:nth-child(even) td{background:var(--cream-dark);}
+
+.check-item,.cross-item{display:flex;gap:10px;align-items:flex-start;margin:8px 0;font-size:.95rem;color:var(--ink-light);}
+.check-item::before{content:'✓';color:var(--green-light);font-weight:700;flex-shrink:0;margin-top:2px;}
+.cross-item::before{content:'✗';color:#e05c5c;font-weight:700;flex-shrink:0;margin-top:2px;}
+
+/* BASE LEGALE CARDS */
+.base-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:24px 0;}
+.base-card{border-radius:10px;padding:18px;border:1px solid var(--border);background:#fff;}
+.base-card h4{font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.base-card .article-ref{font-size:.75rem;font-weight:600;color:var(--green);background:var(--green-pale);padding:2px 8px;border-radius:10px;display:inline-block;margin-bottom:8px;}
+.base-card p{font-size:.83rem;color:var(--ink-muted);margin:0;}
+.base-card.active{background:var(--green-ultra);border-color:var(--green-pale);}
+.base-card.active h4{color:var(--green);}
+
+/* TIMELINE */
+.timeline{margin:24px 0;}
+.tl-item{display:flex;gap:16px;margin-bottom:16px;align-items:flex-start;}
+.tl-dot{width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0;margin-top:2px;}
+.tl-content h4{font-weight:600;color:var(--ink);margin-bottom:4px;}
+.tl-content p{font-size:.88rem;color:var(--ink-muted);margin:0;}
+
+.cta-block{background:var(--ink);color:#fff;border-radius:12px;padding:40px 32px;text-align:center;margin:48px 0;}
+.cta-block h3{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:12px;color:#fff;}
+.cta-block p{color:rgba(255,255,255,.75);margin-bottom:24px;}
+.btn-cta{display:inline-block;background:var(--green-light);color:#fff;font-weight:600;padding:14px 32px;border-radius:8px;font-size:1rem;cursor:pointer;border:none;}
+.btn-cta:hover{background:var(--green-mid);text-decoration:none;color:#fff;}
+
+.faq-list{margin:24px 0;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:18px 0;font-size:1rem;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:'Outfit',sans-serif;}
+.faq-q::after{content:'+';font-size:1.3rem;color:var(--green-light);flex-shrink:0;transition:transform .25s;}
+.faq-item.open .faq-q::after{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-item.open .faq-a{max-height:400px;}
+.faq-a p{padding-bottom:18px;color:var(--ink-light);}
+
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 24px 32px;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+.footer-brand img{height:32px;margin-bottom:16px;filter:brightness(0) invert(1);}
+.footer-brand p{font-size:.88rem;line-height:1.65;opacity:.7;}
+.footer-col h4{font-size:.85rem;font-weight:600;color:#fff;letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px;}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:8px;}
+.footer-col a{font-size:.88rem;color:rgba(255,255,255,.6);}
+.footer-col a:hover{color:#fff;text-decoration:none;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.82rem;}
+@media(max-width:640px){
+  .base-grid{grid-template-columns:1fr;}
+  .stat-band{grid-template-columns:1fr;gap:24px;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"RGPD et vérification de CV : guide complet pour recruteurs",
+  "description":"Vérifier un CV est légal sous RGPD via l'intérêt légitime (art. 6.1.f). Guide complet : bases légales, conservation, droits candidats, obligations CNIL.",
+  "image":"https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&w=1400&q=80",
+  "author":{"@type":"Organization","name":"CVérifié"},
+  "publisher":{"@type":"Organization","name":"CVérifié","logo":{"@type":"ImageObject","url":"https://xn--cvrifi-cxa2g.fr/images/cverifie-logo-green.png"}},
+  "datePublished":"2024-10-10",
+  "dateModified":"2025-01-15"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Quelle est la base légale RGPD pour vérifier un CV ?","acceptedAnswer":{"@type":"Answer","text":"La base légale principale est l'intérêt légitime de l'employeur (art. 6.1.f RGPD), sous réserve que la vérification soit proportionnée au poste et que le candidat soit informé. Le consentement peut également être utilisé mais est plus fragile dans la relation employeur-candidat."}},
+    {"@type":"Question","name":"Combien de temps peut-on conserver les données d'un candidat non retenu ?","acceptedAnswer":{"@type":"Answer","text":"La CNIL recommande une durée maximale de 2 ans à compter du dernier contact avec le candidat. Au-delà, les données doivent être supprimées ou anonymisées, sauf accord exprès du candidat pour une conservation plus longue."}},
+    {"@type":"Question","name":"Faut-il informer le candidat qu'on vérifie son CV ?","acceptedAnswer":{"@type":"Answer","text":"Oui, obligatoirement. En vertu de l'art. 13 RGPD, le candidat doit être informé de la vérification, de sa finalité, de sa base légale, et de ses droits (accès, rectification, opposition). Cette information peut figurer dans l'offre d'emploi ou dans un message lors de la candidature."}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="../index.html"><img src="../images/cverifie-logo-green.png" alt="CVérifié" class="logo-nav"></a>
+    </div>
+    <div class="nav-links">
+      <a href="../index.html#comment">Comment ça marche</a>
+      <a href="../index.html#tarifs">Tarifs</a>
+      <a href="../index.html#candidats">Pour les candidats</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="index.html">Blog</a>
+    </div>
+    <button class="nav-cta" onclick="window.location='../commander.html'">Lancer une vérification</button>
+  </div>
+</nav>
+
+<div class="hero-blog">
+  <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&w=1400&q=80" alt="Document juridique RGPD et vérification de candidat">
+  <div class="hero-text">
+    <span class="hero-cat">Légal / Droit du travail</span>
+    <h1>RGPD et vérification de CV : guide complet pour recruteurs</h1>
+  </div>
+</div>
+
+<div class="article-wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">Accueil</a> &rsaquo; <a href="index.html">Blog</a> &rsaquo; RGPD et vérification de CV
+  </div>
+
+  <div class="article-meta">
+    <span class="tag">Légal / Droit du travail</span>
+    <span class="meta-sep">|</span>
+    <span class="meta-date">10 octobre 2024</span>
+    <span class="meta-sep">|</span>
+    <span class="meta-read">10 min de lecture</span>
+  </div>
+
+  <h1 class="article-title">RGPD et vérification de CV : guide complet pour recruteurs en France</h1>
+
+  <div class="article-intro">
+    Vérifier les informations d'un CV est légal en France, à condition de respecter le cadre RGPD. La base légale de l'intérêt légitime (art. 6.1.f) permet cette démarche pour la quasi-totalité des postes, sous réserve d'informer le candidat et de respecter les règles de conservation des données. Ce guide détaille les obligations concrètes.
+  </div>
+
+  <div class="stat-band">
+    <div>
+      <span class="stat-num">2 ans</span>
+      <div class="stat-label">durée maximale de conservation des données candidats (CNIL)</div>
+    </div>
+    <div>
+      <span class="stat-num">20 M€</span>
+      <div class="stat-label">amende maximale RGPD en cas de manquement grave</div>
+    </div>
+    <div>
+      <span class="stat-num">Art. 6.1.f</span>
+      <div class="stat-label">base légale de l'intérêt légitime, applicable à la vérification CV</div>
+    </div>
+  </div>
+
+  <h2 class="section-h">Les trois bases légales possibles</h2>
+
+  <p>Le RGPD impose que tout traitement de données personnelles repose sur une base légale explicite. Pour la vérification de CV, trois bases légales sont potentiellement applicables, avec des degrés de solidité différents.</p>
+
+  <div class="base-grid">
+    <div class="base-card active">
+      <span class="article-ref">Art. 6.1.f RGPD</span>
+      <h4>Intérêt légitime</h4>
+      <p>Base recommandée. L'employeur a un intérêt légitime à recruter sur des informations exactes. Applicable si la vérification est proportionnée au poste.</p>
+    </div>
+    <div class="base-card">
+      <span class="article-ref">Art. 6.1.a RGPD</span>
+      <h4>Consentement</h4>
+      <p>Possible mais fragile : le consentement d'un candidat n'est pas libre au sens strict du RGPD en raison du déséquilibre de la relation avec l'employeur.</p>
+    </div>
+    <div class="base-card">
+      <span class="article-ref">Art. 6.1.c RGPD</span>
+      <h4>Obligation légale</h4>
+      <p>Applicable uniquement pour certains secteurs réglementés (santé, enseignement, finance) où la vérification des qualifications est imposée par la loi.</p>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <strong>Pourquoi l'intérêt légitime est la bonne base légale</strong>
+    L'intérêt légitime (art. 6.1.f) est la base la plus robuste pour la vérification de CV car : (1) il ne requiert pas de consentement du candidat, (2) il ne crée pas de risque de retrait du consentement, (3) il est reconnu par la CNIL dans ses lignes directrices sur le recrutement. Il faut néanmoins documenter la mise en balance entre l'intérêt de l'employeur et les droits du candidat.
+  </div>
+
+  <h2 class="section-h">L'obligation d'information (art. 13 RGPD)</h2>
+
+  <p>Quelle que soit la base légale retenue, l'employeur doit informer le candidat de la vérification. Cette information doit être fournie au moment de la collecte des données, c'est-à-dire lors de la candidature ou au plus tard avant le début de la vérification.</p>
+
+  <h3 class="subsection-h">Ce que doit contenir l'information</h3>
+
+  <div class="check-item">L'identité et les coordonnées du responsable de traitement (votre entreprise)</div>
+  <div class="check-item">La finalité du traitement (vérification des informations du CV)</div>
+  <div class="check-item">La base légale (intérêt légitime ou autre)</div>
+  <div class="check-item">La durée de conservation des données</div>
+  <div class="check-item">Les droits du candidat (accès, rectification, effacement, opposition)</div>
+  <div class="check-item">L'existence éventuelle d'un sous-traitant (prestataire de vérification)</div>
+
+  <div class="warning-box">
+    <strong>Comment transmettre cette information en pratique</strong>
+    L'information peut être intégrée dans l'offre d'emploi, dans un email de confirmation de candidature, ou dans le formulaire de candidature en ligne. Un lien vers votre politique de confidentialité RH suffit dans la plupart des cas, à condition que celle-ci soit réellement accessible et complète.
+  </div>
+
+  <h2 class="section-h">Conservation des données : la règle des 2 ans</h2>
+
+  <p>La CNIL a publié des lignes directrices claires sur la durée de conservation des données de candidats. Ces durées s'appliquent que le candidat soit retenu ou non.</p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot">1</div>
+      <div class="tl-content">
+        <h4>Candidature active (processus de recrutement en cours)</h4>
+        <p>Conservation justifiée pendant toute la durée du processus. Aucune limite fixe, mais le processus doit avoir une durée raisonnable.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2</div>
+      <div class="tl-content">
+        <h4>Candidat non retenu (CVthèque)</h4>
+        <p>2 ans maximum à compter du dernier contact, selon les recommandations CNIL. Le candidat doit avoir été informé de cette conservation prolongée.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">3</div>
+      <div class="tl-content">
+        <h4>Candidat retenu (devient salarié)</h4>
+        <p>Les données passent dans le dossier salarié, soumis à des règles différentes (durée de la relation contractuelle + 5 ans).</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">4</div>
+      <div class="tl-content">
+        <h4>Suppression ou anonymisation</h4>
+        <p>Au-delà de 2 ans sans contact, suppression ou anonymisation obligatoire. Les données anonymisées ne sont plus soumises au RGPD.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-h">Les droits du candidat</h2>
+
+  <p>Le candidat dispose de droits que vous devez respecter et être en mesure d'exercer dans un délai d'un mois.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Droit</th>
+        <th>Ce que le candidat peut demander</th>
+        <th>Délai de réponse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Accès (art. 15)</strong></td>
+        <td>Obtenir copie de toutes ses données traitées</td>
+        <td>1 mois</td>
+      </tr>
+      <tr>
+        <td><strong>Rectification (art. 16)</strong></td>
+        <td>Corriger des données inexactes ou incomplètes</td>
+        <td>1 mois</td>
+      </tr>
+      <tr>
+        <td><strong>Effacement (art. 17)</strong></td>
+        <td>Demander la suppression de ses données</td>
+        <td>1 mois</td>
+      </tr>
+      <tr>
+        <td><strong>Opposition (art. 21)</strong></td>
+        <td>S'opposer au traitement basé sur l'intérêt légitime</td>
+        <td>1 mois</td>
+      </tr>
+      <tr>
+        <td><strong>Limitation (art. 18)</strong></td>
+        <td>Geler l'utilisation des données pendant un litige</td>
+        <td>1 mois</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="danger-box">
+    <strong>Droit d'opposition : attention aux implications</strong>
+    Si un candidat exerce son droit d'opposition à la vérification, vous pouvez maintenir le traitement si vous démontrez des motifs légitimes impérieux. Pour un poste à responsabilité ou réglementé, cet argument est généralement solide. En cas de doute, consultez votre DPO.
+  </div>
+
+  <h2 class="section-h">Obligations envers le prestataire de vérification</h2>
+
+  <p>Si vous faites appel à un prestataire externe pour vérifier les CV (comme CVérifié), ce prestataire est un sous-traitant au sens du RGPD. Cette relation implique des obligations spécifiques.</p>
+
+  <div class="check-item">Signer un contrat de traitement des données (DPA) avec le prestataire (art. 28 RGPD)</div>
+  <div class="check-item">S'assurer que le prestataire offre des garanties suffisantes de conformité RGPD</div>
+  <div class="check-item">Vérifier que les données ne sont pas transférées hors UE sans garanties adéquates</div>
+  <div class="check-item">Mentionner le prestataire comme destinataire des données dans l'information candidat</div>
+
+  <div class="highlight-box">
+    <strong>CVérifié et conformité RGPD</strong>
+    CVérifié est un prestataire français, les données sont traitées exclusivement en France. Un DPA (Data Processing Agreement) conforme RGPD est signé avec chaque client entreprise. Les données des candidats sont supprimées 30 jours après la remise du rapport de vérification.
+  </div>
+
+  <h2 class="section-h">Ce qu'il est interdit de vérifier</h2>
+
+  <p>La vérification doit être limitée aux informations en lien direct avec le poste et les compétences requises. Certaines vérifications sont explicitement interdites.</p>
+
+  <div class="cross-item">Casier judiciaire (sauf secteurs spécifiquement autorisés par la loi)</div>
+  <div class="cross-item">Situation personnelle, familiale, ou état de santé</div>
+  <div class="cross-item">Activités syndicales, politiques ou religieuses</div>
+  <div class="cross-item">Informations non mentionnées sur le CV et sans lien avec le poste</div>
+  <div class="cross-item">Données accessibles sur les réseaux sociaux personnels (Facebook, etc.)</div>
+
+  <div class="check-item">Diplômes et certifications mentionnés sur le CV</div>
+  <div class="check-item">Expériences professionnelles, dates et intitulés de postes</div>
+  <div class="check-item">Compétences techniques déclarées en lien avec le poste</div>
+  <div class="check-item">Habilitations professionnelles requises pour l'exercice du poste</div>
+
+  <div class="cta-block">
+    <h3>Vérification conforme RGPD, clé en main</h3>
+    <p>CVérifié gère l'ensemble du processus en conformité avec le RGPD : information candidat, DPA, hébergement en France, suppression des données. Vous recevez un rapport certifié sans contrainte administrative.</p>
+    <button class="btn-cta" onclick="window.location='../commander.html'">Demander un devis</button>
+  </div>
+
+  <h2 class="section-h">Questions fréquentes</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">Quelle est la base légale RGPD pour vérifier un CV ?</button>
+      <div class="faq-a"><p>La base légale principale recommandée est l'intérêt légitime de l'employeur (art. 6.1.f RGPD). Elle permet la vérification sans recueillir le consentement du candidat, sous réserve que la vérification soit proportionnée au poste et que le candidat soit informé. Pour les secteurs réglementés, l'obligation légale (art. 6.1.c) peut également s'appliquer.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Combien de temps peut-on conserver les données d'un candidat non retenu ?</button>
+      <div class="faq-a"><p>La CNIL recommande une durée maximale de 2 ans à compter du dernier contact avec le candidat. Au-delà, les données doivent être supprimées ou anonymisées, sauf accord exprès du candidat pour une conservation plus longue (par exemple pour être recontacté pour des offres futures).</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Faut-il informer le candidat qu'on vérifie son CV ?</button>
+      <div class="faq-a"><p>Oui, obligatoirement. En vertu de l'art. 13 RGPD, le candidat doit être informé de la vérification, de sa finalité, de sa base légale, et de ses droits. Cette information peut figurer dans l'offre d'emploi, dans un email de confirmation de candidature, ou via un lien vers votre politique de confidentialité RH.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Un candidat peut-il s'opposer à la vérification de son CV ?</button>
+      <div class="faq-a"><p>Oui, il peut exercer son droit d'opposition (art. 21 RGPD). Mais si vous avez des motifs légitimes impérieux qui prévalent sur ses intérêts, vous pouvez maintenir la vérification malgré son opposition. Pour un poste à responsabilité, financier ou réglementé, ce motif est généralement solide. En cas de doute, consultez votre DPO ou un avocat spécialisé.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Faut-il un DPO pour mettre en place des vérifications de CV ?</button>
+      <div class="faq-a"><p>La désignation d'un DPO n'est obligatoire que pour les organismes publics et les entreprises traitant des données sensibles à grande échelle. Pour la plupart des TPE/PME, elle est facultative. En revanche, documenter le traitement dans votre registre des activités de traitement (RAT) est obligatoire pour toute entreprise de plus de 250 salariés, et fortement recommandé en dessous.</p></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="../images/cverifie-logo-white.png" alt="CVérifié">
+        <p>Le service de vérification de CV et diplômes pour les recruteurs français. Résultats certifiés en 3 à 5 jours ouvrés.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Service</h4>
+        <ul>
+          <li><a href="../index.html#comment-ca-marche">Comment ça marche</a></li>
+          <li><a href="../index.html#tarifs">Tarifs</a></li>
+          <li><a href="../commander.html">Commander</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="index.html">Blog</a></li>
+          <li><a href="verification-cv-legal-france.html">Cadre légal</a></li>
+          <li><a href="statistiques-mensonges-cv-france.html">Statistiques</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../index.html#legal">Mentions légales</a></li>
+          <li><a href="../index.html#confidentialite">Confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 CVérifié. Tous droits réservés.</span>
+      <span>Vérification CV et diplômes en France</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;
+    const wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
+    if(!wasOpen)item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>

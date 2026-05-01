@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3)",
+      "Bash(curl -sI \"https://www.google.com\")",
+      "Bash(curl -sL -H 'Referer: https://en.wikipedia.org/wiki/HEC_Paris' https://upload.wikimedia.org/wikipedia/fr/thumb/5/5a/Logo_HEC_Paris.svg/200px-Logo_HEC_Paris.svg.png -o /tmp/test_hec.png)",
+      "Read(//tmp/**)",
+      "Bash(curl -s -L -A 'Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/124.0.0.0 Safari/537.36' https://www.hec.edu)",
+      "Bash(curl -s -L -A 'Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/124.0.0.0 Safari/537.36' https://www.hec.edu/themes/custom/hec_theme/logo.svg -o /Users/sabraham/Desktop/CVérifié.fr/images/logos/hec.svg)",
+      "Bash(curl -s -L -A 'Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/124.0.0.0 Safari/537.36' https://upload.wikimedia.org/wikipedia/fr/6/6e/Logo_Sciences_Po.svg -o /Users/sabraham/Desktop/CVérifié.fr/images/logos/sciences-po.svg)",
+      "Bash(curl -s -L -A 'Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/124.0.0.0 Safari/537.36' --max-time 10 https://www.telecom-paris.fr)",
+      "Bash(curl -v -A 'Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/124.0.0.0 Safari/537.36' -H 'Accept: image/png,image/*;q=0.9' -H 'Referer: https://www.essec.edu/' --max-time 10 https://www.essec.edu/images/home/BlasonWhite.png -o /tmp/essec_test.png)",
+      "Bash(curl -s -A 'Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/124.0.0.0 Safari/537.36' https://www.sciencespo.fr)",
+      "Bash(python3 -c \"from PIL import Image; print\\('PIL available'\\)\")",
+      "Bash(python3 -c \"import PIL; print\\(PIL.__version__\\)\")",
+      "Bash(pip3 install *)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_in_Chrome__navigate",
+      "mcp__Claude_in_Chrome__tabs_create_mcp",
+      "WebSearch",
+      "Bash(sed -i '' 's|href=\"#\">Contact</a>|href=\"contact.html\">Contact</a>|g' index.html demo.html commander.html)",
+      "Bash(find blog *)",
+      "Bash(xargs -I{} basename {})",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npm -v)",
+      "Bash(npm init *)",
+      "Bash(node -e ' *)",
+      "Bash(npm install *)",
+      "Bash(cp -r \"/Users/sabraham/Desktop/CVérifié.fr/images\" \"/Users/sabraham/Desktop/CVérifié.fr/src/images\")",
+      "Bash(cp -r \"/Users/sabraham/Desktop/CVérifié.fr/.claude\" \"/Users/sabraham/Desktop/CVérifié.fr/src/.claude\")",
+      "Bash(cp /Users/sabraham/Desktop/CVérifié.fr/blog/*.html \"/Users/sabraham/Desktop/CVérifié.fr/src/blog/\")",
+      "Bash(node process_html.js)",
+      "Bash(npm run *)"
+    ]
+  }
+}
