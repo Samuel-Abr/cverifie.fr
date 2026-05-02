@@ -13,8 +13,10 @@
       <a href="/#faq">FAQ</a>
       <a href="/blog/" class="{{ 'active' if '/blog' in page.url else '' }}">Blog</a>
     </div>
-    <a href="/demo.html" class="nav-demo-btn">Voir un exemple</a>
-    <button class="nav-cta" onclick="window.location='/commander.html'">Lancer une vérification</button>
+    <div class="nav-actions">
+      <a href="/demo.html" class="nav-demo-btn">Tester</a>
+      <button class="nav-cta" onclick="window.location='/commander.html'">Lancer une vérification</button>
+    </div>
     <div class="nav-mobile-right">
       <button class="nav-cta-mobile" onclick="window.location='/commander.html'">Lancer une vérification</button>
       <button class="hamburger" id="hamburger" aria-label="Menu">
