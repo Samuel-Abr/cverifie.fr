@@ -419,6 +419,18 @@ body.dark-story nav.main-nav {
   background:rgba(5,5,7,0.88);
   border-bottom-color:rgba(255,255,255,0.07);
 }
+/* Demo button in nav */
+.nav-demo-btn{
+  font-size:.875rem;font-weight:700;
+  color:var(--green);
+  padding:8px 16px;border-radius:8px;
+  border:1.5px solid var(--green);
+  white-space:nowrap;transition:background .2s,color .2s;
+}
+.nav-demo-btn:hover{background:var(--green);color:white}
+body.dark-story .nav-demo-btn{color:var(--green-light);border-color:var(--green-light)}
+body.dark-story .nav-demo-btn:hover{background:var(--green-light);color:#050507}
+
 /* Logo switching nav */
 .logo-nav-dark { display:none; }
 body.dark-story .logo-nav-default { display:none; }
