@@ -1,269 +1,364 @@
 ---
 layout: base.njk
+title: "Jean-Claude Romand : l'homme qui n'existait pas"
+description: "Pendant 18 ans, Jean-Claude Romand a fait croire à sa famille qu'il était médecin à l'OMS. Il ne travaillait nulle part. Il attendait. Et quand la vérité a menacé d'éclater, il a tout détruit."
 bodyClass: dark-story
-title: "Jean-Claude Romand : 18 ans de mensonge, 5 meurtres"
-description: "Pendant 18 ans, Jean-Claude Romand a prétendu être médecin chercheur à l'OMS. Quand la vérité allait éclater, il a tué sa famille entière. L'histoire vraie qui hante encore la France."
 ---
 <style>
-/* ── STORY CINEMA ── */
-.sp-bar{position:fixed;top:64px;left:0;height:2px;width:0;background:var(--green-light);z-index:99;transition:width .12s linear;pointer-events:none}
+.sp-bar{position:fixed;top:64px;left:0;height:3px;width:0%;background:var(--green-light);z-index:9999;transition:width .1s linear;pointer-events:none}
+body.dark-story{background:#050507;color:rgba(255,255,255,0.82)}
+body.dark-story a{color:var(--green-light)}
 .sp-hero{height:100vh;min-height:580px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:12vh}
-.sp-hero-bg{position:absolute;inset:0}
-.sp-hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.28) saturate(.6)}
-.sp-hero-gradient{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,5,7,.05) 0%,rgba(5,5,7,.0) 20%,rgba(5,5,7,.55) 60%,rgba(5,5,7,1) 100%)}
-.sp-hero-content{position:relative;z-index:2;max-width:820px;margin:0 auto;padding:0 2rem;width:100%}
-.sp-eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-light);margin-bottom:1.25rem}
-.sp-hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,4rem);color:white;line-height:1.1;letter-spacing:-0.025em;margin-bottom:1.5rem;font-weight:700}
-.sp-hero-title em{color:var(--green-light);font-style:italic}
-.sp-hero-deck{font-size:1.05rem;color:rgba(255,255,255,.58);line-height:1.75;max-width:640px;margin-bottom:1.75rem}
-.sp-hero-meta{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;font-size:.78rem;color:rgba(255,255,255,.32);letter-spacing:.03em}
-.sp-scroll-hint{position:absolute;bottom:2.5rem;right:2.5rem;z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.28);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;animation:sp-bounce 2.5s ease-in-out infinite}
-@keyframes sp-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
-.sp-scroll-hint svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.sp-article{background:#050507;padding-bottom:7rem}
-.sp-text{max-width:680px;margin:0 auto;padding:4rem 2rem 0}
-.sp-text p{font-size:1.05rem;color:rgba(255,255,255,.7);line-height:1.92;margin-bottom:1.5rem}
-.sp-text strong{color:rgba(255,255,255,.92);font-weight:600}
-.sp-text ul{padding-left:1.5rem;margin-bottom:1.5rem}
-.sp-text li{font-size:1rem;color:rgba(255,255,255,.62);line-height:1.75;margin-bottom:.5rem}
-.sp-chapter{max-width:680px;margin:0 auto;padding:4.5rem 2rem 0}
-.sp-chapter h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.1rem);color:white;font-weight:700;line-height:1.2;letter-spacing:-0.02em;padding-bottom:.9rem;border-bottom:1px solid rgba(255,255,255,.1)}
-.sp-img-break{position:relative;height:62vh;min-height:300px;margin:5rem 0;overflow:hidden}
-.sp-img-break img{width:100%;height:100%;object-fit:cover;filter:brightness(.45) saturate(.7)}
-.sp-img-caption{position:absolute;bottom:1.25rem;right:2rem;font-size:.7rem;color:rgba(255,255,255,.32);font-style:italic;letter-spacing:.02em}
-.sp-quote{max-width:760px;margin:0 auto;padding:4.5rem 2rem;text-align:center;position:relative}
-.sp-quote::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:36px;height:2px;background:var(--green-light)}
-.sp-quote blockquote{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.5vw,1.65rem);color:rgba(255,255,255,.88);line-height:1.5;font-style:italic;font-weight:400;letter-spacing:-0.01em;margin-bottom:1.25rem}
-.sp-quote cite{font-size:.75rem;color:rgba(255,255,255,.28);font-style:normal;letter-spacing:.04em}
-.sp-keybox{max-width:680px;margin:4rem auto 0;padding:0 2rem}
-.sp-keybox-inner{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:1.75rem 2rem}
-.sp-keybox h4{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-light);margin-bottom:1.25rem}
-.sp-keybox ul{padding-left:0;list-style:none;margin:0}
-.sp-keybox li{font-size:.9rem;color:rgba(255,255,255,.58);line-height:1.72;margin-bottom:.75rem;padding-left:1.2rem;position:relative}
-.sp-keybox li::before{content:'';position:absolute;left:0;top:.65em;width:5px;height:1px;background:var(--green-light)}
-.sp-keybox li strong{color:rgba(255,255,255,.85);font-weight:600}
-.sp-timeline{max-width:680px;margin:4rem auto 0;padding:0 2rem}
-.sp-timeline-inner{border-left:1px solid rgba(255,255,255,.12);padding-left:2rem}
+.sp-hero-img{position:absolute;inset:0;z-index:0}
+.sp-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.sp-hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(5,5,7,0.98) 0%,rgba(5,5,7,0.65) 45%,rgba(5,5,7,0.15) 100%)}
+.sp-hero-body{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 2rem;width:100%}
+.sp-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(82,183,136,0.15);border:1px solid rgba(82,183,136,0.4);color:#52B788;padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.5rem}
+.sp-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:#52B788}
+.sp-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5.5vw,4rem);color:white;line-height:1.1;letter-spacing:-0.025em;margin-bottom:1.25rem;font-weight:700}
+.sp-hero h1 em{color:#52B788;font-style:italic}
+.sp-hero-lead{font-size:1.1rem;color:rgba(255,255,255,0.6);line-height:1.75;max-width:640px;margin-bottom:2rem}
+.sp-hero-meta{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.sp-hero-meta-item{font-size:12px;color:rgba(255,255,255,0.35);display:flex;align-items:center;gap:6px}
+.sp-hero-meta-item strong{color:rgba(255,255,255,0.6)}
+.sp-hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:2}
+.sp-hero-scroll span{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,0.28)}
+.sp-hero-scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,rgba(255,255,255,0.28),transparent);animation:scrollpulse 1.8s ease-in-out infinite}
+@keyframes scrollpulse{0%,100%{opacity:.4}50%{opacity:1}}
+.sp-article{max-width:740px;margin:0 auto;padding:5rem 2rem 2rem}
+.sp-text p{font-size:1.075rem;color:rgba(255,255,255,0.75);line-height:1.92;margin-bottom:1.5rem}
+.sp-text p:last-child{margin-bottom:0}
+.sp-text strong{color:rgba(255,255,255,0.92);font-weight:600}
+.sp-text em{color:rgba(255,255,255,0.85)}
+.sp-chapter{margin:4.5rem 0 1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.07)}
+.sp-chapter-num{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green-light);opacity:.7;margin-bottom:.6rem}
+.sp-chapter h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3.5vw,2.1rem);color:white;line-height:1.2;letter-spacing:-0.02em;font-weight:700}
+.sp-quote{margin:3rem 0;padding:0 0 0 1.75rem;border-left:3px solid var(--green-light)}
+.sp-quote blockquote{font-family:'Playfair Display',serif;font-size:1.2rem;color:rgba(255,255,255,0.88);line-height:1.65;font-style:italic;margin:0 0 .75rem}
+.sp-quote cite{font-size:.78rem;color:rgba(255,255,255,0.35);font-style:normal;letter-spacing:.03em}
+.sp-keybox{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:1.75rem 2rem;margin:2.5rem 0}
+.sp-keybox-label{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green-light);margin-bottom:1rem;opacity:.8}
+.sp-keybox ul{padding-left:1.25rem;margin:0}
+.sp-keybox li{font-size:.9375rem;color:rgba(255,255,255,0.68);line-height:1.7;margin-bottom:.55rem}
+.sp-keybox li strong{color:rgba(255,255,255,0.88)}
+.sp-timeline{margin:2.5rem 0;border-left:1px solid rgba(255,255,255,0.1);padding-left:1.75rem}
 .sp-tl-item{position:relative;margin-bottom:1.75rem}
-.sp-tl-item::before{content:'';position:absolute;left:-2.38rem;top:4px;width:9px;height:9px;border-radius:50%;background:var(--green-light);border:2px solid #050507;box-shadow:0 0 0 1px var(--green-light)}
-.sp-tl-date{font-size:.72rem;font-weight:700;color:var(--green-light);letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:.3rem}
-.sp-tl-text{font-size:.9rem;color:rgba(255,255,255,.55);line-height:1.65}
-.sp-lesson{max-width:680px;margin:5rem auto 0;padding:0 2rem}
-.sp-lesson-inner{background:rgba(45,106,79,.12);border:1px solid rgba(82,183,136,.18);border-radius:14px;padding:2.5rem}
-.sp-lesson h3{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-light);margin-bottom:1.25rem}
-.sp-lesson p{font-size:.95rem;color:rgba(255,255,255,.6);line-height:1.82;margin-bottom:.75rem}
+.sp-tl-item::before{content:'';position:absolute;left:-2.125rem;top:5px;width:9px;height:9px;border-radius:50%;background:var(--green-light);border:2px solid #050507;box-shadow:0 0 0 2px var(--green-light)}
+.sp-tl-date{font-size:.75rem;font-weight:700;color:var(--green-light);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.3rem;display:block;opacity:.9}
+.sp-tl-item p{font-size:.9375rem;color:rgba(255,255,255,0.62);line-height:1.7;margin:0}
+.sp-lesson{background:rgba(82,183,136,0.06);border:1px solid rgba(82,183,136,0.18);border-radius:16px;padding:2.5rem;margin:3.5rem 0;position:relative;overflow:hidden}
+.sp-lesson::before{content:'';position:absolute;top:-80px;right:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(82,183,136,0.12) 0%,transparent 70%)}
+.sp-lesson-inner{position:relative;z-index:1}
+.sp-lesson-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green-light);margin-bottom:1rem;display:block}
+.sp-lesson h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:white;margin-bottom:1.25rem;font-weight:700}
+.sp-lesson p{font-size:.9375rem;color:rgba(255,255,255,0.68);line-height:1.8;margin-bottom:.8rem}
 .sp-lesson p:last-child{margin-bottom:0}
-.sp-cta-block{max-width:680px;margin:5rem auto 0;padding:0 2rem}
-.sp-cta-inner{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:2rem;display:flex;align-items:center;gap:1.75rem}
-.sp-cta-icon{width:52px;height:52px;background:rgba(82,183,136,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sp-lesson strong{color:rgba(255,255,255,0.88)}
+.sp-img-break{position:relative;height:65vh;min-height:320px;margin:5.5rem 0;overflow:hidden}
+.sp-img-break img{width:100%;height:100%;object-fit:cover}
+.sp-img-break::before{content:'';position:absolute;inset:0;z-index:1;background:rgba(5,5,7,0.3)}
+.sp-img-break-caption{position:absolute;bottom:1.25rem;right:1.5rem;font-size:.68rem;color:rgba(255,255,255,0.28);z-index:2;letter-spacing:.07em}
+.sp-cta-block{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:2.25rem 2rem;margin:4rem 0;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.sp-cta-icon{width:52px;height:52px;background:rgba(82,183,136,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .sp-cta-icon svg{width:22px;height:22px;stroke:var(--green-light);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sp-cta-text{flex:1;min-width:200px}
 .sp-cta-text h4{font-size:1rem;font-weight:700;color:white;margin-bottom:.4rem}
-.sp-cta-text p{font-size:.875rem;color:rgba(255,255,255,.42);line-height:1.6;margin:0}
-.sp-cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:white;padding:12px 22px;border-radius:8px;font-size:13px;font-weight:600;white-space:nowrap;transition:background .2s;flex-shrink:0}
-.sp-cta-btn:hover{background:var(--green-mid)}
-.sp-cta-btn svg{width:13px;height:13px;stroke:white;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-.sp-nav{max-width:680px;margin:4.5rem auto 0;padding:2rem 2rem 0;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.sp-cta-text p{font-size:.875rem;color:rgba(255,255,255,0.5);line-height:1.65;margin:0}
+.sp-cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:white;padding:12px 24px;border-radius:9px;font-size:13px;font-weight:600;white-space:nowrap;transition:background .2s;flex-shrink:0}
+.sp-cta-btn:hover{background:var(--green-mid);color:white}
+.sp-nav{border-top:1px solid rgba(255,255,255,0.07);padding:2rem 0 3rem;margin-top:1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .sp-nav a{font-size:.875rem;color:var(--green-light);font-weight:600;display:flex;align-items:center;gap:6px;transition:opacity .2s}
-.sp-nav a:hover{opacity:.7}
+.sp-nav a:hover{opacity:.75}
 .sp-nav a svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* ── IMMERSIVE COMPONENTS ─── */
+.sp-fullbleed{width:100vw;margin-left:calc(50% - 50vw)}
+.sp-interlude{padding:8rem 2rem;text-align:center;background:#06060a;position:relative;overflow:hidden}
+.sp-interlude::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(82,183,136,0.07) 0%,transparent 65%)}
+.sp-interlude-inner{position:relative;z-index:1;max-width:820px;margin:0 auto}
+.sp-interlude-text{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,4vw,3rem);color:rgba(255,255,255,0.92);line-height:1.3;font-style:italic;font-weight:400}
+.sp-interlude-text em{color:var(--green-light);font-style:normal}
+.sp-interlude-sub{margin-top:1.5rem;font-size:.72rem;color:rgba(255,255,255,0.25);letter-spacing:.15em;text-transform:uppercase}
+.sp-img-over{position:relative;height:72vh;min-height:420px;overflow:hidden;margin:5.5rem 0}
+.sp-img-over img{width:100%;height:100%;object-fit:cover;filter:brightness(.22) saturate(.5)}
+.sp-img-over-body{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center}
+.sp-img-over-body p{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3.5vw,2.4rem);color:rgba(255,255,255,0.92);max-width:720px;line-height:1.4;font-style:italic}
+.sp-img-over-body .sp-src{margin-top:1.5rem;font-size:.7rem;color:rgba(255,255,255,0.2);letter-spacing:.14em;text-transform:uppercase;font-style:normal}
+.sp-split-wrap{display:grid;grid-template-columns:1fr 1fr;position:relative;min-height:100vh}
+.sp-split-img{position:sticky;top:64px;height:calc(100vh - 64px);overflow:hidden;align-self:start}
+.sp-split-img img{width:100%;height:100%;object-fit:cover}
+.sp-split-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 55%,#050507 100%)}
+.sp-split-body{padding:5rem 3rem 5rem 4.5rem}
+.sp-split-body .sp-chapter{margin-top:0;padding-top:0;border-top:none}
+.sp-split-body .sp-text p{font-size:1.05rem;color:rgba(255,255,255,0.72);line-height:1.9;margin-bottom:1.4rem}
 .sp-reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
 .sp-reveal.sp-in{opacity:1;transform:translateY(0)}
-.sp-img-break.sp-reveal{transform:none}
-.sp-img-break.sp-reveal img{opacity:0;transform:scale(1.05);transition:opacity 1.1s ease,transform 1.4s ease}
-.sp-img-break.sp-in img{opacity:1;transform:scale(1)}
+.sp-img-break.sp-reveal img,.sp-img-over.sp-reveal img{opacity:0;transform:scale(1.05);transition:opacity 1.1s ease,transform 1.4s ease}
+.sp-img-break.sp-in img,.sp-img-over.sp-in img{opacity:1;transform:scale(1)}
+.sp-img-break.sp-reveal,.sp-img-over.sp-reveal{opacity:1;transform:none}
+@media(max-width:860px){
+  .sp-split-wrap{grid-template-columns:1fr}
+  .sp-split-img{position:relative;height:55vw;top:auto}
+  .sp-split-img::after{background:linear-gradient(to bottom,transparent 50%,#050507 100%)}
+  .sp-split-body{padding:2.5rem 1.5rem}
+}
 @media(max-width:640px){
   .sp-hero{padding-bottom:8vh}
-  .sp-hero-title{font-size:2rem}
-  .sp-text,.sp-chapter,.sp-keybox,.sp-lesson,.sp-cta-block,.sp-timeline{padding-left:1.25rem;padding-right:1.25rem}
-  .sp-quote{padding:3rem 1.25rem}
-  .sp-img-break{height:50vh;margin:3.5rem 0}
-  .sp-cta-inner{flex-direction:column;align-items:flex-start}
-  .sp-scroll-hint{display:none}
-  .sp-nav{padding-left:1.25rem;padding-right:1.25rem}
+  .sp-hero-body{padding:0 1.25rem}
+  .sp-article{padding:3rem 1.25rem 1rem}
+  .sp-cta-block{flex-direction:column;align-items:flex-start}
+  .sp-img-break,.sp-img-over{height:48vw;min-height:220px;margin:3.5rem 0}
+  .sp-interlude{padding:5rem 1.5rem}
 }
 </style>
 
 <div class="sp-bar" id="spBar"></div>
 
 <section class="sp-hero">
-  <div class="sp-hero-bg">
-    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80&fm=webp"
-         alt="Forêt sombre" fetchpriority="high" width="1600" height="900">
+  <div class="sp-hero-img">
+    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1800&q=85&auto=format&fit=crop" alt="Forêt dense dans l'obscurité">
   </div>
-  <div class="sp-hero-gradient"></div>
-  <div class="sp-hero-content">
-    <span class="sp-eyebrow">Histoire vraie · France · 1975–1993</span>
-    <h1 class="sp-hero-title">Jean-Claude Romand :<br><em>18 ans de mensonge</em>, 5 meurtres</h1>
-    <p class="sp-hero-deck">Pendant presque deux décennies, cet homme a prétendu être médecin chercheur à l'Organisation Mondiale de la Santé. Il n'avait jamais passé son concours de deuxième année. Quand le château de cartes allait s'effondrer, il a choisi l'irréparable.</p>
+  <div class="sp-hero-body">
+    <div class="sp-eyebrow">Histoire vraie · France · Crime</div>
+    <h1>Jean-Claude Romand :<br><em>l'homme qui n'existait pas</em></h1>
+    <p class="sp-hero-lead">Pendant dix-huit ans, il a fait croire à sa femme, ses enfants, ses parents et ses amis qu'il était chercheur à l'OMS. Il ne travaillait nulle part. Il attendait. Et quand la vérité a failli éclater, il a tout détruit.</p>
     <div class="sp-hero-meta">
-      <span>Janvier 1993</span><span>·</span><span>Ferney-Voltaire, France</span><span>·</span><span>12 min de lecture</span>
+      <span class="sp-hero-meta-item"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="2" width="10" height="9" rx="1"/><path d="M4 2V1M8 2V1M1 5h10"/></svg><strong>9 janvier 1993</strong> · Prévessin-Moëns, Ain</span>
+      <span class="sp-hero-meta-item"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="5"/><polyline points="6,3 6,6 8,8"/></svg>18 min de lecture</span>
     </div>
   </div>
-  <div class="sp-scroll-hint">
-    <span>Défiler</span>
-    <svg viewBox="0 0 16 16"><polyline points="4,6 8,11 12,6"/></svg>
-  </div>
+  <div class="sp-hero-scroll"><span>Défiler</span><div class="sp-hero-scroll-line"></div></div>
 </section>
 
 <article class="sp-article">
-
   <div class="sp-text sp-reveal">
-    <p>Il y a des histoires qu'on lit et qu'on ne peut plus oublier. L'affaire Jean-Claude Romand est de celles-là, non pas parce qu'elle est spectaculaire, mais parce qu'elle est profondément humaine dans toute la complexité de ce terme. C'est l'histoire d'un mensonge ordinaire qui a duré dix-huit ans, et d'un homme ordinaire qui a préféré tuer sa famille plutôt que d'avouer qu'il n'avait jamais été ce qu'il prétendait être.</p>
+    <p>Le 9 janvier 1993, à 4h52 du matin, les pompiers de Prévessin-Moëns reçoivent un appel. Une maison brûle dans un lotissement calme du pays de Gex, à cinq kilomètres de la frontière suisse. Quand les premiers hommes pénètrent dans la bâtisse encore fumante, ils découvrent ce qu'ils vont mettre des années à oublier.</p>
+    <p>Trois corps. Florence Romand, 38 ans, institutrice. Caroline, 7 ans. Antoine, 5 ans. La mère et ses deux enfants. Ils ont été tués dans leur sommeil, chacun d'une balle dans la tête, avant que quelqu'un mette le feu à la maison et tente de mourir avec eux.</p>
+    <p>Cet homme, c'est Jean-Claude Romand. Le mari. Le père. 39 ans. Chercheur à l'Organisation Mondiale de la Santé à Genève, spécialiste reconnu en pharmacologie, fils modèle, voisin affable, ami fidèle. Celui que tout le monde dans le quartier saluait le matin en le voyant prendre la route de Genève avec son attaché-case.</p>
+    <p>Sauf que Jean-Claude Romand n'a jamais travaillé à l'OMS. Jamais exercé la médecine. Jamais obtenu son diplôme. Depuis <strong>dix-huit ans</strong>, chaque matin, il part pour un bureau qui n'existe pas. Il n'est rien de ce qu'il prétend être. Et il ne l'a jamais été.</p>
   </div>
+</article>
 
-  <div class="sp-chapter sp-reveal">
-    <h2>Acte I : Le mensonge inaugural, 1975</h2>
+<div class="sp-fullbleed sp-reveal">
+  <div class="sp-interlude">
+    <div class="sp-interlude-inner">
+      <p class="sp-interlude-text"><em>Dix-huit ans.</em> 6 574 matins. Il embrassait ses enfants, montait en voiture, et partait pour un bureau qui n'existait nulle part.</p>
+      <p class="sp-interlude-sub">La plus longue imposture jamais documentée en France</p>
+    </div>
   </div>
+</div>
 
-  <div class="sp-text sp-reveal">
-    <p>Tout commence à la faculté de médecine de Lyon, à l'automne 1975. Jean-Claude Romand, 18 ans, fils d'un garde forestier des Alpes, s'inscrit en première année de médecine. C'est là qu'il rencontre Florence Crolet, dont il tombe amoureux.</p>
-    <p>En juin 1976, il rate son examen de passage en deuxième année. C'est un échec banal : les deux tiers de ses camarades subissent le même sort. La différence, c'est ce qu'il décide ce soir-là : il ne dit rien à personne. Il continue de se lever le matin, de prendre sa voiture, de partir "à la fac". Sauf qu'il ne va nulle part. Il passe ses journées dans sa voiture, dans des cafés, dans des forêts. Il rentre le soir à la même heure.</p>
-    <p>Un an plus tard, il "passe" en troisième année. Puis il "obtient" sa maîtrise. Puis son doctorat. Puis son poste de chercheur à Genève, à l'Organisation Mondiale de la Santé.</p>
+<div class="sp-fullbleed sp-reveal">
+  <div class="sp-split-wrap">
+    <div class="sp-split-img">
+      <img src="https://images.unsplash.com/photo-1491555103944-7c647fd857e6?w=1200&q=85&auto=format&fit=crop" alt="Paysage d'hiver, arbres couverts de neige">
+    </div>
+    <div class="sp-split-body">
+      <div class="sp-chapter">
+        <div class="sp-chapter-num">Chapitre 01</div>
+        <h2>Automne 1975 : la ligne qu'on ne franchit pas</h2>
+      </div>
+      <div class="sp-text">
+        <p>Il y a, dans chaque grande imposture, un instant originel. Un moment où quelqu'un décide — souvent sans mesurer ce qu'il décide — que le mensonge est préférable à la vérité. Pour Jean-Claude Romand, cet instant a un nom précis : l'examen de passage entre la première et la deuxième année de médecine à Lyon, à l'automne 1975.</p>
+        <p>Il échoue. De peu. Quelques points sur quelques centaines. Une frontière mince comme une feuille de papier, mais une frontière quand même.</p>
+        <p>Ce soir-là, pendant que ses camarades comparent leurs résultats dans les couloirs de la faculté, Romand rentre chez lui. Il pense à son père, garde forestier dans l'Ain, qui n'a jamais fait d'études mais qui parle de son fils le médecin à qui veut l'entendre. Il pense à Corinne, sa petite amie depuis deux ans, qui le regarde comme si sa réussite future était une évidence.</p>
+        <p>Il ne dit rien. Ce soir-là, il ne dit rien. Et le lendemain non plus.</p>
+        <p>Le surlendemain, à l'heure habituelle, il se lève. S'habille. Embrasse Corinne. Prend sa voiture et roule vers la faculté. Il n'est plus inscrit. Mais dans les amphithéâtres bondés de Lyon dans les années soixante-dix, personne ne vérifie les visages. Il s'assied dans le fond. Il prend des notes. Il déjeune à la cafétéria avec ses anciens camarades, ceux qui font légitimement leur deuxième année.</p>
+        <p>À 18h, il rentre. Comme si de rien n'était.</p>
+        <p>Il fait ça un mois. Deux mois. Toute une année universitaire. Puis une deuxième. Une troisième. Il "réussit" ses examens, "passe" en quatrième année, "devient interne". Il ne passe rien du tout. Il apprend la médecine sans avoir le droit de l'exercer. Il connaît la pharmacologie mieux que certains diplômés en titre.</p>
+        <p>En 1979, il épouse Corinne, devenue Florence dans les documents judiciaires. Cette même année, il obtient une invitation à une réception organisée par l'OMS à Genève — il a simplement écrit une lettre. Il s'y rend, rencontre des médecins, échange des cartes de visite. À son retour, il parle à Florence de ses "nouveaux collègues de Genève".</p>
+        <p>Le mensonge a trouvé son architecture définitive. Elle ne bougera plus pendant dix-huit ans.</p>
+      </div>
+    </div>
   </div>
+</div>
 
-  <div class="sp-quote sp-reveal">
-    <blockquote>« Il passait ses journées dans sa voiture garée sur des aires d'autoroute, dans des forêts, sur des parkings de supermarchés. Parfois il regardait la frontière suisse sans la franchir. »</blockquote>
-    <cite>Emmanuel Carrère, L'Adversaire (2000)</cite>
-  </div>
+<article class="sp-article">
 
-  <div class="sp-img-break sp-reveal">
-    <img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=1600&q=75&fm=webp"
-         alt="Route vide dans la nuit" loading="lazy" width="1600" height="900">
-    <span class="sp-img-caption">Il errait. Pendant dix-huit ans.</span>
-  </div>
-
-  <div class="sp-chapter sp-reveal">
-    <h2>Acte II : Construire une vie entière sur du vent</h2>
-  </div>
-
-  <div class="sp-text sp-reveal">
-    <p>Pour entretenir l'illusion, Romand est devenu un artiste. Il parle de ses "recherches" avec suffisamment de vague pour sembler crédible. Il voyage en Suisse une ou deux fois par an, pas pour travailler à l'OMS, mais pour y rôder, photographier les couloirs, mémoriser les noms des vrais chercheurs.</p>
-    <p>Il a un bureau imaginaire au Département de médecine interne. Un salaire imaginaire de 24 000 francs par mois. Des collègues imaginaires dont il cite les prénoms au dîner. Des conférences imaginaires à Washington, à Tokyo, à Vienne.</p>
-  </div>
-
-  <div class="sp-keybox sp-reveal">
-    <div class="sp-keybox-inner">
-      <h4>L'architecture du mensonge</h4>
-      <ul>
-        <li><strong>Diplômes :</strong> Tous faux. Doctorat de médecine, habilitation à diriger des recherches : aucun n'existait.</li>
-        <li><strong>Emploi :</strong> Il ne mit jamais les pieds dans les bureaux de l'OMS en tant que salarié.</li>
-        <li><strong>Revenus :</strong> Il "gérait" l'épargne de ses proches pour "l'investir" via des réseaux suisses. En réalité, il la dépensait.</li>
-        <li><strong>Réseau social :</strong> Tous ses amis, sa femme, ses parents le croyaient sincèrement médecin à l'OMS. Personne n'avait vérifié. Personne.</li>
-      </ul>
+  <div class="sp-img-over sp-reveal">
+    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=80&auto=format&fit=crop" alt="Route déserte dans la brume matinale">
+    <div class="sp-img-over-body">
+      <p>« Il partait le matin comme tout le monde. Il rentrait le soir comme tout le monde. Entre les deux, il attendait que le temps passe. »</p>
+      <span class="sp-src">Rapport d'instruction · Tribunal de Bourg-en-Bresse</span>
     </div>
   </div>
 
-  <div class="sp-text sp-reveal">
-    <p>Ce qui est peut-être le plus vertigineux, c'est la logistique du mensonge. Romand devait mémoriser des dizaines de détails, maintenir une cohérence sur dix-huit ans, adapter son récit sans jamais se contredire. C'est une performance intellectuelle hallucinante, mise au service d'un vide absolu.</p>
-  </div>
-
   <div class="sp-chapter sp-reveal">
-    <h2>Acte III : L'argent, le poison lent</h2>
+    <div class="sp-chapter-num">Chapitre 02</div>
+    <h2>Ce qu'il faisait vraiment, entre 8h30 et 18h00</h2>
   </div>
 
   <div class="sp-text sp-reveal">
-    <p>À partir du début des années 1980, Romand commence à court-circuiter ses mensonges par un nouveau problème : il lui faut de l'argent. Son "salaire" de l'OMS n'existe pas, mais les factures arrivent. La maison à Prévessin-Moëns, les vacances, les vêtements des enfants : tout cela coûte.</p>
-    <p>Sa solution est diabolique dans sa simplicité : il propose à ses proches de faire fructifier leur épargne via ses "contacts" en Suisse. Ses parents, ses beaux-parents, son ami d'enfance Luc Ladmiral : ils lui confient des dizaines de milliers de francs. Florence elle-même lui remet les économies familiales. L'argent disparaît.</p>
-    <p>Fin 1992, un médecin ami de la famille commence à poser des questions trop précises. Florence a demandé à consulter un médecin à Genève, "un collègue" de son mari, et la réponse qui lui revient est ambiguë. Le château de cartes commence à trembler.</p>
-  </div>
-
-  <div class="sp-chapter sp-reveal">
-    <h2>Acte IV : Les 9 et 11 janvier 1993</h2>
-  </div>
-
-  <div class="sp-text sp-reveal">
-    <p>Jean-Claude Romand comprend que tout va s'effondrer. Pas dans quelques semaines. Dans quelques jours.</p>
-    <p>Dans la nuit du 8 au 9 janvier 1993, après une dispute avec Florence, il la tue dans leur chambre. Le lendemain matin, il attend que ses enfants descendent. Caroline, 7 ans, et Antoine, 5 ans. Il les tue l'un après l'autre.</p>
-    <p>Le 11 janvier, il rend visite à ses parents dans les Rousses, dans le Jura. Il leur tire dessus. Puis à sa maîtresse parisienne, Corinne Chambonnet : elle survit miraculeusement. Il revient ensuite à Prévessin-Moëns, avale des barbituriques, et met le feu à la maison. Il survivra. Ses victimes, non.</p>
+    <p>La question que chacun finit par poser, en découvrant l'histoire de Jean-Claude Romand, est inévitable : mais qu'est-ce qu'il faisait, ces journées-là ?</p>
+    <p>La réponse est vertigineuse dans sa banalité. Il conduisait. Il attendait. Il lisait. Il dormait parfois dans sa voiture, dans un parking souterrain de Genève, entre deux et quatre de l'après-midi.</p>
+    <p>Chaque matin vers 8h30, Romand part en voiture comme un cadre supérieur qui prend la direction de la frontière suisse. Il gare son véhicule dans un parking public à quelques centaines de mètres des bâtiments de l'OMS — assez près pour que la mise en scène soit crédible si quelqu'un le suivait, assez loin pour ne jamais croiser ceux qui y travaillent vraiment. Et là, il attend.</p>
+    <p>Parfois, il entre dans la cafétéria de l'OMS — accessible au public — commande un café, déplie le Journal de Genève. Il lit des publications médicales, des revues de pharmacologie. Il suit de loin une carrière qu'il n'a pas. Il connaît les noms des vrais chercheurs, les titres des vrais projets. Si Florence ou un ami lui pose des questions sur son travail, il répond avec précision et sans hésitation.</p>
+    <p>D'autres jours, il roule. Les autoroutes françaises et suisses sont son bureau — des centaines de kilomètres d'aller-retour sans destination précise, dans une voiture qui sent le tabac froid. Il mange seul dans des aires d'autoroute. Il fait des siestes dans des forêts de la Dombes. Il tue les heures avec la patience obstinée d'un homme qui a décidé une fois pour toutes que c'était comme ça.</p>
+    <p>Les "voyages professionnels" à Bruxelles, à New York, à Moscou ? Des séjours solitaires dans des villes qu'il ne visite pas vraiment. Il s'installe dans une chambre d'hôtel payée en liquide, mange au restaurant en lisant, dort, rentre. Il rapporte à Florence de petits cadeaux achetés dans les aéroports. Il lui parle de réunions fictives, de collègues qui n'existent pas, d'articles scientifiques dont il a inventé les auteurs et les conclusions.</p>
+    <p>Il ne boit pas. Ne se drogue pas. N'a pas de liaisons à cette époque. N'entretient aucune activité clandestine au sens habituel du terme. Dans ces parkings, ces forêts, ces cafétérias anonymes, il est simplement un homme qui attend que les heures passent assez vite pour rentrer chez lui sans éveiller de soupçons.</p>
+    <p>Il y a quelque chose de vertigineux dans cette image. Dix-huit années de mensonge ne supposent pas un seul grand acte courageux de dissimulation — elles supposent des <strong>milliers de moments ordinaires</strong>, des milliers de matins où il aurait pu tout avouer et ne l'a pas fait. Dix-huit ans, c'est la longueur d'une carrière entière. C'est plus long que l'adolescence de ses enfants.</p>
   </div>
 
   <div class="sp-img-break sp-reveal">
-    <img src="https://images.unsplash.com/photo-1474932430478-367756085004?auto=format&fit=crop&w=1600&q=75&fm=webp"
-         alt="Palais de justice" loading="lazy" width="1600" height="900">
-    <span class="sp-img-caption">Procès à Bourg-en-Bresse, juillet 1996.</span>
+    <img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=1600&q=80&auto=format&fit=crop" alt="Route de nuit, phares dans la brume">
+    <span class="sp-img-break-caption">Les autoroutes franco-suisses · 1975 — 1993</span>
+  </div>
+
+  <div class="sp-chapter sp-reveal">
+    <div class="sp-chapter-num">Chapitre 03</div>
+    <h2>L'argent des autres</h2>
+  </div>
+
+  <div class="sp-text sp-reveal">
+    <p>Un mensonge de cette ampleur coûte cher. La maison dans le lotissement chic du pays de Gex. Les vêtements d'un cadre de l'OMS. Les restaurants quand on reçoit des amis. Les cadeaux des voyages. Romand n'a pas de salaire. Mais il a trouvé une solution d'une élégance glaçante.</p>
+    <p>Il gère l'argent des autres.</p>
+    <p>Ses parents d'abord. Son père, qui a passé sa vie à épargner le salaire d'un garde forestier, croit en son fils le brillant médecin de l'OMS. Romand lui parle de placements sécurisés en Suisse, de comptes à rendement garanti accessibles grâce à ses relations dans les milieux médicaux genevois. Son père lui confie ses économies. Tout. Environ <strong>900 000 francs</strong> de la vie entière d'un homme qui n'a jamais gaspillé un centime.</p>
+    <p>Ses beaux-parents ensuite. 560 000 francs. Un médecin ami remet des sommes pour des "investissements canadiens à fort rendement". D'autres relations lui font confiance à leur tour.</p>
+    <p>Au total, plusieurs millions de francs ont transité par ses mains en moins de vingt ans.</p>
+    <p>Cet argent n'est jamais investi. Il est dépensé, lentement, pour financer une vie ordinaire. Et les rendements ? Romand envoie des relevés de compte soigneusement fabriqués. Des courriers à en-tête de banques suisses dont il a reproduit les logos au millimètre, tapés à la machine, signés d'une main assurée. Les sommes "fructifient". Les intérêts "s'accumulent". Quand un investisseur demande à récupérer une partie de son capital, Romand règle en liquide — puisé dans les apports des autres investisseurs. Un dispositif de Ponzi artisanal, entretenu vingt ans dans un bungalow du Pays de Gex.</p>
+    <p>Personne n'a jamais appelé la banque directement. Personne n'a demandé à voir les originaux. On faisait confiance. Parce qu'un médecin de l'OMS, ça ne ment pas. Parce que c'est de la famille, presque. Parce que vérifier aurait été une forme d'insulte.</p>
+  </div>
+
+  <div class="sp-quote sp-reveal">
+    <blockquote>« Il était exactement le genre de personne à qui on fait confiance sans réfléchir. Cultivé, discret, compétent. On n'imaginait pas qu'il puisse avoir besoin de mentir. »</blockquote>
+    <cite>Témoignage d'un proche, procès de Bourg-en-Bresse, 1996</cite>
+  </div>
+
+</article>
+
+<div class="sp-fullbleed sp-reveal">
+  <div class="sp-interlude">
+    <div class="sp-interlude-inner">
+      <p class="sp-interlude-text">À l'automne 1992, pour la première fois en <em>dix-sept ans</em>, quelqu'un commence à poser les mauvaises questions.</p>
+    </div>
+  </div>
+</div>
+
+<article class="sp-article">
+
+  <div class="sp-chapter sp-reveal">
+    <div class="sp-chapter-num">Chapitre 04</div>
+    <h2>La fissure : quand tout commence à s'effondrer en même temps</h2>
+  </div>
+
+  <div class="sp-text sp-reveal">
+    <p>À l'automne 1992, Jean-Claude Romand entame une liaison avec Chantal Deleyer, une ancienne camarade de faculté retrouvée lors d'un voyage. Il lui confie son secret — pas tout, pas d'un seul coup, mais assez pour qu'elle commence à chercher, à recouper, à sentir que quelque chose ne tient pas.</p>
+    <p>Chantal contacte Florence. Romand apprend qu'une conversation a eu lieu entre les deux femmes. Pour la première fois depuis 1975, quelqu'un en dehors de lui sait — ou commence à savoir — que la réalité est autre.</p>
+    <p>Ce qui se passe ensuite dit tout sur l'état mental de Romand à ce moment-là. Il essaie de faire taire Chantal. Physiquement. Il contacte un individu présenté comme capable d'arranger ce genre de chose. Il lui remet de l'argent. L'homme prend l'argent et disparaît. La menace, elle, ne disparaît pas.</p>
+    <p>Parallèlement, à la fin de l'année, les parents de Florence font part de leur souhait de récupérer leur capital. Une demande parfaitement légitime. Absolument impossible à satisfaire — l'argent est depuis longtemps dépensé.</p>
+    <p>L'édifice de dix-huit ans commence à se fissurer de partout en même temps. La menace de Chantal. La demande des beaux-parents. Les questions de Florence. La vérité, que Romand a maintenue à distance par la seule force de sa volonté, est soudainement toute proche.</p>
+    <p>Dans les jours qui précèdent le 9 janvier 1993, Romand calcule. Pas les mensonges à concocter — ça, il l'a fait pendant dix-huit ans sans effort. Il calcule les <em>conséquences d'une révélation</em>. Il visualise les visages de chacun quand ils comprendront. Et quelque chose en lui — quelque chose que les psychiatres appelleront plus tard une structure de personnalité narcissique sévère — conclut que cette confrontation est impossible. Pas douloureuse. Pas honteuse. Impossible. Qu'il ne survivra pas à cette humiliation. Et que ceux qu'il aime non plus.</p>
+  </div>
+
+  <div class="sp-img-over sp-reveal">
+    <img src="https://images.unsplash.com/photo-1474932430478-367756085004?w=1600&q=80&auto=format&fit=crop" alt="Colonnes de palais de justice">
+    <div class="sp-img-over-body">
+      <p>« Il aimait sa famille. Et c'est précisément pour ça qu'il ne pouvait pas les laisser apprendre la vérité. »</p>
+      <span class="sp-src">Emmanuel Carrère, L'Adversaire, 1999</span>
+    </div>
+  </div>
+
+</article>
+
+<div class="sp-fullbleed sp-reveal">
+  <div class="sp-interlude">
+    <div class="sp-interlude-inner">
+      <p class="sp-interlude-text">Le <em>9 janvier 1993</em>, Jean-Claude Romand se lève avant l'aube. Sa femme dort encore. Ses enfants aussi.</p>
+    </div>
+  </div>
+</div>
+
+<article class="sp-article">
+
+  <div class="sp-chapter sp-reveal">
+    <div class="sp-chapter-num">Chapitre 05</div>
+    <h2>Ce matin-là</h2>
+  </div>
+
+  <div class="sp-text sp-reveal">
+    <p>Nous ne saurons jamais exactement ce qu'il a pensé dans les heures qui ont précédé. Nous savons, en revanche, avec une précision judiciaire absolue, ce qu'il a fait.</p>
+    <p>Il tue Florence d'abord, d'une balle dans la tête pendant qu'elle dort. Puis il monte à l'étage. Il entre dans la chambre de Caroline. Puis dans celle d'Antoine.</p>
+    <p>Ensuite, aussi calmement qu'un homme qui part travailler, il prend sa voiture et roule jusqu'à la maison de ses parents dans l'Ain — à une heure et demie de là. Il arrive vers midi. Il déjeune avec eux. Il parle de choses ordinaires. Dans l'après-midi, il les tue à leur tour.</p>
+    <p>Il rentre dans la maison des Pays de Gex. Il avale un cocktail de médicaments en grande quantité. Il met le feu.</p>
+    <p>Mais le feu prend moins vite qu'il ne l'espérait, ou les médicaments l'emportent trop tôt. Il perd connaissance avant que les flammes l'atteignent vraiment. Au matin, les pompiers le trouvent vivant, brûlé aux mains et au visage, inconscient dans les décombres fumants.</p>
+    <p>À l'hôpital, sous sédatifs et bandages, Jean-Claude Romand commence à parler. D'abord les meurtres. Puis, heure après heure, sous les questions incrédules des enquêteurs : les dix-huit ans. Les parkings. Les relevés de compte fabriqués à la machine à écrire. Les voyages fictifs dans des villes qu'il ne visitait pas. Les collègues inventés. Le diplôme inexistant. Tout.</p>
+    <p>Les policiers qui l'interrogent ce jour-là n'ont jamais entendu quelque chose de pareil. Ils cherchent la folie dans ses yeux. Ils n'y trouvent qu'une clarté presque administrative. Romand répond à tout, avec précision, sans débordement émotionnel. Comme si raconter le mensonge était, pour lui, aussi naturel que de l'avoir vécu.</p>
+  </div>
+
+  <div class="sp-img-break sp-reveal">
+    <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?w=1600&q=80&auto=format&fit=crop" alt="Couloir sombre et désert">
+    <span class="sp-img-break-caption">Prévessin-Moëns · Ain · 9 janvier 1993</span>
+  </div>
+
+  <div class="sp-chapter sp-reveal">
+    <div class="sp-chapter-num">Chapitre 06</div>
+    <h2>Le procès, Carrère, et la question qui reste sans réponse</h2>
+  </div>
+
+  <div class="sp-text sp-reveal">
+    <p>Le procès de Jean-Claude Romand s'ouvre en juin 1996 à Bourg-en-Bresse. Il dure trois semaines. La salle est comble chaque matin. Les journalistes du monde entier sont là. On attend un monstre. On trouve un homme pâle, ordinaire, qui répond à voix basse et regarde ses mains entre les questions.</p>
+    <p>Romand plaide coupable. Il ne conteste aucun fait. Quand il parle, c'est avec cette placidité déroutante que les policiers avaient remarquée à l'hôpital — une absence d'affect qui glace les jurés plus sûrement que des larmes ne l'auraient fait. Il dit qu'il aimait sa famille. Il dit qu'il ne pouvait pas les laisser vivre avec la honte de ce qu'il était. Il dit des choses qui seraient cohérentes, dans un autre contexte. Ici, elles justifient cinq meurtres.</p>
+    <p>Il est condamné à la réclusion criminelle à perpétuité.</p>
+    <p>L'écrivain Emmanuel Carrère, fasciné par l'affaire depuis son dénouement, obtient l'autorisation de correspondre avec Romand en prison. Leur échange dure plusieurs années. En 1999, il publie <em>L'Adversaire</em> — un récit non-fictif qui devient rapidement un classique de la littérature française. Le titre est tiré de l'Épître de Jean : "L'adversaire qui vous égare est dans le monde." Carrère lui-même confesse qu'il a cherché une explication et ne l'a pas trouvée. Romand n'est pas fou au sens clinique. Il n'est pas un manipulateur froid au sens habituel. Il est quelque chose de plus insaisissable : un homme qui a préféré anéantir ceux qu'il aimait plutôt que de les décevoir.</p>
+    <p><strong>Jean-Claude Romand a été libéré conditionnellement en 2019</strong>, après vingt-six ans de détention. Il vit quelque part en France, sous une identité protégée. Personne ne sait qui est son voisin.</p>
+  </div>
+
+  <div class="sp-quote sp-reveal">
+    <blockquote>« Je n'ai pas trouvé de monstre au bout de cette histoire. J'ai trouvé quelqu'un qui ressemblait, par certains côtés, à quelqu'un que j'aurais pu être. Et c'est ça qui m'a le plus troublé. »</blockquote>
+    <cite>Emmanuel Carrère, L'Adversaire, 1999</cite>
+  </div>
+
+  <div class="sp-chapter sp-reveal">
+    <div class="sp-chapter-num">Chronologie</div>
+    <h2>Dix-huit ans, date par date</h2>
   </div>
 
   <div class="sp-timeline sp-reveal">
-    <div class="sp-timeline-inner">
-      <div class="sp-tl-item">
-        <span class="sp-tl-date">8–9 janvier 1993</span>
-        <p class="sp-tl-text">Meurtre de Florence Romand, son épouse.</p>
-      </div>
-      <div class="sp-tl-item">
-        <span class="sp-tl-date">9 janvier 1993</span>
-        <p class="sp-tl-text">Meurtre de Caroline (7 ans) et Antoine (5 ans), leurs enfants.</p>
-      </div>
-      <div class="sp-tl-item">
-        <span class="sp-tl-date">11 janvier 1993</span>
-        <p class="sp-tl-text">Meurtre de ses deux parents. Tentative de meurtre sur Corinne Chambonnet à Paris. Tentative de suicide par incendie : il survit.</p>
-      </div>
-      <div class="sp-tl-item">
-        <span class="sp-tl-date">Juillet 1996</span>
-        <p class="sp-tl-text">Condamné à la réclusion criminelle à perpétuité, avec période de sûreté de 22 ans.</p>
-      </div>
-      <div class="sp-tl-item">
-        <span class="sp-tl-date">Juin 2019</span>
-        <p class="sp-tl-text">Libération conditionnelle après 26 ans d'incarcération. Vit sous identité protégée.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="sp-chapter sp-reveal">
-    <h2>Acte V : L'imposteur et ses miroirs</h2>
-  </div>
-
-  <div class="sp-text sp-reveal">
-    <p>Comment un homme peut-il mentir pendant dix-huit ans à sa femme, ses enfants, ses amis, ses parents, sans jamais être démasqué ?</p>
-    <p>La réponse est aussi inconfortable qu'évidente : <strong>personne n'a jamais vérifié.</strong></p>
-    <p>Pas Florence, pourtant médecin elle-même, qui partageait sa vie depuis 1980. Pas ses beaux-parents, qui lui confièrent leurs économies. La confiance interpersonnelle (cette confiance aveugle que nous accordons à ceux que nous pensons connaître) était suffisante pour entretenir le mensonge.</p>
-    <p>Les études françaises estiment que <strong>12 % des CV contiennent un mensonge significatif</strong> sur les diplômes ou les expériences. Pas des assassins. Pas des Romand. Mais des gens qui ont pris le risque de mentir parce qu'ils savaient (consciemment ou non) que personne ne vérifierait.</p>
-  </div>
-
-  <div class="sp-quote sp-reveal">
-    <blockquote>« La question qui se pose n'est pas : comment a-t-il pu faire ça ? C'est : comment avons-nous pu ne pas le voir ? »</blockquote>
-    <cite>Compte-rendu du procès, Le Monde, juillet 1996</cite>
+    <div class="sp-tl-item"><span class="sp-tl-date">Automne 1975</span><p>Échec à l'examen de 1ère année de médecine à Lyon. Romand ne dit rien à personne et commence à fréquenter la faculté sans être inscrit.</p></div>
+    <div class="sp-tl-item"><span class="sp-tl-date">1979</span><p>Mariage avec Florence. Invitation à une réception OMS à Genève. Le mensonge trouve son cadre définitif.</p></div>
+    <div class="sp-tl-item"><span class="sp-tl-date">1980 – 1991</span><p>Dix années de vie ordinaire dans le Pays de Gex. Deux enfants. Une maison. Des dîners entre amis. Des millions de francs collectés auprès de proches sous prétexte d'investissements.</p></div>
+    <div class="sp-tl-item"><span class="sp-tl-date">Automne 1992</span><p>Liaison avec Chantal Deleyer. Premières fissures dans l'édifice. Les beaux-parents demandent à récupérer leur argent.</p></div>
+    <div class="sp-tl-item"><span class="sp-tl-date">9 janvier 1993</span><p>Romand tue Florence et leurs deux enfants, puis ses propres parents. Il met le feu à la maison et survit.</p></div>
+    <div class="sp-tl-item"><span class="sp-tl-date">Juin 1996</span><p>Procès à Bourg-en-Bresse. Condamné à la réclusion criminelle à perpétuité.</p></div>
+    <div class="sp-tl-item"><span class="sp-tl-date">1999</span><p>Emmanuel Carrère publie <em>L'Adversaire</em>. Le livre devient un classique.</p></div>
+    <div class="sp-tl-item"><span class="sp-tl-date">2019</span><p>Libération conditionnelle après 26 ans. Romand vit sous identité protégée en France.</p></div>
   </div>
 
   <div class="sp-lesson sp-reveal">
     <div class="sp-lesson-inner">
-      <h3>La leçon pour les recruteurs</h3>
-      <p>L'affaire Romand n'est pas une curiosité historique. C'est un rappel brutal que la confiance, sans vérification, n'est pas une stratégie : c'est un pari.</p>
-      <p>Vérifier les diplômes et les expériences d'un candidat n'est pas un acte de méfiance. C'est de la diligence raisonnable. La question n'est pas "Ai-je des raisons de douter ?" La question est "Ai-je des raisons de ne pas vérifier ?"</p>
+      <span class="sp-lesson-label">Ce que ça change pour vous</span>
+      <h3>L'histoire de Romand n'est pas une histoire de crime. C'est une histoire de vérification.</h3>
+      <p>L'affaire Romand n'aurait jamais duré dix-huit ans si quelqu'un — n'importe qui — avait un jour passé un simple coup de téléphone à l'OMS. Un seul appel. "Bonjour, est-ce que Jean-Claude Romand travaille bien dans votre organisation ?" La réponse aurait pris trente secondes. Elle aurait changé le destin de cinq personnes.</p>
+      <p>Les parents, les beaux-parents, les amis de Romand n'étaient pas naïfs. Ils étaient simplement dans le système de confiance par défaut que nous entretenons tous envers ceux qui font partie de notre cercle. <strong>On ne vérifie pas les gens qu'on aime. On ne vérifie pas les gens qu'on respecte.</strong> Et précisément parce qu'on ne vérifie pas, certains bâtissent des vies entières sur ce silence.</p>
+      <p>Dans le recrutement, le même mécanisme s'applique. On fait confiance parce que le candidat est recommandé, parce qu'il parle bien, parce qu'il présente bien. Et personne ne passe le coup de fil qui prendrait quinze minutes.</p>
     </div>
   </div>
 
   <div class="sp-cta-block sp-reveal">
-    <div class="sp-cta-inner">
-      <div class="sp-cta-icon">
-        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
-      </div>
-      <div class="sp-cta-text">
-        <h4>Votre prochain recrutement mérite une vérification</h4>
-        <p>Diplômes, expériences, références : CVérifié vérifie tout en 48h. Dès 14,90 € par candidat, sans abonnement.</p>
-      </div>
-      <a href="/commander.html" class="sp-cta-btn">
-        Vérifier un candidat
-        <svg viewBox="0 0 16 16"><polyline points="3,8 13,8"/><polyline points="9,4 13,8 9,12"/></svg>
-      </a>
+    <div class="sp-cta-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg></div>
+    <div class="sp-cta-text">
+      <h4>Le coup de fil que personne ne passe ? On le passe pour vous.</h4>
+      <p>CVérifié vérifie diplômes, postes et expériences directement à la source, rapport écrit sous 48h. Dès 14,90 €.</p>
     </div>
+    <a href="/commander.html" class="sp-cta-btn">Vérifier un candidat <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 13,8"/><polyline points="9,4 13,8 9,12"/></svg></a>
   </div>
 
-  <nav class="sp-nav sp-reveal">
-    <a href="/blog/histoires-vraies-fraudes-cv.html">
-      <svg viewBox="0 0 16 16"><polyline points="13,8 3,8"/><polyline points="7,12 3,8 7,4"/></svg>
-      Toutes les histoires
-    </a>
-    <a href="/blog/histoire-marilee-jones-faux-diplomes-mit.html">
-      Marilee Jones, MIT
-      <svg viewBox="0 0 16 16"><polyline points="3,8 13,8"/><polyline points="9,4 13,8 9,12"/></svg>
-    </a>
+  <nav class="sp-nav">
+    <a href="/blog/histoires-vraies-fraudes-cv.html"><svg viewBox="0 0 16 16"><polyline points="13,8 3,8"/><polyline points="7,12 3,8 7,4"/></svg>Toutes les histoires</a>
+    <a href="/blog/histoire-marilee-jones-faux-diplomes-mit.html">Marilee Jones, MIT <svg viewBox="0 0 16 16"><polyline points="3,8 13,8"/><polyline points="9,4 13,8 9,12"/></svg></a>
   </nav>
 
 </article>
 
 <script>
-const spBar=document.getElementById('spBar');
-window.addEventListener('scroll',function(){const h=document.documentElement;spBar.style.width=Math.min((h.scrollTop||document.body.scrollTop)/(h.scrollHeight-h.clientHeight)*100,100)+'%';},{passive:true});
-const obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('sp-in');obs.unobserve(e.target);}});},{threshold:0.06,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.sp-reveal').forEach(function(el){obs.observe(el);});
+(function(){
+  var bar=document.getElementById('spBar');
+  function updateBar(){var s=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;if(h>0)bar.style.width=(s/h*100)+'%';}
+  window.addEventListener('scroll',updateBar,{passive:true});
+  var els=document.querySelectorAll('.sp-reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('sp-in');io.unobserve(e.target);}});},{threshold:0.08});
+    els.forEach(function(el){io.observe(el);});
+  } else {els.forEach(function(el){el.classList.add('sp-in');});}
+})();
 </script>
