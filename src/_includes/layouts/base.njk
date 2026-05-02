@@ -419,9 +419,10 @@ body.dark-story nav.main-nav {
   background:rgba(5,5,7,0.88);
   border-bottom-color:rgba(255,255,255,0.07);
 }
-body.dark-story .logo-nav {
-  filter: brightness(0) saturate(100%) invert(67%) sepia(30%) saturate(607%) hue-rotate(101deg) brightness(1.05);
-}
+/* Logo switching nav */
+.logo-nav-dark { display:none; }
+body.dark-story .logo-nav-default { display:none; }
+body.dark-story .logo-nav-dark { display:block; }
 body.dark-story .nav-links a { color:rgba(255,255,255,0.55); }
 body.dark-story .nav-links a:hover { color:var(--green-light); }
 body.dark-story .nav-links a.active { color:var(--green-light); }
