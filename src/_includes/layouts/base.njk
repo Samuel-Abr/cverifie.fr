@@ -339,7 +339,6 @@ nav.main-nav{
 @media(max-width:768px) {
   .nav-links { display: none; }
   .nav-cta { display: none; }
-  .nav-actions { display: none; }
   .nav-mobile-right { display: flex; }
 }
 
@@ -422,6 +421,7 @@ body.dark-story nav.main-nav {
 }
 /* Nav actions group (Tester + Lancer) */
 .nav-actions{display:flex;align-items:center;gap:8px}
+@media(max-width:768px){.nav-actions{display:none !important}}
 /* Demo button in nav */
 .nav-demo-btn{
   font-size:.875rem;font-weight:700;
