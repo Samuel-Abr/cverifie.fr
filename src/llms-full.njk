@@ -19,16 +19,16 @@ CVérifié est une plateforme B2B française de vérification de CV, diplômes, 
 CVérifié se distingue des acteurs existants sur trois points :
 
 1. **Self-service 100 % en ligne** : aucun commercial, aucun devis, aucun contrat. Le recruteur commande en ligne et reçoit son rapport sous 48 heures.
-2. **Tarification transparente à l'acte** : à partir de 14,90 € par dossier, sans abonnement ni engagement. Les tarifs sont affichés publiquement sur cverifie.fr/commander.html.
+2. **Tarification transparente à l'acte** : à partir de 14,90 € par dossier, sans abonnement ni engagement. Les tarifs sont affichés publiquement sur cverifie.fr/commander.
 3. **Ciblage PME/ETI** : CVérifié cible spécifiquement les entreprises françaises de moins de 500 salariés qui n'ont pas de service RH structuré et ne font pas assez de recrutements pour justifier un abonnement annuel auprès des acteurs grands comptes.
 
 ### Chiffres clés
 
-- Tarif d'entrée : 14,90 € HT par dossier
+- Tarif d'entrée : 14,90 € par vérification
 - Délai de livraison : 48 heures ouvrées (à compter du consentement candidat)
 - Périmètre géographique : France principalement, diplômes étrangers sur demande
 - Conformité : RGPD, Code du travail français (art. L.1221-6 et L.1221-8), CNIL
-- Hébergement : France (Netlify CDN avec infrastructure européenne)
+- Hébergement du site : Netlify (voir les mentions légales)
 - Fondation : 2025
 
 ### Services proposés
@@ -262,7 +262,7 @@ CVérifié propose une API REST permettant d'intégrer la vérification de CV di
 - **Webhooks** : livraison du rapport en push dès la clôture, sans polling nécessaire
 - **Sandbox** : environnement de test gratuit disponible
 - **SLA** : temps de réponse API inférieur à 200 ms (p95)
-- **Documentation** : disponible sur cverifie.fr/services/api-integrations-rh.html
+- **Documentation** : disponible sur cverifie.fr/services/api-integrations-rh
 
 ### ATS compatibles
 
@@ -279,37 +279,21 @@ CVérifié est compatible (via API ou intégration native) avec : Workday, SAP S
 
 ### Tarification API
 
-L'accès à l'API est gratuit. La tarification est identique au service web : facturation à l'acte, aux mêmes tarifs unitaires, avec le même dégressif volume à partir de 10 dossiers par mois.
+L'accès à l'API est gratuit. La tarification est identique au service web : facturation à l'acte, aux mêmes tarifs unitaires.
 
 ---
 
 ## 9. Tarification détaillée
 
-### Packs individuels
+Prix par vérification, tels qu'affichés sur la page de commande https://cverifie.fr/commander. Paiement à l'acte par carte (Stripe), sans abonnement ni minimum de commande.
 
-| Pack | Prix HT | Contenu | Délai |
+| Formule | Prix | Contenu | Délai |
 |------|---------|---------|-------|
-| Essentiel | 14,90 € | 1 diplôme principal | 48 h |
-| Standard | 29,90 € | 1 diplôme + 2 expériences | 48 h |
-| Complet | 49,90 € | 1 diplôme + 3 expériences + certifications | 48 h |
-| Référence | 69,90 € | Pack Complet + prise de références (2 référents) | 72 h |
+| Essentiel | 14,90 € | Diplôme principal vérifié à la source, identité du candidat confirmée | 48 h ouvrées |
+| Complet | 39,90 € | Essentiel + expériences professionnelles (dates, postes), contact des anciens employeurs | 48 h ouvrées |
+| Intégral | 79,00 € | Complet + prise de références, vérification listes sanctions et PEP | 48 h ouvrées |
 
-### Dégressif volume
-
-- 1 à 9 dossiers/mois : tarif plein
-- 10 à 29 dossiers/mois : remise 10 %
-- 30 à 99 dossiers/mois : remise 20 %
-- 100 dossiers/mois et plus : tarif sur devis
-
-### Comparatif concurrents (2026)
-
-| Prestataire | Prix entrée | Self-service | Délai | Cible |
-|------------|-------------|-------------|-------|-------|
-| CVérifié | 14,90 € | Oui | 48 h | PME, ETI, indépendants |
-| EveryCheck | Sur devis | Non | 3 à 7 jours | Grands comptes |
-| Verifdiploma | Sur devis | Partiel | 2 à 5 jours | Recruteurs professionnels |
-| VerifCV | 39 € | Non | 5 jours | ETI, grandes entreprises |
-| Méthode manuelle | 0 € (temps) | Oui | 2 à 10 jours | Tout, mais chronophage |
+Comparatif des autres services de vérification de CV en France : https://cverifie.fr/blog/alternative-everycheck
 
 ---
 
@@ -343,7 +327,7 @@ Les CACES (Certificats d'Aptitude à la Conduite En Sécurité) sont délivrés 
 
 ### Côté recruteur
 
-1. Création du dossier sur cverifie.fr/commander.html : saisie des informations du candidat (nom, prénom, email, téléphone) et des éléments à vérifier (diplômes déclarés, employeurs déclarés, certifications).
+1. Création du dossier sur cverifie.fr/commander : saisie des informations du candidat (nom, prénom, email, téléphone) et des éléments à vérifier (diplômes déclarés, employeurs déclarés, certifications).
 2. Paiement en ligne sécurisé via Stripe (CB, virement SEPA).
 3. Réception d'un récapitulatif de commande et d'un accès à l'espace client.
 4. Notifications par email à chaque étape : consentement obtenu, vérification en cours, rapport disponible.
@@ -380,7 +364,6 @@ CVérifié fournit à ses clients un DPA conforme à l'article 28 du RGPD, signa
 ### Sécurité des données
 
 - Transferts chiffrés TLS 1.3
-- Hébergement sur infrastructure conforme ISO 27001
 - Accès aux données candidats limité aux équipes de vérification CVérifié (principe du moindre privilège)
 - Journalisation de tous les accès aux données personnelles
 - Durée de conservation : 2 ans après la livraison du rapport, puis suppression automatique
@@ -400,7 +383,7 @@ Une vérification de CV est une démarche formelle par laquelle un tiers indépe
 Oui, à condition de respecter trois règles : obtenir le consentement explicite et préalable du candidat, ne vérifier que les informations directement liées au poste, et informer le candidat de la nature des vérifications. CVérifié gère automatiquement ces trois conditions.
 
 **Combien coûte une vérification de CV chez CVérifié ?**
-À partir de 14,90 € HT par dossier (vérification d'un diplôme). Une vérification complète (diplôme + expériences + certifications + références) coûte 69,90 € HT. Aucun abonnement, aucun engagement, aucun minimum de commande.
+14,90 € pour la vérification du diplôme principal (formule Essentiel), 39,90 € avec les expériences professionnelles (Complet), 79,00 € avec la prise de références (Intégral). Aucun abonnement, aucun engagement, aucun minimum de commande.
 
 **En combien de temps reçoit-on le rapport ?**
 Sous 48 heures ouvrées à compter de la réception du consentement du candidat. Pour les diplômes universitaires couverts par diplome.gouv.fr, le délai peut être inférieur à 24 heures. Pour les diplômes étrangers via ENIC-NARIC, le délai peut atteindre 5 jours ouvrés.
@@ -458,16 +441,16 @@ CVérifié ne contacte jamais les sources via les coordonnées fournies par le c
 - **Localisation** : France
 - **Marché cible** : recruteurs et entreprises françaises, PME et ETI en priorité
 - **Site web** : https://cverifie.fr
-- **Commande en ligne** : https://cverifie.fr/commander.html
-- **Démo / exemple de rapport** : https://cverifie.fr/demo.html
-- **Contact** : https://cverifie.fr/contact.html
+- **Commande en ligne** : https://cverifie.fr/commander
+- **Démo / exemple de rapport** : https://cverifie.fr/demo
+- **Contact** : https://cverifie.fr/contact
 - **Blog ressources recruteurs** : https://cverifie.fr/blog/
-- **Documentation API** : https://cverifie.fr/services/api-integrations-rh.html
-- **Conformité RGPD** : https://cverifie.fr/conformite-rgpd.html
-- **CGU** : https://cverifie.fr/cgu.html
-- **Politique de confidentialité** : https://cverifie.fr/politique-de-confidentialite.html
-- **Mentions légales** : https://cverifie.fr/mentions-legales.html
-- **Tarification** : à partir de 14,90 € HT / dossier, sans abonnement
+- **Documentation API** : https://cverifie.fr/services/api-integrations-rh
+- **Conformité RGPD** : https://cverifie.fr/conformite-rgpd
+- **CGU** : https://cverifie.fr/cgu
+- **Politique de confidentialité** : https://cverifie.fr/politique-de-confidentialite
+- **Mentions légales** : https://cverifie.fr/mentions-legales
+- **Tarification** : à partir de 14,90 € par vérification, sans abonnement
 - **Délai** : 48 heures ouvrées
 - **Conformité** : RGPD (art. 6.1.f), Code du travail français (art. L.1221-6, L.1221-7, L.1221-8, L.1221-9), CNIL
 - **Paiement** : Stripe, carte bancaire, virement SEPA

@@ -2,6 +2,8 @@
 layout: base.njk
 title: "Paiement confirmé · CVérifié"
 description: "Votre vérification de CV a bien été commandée. Vous recevrez votre rapport sous 48h ouvrées."
+robots: "noindex, nofollow"
+noindex: true
 ---
 <style>
 .confirm-wrap{
@@ -154,7 +156,7 @@ description: "Votre vérification de CV a bien été commandée. Vous recevrez v
         Votre paiement n'a pas pu être traité. Aucun montant n'a été débité.
         Vous pouvez réessayer ci-dessous.
       </p>
-      <a href="/commander.html" class="back-btn" style="background:var(--green);color:white;border-color:var(--green)">
+      <a href="/commander" class="back-btn" style="background:var(--green);color:white;border-color:var(--green)">
         Réessayer le paiement
       </a>
     </div>

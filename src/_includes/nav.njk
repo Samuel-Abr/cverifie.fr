@@ -8,13 +8,14 @@
     </div>
     <div class="nav-links">
       <a href="/#comment">Comment ça marche</a>
+      <a href="/services/" class="{{ 'active' if '/services' in page.url else '' }}">Services</a>
       <a href="/#tarifs">Tarifs</a>
       <a href="/#candidats">Pour les candidats</a>
       <a href="/#faq">FAQ</a>
       <a href="/blog/" class="{{ 'active' if '/blog' in page.url else '' }}">Blog</a>
     </div>
     <div class="nav-actions">
-      <a href="/demo.html" class="nav-demo-btn">Tester</a>
+      <a href="/demo" class="nav-demo-btn">Tester</a>
       <button class="nav-cta" onclick="window.location='/commander.html'">Lancer une vérification</button>
     </div>
     <div class="nav-mobile-right">
@@ -31,13 +32,14 @@
   <button class="mobile-menu-close" id="mobileClose" aria-label="Fermer le menu">&#x2715;</button>
   <a href="/" onclick="closeMobileMenu()">Accueil</a>
   <a href="/#comment" onclick="closeMobileMenu()">Comment ça marche</a>
+  <a href="/services/" onclick="closeMobileMenu()">Services</a>
   <a href="/#tarifs" onclick="closeMobileMenu()">Tarifs</a>
   <a href="/#candidats" onclick="closeMobileMenu()">Pour les candidats</a>
   <a href="/#faq" onclick="closeMobileMenu()">FAQ</a>
   <a href="/blog/" onclick="closeMobileMenu()">Blog</a>
-  <a href="/demo.html" onclick="closeMobileMenu()" style="font-weight:700;color:var(--green)">Voir un exemple de rapport</a>
+  <a href="/demo" onclick="closeMobileMenu()" style="font-weight:700;color:var(--green)">Voir un exemple de rapport</a>
   <div class="mobile-divider"></div>
-  <a href="/commander.html" class="mobile-cta">Lancer une vérification</a>
+  <a href="/commander" class="mobile-cta">Lancer une vérification</a>
 </div>
 
 <script>

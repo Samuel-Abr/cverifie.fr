@@ -8,3 +8,27 @@
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
+
+# En-têtes de sécurité (audit SEO-GEO, T08)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Cache long pour les images (audit SEO-GEO, T09).
+# 30 jours : un fichier image remplacé sous le même nom peut rester en cache côté visiteur.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# Un seul saut pour http://www (audit SEO-GEO, T10)
+[[redirects]]
+  from = "http://www.cverifie.fr/*"
+  to = "https://cverifie.fr/:splat"
+  status = 301
+  force = true

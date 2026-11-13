@@ -2,7 +2,19 @@
 layout: base.njk
 title: "API Vérification CV & Intégrations RH | CVérifié"
 description: "Intégrez la vérification de CV directement dans votre ATS ou SIRH. API REST CVérifié : webhooks, authentification OAuth2, résultats JSON. Pour équipes RH et DSI."
-hasFaq: true
+faqItems:
+  - q: "Faut-il être développeur pour utiliser l'API CVérifié ?"
+    a: "L'API CVérifié est destinée aux équipes techniques (développeurs, DSI) qui souhaitent intégrer la vérification de CV dans leur ATS ou SIRH. Elle requiert des compétences en développement backend pour effectuer des requêtes HTTP et gérer des webhooks. Cependant, si vous utilisez Greenhouse ou un ATS avec un marketplace d'intégrations, l'installation peut se faire en self-service sans développement. Pour toute autre intégration, un développeur ayant quelques heures disponibles suffira pour connecter l'API CVérifié à votre système."
+  - q: "L'API CVérifié est-elle disponible en sandbox pour les tests ?"
+    a: "Oui. Un environnement sandbox complet est disponible gratuitement depuis votre espace client CVérifié. Le sandbox utilise des données fictives et simule des délais réduits (quelques minutes au lieu de 48 h) pour faciliter les tests. Il reproduit tous les scénarios possibles : consentement accordé ou refusé, rapport avec confirmation, rapport avec discordances, timeout de candidat, etc. Aucun frais n'est engagé dans le sandbox. L'accès au sandbox est disponible immédiatement après création de compte."
+  - q: "Comment l'API gère-t-elle le consentement RGPD du candidat ?"
+    a: "Quand vous soumettez une vérification via l'API avec l'adresse email du candidat, CVérifié envoie automatiquement un email d'information au candidat, lui expliquant qu'une vérification est en cours, pour quel employeur, et sur quels éléments de son parcours. Un lien lui permet de donner ou refuser son consentement via une page sécurisée hébergée par CVérifié. La preuve de consentement (horodatée, avec adresse IP) est incluse dans le rapport final. Si le candidat refuse ou ne répond pas dans les 48 h, la vérification est annulée et vous êtes notifié via webhook. Aucun frais n'est prélevé pour les dossiers annulés avant consentement."
+  - q: "L'API peut-elle s'intégrer à n'importe quel ATS ?"
+    a: "L'API CVérifié est une API REST standard qui peut s'intégrer à tout ATS supportant les webhooks sortants ou les intégrations via HTTP. La grande majorité des ATS modernes (Greenhouse, Lever, Workday, BambooHR, Personio, Recruitee, SmartRecruiters, etc.) supportent ce type d'intégration. Si votre ATS est plus ancien et ne supporte pas les webhooks, il est souvent possible de passer par un outil d'automatisation intermédiaire (Zapier, Make/Integromat, n8n) pour faire le pont entre votre ATS et l'API CVérifié sans développement spécifique."
+  - q: "Quel est le délai de réponse de l'API CVérifié ?"
+    a: "L'API CVérifié répond à toutes les requêtes de soumission et de statut en moins de 200 ms (p95). Ce délai correspond au temps de réponse de l'API elle-même, pas au délai de traitement de la vérification. La vérification effective (contact des sources, rapport) prend 48 à 72 heures selon le type de vérification commandée. Vous êtes notifié de la livraison du rapport via webhook. Vous n'avez donc pas à poller l'API en boucle pour suivre l'avancement."
+  - q: "Y a-t-il des coûts supplémentaires pour l'accès à l'API ?"
+    a: "Non. L'accès à l'API CVérifié est entièrement gratuit. Il n'y a pas de frais d'inscription, pas de frais mensuels d'accès à l'API, pas de frais de mise en place, et pas de coût minimum. Vous ne payez que les vérifications réellement effectuées, au même tarif unitaire que le service web (14,90 € à l'unité, avec dégressif à partir de 10 dossiers par mois). Le sandbox est également gratuit et illimité. Pour les grandes entreprises avec des volumes importants (plus de 50 dossiers par mois), des tarifs négociés sont disponibles sur demande."
 ---
 <script type="application/ld+json">
 {
@@ -13,7 +25,7 @@ hasFaq: true
   "provider": { "@type": "Organization", "name": "CVérifié", "url": "https://cverifie.fr" },
   "areaServed": { "@type": "Country", "name": "FR" },
   "serviceType": "API de vérification de CV",
-  "offers": { "@type": "Offer", "price": "14.90", "priceCurrency": "EUR", "url": "https://cverifie.fr/commander.html" }
+  "offers": { "@type": "Offer", "price": "14.90", "priceCurrency": "EUR", "url": "https://cverifie.fr/commander" }
 }
 </script>
 <script type="application/ld+json">
@@ -23,7 +35,7 @@ hasFaq: true
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cverifie.fr/" },
     { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://cverifie.fr/services/" },
-    { "@type": "ListItem", "position": 3, "name": "API & Intégrations RH", "item": "https://cverifie.fr/services/api-integrations-rh.html" }
+    { "@type": "ListItem", "position": 3, "name": "API & Intégrations RH", "item": "https://cverifie.fr/services/api-integrations-rh" }
   ]
 }
 </script>
@@ -427,15 +439,15 @@ hasFaq: true
     <h2 class="svc-title">Articles connexes sur la vérification de CV</h2>
 
     <div class="related-grid">
-      <a class="related-card" href="/blog/alternative-everycheck.html">
+      <a class="related-card" href="/blog/alternative-everycheck">
         <div class="related-card-label">Comparatif</div>
         <h4>Alternatives à EveryCheck : comparatif des solutions de vérification de CV en France</h4>
       </a>
-      <a class="related-card" href="/blog/verification-cv-legal-france.html">
+      <a class="related-card" href="/blog/verification-cv-legal-france">
         <div class="related-card-label">Cadre légal</div>
         <h4>Vérification de CV en France : ce que la loi autorise et interdit</h4>
       </a>
-      <a class="related-card" href="/blog/rgpd-verification-candidat-guide-complet.html">
+      <a class="related-card" href="/blog/rgpd-verification-candidat-guide-complet">
         <div class="related-card-label">RGPD</div>
         <h4>RGPD et vérification de candidats : guide complet pour les RH</h4>
       </a>
@@ -448,12 +460,12 @@ hasFaq: true
   <div class="svc-cta">
     <h2>Accéder à la documentation API</h2>
     <p>Sandbox gratuit, documentation Swagger complète, support technique inclus. Première intégration réalisable en quelques heures.</p>
-    <a href="/contact.html" class="svc-cta-btn">Demander l'accès à l'API →</a>
+    <a href="/contact" class="svc-cta-btn">Demander l'accès à l'API →</a>
     <div style="margin-top:1.5rem;background:rgba(255,255,255,.15);border-radius:8px;padding:.75rem 1rem">
       <p style="color:rgba(255,255,255,.8);font-size:.85rem;margin:0">Aller plus loin :
-        <a href="/services/verification-diplomes.html" style="color:white;font-weight:600">Vérification de diplômes</a> ·
-        <a href="/services/controle-integrite.html" style="color:white;font-weight:600">Contrôle d'intégrité</a> ·
-        <a href="/services/prise-de-references.html" style="color:white;font-weight:600">Prise de références</a>
+        <a href="/services/verification-diplomes" style="color:white;font-weight:600">Vérification de diplômes</a> ·
+        <a href="/services/controle-integrite" style="color:white;font-weight:600">Contrôle d'intégrité</a> ·
+        <a href="/services/prise-de-references" style="color:white;font-weight:600">Prise de références</a>
       </p>
     </div>
   </div>

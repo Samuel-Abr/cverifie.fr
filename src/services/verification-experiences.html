@@ -2,7 +2,21 @@
 layout: base.njk
 title: "Vérification d'Expériences Professionnelles · CVérifié"
 description: "Vérifiez les expériences professionnelles de vos candidats : dates, postes, employeurs. Service en ligne, résultat sous 48 h, conforme RGPD. Dès 14,90 €."
-hasFaq: true
+faqItems:
+  - q: "Quelle est la différence entre vérification d'expériences et prise de références ?"
+    a: "La vérification d'expériences confirme des faits objectifs et vérifiables : dates d'emploi, intitulé de poste, type de contrat, existence de l'employeur. C'est une démarche factuelle qui donne une réponse binaire (confirmé / discordance). La prise de références, en revanche, recueille des avis qualitatifs d'anciens managers sur les compétences comportementales, la qualité du travail et l'intégration en équipe. Les deux démarches sont complémentaires et peuvent être commandées ensemble chez CVérifié. Pour les postes à responsabilité, nous recommandons systématiquement de combiner les deux."
+  - q: "Peut-on vérifier l'expérience d'un candidat qui n'a pas donné son accord ?"
+    a: "Non, en aucun cas. Le RGPD (art. 6.1.a) et l'article L.1221-6 du Code du travail imposent le consentement explicite du candidat avant toute collecte d'informations le concernant. CVérifié ne permet pas de lancer une vérification sans que le candidat ait formellement donné son accord via notre processus de consentement. Toute vérification effectuée sans consentement expose l'employeur à une plainte CNIL et à des poursuites pour violation de la vie privée."
+  - q: "Que faire si un ancien employeur ne répond pas à la demande de vérification ?"
+    a: "CVérifié effectue jusqu'à 3 tentatives de contact par canaux différents (téléphone, email officiel, courrier). Si l'employeur ne répond pas dans le délai imparti, le rapport indique \"Non confirmé : absence de réponse de l'employeur\" avec la traçabilité des tentatives de contact. Ce résultat est différent d'un résultat \"Discordance détectée\" et laisse à l'employeur le soin d'interpréter le silence selon le contexte. En cas d'entreprise liquidée, CVérifié recherche les archives commerciales disponibles."
+  - q: "CVérifié peut-il vérifier des expériences professionnelles à l'étranger ?"
+    a: "Oui, pour la majorité des pays. Pour les pays de l'Union Européenne, la vérification est facilitée par les registres d'entreprises accessibles en ligne (Companies House au Royaume-Uni, Handelsregister en Allemagne, Registro Mercantil en Espagne, etc.). Pour les pays hors UE, CVérifié dispose de correspondants locaux dans les principaux marchés (USA, Canada, Maghreb, Afrique subsaharienne, Asie). Un délai supplémentaire peut s'appliquer selon le pays d'origine."
+  - q: "Combien coûte la vérification d'une expérience professionnelle ?"
+    a: "La vérification d'une expérience est à 14,90 € par dossier. Un dossier peut inclure la vérification de 1 à 3 expériences pour ce même tarif de base. Au-delà de 3 expériences à vérifier, des frais additionnels peuvent s'appliquer. Pour les clients récurrents (plus de 10 dossiers par mois), des tarifs dégressifs sont disponibles. Consultez notre page de commande pour les détails tarifaires."
+  - q: "La vérification d'expériences est-elle différente de la prise de références ?"
+    a: "Oui. La vérification d'expériences est une démarche factuelle et documentaire : on confirme des données objectives (dates, poste, contrat) auprès du service RH de l'ancien employeur. La prise de références est une démarche qualitative : on recueille l'opinion d'un manager direct sur les compétences, le comportement et la valeur ajoutée du candidat. La vérification d'expériences est plus rapide et moins sujette à interprétation ; la prise de références est plus riche mais plus subjective. CVérifié propose les deux services, séparément ou combinés."
+  - q: "Peut-on vérifier un stage ou une période d'alternance ?"
+    a: "Oui. CVérifié peut vérifier les stages, les contrats d'apprentissage et les contrats de professionnalisation exactement comme les autres types de contrats. Ces vérifications sont particulièrement importantes pour les jeunes diplômés dont le parcours professionnel est essentiellement composé de stages. La vérification porte sur les mêmes éléments : dates, intitulé de mission, nom du maître de stage ou tuteur, type de contrat."
 ---
 <script type="application/ld+json">
 {
@@ -13,7 +27,7 @@ hasFaq: true
   "provider": { "@type": "Organization", "name": "CVérifié", "url": "https://cverifie.fr" },
   "areaServed": { "@type": "Country", "name": "FR" },
   "serviceType": "Vérification d'expériences professionnelles",
-  "offers": { "@type": "Offer", "price": "14.90", "priceCurrency": "EUR", "url": "https://cverifie.fr/commander.html" }
+  "offers": { "@type": "Offer", "price": "14.90", "priceCurrency": "EUR", "url": "https://cverifie.fr/commander" }
 }
 </script>
 <script type="application/ld+json">
@@ -23,7 +37,7 @@ hasFaq: true
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cverifie.fr/" },
     { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://cverifie.fr/services/" },
-    { "@type": "ListItem", "position": 3, "name": "Vérification d'expériences professionnelles", "item": "https://cverifie.fr/services/verification-experiences.html" }
+    { "@type": "ListItem", "position": 3, "name": "Vérification d'expériences professionnelles", "item": "https://cverifie.fr/services/verification-experiences" }
   ]
 }
 </script>
@@ -148,7 +162,7 @@ hasFaq: true
         </div>
         <div>
           <h4>Coût d'un mauvais recrutement : 15 000 à 120 000 €</h4>
-          <p>Selon le niveau de poste, le coût total d'un mauvais recrutement (onboarding, formation, rupture, remplacement) va de 15 000 € pour un poste d'exécution à plus de 120 000 € pour un poste de direction. Consulter notre article sur le <a href="/blog/cout-mauvais-recrutement-france.html" style="color:var(--green)">coût d'un mauvais recrutement en France</a>.</p>
+          <p>Selon le niveau de poste, le coût total d'un mauvais recrutement (onboarding, formation, rupture, remplacement) va de 15 000 € pour un poste d'exécution à plus de 120 000 € pour un poste de direction. Consulter notre article sur le <a href="/blog/cout-mauvais-recrutement-france" style="color:var(--green)">coût d'un mauvais recrutement en France</a>.</p>
         </div>
       </div>
       <div class="check-item">
@@ -284,7 +298,7 @@ hasFaq: true
     </div>
 
     <p style="margin-top:1.5rem;font-size:.875rem;color:var(--ink-muted)">
-      Pour aller plus loin : <a href="/blog/verification-cv-legal-france.html" style="color:var(--green)">La vérification de CV en France : ce que dit la loi</a>
+      Pour aller plus loin : <a href="/blog/verification-cv-legal-france" style="color:var(--green)">La vérification de CV en France : ce que dit la loi</a>
     </p>
   </div>
 </section>
@@ -314,7 +328,7 @@ hasFaq: true
       </div>
       <div class="faq-item">
         <h3>Combien coûte la vérification d'une expérience professionnelle ?</h3>
-        <p>La vérification d'une expérience est à 14,90 € par dossier. Un dossier peut inclure la vérification de 1 à 3 expériences pour ce même tarif de base. Au-delà de 3 expériences à vérifier, des frais additionnels peuvent s'appliquer. Pour les clients récurrents (plus de 10 dossiers par mois), des tarifs dégressifs sont disponibles. Consultez notre <a href="/commander.html" style="color:var(--green)">page de commande</a> pour les détails tarifaires.</p>
+        <p>La vérification d'une expérience est à 14,90 € par dossier. Un dossier peut inclure la vérification de 1 à 3 expériences pour ce même tarif de base. Au-delà de 3 expériences à vérifier, des frais additionnels peuvent s'appliquer. Pour les clients récurrents (plus de 10 dossiers par mois), des tarifs dégressifs sont disponibles. Consultez notre <a href="/commander" style="color:var(--green)">page de commande</a> pour les détails tarifaires.</p>
       </div>
       <div class="faq-item">
         <h3>La vérification d'expériences est-elle différente de la prise de références ?</h3>
@@ -335,15 +349,15 @@ hasFaq: true
     <h2 class="svc-title">Articles pour approfondir le sujet</h2>
 
     <div class="related-grid">
-      <a class="related-card" href="/blog/comment-verifier-experiences-professionnelles-candidat.html">
+      <a class="related-card" href="/blog/comment-verifier-experiences-professionnelles-candidat">
         <div class="related-card-label">Guide pratique</div>
         <h4>Comment vérifier les expériences professionnelles d'un candidat</h4>
       </a>
-      <a class="related-card" href="/blog/faux-cv-exemples-detecter-signaux.html">
+      <a class="related-card" href="/blog/faux-cv-exemples-detecter-signaux">
         <div class="related-card-label">Signaux d'alerte</div>
         <h4>Faux CV : exemples concrets et signaux à détecter lors du recrutement</h4>
       </a>
-      <a class="related-card" href="/blog/statistiques-mensonges-cv-france.html">
+      <a class="related-card" href="/blog/statistiques-mensonges-cv-france">
         <div class="related-card-label">Statistiques</div>
         <h4>Mensonges sur les CV en France : les chiffres qui doivent alerter les RH</h4>
       </a>
@@ -356,12 +370,12 @@ hasFaq: true
   <div class="svc-cta">
     <h2>Vérifiez les expériences de votre prochain candidat</h2>
     <p>14,90 € par dossier. Résultat sous 48 heures ouvrées. Aucun engagement.</p>
-    <a href="/commander.html" class="svc-cta-btn">Lancer une vérification →</a>
+    <a href="/commander" class="svc-cta-btn">Lancer une vérification →</a>
     <div style="margin-top:1.5rem;background:rgba(255,255,255,.15);border-radius:8px;padding:.75rem 1rem">
       <p style="color:rgba(255,255,255,.8);font-size:.85rem;margin:0">Aller plus loin :
-        <a href="/services/verification-diplomes.html" style="color:white;font-weight:600">Vérification de diplômes</a> ·
-        <a href="/services/prise-de-references.html" style="color:white;font-weight:600">Prise de références</a> ·
-        <a href="/services/controle-integrite.html" style="color:white;font-weight:600">Contrôle d'intégrité</a>
+        <a href="/services/verification-diplomes" style="color:white;font-weight:600">Vérification de diplômes</a> ·
+        <a href="/services/prise-de-references" style="color:white;font-weight:600">Prise de références</a> ·
+        <a href="/services/controle-integrite" style="color:white;font-weight:600">Contrôle d'intégrité</a>
       </p>
     </div>
   </div>

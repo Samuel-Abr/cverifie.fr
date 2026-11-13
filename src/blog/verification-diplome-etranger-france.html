@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: "Vérifier un diplôme étranger en France : guide ENIC-NARIC et apostille | CVérifié"
+title: "Vérifier un diplôme étranger : ENIC-NARIC, apostille | CVérifié"
 description: "Comment vérifier un diplôme étranger en France : ENIC-NARIC, apostille, procédures par pays (UE, USA, Maghreb, Inde, Chine). Guide complet pour recruteurs."
 ogType: article
 articleDate: "2026-02-12"
@@ -25,7 +25,7 @@ a:hover{text-decoration:underline;}
 .hero-blog::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,26,36,.35) 0%,rgba(26,26,36,.72) 100%);}
 .hero-text{position:absolute;bottom:48px;left:50%;transform:translateX(-50%);width:100%;max-width:760px;padding:0 24px;z-index:2;color:#fff;}
 .hero-cat{display:inline-block;background:var(--green-light);color:#fff;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px;}
-.hero-text h1{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.2;color:#fff;}
+.hero-text h1,.hero-text .hero-h1{font-weight:600;font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.2;color:#fff;}
 
 .article-wrap{max-width:760px;margin:0 auto;padding:48px 24px 80px;}
 .breadcrumb{font-size:.8rem;color:var(--ink-muted);margin-bottom:20px;}
@@ -104,19 +104,19 @@ a:hover{text-decoration:underline;}
   <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=72&fm=webp" alt="Globe terrestre et documents universitaires étrangers" loading="eager" fetchpriority="high" width="1200" height="800">
   <div class="hero-text">
     <span class="hero-cat">Guide pratique</span>
-    <h1>Vérifier un diplôme étranger en France : guide ENIC-NARIC et apostille</h1>
+    <p class="hero-h1">Vérifier un diplôme étranger en France : guide ENIC-NARIC et apostille</p>
   </div>
 </div>
 
 <div class="article-wrap">
   <div class="breadcrumb">
-    <a href="/">Accueil</a> &rsaquo; <a href="index.html">Blog</a> &rsaquo; Vérifier un diplôme étranger
+    <a href="/">Accueil</a> &rsaquo; <a href="/">Blog</a> &rsaquo; Vérifier un diplôme étranger
   </div>
 
   <div class="article-meta">
     <span class="tag">Guide pratique</span>
     <span class="meta-sep">|</span>
-    <span class="meta-date">7 novembre 2024</span>
+    <span class="meta-date">Publié le <time datetime="{{ articleDate }}">{{ articleDate | dateFr }}</time>{% if articleModified %}, mis à jour le <time datetime="{{ articleModified }}">{{ articleModified | dateFr }}</time>{% endif %}</span>
     <span class="meta-sep">|</span>
     <span class="meta-read">9 min de lecture</span>
   </div>
@@ -333,8 +333,8 @@ a:hover{text-decoration:underline;}
   <div style="margin:3rem 0 0;padding:1.5rem;background:var(--green-ultra,#f0faf4);border-radius:12px;border:1px solid var(--border,#e5e7eb)">
     <h2 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--ink,#1a1a24);margin:0 0 1rem">Nos services associés</h2>
     <div style="display:flex;flex-direction:column;gap:.625rem">
-      <a href="/services/verification-diplomes.html" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.875rem 1rem;background:#fff;border-radius:8px;border:1px solid var(--border,#e5e7eb);text-decoration:none;color:inherit"><div><div style="font-weight:600;font-size:.9rem;margin-bottom:.2rem">🎓 Vérification de diplômes</div><div style="font-size:.8rem;color:var(--ink-muted,#6b7280);line-height:1.5">Confirmation officielle auprès de chaque établissement. Rapport PDF en 48h.</div></div><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6,3 12,8 6,13"/></svg></a>
-      <a href="/services/verification-experiences.html" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.875rem 1rem;background:#fff;border-radius:8px;border:1px solid var(--border,#e5e7eb);text-decoration:none;color:inherit"><div><div style="font-weight:600;font-size:.9rem;margin-bottom:.2rem">💼 Vérification d'expériences</div><div style="font-size:.8rem;color:var(--ink-muted,#6b7280);line-height:1.5">Dates, intitulés et motifs de départ confirmés auprès des anciens employeurs.</div></div><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6,3 12,8 6,13"/></svg></a>
+      <a href="/services/verification-diplomes" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.875rem 1rem;background:#fff;border-radius:8px;border:1px solid var(--border,#e5e7eb);text-decoration:none;color:inherit"><div><div style="font-weight:600;font-size:.9rem;margin-bottom:.2rem">🎓 Vérification de diplômes</div><div style="font-size:.8rem;color:var(--ink-muted,#6b7280);line-height:1.5">Confirmation officielle auprès de chaque établissement. Rapport PDF en 48h.</div></div><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6,3 12,8 6,13"/></svg></a>
+      <a href="/services/verification-experiences" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.875rem 1rem;background:#fff;border-radius:8px;border:1px solid var(--border,#e5e7eb);text-decoration:none;color:inherit"><div><div style="font-weight:600;font-size:.9rem;margin-bottom:.2rem">💼 Vérification d'expériences</div><div style="font-size:.8rem;color:var(--ink-muted,#6b7280);line-height:1.5">Dates, intitulés et motifs de départ confirmés auprès des anciens employeurs.</div></div><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6,3 12,8 6,13"/></svg></a>
     </div>
   </div>
 

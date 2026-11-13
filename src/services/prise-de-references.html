@@ -2,7 +2,19 @@
 layout: base.njk
 title: "Prise de Références Professionnelles · CVérifié"
 description: "Recueillez des avis structurés d'anciens managers sur vos candidats. Entretiens téléphoniques standardisés, conformes RGPD. Résultat sous 48 h."
-hasFaq: true
+faqItems:
+  - q: "Combien de références CVérifié contacte-t-il par défaut ?"
+    a: "CVérifié contacte 2 à 3 références en standard. Il est recommandé de viser 3 références couvrant si possible les 5 dernières années : le manager direct le plus récent, un manager ou N+2 d'une expérience précédente, et si pertinent un client interne ou externe. Le rapport intègre toutes les réponses obtenues. Si un référent refuse de répondre ou n'est pas joignable, CVérifié le consigne et peut proposer de contacter un référent de substitution si vous en avez un à suggérer."
+  - q: "Peut-on faire une prise de références à l'insu du candidat ?"
+    a: "Non, en aucun cas. CVérifié requiert le consentement explicite du candidat avant de contacter ses références, conformément au RGPD et au droit du travail français. Le candidat est informé du nom de l'employeur commanditaire, du nombre de références qui seront contactées et des grandes thématiques abordées. Une prise de références menée à l'insu d'un candidat constituerait une violation de sa vie privée et exposerait l'employeur à des poursuites."
+  - q: "Que se passe-t-il si les référents refusent de répondre ?"
+    a: "CVérifié effectue jusqu'à 3 tentatives de contact par téléphone et email pour chaque référent. En cas de refus explicite, cela est consigné dans le rapport (\"Référent contacté, a refusé de répondre\") sans que CVérifié ne cherche à interpréter ce refus. En cas d'absence de réponse, un dernier message est laissé et l'absence de réponse est documentée. L'employeur reçoit dans tous les cas un rapport avec la traçabilité complète des démarches effectuées, même si aucun référent n'a répondu."
+  - q: "Quelle est la différence entre prise de références et vérification d'expériences professionnelles ?"
+    a: "La vérification d'expériences est factuelle et documentaire : elle confirme ou infirme des données objectives (dates d'emploi, intitulé de poste, type de contrat) en interrogeant le service RH de l'ancien employeur. La prise de références est qualitative : elle recueille l'opinion subjective d'anciens managers sur les compétences comportementales, la qualité du travail et la valeur ajoutée du candidat. Les deux démarches sont complémentaires. CVérifié propose de les combiner dans son offre de contrôle d'intégrité."
+  - q: "Quel est le tarif de la prise de références ?"
+    a: "La prise de références professionnelles est proposée à partir de 29,90 € par dossier (2 à 3 références contactées, rapport de synthèse inclus). Pour les clients souhaitant combiner prise de références et vérification d'expériences ou de diplômes, des offres groupées sont disponibles dans notre formule de contrôle d'intégrité complète à 39,90 €. Aucun abonnement, aucun engagement. Facturation à l'usage."
+  - q: "La prise de références est-elle juridiquement valable en France ?"
+    a: "Oui, la prise de références professionnelles est une pratique légale en France, encadrée par l'article L.1221-6 du Code du travail et le RGPD. Elle est considérée comme une méthode de recrutement licite à condition de respecter trois critères : consentement du candidat, pertinence des questions par rapport à l'emploi proposé, et absence de questions discriminatoires. Le rapport produit par CVérifié peut être conservé dans le dossier de recrutement et utilisé comme élément d'aide à la décision."
 ---
 <script type="application/ld+json">
 {
@@ -13,7 +25,7 @@ hasFaq: true
   "provider": { "@type": "Organization", "name": "CVérifié", "url": "https://cverifie.fr" },
   "areaServed": { "@type": "Country", "name": "FR" },
   "serviceType": "Prise de références professionnelles",
-  "offers": { "@type": "Offer", "price": "29.90", "priceCurrency": "EUR", "url": "https://cverifie.fr/commander.html" }
+  "offers": { "@type": "Offer", "price": "29.90", "priceCurrency": "EUR", "url": "https://cverifie.fr/commander" }
 }
 </script>
 <script type="application/ld+json">
@@ -23,7 +35,7 @@ hasFaq: true
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cverifie.fr/" },
     { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://cverifie.fr/services/" },
-    { "@type": "ListItem", "position": 3, "name": "Prise de références professionnelles", "item": "https://cverifie.fr/services/prise-de-references.html" }
+    { "@type": "ListItem", "position": 3, "name": "Prise de références professionnelles", "item": "https://cverifie.fr/services/prise-de-references" }
   ]
 }
 </script>
@@ -284,15 +296,15 @@ hasFaq: true
     <h2 class="svc-title">Articles recommandés sur la prise de références</h2>
 
     <div class="related-grid">
-      <a class="related-card" href="/blog/comment-verifier-experiences-professionnelles-candidat.html">
+      <a class="related-card" href="/blog/comment-verifier-experiences-professionnelles-candidat">
         <div class="related-card-label">Méthodes</div>
         <h4>Comment vérifier les expériences professionnelles d'un candidat : méthodes et outils</h4>
       </a>
-      <a class="related-card" href="/blog/verification-cv-legal-france.html">
+      <a class="related-card" href="/blog/verification-cv-legal-france">
         <div class="related-card-label">Cadre légal</div>
         <h4>Vérification de CV en France : ce que la loi autorise et interdit</h4>
       </a>
-      <a class="related-card" href="/blog/rgpd-verification-candidat-guide-complet.html">
+      <a class="related-card" href="/blog/rgpd-verification-candidat-guide-complet">
         <div class="related-card-label">RGPD</div>
         <h4>RGPD et vérification de candidats : guide complet pour les RH</h4>
       </a>
@@ -305,12 +317,12 @@ hasFaq: true
   <div class="svc-cta">
     <h2>Lancez une prise de références sous 48 h</h2>
     <p>29,90 € par dossier. Entretiens structurés avec les anciens managers. Rapport de synthèse complet.</p>
-    <a href="/commander.html" class="svc-cta-btn">Commander une prise de références →</a>
+    <a href="/commander" class="svc-cta-btn">Commander une prise de références →</a>
     <div style="margin-top:1.5rem;background:rgba(255,255,255,.15);border-radius:8px;padding:.75rem 1rem">
       <p style="color:rgba(255,255,255,.8);font-size:.85rem;margin:0">Aller plus loin :
-        <a href="/services/verification-diplomes.html" style="color:white;font-weight:600">Vérification de diplômes</a> ·
-        <a href="/services/verification-experiences.html" style="color:white;font-weight:600">Vérification d'expériences</a> ·
-        <a href="/services/controle-integrite.html" style="color:white;font-weight:600">Contrôle d'intégrité complet</a>
+        <a href="/services/verification-diplomes" style="color:white;font-weight:600">Vérification de diplômes</a> ·
+        <a href="/services/verification-experiences" style="color:white;font-weight:600">Vérification d'expériences</a> ·
+        <a href="/services/controle-integrite" style="color:white;font-weight:600">Contrôle d'intégrité complet</a>
       </p>
     </div>
   </div>

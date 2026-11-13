@@ -6,21 +6,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ title if title else "CVérifié · Vérification de CV & Diplômes en 48h" }}</title>
 <meta name="description" content="{{ description if description else 'CVérifié vérifie les CV et diplômes de vos candidats en 48h. Service 100% en ligne, sans engagement, à partir de 14,90€.' }}">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://cverifie.fr{{ page.url }}">
+<meta name="robots" content="{{ robots if robots else 'index, follow, max-image-preview:large' }}">
+<link rel="canonical" href="https://cverifie.fr{{ page.url | cleanUrl }}">
 
 <!-- JSON-LD: Organisation (toutes pages) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://cverifie.fr/#organization",
   "name": "CVérifié",
-  "url": "https://cverifie.fr",
+  "url": "https://cverifie.fr/",
+  "email": "contact@cverifie.fr",
   "logo": "https://cverifie.fr/images/cverifie-logo-green-sm.png",
   "description": "Service de vérification de CV et de diplômes pour recruteurs français, 100 % en ligne, sous 48 h.",
   "foundingDate": "2025",
   "address": { "@type": "PostalAddress", "addressCountry": "FR", "addressLocality": "Paris" },
-  "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "url": "https://cverifie.fr/contact.html", "areaServed": "FR" },
+  "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "email": "contact@cverifie.fr", "url": "https://cverifie.fr/contact", "areaServed": "FR", "availableLanguage": "fr" },
   "sameAs": []
 }
 </script>
@@ -29,15 +31,12 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": "https://cverifie.fr/#website",
   "name": "CVérifié",
-  "url": "https://cverifie.fr",
+  "url": "https://cverifie.fr/",
   "description": "Service français de vérification de CV, diplômes et expériences professionnelles pour recruteurs. 100 % en ligne, sous 48 h, à partir de 14,90 €. Conforme RGPD.",
   "inLanguage": "fr-FR",
-  "publisher": {
-    "@type": "Organization",
-    "name": "CVérifié",
-    "url": "https://cverifie.fr"
-  }
+  "publisher": { "@id": "https://cverifie.fr/#organization" }
 }
 </script>
 {% if ogType == 'article' %}
@@ -51,15 +50,16 @@
   "datePublished": "{{ articleDate }}",
   "dateModified": "{{ articleModified if articleModified else articleDate }}",
   "author": {
-    "@type": "Person",
-    "name": "{{ articleAuthor if articleAuthor else 'Équipe CVérifié' }}"
+    "@type": "Organization",
+    "name": "{{ articleAuthor if articleAuthor else 'Équipe CVérifié' }}",
+    "url": "https://cverifie.fr/a-propos"
   },
   "publisher": {
     "@type": "Organization",
     "name": "CVérifié",
     "logo": { "@type": "ImageObject", "url": "https://cverifie.fr/images/cverifie-logo-green-sm.png" }
   },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://cverifie.fr{{ page.url }}" }
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://cverifie.fr{{ page.url | cleanUrl }}" }
 }
 </script>
 {% endif %}
@@ -80,48 +80,13 @@
   ]
 }
 </script>
-{% elif hasFaq %}
-<!-- JSON-LD: FAQPage (générique service) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Combien coûte une vérification de CV ?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Une vérification CVérifié commence à 14,90 € par dossier. Le tarif varie selon les éléments contrôlés (diplômes, expériences, références). Aucun abonnement ni engagement requis." }
-    },
-    {
-      "@type": "Question",
-      "name": "En combien de temps obtenez-vous les résultats ?",
-      "acceptedAnswer": { "@type": "Answer", "text": "CVérifié remet un rapport complet sous 48 heures ouvrées. Une option express 24 h est disponible sur demande." }
-    },
-    {
-      "@type": "Question",
-      "name": "Est-ce légal de vérifier le CV d'un candidat en France ?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Oui, à condition d'avoir obtenu le consentement écrit du candidat. CVérifié vous fournit les formulaires de consentement conformes au RGPD et au Code du travail." }
-    },
-    {
-      "@type": "Question",
-      "name": "Que vérifie exactement CVérifié ?",
-      "acceptedAnswer": { "@type": "Answer", "text": "CVérifié contrôle les diplômes (auprès des établissements émetteurs), les expériences professionnelles (auprès des anciens employeurs), les certifications professionnelles (CACES, IT, etc.) et peut réaliser des prises de références." }
-    },
-    {
-      "@type": "Question",
-      "name": "La vérification est-elle conforme au RGPD ?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Oui. Le consentement explicite du candidat est recueilli avant toute vérification. Les données sont traitées et hébergées en France, conformément au RGPD et à la CNIL." }
-    }
-  ]
-}
-</script>
 {% endif %}
 
 <!-- Open Graph -->
 <meta property="og:type" content="{{ ogType if ogType else 'website' }}">
 <meta property="og:title" content="{{ title if title else 'CVérifié · Vérification de CV & Diplômes en 48h' }}">
 <meta property="og:description" content="{{ description if description else 'CVérifié vérifie les CV et diplômes de vos candidats en 48h. Service 100% en ligne, sans engagement, à partir de 14,90€.' }}">
-<meta property="og:url" content="https://cverifie.fr{{ page.url }}">
+<meta property="og:url" content="https://cverifie.fr{{ page.url | cleanUrl }}">
 <meta property="og:image" content="{{ ogImage if ogImage else 'https://cverifie.fr/images/cverifie-og.png' }}">
 <meta property="og:site_name" content="CVérifié">
 <meta property="og:locale" content="fr_FR">
@@ -476,7 +441,7 @@ body.dark-story .nav-cta-mobile { background:var(--green); }
     <h2 class="lire-aussi-title">Lire aussi</h2>
     <div class="lire-aussi-grid">
       {% for item in related %}
-      <a href="/blog/{{ item.slug }}.html" class="lire-aussi-card">
+      <a href="/blog/{{ item.slug }}" class="lire-aussi-card">
         <span class="lire-aussi-label">Article</span>
         <span class="lire-aussi-name">{{ item.title }}</span>
         <span class="lire-aussi-arrow">→</span>
