@@ -3,7 +3,8 @@
     { "slug": "comment-verifier-experiences-professionnelles-candidat", "title": "Comment vérifier les expériences d'un candidat" },
     { "slug": "comment-verifier-diplome-francais-etape-par-etape", "title": "Comment vérifier un diplôme français" },
     { "slug": "verifier-certifications-professionnelles-caces-it", "title": "Vérifier les certifications professionnelles (CACES, IT…)" },
-    { "slug": "combien-coute-verification-cv-entreprise", "title": "Combien coûte une vérification de CV ?" }
+    { "slug": "combien-coute-verification-cv-entreprise", "title": "Combien coûte une vérification de CV ?" },
+    { "slug": "verification-cv-tech-startup-developpeur", "title": "Vérification de CV tech : 42, bootcamps, cloud" }
   ],
   "faux-cv-exemples-detecter-signaux": [
     { "slug": "statistiques-mensonges-cv-france", "title": "Mensonges sur les CV : chiffres & statistiques" },
@@ -15,7 +16,8 @@
     { "slug": "rgpd-verification-candidat-guide-complet", "title": "RGPD & vérification candidat : guide complet" },
     { "slug": "que-faire-candidat-ment-sur-cv", "title": "Que faire quand un candidat ment sur son CV ?" },
     { "slug": "alternative-everycheck", "title": "Alternative EveryCheck : comparatif 2026" },
-    { "slug": "combien-coute-verification-cv-entreprise", "title": "Combien coûte une vérification de CV ?" }
+    { "slug": "combien-coute-verification-cv-entreprise", "title": "Combien coûte une vérification de CV ?" },
+    { "slug": "verification-cv-secteur-sante-medical", "title": "Vérification de CV dans la santé" }
   ],
   "rgpd-verification-candidat-guide-complet": [
     { "slug": "verification-cv-legal-france", "title": "Vérification de CV : cadre légal en France" },
@@ -39,13 +41,15 @@
     { "slug": "faux-cv-exemples-detecter-signaux", "title": "Faux CV : 15 signaux d'alerte à connaître" },
     { "slug": "statistiques-mensonges-cv-france", "title": "Mensonges sur les CV : chiffres & statistiques" },
     { "slug": "comment-verifier-diplome-francais-etape-par-etape", "title": "Comment vérifier un diplôme français" },
-    { "slug": "que-faire-candidat-ment-sur-cv", "title": "Que faire quand un candidat ment sur son CV ?" }
+    { "slug": "que-faire-candidat-ment-sur-cv", "title": "Que faire quand un candidat ment sur son CV ?" },
+    { "slug": "verification-cv-finance-banque-conseil", "title": "Vérification de CV en finance et banque" }
   ],
   "comment-verifier-diplome-francais-etape-par-etape": [
     { "slug": "comment-verifier-cv-diplome-pme", "title": "Comment vérifier le CV d'un candidat (guide PME)" },
     { "slug": "verifier-certifications-professionnelles-caces-it", "title": "Vérifier les certifications professionnelles (CACES, IT…)" },
     { "slug": "verification-diplome-etranger-france", "title": "Vérifier un diplôme étranger en France" },
-    { "slug": "faux-diplome-grande-ecole-hec-sciences-po", "title": "Faux diplômes grandes écoles : HEC, Sciences Po…" }
+    { "slug": "faux-diplome-grande-ecole-hec-sciences-po", "title": "Faux diplômes grandes écoles : HEC, Sciences Po…" },
+    { "slug": "verification-cv-secteur-sante-medical", "title": "Vérification de CV dans la santé" }
   ],
   "que-faire-candidat-ment-sur-cv": [
     { "slug": "faux-cv-exemples-detecter-signaux", "title": "Faux CV : 15 signaux d'alerte à connaître" },
@@ -57,7 +61,8 @@
     { "slug": "alternative-everycheck", "title": "Alternative EveryCheck : comparatif 2026" },
     { "slug": "cout-mauvais-recrutement-france", "title": "Le coût d'un mauvais recrutement en France" },
     { "slug": "calculateur-cout-mauvais-recrutement", "title": "Calculateur : coût d'un mauvais recrutement" },
-    { "slug": "comment-verifier-cv-diplome-pme", "title": "Comment vérifier le CV d'un candidat (guide PME)" }
+    { "slug": "comment-verifier-cv-diplome-pme", "title": "Comment vérifier le CV d'un candidat (guide PME)" },
+    { "slug": "verification-cv-finance-banque-conseil", "title": "Vérification de CV en finance et banque" }
   ],
   "comment-verifier-experiences-professionnelles-candidat": [
     { "slug": "comment-verifier-cv-diplome-pme", "title": "Comment vérifier le CV d'un candidat (guide PME)" },

@@ -3,6 +3,26 @@ layout: base.njk
 title: "Lancer une vérification · CVérifié"
 description: "Lancez une vérification de CV ou de diplôme en quelques clics. Choisissez votre formule, renseignez les informations du candidat, recevez le rapport sous 48h."
 ---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Vérification de CV et de diplômes",
+  "serviceType": "Vérification des antécédents professionnels",
+  "provider": { "@id": "https://cverifie.fr/#organization" },
+  "areaServed": { "@type": "Country", "name": "France" },
+  "url": "https://cverifie.fr/commander",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Formules de vérification",
+    "itemListElement": [
+      { "@type": "Offer", "name": "Essentiel", "description": "Vérification du diplôme principal, identité du candidat confirmée, rapport PDF sous 48 h ouvrées.", "price": "14.90", "priceCurrency": "EUR", "url": "https://cverifie.fr/commander" },
+      { "@type": "Offer", "name": "Complet", "description": "Essentiel + expériences professionnelles (dates, postes), contact des anciens employeurs, rapport sous 48 h ouvrées.", "price": "39.90", "priceCurrency": "EUR", "url": "https://cverifie.fr/commander" },
+      { "@type": "Offer", "name": "Intégral", "description": "Complet + prise de références et vérification listes sanctions et PEP, rapport sous 48 h ouvrées.", "price": "79.00", "priceCurrency": "EUR", "url": "https://cverifie.fr/commander" }
+    ]
+  }
+}
+</script>
 <!-- Stripe.js — chargé tôt pour réduire la latence -->
 <script src="https://js.stripe.com/v3/"></script>
 

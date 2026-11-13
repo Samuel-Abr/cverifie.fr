@@ -1,5 +1,6 @@
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("src/favicon.ico");
 
   // URL publique propre, telle que Netlify la sert et la lie :
   // /contact.html -> /contact, /index.html -> /, /blog/index.html -> /blog/
@@ -13,6 +14,13 @@ module.exports = function(eleventyConfig) {
     const d = new Date(`${iso}T12:00:00Z`);
     return d.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
   });
+
+  // Articles du blog (pages avec ogType: article), triés par URL
+  eleventyConfig.addCollection("articles", (api) =>
+    api.getAll()
+      .filter((p) => p.url && p.url.startsWith("/blog/") && p.data.ogType === "article")
+      .sort((a, b) => a.url.localeCompare(b.url))
+  );
 
   // Les fichiers restent générés en .html (Netlify les sert sans l'extension)
   eleventyConfig.addGlobalData("permalink", () => {

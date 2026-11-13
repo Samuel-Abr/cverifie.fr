@@ -3,6 +3,24 @@ layout: base.njk
 title: "Blog CVérifié · Ressources pour recruteurs"
 description: "Guides pratiques, cadre légal, données de marché. Tout ce qu'un recruteur français doit savoir sur la vérification de CV et de diplômes."
 ---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Blog CVérifié : ressources pour recruteurs",
+  "url": "https://cverifie.fr/blog/",
+  "isPartOf": { "@id": "https://cverifie.fr/#website" },
+  "publisher": { "@id": "https://cverifie.fr/#organization" },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+{%- for p in collections.articles %}
+      { "@type": "ListItem", "position": {{ loop.index }}, "url": "https://cverifie.fr{{ p.url | cleanUrl }}", "name": {{ p.data.title | dump | safe }} }{{ "," if not loop.last }}
+{%- endfor %}
+    ]
+  }
+}
+</script>
 <style>
 /* BLOG MASTHEAD */
 .blog-masthead{
