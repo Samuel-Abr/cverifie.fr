@@ -124,6 +124,13 @@ description: "Une question, une demo ou juste un bonjour ? Contactez CVérifié 
 .form-success-ico svg{width:26px;height:26px;stroke:var(--green);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 .form-success-title{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--ink)}
 .form-success-text{font-size:.9rem;color:var(--ink-muted);line-height:1.65;max-width:380px}
+/* Error state */
+.form-error-msg{
+  margin-top:1rem;padding:.85rem 1rem;border-radius:10px;
+  background:var(--red-soft);color:var(--red);
+  font-size:.875rem;line-height:1.55;
+}
+.form-error-msg a{color:var(--red);font-weight:600;text-decoration:underline}
 
 /* ── INFO COL ── */
 .contact-info{
@@ -188,7 +195,7 @@ description: "Une question, une demo ou juste un bonjour ? Contactez CVérifié 
 
     <!-- FORM -->
     <div class="contact-form-wrap">
-      <form name="contact" data-netlify="true" netlify-honeypot="bot-field" method="POST" id="contact-form" onsubmit="handleSubmit(event)">
+      <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" method="POST" id="contact-form" onsubmit="handleSubmit(event)">
         <input type="hidden" name="form-name" value="contact">
         <p style="display:none"><label>Ne pas remplir : <input name="bot-field"></label></p>
 
@@ -244,6 +251,11 @@ description: "Une question, une demo ou juste un bonjour ? Contactez CVérifié 
             Envoyer le message
           </button>
         </div>
+
+        <p class="form-error-msg" id="form-error" role="alert" hidden>
+          Votre message n'a pas pu être envoyé. Merci de réessayer dans un instant ou de nous écrire directement à
+          <a href="mailto:contact@cverifie.fr">contact@cverifie.fr</a>.
+        </p>
 
       </form>
 
@@ -315,6 +327,9 @@ description: "Une question, une demo ou juste un bonjour ? Contactez CVérifié 
 function handleSubmit(e) {
   e.preventDefault();
   const btn = document.getElementById('submit-btn');
+  const errorEl = document.getElementById('form-error');
+  const originalLabel = btn.innerHTML;
+  errorEl.hidden = true;
   btn.disabled = true;
   btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="8,12 11,15 16,9"/></svg> Envoi en cours...';
 
@@ -322,13 +337,17 @@ function handleSubmit(e) {
   const data = new URLSearchParams(new FormData(form));
 
   fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data.toString() })
-    .then(() => {
+    .then((response) => {
+      // fetch ne rejette pas sur 404/405/500 : on vérifie le statut nous-mêmes
+      if (!response.ok) throw new Error('HTTP ' + response.status);
       form.style.display = 'none';
       document.getElementById('form-success').style.display = 'flex';
     })
-    .catch(() => {
-      form.style.display = 'none';
-      document.getElementById('form-success').style.display = 'flex';
+    .catch((err) => {
+      console.error('Envoi du formulaire de contact échoué :', err);
+      errorEl.hidden = false;
+      btn.disabled = false;
+      btn.innerHTML = originalLabel;
     });
 }
 </script>
