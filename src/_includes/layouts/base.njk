@@ -186,6 +186,13 @@ nav.main-nav{
 }
 .nav-links a:hover{color:var(--green)}
 .nav-links a.active{color:var(--green);font-weight:600}
+.nav-links a{white-space:nowrap}
+/* Écrans moyens : on resserre, puis on masque les liens secondaires (toujours dans le menu mobile) */
+@media(max-width:1180px){.nav-inner{padding:0 1.25rem}.nav-links{gap:1.1rem}.nav-links a{font-size:13.5px}}
+@media(max-width:1060px){.nav-links a[href="/#faq"]{display:none}}
+@media(max-width:1000px){.nav-links a[href="/#comment"]{display:none}}
+@media(max-width:870px){.nav-links a[href="/blog/"]{display:none}}
+@media(max-width:840px){.nav-links a[href="/#tarifs"]{display:none}}
 .nav-cta{
   background:var(--green);color:white;
   padding:10px 22px;border-radius:8px;border:none;
@@ -438,7 +445,7 @@ body.dark-story nav.main-nav {
   background:rgba(5,5,7,0.88);
   border-bottom-color:rgba(255,255,255,0.07);
 }
-/* Nav actions group (Tester + Lancer) */
+/* Nav actions group (Nous contacter + Vérifier un candidat) */
 .nav-actions{display:flex;align-items:center;gap:8px}
 @media(max-width:768px){.nav-actions{display:none !important}}
 /* Demo button in nav */
